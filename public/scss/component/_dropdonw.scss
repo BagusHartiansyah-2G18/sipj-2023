@@ -1,0 +1,29 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+@forward '../base/index';
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    & .dropdown-content {
+        display: none;
+        position: absolute;
+        @extend .blight;
+        @extend .borderR10px;
+        width: 100%;
+        @include _sty.shadow(1px 1px 1px 1px);
+        padding: 12px 16px;
+        z-index: 1;
+        // left: 5px;
+        top: 45px;
+    }
+
+}
+.dropdown:hover .dropdown-content  {
+    display: block;
+}
+
+input:focus + .dropdown-content{
+    display: block;
+}

@@ -1,0 +1,164 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+@forward '../base/index';
+@forward '../component/index';
+
+@forward 'loginResponsive';
+
+.wrapLogin1{
+    @include _pos.flexR();
+    width: 100%;
+    height: 100%;
+
+    & .wrap{
+        width: 40%; 
+        padding: 8% 10px;
+        & .logo{
+            width: max-content;
+            height: 300px;
+            margin: 0px auto;
+            @include _pos.flexC(); 
+            & img{
+                height: 60%;
+            }
+        }
+        & div{
+            @include _pos.flexC();
+            text-align: center;
+            & h2{
+                font-size: 50px;
+                display: block;
+                @extend .fpacifico;
+                text-shadow: map-get(_.$c,'info') 1px 0 10px;
+            }
+            & p{
+                @extend .fcookie;
+                // @include _.c('dark');
+                @extend .pm0;
+                font-size: 30px;
+                text-shadow: map-get(_.$c,'info') 1px 0 10px;
+                // border: 10px solid map-get(_.$c,'info');
+            }
+        }
+        & .subitem{
+            @include _pos.flexR();
+            @include _pos.justifyC();         
+            @include _pos.algI();  
+            padding: 5px 0px;
+            @include _.c('white'); 
+            margin-top: 10%;
+            // width: max-content;
+            & .material-icons{ 
+                padding: 5px;
+                @include _.bc('white'); 
+                border-radius: 50%;
+                // font-size: 25px;  
+                @extend .fz25;
+            }
+            & #text{
+                padding: 0px 15px;
+                text-align: start;
+                border-top-left-radius: 10px 10px;
+                border-bottom-left-radius: 10px 10px;
+                border-top-right-radius: 10px 10px;
+                border-bottom-right-radius: 10px 10px;
+                // @include _sty.shadow(3px 3px 3px 3px);
+        
+            }
+            .oval{
+                // @include _sty.shadow(3px 3px 3px 3px);
+            }
+            & #kiri{
+                @include _pos.relative();
+                left: -13px;
+                padding: 0px;
+            }
+            & #kanan{
+                @include _pos.relative();
+                left: 10px;
+                padding: 0px;
+            }
+            & .title{
+                @include _.flato('Lato-BlackItalic');
+                font-size: 25px;
+            }
+        } 
+    }
+
+    & .login{
+        width: 60%; 
+
+        & .wrap{
+            @include _pos.flexC();
+            padding: 8% 10px;
+            margin-top: 30%;
+            width: 100%;
+            & .nmApp{
+                @extend .fcookie;
+            }
+            & .form{
+                width: 80%;
+                @extend .m0auto;
+            }
+        }
+    }
+}
+
+.wrapLogin2{
+    @include _pos.flexR();
+    width: 100%;
+    height: 100%;
+
+    & .wrap{
+        width: 40%; 
+        padding: 8% 10px;
+        @include _pos.relative();
+        @include _pos.flexC();
+        // @include _pos.algI();
+        & .logo{
+            width: max-content;
+            height: max-content;
+            // height: 300px;
+            // @extend .m0auto;
+            @extend .povalBorder;
+            @extend .bdark;
+            @include _pos.absolute(('l': unset, 'r': -50px, 't': 30%, 'b': unset));
+            // right: 10%;
+            @include _sty.border(10px,'light');
+            & img{
+                height: 60%;
+            }
+        }
+         
+    }
+
+    & .login{
+        width: 60%; 
+
+        & .wrap{
+            @include _pos.flexC();
+            padding: 8% 10px;
+            margin-top: 20%;
+            width: 100%;
+            & .nmApp{
+                @extend .fcookie;
+                @extend .hheader;
+                @extend .m0auto;
+                & p{
+                    @extend .fcookie;
+                    // @include _.c('dark');
+                    @extend .pm0;
+                    font-size: 30px;
+                    text-shadow: map-get(_.$c,'info') 1px 0 10px;
+                    // border: 10px solid map-get(_.$c,'info');
+                }
+            }
+            & .form{
+                width: 80%;
+                @extend .m0auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@use './variable' as var;
+// //batas position => pos
+// // @debug ('l': unset, 'r': unset, 't': unset, 'b': unset);
+// // bottom : b
+// // top : t
+// // left : l 
+// // right : r
+// // tambah x jika permanent 
+@mixin fixed($map){
+    // mix.posFixed(('l': unset, 'r': unset, 't': unset, 'b': unset));
+    position: fixed;
+    bottom: map-get($map, 'b');
+    right: map-get($map, 'r');
+    top: map-get($map, 't');
+    left: map-get($map, 'l');
+}
+@mixin relative($display:false){
+    @if ($display){
+        display: $display;
+    }
+    position: relative;
+}
+@mixin absolute($map : ('l': unset, 'r': unset, 't': unset, 'b': unset)){
+    // ('l': unset, 'r': unset, 't': unset, 'b': unset)
+    position: absolute;
+    z-index: 1;
+    bottom: map-get($map, 'b');
+    right: map-get($map, 'r');
+    top: map-get($map, 't');
+    left: map-get($map, 'l');
+}
+@mixin flexC{
+    display: flex;
+    flex-direction: column;
+}
+@mixin flexR{
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin gridC($colom:false){
+    display: grid;
+    @if ($colom){
+        grid-template-columns: $colom;
+    }
+}
+@mixin gridR($row:false){
+    display: grid;
+    @if ($row){
+        grid-template-rows: $row;
+    }
+    
+}
+
+@mixin justifyC($display:false,$v: center){
+    @if ($display){
+        display: $display;
+    }
+    justify-content: $v;
+}
+@mixin justifyI($display:false,$v: center){
+    @if ($display){
+        display: $display;
+    }
+    justify-items: $v;
+}
+@mixin justifyS($display:false,$v: center){
+    @if ($display){
+        display: $display;
+    }
+    justify-self: $v;
+}
+
+@mixin algC($display:false,$v: center){
+    @if ($display){
+        display: $display;
+    }
+    align-content: $v;
+}
+@mixin algI($display:false,$v: center){
+    @if ($display){
+        display: $display;
+    }
+    align-items: $v;
+}
+@mixin algS($display:false,$v: center){
+    @if ($display){
+        display: $display;
+    }
+    align-self: $v;
+}
+
+
+@mixin rotasi($v: 45deg){
+    // skewY
+    transform: rotate($v);
+}
+@mixin skew($v: 45deg, $y : true){
+    @if $y {
+        transform: skewY($v);
+    } @else{
+        transform: skewX($v);
+    }
+}

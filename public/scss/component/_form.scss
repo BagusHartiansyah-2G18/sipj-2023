@@ -1,0 +1,389 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+@forward '../base/index';
+
+// & .abs{
+//     @include _pos.flexC();
+//     @include _pos.absolute(('l': -10%, 'r': unset, 't': unset, 'b': unset));
+//     @extend .w100p;
+//     & .form1:first-child,.form2:first-child{
+//         @extend .mw640px;
+        
+//     }
+//     & .form1:last-child,.form2:last-child{ 
+//         @include _pos.relative();
+//         right: -10%;
+//     }
+// }
+.formActionLeft{
+    @include _pos.flexC();
+    @include _pos.justifyC(false,space-between);
+} 
+.formActionLeftAct{
+    @include _pos.gridR(1fr);
+    gap: 15px;
+    & .form2:first-child, .form1:first-child{
+        width: 100%; 
+    }
+    & .updGrid2to1{
+        grid-area: 1;
+    }
+    & .form2:last-child,.form1:last-child{
+        min-width: 400px;
+        @include _pos.relative(); 
+    }
+}
+.form1{
+    @include _pos.flexC();
+    @include _.mar(0px 0px 3% 0px);
+    @include _sty.shadow(1px 1px 2px 2px);
+    border-radius: 5px;
+    & .header{
+        @include _pos.flexR();
+        @include _pos.justifyC(false,space-between);
+        // border: 2px solid map-get(_.$c, 'muted');
+        @include _.pad(1%);
+        & .icon{
+            @include _pos.flexR();
+            @include _pos.algI();
+            & span{
+                margin-right: 10px;
+            }
+        }
+    }
+    & .body{
+        @include _pos.flexC();
+        min-height: 50px;
+        @include _sty.shadow(1px 1px 3px 1px);
+        @include _.pad(1%);
+        // @include _.mar(0px 5%);
+    }
+    & .footer{
+        @include _pos.flexR();
+        min-height: 50px;
+        @include _.pad(1%);
+        @include _sty.shadow(1px 1px 1px 1px);
+    }
+    & .posEnd{
+        @include _pos.justifyC(flex,end);
+    }
+    & .absB0{
+        position: absolute;
+        bottom: 0px;
+        width: 98%;
+    }
+}
+.form2{
+    @include _pos.flexC();
+    border-radius: 10px;
+    @include _sty.shadow(3px 3px 3px 3px);
+    margin-bottom: 3%;
+    @extend .mw400px; 
+    & .header{
+        @include _pos.flexR();
+        @include _pos.justifyC(false,space-between);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        @include _sty.shadow(3px 3px 3px 3px);
+        @include _.pad(1%);
+        & .icon{
+            @include _pos.flexR();
+            @include _pos.algI();
+            & span{
+                margin-right: 10px;
+            }
+        }
+    }
+    & .header1{
+        text-align: center;
+        padding: 10px 15px;
+        // @include _.bc('primary');
+        // width: max-content;
+        @include _sty.shadow(3px 3px 3px 3px);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        @include _pos.flexR();
+        
+        @include _pos.algI();
+        & span{
+            border-radius: 10px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        & h2{
+            text-transform: uppercase;
+            @extend .fz15;
+        }
+    }
+    & .project{
+        @include _pos.gridC(repeat(4,25%));
+        margin: 0px 5% 5% 5%;
+        padding-top: 10px; 
+        border-radius: 15px;
+        // min-height: 400px;
+        // max-height: 600px;
+        // overflow: auto;
+        & .item{
+            margin: 5% 20px;
+            width: 80%;
+            height: 250px;
+            @include _.bc('light');
+            max-width: 200px;
+            border-radius: 10%;
+            @include _pos.flexC();
+            & img{
+                height: 90%;
+                border-radius: 10%;
+                border: 5px solid map-get(_.$c,'dark');
+            }
+            & h5{
+                text-align: center;
+                text-transform: uppercase;
+                height: 10%;
+            }
+        }
+
+        & .item2{
+            margin: 5% 20px;
+            width: max-content;
+            padding: 20px;
+            max-height: 500px;
+            @include _.bc('light');
+            max-width: 500px;
+            border-radius: 10%;
+            @include _pos.flexC();
+            @include _sty.shadow(3px 3px 5px 5px);
+            // @include _pos.fixed();
+            & .material-icons{
+                font-size: 50px;
+                text-align: center;
+                padding: 10px;
+                border-radius: 50%;
+                width: max-content;
+                @include _pos.relative();
+                top: -15px;
+                @include _pos.algS(flex);
+            }
+            & div{
+                height: 100%;
+                & h2{
+                    font-size: 14px;
+                    text-align: center;
+                    font-weight: bold;
+                    padding: 5px;
+                    text-transform: uppercase;
+                    text-decoration: dashed;
+                    margin-top: 0px;
+                }
+                & p{
+                    text-align: justify;
+                }
+            }
+        } 
+
+        
+        & .rotKiri{
+            @include _pos.skew(10deg, false);
+        }
+        & .rotKanan{
+            @include _pos.skew(-10deg, false);
+        }
+    }
+    & .footer{
+        @include _pos.flexR();
+        min-height: 50px;
+        @include _.pad(1%);
+        @include _sty.shadow(1px 1px 1px 1px);
+    }
+    & .posEnd{
+        @include _pos.justifyC(flex,end);
+    }
+    & .absB0{
+        position: absolute;
+        bottom: 0px;
+        width: 98%;
+    }
+}
+
+.formImage{
+    margin: 5% 20px;
+    width: 90%;
+    height: 200px;
+    @include _.c('white');
+    max-width: 500px;
+    border-radius: 10%;
+    @include _pos.flexR();
+
+    & img{
+        // height: 100%;
+        border-radius: 10%;
+        border: 5px solid map-get(_.$c,'white');
+    }
+    & div{
+        height: 100%;
+        padding: 10px;
+        & h2{
+            @extend .fz15;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
+            text-transform: uppercase;
+            text-decoration-line: underline;
+        }
+        & p{
+            text-align: justify;
+            @extend .fz15;
+        }
+    }
+}
+
+ 
+
+@media only screen and (min-width: 640px) {
+    
+}
+@media only screen and (min-width: 840px) {
+    
+}
+@media only screen and (min-width: 1007px) {
+}
+@media only screen and (min-width:1200px ) {
+    .formActionLeftAct{
+        @include _pos.flexR();
+        & .form2:first-child, .form1:first-child{
+            right: -10%
+        } 
+    }
+}
+@media only screen and (min-width:1400px ) {
+    
+        // & .form1:last-child,.form2:last-child{ 
+        //     @include _pos.relative();
+        //     right: -10%;
+        // }
+}
+
+
+.form0{
+    @extend .flexC;
+    @include _sty.shadow(1px 1px 1px 1px);
+    width: 100%;
+}
+
+.ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    overflow: visible;
+    position: relative
+}
+
+.ribbon::after,.ribbon::before {
+    position: absolute;
+    content: '';
+    display: block
+}
+
+.ribbon.ribbon-success::after,.ribbon.ribbon-success::before {
+    border: 5px solid map-get(_.$c, 'success');
+}
+
+.ribbon.ribbon-danger::after,.ribbon.ribbon-danger::before {
+    border: 5px solid map-get(_.$c, 'danger');
+}
+
+.ribbon.ribbon-primary::after,.ribbon.ribbon-primary::before {
+    border: 5px solid map-get(_.$c, 'primary');
+}
+
+.ribbon.ribbon-secondary::after,.ribbon.ribbon-secondary::before {
+    border: 5px solid map-get(_.$c, 'secondary');
+}
+.ribbon.ribbon-warning::after,.ribbon.ribbon-warning::before {
+    border: 5px solid map-get(_.$c, 'warning');
+}
+
+.ribbon span {
+    @extend .fz15;
+    position: absolute;
+    display: block;
+    width: auto;
+    padding: 15px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    color: #fff;
+    // font: 700 18px/1 Lato,sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    text-align: center
+}
+
+.ribbon.ribbon-top-left {
+    top: -10px;
+    left: -10px
+}
+
+.ribbon.ribbon-top-left::after,.ribbon.ribbon-top-left::before {
+    border-top-color: transparent;
+    border-left-color: transparent
+}
+
+.ribbon.ribbon-top-left::before {
+    top: 0;
+    right: 0
+}
+
+.ribbon.ribbon-top-left::after {
+    bottom: 0;
+    left: 0
+}
+
+.ribbon.ribbon-top-left span {
+    right: -25px;
+    top: 30px;
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg)
+}
+
+@media (max-width: 1600px) and (min-width:1200px) {
+    .ribbon.ribbon-top-left span {
+        right:-45px;
+        top: 14px
+    }
+}
+
+@media (max-width: 767px) {
+    .ribbon.ribbon-top-left span {
+        right:-45px;
+        top: 14px
+    }
+}
+
+.ribbon.ribbon-center::before {
+    height: 0;
+    width: 0;
+    border-width: 0;
+    border-top-width: 10px;
+    border-left: 10px solid transparent;
+    bottom: -10px;
+    left: -10px
+}
+
+.ribbon.ribbon-center::after {
+    height: 0;
+    width: 0;
+    border-width: 0;
+    border-top-width: 10px;
+    border-right: 10px solid transparent;
+    bottom: -10px;
+    right: -10px
+}
+
+.ribbon.ribbon-center span {
+    left: -10px;
+    right: -10px
+}

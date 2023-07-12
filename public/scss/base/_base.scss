@@ -1,0 +1,55 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+.dnone{display: none !important;}
+.flexR{@include _pos.flexR();}
+.flexC{@include _pos.flexC();}
+.algI{@include _pos.algI(flex)};
+.justifyEnd{@include _pos.justifyC(flex,end)}
+.justifySB{@include _pos.justifyC(flex,space-between)}
+.justifySE{@include _pos.justifyC(flex,space-evenly)}
+.justifySA{@include _pos.justifyC(flex,space-around)}
+.posRelative{@include _pos.relative();}
+.grid3C{
+    @include _pos.gridC(repeat(3,1fr));
+    grid-gap: 10px;
+}
+
+.relTop40{
+    @include _pos.relative();
+    top: -40px;
+}
+.absTop40{@include _pos.absolute(('l': unset, 'r': unset, 't': -40px, 'b': unset));}
+.absTop70{@include _pos.absolute(('l': unset, 'r': unset, 't': 70px, 'b': unset));}
+.fixed{@include _pos.fixed(('l': unset, 'r': unset, 't': unset, 'b': unset));}
+
+.borderR50p{border-radius: 50%;}
+.borderR10px{border-radius: 10px;}
+.borderLeftTB10px{border-top-left-radius: 10px 10px; border-bottom-left-radius: 10px 10px;}
+.borderB{
+    border: 0px;
+    border-radius: 0px !important;
+    border-bottom: 1px solid map-get(_.$c,'light'); 
+}
+.overAuto{overflow: auto;}
+.over200px{
+    @extend .overAuto;
+    max-height: 200px; 
+}
+// @use '../abstracts/variable' as _;
+// @use '../abstracts/mixPosition' as _pos;
+// .iconText{
+//     @include _pos.flexR();
+//     @include _.mar(0 10px);
+//     & .color{
+//         @include _.c('light');
+//         @include _.pad(0 5px);
+//         text-decoration: none;
+//         cursor: pointer;
+//     }
+// }
+
+.boxShadow1px{
+    @include _sty.shadow(1px 1px 1px 1px,map-get(_.$c,'dark'));
+}

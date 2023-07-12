@@ -1,0 +1,14 @@
+@use '../../abstracts/variable' as _;
+@use '../../abstracts/mixPosition' as _pos;
+@use '../../abstracts/style' as _sty;
+
+
+.bimgOpa{
+    height: 200px;
+    background-image: url('../../slider/bg-dev1.jpg');
+    background-size: cover;
+    & .bgOpa{
+        height: 100%;
+        @include _.opacity('dark',0.4);
+    }
+}

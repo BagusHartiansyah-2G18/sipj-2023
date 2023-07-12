@@ -1,0 +1,31 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+
+@forward '../base/index';
+
+.flexR3{
+    @include _pos.flexC();
+    @include _pos.justifyC(false,space-between);
+    gap: 30px;
+} 
+
+@media only screen and (min-width: 640px) {
+    .flexR3{
+        @include _pos.gridC(repeat(2,1fr));
+        grid-gap: 40px;
+    }
+}
+@media only screen and (min-width: 840px) {
+    
+}
+@media only screen and (min-width: 1007px) {
+    .flexR3{
+        @include _pos.flexR();
+        gap: 50px;
+    }
+}
+@media only screen and (min-width:1200px ) {
+    
+}

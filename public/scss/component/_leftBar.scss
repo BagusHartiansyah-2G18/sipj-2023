@@ -1,0 +1,82 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+@forward '../base/index';
+
+.leftBar2{
+    width: 250px;
+    @include _.bc('white');
+    @include _pos.flexC();
+    height: 94%; 
+    // @include _pos.absolute(('l': -300px, 'r': unset, 't': 70px, 'b': unset));
+    @include _sty.shadow(1px 2px 2px 2px);
+    // border-right:1px solid purple ;
+    & .icon{
+        margin: 5% 0px;
+        padding: 5px;
+        // height: 60px;
+        width: 90%;
+        @include _pos.flexC();
+        @include _pos.justifyC();
+        @include _.c('dark');
+        text-align: center;
+        @extend .fcookie;
+        & img{
+            height: 50px; 
+            width: 50px;
+            @extend .m0auto;
+            border-radius: 50%;
+            padding: 10px;
+            @include _.bc('dark');
+        }
+        & h2{
+            @extend .pm0;
+        }
+    }
+    & ul{
+        @include _pos.flexC();
+        margin: 5%;
+        padding: 15px;
+        & li{
+            margin: 5% 0px;
+            list-style: none;
+            & a{
+                @include _pos.justifyC(false,space-between);
+                @include _pos.flexR();
+                @include _pos.algI();
+                text-decoration-line: unset;
+                cursor: pointer;
+                & label{
+                    text-transform: uppercase;
+                    @extend .fz15;
+                    cursor: pointer;
+                }
+                & .material-icons{
+                    @extend .fz25;
+                }
+            }
+        }
+    }
+} 
+.lbActive{
+    @include _pos.absolute(('l': -350px, 'r': unset, 't': 70px, 'b': unset));
+}
+.lfAct{
+    @include _pos.absolute(('l': unset, 'r': unset, 't': 70px, 'b': unset));
+}
+
+@media only screen and (min-width: 640px) {
+    
+}
+@media only screen and (min-width: 840px) {
+    
+}
+@media only screen and (min-width: 1007px) {
+    .leftBar2{
+        width: 275px;
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width:1200px ) {
+    
+}

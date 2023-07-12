@@ -1,0 +1,62 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+
+.wblock{display: block !important;}
+.w100p{width: 100% !important;}
+.w95p{width: 95% !important;}
+.w90p{width: 90% !important;}
+.w80p{width: 80% !important;}
+.w70p{width: 70% !important;}
+.w65p{width: 65% !important;}
+.w50p{width: 50% !important;}
+.w45p{width: 45% !important;}
+.w30p{width: 30% !important;}
+.w20p{width: 20% !important;}
+.wmax{width: max-content !important;}
+
+.w200px{width: 200px !important;}
+.w250px{width: 250px !important;}
+.w300px{width: 300px !important;}
+.w350px{width: 350px !important;}
+.w400px{width: 400px !important;}
+.w450px{width: 450px !important;}
+.w500px{width: 500px !important;}
+.w550px{width: 550px !important;}
+.w600px{width: 600px !important;}
+.w640px{width: 640px !important;}
+.w700px{width: 700px !important;}
+.w800px{width: 800px !important;}
+.w900px{width: 900px !important;}
+
+
+
+.mw50px{min-width: 50px !important;}
+.mw75px{min-width: 75px !important;}
+.mw100px{min-width: 100px !important;}
+.mw125px{min-width: 125px !important;}
+.mw150px{min-width: 150px !important;}
+
+.mw175px{min-width: 175px !important;}
+.mw200px{min-width: 200px !important;}
+.mw250px{min-width: 250px !important;}
+.mw300px{min-width: 300px !important;}
+.mw350px{min-width: 350px !important;}
+.mw400px{min-width: 400px !important;}
+.mw450px{min-width: 450px !important;}
+.mw500px{min-width: 500px !important;}
+.mw550px{min-width: 550px !important;}
+.mw600px{min-width: 600px !important;}
+.mw640px{min-width: 640px !important;}
+.mw700px{min-width: 700px !important;}
+.mw800px{min-width: 800px !important;}
+.mw900px{min-width: 900px !important;}
+
+.hheader{height: 50px !important;}
+
+.w400px{width: 400px !important;}
+
+// height
+.mxh100p{max-height: 100% !important;}
+.hmax{height: max-content !important;}

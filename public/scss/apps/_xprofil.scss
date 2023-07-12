@@ -1,0 +1,568 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+@forward 'xprofilResponsive';
+.fz20{
+    font-size: 15px;
+}
+.fz15{
+    font-size: 12px;
+}
+.fz12{
+    font-size: 10px;
+}
+.fz10{
+    font-size: 8px;
+}
+
+// body
+body {
+    // font-family: var.$fonts;
+    @include _.flato('Lato-Regular');
+    padding: 0px;
+    margin: 0px;
+    @include _.c('dark');
+    @include _.padmar0;
+    background-image: url('/slider/bg-g30.png');
+}
+header{
+    @include _.pad(10px);
+    height: 50px;
+    @include _.bc('dark');
+    @include _.c('white');
+    // @include _pos.gridC(40% 20% 40%);
+    @include _pos.flexR();
+    @include _pos.algC();
+    @include _pos.relative();
+    border-top: 30px solid #17a2b8;
+    border-left: 30px solid transparent;
+    // border-bottom: 30px solid #343a40;
+    border-right: 30px solid transparent;
+    & .navbar{
+        @include _pos.gridC(repeat(2,50%));
+        // padding: 15px 10%;
+        width: 100%;
+        & .menu{
+            @include _pos.flexR();
+            @include _pos.algI();
+            cursor: pointer;
+        }
+        & .titmenu{ 
+            @include _.d0();
+        }
+        & .end{
+            @include _pos.justifyC(false,end);
+        }
+    }
+    & .center{
+        height: 80px;
+        @include _.mar(auto);
+        & div{
+            padding: 20px;
+            @include _pos.relative();
+            top: -20;
+            width: 80px;
+            background-color: #17a2b8;
+            border-radius: 50%;
+            & img{
+                background-color: white;
+                border-radius: 50%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+.minZiseIklan{
+    min-width: 400px !important;
+}
+.container{
+    @include _.opacity('light',0.6);
+    
+    & .iklan{
+        @include _pos.flexC();
+        width: 80%;
+        margin: auto;
+    }
+
+    & .wrapiklan{
+        @include _pos.flexC();
+        border-radius: 10px;
+        @include _sty.shadow(3px 3px 3px 3px);
+        margin-bottom: 5%;
+        @extend .minZiseIklan; 
+
+        & .judulProject{
+            text-align: center;
+            padding: 10px 15px;
+            // @include _.bc('primary');
+            // width: max-content;
+            @include _sty.shadow(3px 3px 3px 3px);
+            border-radius: 10px;
+            @include _pos.flexR();
+            
+            @include _pos.algI();
+            & .material-icons{
+                border-radius: 10px;
+                padding: 10px;
+                margin-right: 10px;
+            }
+            & h2{
+                text-transform: uppercase;
+                @extend .fz15;
+            }
+        }
+        & .project{
+            @include _pos.gridC(repeat(4,25%));
+            margin: 0px 5% 5% 5%;
+            padding-top: 10px; 
+            border-radius: 15px;
+            // min-height: 400px;
+            // max-height: 600px;
+            // overflow: auto;
+            & .item{
+                margin: 5% 20px;
+                width: 80%;
+                height: 250px;
+                @include _.bc('light');
+                max-width: 200px;
+                border-radius: 10%;
+                @include _pos.flexC();
+                & img{
+                    height: 90%;
+                    border-radius: 10%;
+                    border: 5px solid map-get(_.$c,'dark');
+                }
+                & h5{
+                    text-align: center;
+                    text-transform: uppercase;
+                    height: 10%;
+                }
+            }
+    
+            & .item2{
+                margin: 5% 20px;
+                width: max-content;
+                padding: 20px;
+                max-height: 500px;
+                @include _.bc('light');
+                max-width: 500px;
+                border-radius: 10%;
+                @include _pos.flexC();
+                @include _sty.shadow(3px 3px 5px 5px);
+                // @include _pos.fixed();
+                & .material-icons{
+                    font-size: 50px;
+                    text-align: center;
+                    padding: 10px;
+                    border-radius: 50%;
+                    width: max-content;
+                    @include _pos.relative();
+                    top: -15px;
+                    @include _pos.algS(flex);
+                }
+                & div{
+                    height: 100%;
+                    & h2{
+                        font-size: 14px;
+                        text-align: center;
+                        font-weight: bold;
+                        padding: 5px;
+                        text-transform: uppercase;
+                        text-decoration: dashed;
+                        margin-top: 0px;
+                    }
+                    & p{
+                        text-align: justify;
+                    }
+                }
+            } 
+    
+            
+            & .rotKiri{
+                @include _pos.skew(10deg, false);
+            }
+            & .rotKanan{
+                @include _pos.skew(-10deg, false);
+            }
+        }
+    }
+    & .slider{
+        margin: 5% auto; 
+        border-radius: 10px;
+        width: 200px;
+        text-decoration-style: none;
+        @include _pos.flexC();
+        @include _pos.algI();
+
+        @include _.c('white'); 
+        & #text{
+            padding: 0px 15px;
+            text-align: start;
+            border-top-left-radius: 10px 10px;
+            border-bottom-left-radius: 10px 10px;
+            border-top-right-radius: 10px 10px;
+            border-bottom-right-radius: 10px 10px;
+            @include _sty.shadow(3px 3px 3px 3px);
+
+        }
+        .oval{
+            @include _sty.shadow(3px 3px 3px 3px);
+        }
+        & #kiri{
+            @include _pos.relative();
+            left: -20px;
+            padding: 0px;
+        }
+        & #kanan{
+            @include _pos.relative();
+            left: 20px;
+            padding: 0px;
+        }
+        & .subitem{
+            @include _pos.flexR();
+            @include _pos.algI();        
+            // @include _.opacity('white',0.4);
+            padding: 5px 0px;
+            @include _.c('white'); 
+            // border-top-right-radius: 5%;
+            // border-bottom-right-radius: 5%;
+            // border-radius: 5%;
+            // @include _pos.justifyC(flex,space-around)
+        } 
+        & .material-icons{
+            // margin: auto;
+            padding: 5px;
+            @include _.bc('white'); 
+            border-radius: 50%;
+            font-size: 25px; 
+            // @include _pos.relative();
+            // top: -20px;
+        }
+        & .title{
+            font-size: 15px;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            @include _.c('white');
+        } 
+    } 
+    & .itemPengalaman{
+        @include _pos.flexC();
+        padding: 15px 5%; 
+        margin: 0px auto; 
+        & .item{
+            @include _pos.flexR();
+            @include _pos.algI();
+            height: 40px;
+            padding: 0px 10px;
+            margin: 10px 0px; 
+            border-top-right-radius: 10px 10px;
+            border-bottom-right-radius: 10px 10px;
+            & img{
+                height: 100%;
+                border-radius: 50%;
+                @include _pos.relative();
+                left: -25px;
+                @include _.pad(5px);
+                border-style: solid;
+                border-color: white;
+                border-top-left-radius: 10px 10px;
+                border-bottom-right-radius: 10px 10px;
+            }
+            & span{
+                padding: 5px;
+                @extend .fz15;
+            }
+        }
+    }
+    & .imgProfil{
+        margin: 5% 20px;
+        width: 90%;
+        height: 200px;
+        @include _.c('white');
+        max-width: 500px;
+        border-radius: 10%;
+        @include _pos.flexR();
+
+        & img{
+            // height: 100%;
+            border-radius: 10%;
+            border: 5px solid map-get(_.$c,'white');
+        }
+        & div{
+            height: 100%;
+            padding: 10px;
+            & h2{
+                @extend .fz15;
+                text-align: center;
+                font-weight: bold;
+                padding: 5px;
+                text-transform: uppercase;
+                text-decoration-line: underline;
+            }
+            & p{
+                text-align: justify;
+                @extend .fz15;
+            }
+        }
+    }
+}
+
+.wrap{
+    @include _pos.flexC(); 
+}
+
+.flowDev{
+    @include _pos.flexC();
+    width: 80%;
+    margin: 5% auto; 
+    & .wrap{
+        @extend .minZiseIklan; 
+        & .judulProject{
+            text-align: center;
+            padding: 10px 0px;
+            // @include _.bc('primary');
+            // width: max-content;
+            
+            border-radius: 10px;
+            @include _pos.flexR();
+            
+            @include _pos.algI();
+            & .material-icons{
+                border-radius: 10px;
+                padding: 10px;
+                margin-right: 10px;
+            }
+            & h2{
+                text-transform: uppercase;
+                @extend .fz15;
+                @include _.pad(5px 10px 5px 15px);
+                @include _sty.shadow(3px 3px 3px 3px);
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                @include _pos.relative();
+                left: -12;
+            }
+        }
+    }
+    & .flow{
+        @include _pos.gridC(repeat(2,1fr));
+        text-align: center;
+        @include _sty.shadow(3px 3px 3px 3px);
+        border-radius: 10px;
+        // @include _.opacity('purple',0.8);
+        & .dev{
+            @include _pos.flexC();
+            // padding: 0px 10px;
+            padding: 10px;
+            & .material-icons{
+                border-radius: 10px;
+                padding: 10px;
+                margin-right: 10px;
+                width: max-content;
+                margin: 0px auto;
+                @include _.bc('purple1');
+                @include _sty.shadow( 3px 3px,white);
+            }
+            & .judul{
+                @extend .fz15;
+                text-transform: uppercase;
+                padding: 5px 0px;
+            }
+            & ol{
+                text-align: start;
+                margin: auto;
+                & li{
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
+.bestProject{
+    @include _pos.flexC();
+    width: 80%;
+    margin: 5% auto;  
+    & .wrap{
+        @extend .minZiseIklan; 
+        & .judulProject{
+            text-align: center;
+            padding: 10px 0px;
+            // @include _.bc('primary');
+            // width: max-content;
+            
+            border-radius: 10px;
+            @include _pos.flexR();
+            
+            @include _pos.algI();
+            & .material-icons{
+                border-radius: 10px;
+                padding: 10px;
+                margin-right: 10px;
+            }
+            & h2{
+                text-transform: uppercase;
+                @extend .fz15;
+                @include _.pad(5px 10px 5px 15px);
+                @include _sty.shadow(3px 3px 3px 3px);
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                @include _pos.relative();
+                left: -12;
+            }
+        }
+    }
+    & .best{
+        @include _pos.flexC();
+        & .icon{
+            display: none;
+            width: 50%; 
+            @include _.pad(50px 100px 50px 0px);
+        }
+        & .project{
+            width: 100%;
+            @include _pos.flexR();
+            & .collom{
+                @include _pos.flexC(); 
+                height: 500px;
+                width: 50%;
+                & img{
+                    height: 50%;
+                    width: 90%;
+                    margin: 15px 10px; 
+                    border-radius: 10px;
+                    @include _sty.shadow(3px 3px 3px 3px,#343a40);
+                }
+            }
+            & .turun{
+                @include _pos.relative();
+                top: 50;
+            }
+        }
+    }
+}
+.contactPersonSosial{
+    // @include _pos.flexC();
+    @include _pos.gridC(40% 45%);
+    width: 100%;
+    @include _pos.justifyC();
+    @include _.opacity('dark',0.4);
+    & .itemCPS{
+        margin: 10% 5% 5% 5%; 
+        border-radius: 10px;
+        width: 100%;
+        text-decoration-style: none;
+        @include _pos.flexC();
+        @include _pos.algI();
+    
+        @include _.c('white'); 
+        & #text{
+            padding: 0px 15px;
+            text-align: start;
+            border-top-left-radius: 10px 10px;
+            border-bottom-left-radius: 10px 10px;
+            border-top-right-radius: 10px 10px;
+            border-bottom-right-radius: 10px 10px;
+            @include _sty.shadow(3px 3px 3px 3px);
+    
+        }
+        .oval{
+            @include _sty.shadow(3px 3px 3px 3px);
+        }
+        & #kiri{
+            @include _pos.relative();
+            left: -20px;
+            padding: 0px;
+        }
+        & #kanan{
+            @include _pos.relative();
+            left: 20px;
+            padding: 0px;
+        }
+        & .subitem{
+            @include _pos.flexR();
+            @include _pos.algI();        
+            // @include _.opacity('white',0.4);
+            padding: 5px 0px;
+            @include _.c('white'); 
+            width: max-content;
+            // border-top-right-radius: 5%;
+            // border-bottom-right-radius: 5%;
+            // border-radius: 5%;
+            // @include _pos.justifyC(flex,space-around)
+        } 
+        & .material-icons{
+            // margin: auto;
+            padding: 5px;
+            @include _.bc('white'); 
+            border-radius: 50%;
+            font-size: 25px; 
+            // @include _pos.relative();
+            // top: -20px;
+        }
+        & .title{
+            @extend .fz15;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            @include _.c('white');
+        } 
+        
+    } 
+    & .autoLR{
+        margin: 10% 50% 5% 50% !important; 
+    }
+
+    & .endItem{
+        @include _pos.algI(false,end);
+    }
+    & .starItem{
+        @include _pos.algI(false,start);
+    }
+}
+.copyRight{
+    // @include _.bc('dark');
+    @include _pos.relative();
+    top: 30px;
+    & .judulProject{
+        text-align: center;
+        padding: 10px 10px;
+        @include _.bc('light');
+        width: max-content;
+        margin: 0px auto;
+        border-radius: 10px;
+        @include _pos.flexR();
+        
+        @include _pos.algI();
+        & .material-icons{
+            border-radius: 10px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        & h2{
+            text-transform: uppercase;
+            @extend .fz15;
+            @include _.pad(5px 10px 5px 15px);
+            @include _sty.shadow(3px 3px 3px 3px);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            @include _pos.relative();
+            left: -12;
+        }
+    }
+}
+
+.relTop40{
+    @include _pos.relative();
+    top: -40px;
+}
+.oval{
+    border-radius: 50%;
+    padding: 10px;
+}
+.spaceAround{
+    display: flex !important;
+    justify-content: space-around;
+}

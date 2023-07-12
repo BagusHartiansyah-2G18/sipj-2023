@@ -1,0 +1,179 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+@forward '../base/index';
+
+
+.btn1{
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px 16px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    // cursor: pointer;
+    border: 0px;
+    transition: opacity 0.3s;
+    background: none;
+
+}
+.btn1:hover:not(.dropdown){
+    opacity: 0.6;
+}
+
+.btn2{
+    @extend .btn1;
+    @include _pos.flexR();
+    @include _pos.algI();
+    border: 1px solid map-get(_.$c, 'dark');
+    & span{
+        margin-right: 5px;
+    }
+}
+.btn3{
+    margin: 0px;
+    @extend .btn2;
+    border-radius: 0px;
+}
+.btn4{
+    @extend .btn2;
+    @include _pos.justifyC(flex,space-between);
+}
+.btn5{
+    @extend .btn1;
+    @include _pos.flexR();
+    @include _pos.algI();
+    padding: 5px 0px;
+    & #text{
+        padding: 0px 15px;
+        text-align: start;
+        border-top-left-radius: 10px 10px;
+        border-bottom-left-radius: 10px 10px;
+        border-top-right-radius: 10px 10px;
+        border-bottom-right-radius: 10px 10px;
+        @include _sty.shadow(3px 3px 3px 3px);
+
+    }
+    & .title{
+        font-size: 15px;
+        padding: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        @include _.c('white');
+    }
+    & .mdi{
+        // margin: auto;
+        padding: 5px;
+        @include _.bc('white');
+        border-radius: 50%;
+        font-size: 25px;
+        // @include _pos.relative();
+        // top: -20px;
+    }
+    // & #kiri,#kanan{
+    //     @include _sty.shadow(3px 3px 3px 3px);
+    // }
+    & #kiri{
+        @include _pos.relative();
+        left: -20px;
+        padding: 0px;
+    }
+    & #kanan{
+        @include _pos.relative();
+        left: 20px;
+        padding: 0px;
+    }
+    // @include _pos.justifyC(flex,space-between);
+}
+.btn6{
+    @extend .btn1;
+    @include _pos.flexR();
+    @include _pos.algI();
+    padding: 0px 10px;
+    margin: 10px 0px;
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    & img, span{
+        height: 100%;
+        border-radius: 50%;
+        @include _pos.relative();
+        left: -25px;
+        @include _.pad(5px);
+        border-style: solid;
+        border-color: white;
+        border-top-left-radius: 10px 10px;
+        border-bottom-right-radius: 10px 10px;
+    }
+
+
+    & label{
+        padding: 5px;
+        @extend .fz15;
+    }
+}
+.btn7{
+    @extend .btn1;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 10px;
+    @include _pos.flexR();
+    @include _pos.algI();
+    & span{
+        border-radius: 10px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+    & h2{
+        text-transform: uppercase;
+        @extend .fz15;
+        @include _.pad(5px 10px 5px 15px);
+        @include _sty.shadow(3px 3px 3px 3px);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        @include _pos.relative();
+        left: -12px;
+    }
+}
+.btnGroup{
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    & ::before, ::after{
+        box-sizing: border-box;
+    }
+    & > .btn1:not(:first-child), .next{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    & > .btn1:not(:last-child), .previous{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    & .current{
+        border-radius: 0px;
+    }
+}
+.btnGroup-vertical > .btn, .btnGroup > .btn{
+    position: relative;
+    flex: 1 1 auto;
+}
+[type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled), button:not(:disabled),a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.disabled, .disabled {
+    @extend .cdark;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+.mdiLeftGroup{
+    @extend .pa;
+    @extend .ma;
+    @extend .borderLeftTB10px;
+    @extend .algI;
+}

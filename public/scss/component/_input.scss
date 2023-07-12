@@ -1,0 +1,102 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+@forward '../base/index';
+
+input, select{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px; 
+} 
+
+.labelInput1{
+    @include _pos.flexC();
+    margin: 5px 0px;
+    & label{
+        width: max-content;
+        @include _pos.relative();
+        z-index: 0;
+        top: 10px;
+        left: 10px;
+        font-size: 15px;
+        @extend .plabel;
+        background-color: white;
+        border-radius: 5px; 
+        font-weight: bold;
+    }
+    
+}
+.labelInput2{
+    @include _pos.flexR();
+    margin: 5px 0px;
+    @include _pos.algI();
+    border-radius: 10px;
+    & label{
+        width: max-content;
+        @extend .fz15;
+        font-weight: bold;
+        @extend .plabel;
+        @include _pos.flexR();
+        @include _pos.algI();
+        & span{
+            margin-right: 5px;
+        }
+    }
+    & input{
+        padding: 10px;
+        width: 100%;
+        border-radius: 10px;
+        // border: 5px solid map-get(_.$c,'secondary');
+        // outline: solid ;
+    } 
+}
+
+.iconInput1{
+    @extend .flexR;
+    @include _pos.relative();
+    & input{
+        @extend .piconR;
+        @extend .fz15;
+        width: 100%;
+    }
+    & span{
+        @extend .abspiconR;
+    }
+}
+.iconInput2{
+    @extend .flexR;
+    @include _pos.relative();
+    & input{
+        @extend .piconL;
+        @extend .fz15;
+        width: 100%;
+        height: max-content;
+    }
+    & span{
+        @extend .abspiconL;
+        z-index: 0;
+    }
+}
+ 
+
+.doubleInput{
+    @extend .flexC; 
+    & label{
+        @extend .fz15;
+        @extend .plabel;
+        font-weight: bold;
+    }
+    & .double{
+        @extend .flexR;
+        @include _pos.justifyC(false,space-around);
+        @include _pos.algI();
+        // & div:first-child{
+        //     width: 65%;
+        // }
+        // & div:last-child{
+        //     width: 30%;
+        // }
+    }
+}
+
+hr{border-top: 1px solid map-get(_.$c, 'dark'); width: 100%;}
