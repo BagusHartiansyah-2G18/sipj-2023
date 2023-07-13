@@ -17793,16 +17793,15 @@ function logout() {
   localStorage.removeItem('sess');
   return /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dispatch) {
-      var resp;
       return _regeneratorRuntime().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
-            resp = _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: 'logout/',
-              api: ''
-            });
-            window.location.replace('/login');
-          case 2:
+            // const resp = api.POST({
+            //   url:'logout/',
+            //   api:''
+            // });
+            window.location.replace('/logout');
+          case 1:
           case "end":
             return _context3.stop();
         }
@@ -19028,6 +19027,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var api = function () {
   var BASE_URL = 'http://localhost:8000/';
+  // const BASE_URL = 'https://sipj.bappedaksb.com/';
   function GET(_x) {
     return _GET.apply(this, arguments);
   }

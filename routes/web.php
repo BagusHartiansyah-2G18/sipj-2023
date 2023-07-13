@@ -42,7 +42,11 @@ Route::controller(HomeController::class)->name('home.')->prefix('home')->group(f
     Route::view('/{path?}', 'react')
         ->where('path', '.*');
 });
-
+Route::get('logout', function(){
+    Auth::logout();
+    Session::flush();
+    return redirect('/login');
+});
 Route::controller(Cdinas::class)->name('api.')->prefix('api/dinas')->group(function(){
     Route::get('/','index')->name('index');
     Route::post('/added','added')->name('added');

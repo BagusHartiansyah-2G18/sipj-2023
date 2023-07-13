@@ -1,5 +1,6 @@
 const api = (() => {
     const BASE_URL = 'http://localhost:8000/';
+    // const BASE_URL = 'https://sipj.bappedaksb.com/';
     async function GET({url, api = 'api/' }) {
         const response = await fetch(`${BASE_URL+api+url}`, {
           method: 'GET',
@@ -9,14 +10,14 @@ const api = (() => {
           // body: JSON.stringify(body),
         });
         const responseJson = await response.json();
-        const { exc, msg='-' } = responseJson; 
+        const { exc, msg='-' } = responseJson;
         if (!exc) {
           throw new Error(msg+ "=> "+url);
         }
         const { data } = responseJson;
         return data;
     }
-    async function POST({ url, body = {} , api = 'api/' }) { 
+    async function POST({ url, body = {} , api = 'api/' }) {
         const response = await fetch(`${BASE_URL+api+url}`, {
           method: 'POST',
           headers: {
@@ -26,7 +27,7 @@ const api = (() => {
           body: JSON.stringify(body),
         });
         const responseJson = await response.json();
-        const { exc, msg='-' } = responseJson; 
+        const { exc, msg='-' } = responseJson;
         if (!exc) {
           throw new Error(msg + "=> "+url);
         }
@@ -37,7 +38,7 @@ const api = (() => {
       dt      : 'data',
       add     : 'entri',
       upd     : 'update',
-      del     : 'delete', 
+      del     : 'delete',
     }
     return {
       GET,

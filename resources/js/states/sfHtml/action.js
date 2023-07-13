@@ -2,7 +2,7 @@ import api from "../../utils/api";
 const actType = {
     setAll : "ALL",
     leftBar: "leftBar",
-    setHtml: "setHtml", 
+    setHtml: "setHtml",
 };
 function setAll(v) {
   return {
@@ -11,7 +11,7 @@ function setAll(v) {
       v,
     },
   };
-} 
+}
 function setLeftBar(v) {
   return {
     type: actType.leftBar,
@@ -19,7 +19,7 @@ function setLeftBar(v) {
       v,
     },
   };
-} 
+}
 
 function setHtml(v) {
   return async (dispatch) => {
@@ -43,11 +43,11 @@ function modalClose(){
 function logout(){
   localStorage.removeItem('sess');
   return async (dispatch) => {
-    const resp = api.POST({
-      url:'logout/',
-      api:''
-    });
-    window.location.replace('/login');
+    // const resp = api.POST({
+    //   url:'logout/',
+    //   api:''
+    // });
+    window.location.replace('/logout');
   }
 }
 function session(){
@@ -63,11 +63,11 @@ function session(){
         })
       });
     } catch (error) {
-      
+
     }
-   
-    if(sess === null){ 
-      data = await api.GET({url:'dinas/sess'}); 
+
+    if(sess === null){
+      data = await api.GET({url:'dinas/sess'});
       await localStorage.setItem('sess',data.sess);
       await localStorage.setItem('menu',data.jenis);
       dispatch(setHtml({
@@ -82,7 +82,7 @@ function session(){
         menu
       }))
     }
-    
+
   }
 }
 function changeMenu(url){
@@ -91,7 +91,7 @@ function changeMenu(url){
     if(url.split('work').length>1){
         ind = 1;
     }
-    const xurl = url.split("/"); 
+    const xurl = url.split("/");
     return dispatch(
       setHtml({
         indMenu : ind,
@@ -99,7 +99,7 @@ function changeMenu(url){
       })
     )
   }
-  
+
 }
 
 function changeMenuSub({menuSub}){
@@ -110,13 +110,13 @@ function changeMenuSub({menuSub}){
       })
     )
   }
-  
+
 }
 
 function listMenu({ jenis }){
   return [
     {
-      id  : 1, 
+      id  : 1,
       url : 'home',
       nm  : 'BASIS DATA',
       menu : [
@@ -138,7 +138,7 @@ function listMenu({ jenis }){
         }
       ]
     },{
-      id  : 2, 
+      id  : 2,
       url : 'work',
       nm  : 'LEMBAR KERJA',
       menu : jenis.map((v,i)=>{
@@ -148,19 +148,19 @@ function listMenu({ jenis }){
         }
       })
     }
-  ] 
+  ]
 }
 
 export {
     actType,
-    
+
     setAll,
     setLeftBar,
 
     setHtml,
     modalClose,
 
-    logout, 
+    logout,
     session,
     changeMenu,
     changeMenuSub,
