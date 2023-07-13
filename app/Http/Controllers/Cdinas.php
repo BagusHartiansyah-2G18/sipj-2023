@@ -507,7 +507,7 @@ class Cdinas extends Controller
             'msg' => $cek['msg']
         ], 200);
     }
-    public function dinasDataBidang($kdDinas){ // all data 1 list
+    public function dinasDataBidang($kdDinas){
         $user =Auth::user();
         $cek = $this->portal($user);
         if($cek['exc']){

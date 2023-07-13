@@ -70,6 +70,7 @@ Route::controller(Cdinas::class)->name('api.')->prefix('api/dinas')->group(funct
     Route::get('/rincian','rincian')->name('rincian');
     Route::get('/dinasBidangSub','dinasBidangSub')->name('dinasBidangSub');
     Route::get('/dinasDataBidang/{kdDinas}','dinasDataBidang')->name('dinasDataBidang');
+    Route::get('/dinasDataBidangSub/{kdDinas}','dinasDataBidangSub')->name('dinasDataBidangSub');
     Route::get('/getSubBidang/{kdDinas}/{kdBidang}','getSubBidang')->name('getSubBidang');
     Route::get('/getUraianSub/{kdDinas}/{kdBidang}/{kdSub}','getUraianSub')->name('getUraianSub');
 
