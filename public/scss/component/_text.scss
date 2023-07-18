@@ -1,0 +1,20 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+@forward '../base/index';
+
+
+.tjudul{
+    @extend .fcookie;
+    @extend .hheader;
+    @extend .m0auto;
+    & p{
+        @extend .fcookie;
+        // @include _.c('dark');
+        @extend .pm0;
+        font-size: 30px;
+        text-shadow: map-get(_.$c,'info') 1px 0 10px;
+        // border: 10px solid map-get(_.$c,'info');
+    }
+}

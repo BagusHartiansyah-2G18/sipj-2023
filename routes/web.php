@@ -22,7 +22,9 @@ use App\Http\Controllers\PdfGenerator;
 */
 
 Route::get('/', function () {
+    return redirect()->route('login');
     return view('welcome');
+
 });
 Route::get('/nosession', function () {
     return response()->json([

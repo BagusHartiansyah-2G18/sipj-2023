@@ -12,25 +12,25 @@ const icon = [
 function HeaderM() {
     icon.forEach
     const { _html } = useSelector((state) => state);
-    const dispatch = useDispatch();   
+    const dispatch = useDispatch();
     const onOffLeftBar = (v) =>{
         dispatch(setLeftBar(v));
-    } 
-    const exeLogout=()=>{ 
+    }
+    const exeLogout=()=>{
         dispatch(logout());
     }
-    const updMenu = (v) =>{ 
+    const updMenu = (v) =>{
         dispatch(changeMenu(v))
-    } 
+    }
     return (
         <header id="mfc2" className="posRelative">
             <div className="header ">
                 <div className="flexR algI pwrap">
                     <img src={_html.url+'/logo/ksb.png'} />
                     <div className="flex clight ">
-                        <h2>BAPPEDA</h2> 
-                        <p>Badan Perencanaan Pembangunan Daerah</p> 
-                        <p>Sumbawa Barat</p> 
+                        <h2>BAPPEDA</h2>
+                        <p>Badan Perencanaan Pembangunan Daerah</p>
+                        <p>Sumbawa Barat</p>
                     </div>
                 </div>
                 <div className="algI">
@@ -40,13 +40,13 @@ function HeaderM() {
                             :<button className="btn2" id="menu"  onClick={()=>onOffLeftBar(1)}><span className="mdi mdi-close clight fziconS"></span></button>
                         )
                     }
-                    
+
                 </div>
             </div>
             <div className="body w95p">
                 <div className="btnGroup">
                     <span className="mdi mdi-web cdark mdi-spin bwarning mdiLeftGroup"></span>
-                    <button className="btn2">SIPJ</button> 
+                    <button className="btn2">SIPJ</button>
                 </div>
                 <div className="navbar updGrid2to3">
                     {
@@ -62,13 +62,12 @@ function HeaderM() {
                 </div>
                 <div className="user">
                     <button className="btn1 cdark" onClick={exeLogout}>
-                        <span className="mdi mdi-logout cdanger fz25">
-                        </span>
+                        <span className="mdi mdi-logout cdanger fz25"></span>
                         Logout
                     </button>
                 </div>
             </div>
-        </header> 
+        </header>
     );
 };
 

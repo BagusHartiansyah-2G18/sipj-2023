@@ -8,6 +8,7 @@ import FormDinas from "../components/subpages/dinas/formDinas";
 import FormBidang from "../components/subpages/dinas/formBidang";
 import FormAnggota from "../components/subpages/dinas/formAnggota";
 import Modal1 from '../components/Modal/modal1';
+import FormMember from "../components/subpages/dinas/formMember";
 
 
 function Dinas() {
@@ -15,30 +16,30 @@ function Dinas() {
     const [ind, setInd] = useState(0);
     const [index, setIndex] = useState(0);
     const dispatch = useDispatch();
-    const [modalC, setmodalC] = useState(''); 
+    const [modalC, setmodalC] = useState('');
 
     const changeDinas=({kdDinas,ind})=>{
         dispatch(getDBidang({kdDinas,ind}));
         setInd(ind);
         setIndex(0);
     }
-    const changeBidang=(v)=>{ 
+    const changeBidang=(v)=>{
         dispatch(getDAnggota(v));
         setIndex(v.index);
-    } 
+    }
 
     function setContentModal(v){
         setmodalC(v);
     }
 
     useEffect(() => {
-        dispatch(getDT()); 
+        dispatch(getDT());
     }, [dispatch]);
     if(_dinas.length===0){
         return (<></>)        ;
     }
-        
-    
+
+
     return (
         <>
             <HeaderPage1
@@ -46,11 +47,11 @@ function Dinas() {
                 pageKet={'daftar dinas diKSB'}
                 icon={'mdi-office-building-marker cdark'}
             ></HeaderPage1>
-            <FormDinas 
+            <FormDinas
                 dt={_dinas}
                 modalC={setContentModal}
             ></FormDinas>
-            <FormBidang 
+            <FormBidang
                 dt={_dinas}
                 changeDinas={changeDinas}
                 modalC={setContentModal}
@@ -60,13 +61,26 @@ function Dinas() {
                 (
                     (Object.keys(_dinas[ind]).length>0 && _dinas[ind].bidang!=undefined && _dinas[ind].bidang.length>0) &&
                     <FormAnggota
-                        dt={_dinas[ind].bidang} 
+                        dt={_dinas[ind].bidang}
                         index={index}
                         ind={ind}
                         kdDinas={_dinas[ind].kdDinas}
                         modalC={setContentModal}
                         changeBidang={changeBidang}
                     ></FormAnggota>
+                )
+            }
+            {
+                (
+                    (Object.keys(_dinas[ind]).length>0 && _dinas[ind].bidang!=undefined && _dinas[ind].bidang.length>0) &&
+                    <FormMember
+                        dt={_dinas[ind].bidang}
+                        index={index}
+                        ind={ind}
+                        kdDinas={_dinas[ind].kdDinas}
+                        modalC={setContentModal}
+                        changeBidang={changeBidang}
+                    ></FormMember>
                 )
             }
             <Modal1

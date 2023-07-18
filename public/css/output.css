@@ -76,7 +76,7 @@
   padding: 10px 0px !important;
 }
 
-.pm0, body, .wrapLogin1 .wrap div p, .wrapLogin2 .login .wrap .nmApp p, body#mfc, header#mfc1 .center div h2, header#mfc1 .center div p, .leftBar2 .icon h2, .headerPage1 .title .page h2 {
+.pm0, body, .wrapLogin1 .wrap div p, body#mfc, header#mfc1 .center div h2, header#mfc1 .center div p, .tjudul p, .leftBar2 .icon h2, .headerPage1 .title .page h2 {
   padding: 0px !important;
   margin: 0px !important;
 }
@@ -113,7 +113,7 @@
   margin: 0% 10px;
 }
 
-.m0auto, .container2, .wrapLogin1 .login .wrap .form, .wrapLogin2 .login .wrap .nmApp, .wrapLogin2 .login .wrap .form, .leftBar2 .icon img {
+.m0auto, .container2, .wrapLogin1 .login .wrap .form, .wrapLogin2 .login .wrap .form, .tjudul, .leftBar2 .icon img {
   margin: 0px auto;
 }
 
@@ -301,7 +301,7 @@
   min-width: 900px !important;
 }
 
-.hheader, .wrapLogin2 .login .wrap .nmApp, header#mfcProfil {
+.hheader, header#mfcProfil, .tjudul {
   height: 50px !important;
 }
 
@@ -596,7 +596,7 @@
   box-shadow: 1px 1px 1px 1px #343a40;
 }
 
-.fz25, .wrapLogin1 .wrap .subitem .material-icons, .leftBar2 ul li a .material-icons {
+.fz25, .wrapLogin1 .wrap .subitem .mdi, .leftBar2 ul li a .material-icons {
   font-size: 20px;
 }
 
@@ -650,7 +650,7 @@
   font-style: normal;
 }
 
-.fcookie, .wrapLogin1 .wrap div p, .wrapLogin1 .login .wrap .nmApp, .wrapLogin2 .login .wrap .nmApp, .wrapLogin2 .login .wrap .nmApp p, header#mfc2 .header h2, header#mfc2 .header p, .leftBar2 .icon {
+.fcookie, .wrapLogin1 .wrap div p, .wrapLogin1 .login .wrap .nmApp, header#mfc2 .header h2, header#mfc2 .header p, .tjudul, .tjudul p, .leftBar2 .icon {
   font-family: "Cookie", Cookie-Regular;
 }
 @font-face {
@@ -681,7 +681,7 @@
 }
 
 @media only screen and (min-width: 840px) {
-  .fz25, .wrapLogin1 .wrap .subitem .material-icons, .leftBar2 ul li a .material-icons {
+  .fz25, .wrapLogin1 .wrap .subitem .mdi, .leftBar2 ul li a .material-icons {
     font-size: 25px !important;
   }
   .fz20 {
@@ -1638,6 +1638,11 @@ table thead tr td {
     gap: 50px;
   }
 }
+.tjudul p {
+  font-size: 30px;
+  text-shadow: #17a2b8 1px 0 10px;
+}
+
 @media only screen and (min-width: 640px) {
   header .navbar .menu {
     display: flex;
@@ -1798,11 +1803,11 @@ header#mfc2 .body .updGrid2to3 {
 }
 .wrapLogin1 .wrap {
   width: 40%;
-  padding: 8% 10px;
+  padding: 5% 10px;
 }
 .wrapLogin1 .wrap .logo {
   width: max-content;
-  height: 300px;
+  height: 250px;
   margin: 0px auto;
   display: flex;
   flex-direction: column;
@@ -1833,7 +1838,7 @@ header#mfc2 .body .updGrid2to3 {
   color: #fff;
   margin-top: 10%;
 }
-.wrapLogin1 .wrap .subitem .material-icons {
+.wrapLogin1 .wrap .subitem .mdi {
   padding: 5px;
   background-color: #fff;
   border-radius: 50%;
@@ -1872,8 +1877,8 @@ header#mfc2 .body .updGrid2to3 {
 .wrapLogin1 .login .wrap {
   display: flex;
   flex-direction: column;
-  padding: 8% 10px;
-  margin-top: 30%;
+  padding: 5% 10px;
+  margin-top: 15%;
   width: 100%;
 }
 .wrapLogin1 .login .wrap .form {
@@ -1916,10 +1921,6 @@ header#mfc2 .body .updGrid2to3 {
   padding: 8% 10px;
   margin-top: 20%;
   width: 100%;
-}
-.wrapLogin2 .login .wrap .nmApp p {
-  font-size: 30px;
-  text-shadow: #17a2b8 1px 0 10px;
 }
 .wrapLogin2 .login .wrap .form {
   width: 80%;

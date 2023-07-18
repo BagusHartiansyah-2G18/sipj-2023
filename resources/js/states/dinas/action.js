@@ -229,11 +229,11 @@ const colDinas = [
   {
       name: 'Dinas',
       selector: row => row.nmDinas,
-      // width : '300px'
+      width : '340px'
   },{
       name: 'Pimpinan',
       selector: row => row.kadis,
-      width : '200px'
+      width : '220px'
   },{
       name: 'NIP',
       selector: row => row.nip,

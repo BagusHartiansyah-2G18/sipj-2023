@@ -76,7 +76,7 @@ function MyApp() {
                                         <>
                                             <Route path="/home/dashboard" element={<Dashboard /> } />
                                             {
-                                                ( sess.kdJaba === '3' &&
+                                                ( sess.kdJaba !== '1' &&
                                                     <>
                                                         <Route path="/home/dinas" element={<Dinas /> } />
                                                         <Route path="/home/rekeningBelanja" element={<RekeningBelanja /> } />
@@ -85,6 +85,7 @@ function MyApp() {
                                                 )
                                             }
                                             <Route path="/home/subkegiatan" element={<Subkegiatan /> } />
+                                            <Route path="*" element={<Dashboard /> } />
                                         </>
                                     )
                                 )

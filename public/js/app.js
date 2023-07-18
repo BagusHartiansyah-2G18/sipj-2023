@@ -9430,7 +9430,7 @@ function MyApp() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
                 path: "/home/dashboard",
                 element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-              }), sess.kdJaba === '3' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
+              }), sess.kdJaba !== '1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
                   path: "/home/dinas",
                   element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Dinas__WEBPACK_IMPORTED_MODULE_7__["default"], {})
@@ -9444,6 +9444,9 @@ function MyApp() {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
                 path: "/home/subkegiatan",
                 element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Subkegiatan__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+                path: "*",
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
               })]
             }), _html.indMenu === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
@@ -9823,14 +9826,14 @@ function Navbar() {
                 className: "mdi mdi-calendar cdark fz25"
               })]
             })
-          }), sess.kdJaba === '3' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+          }), sess.kdJaba !== '3' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                to: "/home/tahun",
+                to: "/home/member",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                  children: "Tahun"
+                  children: "Member"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi mdi-calendar cdark fz25"
+                  className: "mdi mdi-account cdark fz25"
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
@@ -9941,24 +9944,6 @@ function Navbar() {
                 className: "mdi mdi-account cdark fz25"
               })]
             })
-          }), sess.kdJaba === '3' && _html.menu[_html.indMenu].menu.map(function (v, i) {
-            var xnm = String(v.nmJPJ).toLowerCase().replace(/\s/g, '');
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-              onClick: function onClick() {
-                return selectMenuSub({
-                  menuSub: xnm
-                });
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                to: "/home/work/" + xnm,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                  className: actSubMenu(xnm, _html.menuSub),
-                  children: v.nmJPJ
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi ".concat(getIcon(xnm), " cdark fz25")
-                })]
-              })
-            }, "subMenu" + i);
           })]
         })]
       })]
@@ -9968,7 +9953,7 @@ function Navbar() {
 ;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);
 function actSubMenu(menu, menuAct) {
-  // const pathname = window.location.pathname;  
+  // const pathname = window.location.pathname;
   if (menuAct === menu) {
     return 'cprimary fbold';
   }
@@ -12691,6 +12676,420 @@ function FormDinas(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/subpages/dinas/formMember.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/subpages/dinas/formMember.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../states/dinas/action */ "./resources/js/states/dinas/action.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
+/* harmony import */ var _tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../tabel/tabel1 */ "./resources/js/components/tabel/tabel1.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var _Modal_modal1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Modal/modal1 */ "./resources/js/components/Modal/modal1.js");
+/* harmony import */ var _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mfc/sfHtml */ "./resources/js/components/mfc/sfHtml.js");
+/* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
+/* harmony import */ var _mfc_sfLib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function FormMember(_ref) {
+  var dt = _ref.dt,
+    kdDinas = _ref.kdDinas,
+    ind = _ref.ind,
+    index = _ref.index,
+    changeBidang = _ref.changeBidang,
+    modalC = _ref.modalC;
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(''),
+    _useInput2 = _slicedToArray(_useInput, 2),
+    search = _useInput2[0],
+    setSearch = _useInput2[1];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      value: index,
+      label: dt[index].nmBidang
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    selectedOptions = _useState2[0],
+    setSelectedOptions = _useState2[1];
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+    _useState4 = _slicedToArray(_useState3, 2),
+    onOff = _useState4[0],
+    setOnOff = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+    _useState6 = _slicedToArray(_useState5, 2),
+    ins = _useState6[0],
+    setIns = _useState6[1];
+  var coll = [].concat(_toConsumableArray(_states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.colAnggota), [{
+    cell: function cell(v) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "btnGroup",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+          className: "btn2",
+          title: "Perbarui",
+          onClick: function onClick() {
+            return upd(v);
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+            className: "mdi mdi-pencil-box cwarning fz25"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+          className: "btn2",
+          title: "Hapus",
+          onClick: function onClick() {
+            return del(v);
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+            className: "mdi mdi-delete-forever cdanger fz25"
+          })
+        })]
+      });
+    },
+    ignoreRowClick: true,
+    allowOverflow: true,
+    button: true,
+    width: '150px'
+  }]);
+  function mclose() {
+    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_7__.modalClose)());
+  }
+  var kdDBidang = dt[index].kdDBidang;
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(-1),
+    _useState8 = _slicedToArray(_useState7, 2),
+    index1 = _useState8[0],
+    setindex1 = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('1'),
+    _useState10 = _slicedToArray(_useState9, 2),
+    kdBAnggota = _useState10[0],
+    setBAnggota = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      value: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus[0].value,
+      label: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus[0].label
+    }),
+    _useState12 = _slicedToArray(_useState11, 2),
+    selStatus = _useState12[0],
+    setselStatus = _useState12[1];
+  var _useInput3 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
+    _useInput4 = _slicedToArray(_useInput3, 2),
+    nmAnggota = _useInput4[0],
+    setnmAnggota = _useInput4[1];
+  var _useInput5 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
+    _useInput6 = _slicedToArray(_useInput5, 2),
+    nmJabatan = _useInput6[0],
+    setnmJabatan = _useInput6[1];
+  var _useInput7 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
+    _useInput8 = _slicedToArray(_useInput7, 2),
+    nip = _useInput8[0],
+    setnip = _useInput8[1];
+  var anggota = dt[index].anggota;
+  function reset() {
+    setBAnggota('ba-1');
+    setnmAnggota({
+      target: {
+        value: ''
+      }
+    });
+    setnmJabatan({
+      target: {
+        value: ''
+      }
+    });
+    setnip({
+      target: {
+        value: ''
+      }
+    });
+    setselStatus({
+      value: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus[0].value,
+      label: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus[0].label
+    });
+  }
+  var close = function close() {
+    setOnOff(1);
+    // dispatch(setLeftBar(0));
+  };
+
+  var add = function add() {
+    // dispatch(setLeftBar(1));
+    setIns(1);
+    setOnOff(0);
+    reset();
+  };
+  var xadded = function xadded() {
+    dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.addedAnggota)({
+      kdDinas: kdDinas,
+      kdDBidang: kdDBidang,
+      nmAnggota: nmAnggota,
+      nmJabatan: nmJabatan,
+      nip: nip,
+      selStatus: selStatus.value,
+      ind: ind,
+      index: index
+    }));
+    reset();
+  };
+  var del = function del(v) {
+    var i = anggota.findIndex(function (val) {
+      return val.kdBAnggota === v.kdBAnggota;
+    });
+    setindex1(i);
+    setBAnggota(anggota[i].kdBAnggota);
+    modalC(_mfc_sfHtml__WEBPACK_IMPORTED_MODULE_6__["default"].modalForm({
+      label: "Konfirmasi",
+      mclose: mclose,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+        children: "Apa benar ingin Mengapus data ini ?"
+      }),
+      footer: _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_6__["default"].modalBtn({
+        mclose: mclose,
+        xdeled: xdeled
+      })
+    }));
+    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_7__.setAll)({
+      modal: true
+    }));
+  };
+  var xdeled = function xdeled(v) {
+    dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.deledAnggota)({
+      kdDinas: kdDinas,
+      kdDBidang: kdDBidang,
+      kdBAnggota: kdBAnggota,
+      ind: ind,
+      index: index,
+      index1: index1
+    }));
+    mclose();
+  };
+  var upd = function upd(v) {
+    var i = anggota.findIndex(function (val) {
+      return val.kdBAnggota === v.kdBAnggota;
+    });
+    setIns(0);
+    setOnOff(0);
+    setindex1(i);
+    setBAnggota(anggota[i].kdBAnggota);
+    setnmAnggota({
+      target: {
+        value: anggota[i].nmAnggota
+      }
+    });
+    setnmJabatan({
+      target: {
+        value: anggota[i].nmJabatan
+      }
+    });
+    setnip({
+      target: {
+        value: anggota[i].nip
+      }
+    });
+    var i1 = _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus.findIndex(function (val) {
+      return val.value == anggota[i].status;
+    });
+    setselStatus({
+      value: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus[i1].value,
+      label: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus[i1].label
+    });
+    // dispatch(setLeftBar(1));
+  };
+
+  var xupded = function xupded() {
+    dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.updedAnggota)({
+      kdDinas: kdDinas,
+      kdDBidang: kdDBidang,
+      kdBAnggota: kdBAnggota,
+      nmAnggota: nmAnggota,
+      nmJabatan: nmJabatan,
+      nip: nip,
+      selStatus: selStatus.value,
+      ind: ind,
+      index: index,
+      index1: index1
+    }));
+    reset();
+    setOnOff(1);
+    mclose();
+  };
+  function selectBidang(data) {
+    changeBidang({
+      kdDinas: kdDinas,
+      kdDBidang: dt[data.value].kdDBidang,
+      ind: ind,
+      index: data.value
+    });
+    // changeBidang({ kdDinas : dt[data.value].kdDinas, ind : data.value})
+    setSelectedOptions(data);
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      className: onOff ? 'formActionLeft' : 'formActionLeftAct',
+      id: "formActionLeft",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form1 bwhite boxShadow1px",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "header bprimary clight",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "icon",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+              className: "mdi mdi-office-building-marker fz25 "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Data Anggota Bidang"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+            className: "btn2 blight cmuted",
+            onClick: add,
+            children: "Entri"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "body",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "justifyEnd mtb10px",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              className: "w30p ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_8__["default"].coptionSelect({
+                  dt: dt,
+                  row: {
+                    label: 'nmBidang'
+                  },
+                  xind: true
+                }),
+                placeholder: "Select Bidang",
+                value: selectedOptions,
+                onChange: selectBidang,
+                isSearchable: true
+              })
+            })
+          }), Object.keys(dt[index]).length !== 0 && dt[index].anggota !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            search: search,
+            oncSearch: setSearch,
+            columns: coll,
+            data: dt[index].anggota.filter(function (item) {
+              if (search === "") {
+                return item;
+              } else if (item.nmAnggota.toLowerCase().includes(search.toLowerCase())) {
+                return item;
+              }
+            })
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
+        id: "itemFormLeft",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "header bprimary clight",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "icon",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+              className: "mdi mdi-clock-edit-outline fz25"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("h3", {
+              className: "",
+              children: [ins ? 'Entri' : 'Perbarui', " Dinas"]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+            className: "btn2 blight cmuted",
+            onClick: close,
+            children: "Close"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "w95p m0auto",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "iconInput2 ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+              className: "borderR10px",
+              type: "text",
+              value: nmAnggota,
+              onChange: setnmAnggota,
+              placeholder: "Nama Anggota"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "iconInput2 ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+              className: "borderR10px",
+              type: "text",
+              value: nmJabatan,
+              onChange: setnmJabatan,
+              placeholder: "Jabatan"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "iconInput2 ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+              className: "borderR10px",
+              type: "text",
+              value: nip,
+              onChange: setnip,
+              placeholder: "NIP"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "doubleInput borderB",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Status"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              options: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus,
+              placeholder: "Select Status",
+              value: selStatus,
+              onChange: setselStatus,
+              isSearchable: true
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          className: "footer posEnd",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "btnGroup",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn2",
+              onClick: close,
+              children: "Close"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
+              onClick: ins ? xadded : xupded,
+              children: ins ? 'Entri' : 'Perbarui'
+            })]
+          })
+        })]
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormMember);
+
+/***/ }),
+
 /***/ "./resources/js/components/subpages/jenisP/formJenis.js":
 /*!**************************************************************!*\
   !*** ./resources/js/components/subpages/jenisP/formJenis.js ***!
@@ -15010,13 +15409,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_subpages_dinas_formBidang__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/subpages/dinas/formBidang */ "./resources/js/components/subpages/dinas/formBidang.js");
 /* harmony import */ var _components_subpages_dinas_formAnggota__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/subpages/dinas/formAnggota */ "./resources/js/components/subpages/dinas/formAnggota.js");
 /* harmony import */ var _components_Modal_modal1__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Modal/modal1 */ "./resources/js/components/Modal/modal1.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_subpages_dinas_formMember__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/subpages/dinas/formMember */ "./resources/js/components/subpages/dinas/formMember.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -15069,29 +15470,36 @@ function Dinas() {
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.getDT)());
   }, [dispatch]);
   if (_dinas.length === 0) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {});
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {});
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
       page: 'Dinas',
       pageKet: 'daftar dinas diKSB',
       icon: 'mdi-office-building-marker cdark'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_subpages_dinas_formDinas__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formDinas__WEBPACK_IMPORTED_MODULE_4__["default"], {
       dt: _dinas,
       modalC: setContentModal
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_subpages_dinas_formBidang__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formBidang__WEBPACK_IMPORTED_MODULE_5__["default"], {
       dt: _dinas,
       changeDinas: changeDinas,
       modalC: setContentModal,
       ind: ind
-    }), Object.keys(_dinas[ind]).length > 0 && _dinas[ind].bidang != undefined && _dinas[ind].bidang.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_subpages_dinas_formAnggota__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    }), Object.keys(_dinas[ind]).length > 0 && _dinas[ind].bidang != undefined && _dinas[ind].bidang.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formAnggota__WEBPACK_IMPORTED_MODULE_6__["default"], {
       dt: _dinas[ind].bidang,
       index: index,
       ind: ind,
       kdDinas: _dinas[ind].kdDinas,
       modalC: setContentModal,
       changeBidang: changeBidang
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), Object.keys(_dinas[ind]).length > 0 && _dinas[ind].bidang != undefined && _dinas[ind].bidang.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formMember__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      dt: _dinas[ind].bidang,
+      index: index,
+      ind: ind,
+      kdDinas: _dinas[ind].kdDinas,
+      modalC: setContentModal,
+      changeBidang: changeBidang
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_7__["default"], {
       children: modalC
     })]
   });
@@ -16278,14 +16686,14 @@ var colDinas = [{
   name: 'Dinas',
   selector: function selector(row) {
     return row.nmDinas;
-  }
-  // width : '300px'
+  },
+  width: '340px'
 }, {
   name: 'Pimpinan',
   selector: function selector(row) {
     return row.kadis;
   },
-  width: '200px'
+  width: '220px'
 }, {
   name: 'NIP',
   selector: function selector(row) {
@@ -19026,8 +19434,8 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var api = function () {
-  // const BASE_URL = 'http://localhost:8000/';
-  var BASE_URL = 'https://sipj.bappedaksb.com/';
+  var BASE_URL = 'http://localhost:8000/';
+  // const BASE_URL = 'https://sipj.bappedaksb.com/';
   function GET(_x) {
     return _GET.apply(this, arguments);
   }

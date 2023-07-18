@@ -12,10 +12,10 @@ import { toast } from 'react-toastify';
 
 function FormDinas({dt, modalC}) {
     const [search, setSearch] = useInput('');
-    const dispatch = useDispatch(); 
-    const [onOff, setOnOff] = useState(1); 
-    const [ins, setIns] = useState(1);  
-    const [ind, setInd] = useState(1);  
+    const dispatch = useDispatch();
+    const [onOff, setOnOff] = useState(1);
+    const [ins, setIns] = useState(1);
+    const [ind, setInd] = useState(1);
     const coll = [...colDinas,{
             cell:(v) =>
                 <div className="btnGroup">
@@ -34,7 +34,7 @@ function FormDinas({dt, modalC}) {
         dispatch(modalClose());
     }
 
-    const [ kdDinas, setkdDinas] = useInput(); 
+    const [ kdDinas, setkdDinas] = useInput();
     const [ nmDinas, setnmDinas] = useInput();
     const [ asDinas, setasDinas] = useInput();
     const [ kadis, setkadis] = useInput();
@@ -58,17 +58,17 @@ function FormDinas({dt, modalC}) {
         setOnOff(0);
         reset();
     }
-    const xadded = () =>{ 
+    const xadded = () =>{
         dispatch(added({ kdDinas, nmDinas, asDinas, kadis, nip }))
         reset();
     }
-    const del = (v) =>{  
+    const del = (v) =>{
         const i =dt.findIndex((val)=> val.nip === v.nip );
         setInd(i);
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
-                mclose, 
+                mclose,
                 children : (
                     <p>Apa benar ingin Mengapus data ini ?</p>
                 ),
@@ -79,22 +79,22 @@ function FormDinas({dt, modalC}) {
                     })
                 )
             })
-        ); 
+        );
         dispatch(
             setHtml({
                 modal : true,
             })
         )
     }
-    const xdeled = (i) =>{ 
+    const xdeled = (i) =>{
         setkdDinas({target:{value:dt[i].kdDinas}});
         dispatch(deled({ kdDinas: dt[i].kdDinas, ind}));
         mclose();
     }
-    const upd = (v) =>{  
+    const upd = (v) =>{
         const i =dt.findIndex((val)=> val.nip === v.nip );
-        setIns(0); 
-        setOnOff(0); 
+        setIns(0);
+        setOnOff(0);
         setInd(i);
         setkdDinas({target:{value:dt[i].kdDinas}});
         setnmDinas({target:{value:dt[i].nmDinas}});
@@ -119,7 +119,7 @@ function FormDinas({dt, modalC}) {
                         </div>
                         <button className="btn2 blight cmuted" onClick={add}>Entri</button>
                     </div>
-                    <div className="body">  
+                    <div className="body">
                         <Tabel1
                             search={search}
                             oncSearch={setSearch}
@@ -142,8 +142,8 @@ function FormDinas({dt, modalC}) {
                         <div className="icon">
                             <span className="mdi mdi-clock-edit-outline fz25"></span>
                             <h3 className="">{(ins?'Entri':'Perbarui')} Dinas</h3>
-                        </div>       
-                        <button className="btn2 blight cmuted" onClick={close}>Close</button>        
+                        </div>
+                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
                     </div>
                     <div className="w95p m0auto">
                         {
@@ -170,10 +170,10 @@ function FormDinas({dt, modalC}) {
                         <div className="iconInput2 ptb10px">
                             <input className="borderR10px" type="text" value={nip} onChange={setnip} placeholder="NIP" />
                             <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
-                        </div> 
+                        </div>
                     </div>
                     <div className="footer posEnd">
-                        <div className="btnGroup"> 
+                        <div className="btnGroup">
                             <button className="btn2"  onClick={close}>Close</button>
                             <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
                         </div>
@@ -181,7 +181,7 @@ function FormDinas({dt, modalC}) {
                 </div>
             </div>
         </>
-        
+
     );
 }
 export default FormDinas;

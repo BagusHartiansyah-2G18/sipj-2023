@@ -6,11 +6,11 @@ import { changeMenuSub } from '../../states/sfHtml/action';
 
 function Navbar() {
     const { _html } = useSelector((state) => state);
-    const dispatch = useDispatch(); 
+    const dispatch = useDispatch();
     const sess = _html.sess;
     function selectMenuSub({menuSub}){
         dispatch(changeMenuSub({menuSub}))
-    }  
+    }
     return (
         <div className={`w20p ${_html.leftBar && 'dnone'} `}>
             <div className="leftBar2" id="liftBar2">
@@ -30,12 +30,12 @@ function Navbar() {
                                         <span className="mdi mdi-calendar cdark fz25"></span>
                                     </Link>
                                 </li>
-                                { (sess.kdJaba === '3' &&
+                                { (sess.kdJaba !== '3' &&
                                     <>
                                         <li>
-                                            <Link to={`/home/tahun`}>
-                                                <label>Tahun</label>
-                                                <span className="mdi mdi-calendar cdark fz25"></span>
+                                            <Link to={`/home/member`}>
+                                                <label>Member</label>
+                                                <span className="mdi mdi-account cdark fz25"></span>
                                             </Link>
                                         </li>
                                         <li>
@@ -68,7 +68,7 @@ function Navbar() {
                         )
                     }
                     {
-                        
+
                         (
                             _html.indMenu === 1 &&
                             <>
@@ -90,7 +90,7 @@ function Navbar() {
                                         <span className="mdi mdi-account cdark fz25"></span>
                                     </Link>
                                 </li>
-                                {
+                                {/* {
                                     (
                                         sess.kdJaba === '3' &&
                                         _html.menu[_html.indMenu].menu.map((v,i) => {
@@ -105,12 +105,12 @@ function Navbar() {
                                             )
                                         })
                                     )
-                                }
+                                } */}
                             </>
                         )
                     }
-                    
-                    
+
+
                 </ul>
             </div>
         </div>
@@ -120,8 +120,8 @@ function Navbar() {
 export default Navbar;
 
 
-function actSubMenu(menu,menuAct){ 
-    // const pathname = window.location.pathname;  
+function actSubMenu(menu,menuAct){
+    // const pathname = window.location.pathname;
     if(menuAct === menu){
         return 'cprimary fbold';
     }

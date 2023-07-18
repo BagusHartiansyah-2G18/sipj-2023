@@ -485,7 +485,7 @@ class Hdb {
     }
     function workAdded($v){
         return DB::insert("
-            insert WORK (
+            insert work (
                 no, kdDinas, kdBidang, date,
                 tujuan,taWork, kdSub, kdJudul,
                 kdBAnggota
