@@ -140,7 +140,7 @@ class Csppd extends Controller
             // $param = $request->only("kdDinas","kdBidang","kdSub","kdJudul");
             // $param["tahun"]= $cek['ta'];
             if(
-                DB::table('WORK')
+                DB::table('work')
                 ->where('kdDinas',$request->kdDinas)
                 ->where('kdBidang',$request->kdBidang)
                 ->where('kdSub',$request->kdSub)
@@ -178,7 +178,7 @@ class Csppd extends Controller
             // $param = $request->only("kdDinas","kdBidang","kdSub","kdJudul");
             // $param["tahun"]= $cek['ta'];
             if(
-                DB::table('WORK')
+                DB::table('work')
                 ->where('kdDinas',$request->kdDinas)
                 ->where('kdBidang',$request->kdBidang)
                 ->where('kdSub',$request->kdSub)
@@ -213,7 +213,7 @@ class Csppd extends Controller
             // $param = $request->only("kdDinas","kdBidang","kdSub","kdJudul");
             // $param["tahun"]= $cek['ta'];
             if(
-                DB::table('WORK')
+                DB::table('work')
                 ->where('kdDinas',$request->kdDinas)
                 ->where('kdBidang',$request->kdBidang)
                 ->where('kdSub',$request->kdSub)
@@ -293,7 +293,7 @@ class Csppd extends Controller
                 'kdBAnggota'=> 'required',
             ]);
             if(
-                DB::table('WORK')
+                DB::table('work')
                 ->where('kdDinas',$request->kdDinas)
                 ->where('kdBidang',$request->kdBidang)
                 ->where('kdSub',$request->kdSub)
