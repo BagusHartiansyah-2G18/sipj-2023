@@ -20,34 +20,48 @@ function FormData({ dt, modalC, param, dataEntri }) {
     function mclose(){
         dispatch(modalClose());
     }
-
     const coll = [...coldata,{
-            cell:(v,i) =>
-                (
-                    v.status === actType.nextStep.start?
-                    <div className="btnGroup">
-                        {/* {tambahan} */}
-                        <button className="btn2 bwarning" title="Perbarui" onClick={()=>upd(v)}><span className="mdi mdi-pencil-box cdark fz25" /></button>
-                        <button className="btn2 bdanger" title="Hapus"  onClick={()=>del(v)}><span className="mdi mdi-delete-forever clight fz25" /></button>
-                        <button className="btn2 bsuccess clight" title="Hapus"  onClick={()=>xnextStep(v)}>Next Step</button>
-                    </div>:
-                    <div className="btnGroup">
-                        <button className="btn2 bprimary clight" title="Open Form" onClick={()=>dataEntri(v)}>Open Form</button>
-                        <Link
-                            to={`/pdf/sppd/${btoa(JSON.stringify(
-                                {
-                                    ...param,
-                                    no:v.no,
-                                    tujuan: v.tujuan,
-                                }
-                            ))}`}
-                            className="btn2 bsuccess clight ptb0"
-                            target="_blank">
-                            PDF
-                        </Link>
+            cell:(v,i) =>{
+                switch (v.status) {
+                    case actType.nextStep.start:
+                        return (
+                            <div className="btnGroup">
+                                {/* {tambahan} */}
+                                <button className="btn2 bwarning" title="Perbarui" onClick={()=>upd(v)}><span className="mdi mdi-pencil-box cdark fz25" /></button>
+                                <button className="btn2 bdanger" title="Hapus"  onClick={()=>del(v)}><span className="mdi mdi-delete-forever clight fz25" /></button>
+                                <button className="btn2 bsuccess clight" title="Hapus"  onClick={()=>xnextStep(v)}>Next Step</button>
+                            </div>
+                        );
+                    case actType.nextStep.step1:
+                        return (
+                            <div className="btnGroup">
+                                <button className="btn2 bprimary clight" title="Open Form" onClick={()=>dataEntri(v)}>Open Form</button>
+                                <Link
+                                    to={`/pdf/sppd/${btoa(JSON.stringify(
+                                        {
+                                            ...param,
+                                            no:v.no,
+                                            tujuan: v.tujuan,
+                                        }
+                                    ))}`}
+                                    className="btn2 bsuccess clight ptb0"
+                                    target="_blank">
+                                    Document
+                                </Link>
 
-                    </div>
-                )
+                            </div>
+                        );
+                    case actType.nextStep.step3:
+                        return (
+                            <Link
+                                to={`/storage/${v.file}`}
+                                className="btn2 bsuccess clight ptb0"
+                                target="_blank">
+                                Document
+                            </Link>
+                        );
+                }
+            }
             ,
             ignoreRowClick: true,
             allowOverflow: true,

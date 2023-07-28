@@ -6,6 +6,7 @@
 .flexR{@include _pos.flexR();}
 .flexC{@include _pos.flexC();}
 .algI{@include _pos.algI(flex)};
+.justifyC{@include _pos.justifyC(flex)}
 .justifyEnd{@include _pos.justifyC(flex,end)}
 .justifySB{@include _pos.justifyC(flex,space-between)}
 .justifySE{@include _pos.justifyC(flex,space-evenly)}
@@ -30,12 +31,12 @@
 .borderB{
     border: 0px;
     border-radius: 0px !important;
-    border-bottom: 1px solid map-get(_.$c,'light'); 
+    border-bottom: 1px solid map-get(_.$c,'light');
 }
 .overAuto{overflow: auto;}
 .over200px{
     @extend .overAuto;
-    max-height: 200px; 
+    max-height: 200px;
 }
 // @use '../abstracts/variable' as _;
 // @use '../abstracts/mixPosition' as _pos;

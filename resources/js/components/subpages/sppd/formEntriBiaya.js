@@ -1,15 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
- 
+
 import { workDelAnggota, addWorkUraian, updWorkUraian, delWorkUraian } from '../../../states/sppd/action';
-import sfHtml from "../../mfc/sfHtml"; 
+import sfHtml from "../../mfc/sfHtml";
 import { setHtml, modalClose } from '../../../states/sfHtml/action';
 
 import FormUraian from "./sub/formUraian";
 
 function FormEntriBiaya({ dt, param, modalC, indWork }) {
-    const dispatch = useDispatch(); 
-    
+    const dispatch = useDispatch();
+
 
     function mclose(){
         dispatch(modalClose());
@@ -19,14 +19,14 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
     const close = () =>{
         setOnOff(1);
     }
-    
 
-    // delete nama staf 
-    const del = (i) =>{  
+
+    // delete nama staf
+    const del = (i) =>{
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
-                mclose, 
+                mclose,
                 children : (
                     <p>Apa benar ingin memhapus data ini ?</p>
                 ),
@@ -56,7 +56,7 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
         mclose();
     }
 
-    const addDPendukung = (ianggota,idukung) =>{ 
+    const addDPendukung = (ianggota,idukung) =>{
         dispatch(addWorkUraian({
             ...param,
             uraian: '',
@@ -70,8 +70,8 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
             index: dt[ianggota].xind,
             index_1: idukung,
         }))
-    } 
-    const updDPendukung = ({ iuraian, ianggota, idukung, kdUraian, uraian, volume, satuan, nilai  }) =>{  
+    }
+    const updDPendukung = ({ iuraian, ianggota, idukung, kdUraian, uraian, volume, satuan, nilai  }) =>{
         dispatch(updWorkUraian({
             ...param,
             kdBAnggota:dt[ianggota].kdBAnggota,
@@ -87,13 +87,13 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
             satuan,
             nilai
         }))
-    } 
+    }
 
-    const delDPendukung = (v) =>{  
+    const delDPendukung = (v) =>{
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
-                mclose, 
+                mclose,
                 children : (
                     <p>Apa benar ingin memhapus data ini ?</p>
                 ),
@@ -134,23 +134,23 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
             <div className="header bprimary clight">
                 <div className="icon">
                     <span className="mdi mdi-office-building-marker fz25 "></span>
-                    <h3>Form Perincian Biaya</h3>
+                    <h3><b>2. Form Rincian Biaya</b></h3>
                 </div>
             </div>
-            <div className=" w95p m0auto ptb10px">  
+            <div className=" w95p m0auto ptb10px">
                 {
-                    dt.map((v,i)=>{ 
-                        return ( 
+                    dt.map((v,i)=>{
+                        return (
                             <div className="form1 bwhite" key={'user'+i}>
                                 <div className="header">
                                     <h3>{v.nmAnggota}</h3>
                                     <div className="btnGroup">
-                                        <button className="btn2 bdanger clight" onClick={()=>del(i)}><span className="mdi mdi-delete-forever clight fz25" /> Hapus</button> 
+                                        <button className="btn2 bdanger clight" onClick={()=>del(i)}><span className="mdi mdi-delete-forever clight fz25" /> Hapus</button>
                                     </div>
                                 </div>
-                                <div className="body"> 
+                                <div className="body">
                                     {
-                                        v.ddukung.map((v1,i1)=>{   
+                                        v.ddukung.map((v1,i1)=>{
                                             return (
                                                 <div className="ptb10px" key={'dukung'+i1}>
                                                     <div className=" flexR justifySB">
@@ -158,15 +158,15 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
                                                             <span className="mdi mdi-login binfo clight fziconS"></span>
                                                             <h2 className="cdark">{v1.nmDP}</h2>
                                                         </button>
-                                                        <button className="btn2 bprimary clight" onClick={()=>addDPendukung(i,i1)}>Entri</button> 
+                                                        <button className="btn2 bprimary clight" onClick={()=>addDPendukung(i,i1)}>Entri</button>
                                                     </div>
                                                     {
                                                         (
                                                             v1.uraian!= undefined &&
                                                             v1.uraian.map((v2,i2)=>{
-                                                            
+
                                                                 return (
-                                                                    <FormUraian 
+                                                                    <FormUraian
                                                                         key={'uraian'+i2}
                                                                         dt={v2}
                                                                         onUpded={updDPendukung}
@@ -182,7 +182,7 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
                                                             })
                                                         )
                                                     }
-                                                </div> 
+                                                </div>
                                             )
                                         })
                                     }

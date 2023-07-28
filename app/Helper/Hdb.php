@@ -286,7 +286,22 @@ class Hdb {
                 a.nama, a.total, a.kdJudul, a.kdJenis, a.kdApbd6,
                 b.nmJPJ,
                 c.nmApbd6,
-                d.tw1, d.tw2, d.tw3, d.tw4, d.ada
+                d.tw1, d.tw2, d.tw3, d.tw4, d.ada,
+                (
+                    select sum(a1.volume * a1.nilai)
+                    from workuraian a1
+                    join work b1 on
+                        a1.kdDinas = b1.kdDinas and
+                        a1.kdBidang = b1.kdBidang and
+                        a1.kdSub = b1.kdSub and
+                        a1.taWork = b1.taWork
+                    where a1.kdDinas="'.$v['kdDinas'].'" and
+                    a1.kdSub = "'.$v['kdSub'].'" and
+                    a1.kdBidang = "'.$v['kdBidang'].'" and
+                    a1.taWork  = "'.$v['tahun'].'" and
+                    b1.status ="final" and
+                    b1.kdJudul=a.kdJudul
+                ) as realisasi
             from ubjudul a
             join jenispj b on
                 a.kdJenis = b.kdJPJ
@@ -359,7 +374,22 @@ class Hdb {
             select
                 a.kdJudul, a.nama, a.total,
                 b.kdSub, b.nmSub,
-                c.tw1, c.tw2, c.tw3, c.tw4
+                c.tw1, c.tw2, c.tw3, c.tw4,
+                (
+                    select sum(a1.volume * a1.nilai)
+                    from workuraian a1
+                    join work b1 on
+                        a1.kdDinas = b1.kdDinas and
+                        a1.kdBidang = b1.kdBidang and
+                        a1.kdSub = b1.kdSub and
+                        a1.taWork = b1.taWork
+                    where a1.kdDinas="'.$v['kdDinas'].'" and
+                    a1.kdSub = "'.$v['kdSub'].'" and
+                    a1.kdBidang = "'.$v['kdBidang'].'" and
+                    a1.taWork  = "'.$v['tahun'].'" and
+                    b1.status ="final" and
+                    b1.kdJudul=a.kdJudul
+                ) as realisasi
             from  ubjudul a
             join triwulan c on
                 a.kdDinas = c.kdDinas and
@@ -440,7 +470,7 @@ class Hdb {
         }
         return DB::select('
             select
-                a.no, a.date, a.status, a.kdBAnggota, a.tujuan
+                a.no, a.date, a.status, a.kdBAnggota, a.tujuan, a.noBuku, a.tglBuku, a.file
             from work a
             '.$where.'
         ');

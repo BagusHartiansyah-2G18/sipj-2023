@@ -20,6 +20,7 @@ import { forEach } from "lodash";
 function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
 
     const [search, setSearch] = useInput('');
+    const [search1, setSearch1] = useInput('');
     const dispatch = useDispatch();
     const [onOff, setOnOff] = useState(1);
     const [ins, setIns] = useState(1);
@@ -290,8 +291,8 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
                                     dt[ind].sub !== undefined && dt[ind].bidang[index]!=undefined &&
                                     <Tabel1
                                         cinput=""
-                                        search={search}
-                                        oncSearch={setSearch}
+                                        search={search1}
+                                        oncSearch={setSearch1}
                                         columns={coll}
                                         selectRow={true}
                                         checkboxSelection={selectDataForm}
@@ -299,7 +300,7 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
                                             dt : dt[ind].sub,
                                             terpilih : 0,
                                             kdDBidang : dt[ind].bidang[index].kdDBidang,
-                                            search
+                                            search:search1
                                         })}
                                         btnAction={
                                             (countDt !== 0 &&

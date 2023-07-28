@@ -328,11 +328,11 @@ const colRincianTw = [
       width : '150px'
   },{
     name: 'Realisasi',
-    selector: row => '0',
+    selector: row => sfLib._$(row.realisasi),
     width : '150px'
   },{
     name: 'Sisa',
-    selector: row => '0'	,
+    selector: row => sfLib._$(row.total-row.realisasi)	,
     width : '150px'
   }
 ];

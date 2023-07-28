@@ -10,6 +10,9 @@ use App\Http\Controllers\Cjenis;
 use App\Http\Controllers\Crincian;
 use App\Http\Controllers\Csppd;
 use App\Http\Controllers\PdfGenerator;
+use Facade\FlareClient\Http\Response;
+use Illuminate\Support\Facades\Storage;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -115,7 +118,10 @@ Route::controller(Csppd::class)->name('api.')->prefix('api/sppd')->group(functio
     Route::post('/added','added')->name('added');
     Route::post('/upded','upded')->name('upded');
     Route::post('/deled','deled')->name('deled');
+
     Route::post('/nextStep','nextStep')->name('nextStep');
+    Route::post('/step3','step3')->name('step3');
+
     Route::post('/addedUser','addedUser')->name('addedUser');
     Route::post('/getAnggotaSelected','getAnggotaSelected')->name('getAnggotaSelected');
     Route::post('/delAnggotaSelected','delAnggotaSelected')->name('delAnggotaSelected');
@@ -132,4 +138,9 @@ Route::controller(PdfGenerator::class)->name('pdf.')->prefix('pdf')->group(funct
     Route::get('/sppd/{val}','sppd')->name('sppd');
 });
 
-// Route::get('/resume', [PdfGeneratorController::class, 'index']);
+
+Route::get('storage/{filename}', function ($filename){
+    $files ="app/public/pdf/sppd/".$filename;
+    $path = storage_path($files);
+    return response()->download($path, 'example.pdf', [], 'inline');
+});

@@ -7,8 +7,8 @@ import { useState } from 'react';
 import HeaderPage1 from '../../../components/dashboard/HeaderPage1';
 
 import Tabel1 from "../../tabel/tabel1";
-import sfHtml from "../../mfc/sfHtml"; 
-import sfLib from "../../mfc/sfLib"; 
+import sfHtml from "../../mfc/sfHtml";
+import sfLib from "../../mfc/sfLib";
 import { setAll, modalClose } from '../../../states/sfHtml/action';
 
 function FormInformasi({dt}) {
@@ -18,7 +18,7 @@ function FormInformasi({dt}) {
                     <div className="icon">
                         <span className="mdi mdi-office-building-marker fz25 "></span>
                         <h3>Informasi</h3>
-                    </div> 
+                    </div>
                 </div>
                 <div className="body">
                     <ul>
@@ -39,14 +39,14 @@ function FormInformasi({dt}) {
                                 </div>
                                 <div>
                                     <label className="fbold">Realisasi</label><br></br>
-                                    <span>Rp.<small>0</small></span>
+                                    <span>Rp.<small>{sfLib._$(dt.realisasi)}</small></span>
                                 </div>
                                 <div>
                                     <label className="fbold">Sisa</label><br></br>
-                                    <span>Rp.<small>0</small></span>
+                                    <span>Rp.<small>{sfLib._$(dt.total-dt.realisasi)}</small></span>
                                 </div>
                             </div>
-                            
+
                         </li>
                         <li className="ptb10px">
                             <label className="fbold">Pagu Triwulan</label><br></br>
@@ -68,7 +68,7 @@ function FormInformasi({dt}) {
                                     <span>Rp.<small>{sfLib._$(dt.tw4)}</small></span>
                                 </div>
                             </div>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
                 {/* <div className="footer"></div> */}

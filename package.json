@@ -26,11 +26,13 @@
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
         "react-data-table-component": "^7.5.3",
+        "react-hook-form": "^7.45.2",
         "react-modal": "^3.16.1",
         "react-redux": "^8.0.7",
         "react-router-dom": "^6.11.2",
         "react-select": "^5.7.3",
         "react-toastify": "^9.1.3",
+        "react-uploader": "^3.38.0",
         "styled-components": "^5.3.11"
     }
 }

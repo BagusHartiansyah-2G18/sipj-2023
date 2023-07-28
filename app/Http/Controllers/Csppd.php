@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Helper\Hdb;
+use Dotenv\Validator;
+use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use League\CommonMark\Inline\Element\Strong;
+use Psy\Readline\Hoa\FileReadWrite;
 
 class Csppd extends Controller
 {
@@ -229,6 +234,68 @@ class Csppd extends Controller
                     'data' => []
                 ], 200);
             }
+            return response()->json([
+                'exc' => false,
+                'msg' => 'query Error'
+            ], 200);
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
+    public function step3(Request $request){
+        $user =Auth::user();
+        $cek = $this->portal($user);
+        if($cek['exc']){
+            $request = $request->all();
+            // $request->validate([
+            //     'kdDinas' => 'required',
+            //     'kdBidang' => 'required',
+            //     'kdSub' => 'required',
+            //     'kdJudul' => 'required',
+            //     'no'=> 'required',
+            //     'status'=> 'required',
+            //     'noBuku'=> 'required',
+            //     'tglBuku'=> 'required',
+            //     'files'=> 'required',
+            // ]);
+            // return print_r($request['files']);
+            $namaFile = $this->_uploadImage($request['files']['data'],$request['files']['nama']);
+            // if($request->files()) {
+            //     $fileName = time().'_'.$request->file->getClientOriginalName();
+            //     return print_r($fileName);
+            //     // $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+            //     // $fileModel->name = time().'_'.$req->file->getClientOriginalName();
+            //     // $fileModel->file_path = '/storage/' . $filePath;
+            //     // $fileModel->save();
+            //     // return back()
+            //     // ->with('success','File has been uploaded.')
+            //     // ->with('file', $fileName);
+            // }
+            // $param = $request->only("kdDinas","kdBidang","kdSub","kdJudul");
+            // $param["tahun"]= $cek['ta'];
+            // if(
+            //     DB::table('work')
+            //     ->where('kdDinas',$request['kdDinas'])
+            //     ->where('kdBidang',$request['kdBidang'])
+            //     ->where('kdSub',$request['kdSub'])
+            //     ->where('kdJudul',$request['kdJudul'])
+            //     ->where('taWork',$cek['ta'])
+            //     ->where('no',$request['no'])
+            //     ->where('kdBAnggota','')
+            //     ->update([
+            //         'status'=> $request['status'],
+            //         'noBuku'=> $request['noBuku'],
+            //         'tglBuku'=> $request['tglBuku'],
+            //         'file' => $namaFile
+            //     ])
+            // ){
+            //     return response()->json([
+            //         'exc' => true,
+            //         'data' => []
+            //     ], 200);
+            // }
             return response()->json([
                 'exc' => false,
                 'msg' => 'query Error'
@@ -477,5 +544,45 @@ class Csppd extends Controller
             "exc"=>false,
             "msg"=>" user can't Dinas !!!"
         ];
+    }
+
+    public function _uploadImage($file,$nama){
+        $split=explode("/",$nama);
+        $flokasi="sppd/";// default foldar jika ber ubah maka tambahakan dinamanya
+        if(count($split)>1){
+            $flokasi='';
+            foreach ($split as $key => $v) {
+                if($key==count($split)-1){
+                    $nama=$v;
+                }else{
+                    $flokasi.=$v."/";
+                }
+            }
+            // $flokasi.=$split[0]."/";
+            // $nama=$split[count($split)-1];
+        }
+        // return print_r($file);
+        // $nama=explode(".",$nama);
+        // switch($nama[count($nama)-1]){
+        //     case "png":$image=substr($file,22);break;
+        //     case "PNG":$image=substr($file,22);break;
+        //     case "pdf":$image=substr($file,22);break;
+        //     default:$image=substr($file,23);break;
+        // }
+        // $image=substr($file,23);
+        // return print_r($nama[1]);
+        date_default_timezone_set("America/New_York");
+        // $namaFile=$nama[count($nama)-2]."-".date("Y-m-d-h-i-sa").".".$nama[count($nama)-1];
+        $namaFile=date("Y-m-d-h-i-sa")."-".$nama;
+
+
+        $delspace=explode(" ",$namaFile);
+        $namaFile="";
+        foreach ($delspace as $key => $value) {
+            $namaFile.=$value;
+        }
+        $lokasiFile='public/pdf/'.$flokasi.$namaFile;
+        Storage::put($lokasiFile,base64_decode($file));
+        return $namaFile;
     }
 }

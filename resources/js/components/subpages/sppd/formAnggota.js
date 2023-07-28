@@ -59,7 +59,7 @@ function FormAnggotaSppd({ dt, param, indWork }) {
                     <div className="header binfo clight">
                         <div className="icon">
                             <span className="mdi mdi-office-building-marker fz25 "></span>
-                            <h3>Entri Staf</h3>
+                            <h3><b>1. Entri Staf</b></h3>
                         </div>
                     </div>
                     <div className="body">

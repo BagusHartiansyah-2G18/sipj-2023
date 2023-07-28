@@ -12,7 +12,10 @@ import FormData from "../../components/subpages/sppd/formData";
 import Modal1 from '../../components/Modal/modal1';
 
 import FormEntriBiaya from "../../components/subpages/sppd/formEntriBiaya";
+import formFinishSppd from "../../components/subpages/sppd/formFinishSppd";
+
 import { toast } from "react-toastify";
+import FormFinishSppd from "../../components/subpages/sppd/formFinishSppd";
 
 
 function SPPD(){
@@ -21,17 +24,17 @@ function SPPD(){
     const param = JSON.parse(atob(value));
 
     // const { basic:[] , anggota:[], dwork:[] } = _sppd;
-    
+
     const dispatch = useDispatch();
 
-    const [indWork, setindWork] = useState(-1);  
-    const [modalC, setmodalC] = useState(''); 
-    const [dataEntri, setdataEntri] = useState({}); 
+    const [indWork, setindWork] = useState(-1);
+    const [modalC, setmodalC] = useState('');
+    const [dataEntri, setdataEntri] = useState({});
 
 
     useEffect(() => {
-        dispatch(getDT(value)); 
-    }, [dispatch]); 
+        dispatch(getDT(value));
+    }, [dispatch]);
     if(Object.keys(_sppd).length===0){
         return <></>;
     }
@@ -40,11 +43,11 @@ function SPPD(){
         if(_sppd.anggota==undefined || _sppd.anggota.length==0){
             return toast.error('Bidang ini tidak memiliki daftar Staf');
         }
-        const i =_sppd.dwork.findIndex((val)=> val.no === v.no ); 
+        const i =_sppd.dwork.findIndex((val)=> val.no === v.no );
 
         dispatch(workSetAnggota({ ind: i, param:{ ...param, no: _sppd.dwork[i].no } }));
         setindWork(i);
-    }  
+    }
     // if(indWork<0){
     //     stepSetAnggota({no:'000.1.2.3/21'});
     // }
@@ -59,7 +62,7 @@ function SPPD(){
             <FormInformasi
                 dt={_sppd.basic[0]}
             ></FormInformasi>
-            <FormData 
+            <FormData
                 dt={_sppd.dwork}
                 modalC={setmodalC}
                 param={param}
@@ -68,26 +71,35 @@ function SPPD(){
             {
                 (
                     indWork>=0 && _sppd.dwork[indWork].anggota != undefined &&
-                    <FormAnggotaSppd 
+                    <FormAnggotaSppd
                         dt={_sppd.dwork[indWork]}
                         indWork={indWork}
-                        param={param} 
+                        param={param}
                     ></FormAnggotaSppd>
                 )
             }
-            
+
             {
                 (
-                    indWork>=0 && 
-                    _sppd.dwork[indWork].anggota != undefined && 
+                    indWork>=0 &&
+                    _sppd.dwork[indWork].anggota != undefined &&
                     _sppd.dwork[indWork].anggota.filter(v=>v.xind!=undefined).length>0 &&
-                    <FormEntriBiaya 
-                        dt={_sppd.dwork[indWork].anggota.filter(v=>v.xind!=undefined)}
-                        param={{ ...param, no :_sppd.dwork[indWork].no }} 
-                        modalC={setmodalC} 
-                        indWork={indWork}
-                    ></FormEntriBiaya>
-                ) 
+                    <>
+                        <FormEntriBiaya
+                            dt={_sppd.dwork[indWork].anggota.filter(v=>v.xind!=undefined)}
+                            param={{ ...param, no :_sppd.dwork[indWork].no }}
+                            modalC={setmodalC}
+                            indWork={indWork}
+                        ></FormEntriBiaya>
+                        <FormFinishSppd
+                            dt={_sppd.dwork[indWork]}
+                            indWork={indWork}
+                            modalC={setmodalC}
+                            param={param}
+                            >
+                        </FormFinishSppd>
+                    </>
+                )
             }
 
             <Modal1

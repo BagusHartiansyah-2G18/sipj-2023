@@ -33,12 +33,12 @@ function Fitur() {
     return (
         <>
             <HeaderPage1
-                page={'Fitur PJ'}
-                pageKet={'Daftar Fitur Sistem Pertanggung Jawaban'}
+                page={'Pertanggung Jawaban'}
+                pageKet={'Daftar sub kegiatan Dan uraian Belanja'}
                 icon={'mdi-office-building-marker cdark'}
             ></HeaderPage1>
 
-            <div className="form0 bwhite">
+            {/* <div className="form0 bwhite">
                 <div className="ribbon ribbon-center ribbon-success">
                     <span className="bsuccess">DAFTAR FITUR Jenis Pertanggung Jawaban</span>
                 </div>
@@ -58,7 +58,7 @@ function Fitur() {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <SelectDataUtama
                 dt={_dinas}
                 modalC={setmodalC}

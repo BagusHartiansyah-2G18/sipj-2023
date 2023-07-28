@@ -13,7 +13,7 @@
 
    <body>
 
-        <div class="wrapLogin1">
+        <div class="wrapLogin1 mh650p">
             <div class="wrap bdark clight">
                 <div class="logo">
                     <img src="/logo/ksb.png" />
@@ -35,7 +35,7 @@
                     <div class="form">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-                            <div class="tjudul"><p>Sistem Administrasi Perjalanan Dinas</p> </div>
+                            <div class="tjudul"><p>Sistem Administrasi Pertanggung Jawaban</p> </div>
                             <div class="pwrap">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
@@ -63,6 +63,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="flexC bmuted">
+            <div class="flexR algI m0auto pwrap">
+                <h2 class="tjudul clight fziconS">
+                    Sumbawa Barat
+                    <span class="mdi mdi-copyright cdanger "></span>
+                    2023
+                </h2>
+            </div>
+
         </div>
    </body>
 

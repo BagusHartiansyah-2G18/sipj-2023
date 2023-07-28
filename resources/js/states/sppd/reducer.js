@@ -1,7 +1,7 @@
 import { actType } from './action';
 function sppdReducer(dt = [], action = {}) {
     switch (action.type) {
-      case actType.dt: 
+      case actType.dt:
         return  {
           ...action.payload.dt,
           anggota:action.payload.dt.anggota.map((v,i)=>{
@@ -15,21 +15,21 @@ function sppdReducer(dt = [], action = {}) {
         return selectdwork({dt, act:action.payload});
       case actType.anggota:
         return selectAnggota({dt, act:action.payload});
-      default: 
+      default:
         return dt;
     }
 }
-  
+
 export default sppdReducer;
 
 function selectAnggota({ dt, act }){
   return {
     ...dt,
-    anggota: dt.anggota.map((v,i)=>{ 
+    anggota: dt.anggota.map((v,i)=>{
       if(i=== act.ind){
         switch (act.type) {
           case actType.anggotaSelect:
-            
+
             return {
               ...v,
               aktif:(v.aktif?0:1)
@@ -70,19 +70,33 @@ function selectdwork({ dt, act }){
         return v;
       })
     break;
+    case actType.nextStep.step3:
+      dwork = dt.dwork.map((v,i)=>{
+        if(i=== act.ind){
+          return{
+            ...v,
+            status:act.status,
+            noBuku:act.noBuku,
+            tglBuku:act.tglBuku,
+            file:act.file
+          }
+        }
+        return v;
+      })
+    break;
     case actType.del:
       dwork = dt.dwork.filter((v,i)=>i!=act.ind);
     break;
     case actType.workSetAnggota:
-      let anggota=[]; 
-      if(act.dt.length>0){ 
+      let anggota=[];
+      if(act.dt.length>0){
         anggota = concatDataAnggotaSelected({
           dataTerpilih: act.dt,
           allData:(dt.dwork[act.ind].anggota === undefined ? dt.anggota:dt.dwork[act.ind].anggota ),
           param: act.param,
           dpendukung: dt.dpendukung,
         })
-      } 
+      }
       dwork = dt.dwork.map((v,i)=>{
         if(i=== act.ind){
           return{
@@ -118,10 +132,10 @@ function selectdwork({ dt, act }){
           return{
             ...v,
             anggota:v.anggota.map((v1,i1)=>{
-              if(i1 === act.index){ 
+              if(i1 === act.index){
                 return {
                   ...v1,
-                  ddukung: v1.ddukung.map((v2,i2)=>{ 
+                  ddukung: v1.ddukung.map((v2,i2)=>{
                     if(i2 === act.index_1){
                       return {
                         ...v2,
@@ -134,7 +148,7 @@ function selectdwork({ dt, act }){
                         //     volume:0,
                         //     satuan:''
                         //   }
-                        // ] 
+                        // ]
                       }
                     }
                     return v2;
@@ -154,10 +168,10 @@ function selectdwork({ dt, act }){
           return{
             ...v,
             anggota:v.anggota.map((v1,i1)=>{
-              if(i1 === act.index){ 
+              if(i1 === act.index){
                 return {
                   ...v1,
-                  ddukung: v1.ddukung.map((v2,i2)=>{ 
+                  ddukung: v1.ddukung.map((v2,i2)=>{
                     if(i2 === act.index_1){
                       return {
                         ...v2,
@@ -192,10 +206,10 @@ function selectdwork({ dt, act }){
           return{
             ...v,
             anggota:v.anggota.map((v1,i1)=>{
-              if(i1 === act.index){ 
+              if(i1 === act.index){
                 return {
                   ...v1,
-                  ddukung: v1.ddukung.map((v2,i2)=>{ 
+                  ddukung: v1.ddukung.map((v2,i2)=>{
                     if(i2 === act.index_1){
                       return {
                         ...v2,
@@ -220,11 +234,11 @@ function selectdwork({ dt, act }){
   }
 }
 
-function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung }){ 
+function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung }){
   let xdt = [], add=false;
-  allData.forEach((v,i)=>{ 
+  allData.forEach((v,i)=>{
     add=true;
-    dataTerpilih.forEach((v1,i1) => {   
+    dataTerpilih.forEach((v1,i1) => {
       if(v1.kdBAnggota===v.kdBAnggota && v1.kdBidang===v.kdBidang){
         xdt.push({
             ...v,
@@ -240,7 +254,7 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
     if(add){
       xdt.push(v);
     }
-  }); 
+  });
   // if(dataTerpilih.length != xdt.length){
   //   console.log(dataTerpilih,xdt);
   //   // toast.error('terjadi kesalahan pengelolaan data');

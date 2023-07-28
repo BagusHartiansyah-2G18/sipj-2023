@@ -309,6 +309,22 @@
   width: 400px !important;
 }
 
+.mh600p {
+  min-height: 600px !important;
+}
+
+.mh650p {
+  min-height: 650px !important;
+}
+
+.mh700p {
+  min-height: 700px !important;
+}
+
+.mh800p {
+  min-height: 800px !important;
+}
+
 .mxh100p {
   max-height: 100% !important;
 }
@@ -502,6 +518,11 @@
 .algI, .mdiLeftGroup {
   display: flex;
   align-items: center;
+}
+
+.justifyC {
+  display: flex;
+  justify-content: center;
 }
 
 .justifyEnd, header#mfc2 .body .user {

@@ -16,6 +16,7 @@ const actType = {
     type : 'nextStep',
     start:'berproses',
     step1:'entriRincian',
+    step3:'final',
   },
   setUraian:'setUraian',
   updUraian:'updUraian',
@@ -114,6 +115,28 @@ function nextStep(body){
     // dispatch(hideLoading());
   };
 }
+function Step3(body){
+    return async (dispatch) => {
+      // dispatch(showLoading());
+      try {
+    //    console.log(bod);
+        // formData.append("file", body.files);
+        // formData.append("file", body.files);
+        await api.POST({url:"sppd/step3",body});
+        // return await api.POSTData({url:"sppd/step3",formData});
+        dispatch({
+          type : actType.crudWork,
+          payload:{
+            ...body,
+            type:actType.nextStep.step3
+          }
+        });
+      } catch (error) {
+        alert(error.message);
+      }
+      // dispatch(hideLoading());
+    };
+  }
 function addedWorkStaf({ dt, ind, param  }){
   return async (dispatch) => {
     // dispatch(showLoading());
@@ -290,7 +313,9 @@ export {
     added,
     upded,
     deled,
+
     nextStep,
+    Step3,
 
     colAnggota,
     coldata,

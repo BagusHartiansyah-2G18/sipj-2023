@@ -629,7 +629,6 @@ class Cdinas extends Controller
         ], 200);
     }
 
-
     function portal($user){
         if(!empty($user->kdDinas)){
             return [
