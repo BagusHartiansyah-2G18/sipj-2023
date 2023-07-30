@@ -119,15 +119,15 @@ function Step3(body){
     return async (dispatch) => {
       // dispatch(showLoading());
       try {
-        await api.POST({url:"sppd/step3",body});
-        dispatch({
-          type : actType.crudWork,
-          payload:{
-            ...body,
-            type:actType.nextStep.step3
-          }
-        });
-        window.location.reload(false);
+        const exec = await api.POST({url:"sppd/step3",body});
+        window.location.reload();
+        // dispatch({
+        //   type : actType.crudWork,
+        //   payload:{
+        //     ...body,
+        //     type:actType.nextStep.step3
+        //   }
+        // });
         // toast.success("sukses malaksanakan aksi !!!");
       } catch (error) {
         toast.error(error.message);

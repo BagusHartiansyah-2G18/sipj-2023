@@ -18893,6 +18893,7 @@ function nextStep(body) {
 function Step3(body) {
   return /*#__PURE__*/function () {
     var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(dispatch) {
+      var exec;
       return _regeneratorRuntime().wrap(function _callee6$(_context6) {
         while (1) switch (_context6.prev = _context6.next) {
           case 0:
@@ -18903,13 +18904,15 @@ function Step3(body) {
               body: body
             });
           case 3:
-            dispatch({
-              type: actType.crudWork,
-              payload: _objectSpread(_objectSpread({}, body), {}, {
-                type: actType.nextStep.step3
-              })
-            });
-            window.location.reload(false);
+            exec = _context6.sent;
+            window.location.reload();
+            // dispatch({
+            //   type : actType.crudWork,
+            //   payload:{
+            //     ...body,
+            //     type:actType.nextStep.step3
+            //   }
+            // });
             // toast.success("sukses malaksanakan aksi !!!");
             _context6.next = 10;
             break;
