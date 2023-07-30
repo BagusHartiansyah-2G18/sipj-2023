@@ -18903,24 +18903,25 @@ function Step3(body) {
               body: body
             });
           case 3:
-            // return await api.POSTData({url:"sppd/step3",formData});
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
                 type: actType.nextStep.step3
               })
             });
-            _context6.next = 9;
+            window.location.reload(false);
+            // toast.success("sukses malaksanakan aksi !!!");
+            _context6.next = 10;
             break;
-          case 6:
-            _context6.prev = 6;
+          case 7:
+            _context6.prev = 7;
             _context6.t0 = _context6["catch"](0);
-            alert(_context6.t0.message);
-          case 9:
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context6.t0.message);
+          case 10:
           case "end":
             return _context6.stop();
         }
-      }, _callee6, null, [[0, 6]]);
+      }, _callee6, null, [[0, 7]]);
     }));
     return function (_x6) {
       return _ref6.apply(this, arguments);

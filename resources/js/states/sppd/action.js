@@ -119,11 +119,7 @@ function Step3(body){
     return async (dispatch) => {
       // dispatch(showLoading());
       try {
-    //    console.log(bod);
-        // formData.append("file", body.files);
-        // formData.append("file", body.files);
         await api.POST({url:"sppd/step3",body});
-        // return await api.POSTData({url:"sppd/step3",formData});
         dispatch({
           type : actType.crudWork,
           payload:{
@@ -131,12 +127,14 @@ function Step3(body){
             type:actType.nextStep.step3
           }
         });
+        window.location.reload(false);
+        // toast.success("sukses malaksanakan aksi !!!");
       } catch (error) {
-        alert(error.message);
+        toast.error(error.message);
       }
       // dispatch(hideLoading());
     };
-  }
+}
 function addedWorkStaf({ dt, ind, param  }){
   return async (dispatch) => {
     // dispatch(showLoading());
