@@ -6,7 +6,7 @@ import Tabel1 from "../../tabel/tabel1";
 import sfLib from '../../mfc/sfLib';
 
 function FormUrusan({dt}) {
-    const [search, setSearch] = useInput(''); 
+    const [search, setSearch] = useInput('');
     return (
         <div className="form1 bwhite boxShadow1px">
             <div className="header bprimary clight">
@@ -14,9 +14,8 @@ function FormUrusan({dt}) {
                     <span className="mdi mdi-office-building-marker fz25 "></span>
                     <h3>Data Urusan Pemerintahan</h3>
                 </div>
-                <button className="btn2 blight cmuted">Entri</button>
             </div>
-            <div className="body">  
+            <div className="body">
                 <Tabel1
                     search={search}
                     oncSearch={setSearch}

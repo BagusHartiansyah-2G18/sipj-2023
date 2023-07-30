@@ -2,10 +2,10 @@ import React from "react";
 
 import { colAbpd6 } from '../../../states/rekeningB/action';
 import { useInput } from '../../../hooks/useInput';
-import Tabel1 from "../../tabel/tabel1"; 
+import Tabel1 from "../../tabel/tabel1";
 
 function FormApbd6({ dt, selectSub }) {
-    const [search, setSearch] = useInput(''); 
+    const [search, setSearch] = useInput('');
     return (
         <div className="form1 bwhite boxShadow1px w50p">
             <div className="header bprimary clight">
@@ -13,13 +13,12 @@ function FormApbd6({ dt, selectSub }) {
                     <span className="mdi mdi-office-building-marker fz25 "></span>
                     <h3>Data Rekening Belanja</h3>
                 </div>
-                <button className="btn2 blight cmuted">Entri</button>
             </div>
-            <div className="body">  
+            <div className="body">
                 <Tabel1
                     search={search}
                     oncSearch={setSearch}
-                    columns={colAbpd6} 
+                    columns={colAbpd6}
                     selectData={selectSub}
                     data={dt.filter((item) => {
                                 if (search === "") {

@@ -13,9 +13,8 @@ function FormSub({ dt, selectSub }) {
                     <span className="mdi mdi-office-building-marker fz25 "></span>
                     <h3>Data Sub Kegiatan</h3>
                 </div>
-                <button className="btn2 blight cmuted">Entri</button>
             </div>
-            <div className="body">  
+            <div className="body">
                 <Tabel1
                     search={search}
                     oncSearch={setSearch}

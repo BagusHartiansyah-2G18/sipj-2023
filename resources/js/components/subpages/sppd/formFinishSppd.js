@@ -105,13 +105,6 @@ function FormFinishSppd({ dt, modalC, param, indWork }) {
                                     onChange={(e)=>sfLib.readFile(e.target,setfiles)}
                                     placeholder="uraian"
                                     />
-                                {/* <input type="file" {...register("file")} className="borderR10px" /> */}
-
-
-                                {/* <FilesUpload
-                                    onFileSelectSuccess={(file) => setfiles(file)}
-                                    onFileSelectError={({ error }) => toast.error(error)}
-                                    ></FilesUpload> */}
                             </div>
                             <div>
                                 {
