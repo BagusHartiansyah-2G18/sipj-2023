@@ -249,53 +249,28 @@ class Csppd extends Controller
         $cek = $this->portal($user);
         if($cek['exc']){
             $request = $request->all();
-            // $request->validate([
-            //     'kdDinas' => 'required',
-            //     'kdBidang' => 'required',
-            //     'kdSub' => 'required',
-            //     'kdJudul' => 'required',
-            //     'no'=> 'required',
-            //     'status'=> 'required',
-            //     'noBuku'=> 'required',
-            //     'tglBuku'=> 'required',
-            //     'files'=> 'required',
-            // ]);
-            // return print_r($request['files']);
             $namaFile = $this->_uploadImage($request['files']['data'],$request['files']['nama']);
-            // if($request->files()) {
-            //     $fileName = time().'_'.$request->file->getClientOriginalName();
-            //     return print_r($fileName);
-            //     // $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
-            //     // $fileModel->name = time().'_'.$req->file->getClientOriginalName();
-            //     // $fileModel->file_path = '/storage/' . $filePath;
-            //     // $fileModel->save();
-            //     // return back()
-            //     // ->with('success','File has been uploaded.')
-            //     // ->with('file', $fileName);
-            // }
-            // $param = $request->only("kdDinas","kdBidang","kdSub","kdJudul");
-            // $param["tahun"]= $cek['ta'];
-            // if(
-            //     DB::table('work')
-            //     ->where('kdDinas',$request['kdDinas'])
-            //     ->where('kdBidang',$request['kdBidang'])
-            //     ->where('kdSub',$request['kdSub'])
-            //     ->where('kdJudul',$request['kdJudul'])
-            //     ->where('taWork',$cek['ta'])
-            //     ->where('no',$request['no'])
-            //     ->where('kdBAnggota','')
-            //     ->update([
-            //         'status'=> $request['status'],
-            //         'noBuku'=> $request['noBuku'],
-            //         'tglBuku'=> $request['tglBuku'],
-            //         'file' => $namaFile
-            //     ])
-            // ){
-            //     return response()->json([
-            //         'exc' => true,
-            //         'data' => []
-            //     ], 200);
-            // }
+            if(
+                DB::table('work')
+                ->where('kdDinas',$request['kdDinas'])
+                ->where('kdBidang',$request['kdBidang'])
+                ->where('kdSub',$request['kdSub'])
+                ->where('kdJudul',$request['kdJudul'])
+                ->where('taWork',$cek['ta'])
+                ->where('no',$request['no'])
+                ->where('kdBAnggota','')
+                ->update([
+                    'status'=> $request['status'],
+                    'noBuku'=> $request['noBuku'],
+                    'tglBuku'=> $request['tglBuku'],
+                    'file' => $namaFile
+                ])
+            ){
+                return response()->json([
+                    'exc' => true,
+                    'data' => []
+                ], 200);
+            }
             return response()->json([
                 'exc' => false,
                 'msg' => 'query Error'
