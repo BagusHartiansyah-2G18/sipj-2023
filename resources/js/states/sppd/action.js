@@ -1,5 +1,6 @@
 import api from "../../utils/api";
 import { toast } from 'react-toastify';
+import sfLib from "../../components/mfc/sfLib";
 
 const nm = 'sppd';
 const actType = {
@@ -184,7 +185,12 @@ const coldata = [
       selector: row => row.date,
   },{
     name: 'Status',
-    selector: row => row.status,
+    selector: row =>{
+        if(row.total==="final"){
+            return sfLib._$(row.total);
+        }
+        return row.status;
+    },
   }
 ];
 
