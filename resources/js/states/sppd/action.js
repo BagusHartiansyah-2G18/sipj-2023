@@ -186,7 +186,7 @@ const coldata = [
   },{
     name: 'Status',
     selector: row =>{
-        if(row.total==="final"){
+        if(row.status==="final"){
             return sfLib._$(row.total);
         }
         return row.status;
