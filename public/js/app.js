@@ -17422,7 +17422,7 @@ function SPPD() {
         param: param
       })]
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
-      children: view > 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("b", {
+      children: view > 3 && indWork >= 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("b", {
         className: "pwrap bwarning",
         children: "Mohon untuk menambahkan data pewagai yang ditugaskan !!!"
       })

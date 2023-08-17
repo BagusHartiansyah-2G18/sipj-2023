@@ -150,7 +150,7 @@ function SPPD(){
                     </>:
                     <>{
                         (
-                            view>3 &&
+                            view>3 && indWork>=0 &&
                             <b className="pwrap bwarning">Mohon untuk menambahkan data pewagai yang ditugaskan !!!</b>
                         )
                     }</>
