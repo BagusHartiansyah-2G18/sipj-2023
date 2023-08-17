@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { useInput } from '../../../hooks/useInput';
 import sfHtml from "../../mfc/sfHtml";
@@ -13,6 +13,8 @@ import { colRincian, actRincian, actTriwulan, getDataSubBidang, getDataUraianSub
 import Tabel1 from "../../tabel/tabel1";
 import { setHtml, setLeftBar, modalClose } from '../../../states/sfHtml/action';
 import { toast } from "react-toastify";
+
+import PropTypes from "prop-types";
 
 function FormBelanja({ dt, modalC, ind, updDataBidang }) {
     const [search, setSearch] = useInput('');
@@ -153,8 +155,8 @@ function FormBelanja({ dt, modalC, ind, updDataBidang }) {
             }))
             reset()
         } catch (error) {
-
-        };
+            toast.error("Gagal Menambahkan Data !!!");
+        }
     }
     const del = (v) =>{
         const rincian =dt[ind].bidang[index].sub[index_1].rincian;
@@ -199,8 +201,8 @@ function FormBelanja({ dt, modalC, ind, updDataBidang }) {
             setOnOff(1);
             mclose();
         } catch (error) {
-
-        };
+            toast.error("Gagal Menghapus Data !!!");
+        }
     }
     const upd = (v) =>{
         dispatch(setLeftBar(1));
@@ -239,8 +241,8 @@ function FormBelanja({ dt, modalC, ind, updDataBidang }) {
             setOnOff(1);
             mclose();
         } catch (error) {
-
-        };
+            toast.error("Gagal Memperbarui Data !!!");
+        }
     }
 
     const saveTriwulan = () =>{
@@ -363,28 +365,28 @@ function FormBelanja({ dt, modalC, ind, updDataBidang }) {
                                             <></>:
                                             <>
                                                 <div className="flexR3">
-                                                    <div class="doubleInput ptb10px">
+                                                    <div className="doubleInput ptb10px">
                                                         <label>triwulan 1</label>
                                                         <div className="iconInput2">
                                                             <input className="borderR10px" type="text" value={tw1} onChange={settw1} placeholder="triwulan 1" />
                                                             <span className={`mdi mdi-cloud-search cwarning `}></span>
                                                         </div>
                                                     </div>
-                                                    <div class="doubleInput ptb10px">
+                                                    <div className="doubleInput ptb10px">
                                                         <label>triwulan 2</label>
                                                         <div className="iconInput2 ">
                                                             <input className="borderR10px" type="text" value={tw2} onChange={settw2} placeholder="triwulan 2" />
                                                             <span className={`mdi mdi-cloud-search cwarning `}></span>
                                                         </div>
                                                     </div>
-                                                    <div class="doubleInput ptb10px">
+                                                    <div className="doubleInput ptb10px">
                                                         <label>triwulan 3</label>
                                                         <div className="iconInput2 ">
                                                             <input className="borderR10px" type="text" value={tw3} onChange={settw3} placeholder="triwulan 3" />
                                                             <span className={`mdi mdi-cloud-search cwarning `}></span>
                                                         </div>
                                                     </div>
-                                                    <div class="doubleInput ptb10px">
+                                                    <div className="doubleInput ptb10px">
                                                         <label>triwulan 4</label>
                                                         <div className="iconInput2">
                                                             <input className="borderR10px" type="text" value={tw4} onChange={settw4} placeholder="triwulan 4" />
@@ -466,6 +468,13 @@ function FormBelanja({ dt, modalC, ind, updDataBidang }) {
         </>
 
     );
+}
+
+FormBelanja.propTypes = {
+    dt : PropTypes.object.isRequired,
+    modalC : PropTypes.func.isRequired,
+    ind : PropTypes.number.isRequired,
+    updDataBidang : PropTypes.func.isRequired
 }
 export default FormBelanja;
 

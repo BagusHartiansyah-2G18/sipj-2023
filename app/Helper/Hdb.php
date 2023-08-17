@@ -96,14 +96,17 @@ class Hdb {
     //anggota
     function getDAnggota($v){
         $data = DB::table('dinas_b_anggota')
-                ->selectRaw('kdBAnggota,nmAnggota,nmJabatan,nip,status')
+                ->selectRaw('kdBAnggota,nmAnggota,nmJabatan,nip,status,asJabatan,golongan,tingkatan')
                 ->where('kdDinas',$v['kdDinas'])
                 ->where('kdBidang',$v['kdBidang'])
                 ->where('taBAnggota',$v['tahun'])
                 ->get();
         return $data;
     }
-    function AnggotaAdded($kdDinas, $kdBidang, $nmAnggota, $nmJabatan, $nip, $status, $tahun){
+    function AnggotaAdded(
+            $kdDinas, $kdBidang, $nmAnggota, $nmJabatan, $nip, $status, $tahun,
+            $asJabatan, $golongan, $tingkat
+        ){
         $getKD=DB::select("
             select kdBAnggota+1 as kd from dinas_b_anggota
             where kdDinas = '".$kdDinas."' and
@@ -120,18 +123,23 @@ class Hdb {
         INSERT INTO `dinas_b_anggota`(
                 `kdBAnggota`, `kdBidang`, `kdDinas`,
                 `nmAnggota`, `nmJabatan`, `nip`, `status`,
-                `taBAnggota`)
+                `taBAnggota`,asJabatan,golongan,tingkatan)
             values
-            (?,?,?,?,?,?,?,?)
+            (?,?,?,?,?,?,?,?,?,?,?)
         ",[
             $kd,$kdBidang,$kdDinas,$nmAnggota,
-            $nmJabatan, $nip, $status, $tahun]);
+            $nmJabatan, $nip, $status, $tahun,
+            $asJabatan, $golongan, $tingkat
+        ]);
     }
     function getAllBidangAnggota($v){
         $where ='';
         if(isset($v['status'])){
             $where =$v['status'];
         }
+        // if(isset($v['kdBidang'])){
+        //     $where =' and a.kdBidang ="'.$v['kdBidang'].'"';
+        // }
         return DB::select('
             select
                 a.kdBAnggota, a.nmAnggota, a.nmJabatan, a.nip, a.status,
@@ -143,9 +151,18 @@ class Hdb {
                 b.kdDinas = a.kdDinas and
                 b.taDBidang = a.taBAnggota
             where a.kdDinas="'.$v['kdDinas'].'" and
-                a.kdBidang ="'.$v['kdBidang'].'" and
                 a.taBAnggota="'.$v['tahun'].'"
+            order by a.tingkatan asc
         ');
+    }
+    function getAnggotaJabatan($v){
+        $data = DB::table('dinas_b_anggota')
+                ->selectRaw('kdBAnggota,nmAnggota,nmJabatan,nip,status,asJabatan,golongan,tingkatan')
+                ->where('kdDinas',$v['kdDinas'])
+                ->where('taBAnggota',$v['tahun'])
+                ->where('status',$v['status'])
+                ->get();
+        return $data;
     }
 
     // sub
@@ -471,6 +488,7 @@ class Hdb {
         return DB::select('
             select
                 a.no, a.date, a.status, a.kdBAnggota, a.tujuan, a.noBuku, a.tglBuku, a.file,
+                maksud, angkut, tempatS, tempatE, dateE, anggaran, keterangan, lokasi, fileD, dasar,
                 (
                     select sum(a1.volume * a1.nilai)
                     from workuraian a1
@@ -514,7 +532,7 @@ class Hdb {
         return DB::select('
             select
                 a.no, a.date, a.status, a.kdBAnggota,
-                b.nip, b.nmAnggota, b.nip, b.nmJabatan
+                b.nip, b.nmAnggota, b.nip, b.nmJabatan, b.asJabatan, b.golongan, b.tingkatan
             from work a
             join dinas_b_anggota b on
                 a.kdBAnggota = b.kdBAnggota and
@@ -526,14 +544,30 @@ class Hdb {
     function workAdded($v){
         return DB::insert("
             insert work (
-                no, kdDinas, kdBidang, date,
-                tujuan,taWork, kdSub, kdJudul,
-                kdBAnggota
+                no, kdDinas, kdBidang,
+
+                maksud,angkut,tempatS,tempatE,
+                date, dateE,anggaran,lokasi,
+
+                taWork, kdSub, kdJudul,kdBAnggota
             ) values
             (
+                ?,?,?,
                 ?,?,?,?,
                 ?,?,?,?,
-                ?
+                ?,?,?,?
+            )
+        ",$v);
+    }
+    function workAdduser($v){
+        return DB::insert("
+            insert work (
+                no, kdDinas, kdBidang,
+                taWork, kdSub, kdJudul,kdBAnggota
+            ) values
+            (
+                ?,?,?,
+                ?,?,?,?
             )
         ",$v);
     }

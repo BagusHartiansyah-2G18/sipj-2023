@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import React, { useEffect } from "react";
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +13,7 @@ import { getDinasBidang, getDataBidangSub } from '../states/dinas/action';
 
 
 function BidangSubKegiatan(){
-    const { _dinas, _html } = useSelector((state) => state);
+    const { _dinas } = useSelector((state) => state);
     const dispatch = useDispatch();
 
     const [ind, setInd] = useState(0);

@@ -1,9 +1,8 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 
-import { useInput } from '../../../hooks/useInput';
 import { useState } from 'react';
-import {  Step3 } from '../../../states/sppd/action';
+import {  uploadDasar, cbDasar } from '../../../states/sppd/action';
 
 import sfHtml from "../../mfc/sfHtml";
 import { setHtml, modalClose } from '../../../states/sfHtml/action';
@@ -11,14 +10,15 @@ import { toast } from 'react-toastify';
 
 import sfLib from '../../mfc/sfLib';
 import PropTypes from "prop-types";
+import Select from "react-select";
 
-function FormFinishSppd({ dt, modalC, param, indWork }) {
+function FormDasar({ dt, modalC, param, indWork }) {
     const dispatch = useDispatch();
     const [onOff] = useState(1);
 
-    const [files, setfiles] = useState(dt.file);
-    const [noBuku, setnoBuku] = useInput(dt.noBuku);
-    const [tglBuku, settglBuku] = useInput(dt.tglBuku);
+    const [files, setfiles] = useState({ nama:dt.fileD});
+    const [ dasar, setdasar] = useState({value:cbDasar[0].value,label:cbDasar[0].label});
+
 
     function mclose(){
         dispatch(modalClose());
@@ -36,8 +36,7 @@ function FormFinishSppd({ dt, modalC, param, indWork }) {
                 clsH: " bwarning",
                 children : (
                     <p>
-                        aksi ini akan mengakhiri tahapan pembuatan dokumen,
-                        Apa benar ingin mengunci dan mengarsipkan data ini ?
+                        perbarui data Dasar Kegiatan ?
                     </p>
                 ),
                 footer : (
@@ -55,64 +54,58 @@ function FormFinishSppd({ dt, modalC, param, indWork }) {
         );
     }
     const xupded = () =>{
-        dispatch(Step3({
+        dispatch(uploadDasar({
             ...param,
-            no: dt.no,
             ind:indWork,
-            status: 'final',
-            noBuku,
-            tglBuku,
             files,
+            dasar:dasar.value,
         }));
         mclose();
     }
-
     if (dt === undefined || dt === null) {
         return <></>;
     }
-
     return (
         <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
             <div className="form1 bwhite boxShadow1px ">
-                <div className="header bprimary clight">
+                <div className="header binfo cwhite">
                     <div className="icon">
-                        <span className="mdi mdi-office-building-marker fz25 "></span>
-                        <h3><b>3. Form Pengarsipan & Penguncian Data</b></h3>
+                        <span className="mdi mdi-circle-slice-2 fz25 "></span>
+                        <h3><b>1. Upload Dasar Kegiatan Perjalanan Dinas</b></h3>
                     </div>
                     <div>
-                        <button className="btn2 bsuccess clight" onClick={()=>saved()}>
+                        <button className="btn2 bprimary clight" onClick={()=>saved()}>
                             <span className="mdi mdi-check-circle  fz25" /> Save
                         </button>
                     </div>
                  </div>
                 <div className="body">
-
                     <div className="flexC w80p">
                         <div className="flexR justifySB">
-                            <div className="labelInput2 ptb10px">
-                                <label className="mw100px"><span className={`mdi mdi-cloud-search cprimary `}></span>No Buku</label>
-                                <input className="borderR10px" type="text" value={noBuku} onChange={setnoBuku} placeholder="No Buku" />
-                            </div>
-                            <div className="labelInput2 ptb10px">
-                                <label className="mw200px"><span className={`mdi mdi-cloud-search cprimary `}></span>Tanggal Buku</label>
-                                <input className="borderR10px" type="text" value={tglBuku} onChange={settglBuku} placeholder="Tanggal diBukukan" />
+                            <div className="labelInput2  ptb10px">
+                                <label className="mw100px"><span className={`mdi mdi-file-send cprimary fziconS`}></span>Dasar</label>
+                                <Select
+                                    options={cbDasar}
+                                    placeholder="Select Dasar"
+                                    value={dasar}
+                                    onChange={setdasar}
+                                    isSearchable={true}
+                                />
                             </div>
                         </div>
                         <div className="flexR justifySB">
                             <div className="labelInput2 ptb10px">
-                                <label className="mw100px"><span className={`mdi mdi-cloud-search cprimary `}></span>Dokumen</label>
+                                <label className="mw100px"><span className={`mdi mdi-file-upload cprimary fziconS`}></span>Dokumen</label>
                                 <input className="borderR10px" type="file" value=''
-                                    onChange={(e)=>sfLib.readFile(e.target,setfiles)}
-                                    placeholder="uraian"
-                                    />
+                                    onChange={(e)=>sfLib.readFile(e.target,setfiles)} />
                             </div>
                             <div>
                                 {
                                     (
-                                        files!='-' &&
+                                        files!='' &&
                                         <div className="pwrap boxShadow1px borderR10px">
-                                            <span className={`mdi mdi-cloud-search cprimary fziconS justifyC`}></span>
-                                            <h5>{files.nama}</h5>
+                                            <span className={`mdi mdi-cloud-upload cprimary fziconS justifyC`}></span>
+                                            <h5><b>{dt.dasar}</b>-{files.nama}</h5>
                                         </div>
                                     )
                                 }
@@ -124,10 +117,10 @@ function FormFinishSppd({ dt, modalC, param, indWork }) {
         </div>
     );
 }
-FormFinishSppd.propTypes = {
+FormDasar.propTypes = {
     dt : PropTypes.object.isRequired,
     param : PropTypes.object.isRequired,
     indWork : PropTypes.number.isRequired,
     modalC : PropTypes.func.isRequired
 }
-export default FormFinishSppd;
+export default FormDasar;

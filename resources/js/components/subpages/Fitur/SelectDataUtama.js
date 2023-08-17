@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { useInput } from '../../../hooks/useInput';
 import sfLib from "../../mfc/sfLib";
@@ -10,7 +10,7 @@ import Select from "react-select";
 import { colSub, colRincianTw, getDataSubBidang, getDataUraianSub } from '../../../states/dinas/action';
 import Tabel1 from "../../tabel/tabel1";
 import {Link} from "react-router-dom";
-
+import PropTypes from "prop-types";
 
 function SelectDataUtama({ dt, ind, updDataBidang }) {
     const dispatch = useDispatch();
@@ -77,9 +77,7 @@ function SelectDataUtama({ dt, ind, updDataBidang }) {
                     }))}`} >
                         <button className="btn2 cprimary" title="triwulan">Realisasikan</button>
                     </Link>
-                )
-            break;
-
+                );
             default:
                 break;
         }
@@ -179,6 +177,12 @@ function SelectDataUtama({ dt, ind, updDataBidang }) {
         </div>
 
     );
+}
+
+SelectDataUtama.propTypes = {
+    dt : PropTypes.object.isRequired,
+    ind : PropTypes.number.isRequired,
+    updDataBidang : PropTypes.func.isRequired
 }
 export default SelectDataUtama;
 

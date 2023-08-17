@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import api from "../../utils/api";
 import { toast } from 'react-toastify';
 import sfLib from "../../components/mfc/sfLib";
@@ -14,6 +15,7 @@ const actType = {
   workSetAnggota:'workSetAnggota',
   workDelAnggota:'workDelAnggota',
   nextStep:{
+    dasar: 'uploadDasar',
     type : 'nextStep',
     start:'berproses',
     step1:'entriRincian',
@@ -136,6 +138,28 @@ function Step3(body){
       // dispatch(hideLoading());
     };
 }
+
+function uploadDasar(body){
+    return async (dispatch) => {
+      // dispatch(showLoading());
+      try {
+        const fileD = await api.POST({url:"sppd/uploadDasar",body});
+        dispatch({
+          type : actType.crudWork,
+          payload:{
+            fileD,
+            ind:body.ind,
+            dasar:body.dasar,
+            type:actType.nextStep.dasar
+          }
+        });
+      } catch (error) {
+        // alert(error.message);
+      }
+      // dispatch(hideLoading());
+    };
+}
+
 function addedWorkStaf({ dt, ind, param  }){
   return async (dispatch) => {
     // dispatch(showLoading());
@@ -161,11 +185,11 @@ function addedWorkStaf({ dt, ind, param  }){
 
 const colAnggota = [
   {
-      name: 'Bidang',
-      selector: row => row.asBidang,
-      width : '150px'
-  },{
-      name: 'Staf',
+//       name: 'Bidang',
+//       selector: row => row.asBidang,
+//       width : '150px'
+//   },{
+      name: 'Nama',
       selector: row => row.nmAnggota,
   },{
     name: 'Jabatan',
@@ -179,7 +203,7 @@ const coldata = [
       width : '150px'
   },{
     name: 'Tujuan',
-    selector: row => row.tujuan,
+    selector: row => row.tempatE,
   },{
       name: 'Tanggal',
       selector: row => row.date,
@@ -189,7 +213,7 @@ const coldata = [
         if(row.status==="final"){
             return sfLib._$(row.total);
         }
-        return row.status;
+        return row.lokasi;
     },
   }
 ];
@@ -308,6 +332,15 @@ function delWorkUraian(body){
   };
 }
 
+const cbDasar = [
+    {
+      label :'Undangan',
+      value :'Undangan',
+    },{
+      label :'Telaahan Staf',
+      value :'Telaahan',
+    }
+];
 
 export {
     actType,
@@ -318,6 +351,7 @@ export {
     upded,
     deled,
 
+    uploadDasar,
     nextStep,
     Step3,
 
@@ -333,4 +367,6 @@ export {
     addWorkUraian,
     updWorkUraian,
     delWorkUraian,
+
+    cbDasar,
 }

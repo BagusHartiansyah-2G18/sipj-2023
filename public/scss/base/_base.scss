@@ -38,19 +38,12 @@
     @extend .overAuto;
     max-height: 200px;
 }
-// @use '../abstracts/variable' as _;
-// @use '../abstracts/mixPosition' as _pos;
-// .iconText{
-//     @include _pos.flexR();
-//     @include _.mar(0 10px);
-//     & .color{
-//         @include _.c('light');
-//         @include _.pad(0 5px);
-//         text-decoration: none;
-//         cursor: pointer;
-//     }
-// }
 
 .boxShadow1px{
     @include _sty.shadow(1px 1px 1px 1px,map-get(_.$c,'dark'));
 }
+
+.transform45{@include _sty.transform(45deg);}
+
+.rotasi45{@include _pos.rotasi();}
+.rotasiM45{@include _pos.rotasi(-45deg);}

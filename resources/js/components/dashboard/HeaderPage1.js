@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 function HeaderPage1({page,pageKet,icon}){
     return (
         <div className="headerPage1">
@@ -16,5 +18,10 @@ function HeaderPage1({page,pageKet,icon}){
             </div> */}
         </div>
     )
+}
+HeaderPage1.propTypes ={
+    page : PropTypes.string.isRequired,
+    pageKet : PropTypes.string.isRequired,
+    icon : PropTypes.string.isRequired,
 }
 export default HeaderPage1;

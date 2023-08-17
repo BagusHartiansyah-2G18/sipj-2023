@@ -1,3 +1,4 @@
+/* eslint-disable react/no-deprecated */
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -37,7 +38,7 @@ import SPPD from './pages/work/sppd';
 import Fitur from './pages/Fitur';
 
 import { setAll, session, changeMenu} from "./states/sfHtml/action";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -47,7 +48,7 @@ function MyApp() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setAll({
-            leftBar : 0,
+            leftBar : 1,
             // indMenu : ind,
             // menuSub : 'dashboard',
             url     : window.location.origin
@@ -55,7 +56,6 @@ function MyApp() {
         dispatch(session());
         dispatch(changeMenu(window.location.pathname));
     }, [dispatch]);
-    const pathname = window.location.pathname;
 
     if(_html.sess === undefined ){
         return <></>;

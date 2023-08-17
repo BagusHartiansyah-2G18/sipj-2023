@@ -63,13 +63,20 @@ class Cdinas extends Controller
         $cek = $this->portal($user);
         if($cek['exc']){
             $tahun = $cek['ta'];
-            $request->validate([
-                'kdDinas'=> 'required',
-                'nmDinas'=> 'required',
-                'asDinas'=> 'required',
-                'kadis'=> 'required',
-                'nip'=> 'required',
-            ]);
+            try {
+                $request->validate([
+                    'kdDinas'=> 'required',
+                    'nmDinas'=> 'required',
+                    'asDinas'=> 'required',
+                    'kadis'=> 'required',
+                    'nip'=> 'required',
+                ]);
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'exc' => false,
+                    'msg' => $th->getMessage()
+                ], 200);
+            }
             $data =Hdb::dinasAdded([
                 $request->kdDinas,
                 $request->nmDinas,
@@ -90,13 +97,20 @@ class Cdinas extends Controller
         $cek = $this->portal($user);
         if($cek['exc']){
             $tahun = $cek['ta'];
-            $request->validate([
-                'kdDinas'=> 'required',
-                'nmDinas'=> 'required',
-                'asDinas'=> 'required',
-                'kadis'=> 'required',
-                'nip'=> 'required',
-            ]);
+            try {
+                $request->validate([
+                    'kdDinas'=> 'required',
+                    'nmDinas'=> 'required',
+                    'asDinas'=> 'required',
+                    'kadis'=> 'required',
+                    'nip'=> 'required',
+                ]);
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'exc' => false,
+                    'msg' => $th->getMessage()
+                ], 200);
+            }
             if(
                 DB::table('dinas')
                 ->where('kdDinas',$request->kdDinas)
@@ -185,11 +199,18 @@ class Cdinas extends Controller
         $cek = $this->portal($user);
         if($cek['exc']){
             $tahun = $cek['ta'];
-            $request->validate([
-                'kdDinas'=> 'required',
-                'nmBidang'=> 'required',
-                'asBidang'=> 'required',
-            ]);
+            try {
+                $request->validate([
+                    'kdDinas'=> 'required',
+                    'nmBidang'=> 'required',
+                    'asBidang'=> 'required',
+                ]);
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'exc' => false,
+                    'msg' => $th->getMessage()
+                ], 200);
+            }
             if (Hdb::bidangAdded($request->kdDinas, $request->nmBidang, $request->asBidang, $tahun)) {
                 $data =Hdb::getDBidang([
                     "kdDinas" =>$request->kdDinas,
@@ -219,7 +240,6 @@ class Cdinas extends Controller
         ], 200);
     }
     public function updedBidang(Request $request){
-
         $user =Auth::user();
         $cek = $this->portal($user);
         if($cek['exc']){
@@ -234,7 +254,7 @@ class Cdinas extends Controller
             } catch (\Throwable $th) {
                 return response()->json([
                     'exc' => false,
-                    'data' => "Kurangnya Data yang di Upload !!!"
+                    'msg' => "Kurangnya Data yang di Upload !!!"
                 ], 200);
             }
 
@@ -328,14 +348,17 @@ class Cdinas extends Controller
                     'kdDinas'=> 'required',
                     'kdDBidang'=> 'required',
                     'nmAnggota'=> 'required',
-                    'nmJabatan'=> 'required',
                     'nip'=> 'required',
+                    'nmJabatan'=> 'required',
+                    'asJabatan'=> 'required',
+                    'golongan'=> 'required',
+                    'tingkat'=> 'required',
                     'selStatus'=> 'required',
                 ]);
             } catch (\Throwable $th) {
                 return response()->json([
                     'exc' => false,
-                    'data' => "Kurangnya Data yang di Upload !!!"
+                    'msg' => $th->getMessage()
                 ], 200);
             }
 
@@ -347,7 +370,10 @@ class Cdinas extends Controller
                     $request->nmJabatan,
                     $request->nip,
                     $request->selStatus,
-                    $tahun
+                    $tahun,
+                    $request->asJabatan,
+                    $request->golongan,
+                    $request->tingkat,
                 )
             ){
                 return response()->json([
@@ -384,6 +410,9 @@ class Cdinas extends Controller
                     'nmAnggota'=> 'required',
                     'nmJabatan'=> 'required',
                     'nip'=> 'required',
+                    'asJabatan'=> 'required',
+                    'golongan'=> 'required',
+                    'tingkat'=> 'required',
                     'selStatus'=> 'required',
                 ]);
             } catch (\Throwable $th) {
@@ -404,6 +433,9 @@ class Cdinas extends Controller
                     'nmJabatan' => $request->nmJabatan,
                     'nip' => $request->nip,
                     'status' => $request->selStatus,
+                    'asJabatan' => $request->asJabatan,
+                    'golongan' => $request->golongan,
+                    'tingkatan' => $request->tingkat,
                 ])
             ){
                 return response()->json([

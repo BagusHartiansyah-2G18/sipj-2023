@@ -1,8 +1,8 @@
 import React from "react";
-import { Form } from "react-router-dom";
 import { useState } from 'react';
 import { useInput } from '../../../../hooks/useInput';
 import sfLib from "../../../mfc/sfLib";
+import PropTypes from "prop-types";
 
 function FormUraian( { dt , onUpded, onDeled, value } ){
     const [uraian, seturaian] = useInput((dt.uraian === '-' ? '' : dt.uraian));
@@ -17,7 +17,7 @@ function FormUraian( { dt , onUpded, onDeled, value } ){
             const hitung = (Number(volume)* Number(nilai))
             settotal(hitung);
         } catch (error) {
-
+            error;
         }
     }
 
@@ -71,5 +71,11 @@ function FormUraian( { dt , onUpded, onDeled, value } ){
             </div>
         </div>
     );
+}
+FormUraian.propTypes = {
+    dt : PropTypes.object.isRequired,
+    value : PropTypes.object.isRequired,
+    onUpded : PropTypes.func.isRequired,
+    onDeled : PropTypes.func.isRequired
 }
 export default FormUraian;

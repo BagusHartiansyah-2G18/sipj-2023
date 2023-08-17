@@ -1,26 +1,18 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { workDelAnggota, addWorkUraian, updWorkUraian, delWorkUraian } from '../../../states/sppd/action';
 import sfHtml from "../../mfc/sfHtml";
 import { setHtml, modalClose } from '../../../states/sfHtml/action';
 
 import FormUraian from "./sub/formUraian";
+import PropTypes from "prop-types";
 
 function FormEntriBiaya({ dt, param, modalC, indWork }) {
     const dispatch = useDispatch();
-
-
     function mclose(){
         dispatch(modalClose());
     }
-
-
-    const close = () =>{
-        setOnOff(1);
-    }
-
-
     // delete nama staf
     const del = (i) =>{
         modalC(
@@ -131,10 +123,10 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
     }
     return (
         <div className="form1 bwhite boxShadow1px ">
-            <div className="header bprimary clight">
+            <div className="header binfo cwhite">
                 <div className="icon">
                     <span className="mdi mdi-office-building-marker fz25 "></span>
-                    <h3><b>2. Form Rincian Biaya</b></h3>
+                    <h3><b>3. Form Rincian Biaya (KWITANSI)</b></h3>
                 </div>
             </div>
             <div className=" w95p m0auto ptb10px">
@@ -195,5 +187,11 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
             {/* <div className="footer"></div> */}
         </div>
     );
+}
+FormEntriBiaya.propTypes = {
+    dt : PropTypes.object.isRequired,
+    param : PropTypes.object.isRequired,
+    indWork : PropTypes.number.isRequired,
+    modalC : PropTypes.func.isRequired
 }
 export default FormEntriBiaya;

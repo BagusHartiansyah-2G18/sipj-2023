@@ -4,6 +4,7 @@ import { colApbd } from '../../../states/rekeningB/action';
 import { useInput } from '../../../hooks/useInput';
 import Tabel1 from "../../tabel/tabel1";
 import sfLib from '../../mfc/sfLib';
+import PropTypes from "prop-types";
 
 function FormApbd({dt}) {
     const [search, setSearch] = useInput('');
@@ -41,5 +42,9 @@ function FormApbd({dt}) {
             {/* <div className="footer"></div> */}
         </div>
     );
+}
+
+FormApbd.propTypes = {
+    dt : PropTypes.object.isRequired
 }
 export default FormApbd;

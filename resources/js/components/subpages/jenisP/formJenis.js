@@ -1,27 +1,28 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { colJenis } from '../../../states/jenisP/action';
 import { useInput } from '../../../hooks/useInput';
 import { useState } from 'react';
 
 import Tabel1 from "../../tabel/tabel1";
-import sfHtml from "../../mfc/sfHtml"; 
+import sfHtml from "../../mfc/sfHtml";
 import { setAll, modalClose } from '../../../states/sfHtml/action';
+import PropTypes from "prop-types";
 
 function FormJenis({dt, actFormJenis, modalC }) {
-    const dispatch = useDispatch(); 
-    const [search, setSearch] = useInput(''); 
-    const [onOff, setOnOff] = useState(1); 
-    const [ins, setIns] = useState(1);  
-    const [ index, setIndex] = useState(); 
- 
+    const dispatch = useDispatch();
+    const [search, setSearch] = useInput('');
+    const [onOff, setOnOff] = useState(1);
+    const [ins, setIns] = useState(1);
+    const [ index, setIndex] = useState();
+
     function mclose(){
         dispatch(modalClose());
     }
 
     const coll = [...colJenis,{
-            cell:(v,i) =>
+            cell:(v) =>
                 <div className="btnGroup">
                     {/* {tambahan} */}
                     <button className="btn2" title="Perbarui" onClick={()=>upd(v)}><span className="mdi mdi-pencil-box cwarning fz25" /></button>
@@ -34,9 +35,9 @@ function FormJenis({dt, actFormJenis, modalC }) {
             width: '150px'
         }
     ];
-    const [ kdJPJ, setkdJPJ] = useState(); 
-    const [ nmJPJ, setnmJPJ] = useInput(); 
-    
+    const [ kdJPJ, setkdJPJ] = useState();
+    const [ nmJPJ, setnmJPJ] = useInput();
+
 
     function reset(){
         setkdJPJ(-1);
@@ -52,20 +53,20 @@ function FormJenis({dt, actFormJenis, modalC }) {
         setIns(1);
         setOnOff(0);
     }
-    const added = () =>{ 
-        actFormJenis({ 
+    const added = () =>{
+        actFormJenis({
             nmJPJ,
             act:"add"
         })
         reset();
     }
-    const del = (v) =>{  
-        const i =dt.findIndex((val)=> val.kdJPJ === v.kdJPJ );   
+    const del = (v) =>{
+        const i =dt.findIndex((val)=> val.kdJPJ === v.kdJPJ );
         setIndex(i);
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
-                mclose, 
+                mclose,
                 children : (
                     <p>Apa benar ingin Mengapus data ini ?</p>
                 ),
@@ -83,7 +84,7 @@ function FormJenis({dt, actFormJenis, modalC }) {
             })
         );
     }
-    const xdeled = () =>{  
+    const xdeled = () =>{
         actFormJenis({
             kdJPJ: dt[index].kdJPJ,
             nmJPJ,
@@ -91,11 +92,11 @@ function FormJenis({dt, actFormJenis, modalC }) {
         });
         mclose();
     }
-    const upd = (v) =>{  
-        const i =dt.findIndex((val)=> val.kdJPJ === v.kdJPJ );   
+    const upd = (v) =>{
+        const i =dt.findIndex((val)=> val.kdJPJ === v.kdJPJ );
         setIndex(i);
         setIns(0);
-        setOnOff(0); 
+        setOnOff(0);
         setkdJPJ(dt[i].kdJPJ);
         setnmJPJ({target:{value:dt[i].nmJPJ}});
     }
@@ -118,7 +119,7 @@ function FormJenis({dt, actFormJenis, modalC }) {
                     </div>
                     <button className="btn2 blight cmuted" onClick={add}>Entri</button>
                 </div>
-                <div className="body">  
+                <div className="body">
                     <Tabel1
                         search={search}
                         oncSearch={setSearch}
@@ -142,8 +143,8 @@ function FormJenis({dt, actFormJenis, modalC }) {
                     <div className="icon">
                         <span className="mdi mdi-clock-edit-outline fz25"></span>
                         <h3 className="">Daftar Jenis</h3>
-                    </div>       
-                    <button className="btn2 blight cmuted" onClick={close}>Close</button>        
+                    </div>
+                    <button className="btn2 blight cmuted" onClick={close}>Close</button>
                 </div>
                 <div className="w95p m0auto ptb10px">
                     <div className="iconInput2">
@@ -152,7 +153,7 @@ function FormJenis({dt, actFormJenis, modalC }) {
                     </div>
                 </div>
                 <div className="footer posEnd">
-                    <div className="btnGroup"> 
+                    <div className="btnGroup">
                         <button className="btn2"  onClick={close}>Close</button>
                         <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?added:upded)}>{(ins?'Entri':'Perbarui')}</button>
                     </div>
@@ -160,5 +161,10 @@ function FormJenis({dt, actFormJenis, modalC }) {
             </div>
         </div>
     );
+}
+FormJenis.propTypes = {
+    dt : PropTypes.object.isRequired,
+    modalC : PropTypes.func.isRequired,
+    actFormJenis : PropTypes.func.isRequired
 }
 export default FormJenis;

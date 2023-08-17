@@ -1,5 +1,7 @@
-import React from "react"
-function Footer1({text,cbg ='hheader w100p bdark', cicon='bdanger cwhite'}){
+import React from "react";
+import PropTypes from "prop-types";
+
+function Footer1({text, cbg ='hheader w100p bdark', cicon='bdanger cwhite'}){
     return (
         <footer className="w100p ">
             <div  id="copyRight">
@@ -11,5 +13,11 @@ function Footer1({text,cbg ='hheader w100p bdark', cicon='bdanger cwhite'}){
             <div className={cbg}></div>
         </footer>
     );
+}
+
+Footer1.propTypes = {
+    text : PropTypes.string.isRequired,
+    cbg : PropTypes.string.isRequired,
+    cicon : PropTypes.string.isRequired,
 }
 export default Footer1;

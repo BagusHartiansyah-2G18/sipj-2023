@@ -3,6 +3,7 @@ import React from "react";
 import { colAbpd6 } from '../../../states/rekeningB/action';
 import { useInput } from '../../../hooks/useInput';
 import Tabel1 from "../../tabel/tabel1";
+import PropTypes from "prop-types";
 
 function FormApbd6({ dt, selectSub }) {
     const [search, setSearch] = useInput('');
@@ -35,5 +36,9 @@ function FormApbd6({ dt, selectSub }) {
             {/* <div className="footer"></div> */}
         </div>
     );
+}
+FormApbd6.propTypes = {
+    dt : PropTypes.object.isRequired,
+    selectSub: PropTypes.func.isRequired
 }
 export default FormApbd6;

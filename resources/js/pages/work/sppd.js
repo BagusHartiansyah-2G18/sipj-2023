@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import React, { useEffect }  from "react";
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,10 +13,12 @@ import FormData from "../../components/subpages/sppd/formData";
 import Modal1 from '../../components/Modal/modal1';
 
 import FormEntriBiaya from "../../components/subpages/sppd/formEntriBiaya";
-import formFinishSppd from "../../components/subpages/sppd/formFinishSppd";
 
 import { toast } from "react-toastify";
 import FormFinishSppd from "../../components/subpages/sppd/formFinishSppd";
+import FormTahapan from "../../components/subpages/sppd/formTahapan";
+import FormDasar from "../../components/subpages/sppd/formDasar";
+import FormDokumen from "../../components/subpages/sppd/formDokumen";
 
 
 function SPPD(){
@@ -27,9 +30,9 @@ function SPPD(){
 
     const dispatch = useDispatch();
 
+    const [view, setview] = useState(4);
     const [indWork, setindWork] = useState(-1);
     const [modalC, setmodalC] = useState('');
-    const [dataEntri, setdataEntri] = useState({});
 
 
     useEffect(() => {
@@ -48,10 +51,11 @@ function SPPD(){
         dispatch(workSetAnggota({ ind: i, param:{ ...param, no: _sppd.dwork[i].no } }));
         setindWork(i);
     }
-    // if(indWork<0){
-    //     stepSetAnggota({no:'000.1.2.3/21'});
-    // }
+    if(indWork<0){
+        stepSetAnggota({no:'000.1.2.3'});
+    }
     // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
+    // console.log(view);
     return (
         <>
             <HeaderPage1
@@ -71,11 +75,35 @@ function SPPD(){
             {
                 (
                     indWork>=0 && _sppd.dwork[indWork].anggota != undefined &&
-                    <FormAnggotaSppd
-                        dt={_sppd.dwork[indWork]}
-                        indWork={indWork}
-                        param={param}
-                    ></FormAnggotaSppd>
+                    <>
+                        <FormTahapan
+                            dt={_sppd.dwork[indWork]}
+                            setview={setview}
+                        ></FormTahapan>
+                        <div className="mh50p"></div>
+                        {
+                            (
+                                view===1 &&
+                                <FormDasar
+                                    dt={_sppd.dwork[indWork]}
+                                    indWork={indWork}
+                                    modalC={setmodalC}
+                                    param={{...param, no:_sppd.dwork[indWork].no}}
+                                    >
+                                </FormDasar>
+                            )
+                        }
+                        {
+                            (
+                                view===2 &&
+                                <FormAnggotaSppd
+                                    dt={_sppd.dwork[indWork]}
+                                    indWork={indWork}
+                                    param={param}
+                                ></FormAnggotaSppd>
+                            )
+                        }
+                    </>
                 )
             }
 
@@ -83,22 +111,49 @@ function SPPD(){
                 (
                     indWork>=0 &&
                     _sppd.dwork[indWork].anggota != undefined &&
-                    _sppd.dwork[indWork].anggota.filter(v=>v.xind!=undefined).length>0 &&
+                    _sppd.dwork[indWork].anggota.filter(v=>v.xind!=undefined).length>0 ?
                     <>
-                        <FormEntriBiaya
-                            dt={_sppd.dwork[indWork].anggota.filter(v=>v.xind!=undefined)}
-                            param={{ ...param, no :_sppd.dwork[indWork].no }}
-                            modalC={setmodalC}
-                            indWork={indWork}
-                        ></FormEntriBiaya>
-                        <FormFinishSppd
-                            dt={_sppd.dwork[indWork]}
-                            indWork={indWork}
-                            modalC={setmodalC}
-                            param={param}
-                            >
-                        </FormFinishSppd>
-                    </>
+                        {
+                            (
+                                view===3 &&
+                                <FormEntriBiaya
+                                    dt={_sppd.dwork[indWork].anggota.filter(v=>v.xind!=undefined)}
+                                    param={{ ...param, no :_sppd.dwork[indWork].no }}
+                                    modalC={setmodalC}
+                                    indWork={indWork}
+                                ></FormEntriBiaya>
+                            )
+                        }
+                        {
+                            (
+                                view===4 &&
+                                <FormDokumen
+                                    dt={_sppd.pimpinan}
+                                    param={{ ...param, no :_sppd.dwork[indWork].no }}
+                                    modalC={setmodalC}
+                                    indWork={indWork}
+                                ></FormDokumen>
+                            )
+                        }
+                        {
+                            (
+                                view===5 &&
+                                <FormFinishSppd
+                                    dt={_sppd.dwork[indWork]}
+                                    indWork={indWork}
+                                    modalC={setmodalC}
+                                    param={param}
+                                    >
+                                </FormFinishSppd>
+                            )
+                        }
+                    </>:
+                    <>{
+                        (
+                            view>3 &&
+                            <b className="pwrap bwarning">Mohon untuk menambahkan data pewagai yang ditugaskan !!!</b>
+                        )
+                    }</>
                 )
             }
 

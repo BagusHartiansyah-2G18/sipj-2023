@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { setLeftBar } from '../../states/sfHtml/action';
 import {Link} from "react-router-dom";
 import { changeMenuSub } from '../../states/sfHtml/action';
 
@@ -30,7 +29,7 @@ function Navbar() {
                                         <span className="mdi mdi-calendar cdark fz25"></span>
                                     </Link>
                                 </li>
-                                { (sess.kdJaba !== '3' &&
+                                { (sess.kdJaba !== '1' &&
                                     <>
                                         <li>
                                             <Link to={`/home/member`}>
@@ -115,7 +114,7 @@ function Navbar() {
             </div>
         </div>
     );
-};
+}
 
 export default Navbar;
 
@@ -128,11 +127,4 @@ function actSubMenu(menu,menuAct){
     return '';
 }
 
-function getIcon(xnm){
-    switch (xnm) {
-        case 'sppd':
-            return `mdi-chart-bar`
-        default:
-            return `mdi-chart-bar`
-    }
-}
+

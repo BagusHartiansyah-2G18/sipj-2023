@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { coldata, added, upded, deled, actType, nextStep } from '../../../states/sppd/action';
 import { useInput } from '../../../hooks/useInput';
@@ -9,6 +9,7 @@ import Tabel1 from "../../tabel/tabel1";
 import sfHtml from "../../mfc/sfHtml";
 import { setHtml, modalClose } from '../../../states/sfHtml/action';
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 
 function FormData({ dt, modalC, param, dataEntri }) {
     const dispatch = useDispatch();
@@ -21,7 +22,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
         dispatch(modalClose());
     }
     const coll = [...coldata,{
-            cell:(v,i) =>{
+            cell:(v) =>{
                 switch (v.status) {
                     case actType.nextStep.start:
                         return (
@@ -29,7 +30,8 @@ function FormData({ dt, modalC, param, dataEntri }) {
                                 {/* {tambahan} */}
                                 <button className="btn2 bwarning" title="Perbarui" onClick={()=>upd(v)}><span className="mdi mdi-pencil-box cdark fz25" /></button>
                                 <button className="btn2 bdanger" title="Hapus"  onClick={()=>del(v)}><span className="mdi mdi-delete-forever clight fz25" /></button>
-                                <button className="btn2 bsuccess clight" title="Hapus"  onClick={()=>xnextStep(v)}>Next Step</button>
+                                {/* <button className="btn2 bsuccess clight" title="Hapus"  onClick={()=>xnextStep(v)}>Next Step</button> */}
+                                <button className="btn2 bprimary clight" title="Open Form" onClick={()=>dataEntri(v)}>Open Form</button>
                             </div>
                         );
                     case actType.nextStep.step1:
@@ -48,7 +50,6 @@ function FormData({ dt, modalC, param, dataEntri }) {
                                     target="_blank">
                                     Document
                                 </Link>
-
                             </div>
                         );
                     case actType.nextStep.step3:
@@ -70,13 +71,28 @@ function FormData({ dt, modalC, param, dataEntri }) {
         }
     ];
     const [ no, setno] = useInput();
-    const [ tujuan, settujuan] = useInput();
+    const [ lokasi, setlokasi] = useInput();
     const [ date, setdate] = useInput();
+    const [ dateE, setdateE] = useInput();
+    const [ maksud, setmaksud] = useInput();
+    const [ angkut, setangkut] = useInput();
+    const [ tempatS, settempatS] = useInput();
+    const [ tempatE, settempatE] = useInput();
+    const [ anggaran, setanggaran] = useInput();
 
 
     function reset(){
         setno({target:{value:''}});
         setdate({target:{value:''}});
+        setlokasi({target:{value:''}});
+        setdateE({target:{value:''}});
+
+        setmaksud({target:{innerHTML:''}});
+
+        setangkut({target:{value:''}});
+        settempatS({target:{value:''}});
+        settempatE({target:{value:''}});
+        setanggaran({target:{value:''}});
     }
 
     const close = () =>{
@@ -90,8 +106,14 @@ function FormData({ dt, modalC, param, dataEntri }) {
     const xadded = () =>{
         dispatch(added({
             no,
-            tujuan,
+            lokasi,
             date,
+            dateE,
+            maksud,
+            angkut,
+            tempatS,
+            tempatE,
+            anggaran,
             ...param
         }))
         reset();
@@ -173,13 +195,28 @@ function FormData({ dt, modalC, param, dataEntri }) {
         setOnOff(0);
         setno({target:{value:v.no}});
         setdate({target:{value:v.date}});
-        settujuan({target:{value:v.tujuan}});
+
+        setlokasi({target:{value:v.lokasi}});
+        setdateE({target:{value:v.dateE}});
+
+        setmaksud({target:{value:v.maksud}});
+
+        setangkut({target:{value:v.angkut}});
+        settempatS({target:{value:v.tempatS}});
+        settempatE({target:{value:v.tempatE}});
+        setanggaran({target:{value:v.anggaran}});
     }
     const xupded = () =>{
         dispatch(upded({
             no,
+            lokasi,
             date,
-            tujuan,
+            dateE,
+            maksud,
+            angkut,
+            tempatS,
+            tempatE,
+            anggaran,
             ...param,
             ind,
             noOld: dt[ind].no
@@ -222,22 +259,85 @@ function FormData({ dt, modalC, param, dataEntri }) {
                 <div className={`header ${(ins?'bprimary':'bwarning')} clight`}>
                     <div className="icon">
                         <span className="mdi mdi-clock-edit-outline fz25"></span>
-                        <h3 className="">${(ins?'Entri':'Perbarui')} Data</h3>
+                        <h3 className="">{(ins?'Entri':'Perbarui')} Data</h3>
                     </div>
                     <button className="btn2 blight cmuted" onClick={close}>Close</button>
                 </div>
-                <div className="w95p m0auto">
-                    <div className="iconInput2 ptb10px">
-                        <input className="borderR10px" type="text" value={no} onChange={setno} placeholder="Nomor SPPD" />
-                        <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                <div className="w95p m0auto ">
+                    <div className="doubleInput ptb10px borderB">
+                        <label>No SPPD</label>
+                        <div className="iconInput2 ">
+                            <input className="borderR10px" type="text" value={no} onChange={setno} placeholder="Nomor SPPD" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>
                     </div>
-                    <div className="iconInput2 ptb10px">
-                        <input className="borderR10px" type="text" value={tujuan} onChange={settujuan} placeholder="Tujuan" />
-                        <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                    <div className="doubleInput ptb10px borderB">
+                        <label>Maksud Perjalanan</label>
+                        <div className="iconInput2 ">
+                        {/* <input className="borderR10px mh50p" type="area" value={maksud} onChange={setmaksud} placeholder="Maksud Perjalanan" /> */}
+                            <textarea rows={3} className="borderR10px pwrap w100p" value={maksud} onChange={setmaksud}></textarea>
+                            {/* <div
+                                className={`contentEditable borderR10px pwrap w100p mh50p`}
+                                // data-placeholder={plac}
+                                contentEditable
+                                value={maksud}
+                                onInput={setmaksud}
+                            /> */}
+                        </div>
                     </div>
-                    <div className="iconInput2 ptb10px">
-                        <input className="borderR10px" type="date" value={date} onChange={setdate} placeholder="Tanggal SPPD" />
-                        <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                    <div className="doubleInput borderB">
+                        <label>Tempat</label>
+                        <div className="double">
+                            <div className="labelInput1 w45p">
+                                <label>Berangkat</label>
+                                <div className="iconInput2 ptb10px">
+                                    <input className="borderR10px" type="text" value={tempatS} onChange={settempatS} placeholder="Berangkat" />
+                                    <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                                </div>
+                            </div>
+                            <div className="labelInput1 w45p">
+                                <label>Tujuan</label>
+                                <div className="iconInput2 ptb10px">
+                                    <input className="borderR10px w80p" type="text" value={tempatE} onChange={settempatE} placeholder="Tujuan" />
+                                    <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="doubleInput ptb10px borderB">
+                        <label>Tempat Kegiatan</label>
+                        <div className="iconInput2 ">
+                            <input className="borderR10px" type="text" value={lokasi} onChange={setlokasi} placeholder="Tempat Kegiatan" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>
+                    </div>
+                    <div className="doubleInput ptb10px borderB">
+                        <label>Alat Angkut</label>
+                        <div className="iconInput2 ">
+                            <input className="borderR10px" type="text" value={angkut} onChange={setangkut} placeholder="Alat Angkut" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>
+                    </div>
+                    <div className="doubleInput borderB">
+                        <label>Tanggal</label>
+                        <div className="double">
+                            <div className="labelInput1">
+                                <label>Berangkat</label>
+                                <input className="borderR10px" type="date" value={date} onChange={setdate} placeholder="Tanggal SPPD" />
+                            </div>
+                            <div className="labelInput1">
+                                <label>Kembali</label>
+                                <input className="borderR10px" type="date" value={dateE} onChange={setdateE} placeholder="Tanggal SPPD" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="doubleInput ptb10px borderB">
+                        <label>Anggaran</label>
+                        <div className="iconInput2 ">
+                            <input className="borderR10px" type="text" value={anggaran} onChange={setanggaran} placeholder="Anggaran" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>
                     </div>
                 </div>
                 <div className="footer posEnd">
@@ -249,5 +349,11 @@ function FormData({ dt, modalC, param, dataEntri }) {
             </div>
         </div>
     );
+}
+FormData.propTypes = {
+    dt : PropTypes.array.isRequired,
+    param : PropTypes.object.isRequired,
+    modalC : PropTypes.func.isRequired,
+    dataEntri : PropTypes.func.isRequired
 }
 export default FormData;

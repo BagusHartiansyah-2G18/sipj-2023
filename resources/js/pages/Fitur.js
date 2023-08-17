@@ -4,18 +4,16 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import HeaderPage1 from '../components/dashboard/HeaderPage1';
-import Modal1 from '../components/Modal/modal1';
 
 import SelectDataUtama from "../components/subpages/Fitur/SelectDataUtama";
 
 import { getrincianDinas, getDataBidangSub } from '../states/dinas/action';
 
 function Fitur() {
-    const { _dinas, _html } = useSelector((state) => state);
+    const { _dinas } = useSelector((state) => state);
     const dispatch = useDispatch();
 
     const [ind, setInd] = useState(0);
-    const [modalC, setmodalC] = useState('');
 
     useEffect(() => {
         dispatch(getrincianDinas());
@@ -61,7 +59,6 @@ function Fitur() {
             </div> */}
             <SelectDataUtama
                 dt={_dinas}
-                modalC={setmodalC}
                 ind={ind}
                 updDataBidang={updDataBidang}
             ></SelectDataUtama>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import React, { useEffect } from "react";
 
 import { useState } from 'react';
@@ -11,7 +12,7 @@ import FormBelanja from "../components/subpages/BidangEntri/Belanja";
 import { getrincianDinas, getDataBidang } from '../states/dinas/action';
 
 function BidangEntriBelanja(){
-    const { _dinas, _html } = useSelector((state) => state);
+    const { _dinas } = useSelector((state) => state);
     const dispatch = useDispatch();
 
     const [ind, setInd] = useState(0);

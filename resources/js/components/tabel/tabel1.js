@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import DataTable from 'react-data-table-component';
 
 function Tabel1({
         search = undefined,
-        oncSearch,data,columns, 
+        oncSearch,data,columns,
         fixedHeader= false, fixedHeaderScrollHeight ='300px' ,
-        checkboxSelection = null,pagination = "true", 
+        checkboxSelection = null,pagination = "true",
         cinput ='w30p',
         btnAction = undefined,
         ExpandedComponent = null,
@@ -34,7 +35,7 @@ function Tabel1({
                 columns={columns}
                 data={data}
                 selectableRows={(checkboxSelection!= null && true)}
-                fixedHeader={fixedHeader} 
+                fixedHeader={fixedHeader}
                 fixedHeaderScrollHeight={fixedHeaderScrollHeight}
                 expandableRows={(ExpandedComponent!= null && true)}
                 expandableRowsComponent={ExpandedComponent == null ? (()=>{}): ExpandedComponent}
@@ -45,4 +46,22 @@ function Tabel1({
         </>
     );
 }
+// Tabel1.propTypes = {
+//     search : PropTypes.string.isRequired,
+//     oncSearch : PropTypes.func.isRequired,
+//     data : PropTypes.array.isRequired,
+//     columns : PropTypes.array.isRequired,
+
+//     // fixedHeader: PropTypes.bool.isRequired,
+//     fixedHeaderScrollHeight: PropTypes.string.isRequired,
+//     checkboxSelection: PropTypes.string.isRequired,
+//     pagination : PropTypes.string.isRequired,
+
+//     cinput : PropTypes.string.isRequired,
+//     btnAction: PropTypes.string.isRequired,
+//     ExpandedComponent: PropTypes.string.isRequired,
+//     rowSelectCritera: PropTypes.bool.isRequired,
+
+//     selectData: PropTypes.func.isRequired,
+// }
 export default Tabel1;

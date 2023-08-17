@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { colDinas, added, deled, upded } from '../../../states/dinas/action';
 import { useInput } from '../../../hooks/useInput';
@@ -8,9 +8,11 @@ import Tabel1 from "../../tabel/tabel1";
 import { setLeftBar } from '../../../states/sfHtml/action';
 import sfHtml from "../../mfc/sfHtml";
 import { setHtml, modalClose } from '../../../states/sfHtml/action';
-import { toast } from 'react-toastify';
+import PropTypes  from "prop-types";
 
 function FormDinas({dt, modalC}) {
+    const { _html } = useSelector((state) => state);
+
     const [search, setSearch] = useInput('');
     const dispatch = useDispatch();
     const [onOff, setOnOff] = useState(1);
@@ -107,17 +109,22 @@ function FormDinas({dt, modalC}) {
         dispatch(upded({ kdDinas, nmDinas, asDinas, kadis, nip, ind }));
         close(1);
     }
-
+    // console.log();
     return (
         <>
             <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
                 <div className="form1 bwhite boxShadow1px">
                     <div className="header bprimary clight">
                         <div className="icon">
-                            <span className="mdi mdi-office-building-marker fz25 "></span>
+                            <span className="mdi mdi-home-analytics fziconS "></span>
                             <h3>Data Dinas</h3>
                         </div>
-                        <button className="btn2 blight cmuted" onClick={add}>Entri</button>
+                        {
+                            (
+                                _html.sess.kdJaba>2 &&
+                                <button className="btn2 blight cmuted" onClick={add}>Entri</button>
+                            )
+                        }
                     </div>
                     <div className="body">
                         <Tabel1
@@ -140,7 +147,7 @@ function FormDinas({dt, modalC}) {
                 <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
                     <div className="header bprimary clight">
                         <div className="icon">
-                            <span className="mdi mdi-clock-edit-outline fz25"></span>
+                            <span className="mdi mdi-home-analytics fz25"></span>
                             <h3 className="">{(ins?'Entri':'Perbarui')} Dinas</h3>
                         </div>
                         <button className="btn2 blight cmuted" onClick={close}>Close</button>
@@ -183,5 +190,9 @@ function FormDinas({dt, modalC}) {
         </>
 
     );
+}
+FormDinas.propTypes = {
+    dt : PropTypes.array.isRequired,
+    modalC : PropTypes.func.isRequired,
 }
 export default FormDinas;

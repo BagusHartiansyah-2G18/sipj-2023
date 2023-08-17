@@ -34,14 +34,48 @@ class Csppd extends Controller
             $dpendukung = Hdb::jenisDataDukung($cek);
             $param['kdBAnggota']='';
             $dwork = Hdb::dwork($param);
-            // // return print_r($dwork);
+            $pimpinan=[
+                "dinas" => Hdb::getAnggotaJabatan([
+                    "kdDinas"=>$param['kdDinas'],
+                    "tahun"=>$param['tahun'],
+                    "status"=>"pimpinan"
+                ]),
+                "plhdinas" => Hdb::getAnggotaJabatan([
+                    "kdDinas"=>$param['kdDinas'],
+                    "tahun"=>$param['tahun'],
+                    "status"=>"sekretaris"
+                ]),
+
+                "setda" => Hdb::getAnggotaJabatan([
+                    "kdDinas"=>$cek['setda'],
+                    "tahun"=>$param['tahun'],
+                    "status"=>"setda"
+                ]),
+                "plhsetda" => Hdb::getAnggotaJabatan([
+                    "kdDinas"=>$cek['setda'],
+                    "tahun"=>$param['tahun'],
+                    "status"=>"asisten"
+                ]),
+
+                "bupati" => Hdb::getAnggotaJabatan([
+                    "kdDinas"=>$cek['setda'],
+                    "tahun"=>$param['tahun'],
+                    "status"=>"bupati"
+                ]),
+                "plhbupati" => Hdb::getAnggotaJabatan([
+                    "kdDinas"=>$cek['setda'],
+                    "tahun"=>$param['tahun'],
+                    "status"=>"wabup"
+                ]),
+            ];
             return response()->json([
                 'exc' => true,
                 'data' => [
                     "basic" => $data,
                     "dwork" => $dwork,
                     "anggota"=> $anggota,
-                    "dpendukung" => $dpendukung
+                    "dpendukung" => $dpendukung,
+                    "pimpinan"  => $pimpinan
                 ]
             ], 200);
         }
@@ -60,20 +94,25 @@ class Csppd extends Controller
                 'kdSub' => 'required',
                 'kdJudul' => 'required',
                 'no'=> 'required',
+                'lokasi'=> 'required',
+
                 'date'=> 'required',
-                'tujuan'=> 'required',
+                'dateE'=> 'required',
+                'maksud'=> 'required',
+                'angkut'=> 'required',
+
+                'tempatS'=> 'required',
+                'tempatE'=> 'required',
+                'anggaran'=> 'required',
             ]);
             $data =Hdb::workAdded([
-                $request->no,
-                $request->kdDinas,
-                $request->kdBidang,
-                $request->date,
-                $request->tujuan,
+                $request->no,$request->kdDinas,$request->kdBidang,
 
-                $cek['ta'],
-                $request->kdSub,
-                $request->kdJudul,
-                ""
+                $request->maksud,$request->angkut,$request->tempatS,$request->tempatE,
+
+                $request->date,$request->dateE,$request->anggaran,$request->lokasi,
+
+                $cek['ta'],$request->kdSub,$request->kdJudul,""
             ]);
             $param = [
                 "kdDinas"=>$request->kdDinas,
@@ -106,12 +145,10 @@ class Csppd extends Controller
                 'date'=> 'required',
                 'kdBAnggota' => 'required',
             ]);
-            $data =Hdb::workAdded([
+            $data =Hdb::workAdduser([
                 $request->no,
                 $request->kdDinas,
                 $request->kdBidang,
-                $request->date,
-                '',
                 $cek['ta'],
                 $request->kdSub,
                 $request->kdJudul,
@@ -137,10 +174,19 @@ class Csppd extends Controller
                 'kdBidang' => 'required',
                 'kdSub' => 'required',
                 'kdJudul' => 'required',
-                'no'=> 'required',
-                'date'=> 'required',
+
                 'noOld'=> 'required',
-                'tujuan'=> 'required',
+                'no'=> 'required',
+                'lokasi'=> 'required',
+
+                'date'=> 'required',
+                'dateE'=> 'required',
+                'maksud'=> 'required',
+                'angkut'=> 'required',
+
+                'tempatS'=> 'required',
+                'tempatE'=> 'required',
+                'anggaran'=> 'required',
             ]);
             // $param = $request->only("kdDinas","kdBidang","kdSub","kdJudul");
             // $param["tahun"]= $cek['ta'];
@@ -152,10 +198,18 @@ class Csppd extends Controller
                 ->where('kdJudul',$request->kdJudul)
                 ->where('taWork',$cek['ta'])
                 ->where('no',$request->noOld)
+                ->where('kdBAnggota','')
                 ->update([
-                    'no' => $request->no,
+                    'no'    => $request->no,
+                    'lokasi'=> $request->lokasi,
                     'date'=> $request->date,
-                    'tujuan'=> $request->tujuan,
+                    'dateE'=> $request->dateE,
+
+                    'maksud'=> $request->maksud,
+                    'angkut'=> $request->angkut,
+                    'tempatS'=> $request->tempatS,
+                    'tempatE'=> $request->tempatE,
+                    'anggaran'=> $request->anggaran,
                 ])
             ){
                 return response()->json([
@@ -269,6 +323,43 @@ class Csppd extends Controller
                 return response()->json([
                     'exc' => true,
                     'data' => []
+                ], 200);
+            }
+            return response()->json([
+                'exc' => false,
+                'msg' => 'query Error'
+            ], 200);
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
+    public function uploadDasar(Request $request){
+        $user =Auth::user();
+        $cek = $this->portal($user);
+        if($cek['exc']){
+            $request = $request->all();
+            $namaFile ='';
+            $dtUpd =['dasar'=> $request['dasar']];
+            if(count($request['files'])>1){
+                $namaFile = $this->_uploadImage($request['files']['data'],"dasar/".$request['files']['nama']);
+                $dtUpd['fileD'] = $namaFile;
+            }
+            if(
+                DB::table('work')
+                ->where('kdDinas',$request['kdDinas'])
+                ->where('kdBidang',$request['kdBidang'])
+                ->where('kdSub',$request['kdSub'])
+                ->where('kdJudul',$request['kdJudul'])
+                ->where('taWork',$cek['ta'])
+                ->where('no',$request['no'])
+                ->where('kdBAnggota','')
+                ->update($dtUpd)
+            ){
+                return response()->json([
+                    'exc' => true,
+                    'data' => $namaFile
                 ], 200);
             }
             return response()->json([
@@ -512,7 +603,8 @@ class Csppd extends Controller
             return [
                 "exc"=>true,
                 "ta"=>"2024",
-                "kdJPJ"=>'jp-1'
+                "kdJPJ"=>'jp-1',
+                "setda"=>'4.01.2.10.0.00.01.0000'
             ];
         }
         return [
@@ -559,5 +651,12 @@ class Csppd extends Controller
         $lokasiFile='public/pdf/'.$flokasi.$namaFile;
         Storage::put($lokasiFile,base64_decode($file));
         return $namaFile;
+    }
+
+    function checkArrayMerge($a1,$a2){
+        if(count($a2)>0){
+            return array_merge($a1,$a2);
+        }
+        return $a1;
     }
 }

@@ -1,35 +1,36 @@
 import React from "react";
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { colDataDukug } from '../../../states/jenisP/action';
 import { useInput } from '../../../hooks/useInput';
 import Tabel1 from "../../tabel/tabel1";
-import Select from "react-select"; 
+import Select from "react-select";
 import sfLib from "../../mfc/sfLib";
-import sfHtml from "../../mfc/sfHtml"; 
+import sfHtml from "../../mfc/sfHtml";
 import { setAll, modalClose } from '../../../states/sfHtml/action';
+import PropTypes from "prop-types";
 
 function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC }) {
-    const dispatch = useDispatch(); 
-    const [search, setSearch] = useInput(''); 
+    const dispatch = useDispatch();
+    const [search, setSearch] = useInput('');
 
     const [selectedOptions, setSelectedOptions] = useState({value:ind,label:dt[ind].nmJPJ});
 
-    const [onOff, setOnOff] = useState(1); 
-    const [ins, setIns] = useState(1);   
- 
+    const [onOff, setOnOff] = useState(1);
+    const [ins, setIns] = useState(1);
+
     function mclose(){
         dispatch(modalClose());
     }
 
     const [ kdDP, setkdDP] = useState();
     const [ index, setIndex] = useState();
-    const [ nmDP, setnmDP] = useInput(); 
+    const [ nmDP, setnmDP] = useInput();
     const coll = [
         ...colDataDukug,
         {
-            cell:(v,i) =>
+            cell:(v) =>
                 <div className="btnGroup">
                     {/* {tambahan} */}
                     <button className="btn2" title="Perbarui" onClick={()=>upd(v)}><span className="mdi mdi-pencil-box cwarning fz25" /></button>
@@ -60,19 +61,19 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
         setIns(1);
         setOnOff(0);
     }
-    const added = () =>{ 
-        actFormJenisDukungan({ 
+    const added = () =>{
+        actFormJenisDukungan({
             nmDP,
             act:"add"
         });
         reset();
     }
-    const del = (v) =>{ 
+    const del = (v) =>{
         const i =dukung.findIndex((val)=> val.kdDP === v.kdDP );
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
-                mclose, 
+                mclose,
                 children : (
                     <p>Apa benar ingin Mengapus data ini ?</p>
                 ),
@@ -90,14 +91,14 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
             })
         );
     }
-    const xdeled = (ind) =>{  
+    const xdeled = (ind) =>{
         actFormJenisDukungan({
             kdDP:dukung[ind].kdDP,
             index: ind,
         });
         mclose();
     }
-    const upd = (v) =>{   
+    const upd = (v) =>{
         const i =dukung.findIndex((val)=> val.kdDP === v.kdDP );
         setIns(0);
         setOnOff(0);
@@ -108,20 +109,20 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
     const upded = () =>{
         actFormJenisDukungan({
             kdDP,
-            nmDP, 
+            nmDP,
             index,
             act:"upd"
         });
         reset(true);
     }
 
-    function selectJenis(data) {   
-        setSelectedOptions(data); 
+    function selectJenis(data) {
+        setSelectedOptions(data);
         changeJenis({ kdJPJ : dt[data.value].kdJPJ, ind : data.value});
         reset(true);
-    } 
+    }
 
-    
+
     return (
         <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
             <div className="form1 bwhite boxShadow1px ">
@@ -132,7 +133,7 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
                     </div>
                     <button className="btn2 blight cmuted" onClick={add}>Entri</button>
                 </div>
-                <div className="body">  
+                <div className="body">
                     <div className="justifyEnd mtb10px">
                         <div className="w30p ">
                             <Select
@@ -169,7 +170,7 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
                             ></Tabel1>
                         )
                     }
-                    
+
                 </div>
                 {/* <div className="footer"></div> */}
             </div>
@@ -178,8 +179,8 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
                     <div className="icon">
                         <span className="mdi mdi-clock-edit-outline fz25"></span>
                         <h3 className="">Entri Sub Jenis</h3>
-                    </div>       
-                    <button className="btn2 blight cmuted" onClick={close}>Close</button>        
+                    </div>
+                    <button className="btn2 blight cmuted" onClick={close}>Close</button>
                 </div>
                 <div className="w95p m0auto ptb10px">
                     <div className="iconInput2">
@@ -188,7 +189,7 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
                     </div>
                 </div>
                 <div className="footer posEnd">
-                    <div className="btnGroup"> 
+                    <div className="btnGroup">
                         <button className="btn2"  onClick={close}>Close</button>
                         <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?added:upded)}>{(ins?'Entri':'Perbarui')}</button>
                     </div>
@@ -196,5 +197,12 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
             </div>
         </div>
     );
+}
+FormJenisPendukung.propTypes = {
+    dt : PropTypes.object.isRequired,
+    ind : PropTypes.number.isRequired,
+    modalC : PropTypes.func.isRequired,
+    changeJenis : PropTypes.func.isRequired,
+    actFormJenisDukungan : PropTypes.func.isRequired
 }
 export default FormJenisPendukung;

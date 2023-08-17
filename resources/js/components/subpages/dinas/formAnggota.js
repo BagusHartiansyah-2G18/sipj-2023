@@ -1,23 +1,24 @@
 import React from "react";
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import { colAnggota, cbStatus, addedAnggota, updedAnggota, deledAnggota } from '../../../states/dinas/action';
+import { colAnggota, cbStatus, cbTingkatan, addedAnggota, updedAnggota, deledAnggota } from '../../../states/dinas/action';
 import { useInput } from '../../../hooks/useInput';
 import Tabel1 from "../../tabel/tabel1";
-import Select from "react-select"; 
-import Modal1 from '../../../components/Modal/modal1';
+import Select from "react-select";
 import sfHtml from "../../mfc/sfHtml";
-import { setAll, modalClose } from '../../../states/sfHtml/action';
+import { setHtml, modalClose } from '../../../states/sfHtml/action';
 import sfLib from "../../mfc/sfLib";
- 
-function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) { 
+import PropTypes from "prop-types";
+
+
+function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
     const [search, setSearch] = useInput('');
     const [selectedOptions, setSelectedOptions] = useState({value:index,label:dt[index].nmBidang});
 
-    const dispatch = useDispatch(); 
-    const [onOff, setOnOff] = useState(1); 
-    const [ins, setIns] = useState(1);   
+    const dispatch = useDispatch();
+    const [onOff, setOnOff] = useState(1);
+    const [ins, setIns] = useState(1);
 
     const coll = [...colAnggota,{
         cell:(v) =>
@@ -41,9 +42,12 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
     const [ index1, setindex1] = useState(-1);
     const [ kdBAnggota, setBAnggota] = useState('1');
     const [ selStatus, setselStatus] = useState({value:cbStatus[0].value,label:cbStatus[0].label});
-    const [ nmAnggota, setnmAnggota] = useInput(); 
+    const [ nmAnggota, setnmAnggota] = useInput();
     const [ nmJabatan, setnmJabatan] = useInput();
-    const [ nip, setnip] = useInput();  
+    const [ asJabatan, setasJabatan] = useInput();
+    const [ nip, setnip] = useInput();
+    const [ golongan, setgolongan] = useInput();
+    const [ tingkat, settingkat] = useState({value:cbTingkatan[0].value,label:cbTingkatan[0].label});
 
     const anggota =dt[index].anggota;
 
@@ -51,8 +55,11 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
         setBAnggota('ba-1');
         setnmAnggota({target:{value:''}});
         setnmJabatan({target:{value:''}});
+        setasJabatan({target:{value:''}});
+        setgolongan({target:{value:''}});
         setnip({target:{value:''}});
-        setselStatus({value:cbStatus[0].value,label:cbStatus[0].label}); 
+        setselStatus({value:cbStatus[0].value,label:cbStatus[0].label});
+        settingkat({value:cbTingkatan[0].value,label:cbTingkatan[0].label});
     }
 
     const close = () =>{
@@ -65,26 +72,29 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
         setOnOff(0);
         reset();
     }
-    const xadded = () =>{ 
-        dispatch(addedAnggota({ 
-            kdDinas, 
-            kdDBidang,  
+    const xadded = () =>{
+        dispatch(addedAnggota({
+            kdDinas,
+            kdDBidang,
             nmAnggota,
-            nmJabatan,
             nip,
-            selStatus: selStatus.value, 
-            ind, index 
+            nmJabatan,
+            asJabatan,
+            golongan,
+            tingkat :  tingkat.value,
+            selStatus: selStatus.value,
+            ind, index
         }))
         reset();
     }
-    const del = (v) =>{  
-        const i =anggota.findIndex((val)=> val.kdBAnggota === v.kdBAnggota );  
+    const del = (v) =>{
+        const i =anggota.findIndex((val)=> val.kdBAnggota === v.kdBAnggota );
         setindex1(i);
         setBAnggota(anggota[i].kdBAnggota);
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
-                mclose, 
+                mclose,
                 children : (
                     <p>Apa benar ingin Mengapus data ini ?</p>
                 ),
@@ -97,48 +107,58 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
             })
         );
         dispatch(
-            setAll({
+            setHtml({
                 modal : true,
             })
         )
     }
-    const xdeled = (v) =>{ 
+    const xdeled = () =>{
         dispatch(
-            deledAnggota({ 
+            deledAnggota({
                 kdDinas, kdDBidang, kdBAnggota,
-                ind, index, index1 
+                ind, index, index1
         }));
         mclose();
     }
-    const upd = (v) =>{  
-        const i =anggota.findIndex((val)=> val.kdBAnggota === v.kdBAnggota );  
-        setIns(0); 
-        setOnOff(0); 
-        setindex1(i);  
+    const upd = (v) =>{
+        const i =anggota.findIndex((val)=> val.kdBAnggota === v.kdBAnggota );
+        setIns(0);
+        setOnOff(0);
+        setindex1(i);
         setBAnggota(anggota[i].kdBAnggota);
         setnmAnggota({target:{value:anggota[i].nmAnggota}});
         setnmJabatan({target:{value:anggota[i].nmJabatan}});
+        setasJabatan({target:{value:anggota[i].asJabatan}});
+        setgolongan({target:{value:anggota[i].golongan}});
         setnip({target:{value:anggota[i].nip}});
-        const i1 =cbStatus.findIndex((val)=> val.value == anggota[i].status );  
-        setselStatus({value:cbStatus[i1].value,label:cbStatus[i1].label})
+
+        const i1 =cbStatus.findIndex((val)=> val.value == anggota[i].status );
+        setselStatus({value:cbStatus[i1].value,label:cbStatus[i1].label});
+
+        const i2 =cbTingkatan.findIndex((val)=> val.value === anggota[i].tingkatan );
+        settingkat({value:cbTingkatan[i2].value,label:cbTingkatan[i2].label})
         // dispatch(setLeftBar(1));
     }
     const xupded = () =>{
-        dispatch(updedAnggota({ 
-            kdDinas, 
+        dispatch(updedAnggota({
+            kdDinas,
             kdDBidang,
-            kdBAnggota,  
+            kdBAnggota,
             nmAnggota,
             nmJabatan,
             nip,
-            selStatus: selStatus.value, 
+            asJabatan,
+            golongan,
+            tingkat :  tingkat.value,
+            selStatus: selStatus.value,
             ind, index, index1
         }));
         reset();
-        setOnOff(1); 
+        setOnOff(1);
         mclose();
     }
-    function selectBidang(data) {  
+    function selectBidang(data) {
+        // const i =bidang.findIndex((val)=> val.kdDBidang === v.kdDBidang );
         changeBidang({
             kdDinas,
             kdDBidang: dt[data.value].kdDBidang,
@@ -146,20 +166,20 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
             index: data.value
         })
         // changeBidang({ kdDinas : dt[data.value].kdDinas, ind : data.value})
-        setSelectedOptions(data); 
-    }    
+        setSelectedOptions(data);
+    }
     return (
         <>
             <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
                 <div className="form1 bwhite boxShadow1px">
                     <div className="header bprimary clight">
                         <div className="icon">
-                            <span className="mdi mdi-office-building-marker fz25 "></span>
+                            <span className="mdi mdi-home-assistant fz25 "></span>
                             <h3>Data Anggota Bidang</h3>
                         </div>
                         <button className="btn2 blight cmuted" onClick={add}>Entri</button>
                     </div>
-                    <div className="body">  
+                    <div className="body">
                         <div className="justifyEnd mtb10px">
                             <div className="w30p ">
                                 <Select
@@ -194,7 +214,7 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
                                 ></Tabel1>
                             )
                         }
-                        
+
                     </div>
                     {/* <div className="footer"></div> */}
                 </div>
@@ -203,23 +223,56 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
                         <div className="icon">
                             <span className="mdi mdi-clock-edit-outline fz25"></span>
                             <h3 className="">{(ins?'Entri':'Perbarui')} Dinas</h3>
-                        </div>       
-                        <button className="btn2 blight cmuted" onClick={close}>Close</button>        
+                        </div>
+                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
                     </div>
                     <div className="w95p m0auto">
-                        <div className="iconInput2 ptb10px">
-                            <input className="borderR10px" type="text" value={nmAnggota} onChange={setnmAnggota} placeholder="Nama Anggota" />
-                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        <div className="doubleInput ptb10px">
+                            <label>Nama Pegawai</label>
+                            <div className="iconInput2">
+                                <input className="borderR10px" type="text" value={nmAnggota} onChange={setnmAnggota} placeholder="Nama Anggota" />
+                                <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                            </div>
                         </div>
-                        <div className="iconInput2 ptb10px">
-                            <input className="borderR10px" type="text" value={nmJabatan} onChange={setnmJabatan} placeholder="Jabatan" />
-                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        <div className="doubleInput ptb10px">
+                            <label>NIP</label>
+                            <div className="iconInput2">
+                                <input className="borderR10px" type="text" value={nip} onChange={setnip} placeholder="NIP" />
+                                <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                            </div>
                         </div>
-                        <div className="iconInput2 ptb10px">
-                            <input className="borderR10px" type="text" value={nip} onChange={setnip} placeholder="NIP" />
-                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        <div className="doubleInput ptb10px">
+                            <label>Jabatan</label>
+                            <div className="iconInput2">
+                                <input className="borderR10px" type="text" value={nmJabatan} onChange={setnmJabatan} placeholder="Jabatan" />
+                                <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                            </div>
                         </div>
-                        <div className="doubleInput borderB">
+                        <div className="doubleInput ptb10px">
+                            <label>Jabatan Alias</label>
+                            <div className="iconInput2">
+                                <input className="borderR10px" type="text" value={asJabatan} onChange={setasJabatan} placeholder="Jabatan Alias" />
+                                <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                            </div>
+                        </div>
+                        <div className="doubleInput ptb10px">
+                            <label>Golongan</label>
+                            <div className="iconInput2">
+                                <input className="borderR10px" type="text" value={golongan} onChange={setgolongan} placeholder="Golongan" />
+                                <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                            </div>
+                        </div>
+                        <div className="doubleInput ptb10px">
+                            <label>Tingkatan</label>
+                            <Select
+                                options={cbTingkatan}
+                                placeholder="Select Tingkatan"
+                                value={tingkat}
+                                onChange={settingkat}
+                                isSearchable={true}
+                            />
+                        </div>
+                        <div className="doubleInput  ptb10px">
                             <label>Status</label>
                             <Select
                                 options={cbStatus}
@@ -229,10 +282,10 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
                                 isSearchable={true}
                             />
                         </div>
-                        
+
                     </div>
                     <div className="footer posEnd">
-                        <div className="btnGroup"> 
+                        <div className="btnGroup">
                             <button className="btn2"  onClick={close}>Close</button>
                             <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
                         </div>
@@ -241,5 +294,13 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
             </div>
         </>
     );
+}
+FormAnggota.propTypes = {
+    dt : PropTypes.array.isRequired,
+    kdDinas : PropTypes.string.isRequired,
+    ind : PropTypes.number.isRequired,
+    index: PropTypes.number.isRequired,
+    changeBidang : PropTypes.func.isRequired,
+    modalC : PropTypes.func.isRequired,
 }
 export default FormAnggota;

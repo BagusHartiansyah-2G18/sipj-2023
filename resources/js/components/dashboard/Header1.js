@@ -1,4 +1,4 @@
-import React, { useEffect, version }  from "react";
+import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { setLeftBar } from '../../states/sfHtml/action';
 import { logout, changeMenu } from '../../states/sfHtml/action';
@@ -10,7 +10,6 @@ const icon = [
     {ic : <span className="mdi mdi-file-document csuccess fz25"></span>, url : ''}
 ]
 function HeaderM() {
-    icon.forEach
     const { _html } = useSelector((state) => state);
     const dispatch = useDispatch();
     const onOffLeftBar = (v) =>{
@@ -69,7 +68,7 @@ function HeaderM() {
             </div>
         </header>
     );
-};
+}
 
 export default HeaderM;
 

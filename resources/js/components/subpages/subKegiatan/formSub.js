@@ -1,8 +1,9 @@
 import React from "react";
 
-import { colSub,colUrusan } from '../../../states/subKegiatan/action';
+import { colSub } from '../../../states/subKegiatan/action';
 import { useInput } from '../../../hooks/useInput';
 import Tabel1 from "../../tabel/tabel1";
+import PropTypes from "prop-types";
 
 function FormSub({ dt, selectSub }) {
     const [search, setSearch] = useInput('');
@@ -34,5 +35,9 @@ function FormSub({ dt, selectSub }) {
             {/* <div className="footer"></div> */}
         </div>
     );
+}
+FormSub.propTypes = {
+    dt : PropTypes.object.isRequired,
+    selectSub : PropTypes.func.isRequired,
 }
 export default FormSub;

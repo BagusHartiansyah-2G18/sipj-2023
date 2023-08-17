@@ -1,15 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 
 import { colAnggota, addedWorkStaf } from '../../../states/sppd/action';
 import { useInput } from '../../../hooks/useInput';
 import { useState } from 'react';
 
 import Tabel1 from "../../tabel/tabel1";
-import sfHtml from "../../mfc/sfHtml";
-import { setAll, modalClose } from '../../../states/sfHtml/action';
-import DataTable from 'react-data-table-component';
+import PropTypes from "prop-types";
 
 
 function FormAnggotaSppd({ dt, param, indWork }) {
@@ -33,33 +30,16 @@ function FormAnggotaSppd({ dt, param, indWork }) {
             },
             dt : dataTamX
         }));
+        setcountDtX(0);
     }
     return (
         <div className="form0 bwhite">
-            <div className="ribbon ribbon-center ribbon-success">
-                <span className="bsuccess">Form Entri </span>
-            </div>
             <div className="">
-                <div className="flexR justifySA ptb10px">
-                    <button className="btn6 bwarning cdark">
-                        <span className="mdi mdi-office-building-marker  fziconM "></span>
-                        <label className="">Nomor <br/> {dt.no}</label>
-                    </button>
-                    <button className="btn6 bprimary cwhite">
-                        <span className="mdi mdi-office-building-marker fziconM "></span>
-                        <label className="">Tujuan <br/> {dt.tujuan}</label>
-                    </button>
-                    <button className="btn6 binfo cdark ">
-                        <span className="mdi mdi-office-building-marker cwarning fziconM "></span>
-                        <label className="clight">Tanggal <br/> {dt.date}</label>
-                    </button>
-
-                </div>
                 <div className="form1 bwhite boxShadow1px ">
                     <div className="header binfo clight">
                         <div className="icon">
                             <span className="mdi mdi-office-building-marker fz25 "></span>
-                            <h3><b>1. Entri Staf</b></h3>
+                            <h3><b>2. Penentuan Pegawai yang ditugaskan</b></h3>
                         </div>
                     </div>
                     <div className="body">
@@ -85,7 +65,7 @@ function FormAnggotaSppd({ dt, param, indWork }) {
                                         <div className="flexR justifySB algI">
                                             <h2>{countDtX+ ` pegawai terpilih`} </h2>
                                             <div className="btnGroup">
-                                                <button className="btn2 bprimary clight" onClick={createFormEntriStaf}>Buat Form Rincian Biaya</button>
+                                                <button className="btn2 bprimary clight" onClick={createFormEntriStaf}>Buatkan Dokumen</button>
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -98,5 +78,11 @@ function FormAnggotaSppd({ dt, param, indWork }) {
             </div>
         </div>
     );
+}
+
+FormAnggotaSppd.propTypes = {
+    dt : PropTypes.object.isRequired,
+    param : PropTypes.object.isRequired,
+    indWork : PropTypes.number.isRequired,
 }
 export default FormAnggotaSppd;

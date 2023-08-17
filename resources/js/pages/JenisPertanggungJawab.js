@@ -1,38 +1,39 @@
+/* eslint-disable react/no-children-prop */
 import React, { useEffect }  from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { 
-    getDT, added, upded, deled, 
+import {
+    getDT, added, upded, deled,
     getDataDukung, addedDukung, updedDukung, deledDukung,
 } from '../states/jenisP/action';
 import { useState } from 'react';
 
 import HeaderPage1 from '../components/dashboard/HeaderPage1';
 import FormJenis from "../components/subpages/jenisP/formJenis";
-import FormJenisPendukung from "../components/subpages/jenisP/formJenisPendukung"; 
+import FormJenisPendukung from "../components/subpages/jenisP/formJenisPendukung";
 import Modal1 from '../components/Modal/modal1';
 
 function JenisP() {
     const { _jenis } = useSelector((state) => state);
-    const [ind, setInd] = useState(0); 
+    const [ind, setInd] = useState(0);
     const dispatch = useDispatch();
-    const [modalC, setmodalC] = useState(''); 
+    const [modalC, setmodalC] = useState('');
 
     function setContentModal(v){
         setmodalC(v);
     }
-    
+
     useEffect(() => {
         dispatch(getDT());
-    }, [dispatch]);  
+    }, [dispatch]);
     if(_jenis.length===0){
         return (<></>)        ;
     }
-    const changeJenis=({kdJPJ,ind})=>{ 
+    const changeJenis=({kdJPJ,ind})=>{
         dispatch(getDataDukung({kdJPJ,ind}));
         setInd(ind);
         // setIndex(0);
-    } 
-    const actFormJenis=({kdJPJ=-1,nmJPJ,ind=-1,act="del"})=>{ 
+    }
+    const actFormJenis=({kdJPJ=-1,nmJPJ,ind=-1,act="del"})=>{
         switch (act) {
             case "add":
                 dispatch(added({nmJPJ}));
@@ -43,12 +44,12 @@ function JenisP() {
             default:
                 dispatch(deled({kdJPJ,ind}));
             break;
-        }  
-    }  
+        }
+    }
 
-    const actFormJenisDukungan=({ kdDP=-1, nmDP, index=-1, act="del" })=>{ 
+    const actFormJenisDukungan=({ kdDP=-1, nmDP, index=-1, act="del" })=>{
         switch (act) {
-            case "add": 
+            case "add":
                 dispatch(addedDukung({ kdJPJ:_jenis[ind].kdJPJ, nmDP, ind }));
             break;
             case "upd":
@@ -57,9 +58,9 @@ function JenisP() {
             default:
                 dispatch(deledDukung({ kdJPJ:_jenis[ind].kdJPJ, kdDP, ind, index}));
             break;
-        }  
+        }
     }
-   
+
     return (
         <>
             <HeaderPage1
@@ -67,18 +68,18 @@ function JenisP() {
                 pageKet={'Basis Data'}
                 icon={'mdi-office-building-marker cdark'}
             ></HeaderPage1>
-            <FormJenis 
+            <FormJenis
                 dt={_jenis}
                 actFormJenis={actFormJenis}
                 modalC={setContentModal}
             ></FormJenis>
-            <FormJenisPendukung 
+            <FormJenisPendukung
                 dt={_jenis}
                 changeJenis={changeJenis}
                 actFormJenisDukungan={actFormJenisDukungan}
                 ind={ind}
                 modalC={setContentModal}
-            ></FormJenisPendukung> 
+            ></FormJenisPendukung>
             <Modal1
                 children ={modalC}
             ></Modal1>

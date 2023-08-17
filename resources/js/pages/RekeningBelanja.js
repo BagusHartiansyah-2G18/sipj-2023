@@ -6,7 +6,6 @@ import { useState } from 'react';
 import HeaderPage1 from '../components/dashboard/HeaderPage1';
 import FormApbd from "../components/subpages/rekeningBelanja/formApbd";
 import FormApbd6 from "../components/subpages/rekeningBelanja/formApbd6";
-;
 
 function RekeningBelanja() {
     const { _rek } = useSelector((state) => state);

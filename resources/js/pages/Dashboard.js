@@ -1,18 +1,16 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import { setAll, setHtml  } from "../states/sfHtml/action";
-
-import Modal1 from "../components/Modal/modal1";
+import { setHtml  } from "../states/sfHtml/action";
 
 function Dashboard() {
-    const dispatch = useDispatch();    
+    const dispatch = useDispatch();
 
 
     const testModal=()=>{
         dispatch(
             setHtml({
-                modal :true, 
+                modal :true,
             })
         )
     }

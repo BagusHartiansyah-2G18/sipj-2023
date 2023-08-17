@@ -5,21 +5,21 @@ import { useDispatch } from 'react-redux';
 import { colBidang, addedBidang, updedBidang, deledBidang } from '../../../states/dinas/action';
 import { useInput } from '../../../hooks/useInput';
 import Tabel1 from "../../tabel/tabel1";
-import Select from "react-select"; 
+import Select from "react-select";
 
 import sfLib from "../../mfc/sfLib";
 import sfHtml from "../../mfc/sfHtml";
-import { setAll, modalClose } from '../../../states/sfHtml/action';
-import Modal1 from '../../../components/Modal/modal1';
+import { setHtml, modalClose } from '../../../states/sfHtml/action';
+import PropTypes from "prop-types";
 
-function FormBidang({dt,changeDinas,ind, modalC}) { 
+function FormBidang({dt,changeDinas,ind, modalC}) {
     const [search, setSearch] = useInput('');
     const [selectedOptions, setSelectedOptions] = useState({value:ind,label:dt[ind].nmDinas});
 
-    const dispatch = useDispatch(); 
-    const [onOff, setOnOff] = useState(1); 
-    const [ins, setIns] = useState(1);  
-    const [index, setIndex] = useState(1);  
+    const dispatch = useDispatch();
+    const [onOff, setOnOff] = useState(1);
+    const [ins, setIns] = useState(1);
+    const [index, setIndex] = useState(1);
 
     const coll = [...colBidang,{
         cell:(v) =>
@@ -38,22 +38,21 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
     function mclose(){
         dispatch(modalClose());
     }
-    const [ kdDinas, setkdDinas] = useState(dt[ind].kdDinas); 
-    const [ kdDBidang, setkdDBidang] = useState('-1'); 
+    const [ kdDinas, setkdDinas] = useState(dt[ind].kdDinas);
+    const [ kdDBidang, setkdDBidang] = useState('-1');
     const [ nmBidang, setnmBidang] = useInput();
-    const [ asBidang, setasBidang] = useInput(); 
+    const [ asBidang, setasBidang] = useInput();
 
     const bidang =dt[ind].bidang;
 
     function reset(){
         setkdDBidang('-1');
         setnmBidang({target:{value:''}});
-        setasBidang({target:{value:''}}); 
+        setasBidang({target:{value:''}});
     }
 
     const close = () =>{
         setOnOff(1);
-        dispatch(setLeftBar(0));
     }
     const add = () =>{
         // dispatch(setLeftBar(1));
@@ -61,17 +60,17 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
         setOnOff(0);
         reset();
     }
-    const xadded = () =>{ 
+    const xadded = () =>{
         dispatch(addedBidang({ kdDinas, nmBidang, asBidang, ind }))
         reset();
     }
-    const del = (v) =>{  
+    const del = (v) =>{
         const i =bidang.findIndex((val)=> val.kdDBidang === v.kdDBidang );
         setIndex(i);
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
-                mclose, 
+                mclose,
                 children : (
                     <p>Apa benar ingin Mengapus data ini ?</p>
                 ),
@@ -84,21 +83,21 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
             })
         );
         dispatch(
-            setAll({
+            setHtml({
                 modal : true,
             })
         )
     }
-    const xdeled = (v) =>{ 
+    const xdeled = () =>{
         setkdDBidang({target:{value:bidang[index].kdDBidang}});
         dispatch(deledBidang({ kdDinas, kdDBidang: bidang[index].kdDBidang, ind, index }));
         mclose();
     }
-    const upd = (v) =>{  
-        const i =bidang.findIndex((val)=> val.kdDBidang === v.kdDBidang );  
-        setIns(0); 
-        setOnOff(0); 
-        setIndex(i);  
+    const upd = (v) =>{
+        const i =bidang.findIndex((val)=> val.kdDBidang === v.kdDBidang );
+        setIns(0);
+        setOnOff(0);
+        setIndex(i);
         setkdDBidang({target:{value:bidang[i].kdDBidang}});
         setnmBidang({target:{value:bidang[i].nmBidang}});
         setasBidang({target:{value:bidang[i].asBidang}});
@@ -107,27 +106,27 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
     const xupded = () =>{
         dispatch(updedBidang({ kdDinas, kdDBidang, nmBidang, asBidang, ind, index }));
         reset();
-        setOnOff(1); 
+        setOnOff(1);
     }
 
-    function selectDinas(data) {   
-        const i =dt.findIndex((val)=> val.kdDinas === data.value );  
+    function selectDinas(data) {
+        const i =dt.findIndex((val)=> val.kdDinas === data.value );
         setkdDinas(dt[i].kdDinas);
-        changeDinas({ kdDinas : dt[i].kdDinas, ind : i});
-        setSelectedOptions(data); 
-    }   
+        changeDinas({ kdDinas : dt[i].kdDinas, indx : i});
+        setSelectedOptions(data);
+    }
     return (
         <>
             <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
                 <div className="form1 bwhite boxShadow1px">
                     <div className="header bprimary clight">
                         <div className="icon">
-                            <span className="mdi mdi-office-building-marker fz25 "></span>
+                            <span className="mdi mdi-home-group fz25 "></span>
                             <h3>Data Bidang</h3>
                         </div>
                         <button className="btn2 blight cmuted" onClick={add}>Entri</button>
                     </div>
-                    <div className="body">  
+                    <div className="body">
                         <div className="justifyEnd mtb10px">
                             <div className="w30p ">
                                 <Select
@@ -162,17 +161,17 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
                                 ></Tabel1>
                             )
                         }
-                        
+
                     </div>
                     {/* <div className="footer"></div> */}
                 </div>
                 <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
                     <div className="header bprimary clight">
                         <div className="icon">
-                            <span className="mdi mdi-clock-edit-outline fz25"></span>
-                            <h3 className="">{(ins?'Entri':'Perbarui')} Dinas</h3>
-                        </div>       
-                        <button className="btn2 blight cmuted" onClick={close}>Close</button>        
+                            <span className="mdi mdi-home-group fz25"></span>
+                            <h3 className="">{(ins?'Entri':'Perbarui')} Bidang</h3>
+                        </div>
+                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
                     </div>
                     <div className="w95p m0auto">
                         <div className="iconInput2 ptb10px">
@@ -185,7 +184,7 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
                         </div>
                     </div>
                     <div className="footer posEnd">
-                        <div className="btnGroup"> 
+                        <div className="btnGroup">
                             <button className="btn2"  onClick={close}>Close</button>
                             <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
                         </div>
@@ -194,5 +193,11 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
             </div>
         </>
     );
+}
+FormBidang.propTypes = {
+    dt : PropTypes.array.isRequired,
+    ind : PropTypes.number.isRequired,
+    changeDinas : PropTypes.func.isRequired,
+    modalC : PropTypes.func.isRequired,
 }
 export default FormBidang;

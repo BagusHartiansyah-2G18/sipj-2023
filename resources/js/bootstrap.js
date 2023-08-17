@@ -1,7 +1,9 @@
+/* eslint-disable no-undef */
 window._ = require('lodash');
 
 try {
     require('bootstrap');
+// eslint-disable-next-line no-empty
 } catch (e) {}
 
 /**

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import api from "../../utils/api";
 import { toast } from 'react-toastify';
 import sfLib from "../../components/mfc/sfLib";
@@ -63,18 +64,11 @@ function added({ kdDinas, nmDinas, kadis, nip, asDinas }){
 }
 function upded({ kdDinas, nmDinas, kadis, nip, asDinas, ind }){
   return async (dispatch) => {
-    // dispatch(showLoading());
-    try {
-      const dt = await api.POST({url:"dinas/upded",body: { kdDinas, nmDinas, kadis, nip, asDinas }});
-      dispatch({
+    const dt = await api.POST({url:"dinas/upded",body: { kdDinas, nmDinas, kadis, nip, asDinas }});
+    dispatch({
         type : actType.upd,
         payload: { kdDinas, nmDinas, kadis, nip, asDinas, ind }
-      });
-    } catch (error) {
-      toast(error.message);
-      toast(error.message);
-    }
-    // dispatch(hideLoading());
+    });
   };
 }
 function deled({ kdDinas, ind }){
@@ -106,26 +100,18 @@ function setDBidang({dt,ind}) {
   };
 }
 function getDBidang({kdDinas,ind}) {
-  return async (dispatch) => {
+    return async (dispatch) => {
       // dispatch(showLoading());
-      try {
         const dt = await api.GET({url:'dinas/bidang/'+kdDinas});
         dispatch(setDBidang({dt,ind}));
-      } catch (error) {
-        toast(error.message);
-      }
       // dispatch(hideLoading());
-  };
+    };
 }
 function addedBidang({ kdDinas, nmBidang, asBidang, ind}){
   return async (dispatch) => {
     // dispatch(showLoading());
-    try {
-      const dt = await api.POST({url:"dinas/addedBidang",body: { kdDinas, nmBidang, asBidang}});
-      dispatch(setDBidang({ dt, ind }));
-    } catch (error) {
-      toast(error.message);
-    }
+    const dt = await api.POST({url:"dinas/addedBidang",body: { kdDinas, nmBidang, asBidang}});
+    dispatch(setDBidang({ dt, ind }));
     // dispatch(hideLoading());
   };
 }
@@ -263,26 +249,63 @@ const colAnggota = [
   {
       name: 'Nama Pegawai',
       selector: row => row.nmAnggota,
-  },{
-      name: 'Jabatan',
-      selector: row => row.nmJabatan,
-      width : '200px'
+    //   width : "250px"
   },{
     name: 'NIP',
     selector: row => row.nip,
-    width : '200px'
-},
+    // width : '200px'
+  }
+  ,{
+//       name: 'Jabatan',
+//       selector: row => row.nmJabatan,
+//       width : '250px'
+//   },{
+    name: 'Jabatan',
+    selector: row => row.asJabatan,
+    // width : '150px'
+  },
 ];
 const cbStatus = [
     {
-      label :'Lainnya',
-      value :'lainnya',
+      label :'Bidang',
+      value :'bidang',
     },{
       label :'Bendahara',
       value :'bendahara',
     },{
-      label :'Pimpinan',
-      value :'pimpinan',
+        label :'Sekretaris',
+        value :'sekretaris',
+    },{
+        label :'Pimpinan',
+        value :'pimpinan',
+    },{
+      label :'Asisten',
+      value :'asisten',
+    },{
+        label :'SETDA',
+        value :'setda',
+    },{
+        label :'Wakil Bupati',
+        value :'wabup',
+    },{
+        label :'Bupati',
+        value :'bupati',
+    }
+];
+
+const cbTingkatan = [
+    {
+      label :'B',
+      value :'2',
+    },{
+      label :'C',
+      value :'3',
+    },{
+      label :'D',
+      value :'4',
+    },{
+        label :'E',
+        value :'5',
     }
 ];
 
@@ -542,5 +565,7 @@ export {
     colAnggota,
     colSub,
     colRincian,
+
     cbStatus,
+    cbTingkatan,
 }

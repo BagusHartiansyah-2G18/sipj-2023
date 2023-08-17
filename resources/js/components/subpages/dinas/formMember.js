@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { colAnggota, cbStatus, addedAnggota, updedAnggota, deledAnggota } from '../../../states/dinas/action';
 import { useInput } from '../../../hooks/useInput';
 import Tabel1 from "../../tabel/tabel1";
 import Select from "react-select";
-import Modal1 from '../../Modal/modal1';
 import sfHtml from "../../mfc/sfHtml";
 import { setAll, modalClose } from '../../../states/sfHtml/action';
 import sfLib from "../../mfc/sfLib";
+import PropTypes from "prop-types";
 
 function FormMember({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
     const [search, setSearch] = useInput('');
@@ -102,7 +102,7 @@ function FormMember({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
             })
         )
     }
-    const xdeled = (v) =>{
+    const xdeled = () =>{
         dispatch(
             deledAnggota({
                 kdDinas, kdDBidang, kdBAnggota,
@@ -241,5 +241,13 @@ function FormMember({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
             </div>
         </>
     );
+}
+FormMember.propTypes = {
+    dt : PropTypes.array.isRequired,
+    kdDinas : PropTypes.string.isRequired,
+    ind : PropTypes.number.isRequired,
+    index : PropTypes.number.isRequired,
+    modalC : PropTypes.func.isRequired,
+    changeBidang : PropTypes.func.isRequired
 }
 export default FormMember;

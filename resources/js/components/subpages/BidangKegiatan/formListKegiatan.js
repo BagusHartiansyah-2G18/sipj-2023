@@ -9,13 +9,14 @@ import sfLib from "../../mfc/sfLib";
 import Select from "react-select";
 
 
-import { colDinas, added, deled, upded, colSub, selectSubBidangDinas } from '../../../states/dinas/action';
+import { colSub, selectSubBidangDinas } from '../../../states/dinas/action';
 
 import Tabel1 from "../../tabel/tabel1";
 import { setLeftBar } from '../../../states/sfHtml/action';
 
 import { setHtml, modalClose } from '../../../states/sfHtml/action';
-import { forEach } from "lodash";
+
+import PropTypes from "prop-types";
 
 function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
 
@@ -23,11 +24,9 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
     const [search1, setSearch1] = useInput('');
     const dispatch = useDispatch();
     const [onOff, setOnOff] = useState(1);
-    const [ins, setIns] = useState(1);
 
     // console.log(dt);
     const [index, setindex] = useState(0);
-    const [index_1, setindex_1] = useState(0);
 
     const [selDinas, setselDinas] = useState({ label: dt[ind].nmDinas, value: dt[ind].kdDinas });
     const [selBidang, setselBidang] = useState({
@@ -96,11 +95,10 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
     }
     const add = () =>{
         dispatch(setLeftBar(1));
-        setIns(1);
         setOnOff(0);
     }
 
-    const msgAdd = (v) =>{
+    const msgAdd = () =>{
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
@@ -125,7 +123,7 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
     }
     const xadded = () =>{
         let xdata = [];
-        dataTam.forEach((v,i)=>{
+        dataTam.forEach((v)=>{
             try {
                 const xi =dt[ind].sub.findIndex((val)=> val.kdSub === v.kdSub);
                 xdata.push({
@@ -136,7 +134,7 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
                     kdSub : dt[ind].sub[xi].kdSub,
                 })
             } catch (error) {
-
+                error;
             }
         });
         dispatch(
@@ -148,7 +146,7 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
         mclose();
     }
 
-    const msgDel = (v) =>{
+    const msgDel = () =>{
         modalC(
             sfHtml.modalForm({
                 label : "Konfirmasi",
@@ -172,7 +170,7 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
     }
     const xdeled = () =>{
         let xdata = [];
-        dataTamX.forEach((v,i)=>{
+        dataTamX.forEach((v)=>{
             try {
                 const xi =dt[ind].sub.findIndex((val)=> val.kdSub === v.kdSub);
                 xdata.push({
@@ -183,7 +181,7 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
                     kdSub : dt[ind].sub[xi].kdSub,
                 })
             } catch (error) {
-
+                error;
             }
         });
         dispatch(
@@ -327,19 +325,26 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
 
     );
 }
+
+FormListSubKegiatan.propTypes = {
+    dt : PropTypes.object.isRequired,
+    modalC : PropTypes.func.isRequired,
+    ind : PropTypes.number.isRequired,
+    updDataBidang : PropTypes.func.isRequired
+}
 export default FormListSubKegiatan;
 
 
 function getDataViewSubBidang({ dt, terpilih, kdDBidang, search }){
      let data = [];
     if(terpilih){
-        data = dt.filter((v,i)=>{
+        data = dt.filter((v)=>{
             if(v.kdBidang === kdDBidang){
                 return v;
             }
         });
     }else{
-        data = dt.filter((v,i)=>{
+        data = dt.filter((v)=>{
             if(v.kdBidang.length === 0){
                 return v;
             }

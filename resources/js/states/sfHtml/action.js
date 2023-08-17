@@ -42,13 +42,7 @@ function modalClose(){
 }
 function logout(){
   localStorage.removeItem('sess');
-  return async (dispatch) => {
-    // const resp = api.POST({
-    //   url:'logout/',
-    //   api:''
-    // });
-    window.location.replace('/logout');
-  }
+  window.location.replace('/logout');
 }
 function session(){
   return async (dispatch) => {
@@ -63,7 +57,7 @@ function session(){
         })
       });
     } catch (error) {
-
+        error;
     }
 
     if(sess === null){

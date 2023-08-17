@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { actType } from './action';
 function sppdReducer(dt = [], action = {}) {
     switch (action.type) {
@@ -52,8 +53,27 @@ function selectdwork({ dt, act }){
           return{
             ...v,
             no: act.no,
+            maksud: act.maksud,
+            angkut: act.angkut,
+            tempatS: act.tempatS,
+            tempatE: act.tempatE,
+
             date: act.date,
-            tujuan: act.tujuan,
+            dateE: act.dateE,
+            anggaran: act.anggaran,
+            lokasi: act.lokasi
+          }
+        }
+        return v;
+      })
+    break;
+    case actType.nextStep.dasar:
+      dwork = dt.dwork.map((v,i)=>{
+        if(i=== act.ind){
+          return{
+            ...v,
+            fileD: act.fileD,
+            dasar: act.dasar
           }
         }
         return v;
@@ -238,7 +258,7 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
   let xdt = [], add=false;
   allData.forEach((v,i)=>{
     add=true;
-    dataTerpilih.forEach((v1,i1) => {
+    dataTerpilih.forEach((v1) => {
       if(v1.kdBAnggota===v.kdBAnggota && v1.kdBidang===v.kdBidang){
         xdt.push({
             ...v,

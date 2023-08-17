@@ -1,4 +1,3 @@
-import { forEach } from 'lodash';
 import { actType } from './action';
 function dinasReducer(dt = [], action = {}) {
     switch (action.type) {
@@ -7,7 +6,10 @@ function dinasReducer(dt = [], action = {}) {
       case actType.upd:
         return dt.map((v,ind)=>{
           if(ind === action.payload.ind){
-            return action.payload;
+            return {
+                ...v,
+                ...action.payload
+            }
           }
           return v;
         });
@@ -128,7 +130,10 @@ function dinasReducer(dt = [], action = {}) {
                           nmAnggota : action.payload.nmAnggota,
                           nmJabatan : action.payload.nmJabatan,
                           nip : action.payload.nip,
-                          status : action.payload.status,
+                          status : action.payload.selStatus,
+                          asJabatan: action.payload.asJabatan,
+                          golongan: action.payload.golongan,
+                          tingkatan: action.payload.tingkat,
                         }
                       }
                       return v2;
@@ -291,3 +296,4 @@ function actRincian({ dt, act }){
             })
   }
 }
+

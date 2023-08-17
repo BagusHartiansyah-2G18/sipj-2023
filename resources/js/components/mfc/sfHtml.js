@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 const sfHtml =(()=>{
 
     function modalForm({ label, clsH='bdanger clight', children, mclose, cfooter ='posEnd' ,footer='' }){
@@ -11,7 +12,7 @@ const sfHtml =(()=>{
                 </div>
                 <div className="body">
                     {children}
-                </div> 
+                </div>
                 {
                     (
                         footer!='' &&
@@ -35,7 +36,7 @@ const sfHtml =(()=>{
         )
     }
     return {
-        modalForm, 
+        modalForm,
         modalBtn,
     }
 })();
