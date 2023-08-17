@@ -9406,7 +9406,7 @@ function MyApp() {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_15__.setAll)({
-      leftBar: 1,
+      leftBar: 0,
       // indMenu : ind,
       // menuSub : 'dashboard',
       url: window.location.origin
@@ -17361,11 +17361,9 @@ function SPPD() {
     }));
     setindWork(i);
   };
-  if (indWork < 0) {
-    stepSetAnggota({
-      no: '000.1.2.3'
-    });
-  }
+  // if(indWork<0){
+  //     stepSetAnggota({no:'000.1.2.3'});
+  // }
   // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
   // console.log(view);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {

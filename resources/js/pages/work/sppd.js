@@ -51,9 +51,9 @@ function SPPD(){
         dispatch(workSetAnggota({ ind: i, param:{ ...param, no: _sppd.dwork[i].no } }));
         setindWork(i);
     }
-    if(indWork<0){
-        stepSetAnggota({no:'000.1.2.3'});
-    }
+    // if(indWork<0){
+    //     stepSetAnggota({no:'000.1.2.3'});
+    // }
     // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
     // console.log(view);
     return (

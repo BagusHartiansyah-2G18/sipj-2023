@@ -48,7 +48,7 @@ function MyApp() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setAll({
-            leftBar : 1,
+            leftBar : 0,
             // indMenu : ind,
             // menuSub : 'dashboard',
             url     : window.location.origin
