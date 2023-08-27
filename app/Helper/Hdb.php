@@ -47,7 +47,7 @@ class Hdb {
                         a.taDinas = c.taSub
                     where a.taDinas="'.$tahun.'"
                     group by
-                        a.kdDinas, a.nmDinas, a.asDinas, a.kadis, a.nip, a.taDinas
+                        a.kdDinas, a.nmDinas, a.asDinas, a.kadis, a.nip, a.taDinas, a.alamat
                 ');
         }else{
             $data = DB::table('dinas')
