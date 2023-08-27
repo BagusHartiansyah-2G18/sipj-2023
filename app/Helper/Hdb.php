@@ -26,6 +26,13 @@ class Hdb {
         }
         return $data;
     }
+    function getDinasOne($kdDinas,$tahun){
+        $data = DB::table('dinas')
+                ->where('taDinas',$tahun)
+                ->where('kdDinas',$kdDinas)
+                ->get();
+        return $data[0];
+    }
     function getDinasJoined($user,$tahun){
         $data =[];
         if($user->kdJaba==3){
@@ -157,10 +164,20 @@ class Hdb {
     }
     function getAnggotaJabatan($v){
         $data = DB::table('dinas_b_anggota')
-                ->selectRaw('kdBAnggota,nmAnggota,nmJabatan,nip,status,asJabatan,golongan,tingkatan')
+                ->selectRaw('kdBAnggota,nmAnggota,nmJabatan,nip,status,asJabatan,golongan,tingkatan, concat(kdBAnggota,"|",kdBidang,"|",kdDinas) as value ')
                 ->where('kdDinas',$v['kdDinas'])
                 ->where('taBAnggota',$v['tahun'])
                 ->where('status',$v['status'])
+                ->get();
+        return $data;
+    }
+    function getOneAnggota($v){
+        $data = DB::table('dinas_b_anggota')
+                ->selectRaw('kdBAnggota,nmAnggota,nmJabatan,nip,status,asJabatan,golongan,tingkatan')
+                ->where('kdDinas',$v['kdDinas'])
+                ->where('taBAnggota',$v['tahun'])
+                ->where('kdBAnggota',$v['kdBAnggota'])
+                ->where('kdBidang',$v['kdBidang'])
                 ->get();
         return $data;
     }
@@ -488,7 +505,7 @@ class Hdb {
         return DB::select('
             select
                 a.no, a.date, a.status, a.kdBAnggota, a.tujuan, a.noBuku, a.tglBuku, a.file,
-                maksud, angkut, tempatS, tempatE, dateE, anggaran, keterangan, lokasi, fileD, dasar,
+                maksud, angkut, tempatS, tempatE, dateE, anggaran, keterangan, lokasi, fileD, dasar, pimOpd, pimBupati, pimSetda,
                 (
                     select sum(a1.volume * a1.nilai)
                     from workuraian a1
@@ -536,9 +553,10 @@ class Hdb {
             from work a
             join dinas_b_anggota b on
                 a.kdBAnggota = b.kdBAnggota and
-                a.kdBidang = b.kdBidang and
                 a.kdDinas = b.kdDinas
             '.$where.'
+
+            order by b.tingkatan asc
         ');
     }
     function workAdded($v){

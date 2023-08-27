@@ -35,6 +35,7 @@
             width: 100%;
             margin-left: 60%;
         }
+        .p0{padding: 0px;}
         .pwrap{padding: 0px 10px;}
         .tcenter{text-align: center;}
         .fz40{font-size: 40px;}
@@ -63,7 +64,7 @@
                         <h2 class="tupper">
                             PEMERINTAH {{$kab}}<br>
                             {{$dinas}}<br>
-                            <label style="font-size: medium;"><i>jl. Bung Karno No. 5 Komplek KTC - Taliwang 84355</i></label>
+                            <label style="font-size: medium;"><i>{{$alamat}}</i></label>
                         </h2>
                     </div>
                 </td>
@@ -76,12 +77,12 @@
             <tr>
                 <td class="w10p"></td>
                 <td class="w60p"></td>
-                <td>Taliwang,@php echo($line.$tahun); @endphp </td>
+                <td>Taliwang, {{$tglCetak}} </td>
             </tr>
             <br>
             <tr>
                 <td>Nomor</td>
-                <td>: {{$data->no}}/_____/Bappeda/VIII/2023</td>
+                <td>: {{$nomor}}</td>
                 <td>Kepada</td>
             </tr>
             <tr>
@@ -103,12 +104,14 @@
             <tr>
                 <td></td>
                 <td colspan="2">
-                    {{$data->maksud}} pada tanggal
-                    {{$data->date.' & '.$data->dateE}}
-                    di {{$data->lokasi}}.
-                    untuk itu mohon diterbitkan SPD atas nama :
-                    <br>
+                    <p style="text-align: justify;padding: 0px; margin: 0px;">
+                        {{$data->maksud}} pada tanggal
+                        {{$textTanggal}}
+                        di {{$data->lokasi}}.
+                        untuk itu mohon diterbitkan SPD atas nama :
+                    </p>
                     <ul>
+                        @php $tamp=0; $tamHtml=""; @endphp
                         @foreach ($member as $dt)
                             <ol style="list-style: disc;">
                                 <Table>
@@ -119,12 +122,53 @@
                                     <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
                                 </Table>
                             </ol>
+                            @if(count($member)>4)
+                                @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
+                                    <div class="page-break"></div>
+                                    <div style="margin-left: 70px;">
+                                    @php $tamHtml.="</div>"; $tamp=0; @endphp
+                                @elseif(($loop->index+1)%5 === 0)
+                                    @if($tamHtml!='')
+                                        @php echo("</div>"); $tamp=0; $tamHtml=''; @endphp
+                                    @endif
+
+                                    <!-- loop member >9 -->
+                                    @if($loop->index+1!=count($member))
+                                        <div class="page-break"></div>
+                                        <iv style="margin-left: 70px;">
+                                        @php $tamHtml.="</div>"; @endphp
+                                    @endif
+                                @endif
+                                @php $tamp++; @endphp
+                            @else
+                                @for($a=4-count($member); $a>0; $a--)
+                                    <div style="min-height: 130px;"></div>
+                                @endfor
+                            @endif
+
+                            <!-- (@php echo($tamp); @endphp) -->
+                            <!-- cek enter terakhir loop  -->
+                            @if($loop->index+1 == count($member) && count($member)>4)
+                                @for($a=7-$tamp; $a>0; $a--)
+                                    <div style="min-height: 130px;"></div>
+                                @endfor
+                            @endif
                         @endforeach
+                        <!-- @php echo($tamHtml); @endphp -->
                     </ul>
+                    <!-- <div style="min-height: 400px;"></div> -->
                     <br>
-                    Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
-                    <br>
-                    Demikian dan atas kebijakan Bapak dihaturkan terima kasih.
+                    @if(count($member)>4)
+                        <div style="margin-left: 70px;">
+                    @endif
+                        <p style="width: 650px;">
+                            Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
+                            <br>
+                            Demikian dan atas kebijakan Bapak dihaturkan terima kasih.
+                        </p>
+                    @if(count($member)>4)
+                        </div>
+                    @endif
                 </td>
             </tr>
             <br>
@@ -133,7 +177,7 @@
                 <td class="w10p"></td>
                 <td class="w60p"></td>
                 <td>
-                    {{$pimpinan->nmJabatan." ".$asDinas}}<br>
+                    {{$jabatanPim." ".$asDinas}}<br>
                     {{$kab}}
                 </td>
             </tr>
@@ -177,7 +221,7 @@
                     <b class="bbottom fz30">
                         SURAT TUGAS<br>
                     </b>
-                    Nomor : 800.1.11.1/_____/VIII/{{$tahun}}
+                    Nomor : {{$nomorTugas}}
                 </td>
             </tr>
             <br>
@@ -201,8 +245,9 @@
             </tr>
             <tr>
                 <td colspan="3">
+                    <div style="margin-left: 70px;">
                     <ul>
-                        @foreach ($member as $dt)
+                        <!-- @foreach ($member as $dt)
                             <ol style="list-style: disc;">
                                 <Table>
                                     <tr><td>{{$loop->index+1}}. </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
@@ -212,16 +257,60 @@
                                     <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
                                 </Table>
                             </ol>
+                        @endforeach -->
+                        @php $tamp=0; $tamHtml=""; @endphp
+                        @foreach ($member as $dt)
+                            <ol style="list-style: disc;">
+                                <Table>
+                                    <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
+                                    <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
+                                    <tr><td></td><td>Jabatan</td><td>: {{$dt->nmJabatan}} {{$asdiskab}}</td></tr>
+                                    <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
+                                    <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
+                                </Table>
+                            </ol>
+                            @if(count($member)>4)
+                                @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
+                                    <div class="page-break"></div>
+                                    @php $tamp=0; @endphp
+                                @elseif(($loop->index+1)%5 === 0)
+                                    @if($tamHtml!='')
+                                        @php $tamp=0; $tamHtml=''; @endphp
+                                    @endif
+
+                                    <!-- loop member >9 -->
+                                    @if($loop->index+1!=count($member))
+                                        <div class="page-break"></div>
+                                    @endif
+                                @endif
+                                @php $tamp++; @endphp
+                            @else
+                                @for($a=4-count($member); $a>0; $a--)
+                                    <div style="min-height: 130px;"></div>
+                                @endfor
+                            @endif
+
+                            <!-- (@php echo($tamp); @endphp) -->
+                            <!-- cek enter terakhir loop  -->
+                            @if($loop->index+1 == count($member) && count($member)>4)
+                                @for($a=8-$tamp; $a>0; $a--)
+                                    <div style="min-height: 130px;"></div>
+                                @endfor
+                            @endif
                         @endforeach
                     </ul>
+                    </div>
                 </td>
             </tr>
             <tr>
                 <td class="w20p">Untuk</td>
-                <td colspan="2">:
-                    {{$data->maksud}} pada tanggal
-                    {{$data->date.' & '.$data->dateE}}
-                    di {{$data->lokasi}}.
+                <td colspan="2">
+                    <p style="text-align: justify;padding: 0px; margin: 0px;">
+                        : {{$data->maksud}} pada tanggal
+                        {{$textTanggal}}
+                        di {{$data->lokasi}}.
+                    </p>
+
                 </td>
             </tr>
             <tr>
@@ -234,7 +323,7 @@
                 <td colspan="3" >
                     <div class="right">
                         <p class="w40p tcenter">
-                            {{$pimpinan->nmJabatan." ".$asDinas}}<br>
+                            {{$jabatanPim." ".$asDinas}}<br>
                             {{$kab}}
                         </p>
                     </div>

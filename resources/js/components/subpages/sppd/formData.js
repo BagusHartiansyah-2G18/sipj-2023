@@ -76,7 +76,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
     const [ dateE, setdateE] = useInput();
     const [ maksud, setmaksud] = useInput();
     const [ angkut, setangkut] = useInput();
-    const [ tempatS, settempatS] = useInput();
+    const [ tempatS, settempatS] = useInput('Taliwang');
     const [ tempatE, settempatE] = useInput();
     const [ anggaran, setanggaran] = useInput();
 
@@ -87,7 +87,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
         setlokasi({target:{value:''}});
         setdateE({target:{value:''}});
 
-        setmaksud({target:{innerHTML:''}});
+        setmaksud({target:{value:''}});
 
         setangkut({target:{value:''}});
         settempatS({target:{value:''}});

@@ -76,7 +76,7 @@
                                 PEMERINTAH {{$kab}}<br>
                                 {{$dinas}}<br>
                             </h2>
-                            <label style="font-size: medium;"><i>jl. Bung Karno No. 5 Komplek KTC - Taliwang 84355</i></label>
+                            <label style="font-size: medium;"><i>{{$alamat}}</i></label>
                         </div>
                     </td>
                 </tr>
@@ -119,8 +119,8 @@
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td>
                                     <b style="text-transform: uppercase;">
-                                        {{$pimpinan->nmJabatan}}<br>
-                                        {{$kab}}
+                                        @php echo($jabatanPim); @endphp <br>
+                                        <!-- {{$kab}} -->
                                     </b>
                                 </td>
                             </tr>
@@ -204,9 +204,9 @@
                                 <td>
                                     <ul>
                                         <ol type="a">
-                                            <li>{{4}}</li>
-                                            <li>{{$data->date}}</li>
-                                            <li>{{$data->dateE}}</li>
+                                            <li>{{$hari}}</li>
+                                            <li>{{$dateS}}</li>
+                                            <li>{{$dateE}}</li>
                                         </ol>
                                     </ul>
                                 </td>
@@ -267,7 +267,7 @@
                             <tr>
                                 <td class="p0">Dikeluarkan di</td>
                                 <td class="p0">:</td>
-                                <td class="p0 tend">{{$data->tempatS}}</td>
+                                <td class="p0">{{$data->tempatS}}</td>
                             </tr>
                             <tr>
                                 <td class="p0">Pada Tanggal</td>
@@ -281,9 +281,8 @@
                 <tr class="tcenter">
                     <td class="w10p"></td>
                     <td class="w50p"></td>
-                    <td>
-                        {{$pimpinan->nmJabatan}}<br>
-                        {{$kab}}
+                    <td style="text-transform: uppercase;">
+                        @php echo($jabatanPim); @endphp
                     </td>
                 </tr>
                 <br>

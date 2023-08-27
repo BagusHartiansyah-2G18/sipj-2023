@@ -121,6 +121,8 @@ Route::controller(Csppd::class)->name('api.')->prefix('api/sppd')->group(functio
 
     Route::post('/uploadDasar','uploadDasar')->name('uploadDasar');
     Route::post('/nextStep','nextStep')->name('nextStep');
+    Route::post('/setPimpinan','setPimpinan')->name('setPimpinan');
+
     Route::post('/step3','step3')->name('step3');
 
     Route::post('/addedUser','addedUser')->name('addedUser');

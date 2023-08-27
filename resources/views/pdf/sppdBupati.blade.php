@@ -205,9 +205,9 @@
                                 <td>
                                     <ul>
                                         <ol type="a">
-                                            <li>{{4}}</li>
-                                            <li>{{$data->date}}</li>
-                                            <li>{{$data->dateE}}</li>
+                                            <li>{{$hari}}</li>
+                                            <li>{{$dateS}}</li>
+                                            <li>{{$dateE}}</li>
                                         </ol>
                                     </ul>
                                 </td>
@@ -268,7 +268,7 @@
                             <tr>
                                 <td class="p0">Dikeluarkan di</td>
                                 <td class="p0">:</td>
-                                <td class="p0 tend">{{$data->tempatS}}</td>
+                                <td class="p0">{{$data->tempatS}}</td>
                             </tr>
                             <tr>
                                 <td class="p0">Pada Tanggal</td>

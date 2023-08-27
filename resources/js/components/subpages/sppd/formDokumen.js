@@ -1,23 +1,96 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { useInput } from '../../../hooks/useInput';
 
-import { workDelAnggota, addWorkUraian, updWorkUraian, delWorkUraian } from '../../../states/sppd/action';
-import sfHtml from "../../mfc/sfHtml";
+import { setPimpinan } from '../../../states/sppd/action';
 import sfLib from "../../mfc/sfLib";
-import { setHtml, modalClose } from '../../../states/sfHtml/action';
 import PropTypes from "prop-types";
 import Select from "react-select";
 import {Link} from "react-router-dom";
 
-function FormDokumen({ dt, param, modalC, indWork }) {
+function FormDokumen({ dt, param, indWork, dwork }) {
     const dispatch = useDispatch();
 
-    const [ plhSetda, setplhSetda] = useState();
+    const [ dinas, setdinas] = useState();
+    const [ setda, setsetda] = useState();
+    const [ bupati, setbupati] = useState();
+
+    const date = new Date().setDate(new Date().getDate());
+    const [ tglCetak, settglCetak] = useInput(new Date(date).toISOString().split('T')[0]);
+
 
     if (dt.length===0) {
         return <></>;
     }
+
+    const dopd      = sfLib.coptionSelect({
+                        dt:dt.dinas.concat(dt.plhdinas).concat(dt.plhdinas1),
+                        row:{label:'nmAnggota', value:'value'},
+                    });
+    const dbupati   = sfLib.coptionSelect({
+                        dt:dt.bupati.concat(dt.plhbupati),
+                        row:{label:'nmAnggota', value:'value'},
+                    });
+    const dsetda    = sfLib.coptionSelect({
+                        dt:dt.setda.concat(dt.plhsetda),
+                        row:{label:'nmAnggota', value:'value'},
+                    });
+    if(dinas === undefined && dwork.pimOpd!==undefined){
+        const i =dopd.findIndex((val)=> val.value === dwork.pimOpd );
+        setdinas({
+            ...dopd[i]
+        })
+    }
+    if(bupati === undefined && dwork.pimBupati!==undefined){
+        const i =dbupati.findIndex((val)=> val.value === dwork.pimBupati );
+        setbupati({
+            ...dbupati[i]
+        })
+    }
+    if(setda === undefined && dwork.pimSetda!==undefined){
+        const i =dsetda.findIndex((val)=> val.value === dwork.pimSetda );
+        setsetda({
+            ...dsetda[i]
+        })
+    }
+
+    const actSetPimpinanDinas = (v) =>{
+        setdinas(v);
+        dispatch(
+            setPimpinan({
+                col: "pimOpd",
+                value: v.value,
+                ...param,
+                ind : indWork
+            })
+        );
+    }
+
+    const actSetPimpinanBupati = (v) =>{
+        setbupati(v);
+        dispatch(
+            setPimpinan({
+                col: "pimBupati",
+                value: v.value,
+                ...param,
+                ind : indWork
+            })
+        );
+    }
+
+    const actSetPimpinanSetda = (v) =>{
+        setsetda(v);
+        dispatch(
+            setPimpinan({
+                col: "pimSetda",
+                value: v.value,
+                ...param,
+                ind : indWork
+            })
+        );
+    }
+
     return (
         <div className="form1 bwhite boxShadow1px ">
             <div className="header binfo cwhite">
@@ -27,12 +100,22 @@ function FormDokumen({ dt, param, modalC, indWork }) {
                 </div>
             </div>
             <div className=" w95p m0auto ptb10px">
+                <div className="ptb10px">
+                    <div className="doubleInput ptb10px">
+                        <label>Tanggal Cetak</label>
+                        <div className="iconInput2">
+                            <input className="borderR10px" type="date" value={tglCetak} onChange={settglCetak} placeholder="Nama Anggota" />
+                            <span className={`mdi mdi-calendar cprimary `}></span>
+                        </div>
+                    </div>
+
+                </div>
                 <div className="form1 bwhite">
                     <div className="header">
                         <h3>1. Surat Tugas - Permohonan SPD</h3>
                         <div className="btnGroup">
                             <Link
-                                to={`/pdf/SuratTugasSppd/${btoa(JSON.stringify(param))}`}
+                                to={`/pdf/SuratTugasSppd/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
                                 <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen
@@ -40,30 +123,16 @@ function FormDokumen({ dt, param, modalC, indWork }) {
                         </div>
                     </div>
                     <div className="body">
-                        <ul className="justifySA">
-                            <li className="ptb10px">
-                                <label className="fbold">Pimpinan</label><br></br>
-                                <span>{dt.dinas[0].nmAnggota}</span>
-                            </li>
-                            <li className="ptb10px">
-                                <label className="fbold">Plh (1)</label><br></br>
-                                <span>{dt.plhdinas[0].nmAnggota}</span>
-                            </li>
-                            {/* <li className="ptb10px">
-                                <label className="fbold">Plh (2)</label><br></br>
-                                <Select
-                                    options={sfLib.coptionSelect({
-                                        dt:dt.plhdinas,
-                                        row:{label:'nmAnggota'},
-                                        xind:true
-                                    })}
-                                    placeholder="Select Bidang"
-                                    value={selectedOptions}
-                                    onChange={selectBidang}
-                                    isSearchable={true}
-                                />
-                            </li> */}
-                        </ul>
+                        <div className="ptb10px">
+                            <label className="fbold">Pimpinan</label><br></br>
+                            <Select
+                                options={dopd}
+                                placeholder="Select"
+                                value={dinas}
+                                onChange={actSetPimpinanDinas}
+                                isSearchable={true}
+                            />
+                        </div>
                     </div>
                 </div>
 
@@ -72,24 +141,25 @@ function FormDokumen({ dt, param, modalC, indWork }) {
                         <h3>2. Surat Perjalanan Dinas (BUPATI)</h3>
                         <div className="btnGroup">
                             <Link
-                                to={`/pdf/sppdBupati/${btoa(JSON.stringify(param))}`}
+                                to={`/pdf/sppdBupati/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
                                 <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen
                             </Link>
                         </div>
                     </div>
-                    <div className="body">
-                        <ul className="justifySA">
-                            <li className="ptb10px">
-                                <label className="fbold">BUPATI</label><br></br>
-                                <span>{dt.bupati[0].nmAnggota}</span>
-                            </li>
-                            <li className="ptb10px">
-                                <label className="fbold">Plh (1)</label><br></br>
-                                <span>{dt.plhbupati[0].nmAnggota}</span>
-                            </li>
-                        </ul>
+                    <div className="body ">
+                        <div className="ptb10px">
+                            <label className="fbold">Pimpinan</label><br></br>
+                            <Select
+                                options={dbupati}
+                                placeholder="Select"
+                                value={bupati}
+                                onChange={actSetPimpinanBupati}
+                                isSearchable={true}
+                            />
+                        </div>
+
                     </div>
                 </div>
 
@@ -98,7 +168,7 @@ function FormDokumen({ dt, param, modalC, indWork }) {
                         <h3>3. Surat Perjalanan Dinas (SETDA)</h3>
                         <div className="btnGroup">
                             <Link
-                                to={`/pdf/sppdSetda/${btoa(JSON.stringify(param))}`}
+                                to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
                                 <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen
@@ -106,30 +176,16 @@ function FormDokumen({ dt, param, modalC, indWork }) {
                         </div>
                     </div>
                     <div className="body">
-                        <ul className="justifySA">
-                            <li className="ptb10px">
-                                <label className="fbold">Pimpinan</label><br></br>
-                                <span>{dt.setda[0].nmAnggota}</span>
-                            </li>
-                            <li className="ptb10px">
-                                <label className="fbold">Plh</label><br></br>
-                                <Select
-                                    options={sfLib.coptionSelect({
-                                        dt:dt.plhsetda,
-                                        row:{label:'nmAnggota'},
-                                        xind:true
-                                    })}
-                                    placeholder="Select PLH"
-                                    value={plhSetda}
-                                    onChange={setplhSetda}
-                                    isSearchable={true}
-                                />
-                            </li>
-                            {/* <li className="ptb10px">
-                                <label className="fbold">Total Pegawai</label><br></br>
-                                <span>{dt.date} - {dt.dateE}</span>
-                            </li> */}
-                        </ul>
+                        <div className="ptb10px">
+                            <label className="fbold">Pimpinan</label><br></br>
+                            <Select
+                                options={dsetda}
+                                placeholder="Select"
+                                value={setda}
+                                onChange={actSetPimpinanSetda}
+                                isSearchable={true}
+                            />
+                        </div>
                     </div>
                 </div>
 
@@ -157,6 +213,6 @@ FormDokumen.propTypes = {
     dt : PropTypes.object.isRequired,
     param : PropTypes.object.isRequired,
     indWork : PropTypes.number.isRequired,
-    modalC : PropTypes.func.isRequired
+    dwork : PropTypes.object.isRequired
 }
 export default FormDokumen;

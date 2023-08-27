@@ -16,6 +16,7 @@ const actType = {
   workDelAnggota:'workDelAnggota',
   nextStep:{
     dasar: 'uploadDasar',
+    setPimpinan: 'setPimpinan',
     type : 'nextStep',
     start:'berproses',
     step1:'entriRincian',
@@ -118,6 +119,25 @@ function nextStep(body){
     // dispatch(hideLoading());
   };
 }
+function setPimpinan(body){
+    return async (dispatch) => {
+      // dispatch(showLoading());
+      try {
+        const dt = await api.POST({url:"sppd/setPimpinan",body});
+        dispatch({
+          type : actType.crudWork,
+          payload:{
+            ...body,
+            type:actType.nextStep.setPimpinan
+          }
+        });
+        toast.success('berhasil diperbarui');
+      } catch (error) {
+        alert(error.message);
+      }
+      // dispatch(hideLoading());
+    };
+  }
 function Step3(body){
     return async (dispatch) => {
       // dispatch(showLoading());
@@ -353,6 +373,7 @@ export {
 
     uploadDasar,
     nextStep,
+    setPimpinan,
     Step3,
 
     colAnggota,

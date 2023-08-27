@@ -14550,7 +14550,7 @@ function FormData(_ref) {
     _useInput14 = _slicedToArray(_useInput13, 2),
     angkut = _useInput14[0],
     setangkut = _useInput14[1];
-  var _useInput15 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
+  var _useInput15 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)('Taliwang'),
     _useInput16 = _slicedToArray(_useInput15, 2),
     tempatS = _useInput16[0],
     settempatS = _useInput16[1];
@@ -14585,7 +14585,7 @@ function FormData(_ref) {
     });
     setmaksud({
       target: {
-        innerHTML: ''
+        value: ''
       }
     });
     setangkut({
@@ -15008,15 +15008,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _states_sppd_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../states/sppd/action */ "./resources/js/states/sppd/action.js");
-/* harmony import */ var _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mfc/sfHtml */ "./resources/js/components/mfc/sfHtml.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
+/* harmony import */ var _states_sppd_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../states/sppd/action */ "./resources/js/states/sppd/action.js");
 /* harmony import */ var _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
-/* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -15035,184 +15040,256 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function FormDokumen(_ref) {
   var dt = _ref.dt,
     param = _ref.param,
-    modalC = _ref.modalC,
-    indWork = _ref.indWork;
+    indWork = _ref.indWork,
+    dwork = _ref.dwork;
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState2 = _slicedToArray(_useState, 2),
-    plhSetda = _useState2[0],
-    setplhSetda = _useState2[1];
+    dinas = _useState2[0],
+    setdinas = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState4 = _slicedToArray(_useState3, 2),
+    setda = _useState4[0],
+    setsetda = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState6 = _slicedToArray(_useState5, 2),
+    bupati = _useState6[0],
+    setbupati = _useState6[1];
+  var date = new Date().setDate(new Date().getDate());
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(new Date(date).toISOString().split('T')[0]),
+    _useInput2 = _slicedToArray(_useInput, 2),
+    tglCetak = _useInput2[0],
+    settglCetak = _useInput2[1];
   if (dt.length === 0) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {});
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {});
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+  var dopd = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
+    dt: dt.dinas.concat(dt.plhdinas).concat(dt.plhdinas1),
+    row: {
+      label: 'nmAnggota',
+      value: 'value'
+    }
+  });
+  var dbupati = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
+    dt: dt.bupati.concat(dt.plhbupati),
+    row: {
+      label: 'nmAnggota',
+      value: 'value'
+    }
+  });
+  var dsetda = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
+    dt: dt.setda.concat(dt.plhsetda),
+    row: {
+      label: 'nmAnggota',
+      value: 'value'
+    }
+  });
+  if (dinas === undefined && dwork.pimOpd !== undefined) {
+    var i = dopd.findIndex(function (val) {
+      return val.value === dwork.pimOpd;
+    });
+    setdinas(_objectSpread({}, dopd[i]));
+  }
+  if (bupati === undefined && dwork.pimBupati !== undefined) {
+    var _i2 = dbupati.findIndex(function (val) {
+      return val.value === dwork.pimBupati;
+    });
+    setbupati(_objectSpread({}, dbupati[_i2]));
+  }
+  if (setda === undefined && dwork.pimSetda !== undefined) {
+    var _i3 = dsetda.findIndex(function (val) {
+      return val.value === dwork.pimSetda;
+    });
+    setsetda(_objectSpread({}, dsetda[_i3]));
+  }
+  var actSetPimpinanDinas = function actSetPimpinanDinas(v) {
+    setdinas(v);
+    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
+      col: "pimOpd",
+      value: v.value
+    }, param), {}, {
+      ind: indWork
+    })));
+  };
+  var actSetPimpinanBupati = function actSetPimpinanBupati(v) {
+    setbupati(v);
+    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
+      col: "pimBupati",
+      value: v.value
+    }, param), {}, {
+      ind: indWork
+    })));
+  };
+  var actSetPimpinanSetda = function actSetPimpinanSetda(v) {
+    setsetda(v);
+    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
+      col: "pimSetda",
+      value: v.value
+    }, param), {}, {
+      ind: indWork
+    })));
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "form1 bwhite boxShadow1px ",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "header binfo cwhite",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
           className: "mdi mdi-circle-slice-7 fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
             children: "4. Progres Dokumen"
           })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: " w95p m0auto ptb10px",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "ptb10px",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "doubleInput ptb10px",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            children: "Tanggal Cetak"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "iconInput2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              className: "borderR10px",
+              type: "date",
+              value: tglCetak,
+              onChange: settglCetak,
+              placeholder: "Nama Anggota"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+              className: "mdi mdi-calendar cprimary "
+            })]
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "form1 bwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
             children: "1. Surat Tugas - Permohonan SPD"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btnGroup",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-              to: "/pdf/SuratTugasSppd/".concat(btoa(JSON.stringify(param))),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/pdf/SuratTugasSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                tglCetak: tglCetak
+              })))),
               className: "btn2 bsuccess clight ptb0",
               target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
               }), " Dokumen"]
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
-            className: "justifySA",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-              className: "ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-                className: "fbold",
-                children: "Pimpinan"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                children: dt.dinas[0].nmAnggota
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-              className: "ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-                className: "fbold",
-                children: "Plh (1)"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                children: dt.plhdinas[0].nmAnggota
-              })]
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              className: "fbold",
+              children: "Pimpinan"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              options: dopd,
+              placeholder: "Select",
+              value: dinas,
+              onChange: actSetPimpinanDinas,
+              isSearchable: true
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "form1 bwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
             children: "2. Surat Perjalanan Dinas (BUPATI)"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btnGroup",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-              to: "/pdf/sppdBupati/".concat(btoa(JSON.stringify(param))),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/pdf/sppdBupati/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                tglCetak: tglCetak
+              })))),
               className: "btn2 bsuccess clight ptb0",
               target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
               }), " Dokumen"]
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "body",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
-            className: "justifySA",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-              className: "ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-                className: "fbold",
-                children: "BUPATI"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                children: dt.bupati[0].nmAnggota
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-              className: "ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-                className: "fbold",
-                children: "Plh (1)"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                children: dt.plhbupati[0].nmAnggota
-              })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "body ",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              className: "fbold",
+              children: "Pimpinan"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              options: dbupati,
+              placeholder: "Select",
+              value: bupati,
+              onChange: actSetPimpinanBupati,
+              isSearchable: true
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "form1 bwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
             children: "3. Surat Perjalanan Dinas (SETDA)"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btnGroup",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-              to: "/pdf/sppdSetda/".concat(btoa(JSON.stringify(param))),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/pdf/sppdSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                tglCetak: tglCetak
+              })))),
               className: "btn2 bsuccess clight ptb0",
               target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
               }), " Dokumen"]
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
-            className: "justifySA",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-              className: "ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-                className: "fbold",
-                children: "Pimpinan"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                children: dt.setda[0].nmAnggota
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-              className: "ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-                className: "fbold",
-                children: "Plh"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-                  dt: dt.plhsetda,
-                  row: {
-                    label: 'nmAnggota'
-                  },
-                  xind: true
-                }),
-                placeholder: "Select PLH",
-                value: plhSetda,
-                onChange: setplhSetda,
-                isSearchable: true
-              })]
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              className: "fbold",
+              children: "Pimpinan"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              options: dsetda,
+              placeholder: "Select",
+              value: setda,
+              onChange: actSetPimpinanSetda,
+              isSearchable: true
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "form1 bwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
             children: "4. Kwitansi"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btnGroup",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/pdf/kwitansiSppd/".concat(btoa(JSON.stringify(param))),
               className: "btn2 bsuccess clight ptb0",
               target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
               }), " Dokumen"]
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body"
         })]
       })]
@@ -15220,10 +15297,10 @@ function FormDokumen(_ref) {
   });
 }
 FormDokumen.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
-  param: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
-  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().number).isRequired,
-  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func).isRequired
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().object).isRequired,
+  param: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().object).isRequired,
+  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().number).isRequired,
+  dwork: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().object).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormDokumen);
 
@@ -17328,7 +17405,7 @@ function SPPD() {
   // const { basic:[] , anggota:[], dwork:[] } = _sppd;
 
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(4),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
     _useState2 = _slicedToArray(_useState, 2),
     view = _useState2[0],
     setview = _useState2[1];
@@ -17413,7 +17490,7 @@ function SPPD() {
         param: _objectSpread(_objectSpread({}, param), {}, {
           no: _sppd.dwork[indWork].no
         }),
-        modalC: setmodalC,
+        dwork: _sppd.dwork[indWork],
         indWork: indWork
       }), view === 5 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formFinishSppd__WEBPACK_IMPORTED_MODULE_10__["default"], {
         dt: _sppd.dwork[indWork],
@@ -18098,8 +18175,11 @@ var colAnggota = [{
 }];
 
 var cbStatus = [{
-  label: 'Bidang',
+  label: 'Staf Bidang',
   value: 'bidang'
+}, {
+  label: 'Kepala Bidang',
+  value: 'kabid'
 }, {
   label: 'Bendahara',
   value: 'bendahara'
@@ -19804,6 +19884,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getDT: () => (/* binding */ getDT),
 /* harmony export */   nextStep: () => (/* binding */ nextStep),
 /* harmony export */   setDT: () => (/* binding */ setDT),
+/* harmony export */   setPimpinan: () => (/* binding */ setPimpinan),
 /* harmony export */   updWorkUraian: () => (/* binding */ updWorkUraian),
 /* harmony export */   upded: () => (/* binding */ upded),
 /* harmony export */   uploadDasar: () => (/* binding */ uploadDasar),
@@ -19839,6 +19920,7 @@ var actType = {
   workDelAnggota: 'workDelAnggota',
   nextStep: {
     dasar: 'uploadDasar',
+    setPimpinan: 'setPimpinan',
     type: 'nextStep',
     start: 'berproses',
     step1: 'entriRincian',
@@ -20038,21 +20120,60 @@ function nextStep(body) {
     };
   }();
 }
-function Step3(body) {
+function setPimpinan(body) {
   return /*#__PURE__*/function () {
     var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(dispatch) {
-      var exec;
+      var dt;
       return _regeneratorRuntime().wrap(function _callee6$(_context6) {
         while (1) switch (_context6.prev = _context6.next) {
           case 0:
             _context6.prev = 0;
             _context6.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "sppd/setPimpinan",
+              body: body
+            });
+          case 3:
+            dt = _context6.sent;
+            dispatch({
+              type: actType.crudWork,
+              payload: _objectSpread(_objectSpread({}, body), {}, {
+                type: actType.nextStep.setPimpinan
+              })
+            });
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
+            _context6.next = 11;
+            break;
+          case 8:
+            _context6.prev = 8;
+            _context6.t0 = _context6["catch"](0);
+            alert(_context6.t0.message);
+          case 11:
+          case "end":
+            return _context6.stop();
+        }
+      }, _callee6, null, [[0, 8]]);
+    }));
+    return function (_x6) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+}
+function Step3(body) {
+  return /*#__PURE__*/function () {
+    var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(dispatch) {
+      var exec;
+      return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+        while (1) switch (_context7.prev = _context7.next) {
+          case 0:
+            _context7.prev = 0;
+            _context7.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
               url: "sppd/step3",
               body: body
             });
           case 3:
-            exec = _context6.sent;
+            exec = _context7.sent;
             window.location.reload();
             // dispatch({
             //   type : actType.crudWork,
@@ -20062,53 +20183,13 @@ function Step3(body) {
             //   }
             // });
             // toast.success("sukses malaksanakan aksi !!!");
-            _context6.next = 10;
-            break;
-          case 7:
-            _context6.prev = 7;
-            _context6.t0 = _context6["catch"](0);
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context6.t0.message);
-          case 10:
-          case "end":
-            return _context6.stop();
-        }
-      }, _callee6, null, [[0, 7]]);
-    }));
-    return function (_x6) {
-      return _ref6.apply(this, arguments);
-    };
-  }();
-}
-function uploadDasar(body) {
-  return /*#__PURE__*/function () {
-    var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(dispatch) {
-      var fileD;
-      return _regeneratorRuntime().wrap(function _callee7$(_context7) {
-        while (1) switch (_context7.prev = _context7.next) {
-          case 0:
-            _context7.prev = 0;
-            _context7.next = 3;
-            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/uploadDasar",
-              body: body
-            });
-          case 3:
-            fileD = _context7.sent;
-            dispatch({
-              type: actType.crudWork,
-              payload: {
-                fileD: fileD,
-                ind: body.ind,
-                dasar: body.dasar,
-                type: actType.nextStep.dasar
-              }
-            });
-            _context7.next = 9;
+            _context7.next = 10;
             break;
           case 7:
             _context7.prev = 7;
             _context7.t0 = _context7["catch"](0);
-          case 9:
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context7.t0.message);
+          case 10:
           case "end":
             return _context7.stop();
         }
@@ -20119,35 +20200,75 @@ function uploadDasar(body) {
     };
   }();
 }
-function addedWorkStaf(_ref8) {
-  var dt = _ref8.dt,
-    ind = _ref8.ind,
-    param = _ref8.param;
+function uploadDasar(body) {
   return /*#__PURE__*/function () {
-    var _ref9 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(dispatch) {
-      return _regeneratorRuntime().wrap(function _callee9$(_context9) {
-        while (1) switch (_context9.prev = _context9.next) {
+    var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(dispatch) {
+      var fileD;
+      return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+        while (1) switch (_context8.prev = _context8.next) {
+          case 0:
+            _context8.prev = 0;
+            _context8.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "sppd/uploadDasar",
+              body: body
+            });
+          case 3:
+            fileD = _context8.sent;
+            dispatch({
+              type: actType.crudWork,
+              payload: {
+                fileD: fileD,
+                ind: body.ind,
+                dasar: body.dasar,
+                type: actType.nextStep.dasar
+              }
+            });
+            _context8.next = 9;
+            break;
+          case 7:
+            _context8.prev = 7;
+            _context8.t0 = _context8["catch"](0);
+          case 9:
+          case "end":
+            return _context8.stop();
+        }
+      }, _callee8, null, [[0, 7]]);
+    }));
+    return function (_x8) {
+      return _ref8.apply(this, arguments);
+    };
+  }();
+}
+function addedWorkStaf(_ref9) {
+  var dt = _ref9.dt,
+    ind = _ref9.ind,
+    param = _ref9.param;
+  return /*#__PURE__*/function () {
+    var _ref10 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(dispatch) {
+      return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+        while (1) switch (_context10.prev = _context10.next) {
           case 0:
             // dispatch(showLoading());
             try {
               dt.forEach( /*#__PURE__*/function () {
-                var _ref10 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(v) {
-                  return _regeneratorRuntime().wrap(function _callee8$(_context8) {
-                    while (1) switch (_context8.prev = _context8.next) {
+                var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(v) {
+                  return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+                    while (1) switch (_context9.prev = _context9.next) {
                       case 0:
-                        _context8.next = 2;
+                        _context9.next = 2;
                         return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
                           url: "sppd/addedUser",
                           body: _objectSpread(_objectSpread({}, v), param)
                         });
                       case 2:
                       case "end":
-                        return _context8.stop();
+                        return _context9.stop();
                     }
-                  }, _callee8);
+                  }, _callee9);
                 }));
-                return function (_x9) {
-                  return _ref10.apply(this, arguments);
+                return function (_x10) {
+                  return _ref11.apply(this, arguments);
                 };
               }());
               dispatch({
@@ -20165,12 +20286,12 @@ function addedWorkStaf(_ref8) {
             // dispatch(hideLoading());
           case 1:
           case "end":
-            return _context9.stop();
+            return _context10.stop();
         }
-      }, _callee9);
+      }, _callee10);
     }));
-    return function (_x8) {
-      return _ref9.apply(this, arguments);
+    return function (_x9) {
+      return _ref10.apply(this, arguments);
     };
   }();
 }
@@ -20214,23 +20335,23 @@ var coldata = [{
     return row.lokasi;
   }
 }];
-function workSetAnggota(_ref11) {
-  var ind = _ref11.ind,
-    param = _ref11.param;
+function workSetAnggota(_ref12) {
+  var ind = _ref12.ind,
+    param = _ref12.param;
   return /*#__PURE__*/function () {
-    var _ref12 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(dispatch) {
+    var _ref13 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(dispatch) {
       var dt;
-      return _regeneratorRuntime().wrap(function _callee10$(_context10) {
-        while (1) switch (_context10.prev = _context10.next) {
+      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+        while (1) switch (_context11.prev = _context11.next) {
           case 0:
-            _context10.prev = 0;
-            _context10.next = 3;
+            _context11.prev = 0;
+            _context11.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
               url: "sppd/getAnggotaSelected",
               body: param
             });
           case 3:
-            dt = _context10.sent;
+            dt = _context11.sent;
             dispatch({
               type: actType.crudWork,
               payload: {
@@ -20240,28 +20361,28 @@ function workSetAnggota(_ref11) {
                 type: actType.workSetAnggota
               }
             });
-            _context10.next = 9;
+            _context11.next = 9;
             break;
           case 7:
-            _context10.prev = 7;
-            _context10.t0 = _context10["catch"](0);
+            _context11.prev = 7;
+            _context11.t0 = _context11["catch"](0);
           case 9:
           case "end":
-            return _context10.stop();
+            return _context11.stop();
         }
-      }, _callee10, null, [[0, 7]]);
+      }, _callee11, null, [[0, 7]]);
     }));
-    return function (_x10) {
-      return _ref12.apply(this, arguments);
+    return function (_x11) {
+      return _ref13.apply(this, arguments);
     };
   }();
 }
-function anggotaSelect(_ref13) {
-  var ind = _ref13.ind;
+function anggotaSelect(_ref14) {
+  var ind = _ref14.ind;
   return /*#__PURE__*/function () {
-    var _ref14 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(dispatch) {
-      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
-        while (1) switch (_context11.prev = _context11.next) {
+    var _ref15 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(dispatch) {
+      return _regeneratorRuntime().wrap(function _callee12$(_context12) {
+        while (1) switch (_context12.prev = _context12.next) {
           case 0:
             try {
               dispatch({
@@ -20277,58 +20398,19 @@ function anggotaSelect(_ref13) {
             // dispatch(hideLoading());
           case 1:
           case "end":
-            return _context11.stop();
-        }
-      }, _callee11);
-    }));
-    return function (_x11) {
-      return _ref14.apply(this, arguments);
-    };
-  }();
-}
-function workDelAnggota(_ref15) {
-  var ind = _ref15.ind,
-    index = _ref15.index,
-    param = _ref15.param;
-  return /*#__PURE__*/function () {
-    var _ref16 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(dispatch) {
-      var dt;
-      return _regeneratorRuntime().wrap(function _callee12$(_context12) {
-        while (1) switch (_context12.prev = _context12.next) {
-          case 0:
-            _context12.prev = 0;
-            _context12.next = 3;
-            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/delAnggotaSelected",
-              body: param
-            });
-          case 3:
-            dt = _context12.sent;
-            dispatch({
-              type: actType.crudWork,
-              payload: {
-                ind: ind,
-                index: index,
-                type: actType.workDelAnggota
-              }
-            });
-            _context12.next = 9;
-            break;
-          case 7:
-            _context12.prev = 7;
-            _context12.t0 = _context12["catch"](0);
-          case 9:
-          case "end":
             return _context12.stop();
         }
-      }, _callee12, null, [[0, 7]]);
+      }, _callee12);
     }));
     return function (_x12) {
-      return _ref16.apply(this, arguments);
+      return _ref15.apply(this, arguments);
     };
   }();
 }
-function addWorkUraian(body) {
+function workDelAnggota(_ref16) {
+  var ind = _ref16.ind,
+    index = _ref16.index,
+    param = _ref16.param;
   return /*#__PURE__*/function () {
     var _ref17 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13(dispatch) {
       var dt;
@@ -20338,37 +20420,36 @@ function addWorkUraian(body) {
             _context13.prev = 0;
             _context13.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/addWorkUraian",
-              body: body
+              url: "sppd/delAnggotaSelected",
+              body: param
             });
           case 3:
             dt = _context13.sent;
             dispatch({
               type: actType.crudWork,
-              payload: _objectSpread(_objectSpread({}, body), {}, {
-                dt: dt,
-                type: actType.setUraian
-              })
+              payload: {
+                ind: ind,
+                index: index,
+                type: actType.workDelAnggota
+              }
             });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil ditambahkan');
-            _context13.next = 11;
+            _context13.next = 9;
             break;
-          case 8:
-            _context13.prev = 8;
+          case 7:
+            _context13.prev = 7;
             _context13.t0 = _context13["catch"](0);
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context13.t0.message);
-          case 11:
+          case 9:
           case "end":
             return _context13.stop();
         }
-      }, _callee13, null, [[0, 8]]);
+      }, _callee13, null, [[0, 7]]);
     }));
     return function (_x13) {
       return _ref17.apply(this, arguments);
     };
   }();
 }
-function updWorkUraian(body) {
+function addWorkUraian(body) {
   return /*#__PURE__*/function () {
     var _ref18 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14(dispatch) {
       var dt;
@@ -20378,7 +20459,7 @@ function updWorkUraian(body) {
             _context14.prev = 0;
             _context14.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/updWorkUraian",
+              url: "sppd/addWorkUraian",
               body: body
             });
           case 3:
@@ -20386,16 +20467,17 @@ function updWorkUraian(body) {
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
-                type: actType.updUraian
+                dt: dt,
+                type: actType.setUraian
               })
             });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil ditambahkan');
             _context14.next = 11;
             break;
           case 8:
             _context14.prev = 8;
             _context14.t0 = _context14["catch"](0);
-            alert(_context14.t0.message);
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context14.t0.message);
           case 11:
           case "end":
             return _context14.stop();
@@ -20407,7 +20489,7 @@ function updWorkUraian(body) {
     };
   }();
 }
-function delWorkUraian(body) {
+function updWorkUraian(body) {
   return /*#__PURE__*/function () {
     var _ref19 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee15(dispatch) {
       var dt;
@@ -20417,7 +20499,7 @@ function delWorkUraian(body) {
             _context15.prev = 0;
             _context15.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/delWorkUraian",
+              url: "sppd/updWorkUraian",
               body: body
             });
           case 3:
@@ -20425,10 +20507,10 @@ function delWorkUraian(body) {
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
-                type: actType.delUraian
+                type: actType.updUraian
               })
             });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil dihapus');
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
             _context15.next = 11;
             break;
           case 8:
@@ -20443,6 +20525,45 @@ function delWorkUraian(body) {
     }));
     return function (_x15) {
       return _ref19.apply(this, arguments);
+    };
+  }();
+}
+function delWorkUraian(body) {
+  return /*#__PURE__*/function () {
+    var _ref20 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee16(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee16$(_context16) {
+        while (1) switch (_context16.prev = _context16.next) {
+          case 0:
+            _context16.prev = 0;
+            _context16.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "sppd/delWorkUraian",
+              body: body
+            });
+          case 3:
+            dt = _context16.sent;
+            dispatch({
+              type: actType.crudWork,
+              payload: _objectSpread(_objectSpread({}, body), {}, {
+                type: actType.delUraian
+              })
+            });
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil dihapus');
+            _context16.next = 11;
+            break;
+          case 8:
+            _context16.prev = 8;
+            _context16.t0 = _context16["catch"](0);
+            alert(_context16.t0.message);
+          case 11:
+          case "end":
+            return _context16.stop();
+        }
+      }, _callee16, null, [[0, 8]]);
+    }));
+    return function (_x16) {
+      return _ref20.apply(this, arguments);
     };
   }();
 }
@@ -20553,6 +20674,20 @@ function selectdwork(_ref2) {
           return _objectSpread(_objectSpread({}, v), {}, {
             fileD: act.fileD,
             dasar: act.dasar
+          });
+        }
+        return v;
+      });
+      break;
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.nextStep.setPimpinan:
+      dwork = dt.dwork.map(function (v, i) {
+        if (i === act.ind) {
+          return _objectSpread(_objectSpread({}, v), {}, {
+            fileD: act.fileD,
+            dasar: act.dasar,
+            pimOpd: act.col === 'pimOpd' ? act.value : v.pimOpd,
+            pimBupati: act.col === 'pimBupati' ? act.value : v.pimBupati,
+            pimSetda: act.col === 'pimSetda' ? act.value : v.pimSetda
           });
         }
         return v;

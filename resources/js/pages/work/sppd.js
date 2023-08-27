@@ -30,7 +30,7 @@ function SPPD(){
 
     const dispatch = useDispatch();
 
-    const [view, setview] = useState(4);
+    const [view, setview] = useState(0);
     const [indWork, setindWork] = useState(-1);
     const [modalC, setmodalC] = useState('');
 
@@ -130,7 +130,7 @@ function SPPD(){
                                 <FormDokumen
                                     dt={_sppd.pimpinan}
                                     param={{ ...param, no :_sppd.dwork[indWork].no }}
-                                    modalC={setmodalC}
+                                    dwork={_sppd.dwork[indWork]}
                                     indWork={indWork}
                                 ></FormDokumen>
                             )

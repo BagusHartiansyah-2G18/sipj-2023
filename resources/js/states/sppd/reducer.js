@@ -79,6 +79,21 @@ function selectdwork({ dt, act }){
         return v;
       })
     break;
+    case actType.nextStep.setPimpinan:
+      dwork = dt.dwork.map((v,i)=>{
+        if(i=== act.ind){
+          return{
+            ...v,
+            fileD: act.fileD,
+            dasar: act.dasar,
+            pimOpd:(act.col==='pimOpd'? act.value:v.pimOpd),
+            pimBupati:(act.col==='pimBupati'? act.value:v.pimBupati),
+            pimSetda:(act.col==='pimSetda'? act.value:v.pimSetda),
+          }
+        }
+        return v;
+      })
+    break;
     case actType.nextStep.type:
       dwork = dt.dwork.map((v,i)=>{
         if(i=== act.ind){

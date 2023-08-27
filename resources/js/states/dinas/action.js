@@ -267,8 +267,11 @@ const colAnggota = [
 ];
 const cbStatus = [
     {
-      label :'Bidang',
+      label :'Staf Bidang',
       value :'bidang',
+    },{
+        label :'Kepala Bidang',
+        value :'kabid',
     },{
       label :'Bendahara',
       value :'bendahara',

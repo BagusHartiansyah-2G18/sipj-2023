@@ -45,6 +45,11 @@ class Csppd extends Controller
                     "tahun"=>$param['tahun'],
                     "status"=>"sekretaris"
                 ]),
+                "plhdinas1" => Hdb::getAnggotaJabatan([
+                    "kdDinas"=>$param['kdDinas'],
+                    "tahun"=>$param['tahun'],
+                    "status"=>"kabid"
+                ]),
 
                 "setda" => Hdb::getAnggotaJabatan([
                     "kdDinas"=>$cek['setda'],
@@ -257,6 +262,7 @@ class Csppd extends Controller
             'msg' => $cek['msg']
         ], 200);
     }
+
     public function nextStep(Request $request){
         $user =Auth::user();
         $cek = $this->portal($user);
@@ -281,6 +287,48 @@ class Csppd extends Controller
                 ->where('no',$request->no)
                 ->update([
                     'status'=> $request->status,
+                ])
+            ){
+                return response()->json([
+                    'exc' => true,
+                    'data' => []
+                ], 200);
+            }
+            return response()->json([
+                'exc' => false,
+                'msg' => 'query Error'
+            ], 200);
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
+    public function setPimpinan(Request $request){
+        $user =Auth::user();
+        $cek = $this->portal($user);
+        if($cek['exc']){
+            $request->validate([
+                'col' => 'required',
+                'value' => 'required',
+
+                'kdDinas' => 'required',
+                'kdBidang' => 'required',
+                'kdSub' => 'required',
+                'kdJudul' => 'required',
+                'no'=> 'required',
+            ]);
+            if(
+                DB::table('work')
+                ->where('kdDinas',$request['kdDinas'])
+                ->where('kdBidang',$request['kdBidang'])
+                ->where('kdSub',$request['kdSub'])
+                ->where('kdJudul',$request['kdJudul'])
+                ->where('taWork',$cek['ta'])
+                ->where('no',$request['no'])
+                ->where('kdBAnggota','')
+                ->update([
+                    $request['col']=> $request['value']
                 ])
             ){
                 return response()->json([
