@@ -556,7 +556,7 @@ class Hdb {
                 a.kdDinas = b.kdDinas
             '.$where.'
 
-            order by b.tingkatan asc
+            order by b.tingkatan, b.nip asc
         ');
     }
     function workAdded($v){
