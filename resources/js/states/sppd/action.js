@@ -218,9 +218,9 @@ const colAnggota = [
 ];
 const coldata = [
   {
-      name: 'Nomor',
+      name: 'No',
       selector: row => row.no,
-      width : '150px'
+      width : '50px'
   },{
     name: 'Tujuan',
     selector: row => row.tempatE,

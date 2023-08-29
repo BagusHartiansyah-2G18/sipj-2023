@@ -102,10 +102,10 @@
                             $sub." "
                         }}
                         <br><br>
-                        <table>
+                        <table >
                             <tr>
                                 <td>sesuai SPPD No.</td>
-                                <td>{{$noSppd}} Tanggal :</td>
+                                <td>{{$no}} Tanggal :</td>
                                 <td>{{$tglSppd}}</td>
                                 <td>dengan perincian sbb :</td>
                             </tr>
@@ -122,7 +122,7 @@
                                 @endphp
                                 @foreach ($dt1->uraian as $dt2)
                                     <tr>
-                                        <td colspan="2">{{$num.". ".$dt2->uraian." (".$dt2->volume." x ".$dt2->satuan.")"}}</td>
+                                        <td colspan="2">{{$num.". ".$dt2->uraian." ".$dt->tingkat." (".$dt2->volume." x ".$dt2->satuan.")"}}</td>
                                         <td>{{ number_format($dt2->nilai,0,',','.')}}</td>
                                         <td>Rp. {{number_format(($dt2->nilai*$dt2->volume),0,',','.')}}</td>
                                     </tr>

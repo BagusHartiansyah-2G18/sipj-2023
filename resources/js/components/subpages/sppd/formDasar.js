@@ -12,7 +12,7 @@ import sfLib from '../../mfc/sfLib';
 import PropTypes from "prop-types";
 import Select from "react-select";
 
-function FormDasar({ dt, modalC, param, indWork }) {
+function FormDasar({ dt, modalC, param, indWork, setview }) {
     const dispatch = useDispatch();
     const [onOff] = useState(1);
 
@@ -61,6 +61,7 @@ function FormDasar({ dt, modalC, param, indWork }) {
             dasar:dasar.value,
         }));
         mclose();
+        setview(1);
     }
     if (dt === undefined || dt === null) {
         return <></>;

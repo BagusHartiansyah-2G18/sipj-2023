@@ -91,7 +91,7 @@
                             <table class="w40p">
                                 <tr>
                                     <td class="p0">Kode No.</td>
-                                    <td class="p0">:  {{$data->no}}</td>
+                                    <td class="p0">:  {{$no}}</td>
                                 </tr>
                                 <tr>
                                     <td class="p0">Nomor</td>
@@ -117,7 +117,7 @@
                             <tr>
                                 <td class="w5p">1</td>
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
-                                <td>
+                                <td colspan="2">
                                     <b style="text-transform: uppercase;">
                                         @php echo($jabatanPim); @endphp <br>
                                         <!-- {{$kab}} -->
@@ -127,7 +127,7 @@
                             <tr>
                                 <td>2</td>
                                 <td>Nama/NIP Pegawai yang Melaksanakan Perjalanan Dinas</td>
-                                <td>
+                                <td colspan="2">
                                     {{$dt->nmAnggota}}<br>
                                     {{$dt->nip}}
                                 </td>
@@ -143,7 +143,7 @@
                                         </ol>
                                     </ul>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     <ul>
                                         <ol type="a">
                                             <li>{{(empty($dt->golongan)?'-':$dt->golongan)}}</li>
@@ -158,7 +158,7 @@
                                 <td>
                                     Maksud Perjalanan Dinas
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     {{$data->maksud}}
                                 </td>
                             </tr>
@@ -167,7 +167,7 @@
                                 <td>
                                     Alat Angkut yang digunakan
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     {{$data->angkut}}
                                 </td>
                             </tr>
@@ -181,7 +181,7 @@
                                         </ol>
                                     </ul>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     <ul>
                                         <ol type="a">
                                             <li>{{$data->tempatS}}</li>
@@ -201,7 +201,7 @@
                                         </ol>
                                     </ul>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     <ul>
                                         <ol type="a">
                                             <li>{{$hari}}</li>
@@ -212,19 +212,28 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td rowspan="2">8</td>
                                 <td>
                                     Pengikut
-                                    <ul>
-                                        <ol type="none">
+                                </td>
+                                <td class="tcenter" >
+                                    Tanggal Lahir
+                                </td>
+                                <td class="tcenter" >
+                                    Keterangan
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul style="padding: 0px; margin: 0px;">
+                                        <ol type="none" style="padding: 0px; margin: 0px;">
                                             <li>1.</li>
                                             <li>2.</li>
                                         </ol>
                                     </ul>
                                 </td>
-                                <td>
-
-                                </td>
+                                <td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>9</td>
@@ -237,7 +246,7 @@
                                         </ol>
                                     </ul>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     <ul>
                                         <ol type="a">
                                             <li>{{$data->anggaran}}</li>
@@ -251,13 +260,12 @@
                                 <td>
                                     Keterangan Lainnya
                                 </td>
-                                <td>
+                                <td colspan="2">
                                 </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
-                <br>
                 <br>
                 <tr class="tcenter">
                     <td class="w10p"></td>

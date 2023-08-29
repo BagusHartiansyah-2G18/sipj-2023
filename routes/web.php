@@ -140,6 +140,7 @@ Route::controller(PdfGenerator::class)->name('pdf.')->prefix('pdf')->group(funct
     Route::get('/SuratTugasSppd/{val}','SuratTugasSppd')->name('SuratTugasSppd');
     Route::get('/sppdSetda/{val}','sppdSetda')->name('sppdSetda');
     Route::get('/sppdBupati/{val}','sppdBupati')->name('sppdBupati');
+    Route::get('/sppdBupatiSetda/{val}','sppdBupatiSetda')->name('sppdBupatiSetda');
 
 
 });

@@ -70,7 +70,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
             width: '250px'
         }
     ];
-    const [ no, setno] = useInput();
+    // const [ no, setno] = useInput();
     const [ lokasi, setlokasi] = useInput();
     const [ date, setdate] = useInput();
     const [ dateE, setdateE] = useInput();
@@ -82,7 +82,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
 
 
     function reset(){
-        setno({target:{value:''}});
+        // setno({target:{value:''}});
         setdate({target:{value:''}});
         setlokasi({target:{value:''}});
         setdateE({target:{value:''}});
@@ -90,7 +90,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
         setmaksud({target:{value:''}});
 
         setangkut({target:{value:''}});
-        settempatS({target:{value:''}});
+        settempatS({target:{value:'Taliwang'}});
         settempatE({target:{value:''}});
         setanggaran({target:{value:''}});
     }
@@ -105,7 +105,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
     }
     const xadded = () =>{
         dispatch(added({
-            no,
+            // no,
             lokasi,
             date,
             dateE,
@@ -193,7 +193,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
         setind(i);
         setIns(0);
         setOnOff(0);
-        setno({target:{value:v.no}});
+        // setno({target:{value:v.no}});
         setdate({target:{value:v.date}});
 
         setlokasi({target:{value:v.lokasi}});
@@ -208,7 +208,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
     }
     const xupded = () =>{
         dispatch(upded({
-            no,
+            // no,
             lokasi,
             date,
             dateE,
@@ -264,13 +264,13 @@ function FormData({ dt, modalC, param, dataEntri }) {
                     <button className="btn2 blight cmuted" onClick={close}>Close</button>
                 </div>
                 <div className="w95p m0auto ">
-                    <div className="doubleInput ptb10px borderB">
+                    {/* <div className="doubleInput ptb10px borderB">
                         <label>No SPPD</label>
                         <div className="iconInput2 ">
                             <input className="borderR10px" type="text" value={no} onChange={setno} placeholder="Nomor SPPD" />
                             <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="doubleInput ptb10px borderB">
                         <label>Maksud Perjalanan</label>
                         <div className="iconInput2 ">

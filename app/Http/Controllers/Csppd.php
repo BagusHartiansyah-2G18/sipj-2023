@@ -98,7 +98,7 @@ class Csppd extends Controller
                 'kdBidang' => 'required',
                 'kdSub' => 'required',
                 'kdJudul' => 'required',
-                'no'=> 'required',
+                // 'no'=> 'required',
                 'lokasi'=> 'required',
 
                 'date'=> 'required',
@@ -111,7 +111,7 @@ class Csppd extends Controller
                 'anggaran'=> 'required',
             ]);
             $data =Hdb::workAdded([
-                $request->no,$request->kdDinas,$request->kdBidang,
+                $request->kdDinas,$request->kdBidang,
 
                 $request->maksud,$request->angkut,$request->tempatS,$request->tempatE,
 

@@ -13,7 +13,7 @@ function FormTahapan({ dt, setview }) {
                 <div className="flexR3 pwrap">
                     <ul>
                         <li className="ptb10px">
-                            <label className="fbold">No SPPD</label><br></br>
+                            <label className="fbold">No</label><br></br>
                             <span>{dt.no}</span>
                         </li>
                         <li className="ptb10px">

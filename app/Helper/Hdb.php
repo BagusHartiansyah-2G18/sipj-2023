@@ -560,6 +560,21 @@ class Hdb {
         ');
     }
     function workAdded($v){
+        $keyTabel="no";
+        $kdTabel=DB::select("select ".$keyTabel." from work where
+            kdDinas='".$v[0]."'and
+            kdBidang='".$v[1]."' and
+            taWork='".$v[10]."' and
+            kdSub='".$v[11]."' and
+            kdJudul='".$v[12]."' and
+            kdBAnggota=''
+            ORDER BY cast(".$keyTabel." as int) DESC limit 1
+        ");
+        if(count($kdTabel)>0){
+            $kdTabel=$kdTabel[0]->no+1;
+        }else{
+            $kdTabel=1;
+        }
         return DB::insert("
             insert work (
                 no, kdDinas, kdBidang,
@@ -570,7 +585,7 @@ class Hdb {
                 taWork, kdSub, kdJudul,kdBAnggota
             ) values
             (
-                ?,?,?,
+                '".$kdTabel."',?,?,
                 ?,?,?,?,
                 ?,?,?,?,
                 ?,?,?,?

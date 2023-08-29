@@ -89,6 +89,7 @@ function SPPD(){
                                     indWork={indWork}
                                     modalC={setmodalC}
                                     param={{...param, no:_sppd.dwork[indWork].no}}
+                                    setview={setview}
                                     >
                                 </FormDasar>
                             )

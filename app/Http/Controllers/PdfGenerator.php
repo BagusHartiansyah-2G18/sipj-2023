@@ -38,6 +38,7 @@ class PdfGenerator extends Controller
                 foreach ($member as $key => $value) {
                     $xtotal=0;
                     $param["kdBAnggota"]=$value->kdBAnggota;
+                    $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
                     $member[$key]->ddukung = Hdb::jenisDataDukung($param);
                     if(count($member[$key]->ddukung)>0){
                         foreach ($member[$key]->ddukung as $key1 => $value1) {
@@ -58,7 +59,7 @@ class PdfGenerator extends Controller
             // return print_r($member);
             $textTotal=[];
             foreach ($total as $key => $value) {
-                $textTotal[$key]=Hsf::terbilang($value);
+                $textTotal[$key]=Hsf::terbilang($value)." Rupiah";
             }
 
             $asDinas ='Bappeda';
@@ -82,7 +83,7 @@ class PdfGenerator extends Controller
                 'sub'    => $data->nmSub,
                 'uraian' => $data->nama,
                 'tujuan' => $data->tujuan,
-
+                "no" =>"000.1.2.3/_____",
                 'noSppd' => $param['no'],
                 'tglSppd' => '30 Januari 2023',
 
@@ -180,7 +181,7 @@ class PdfGenerator extends Controller
                 }
             }
 
-            // $member = array_merge( $member, $member);
+            // $member = array_merge($member, $member);
             $date =  explode("-",$param['tglCetak']);
             // Array ( [0] => 2023 [1] => 08 [2] => 27 )
 
@@ -228,7 +229,7 @@ class PdfGenerator extends Controller
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
 
-                'nomor' =>$data->no."/_____/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
+                'nomor' =>"000.1.2.3/_____/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
                 'nomorTugas' =>"800.1.11.1/_____/".$this->getRomawi($date[1])."/".$date[0]
             ];
             $pdf = PDF::loadView('pdf.suratTugas', $datax)
@@ -240,7 +241,7 @@ class PdfGenerator extends Controller
             'msg' => $cek['msg']
         ], 200);
     }
-    public function sppdSetda($val){
+    public function sppdBupatiSetda($val){
         $user =Auth::user();
         $cek = $this->portal($user);
         if($cek['exc']){
@@ -258,7 +259,7 @@ class PdfGenerator extends Controller
             $data =Hdb::dwork($param)[0];
 
             $param["where"]= ' and a.kdBAnggota !=""
-                and b.tingkatan>3
+                and b.tingkatan<=3
             ';
             $member = Hdb::dworkAnggotaBidang($param);
 
@@ -268,7 +269,7 @@ class PdfGenerator extends Controller
                 "tahun"=>$param['tahun'],
                 "status"=>"setda"
             ])[0];
-            $jabatanPim = "A.n. BUPATI SUMBAWA BARAT <br> Plh. ".$pimpinan->nmJabatan;
+            $jabatanPim = "<label style='text-transform: lowercase'>a.n</label> BUPATI SUMBAWA BARAT <br> <label style='text-transform: capitalize'>Plh</label>. ".$pimpinan->nmJabatan;
             if(!empty($data->pimSetda)){
                 // get Pimpinan selected
                 $split = explode("|",$data->pimSetda);
@@ -279,7 +280,7 @@ class PdfGenerator extends Controller
                     "kdBidang"=>$split[1]
                 ])[0];
                 if($selectPim->status !=='setda'){
-                    $jabatanPim .= "<br> u.b ".$selectPim->nmJabatan;
+                    $jabatanPim .= "<br> <label style='text-transform: lowercase'>u.b</label> ".$selectPim->nmJabatan;
                     $pimpinan = $selectPim;
                 }
 
@@ -326,7 +327,109 @@ class PdfGenerator extends Controller
 
                 "dateS"=>$dateS[2]." ".$this->getBulan($dateS[1])." ".$dateS[0] ,
                 "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
+                "no" =>"000.1.2.3",
+                'member' => $member,
+                'pimpinan'=> $pimpinan,
+                'jabatanPim' => $jabatanPim,
+                'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],
+                'hari'  => $hari." Hari"
+            ];
+            $pdf = PDF::loadView('pdf.sppdSetda', $datax)
+                    ->setPaper('legal','portrait');
+            return $pdf->stream('sppd-Setda'.$data->no.'.pdf');
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
+    public function sppdSetda($val){
+        $user =Auth::user();
+        $cek = $this->portal($user);
+        if($cek['exc']){
+            $baseEND=json_decode((base64_decode($val)));
+            $param = [
+                "kdDinas"=>$baseEND->{'kdDinas'},
+                // "kdBidang"=>$baseEND->{'kdBidang'},
+                "kdSub"=>$baseEND->{'kdSub'},
+                "kdJudul"=>$baseEND->{'kdJudul'},
+                "no"=>$baseEND->{'no'},
+                "tahun"=>$cek['ta'],
+                "tglCetak"=>$baseEND->{'tglCetak'}
+            ];
+            $param["where"]= ' and a.kdBAnggota =""';
+            $data =Hdb::dwork($param)[0];
 
+            $param["where"]= ' and a.kdBAnggota !=""
+                and b.tingkatan>3
+            ';
+            $member = Hdb::dworkAnggotaBidang($param);
+
+            // getPimpinan
+            $pimpinan = Hdb::getAnggotaJabatan([
+                "kdDinas"=>$cek['setda'],
+                "tahun"=>$param['tahun'],
+                "status"=>"setda"
+            ])[0];
+            $jabatanPim =$pimpinan->nmJabatan;
+            if(!empty($data->pimSetda)){
+                // get Pimpinan selected
+                $split = explode("|",$data->pimSetda);
+                $selectPim = Hdb::getOneAnggota([
+                    "kdDinas"=>$split[2],
+                    "tahun"=>$param['tahun'],
+                    "kdBAnggota"=>$split[0],
+                    "kdBidang"=>$split[1]
+                ])[0];
+                if($selectPim->status !=='setda'){
+                    $jabatanPim .= "<br> <label style='text-transform: lowercase'>u.b</label> ".$selectPim->nmJabatan;
+                    $pimpinan = $selectPim;
+                }
+
+                // if($selectPim->status === "kabid "){
+                //     $selectPim1 = Hdb::getAnggotaJabatan([
+                //         "kdDinas"=>$param['kdDinas'],
+                //         "tahun"=>$param['tahun'],
+                //         "status"=>"sekretaris"
+                //     ]);
+                // }
+            }
+
+            $dinas = Hdb::getDinasOne($cek['setda'],$param['tahun']);
+
+            if(count($member)>0){
+                foreach ($member as $key => $value) {
+                    $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
+                }
+            }
+
+            $date =  explode("-",$param['tglCetak']);
+            // Array ( [0] => 2023 [1] => 08 [2] => 27 )
+            $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+
+            $dateS = explode("-",$data->date);
+            $dateE = [];
+            $textTanggal = $dateS[2];
+            if(!empty($data->dateE)){
+                $dateE = explode("-",$data->dateE);
+            }
+
+            $asKab = 'Kab. Sumbawa Barat';
+            $kab = 'Kabupaten Sumbawa Barat';
+            $asdiskab= $dinas->asDinas.' '.$asKab;
+            $datax = [
+                'dinas' =>$dinas->nmDinas,
+                'asDinas' => $dinas->asDinas,
+                'asKab' => $asKab,
+                'kab' => $kab,
+                'asdiskab' => $asdiskab,
+                'alamat'    => $dinas->alamat,
+                "tahun"=> $cek['ta'],
+                'data' => $data,
+
+                "dateS"=>$dateS[2]." ".$this->getBulan($dateS[1])." ".$dateS[0] ,
+                "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
+                "no" =>"000.1.2.3",
                 'member' => $member,
                 'pimpinan'=> $pimpinan,
                 'jabatanPim' => $jabatanPim,
@@ -429,7 +532,7 @@ class PdfGenerator extends Controller
                 'data' => $data,
                 "dateS"=>$dateS[2]." ".$this->getBulan($dateS[1])." ".$dateS[0] ,
                 "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
-
+                "no" =>"000.1.2.3",
                 'member' => $member,
                 'pimpinan'=> $pimpinan,
                 'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],

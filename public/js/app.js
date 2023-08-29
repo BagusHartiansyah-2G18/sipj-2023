@@ -14238,7 +14238,8 @@ function FormDasar(_ref) {
   var dt = _ref.dt,
     modalC = _ref.modalC,
     param = _ref.param,
-    indWork = _ref.indWork;
+    indWork = _ref.indWork,
+    setview = _ref.setview;
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
     _useState2 = _slicedToArray(_useState, 1),
@@ -14286,6 +14287,7 @@ function FormDasar(_ref) {
       dasar: dasar.value
     })));
     mclose();
+    setview(1);
   };
   if (dt === undefined || dt === null) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {});
@@ -14526,48 +14528,41 @@ function FormData(_ref) {
     button: true,
     width: '250px'
   }]);
+  // const [ no, setno] = useInput();
   var _useInput3 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
     _useInput4 = _slicedToArray(_useInput3, 2),
-    no = _useInput4[0],
-    setno = _useInput4[1];
+    lokasi = _useInput4[0],
+    setlokasi = _useInput4[1];
   var _useInput5 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
     _useInput6 = _slicedToArray(_useInput5, 2),
-    lokasi = _useInput6[0],
-    setlokasi = _useInput6[1];
+    date = _useInput6[0],
+    setdate = _useInput6[1];
   var _useInput7 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
     _useInput8 = _slicedToArray(_useInput7, 2),
-    date = _useInput8[0],
-    setdate = _useInput8[1];
+    dateE = _useInput8[0],
+    setdateE = _useInput8[1];
   var _useInput9 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
     _useInput10 = _slicedToArray(_useInput9, 2),
-    dateE = _useInput10[0],
-    setdateE = _useInput10[1];
+    maksud = _useInput10[0],
+    setmaksud = _useInput10[1];
   var _useInput11 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
     _useInput12 = _slicedToArray(_useInput11, 2),
-    maksud = _useInput12[0],
-    setmaksud = _useInput12[1];
-  var _useInput13 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
+    angkut = _useInput12[0],
+    setangkut = _useInput12[1];
+  var _useInput13 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)('Taliwang'),
     _useInput14 = _slicedToArray(_useInput13, 2),
-    angkut = _useInput14[0],
-    setangkut = _useInput14[1];
-  var _useInput15 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)('Taliwang'),
+    tempatS = _useInput14[0],
+    settempatS = _useInput14[1];
+  var _useInput15 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
     _useInput16 = _slicedToArray(_useInput15, 2),
-    tempatS = _useInput16[0],
-    settempatS = _useInput16[1];
+    tempatE = _useInput16[0],
+    settempatE = _useInput16[1];
   var _useInput17 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
     _useInput18 = _slicedToArray(_useInput17, 2),
-    tempatE = _useInput18[0],
-    settempatE = _useInput18[1];
-  var _useInput19 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(),
-    _useInput20 = _slicedToArray(_useInput19, 2),
-    anggaran = _useInput20[0],
-    setanggaran = _useInput20[1];
+    anggaran = _useInput18[0],
+    setanggaran = _useInput18[1];
   function reset() {
-    setno({
-      target: {
-        value: ''
-      }
-    });
+    // setno({target:{value:''}});
     setdate({
       target: {
         value: ''
@@ -14595,7 +14590,7 @@ function FormData(_ref) {
     });
     settempatS({
       target: {
-        value: ''
+        value: 'Taliwang'
       }
     });
     settempatE({
@@ -14619,7 +14614,7 @@ function FormData(_ref) {
   };
   var xadded = function xadded() {
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.added)(_objectSpread({
-      no: no,
+      // no,
       lokasi: lokasi,
       date: date,
       dateE: dateE,
@@ -14699,11 +14694,7 @@ function FormData(_ref) {
     setind(i);
     setIns(0);
     setOnOff(0);
-    setno({
-      target: {
-        value: v.no
-      }
-    });
+    // setno({target:{value:v.no}});
     setdate({
       target: {
         value: v.date
@@ -14747,7 +14738,7 @@ function FormData(_ref) {
   };
   var xupded = function xupded() {
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.upded)(_objectSpread(_objectSpread({
-      no: no,
+      // no,
       lokasi: lokasi,
       date: date,
       dateE: dateE,
@@ -14820,22 +14811,6 @@ function FormData(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "w95p m0auto ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "doubleInput ptb10px borderB",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-            children: "No SPPD"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "iconInput2 ",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              className: "borderR10px",
-              type: "text",
-              value: no,
-              onChange: setno,
-              placeholder: "Nomor SPPD"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "doubleInput ptb10px borderB",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
             children: "Maksud Perjalanan"
@@ -15208,9 +15183,18 @@ function FormDokumen(_ref) {
           className: "header",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
             children: "2. Surat Perjalanan Dinas (BUPATI)"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "btnGroup",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/pdf/sppdBupatiSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                tglCetak: tglCetak
+              })))),
+              className: "btn2 bwarning ptb0",
+              target: "_blank",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                className: "mdi mdi-file-pdf-box fz25"
+              }), " Dokumen SETDA"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/pdf/sppdBupati/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
                 tglCetak: tglCetak
               })))),
@@ -15219,7 +15203,7 @@ function FormDokumen(_ref) {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
               }), " Dokumen"]
-            })
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body ",
@@ -15927,7 +15911,7 @@ function FormTahapan(_ref) {
             className: "ptb10px",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
               className: "fbold",
-              children: "No SPPD"
+              children: "No"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
               children: dt.no
             })]
@@ -17467,7 +17451,8 @@ function SPPD() {
         modalC: setmodalC,
         param: _objectSpread(_objectSpread({}, param), {}, {
           no: _sppd.dwork[indWork].no
-        })
+        }),
+        setview: setview
       }), view === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formAnggota__WEBPACK_IMPORTED_MODULE_5__["default"], {
         dt: _sppd.dwork[indWork],
         indWork: indWork,
@@ -20311,11 +20296,11 @@ var colAnggota = [{
   }
 }];
 var coldata = [{
-  name: 'Nomor',
+  name: 'No',
   selector: function selector(row) {
     return row.no;
   },
-  width: '150px'
+  width: '50px'
 }, {
   name: 'Tujuan',
   selector: function selector(row) {
