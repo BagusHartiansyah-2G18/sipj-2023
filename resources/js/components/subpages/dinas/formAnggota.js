@@ -101,7 +101,7 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
                 footer : (
                     sfHtml.modalBtn({
                         mclose,
-                        xdeled
+                        xdeled:(()=>xdeled(i,anggota[i].kdBAnggota))
                     })
                 )
             })
@@ -112,11 +112,11 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
             })
         )
     }
-    const xdeled = () =>{
+    const xdeled = (i,kdAnggota) =>{
         dispatch(
             deledAnggota({
-                kdDinas, kdDBidang, kdBAnggota,
-                ind, index, index1
+                kdDinas, kdDBidang, kdBAnggota:kdAnggota,
+                ind, index, index1:i
         }));
         mclose();
     }

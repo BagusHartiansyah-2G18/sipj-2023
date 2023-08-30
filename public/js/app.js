@@ -11822,21 +11822,23 @@ function FormAnggota(_ref) {
       }),
       footer: _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_5__["default"].modalBtn({
         mclose: mclose,
-        xdeled: xdeled
+        xdeled: function xdeled() {
+          return _xdeled(i, anggota[i].kdBAnggota);
+        }
       })
     }));
     dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_6__.setHtml)({
       modal: true
     }));
   };
-  var xdeled = function xdeled() {
+  var _xdeled = function _xdeled(i, kdAnggota) {
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.deledAnggota)({
       kdDinas: kdDinas,
       kdDBidang: kdDBidang,
-      kdBAnggota: kdBAnggota,
+      kdBAnggota: kdAnggota,
       ind: ind,
       index: index,
-      index1: index1
+      index1: i
     }));
     mclose();
   };
@@ -15265,7 +15267,9 @@ function FormDokumen(_ref) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btnGroup",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-              to: "/pdf/kwitansiSppd/".concat(btoa(JSON.stringify(param))),
+              to: "/pdf/kwitansiSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                tglCetak: tglCetak
+              })))),
               className: "btn2 bsuccess clight ptb0",
               target: "_blank",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
@@ -15359,7 +15363,8 @@ function FormEntriBiaya(_ref) {
       ind: indWork,
       index: dt[ind].ind,
       param: _objectSpread(_objectSpread({}, param), {}, {
-        kdBAnggota: dt[ind].kdBAnggota
+        kdBAnggota: dt[ind].kdBAnggota,
+        kdBidang: dt[ind].kdDBidang
       })
     }));
     mclose();
@@ -15519,7 +15524,7 @@ function FormEntriBiaya(_ref) {
   });
 }
 FormEntriBiaya.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().object).isRequired,
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().array).isRequired,
   param: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().object).isRequired,
   indWork: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().number).isRequired,
   modalC: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().func).isRequired
@@ -17423,7 +17428,7 @@ function SPPD() {
     setindWork(i);
   };
   // if(indWork<0){
-  //     stepSetAnggota({no:'000.1.2.3'});
+  //     stepSetAnggota({no:'1'});
   // }
   // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
   // console.log(view);
@@ -20244,7 +20249,7 @@ function addedWorkStaf(_ref9) {
                         _context9.next = 2;
                         return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
                           url: "sppd/addedUser",
-                          body: _objectSpread(_objectSpread({}, v), param)
+                          body: _objectSpread(_objectSpread({}, param), v)
                         });
                       case 2:
                       case "end":
@@ -20848,10 +20853,11 @@ function concatDataAnggotaSelected(_ref3) {
     dpendukung = _ref3.dpendukung;
   var xdt = [],
     add = false;
+  //   console.log(allData,dataTerpilih);
   allData.forEach(function (v, i) {
     add = true;
     dataTerpilih.forEach(function (v1) {
-      if (v1.kdBAnggota === v.kdBAnggota && v1.kdBidang === v.kdBidang) {
+      if (v1.kdBAnggota === v.kdBAnggota && v1.kdDBidang === v.kdDBidang) {
         xdt.push(_objectSpread(_objectSpread(_objectSpread({}, v), param), {}, {
           xind: i,
           kdBAnggota: v.kdBAnggota,
@@ -20871,6 +20877,7 @@ function concatDataAnggotaSelected(_ref3) {
   //   // toast.error('terjadi kesalahan pengelolaan data');
   //   return [];
   // }
+  //   console.log(xdt);
   return xdt;
 }
 
@@ -21046,8 +21053,8 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var api = function () {
-  // const BASE_URL = 'http://localhost:8000/';
-  var BASE_URL = 'https://sipj.bappedaksb.com/';
+  var BASE_URL = 'http://localhost:8000/';
+  // const BASE_URL = 'https://sipj.bappedaksb.com/';
   function GET(_x) {
     return _GET.apply(this, arguments);
   }

@@ -117,7 +117,7 @@
                                     <Table>
                                         <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
                                         <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
-                                        <tr><td></td><td>Jabatan</td><td>: {{$dt->nmJabatan}} {{$asdiskab}}</td></tr>
+                                        <tr><td></td><td>Jabatan</td><td >: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
                                         <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
                                         <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
                                     </Table>
@@ -125,9 +125,9 @@
                                 @if(count($member)>4)
                                     @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
                                         <div class="page-break"></div>
-                                        <div style="margin-left: 70px;">
+                                        <div style="margin-left: 70px; width: 100%;">
                                         @php $tamp=0; $tamHtml='</div>'; @endphp
-                                    @elseif(($tamp+1)%10 === 0)
+                                    @elseif(($tamp+1)%9 === 0)
 
                                         @if($tamHtml!='')
                                             @php echo($tamHtml); $tamp=0; $tamHtml=''; @endphp
@@ -136,15 +136,17 @@
                                         <!-- loop member >9 -->
                                         @if($loop->index+1!=count($member))
                                             <div class="page-break"></div>
-                                            <div style="margin-left: 70px;">
+                                            <div style="margin-left: 70px;width: 100%;">
                                             @php $tamp=0; $tamHtml='</div>'; @endphp
                                         @endif
                                     @endif
                                     @php $tamp++; @endphp
                                 @else
-                                    @for($a=4-count($member); $a>0; $a--)
-                                        <div style="min-height: 130px;"></div>
-                                    @endfor
+                                    <!-- @if($loop->index+1 == count($member))
+                                        @for($a=4-count($member); $a>0; $a--)
+                                            <div style="min-height: 130px;"></div>
+                                        @endfor
+                                    @endif -->
                                 @endif
 
                                 <!-- (@php echo($tamp); @endphp) -->
@@ -269,7 +271,7 @@
                                 <Table>
                                     <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
                                     <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
-                                    <tr><td></td><td>Jabatan</td><td>: {{$dt->nmJabatan}} {{$asdiskab}}</td></tr>
+                                    <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
                                     <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
                                     <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
                                 </Table>
@@ -278,7 +280,7 @@
                                 @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
                                     <div class="page-break"></div>
                                     @php $tamp=0; @endphp
-                                @elseif(($tamp+1)%10 === 0)
+                                @elseif(($tamp+1)%8 === 0)
                                     @if($tamHtml!='')
                                         @php $tamp=0; $tamHtml=''; @endphp
                                     @endif
@@ -290,9 +292,9 @@
                                 @endif
                                 @php $tamp++; @endphp
                             @else
-                                @for($a=4-count($member); $a>0; $a--)
+                                <!-- @for($a=4-count($member); $a>0; $a--)
                                     <div style="min-height: 130px;"></div>
-                                @endfor
+                                @endfor -->
                             @endif
 
                             <!-- (@php echo($tamp); @endphp) -->

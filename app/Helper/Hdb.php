@@ -150,7 +150,7 @@ class Hdb {
         return DB::select('
             select
                 a.kdBAnggota, a.nmAnggota, a.nmJabatan, a.nip, a.status,
-                b.nmBidang, b.asBidang,
+                b.nmBidang, b.asBidang, b.kdDBidang,
                 0 as aktif
             from dinas_b_anggota a
             join dinas_bidang b on
@@ -449,7 +449,7 @@ class Hdb {
                 a.kdJudul, a.nama, a.total,
                 b.kdSub, b.nmSub,
                 c.nmKeg, c.kdKeg,
-                d.total as totWork, d.date,d.tujuan
+                d.total as totWork, d.date,d.tujuan, d.tempatE
             from  ubjudul a
             join work d on
                 a.kdJudul = d.kdJudul and
@@ -504,7 +504,7 @@ class Hdb {
         }
         return DB::select('
             select
-                a.no, a.date, a.status, a.kdBAnggota, a.tujuan, a.noBuku, a.tglBuku, a.file,
+                a.no, a.date, a.status, a.kdBAnggota, a.kdBidang , a.kdBidang as kdDBidang, a.tujuan, a.noBuku, a.tglBuku, a.file,
                 maksud, angkut, tempatS, tempatE, dateE, anggaran, keterangan, lokasi, fileD, dasar, pimOpd, pimBupati, pimSetda,
                 (
                     select sum(a1.volume * a1.nilai)
@@ -518,6 +518,7 @@ class Hdb {
                 ) as total
             from work a
             '.$where.'
+
         ');
     }
     function dworkAnggotaBidang($v){
@@ -549,13 +550,20 @@ class Hdb {
         return DB::select('
             select
                 a.no, a.date, a.status, a.kdBAnggota,
-                b.nip, b.nmAnggota, b.nip, b.nmJabatan, b.asJabatan, b.golongan, b.tingkatan
+                b.nip, b.nmAnggota, b.nip, b.nmJabatan, b.asJabatan, b.golongan, b.tingkatan,
+                c.nmBidang
             from work a
             join dinas_b_anggota b on
                 a.kdBAnggota = b.kdBAnggota and
-                a.kdDinas = b.kdDinas
+                a.kdBidang = b.kdBidang and
+                a.kdDinas = b.kdDinas and
+                a.taWork = b.taBAnggota
+            join dinas_bidang c on
+                b.kdDinas = c.kdDinas and
+                b.kdBidang = c.kdDBidang and
+                b.taBAnggota = c.taDBidang
             '.$where.'
-
+            GROUP BY a.no, a.kdBAnggota, a.kdBidang, a.kdDinas, a.taWork, a.kdSub, a.kdJudul
             order by b.tingkatan, b.nip asc
         ');
     }

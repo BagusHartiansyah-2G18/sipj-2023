@@ -25,12 +25,16 @@ class PdfGenerator extends Controller
                 "kdJudul"=>$baseEND->{'kdJudul'},
                 "no"=>$baseEND->{'no'},
                 "tahun"=>$cek['ta'],
-                "kdJPJ"=>'jp-1'
+                "kdJPJ"=>'jp-1',
+                "tglCetak"=>$baseEND->{'tglCetak'}
             ];
             $param["where"]= ' and d.kdBAnggota =""';
             $data =Hdb::getDataSppdKegiatan($param)[0];
             $param["where"]= ' and a.kdBAnggota !=""';
+            unset($param['kdBidang']);
             $member = Hdb::dworkAnggotaBidang($param);
+
+            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
 
             $total=[];
 
@@ -55,18 +59,21 @@ class PdfGenerator extends Controller
                     // $anggotaWork[$key]->uraian = Hdb::dworkUraian($param);
                 }
             }
+
+
             // echo "<pre>";
             // return print_r($member);
+            $date =  explode("-",$param['tglCetak']);
+
             $textTotal=[];
             foreach ($total as $key => $value) {
                 $textTotal[$key]=Hsf::terbilang($value)." Rupiah";
             }
 
-            $asDinas ='Bappeda';
             $asKab = 'Kabupaten Sumbawa Barat';
-            $asdiskab= $asDinas.' '.$asKab;
+            $asdiskab= $dinas->asDinas.' '.$asKab;
             $datax = [
-                'asDinas' => $asDinas,
+                'asDinas' => $dinas->asDinas,
                 'asKab' => $asKab,
                 'asdiskab' => $asdiskab,
                 'noRek'     => '-',
@@ -82,14 +89,14 @@ class PdfGenerator extends Controller
                 'keg' => $data->nmKeg,
                 'sub'    => $data->nmSub,
                 'uraian' => $data->nama,
-                'tujuan' => $data->tujuan,
+                'tujuan' => $data->tempatE,
                 "no" =>"000.1.2.3/_____",
                 'noSppd' => $param['no'],
-                'tglSppd' => '30 Januari 2023',
+                'tglSppd' => $date[2]." ".$this->getBulan($date[1])." ".$date[0],
 
-                'kaban' => 'Bagus H',
-                'nipKaban' => '121010011102',
-                'bendahara'=>'diding S',
+                'kaban' => 'Data Pimpinan 0',
+                'nipKaban' => '-',
+                'bendahara'=>'Data Bendahara 0',
                 'nipBendahara' => '12101001110221',
                 "tahun"=> $cek['ta'],
                 'data' => $member,
@@ -173,7 +180,8 @@ class PdfGenerator extends Controller
             }
 
             $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
-
+            // echo("<pre>");
+            // return print_r($dinas);
 
             if(count($member)>0){
                 foreach ($member as $key => $value) {
@@ -382,7 +390,7 @@ class PdfGenerator extends Controller
                     "kdBidang"=>$split[1]
                 ])[0];
                 if($selectPim->status !=='setda'){
-                    $jabatanPim .= "<br> <label style='text-transform: lowercase'>u.b</label> ".$selectPim->nmJabatan;
+                    $jabatanPim .= "<br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
                     $pimpinan = $selectPim;
                 }
 
@@ -497,8 +505,9 @@ class PdfGenerator extends Controller
                 //     ]);
                 // }
             }
+            // $member = [$member[0]];
 
-            $dinas = Hdb::getDinasOne($cek['setda'],$param['tahun']);
+            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
 
             if(count($member)>0){
                 foreach ($member as $key => $value) {
@@ -520,7 +529,7 @@ class PdfGenerator extends Controller
             $asDinas ='Bupati';
             $asKab = 'Kab. Sumbawa Barat';
             $kab = 'Sumbawa Barat';
-            $asdiskab= $asDinas.' '.$asKab;
+            $asdiskab= $dinas->asDinas.' '.$asKab;
             $datax = [
                 'dinas' => 'BUPATI',
                 'asDinas' => $asDinas,

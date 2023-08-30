@@ -200,7 +200,7 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                         <h3>4. Kwitansi</h3>
                         <div className="btnGroup">
                             <Link
-                                to={`/pdf/kwitansiSppd/${btoa(JSON.stringify(param))}`}
+                                to={`/pdf/kwitansiSppd/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
                                 <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen

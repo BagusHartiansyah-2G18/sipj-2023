@@ -42,7 +42,8 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
             index:dt[ind].ind,
             param:{
                 ...param,
-                kdBAnggota:dt[ind].kdBAnggota
+                kdBAnggota:dt[ind].kdBAnggota,
+                kdBidang:dt[ind].kdDBidang
             }
         }))
         mclose();
@@ -189,7 +190,7 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
     );
 }
 FormEntriBiaya.propTypes = {
-    dt : PropTypes.object.isRequired,
+    dt : PropTypes.array.isRequired,
     param : PropTypes.object.isRequired,
     indWork : PropTypes.number.isRequired,
     modalC : PropTypes.func.isRequired

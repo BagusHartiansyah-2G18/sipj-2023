@@ -83,24 +83,26 @@
                 <tr>
                     <td>BANYAKNYA UANG</td>
                     <td>:</td>
-                    <td><b class="capitalize">{{$textTotal[$loop->index]}}</b></td>
+                    <td><b class="capitalize">{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</b></td>
                 </tr>
                 <tr>
                     <td>UNTUK PEMBAYARAN</td>
                     <td>:</td>
                     <td>
-                        {{
-                            $uraian." ke ".
-                            $tujuan." An. ".
-                            $dt->nmAnggota." jabatan ".
-                            $dt->nmJabatan." ".
-                            $nmBidang." ".
-                            $asDinas." ".
-                            " pada Kegiatan ".
-                            $keg." ".
-                            " pada Sub Kegiatan ".
-                            $sub." "
-                        }}
+                        <p style="text-align: justify;">
+                            {{
+                                $uraian." ke ".
+                                $tujuan." An. ".
+                                $dt->nmAnggota." jabatan ".
+                                $dt->nmJabatan." ".
+                                ($dt->status==='bidang' || $dt->status==='kabid'?$dt->nmBidang." ":"").
+                                $asDinas." ".
+                                " pada Kegiatan ".
+                                $keg." ".
+                                " pada Sub Kegiatan ".
+                                $sub." "
+                            }}
+                        </p>
                         <br><br>
                         <table >
                             <tr>

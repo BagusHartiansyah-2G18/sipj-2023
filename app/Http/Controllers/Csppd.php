@@ -143,7 +143,7 @@ class Csppd extends Controller
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
-                'kdBidang' => 'required',
+                'kdDBidang' => 'required',
                 'kdSub' => 'required',
                 'kdJudul' => 'required',
                 'no'=> 'required',
@@ -153,7 +153,7 @@ class Csppd extends Controller
             $data =Hdb::workAdduser([
                 $request->no,
                 $request->kdDinas,
-                $request->kdBidang,
+                $request->kdDBidang,
                 $cek['ta'],
                 $request->kdSub,
                 $request->kdJudul,
@@ -431,7 +431,7 @@ class Csppd extends Controller
                 'kdJudul' => 'required',
                 'no'=> 'required',
             ]);
-            $param = $request->only("kdDinas","kdBidang","kdSub","kdJudul","no");
+            $param = $request->only("kdDinas","kdSub","kdJudul","no");
             $param["tahun"]= $cek['ta'];
             $param["where"]= ' and a.kdBAnggota !=""';
 

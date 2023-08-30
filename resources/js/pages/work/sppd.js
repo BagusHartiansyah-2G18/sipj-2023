@@ -52,7 +52,7 @@ function SPPD(){
         setindWork(i);
     }
     // if(indWork<0){
-    //     stepSetAnggota({no:'000.1.2.3'});
+    //     stepSetAnggota({no:'1'});
     // }
     // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
     // console.log(view);

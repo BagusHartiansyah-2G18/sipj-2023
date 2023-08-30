@@ -30,6 +30,13 @@
         table{
             box-sizing: 1.5px;
         }
+        #tabelNo{
+
+        }
+        #tabelNo td{
+            padding: 0;
+            margin: 0;
+        }
         td{
             padding: 5px;
         }
@@ -46,6 +53,7 @@
             padding: 0px 0px 0px 20px;
             margin: 0px;
         }
+        .tupper{text-transform: uppercase;}
         .pwrap{padding: 0px 10px;}
         .tcenter{text-align: center;}
         .tend{text-align: right;}
@@ -61,6 +69,8 @@
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
+        $titik ='..............................................';
+        $br="<br><br><br>";
     @endphp
 
     @foreach ($member as $dt)
@@ -147,7 +157,7 @@
                                     <ul>
                                         <ol type="a">
                                             <li>{{(empty($dt->golongan)?'-':$dt->golongan)}}</li>
-                                            <li>{{$dt->nmJabatan}}</li>
+                                            <li>{{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)." ".$asdiskab}}</li>
                                             <li>{{$dt->tingkat}}</li>
                                         </ol>
                                     </ul>
@@ -310,5 +320,203 @@
             <div class="page-break"></div>
         @endif
     @endforeach
+    <div class="page-break"></div>
+    <table class="w100p" border="1">
+        <tr>
+            <td class="w5p"></td>
+            <td class="w45p"></td>
+            <td>
+                SPD No. <br>
+                <table border="0" id="tabelNo">
+                    <tr >
+                        <td>Berangkat dari</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>(Tempat kedudukan)</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Ke</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Pada Tanggal</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+                @php echo($br); @endphp
+                (@php echo($titik); @endphp)<br>
+                NIP. <!-- <label style="width: 70px;     border-bottom: 1px dotted black;"></label> -->
+            </td>
+        </tr>
+        <tr>
+            <td class="w5p">a</td>
+            <td class="w45p">
+                <table border="0"  id="tabelNo">
+                    <tr>
+                        <td>Tiba di</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Pada Tanggal</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+                @php echo($br); @endphp
+                (@php echo($titik); @endphp)<br>
+                NIP.
+            </td>
+            <td>
+                <table border="0" id="tabelNo">
+                    <tr>
+                        <td>Berangkat dari</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Ke</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Pada Tanggal</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+                @php echo($br); @endphp
+                (@php echo($titik); @endphp)<br>
+                NIP.
+            </td>
+        </tr>
+        <tr>
+            <td class="w5p">b</td>
+            <td class="w45p">
+                <table border="0" id="tabelNo">
+                    <tr>
+                        <td>Tiba di</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Pada Tanggal</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+                @php echo($br); @endphp
+                (@php echo($titik); @endphp)<br>
+                NIP.
+            </td>
+            <td>
+                <table border="0" id="tabelNo">
+                    <tr>
+                        <td>Berangkat dari</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Ke</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Pada Tanggal</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+                @php echo($br); @endphp
+                (@php echo($titik); @endphp)<br>
+                NIP.
+            </td>
+        </tr>
+        <tr>
+            <td class="w5p">c</td>
+            <td class="w45p">
+                <table border="0" id="tabelNo">
+                    <tr>
+                        <td>Tiba di</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Pada Tanggal</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+                @php echo($br); @endphp
+                (@php echo($titik); @endphp) <br>
+                NIP.
+            </td>
+            <td>
+                <table border="0" id="tabelNo">
+                    <tr>
+                        <td>Berangkat dari</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Ke</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Pada Tanggal</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+                @php echo($br); @endphp
+                (@php echo($titik); @endphp) <br>
+                NIP.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div style="margin-left: 40%;">
+                    <table border="0" id="tabelNo" class="w100p">
+                        <tr>
+                            <td class="w30p">Tiba kembali di</td>
+                            <td>:</td>
+                        </tr>
+                        <tr>
+                            <td>Pada tanggal</td>
+                            <td>:</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p style="text-align: justify;">
+                                    Telah diperiksa dengan keterangan bahwa perjalanan tersebut
+                                    diatas benar dilaksanakan atas perintahnya dan semata - mata untuk
+                                    kepentingan jabatan dalam waktu yang sesingkat - singkatnya
+                                </p>
+                                <p class="tcenter">
+                                    <b>
+                                        <label class="tupper">@php echo($jabatanPim); @endphp</label>
+                                        @php echo($br); @endphp
+                                        {{$pimpinan->nmAnggota}}<br>
+                                        NIP. {{$pimpinan->nip}}
+                                    </b>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td >d</td>
+            <td colspan="2">
+                <label class="tupper">
+                    catatan lain - lain
+                </label>
+            </td>
+
+        </tr>
+        <tr>
+            <td >e</td>
+            <td colspan="2">
+                <label class="tupper">
+                    perhatian
+                </label><br>
+                <p style="text-align: justify;">
+                    Pejabat yang berwenang menerbitkan SPPD, pegawai yang melakukan perjalanan  dinas,
+                    para pejabat yang mengesahkan tanggal berangkat/tiba serta bendaharawan bertanggung jawab
+                    berdasarkan peraturan - peraturan keuangan Negara apabila mendapat rugi akibat kesalahan, Kealpaannya.
+                </p>
+            </td>
+
+        </tr>
+    </table>
 </body>
 </html>
