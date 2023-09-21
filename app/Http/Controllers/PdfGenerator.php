@@ -194,7 +194,7 @@ class PdfGenerator extends Controller
                 //         "status"=>"sekretaris"
                 //     ]);
                 // }
-            }else{
+            }else if($data->pimOpd=='Manual'){
                 $tamPimpinan = explode("&",$data->tdOPD);
                 $nmAnggota = $this->getArrayNewLineInText($tamPimpinan[1]);
                 if(count($nmAnggota)<2){
@@ -328,7 +328,7 @@ class PdfGenerator extends Controller
                 //         "status"=>"sekretaris"
                 //     ]);
                 // }
-            }else{
+            }else if($data->pimSetda=='Manual'){
                 $tamPimpinan = explode("&",$data->tdSETDA);
                 $pimpinan =  (object)[
                     'nmAnggota'=>$this->getNewLineInText($tamPimpinan[1]),
@@ -437,7 +437,7 @@ class PdfGenerator extends Controller
                 //         "status"=>"sekretaris"
                 //     ]);
                 // }
-            }else{
+            }else if($data->pimSetda=='Manual'){
                 $tamPimpinan = explode("&",$data->tdSETDA);
                 $pimpinan =  (object)[
                     'nmAnggota'=>$this->getNewLineInText($tamPimpinan[1]),
@@ -547,7 +547,7 @@ class PdfGenerator extends Controller
                 //         "status"=>"sekretaris"
                 //     ]);
                 // }
-            }else{
+            }else if($data->pimBupati=='Manual'){
                 $tamPimpinan = explode("&",$data->tdBUPATI);
                 $pimpinan =  (object)[
                     'nmAnggota'=>$this->getNewLineInText($tamPimpinan[1]),
