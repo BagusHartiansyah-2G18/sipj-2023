@@ -306,7 +306,8 @@ class PdfGenerator extends Controller
                 "tahun"=>$param['tahun'],
                 "status"=>"setda"
             ])[0];
-            $jabatanPim = "<label style='text-transform: lowercase'>a.n</label> BUPATI SUMBAWA BARAT <br> <label style='text-transform: capitalize'>Plh</label>. ".$pimpinan->nmJabatan;
+            // <label style='text-transform: lowercase'>a.n</label> BUPATI SUMBAWA BARAT <br> "<label style='text-transform: capitalize'>Plh</label>. ".
+            $jabatanPim = $pimpinan->nmJabatan;
             if(!empty($data->pimSetda)  && $data->pimSetda!='Manual'){
                 // get Pimpinan selected
                 $split = explode("|",$data->pimSetda);
