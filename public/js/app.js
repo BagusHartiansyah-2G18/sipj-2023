@@ -17736,12 +17736,10 @@ function SPPD() {
     setindWork(i);
     setview(0);
   };
-  if (indWork < 0) {
-    stepSetAnggota({
-      no: '1'
-    });
-    setview(4);
-  }
+  // if(indWork<0){
+  //     stepSetAnggota({no:'1'});
+  //     setview(4);
+  // }
   // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
   // console.log(view);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
