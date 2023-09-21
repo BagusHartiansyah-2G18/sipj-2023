@@ -124,7 +124,7 @@
                                 @endphp
                                 @foreach ($dt1->uraian as $dt2)
                                     <tr>
-                                        <td colspan="2">{{$num.". ".$dt2->uraian." ".$dt->tingkat." (".$dt2->volume." x ".$dt2->satuan.")"}}</td>
+                                        <td colspan="2">{{$num.". ".$dt2->uraian." ".($loop-index == 1 ? $dt->tingkat:'')." (".$dt2->volume." x ".$dt2->satuan.")"}}</td>
                                         <td>{{ number_format($dt2->nilai,0,',','.')}}</td>
                                         <td>Rp. {{number_format(($dt2->nilai*$dt2->volume),0,',','.')}}</td>
                                     </tr>
