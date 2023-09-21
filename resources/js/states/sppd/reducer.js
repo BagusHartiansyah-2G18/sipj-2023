@@ -30,7 +30,6 @@ function selectAnggota({ dt, act }){
       if(i=== act.ind){
         switch (act.type) {
           case actType.anggotaSelect:
-
             return {
               ...v,
               aktif:(v.aktif?0:1)
@@ -89,6 +88,19 @@ function selectdwork({ dt, act }){
             pimOpd:(act.col==='pimOpd'? act.value:v.pimOpd),
             pimBupati:(act.col==='pimBupati'? act.value:v.pimBupati),
             pimSetda:(act.col==='pimSetda'? act.value:v.pimSetda),
+          }
+        }
+        return v;
+      })
+    break;
+    case actType.nextStep.setTandaTangan:
+      dwork = dt.dwork.map((v,i)=>{
+        if(i=== act.ind){
+          return{
+            ...v,
+            tdOPD:(act.col==='tdOPD'? act.value:v.tdOPD),
+            tdBUPATI:(act.col==='tdBUPATI'? act.value:v.tdBUPATI),
+            tdSETDA:(act.col==='tdSETDA'? act.value:v.tdSETDA),
           }
         }
         return v;

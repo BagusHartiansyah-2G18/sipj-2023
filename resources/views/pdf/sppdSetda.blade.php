@@ -7,9 +7,10 @@
         .page-break {
             page-break-after: always;
         }
-        .fz12{
-            font-size: 12px;
-        }
+        .fz12{ font-size: 12px;}
+        .fz14{ font-size: 14px;}
+        .fz16{font-size: 16px;}
+
         .w100p{width: 100%;}
         .w70p{width: 70%;}
         .w60p{width: 60%;}
@@ -59,13 +60,14 @@
         .tend{text-align: right;}
         .fz40{font-size: 40px;}
         .fz30{font-size: 30px;}
+        .fz25{font-size: 25px;}
         .fz20{font-size: 20px;}
         .bbottom{border-bottom: 1px solid;}
 
         .capitalize{text-transform: capitalize;}
     </style>
 </head>
-<body>
+<body class="fz14">
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
@@ -82,7 +84,7 @@
                     </td>
                     <td>
                         <div class="tcenter pwrap">
-                            <h2 style="text-transform: uppercase;">
+                            <h2 style="text-transform: uppercase;" class="tcenter fz25">
                                 PEMERINTAH {{$kab}}<br>
                                 {{$dinas}}<br>
                             </h2>
@@ -310,8 +312,13 @@
                     <td class="w10p"></td>
                     <td class="w50p"></td>
                     <td>
-                        {{$pimpinan->nmAnggota}}<br>
-                        NIP. {{$pimpinan->nip}}
+                        @if(count((array) $pimpinan)>2)
+                            {{$pimpinan->nmAnggota}}<br>
+                            NIP. {{$pimpinan->nip}}
+                        @else
+                            @php echo($pimpinan->nmAnggota) @endphp
+                        @endif
+
                     </td>
                 </tr>
             </table>
@@ -484,8 +491,13 @@
                                     <b>
                                         <label class="tupper">@php echo($jabatanPim); @endphp</label>
                                         @php echo($br); @endphp
-                                        {{$pimpinan->nmAnggota}}<br>
-                                        NIP. {{$pimpinan->nip}}
+
+                                        @if(count((array) $pimpinan)>2)
+                                            {{$pimpinan->nmAnggota}}<br>
+                                            NIP. {{$pimpinan->nip}}
+                                        @else
+                                            @php echo($pimpinan->nmAnggota) @endphp
+                                        @endif
                                     </b>
                                 </p>
                             </td>

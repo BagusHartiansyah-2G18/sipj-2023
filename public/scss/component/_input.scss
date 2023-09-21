@@ -110,3 +110,8 @@ hr{border-top: 1px solid map-get(_.$c, 'dark'); width: 100%;}
     color:grey;
     /* font-style:italic; */
 }
+
+
+textarea{
+    white-space: pre-wrap;
+}

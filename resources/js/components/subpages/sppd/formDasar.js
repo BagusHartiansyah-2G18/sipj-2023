@@ -19,7 +19,6 @@ function FormDasar({ dt, modalC, param, indWork, setview }) {
     const [files, setfiles] = useState({ nama:dt.fileD});
     const [ dasar, setdasar] = useState({value:cbDasar[0].value,label:cbDasar[0].label});
 
-
     function mclose(){
         dispatch(modalClose());
     }

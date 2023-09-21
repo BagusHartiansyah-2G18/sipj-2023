@@ -624,15 +624,19 @@
   border-radius: 10px;
 }
 
+.borderB {
+  border: 0px;
+  border-radius: 0px !important;
+  border-bottom: 1px solid #e2e2e2;
+}
+
 .borderLeftTB10px, .mdiLeftGroup {
   border-top-left-radius: 10px 10px;
   border-bottom-left-radius: 10px 10px;
 }
 
-.borderB {
-  border: 0px;
-  border-radius: 0px !important;
-  border-bottom: 1px solid #e2e2e2;
+.borderL {
+  border-left: 1px solid #e2e2e2;
 }
 
 .overAuto, .over200px {
@@ -1055,6 +1059,10 @@ hr {
   content: attr(data-placeholder);
   color: grey;
   /* font-style:italic; */
+}
+
+textarea {
+  white-space: pre-wrap;
 }
 
 .msgLabelIcon {

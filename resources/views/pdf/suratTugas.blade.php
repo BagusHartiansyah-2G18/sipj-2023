@@ -7,9 +7,10 @@
         .page-break {
             page-break-after: always;
         }
-        .fz12{
-            font-size: 12px;
-        }
+        .fz12{ font-size: 12px;}
+        .fz14{ font-size: 14px;}
+        .fz16{font-size: 16px;}
+
         .w100p{width: 100%;}
         .w70p{width: 70%;}
         .w60p{width: 60%;}
@@ -40,13 +41,14 @@
         .tcenter{text-align: center;}
         .fz40{font-size: 40px;}
         .fz30{font-size: 30px;}
+        .fz25{font-size: 25px;}
         .fz20{font-size: 20px;}
         .bbottom{border-bottom: 1px solid;}
 
         .capitalize{text-transform: capitalize;}
     </style>
 </head>
-<body>
+<body class="fz14">
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
@@ -61,7 +63,7 @@
                 </td>
                 <td>
                     <div class="tcenter pwrap">
-                        <h2 class="tupper">
+                        <h2 class="tupper"  class="tcenter fz25">
                             PEMERINTAH {{$kab}}<br>
                             {{$dinas}}<br>
                             <label style="font-size: medium;"><i>{{$alamat}}</i></label>
@@ -184,7 +186,7 @@
                 <td class="w10p"></td>
                 <td class="w60p"></td>
                 <td>
-                    {{$jabatanPim." ".$asDinas}}<br>
+                    @php echo($jabatanPim.' '.$asDinas); @endphp <br>
                     {{$kab}}
                 </td>
             </tr>
@@ -239,7 +241,7 @@
                 <td>NIP</td><td>: {{$pimpinan->nip}}</td>
             </tr>
             <tr>
-                <td>Jabatan</td><td>: {{$pimpinan->nmJabatan}} {{$asdiskab}}</td>
+                <td>Jabatan</td><td>: @php echo($pimpinan->nmJabatan); @endphp {{$asdiskab}}</td>
             </tr>
             <br>
             <tr class="tcenter ">
@@ -330,7 +332,7 @@
                 <td colspan="3" >
                     <div class="right">
                         <p class="w40p tcenter">
-                            {{$jabatanPim." ".$asDinas}}<br>
+                            @php echo($jabatanPim); @endphp  {{$asDinas}}<br>
                             {{$kab}}
                         </p>
                     </div>

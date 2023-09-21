@@ -446,7 +446,7 @@ class Hdb {
     function getDataSppdKegiatan($v){
         return DB::select('
             select
-                a.kdJudul, a.nama, a.total,
+                a.kdJudul, a.nama, a.total, a.kdApbd6,
                 b.kdSub, b.nmSub,
                 c.nmKeg, c.kdKeg,
                 d.total as totWork, d.date,d.tujuan, d.tempatE
@@ -506,6 +506,7 @@ class Hdb {
             select
                 a.no, a.date, a.status, a.kdBAnggota, a.kdBidang , a.kdBidang as kdDBidang, a.tujuan, a.noBuku, a.tglBuku, a.file,
                 maksud, angkut, tempatS, tempatE, dateE, anggaran, keterangan, lokasi, fileD, dasar, pimOpd, pimBupati, pimSetda,
+                tdOPD,tdBUPATI,tdSETDA,noSPPD,
                 (
                     select sum(a1.volume * a1.nilai)
                     from workuraian a1

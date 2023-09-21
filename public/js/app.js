@@ -15043,46 +15043,123 @@ function FormDokumen(_ref) {
   if (dt.length === 0) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {});
   }
+  var opsIsiManual = [{
+    value: 'Manual',
+    nmAnggota: 'Isi Manual',
+    label: 'Isi Manual'
+  }];
+  var _useInput3 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
+    _useInput4 = _slicedToArray(_useInput3, 2),
+    ketOPD = _useInput4[0],
+    setketOPD = _useInput4[1];
+  var _useInput5 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
+    _useInput6 = _slicedToArray(_useInput5, 2),
+    namaOPD = _useInput6[0],
+    setnamaOPD = _useInput6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState8 = _slicedToArray(_useState7, 2),
+    onOPD = _useState8[0],
+    setonOPD = _useState8[1];
+  var _useInput7 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
+    _useInput8 = _slicedToArray(_useInput7, 2),
+    ketSetda = _useInput8[0],
+    setketSetda = _useInput8[1];
+  var _useInput9 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
+    _useInput10 = _slicedToArray(_useInput9, 2),
+    namaSetda = _useInput10[0],
+    setnamaSetda = _useInput10[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState10 = _slicedToArray(_useState9, 2),
+    onSetda = _useState10[0],
+    setonSetda = _useState10[1];
+  var _useInput11 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
+    _useInput12 = _slicedToArray(_useInput11, 2),
+    ketBupati = _useInput12[0],
+    setketBupati = _useInput12[1];
+  var _useInput13 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
+    _useInput14 = _slicedToArray(_useInput13, 2),
+    namaBupati = _useInput14[0],
+    setnamaBupati = _useInput14[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState12 = _slicedToArray(_useState11, 2),
+    onBupati = _useState12[0],
+    setonBupati = _useState12[1];
+  var _useInput15 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(dwork.noSPPD),
+    _useInput16 = _slicedToArray(_useInput15, 2),
+    noSPPD = _useInput16[0],
+    setNoSPPD = _useInput16[1];
   var dopd = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-    dt: dt.dinas.concat(dt.plhdinas).concat(dt.plhdinas1),
+    dt: dt.dinas.concat(dt.plhdinas).concat(dt.plhdinas1).concat(opsIsiManual),
     row: {
       label: 'nmAnggota',
       value: 'value'
     }
   });
   var dbupati = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-    dt: dt.bupati.concat(dt.plhbupati),
+    dt: dt.bupati.concat(dt.plhbupati).concat(opsIsiManual),
     row: {
       label: 'nmAnggota',
       value: 'value'
     }
   });
   var dsetda = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-    dt: dt.setda.concat(dt.plhsetda),
+    dt: dt.setda.concat(dt.plhsetda).concat(opsIsiManual),
     row: {
       label: 'nmAnggota',
       value: 'value'
     }
   });
   if (dinas === undefined && dwork.pimOpd !== undefined) {
-    var i = dopd.findIndex(function (val) {
-      return val.value === dwork.pimOpd;
-    });
-    setdinas(_objectSpread({}, dopd[i]));
+    if (dwork.pimOpd === 'Manual') {
+      setdinas(_objectSpread({}, opsIsiManual[0]));
+      isiManualForm({
+        dari: 'OPD',
+        isi: dwork.tdOPD
+      });
+    } else {
+      var i = dopd.findIndex(function (val) {
+        return val.value === dwork.pimOpd;
+      });
+      setdinas(_objectSpread({}, dopd[i]));
+    }
   }
   if (bupati === undefined && dwork.pimBupati !== undefined) {
-    var _i2 = dbupati.findIndex(function (val) {
-      return val.value === dwork.pimBupati;
-    });
-    setbupati(_objectSpread({}, dbupati[_i2]));
+    if (dwork.pimBupati === 'Manual') {
+      setbupati(_objectSpread({}, opsIsiManual[0]));
+      isiManualForm({
+        dari: 'BUPATI',
+        isi: dwork.tdBUPATI
+      });
+    } else {
+      var _i2 = dbupati.findIndex(function (val) {
+        return val.value === dwork.pimBupati;
+      });
+      setbupati(_objectSpread({}, dbupati[_i2]));
+    }
   }
   if (setda === undefined && dwork.pimSetda !== undefined) {
-    var _i3 = dsetda.findIndex(function (val) {
-      return val.value === dwork.pimSetda;
-    });
-    setsetda(_objectSpread({}, dsetda[_i3]));
+    if (dwork.pimSetda === 'Manual') {
+      setsetda(_objectSpread({}, opsIsiManual[0]));
+      isiManualForm({
+        dari: 'SETDA',
+        isi: dwork.tdSETDA
+      });
+    } else {
+      var _i3 = dsetda.findIndex(function (val) {
+        return val.value === dwork.pimSetda;
+      });
+      setsetda(_objectSpread({}, dsetda[_i3]));
+    }
   }
   var actSetPimpinanDinas = function actSetPimpinanDinas(v) {
+    if (v.value === 'Manual') {
+      isiManualForm({
+        dari: 'OPD',
+        isi: dwork.tdOPD
+      });
+    } else {
+      setonOPD(0);
+    }
     setdinas(v);
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
       col: "pimOpd",
@@ -15092,6 +15169,14 @@ function FormDokumen(_ref) {
     })));
   };
   var actSetPimpinanBupati = function actSetPimpinanBupati(v) {
+    if (v.value === 'Manual') {
+      isiManualForm({
+        dari: 'BUPATI',
+        isi: dwork.tdBUPATI
+      });
+    } else {
+      setonBupati(0);
+    }
     setbupati(v);
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
       col: "pimBupati",
@@ -15101,10 +15186,92 @@ function FormDokumen(_ref) {
     })));
   };
   var actSetPimpinanSetda = function actSetPimpinanSetda(v) {
+    if (v.value === 'Manual') {
+      isiManualForm({
+        dari: 'SETDA',
+        isi: dwork.tdSETDA
+      });
+    } else {
+      setonSetda(0);
+    }
     setsetda(v);
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
       col: "pimSetda",
       value: v.value
+    }, param), {}, {
+      ind: indWork
+    })));
+  };
+  function isiManualForm(_ref2) {
+    var dari = _ref2.dari,
+      isi = _ref2.isi;
+    var split = [];
+    if (isi.length > 2) {
+      split = isi.split('&');
+    } else {
+      split.push('', '');
+    }
+    switch (dari) {
+      case 'OPD':
+        setonOPD(1);
+        setketOPD({
+          target: {
+            value: split[0]
+          }
+        });
+        setnamaOPD({
+          target: {
+            value: split[1]
+          }
+        });
+        break;
+      case 'SETDA':
+        setonSetda(1);
+        setketSetda({
+          target: {
+            value: split[0]
+          }
+        });
+        setnamaSetda({
+          target: {
+            value: split[1]
+          }
+        });
+        break;
+      default:
+        setonBupati(1);
+        setketBupati({
+          target: {
+            value: split[0]
+          }
+        });
+        setnamaBupati({
+          target: {
+            value: split[1]
+          }
+        });
+        break;
+    }
+  }
+  var saveTandaTangan = function saveTandaTangan(dari) {
+    var col, value;
+    switch (dari) {
+      case 'OPD':
+        col = 'tdOPD';
+        value = ketOPD + "&" + namaOPD;
+        break;
+      case 'SETDA':
+        col = 'tdSETDA';
+        value = ketSetda + "&" + namaSetda;
+        break;
+      default:
+        col = 'tdBUPATI';
+        value = ketBupati + "&" + namaBupati;
+        break;
+    }
+    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setTandaTanganManual)(_objectSpread(_objectSpread({
+      col: col,
+      value: value
     }, param), {}, {
       ind: indWork
     })));
@@ -15166,17 +15333,58 @@ function FormDokumen(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-              className: "fbold",
-              children: "Pimpinan"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
-              options: dopd,
-              placeholder: "Select",
-              value: dinas,
-              onChange: actSetPimpinanDinas,
-              isSearchable: true
-            })]
+            className: "flexR w100p justifySA",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "ptb10px ".concat(onOPD ? 'w45p' : 'w100p', " "),
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                className: "fbold",
+                children: "Pimpinan"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                options: dopd,
+                placeholder: "Select",
+                value: dinas,
+                onChange: actSetPimpinanDinas,
+                isSearchable: true
+              })]
+            }), onOPD ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "pwrap w45p borderL borderLeftTB10px",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                className: "doubleInput ptb10px borderB",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                  children: "Keterangan Penanda Tangan"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  className: "iconInput2 ",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+                    rows: 3,
+                    className: "borderR10px pwrap w100p",
+                    value: ketOPD,
+                    onChange: setketOPD
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                className: "doubleInput ptb10px borderB",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                  children: "Nama Penanda Tangan"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  className: "iconInput2 ",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+                    rows: 3,
+                    className: "borderR10px pwrap w100p",
+                    value: namaOPD,
+                    onChange: setnamaOPD
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                className: "btnGroup",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                  className: "btn2 bwarning",
+                  onClick: function onClick() {
+                    return saveTandaTangan('OPD');
+                  },
+                  children: "perbarui"
+                })
+              })]
+            }) : '']
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -15210,17 +15418,58 @@ function FormDokumen(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body ",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-              className: "fbold",
-              children: "Pimpinan"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
-              options: dbupati,
-              placeholder: "Select",
-              value: bupati,
-              onChange: actSetPimpinanBupati,
-              isSearchable: true
-            })]
+            className: "flexR w100p justifySA",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "ptb10px ".concat(onBupati ? 'w45p' : 'w100p', " "),
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                className: "fbold",
+                children: "Pimpinan"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                options: dbupati,
+                placeholder: "Select",
+                value: bupati,
+                onChange: actSetPimpinanBupati,
+                isSearchable: true
+              })]
+            }), onBupati ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "pwrap w45p borderL borderLeftTB10px",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                className: "doubleInput ptb10px borderB",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                  children: "Keterangan Penanda Tangan"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  className: "iconInput2 ",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+                    rows: 3,
+                    className: "borderR10px pwrap w100p",
+                    value: ketBupati,
+                    onChange: setketBupati
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                className: "doubleInput ptb10px borderB",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                  children: "Nama Penanda Tangan"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  className: "iconInput2 ",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+                    rows: 3,
+                    className: "borderR10px pwrap w100p",
+                    value: namaBupati,
+                    onChange: setnamaBupati
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                className: "btnGroup",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                  className: "btn2 bwarning",
+                  onClick: function onClick() {
+                    return saveTandaTangan('BUPATI');
+                  },
+                  children: "perbarui"
+                })
+              })]
+            }) : '']
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -15245,17 +15494,58 @@ function FormDokumen(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-              className: "fbold",
-              children: "Pimpinan"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
-              options: dsetda,
-              placeholder: "Select",
-              value: setda,
-              onChange: actSetPimpinanSetda,
-              isSearchable: true
-            })]
+            className: "flexR w100p justifySA",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "ptb10px ".concat(onSetda ? 'w45p' : 'w100p', " "),
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                className: "fbold",
+                children: "Pimpinan"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                options: dsetda,
+                placeholder: "Select",
+                value: setda,
+                onChange: actSetPimpinanSetda,
+                isSearchable: true
+              })]
+            }), onSetda ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "pwrap w45p borderL borderLeftTB10px",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                className: "doubleInput ptb10px borderB",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                  children: "Keterangan Penanda Tangan"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  className: "iconInput2 ",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+                    rows: 3,
+                    className: "borderR10px pwrap w100p",
+                    value: ketSetda,
+                    onChange: setketSetda
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                className: "doubleInput ptb10px borderB",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+                  children: "Nama Penanda Tangan"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  className: "iconInput2 ",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+                    rows: 3,
+                    className: "borderR10px pwrap w100p",
+                    value: namaSetda,
+                    onChange: setnamaSetda
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                className: "btnGroup",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                  className: "btn2 bwarning",
+                  onClick: function onClick() {
+                    return saveTandaTangan('SETDA');
+                  },
+                  children: "perbarui"
+                })
+              })]
+            }) : '']
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -15268,7 +15558,8 @@ function FormDokumen(_ref) {
             className: "btnGroup",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/pdf/kwitansiSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak
+                tglCetak: tglCetak,
+                noSPPD: noSPPD
               })))),
               className: "btn2 bsuccess clight ptb0",
               target: "_blank",
@@ -15278,7 +15569,24 @@ function FormDokumen(_ref) {
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "body"
+          className: "body",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "doubleInput ptb10px borderB",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              children: "No SPPD"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "iconInput2 ",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                className: "borderR10px",
+                type: "text",
+                value: noSPPD,
+                onChange: setNoSPPD,
+                placeholder: "000.1.2.3/....."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                className: "mdi mdi-cloud-search cdark "
+              })]
+            })]
+          })
         })]
       })]
     })]
@@ -17426,10 +17734,14 @@ function SPPD() {
       })
     }));
     setindWork(i);
+    setview(0);
   };
-  // if(indWork<0){
-  //     stepSetAnggota({no:'1'});
-  // }
+  if (indWork < 0) {
+    stepSetAnggota({
+      no: '1'
+    });
+    setview(4);
+  }
   // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
   // console.log(view);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
@@ -19875,6 +20187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   nextStep: () => (/* binding */ nextStep),
 /* harmony export */   setDT: () => (/* binding */ setDT),
 /* harmony export */   setPimpinan: () => (/* binding */ setPimpinan),
+/* harmony export */   setTandaTanganManual: () => (/* binding */ setTandaTanganManual),
 /* harmony export */   updWorkUraian: () => (/* binding */ updWorkUraian),
 /* harmony export */   upded: () => (/* binding */ upded),
 /* harmony export */   uploadDasar: () => (/* binding */ uploadDasar),
@@ -19911,6 +20224,7 @@ var actType = {
   nextStep: {
     dasar: 'uploadDasar',
     setPimpinan: 'setPimpinan',
+    setTandaTangan: 'setTandaTangan',
     type: 'nextStep',
     start: 'berproses',
     step1: 'entriRincian',
@@ -20149,21 +20463,60 @@ function setPimpinan(body) {
     };
   }();
 }
-function Step3(body) {
+function setTandaTanganManual(body) {
   return /*#__PURE__*/function () {
     var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(dispatch) {
-      var exec;
+      var dt;
       return _regeneratorRuntime().wrap(function _callee7$(_context7) {
         while (1) switch (_context7.prev = _context7.next) {
           case 0:
             _context7.prev = 0;
             _context7.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "sppd/setPimpinan",
+              body: body
+            });
+          case 3:
+            dt = _context7.sent;
+            dispatch({
+              type: actType.crudWork,
+              payload: _objectSpread(_objectSpread({}, body), {}, {
+                type: actType.nextStep.setTandaTangan
+              })
+            });
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
+            _context7.next = 11;
+            break;
+          case 8:
+            _context7.prev = 8;
+            _context7.t0 = _context7["catch"](0);
+            alert(_context7.t0.message);
+          case 11:
+          case "end":
+            return _context7.stop();
+        }
+      }, _callee7, null, [[0, 8]]);
+    }));
+    return function (_x7) {
+      return _ref7.apply(this, arguments);
+    };
+  }();
+}
+function Step3(body) {
+  return /*#__PURE__*/function () {
+    var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(dispatch) {
+      var exec;
+      return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+        while (1) switch (_context8.prev = _context8.next) {
+          case 0:
+            _context8.prev = 0;
+            _context8.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
               url: "sppd/step3",
               body: body
             });
           case 3:
-            exec = _context7.sent;
+            exec = _context8.sent;
             window.location.reload();
             // dispatch({
             //   type : actType.crudWork,
@@ -20173,53 +20526,13 @@ function Step3(body) {
             //   }
             // });
             // toast.success("sukses malaksanakan aksi !!!");
-            _context7.next = 10;
-            break;
-          case 7:
-            _context7.prev = 7;
-            _context7.t0 = _context7["catch"](0);
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context7.t0.message);
-          case 10:
-          case "end":
-            return _context7.stop();
-        }
-      }, _callee7, null, [[0, 7]]);
-    }));
-    return function (_x7) {
-      return _ref7.apply(this, arguments);
-    };
-  }();
-}
-function uploadDasar(body) {
-  return /*#__PURE__*/function () {
-    var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(dispatch) {
-      var fileD;
-      return _regeneratorRuntime().wrap(function _callee8$(_context8) {
-        while (1) switch (_context8.prev = _context8.next) {
-          case 0:
-            _context8.prev = 0;
-            _context8.next = 3;
-            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/uploadDasar",
-              body: body
-            });
-          case 3:
-            fileD = _context8.sent;
-            dispatch({
-              type: actType.crudWork,
-              payload: {
-                fileD: fileD,
-                ind: body.ind,
-                dasar: body.dasar,
-                type: actType.nextStep.dasar
-              }
-            });
-            _context8.next = 9;
+            _context8.next = 10;
             break;
           case 7:
             _context8.prev = 7;
             _context8.t0 = _context8["catch"](0);
-          case 9:
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context8.t0.message);
+          case 10:
           case "end":
             return _context8.stop();
         }
@@ -20230,35 +20543,75 @@ function uploadDasar(body) {
     };
   }();
 }
-function addedWorkStaf(_ref9) {
-  var dt = _ref9.dt,
-    ind = _ref9.ind,
-    param = _ref9.param;
+function uploadDasar(body) {
   return /*#__PURE__*/function () {
-    var _ref10 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(dispatch) {
-      return _regeneratorRuntime().wrap(function _callee10$(_context10) {
-        while (1) switch (_context10.prev = _context10.next) {
+    var _ref9 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(dispatch) {
+      var fileD;
+      return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+        while (1) switch (_context9.prev = _context9.next) {
+          case 0:
+            _context9.prev = 0;
+            _context9.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "sppd/uploadDasar",
+              body: body
+            });
+          case 3:
+            fileD = _context9.sent;
+            dispatch({
+              type: actType.crudWork,
+              payload: {
+                fileD: fileD,
+                ind: body.ind,
+                dasar: body.dasar,
+                type: actType.nextStep.dasar
+              }
+            });
+            _context9.next = 9;
+            break;
+          case 7:
+            _context9.prev = 7;
+            _context9.t0 = _context9["catch"](0);
+          case 9:
+          case "end":
+            return _context9.stop();
+        }
+      }, _callee9, null, [[0, 7]]);
+    }));
+    return function (_x9) {
+      return _ref9.apply(this, arguments);
+    };
+  }();
+}
+function addedWorkStaf(_ref10) {
+  var dt = _ref10.dt,
+    ind = _ref10.ind,
+    param = _ref10.param;
+  return /*#__PURE__*/function () {
+    var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(dispatch) {
+      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+        while (1) switch (_context11.prev = _context11.next) {
           case 0:
             // dispatch(showLoading());
             try {
               dt.forEach( /*#__PURE__*/function () {
-                var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(v) {
-                  return _regeneratorRuntime().wrap(function _callee9$(_context9) {
-                    while (1) switch (_context9.prev = _context9.next) {
+                var _ref12 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(v) {
+                  return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+                    while (1) switch (_context10.prev = _context10.next) {
                       case 0:
-                        _context9.next = 2;
+                        _context10.next = 2;
                         return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
                           url: "sppd/addedUser",
                           body: _objectSpread(_objectSpread({}, param), v)
                         });
                       case 2:
                       case "end":
-                        return _context9.stop();
+                        return _context10.stop();
                     }
-                  }, _callee9);
+                  }, _callee10);
                 }));
-                return function (_x10) {
-                  return _ref11.apply(this, arguments);
+                return function (_x11) {
+                  return _ref12.apply(this, arguments);
                 };
               }());
               dispatch({
@@ -20276,12 +20629,12 @@ function addedWorkStaf(_ref9) {
             // dispatch(hideLoading());
           case 1:
           case "end":
-            return _context10.stop();
+            return _context11.stop();
         }
-      }, _callee10);
+      }, _callee11);
     }));
-    return function (_x9) {
-      return _ref10.apply(this, arguments);
+    return function (_x10) {
+      return _ref11.apply(this, arguments);
     };
   }();
 }
@@ -20325,23 +20678,23 @@ var coldata = [{
     return row.lokasi;
   }
 }];
-function workSetAnggota(_ref12) {
-  var ind = _ref12.ind,
-    param = _ref12.param;
+function workSetAnggota(_ref13) {
+  var ind = _ref13.ind,
+    param = _ref13.param;
   return /*#__PURE__*/function () {
-    var _ref13 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(dispatch) {
+    var _ref14 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(dispatch) {
       var dt;
-      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
-        while (1) switch (_context11.prev = _context11.next) {
+      return _regeneratorRuntime().wrap(function _callee12$(_context12) {
+        while (1) switch (_context12.prev = _context12.next) {
           case 0:
-            _context11.prev = 0;
-            _context11.next = 3;
+            _context12.prev = 0;
+            _context12.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
               url: "sppd/getAnggotaSelected",
               body: param
             });
           case 3:
-            dt = _context11.sent;
+            dt = _context12.sent;
             dispatch({
               type: actType.crudWork,
               payload: {
@@ -20351,28 +20704,28 @@ function workSetAnggota(_ref12) {
                 type: actType.workSetAnggota
               }
             });
-            _context11.next = 9;
+            _context12.next = 9;
             break;
           case 7:
-            _context11.prev = 7;
-            _context11.t0 = _context11["catch"](0);
+            _context12.prev = 7;
+            _context12.t0 = _context12["catch"](0);
           case 9:
           case "end":
-            return _context11.stop();
+            return _context12.stop();
         }
-      }, _callee11, null, [[0, 7]]);
+      }, _callee12, null, [[0, 7]]);
     }));
-    return function (_x11) {
-      return _ref13.apply(this, arguments);
+    return function (_x12) {
+      return _ref14.apply(this, arguments);
     };
   }();
 }
-function anggotaSelect(_ref14) {
-  var ind = _ref14.ind;
+function anggotaSelect(_ref15) {
+  var ind = _ref15.ind;
   return /*#__PURE__*/function () {
-    var _ref15 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(dispatch) {
-      return _regeneratorRuntime().wrap(function _callee12$(_context12) {
-        while (1) switch (_context12.prev = _context12.next) {
+    var _ref16 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13(dispatch) {
+      return _regeneratorRuntime().wrap(function _callee13$(_context13) {
+        while (1) switch (_context13.prev = _context13.next) {
           case 0:
             try {
               dispatch({
@@ -20388,58 +20741,19 @@ function anggotaSelect(_ref14) {
             // dispatch(hideLoading());
           case 1:
           case "end":
-            return _context12.stop();
-        }
-      }, _callee12);
-    }));
-    return function (_x12) {
-      return _ref15.apply(this, arguments);
-    };
-  }();
-}
-function workDelAnggota(_ref16) {
-  var ind = _ref16.ind,
-    index = _ref16.index,
-    param = _ref16.param;
-  return /*#__PURE__*/function () {
-    var _ref17 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13(dispatch) {
-      var dt;
-      return _regeneratorRuntime().wrap(function _callee13$(_context13) {
-        while (1) switch (_context13.prev = _context13.next) {
-          case 0:
-            _context13.prev = 0;
-            _context13.next = 3;
-            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/delAnggotaSelected",
-              body: param
-            });
-          case 3:
-            dt = _context13.sent;
-            dispatch({
-              type: actType.crudWork,
-              payload: {
-                ind: ind,
-                index: index,
-                type: actType.workDelAnggota
-              }
-            });
-            _context13.next = 9;
-            break;
-          case 7:
-            _context13.prev = 7;
-            _context13.t0 = _context13["catch"](0);
-          case 9:
-          case "end":
             return _context13.stop();
         }
-      }, _callee13, null, [[0, 7]]);
+      }, _callee13);
     }));
     return function (_x13) {
-      return _ref17.apply(this, arguments);
+      return _ref16.apply(this, arguments);
     };
   }();
 }
-function addWorkUraian(body) {
+function workDelAnggota(_ref17) {
+  var ind = _ref17.ind,
+    index = _ref17.index,
+    param = _ref17.param;
   return /*#__PURE__*/function () {
     var _ref18 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14(dispatch) {
       var dt;
@@ -20449,37 +20763,36 @@ function addWorkUraian(body) {
             _context14.prev = 0;
             _context14.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/addWorkUraian",
-              body: body
+              url: "sppd/delAnggotaSelected",
+              body: param
             });
           case 3:
             dt = _context14.sent;
             dispatch({
               type: actType.crudWork,
-              payload: _objectSpread(_objectSpread({}, body), {}, {
-                dt: dt,
-                type: actType.setUraian
-              })
+              payload: {
+                ind: ind,
+                index: index,
+                type: actType.workDelAnggota
+              }
             });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil ditambahkan');
-            _context14.next = 11;
+            _context14.next = 9;
             break;
-          case 8:
-            _context14.prev = 8;
+          case 7:
+            _context14.prev = 7;
             _context14.t0 = _context14["catch"](0);
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context14.t0.message);
-          case 11:
+          case 9:
           case "end":
             return _context14.stop();
         }
-      }, _callee14, null, [[0, 8]]);
+      }, _callee14, null, [[0, 7]]);
     }));
     return function (_x14) {
       return _ref18.apply(this, arguments);
     };
   }();
 }
-function updWorkUraian(body) {
+function addWorkUraian(body) {
   return /*#__PURE__*/function () {
     var _ref19 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee15(dispatch) {
       var dt;
@@ -20489,7 +20802,7 @@ function updWorkUraian(body) {
             _context15.prev = 0;
             _context15.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/updWorkUraian",
+              url: "sppd/addWorkUraian",
               body: body
             });
           case 3:
@@ -20497,16 +20810,17 @@ function updWorkUraian(body) {
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
-                type: actType.updUraian
+                dt: dt,
+                type: actType.setUraian
               })
             });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil ditambahkan');
             _context15.next = 11;
             break;
           case 8:
             _context15.prev = 8;
             _context15.t0 = _context15["catch"](0);
-            alert(_context15.t0.message);
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context15.t0.message);
           case 11:
           case "end":
             return _context15.stop();
@@ -20518,7 +20832,7 @@ function updWorkUraian(body) {
     };
   }();
 }
-function delWorkUraian(body) {
+function updWorkUraian(body) {
   return /*#__PURE__*/function () {
     var _ref20 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee16(dispatch) {
       var dt;
@@ -20528,7 +20842,7 @@ function delWorkUraian(body) {
             _context16.prev = 0;
             _context16.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/delWorkUraian",
+              url: "sppd/updWorkUraian",
               body: body
             });
           case 3:
@@ -20536,10 +20850,10 @@ function delWorkUraian(body) {
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
-                type: actType.delUraian
+                type: actType.updUraian
               })
             });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil dihapus');
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
             _context16.next = 11;
             break;
           case 8:
@@ -20554,6 +20868,45 @@ function delWorkUraian(body) {
     }));
     return function (_x16) {
       return _ref20.apply(this, arguments);
+    };
+  }();
+}
+function delWorkUraian(body) {
+  return /*#__PURE__*/function () {
+    var _ref21 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee17(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee17$(_context17) {
+        while (1) switch (_context17.prev = _context17.next) {
+          case 0:
+            _context17.prev = 0;
+            _context17.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "sppd/delWorkUraian",
+              body: body
+            });
+          case 3:
+            dt = _context17.sent;
+            dispatch({
+              type: actType.crudWork,
+              payload: _objectSpread(_objectSpread({}, body), {}, {
+                type: actType.delUraian
+              })
+            });
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil dihapus');
+            _context17.next = 11;
+            break;
+          case 8:
+            _context17.prev = 8;
+            _context17.t0 = _context17["catch"](0);
+            alert(_context17.t0.message);
+          case 11:
+          case "end":
+            return _context17.stop();
+        }
+      }, _callee17, null, [[0, 8]]);
+    }));
+    return function (_x17) {
+      return _ref21.apply(this, arguments);
     };
   }();
 }
@@ -20678,6 +21031,18 @@ function selectdwork(_ref2) {
             pimOpd: act.col === 'pimOpd' ? act.value : v.pimOpd,
             pimBupati: act.col === 'pimBupati' ? act.value : v.pimBupati,
             pimSetda: act.col === 'pimSetda' ? act.value : v.pimSetda
+          });
+        }
+        return v;
+      });
+      break;
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.nextStep.setTandaTangan:
+      dwork = dt.dwork.map(function (v, i) {
+        if (i === act.ind) {
+          return _objectSpread(_objectSpread({}, v), {}, {
+            tdOPD: act.col === 'tdOPD' ? act.value : v.tdOPD,
+            tdBUPATI: act.col === 'tdBUPATI' ? act.value : v.tdBUPATI,
+            tdSETDA: act.col === 'tdSETDA' ? act.value : v.tdSETDA
           });
         }
         return v;

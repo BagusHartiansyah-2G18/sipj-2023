@@ -27,12 +27,17 @@
 
 .borderR50p{border-radius: 50%;}
 .borderR10px{border-radius: 10px;}
-.borderLeftTB10px{border-top-left-radius: 10px 10px; border-bottom-left-radius: 10px 10px;}
 .borderB{
     border: 0px;
     border-radius: 0px !important;
     border-bottom: 1px solid map-get(_.$c,'light');
 }
+
+.borderLeftTB10px{border-top-left-radius: 10px 10px; border-bottom-left-radius: 10px 10px;}
+.borderL{
+    border-left: 1px solid map-get(_.$c,'light');
+}
+
 .overAuto{overflow: auto;}
 .over200px{
     @extend .overAuto;
@@ -47,3 +52,4 @@
 
 .rotasi45{@include _pos.rotasi();}
 .rotasiM45{@include _pos.rotasi(-45deg);}
+

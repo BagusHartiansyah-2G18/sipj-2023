@@ -7,9 +7,9 @@
         .page-break {
             page-break-after: always;
         }
-        .fz12{
-            font-size: 12px;
-        }
+        .fz12{ font-size: 12px;}
+        .fz14{ font-size: 14px;}
+        .fz16{font-size: 16px;}
         .w100p{width: 100%;}
         .w70p{width: 70%;}
         .w60p{width: 60%;}
@@ -60,6 +60,7 @@
         .tend{text-align: right;}
         .fz40{font-size: 40px;}
         .fz30{font-size: 30px;}
+        .fz25{font-size: 25px;}
         .fz20{font-size: 20px;}
         .bbottom{border-bottom: 1px solid;}
 
@@ -67,7 +68,7 @@
         .lowercase{text-transform: lowercase;}
     </style>
 </head>
-<body>
+<body class="fz14">
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
@@ -81,16 +82,15 @@
                 <tr>
                     <td class="p0">
                         <div style="margin-left: 42.5%;">
-                            <img src="logo/garuda.png" width="100px">
+                            <img src="logo/garuda.png" width="80px">
                         </div>
-                        <h2 style="text-transform: uppercase;" class="tcenter">
+                        <h2 style="text-transform: uppercase;" class="tcenter fz25">
                             {{$dinas}} {{$kab}}
                         </h2>
                     </td>
                 </tr>
             </table>
             <hr>
-            <br>
             <!-- <br> -->
             <table class="fz12" class="w100p">
                 <tr>
@@ -113,7 +113,6 @@
                         </div>
                     </td>
                 </tr>
-                <br>
                 <tr class="tcenter">
                     <td colspan="3" >
                         <b class="bbottom fz20">
@@ -131,7 +130,7 @@
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td colspan="2">
                                     <b style="text-transform: uppercase;">
-                                        {{$pimpinan->nmJabatan}}
+                                        @php echo($pimpinan->nmJabatan) @endphp
                                         {{$kab}}
                                     </b>
                                 </td>
@@ -304,7 +303,8 @@
                     <td class="w50p"></td>
                     <td>
                         <span class="tupper">
-                            {{$pimpinan->nmJabatan." ".$kab}}
+                            @php echo($pimpinan->nmJabatan) @endphp
+                            {{$kab}}
                         </span>
                     </td>
                 </tr>
@@ -315,7 +315,7 @@
                     <td class="w10p"></td>
                     <td class="w50p"></td>
                     <td>
-                        {{$pimpinan->nmAnggota}}
+                        @php echo($pimpinan->nmAnggota) @endphp
                     </td>
                 </tr>
             </table>
@@ -486,9 +486,9 @@
                                 </p>
                                 <p class="tcenter">
                                     <b>
-                                        <label class="tupper">{{$pimpinan->nmJabatan." ".$kab}}</label>
+                                        <label class="tupper">@php echo($pimpinan->nmJabatan) @endphp {{$kab}}</label>
                                         @php echo($br); @endphp
-                                        {{$pimpinan->nmAnggota}}
+                                        @php echo($pimpinan->nmAnggota) @endphp
                                     </b>
                                 </p>
                             </td>
