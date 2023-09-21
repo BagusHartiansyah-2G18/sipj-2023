@@ -118,13 +118,13 @@
                                 $totalJenis = 0;
                                 $totalPerJenis=array();
                             @endphp
-                            @foreach ($dt->ddukung as $dt1)
+                            @foreach ($dt->ddukung as $ind1 => $dt1)
                                 @php
                                     $totalSubJenis = 0;
                                 @endphp
-                                @foreach ($dt1->uraian as $dt2)
+                                @foreach ($dt1->uraian as $ind2 => $dt2)
                                     <tr>
-                                        <td colspan="2">{{$num.". ".$dt2->uraian." ".($loop->index == 1 ? $dt->tingkat:'')." (".$dt2->volume." x ".$dt2->satuan.")"}}</td>
+                                        <td colspan="2">{{$num.". ".$dt2->uraian." ".( $ind1 == 0 ? $dt->tingkat:'')." (".$dt2->volume." x ".$dt2->satuan.")"}}</td>
                                         <td>{{ number_format($dt2->nilai,0,',','.')}}</td>
                                         <td>Rp. {{number_format(($dt2->nilai*$dt2->volume),0,',','.')}}</td>
                                     </tr>
