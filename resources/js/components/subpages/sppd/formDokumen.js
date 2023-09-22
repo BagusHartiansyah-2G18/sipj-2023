@@ -152,10 +152,10 @@ function FormDokumen({ dt, param, indWork, dwork }) {
     }
     function isiManualForm({ dari, isi }){
         let split =[];
-        if(isi.length>4){
-            split = isi.split('&');
-        }else{
+        if( isi==null || isi.length<4){
             split.push('','');
+        }else{
+            split = isi.split('&');
         }
         switch (dari) {
             case 'OPD':
