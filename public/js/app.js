@@ -11302,7 +11302,7 @@ function FormListSubKegiatan(_ref) {
   });
 }
 FormListSubKegiatan.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object).isRequired,
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().array).isRequired,
   modalC: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().func).isRequired,
   ind: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().number).isRequired,
   updDataBidang: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().func).isRequired
@@ -11586,7 +11586,7 @@ function SelectDataUtama(_ref) {
   });
 }
 SelectDataUtama.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().array).isRequired,
   ind: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().number).isRequired,
   updDataBidang: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func).isRequired
 };
@@ -15206,7 +15206,7 @@ function FormDokumen(_ref) {
     var dari = _ref2.dari,
       isi = _ref2.isi;
     var split = [];
-    if (isi.length > 2) {
+    if (isi.length > 4) {
       split = isi.split('&');
     } else {
       split.push('', '');

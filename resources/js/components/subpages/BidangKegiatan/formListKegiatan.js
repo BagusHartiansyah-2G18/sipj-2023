@@ -327,7 +327,7 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
 }
 
 FormListSubKegiatan.propTypes = {
-    dt : PropTypes.object.isRequired,
+    dt : PropTypes.array.isRequired,
     modalC : PropTypes.func.isRequired,
     ind : PropTypes.number.isRequired,
     updDataBidang : PropTypes.func.isRequired

@@ -180,7 +180,7 @@ function SelectDataUtama({ dt, ind, updDataBidang }) {
 }
 
 SelectDataUtama.propTypes = {
-    dt : PropTypes.object.isRequired,
+    dt : PropTypes.array.isRequired,
     ind : PropTypes.number.isRequired,
     updDataBidang : PropTypes.func.isRequired
 }

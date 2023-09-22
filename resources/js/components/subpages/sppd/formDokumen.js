@@ -152,7 +152,7 @@ function FormDokumen({ dt, param, indWork, dwork }) {
     }
     function isiManualForm({ dari, isi }){
         let split =[];
-        if(isi.length>2){
+        if(isi.length>4){
             split = isi.split('&');
         }else{
             split.push('','');
