@@ -15478,18 +15478,29 @@ function FormDokumen(_ref) {
           className: "header",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
             children: "3. Surat Perjalanan Dinas (SETDA)"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "btnGroup",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/pdf/sppdSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak
+                tglCetak: tglCetak,
+                sppdDaerah: 1
+              })))),
+              className: "btn2 bwarning ptb0",
+              target: "_blank",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                className: "mdi mdi-file-pdf-box clight fz25"
+              }), " Dokumen Daerah"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/pdf/sppdSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                tglCetak: tglCetak,
+                sppdDaerah: 0
               })))),
               className: "btn2 bsuccess clight ptb0",
               target: "_blank",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
               }), " Dokumen"]
-            })
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body",
@@ -21416,8 +21427,8 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var api = function () {
-  // const BASE_URL = 'http://localhost:8000/';
-  var BASE_URL = 'https://sipj.bappedaksb.com/';
+  var BASE_URL = 'http://localhost:8000/';
+  // const BASE_URL = 'https://sipj.bappedaksb.com/';
   function GET(_x) {
     return _GET.apply(this, arguments);
   }

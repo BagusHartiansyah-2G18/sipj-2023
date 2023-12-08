@@ -1,6 +1,6 @@
 const api = (() => {
-    // const BASE_URL = 'http://localhost:8000/';
-    const BASE_URL = 'https://sipj.bappedaksb.com/';
+    const BASE_URL = 'http://localhost:8000/';
+    // const BASE_URL = 'https://sipj.bappedaksb.com/';
     async function GET({url, api = 'api/' }) {
         const response = await fetch(`${BASE_URL+api+url}`, {
           method: 'GET',

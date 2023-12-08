@@ -404,6 +404,44 @@ class Hdb {
 
     // sppd
     function getDataSppd($v){
+    //     return print_r('
+    //     select
+    //         a.kdJudul, a.nama, a.total,
+    //         b.kdSub, b.nmSub,
+    //         c.tw1, c.tw2, c.tw3, c.tw4,
+    //         (
+    //             select sum(a1.volume * a1.nilai)
+    //             from workuraian a1
+    //             join work b1 on
+    //                 a1.kdDinas = b1.kdDinas and
+    //                 a1.kdBidang = b1.kdBidang and
+    //                 a1.kdSub = b1.kdSub and
+    //                 a1.taWork = b1.taWork
+    //             where a1.kdDinas="'.$v['kdDinas'].'" and
+    //             a1.kdSub = "'.$v['kdSub'].'" and
+    //             a1.kdBidang = "'.$v['kdBidang'].'" and
+    //             a1.taWork  = "'.$v['tahun'].'" and
+    //             b1.status ="final" and
+    //             b1.kdJudul=a.kdJudul
+    //         ) as realisasi
+    //     from  ubjudul a
+    //     join triwulan c on
+    //         a.kdDinas = c.kdDinas and
+    //         a.kdBidang = c.kdBidang and
+    //         a.kdJudul = c.kdJudul and
+    //         a.taJudul = c.taJudul
+    //     join psub b on
+    //         a.kdSub = b.kdSub and
+    //         a.taJudul = b.taSub and
+    //         a.kdBidang = b.kdBidang and
+    //         a.kdDinas = b.kdDinas
+    //     where
+    //         a.kdJudul="'.$v['kdJudul'].'" and
+    //         a.kdSub="'.$v['kdSub'].'" and
+    //         a.kdBidang="'.$v['kdBidang'].'" and
+    //         a.kdDinas="'.$v['kdDinas'].'" and
+    //         a.taJudul="'.$v['tahun'].'"
+    // ');
         return DB::select('
             select
                 a.kdJudul, a.nama, a.total,
@@ -425,7 +463,7 @@ class Hdb {
                     b1.kdJudul=a.kdJudul
                 ) as realisasi
             from  ubjudul a
-            join triwulan c on
+            left join  triwulan c on
                 a.kdDinas = c.kdDinas and
                 a.kdBidang = c.kdBidang and
                 a.kdJudul = c.kdJudul and

@@ -400,7 +400,8 @@ class PdfGenerator extends Controller
                 "kdJudul"=>$baseEND->{'kdJudul'},
                 "no"=>$baseEND->{'no'},
                 "tahun"=>$cek['ta'],
-                "tglCetak"=>$baseEND->{'tglCetak'}
+                "tglCetak"=>$baseEND->{'tglCetak'},
+                "sppdDaerah"=>$baseEND->{'sppdDaerah'}
             ];
             $param["where"]= ' and a.kdBAnggota =""';
             $data =Hdb::dwork($param)[0];
@@ -416,6 +417,7 @@ class PdfGenerator extends Controller
                 "tahun"=>$param['tahun'],
                 "status"=>"setda"
             ])[0];
+            $jabatanPimReal= $pimpinan->nmJabatan;
             $jabatanPim =$pimpinan->nmJabatan;
             if(!empty($data->pimSetda) && $data->pimSetda!='Manual'){
                 // get Pimpinan selected
@@ -427,7 +429,13 @@ class PdfGenerator extends Controller
                     "kdBidang"=>$split[1]
                 ])[0];
                 if($selectPim->status !=='setda'){
-                    $jabatanPim .= "<br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
+                    $jabatanPimReal = $selectPim->nmJabatan;
+                    if($param['sppdDaerah']){
+                        $jabatanPim = "An. BUPATI SUMBAWA BARAT <br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
+                    }else{ 
+                        $jabatanPim .= "<br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
+                    }
+                    
                     $pimpinan = $selectPim;
                 }
 
@@ -459,6 +467,10 @@ class PdfGenerator extends Controller
             // Array ( [0] => 2023 [1] => 08 [2] => 27 )
             $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
 
+            if($hari==0){
+                $hari = 1;
+            }
+
             $dateS = explode("-",$data->date);
             $dateE = [];
             $textTanggal = $dateS[2];
@@ -483,6 +495,7 @@ class PdfGenerator extends Controller
                 "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
                 "no" =>"000.1.2.3",
                 'member' => $member,
+                'jabatanPimReal'=>$jabatanPimReal,
                 'pimpinan'=> $pimpinan,
                 'jabatanPim' => $jabatanPim,
                 'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],

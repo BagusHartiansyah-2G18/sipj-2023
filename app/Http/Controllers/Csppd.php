@@ -174,14 +174,14 @@ class Csppd extends Controller
         $user =Auth::user();
         $cek = $this->portal($user);
         if($cek['exc']){
+            
             $request->validate([
                 'kdDinas' => 'required',
                 'kdBidang' => 'required',
                 'kdSub' => 'required',
                 'kdJudul' => 'required',
 
-                'noOld'=> 'required',
-                'no'=> 'required',
+                'noOld'=> 'required', 
                 'lokasi'=> 'required',
 
                 'date'=> 'required',
@@ -205,7 +205,7 @@ class Csppd extends Controller
                 ->where('no',$request->noOld)
                 ->where('kdBAnggota','')
                 ->update([
-                    'no'    => $request->no,
+                    'no'    => $request->noOld,
                     'lokasi'=> $request->lokasi,
                     'date'=> $request->date,
                     'dateE'=> $request->dateE,

@@ -63,7 +63,7 @@
                 </td>
                 <td>
                     <div class="tcenter pwrap">
-                        <h2 class="tupper"  class="tcenter fz25">
+                        <h2 class="tupper tcenter fz25" >
                             PEMERINTAH {{$kab}}<br>
                             {{$dinas}}<br>
                             <label style="font-size: medium;"><i>{{$alamat}}</i></label>
@@ -212,13 +212,25 @@
                 </td>
                 <td>
                     <div class="tcenter pwrap">
+                        <h2 class="tupper tcenter fz25" >
+                            PEMERINTAH {{$kab}}<br>
+                            {{$dinas}}<br>
+                            <label style="font-size: medium;"><i>{{$alamat}}</i></label>
+                        </h2>
+                    </div>
+                </td>
+                <!-- <td>
+                    <div class="w30p"><img src="logo/ksb.png" width="60px"></div>
+                </td>
+                <td>
+                    <div class="tcenter pwrap">
                         <h2 class="tupper">
                             PEMERINTAH {{$kab}}<br>
                             {{$dinas}}<br>
                             <label style="font-size: medium;"><i>jl. Bung Karno No. 5 Komplek KTC - Taliwang 84355</i></label>
                         </h2>
                     </div>
-                </td>
+                </td> -->
             </tr>
         </table>
         <hr>

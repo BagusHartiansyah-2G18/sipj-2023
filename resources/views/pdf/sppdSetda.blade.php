@@ -131,7 +131,7 @@
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td colspan="2">
                                     <b style="text-transform: uppercase;">
-                                        @php echo($jabatanPim); @endphp <br>
+                                        @php echo($jabatanPimReal); @endphp <br>
                                         <!-- {{$kab}} -->
                                     </b>
                                 </td>

@@ -336,7 +336,13 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                         <h3>3. Surat Perjalanan Dinas (SETDA)</h3>
                         <div className="btnGroup">
                             <Link
-                                to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak}))}`}
+                                to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:1}))}`}
+                                className="btn2 bwarning ptb0"
+                                target="_blank">
+                                <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen Daerah
+                            </Link>
+                            <Link
+                                to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:0}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
                                 <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen
