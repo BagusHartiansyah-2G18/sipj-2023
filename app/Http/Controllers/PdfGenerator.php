@@ -278,116 +278,7 @@ class PdfGenerator extends Controller
             'msg' => $cek['msg']
         ], 200);
     }
-    public function sppdBupatiSetda($val){
-        $user =Auth::user();
-        $cek = $this->portal($user);
-        if($cek['exc']){
-            $baseEND=json_decode((base64_decode($val)));
-            $param = [
-                "kdDinas"=>$baseEND->{'kdDinas'},
-                // "kdBidang"=>$baseEND->{'kdBidang'},
-                "kdSub"=>$baseEND->{'kdSub'},
-                "kdJudul"=>$baseEND->{'kdJudul'},
-                "no"=>$baseEND->{'no'},
-                "tahun"=>$cek['ta'],
-                "tglCetak"=>$baseEND->{'tglCetak'}
-            ];
-            $param["where"]= ' and a.kdBAnggota =""';
-            $data =Hdb::dwork($param)[0];
 
-            $param["where"]= ' and a.kdBAnggota !=""
-                and b.tingkatan<=3
-            ';
-            $member = Hdb::dworkAnggotaBidang($param);
-
-            // getPimpinan
-            $pimpinan = Hdb::getAnggotaJabatan([
-                "kdDinas"=>$cek['setda'],
-                "tahun"=>$param['tahun'],
-                "status"=>"setda"
-            ])[0];
-            // <label style='text-transform: lowercase'>a.n</label> BUPATI SUMBAWA BARAT <br> "<label style='text-transform: capitalize'>Plh</label>. ".
-            $jabatanPim = $pimpinan->nmJabatan;
-            if(!empty($data->pimSetda)  && $data->pimSetda!='Manual'){
-                // get Pimpinan selected
-                $split = explode("|",$data->pimSetda);
-                $selectPim = Hdb::getOneAnggota([
-                    "kdDinas"=>$split[2],
-                    "tahun"=>$param['tahun'],
-                    "kdBAnggota"=>$split[0],
-                    "kdBidang"=>$split[1]
-                ])[0];
-                if($selectPim->status !=='setda'){
-                    $jabatanPim .= "<br> <label style='text-transform: lowercase'>u.b</label> ".$selectPim->nmJabatan;
-                    $pimpinan = $selectPim;
-                }
-
-                // if($selectPim->status === "kabid "){
-                //     $selectPim1 = Hdb::getAnggotaJabatan([
-                //         "kdDinas"=>$param['kdDinas'],
-                //         "tahun"=>$param['tahun'],
-                //         "status"=>"sekretaris"
-                //     ]);
-                // }
-            }else if($data->pimSetda=='Manual'){
-                $tamPimpinan = explode("&",$data->tdSETDA);
-                $pimpinan =  (object)[
-                    'nmAnggota'=>$this->getNewLineInText($tamPimpinan[1]),
-                    'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0])
-                ];
-                $jabatanPim = $this->getNewLineInText($tamPimpinan[0]);
-            }
-
-            $dinas = Hdb::getDinasOne($cek['setda'],$param['tahun']);
-
-            if(count($member)>0){
-                foreach ($member as $key => $value) {
-                    $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
-                }
-            }
-
-            $date =  explode("-",$param['tglCetak']);
-            // Array ( [0] => 2023 [1] => 08 [2] => 27 )
-            $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-
-            $dateS = explode("-",$data->date);
-            $dateE = [];
-            $textTanggal = $dateS[2];
-            if(!empty($data->dateE)){
-                $dateE = explode("-",$data->dateE);
-            }
-
-            $asKab = 'Kab. Sumbawa Barat';
-            $kab = 'Kabupaten Sumbawa Barat';
-            $asdiskab= $dinas->asDinas.' '.$asKab;
-            $datax = [
-                'dinas' =>$dinas->nmDinas,
-                'asDinas' => $dinas->asDinas,
-                'asKab' => $asKab,
-                'kab' => $kab,
-                'asdiskab' => $asdiskab,
-                'alamat'    => $dinas->alamat,
-                "tahun"=> $cek['ta'],
-                'data' => $data,
-
-                "dateS"=>$dateS[2]." ".$this->getBulan($dateS[1])." ".$dateS[0] ,
-                "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
-                "no" =>"000.1.2.3",
-                'member' => $member,
-                'pimpinan'=> $pimpinan,
-                'jabatanPim' => $jabatanPim,
-                'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],
-                'hari'  => $hari." Hari"
-            ];
-            $pdf = PDF::loadView('pdf.sppdSetda', $datax)
-                    ->setPaper('legal','portrait');
-            return $pdf->stream('sppd-Setda'.$data->no.'.pdf');
-        }
-        return response()->json([
-            'exc' => false,
-            'msg' => $cek['msg']
-        ], 200);
-    }
     public function sppdSetda($val){
         $user =Auth::user();
         $cek = $this->portal($user);
@@ -432,10 +323,10 @@ class PdfGenerator extends Controller
                     $jabatanPimReal = $selectPim->nmJabatan;
                     if($param['sppdDaerah']){
                         $jabatanPim = "An. BUPATI SUMBAWA BARAT <br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
-                    }else{ 
+                    }else{
                         $jabatanPim .= "<br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
                     }
-                    
+
                     $pimpinan = $selectPim;
                 }
 
@@ -465,10 +356,11 @@ class PdfGenerator extends Controller
 
             $date =  explode("-",$param['tglCetak']);
             // Array ( [0] => 2023 [1] => 08 [2] => 27 )
-            $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-
-            if($hari==0){
-                $hari = 1;
+            // $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+            $hari = 1;
+            if(strlen($data->date)>0){
+                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+                $hari++;
             }
 
             $dateS = explode("-",$data->date);
@@ -498,8 +390,8 @@ class PdfGenerator extends Controller
                 'jabatanPimReal'=>$jabatanPimReal,
                 'pimpinan'=> $pimpinan,
                 'jabatanPim' => $jabatanPim,
-                'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],
-                'hari'  => $hari." Hari"
+                'tglCetak'=> $this->getBulan($date[1])." ".$date[0],
+                'hari'  => $hari." (".Hsf::terbilang($hari).") "."Hari"
             ];
             $pdf = PDF::loadView('pdf.sppdSetda', $datax)
                     ->setPaper('legal','portrait');
@@ -581,7 +473,14 @@ class PdfGenerator extends Controller
 
             $date =  explode("-",$param['tglCetak']);
             // Array ( [0] => 2023 [1] => 08 [2] => 27 )
-            $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+
+            $hari = 1;
+            if(strlen($data->date)>0){
+                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+                $hari++;
+            }
+
+
 
             $dateS = explode("-",$data->date);
             $dateE = [];
@@ -608,12 +507,137 @@ class PdfGenerator extends Controller
                 "no" =>"000.1.2.3",
                 'member' => $member,
                 'pimpinan'=> $pimpinan,
-                'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],
-                'hari'  => $hari." Hari"
+                // 'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],
+                'tglCetak'=>$this->getBulan($date[1])." ".$date[0],
+                'hari'  => $hari." (".Hsf::terbilang($hari).") "."Hari"
             ];
             $pdf = PDF::loadView('pdf.sppdBupati', $datax)
                     ->setPaper('legal','portrait');
             return $pdf->stream('sppd-Bupati-'.$data->no.'.pdf');
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
+    public function sppdBupatiSetda($val){
+        $user =Auth::user();
+        $cek = $this->portal($user);
+        if($cek['exc']){
+            $baseEND=json_decode((base64_decode($val)));
+            $param = [
+                "kdDinas"=>$baseEND->{'kdDinas'},
+                // "kdBidang"=>$baseEND->{'kdBidang'},
+                "kdSub"=>$baseEND->{'kdSub'},
+                "kdJudul"=>$baseEND->{'kdJudul'},
+                "no"=>$baseEND->{'no'},
+                "tahun"=>$cek['ta'],
+                "tglCetak"=>$baseEND->{'tglCetak'},
+                "sppdDaerah"=>$baseEND->{'sppdDaerah'}
+            ];
+            $param["where"]= ' and a.kdBAnggota =""';
+            $data =Hdb::dwork($param)[0];
+
+            $param["where"]= ' and a.kdBAnggota !=""
+                and b.tingkatan<=3
+            ';
+            $member = Hdb::dworkAnggotaBidang($param);
+
+            // getPimpinan
+            $pimpinan = Hdb::getAnggotaJabatan([
+                "kdDinas"=>$cek['setda'],
+                "tahun"=>$param['tahun'],
+                "status"=>"setda"
+            ])[0];
+            $jabatanPimReal= $pimpinan->nmJabatan;
+            // <label style='text-transform: lowercase'>a.n</label> BUPATI SUMBAWA BARAT <br> "<label style='text-transform: capitalize'>Plh</label>. ".
+            $jabatanPim = $pimpinan->nmJabatan;
+            if(!empty($data->pimSetda) && $data->pimSetda!='Manual'){
+                // get Pimpinan selected
+                $split = explode("|",$data->pimSetda);
+                $selectPim = Hdb::getOneAnggota([
+                    "kdDinas"=>$split[2],
+                    "tahun"=>$param['tahun'],
+                    "kdBAnggota"=>$split[0],
+                    "kdBidang"=>$split[1]
+                ])[0];
+                if($selectPim->status !=='setda'){
+                    $jabatanPimReal = $selectPim->nmJabatan;
+                    if($param['sppdDaerah']){
+                        $jabatanPim = "An. BUPATI SUMBAWA BARAT <br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
+                    }else{
+                        $jabatanPim .= "<br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
+                    }
+
+                    $pimpinan = $selectPim;
+                }
+
+                // if($selectPim->status === "kabid "){
+                //     $selectPim1 = Hdb::getAnggotaJabatan([
+                //         "kdDinas"=>$param['kdDinas'],
+                //         "tahun"=>$param['tahun'],
+                //         "status"=>"sekretaris"
+                //     ]);
+                // }
+            }else if($data->pimSetda=='Manual'){
+                $tamPimpinan = explode("&",$data->tdSETDA);
+                $pimpinan =  (object)[
+                    'nmAnggota'=>$this->getNewLineInText($tamPimpinan[1]),
+                    'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0])
+                ];
+                $jabatanPim = $this->getNewLineInText($tamPimpinan[0]);
+            }
+
+            $dinas = Hdb::getDinasOne($cek['setda'],$param['tahun']);
+
+            if(count($member)>0){
+                foreach ($member as $key => $value) {
+                    $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
+                }
+            }
+
+            $date =  explode("-",$param['tglCetak']);
+            // Array ( [0] => 2023 [1] => 08 [2] => 27 )
+            $hari = 1;
+            if(strlen($data->date)>0){
+                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+                $hari++;
+            }
+
+            $dateS = explode("-",$data->date);
+            $dateE = [];
+            $textTanggal = $dateS[2];
+            if(!empty($data->dateE)){
+                $dateE = explode("-",$data->dateE);
+            }
+
+            $asKab = 'Kab. Sumbawa Barat';
+            $kab = 'Kabupaten Sumbawa Barat';
+            $asdiskab= $dinas->asDinas.' '.$asKab;
+            $datax = [
+                'dinas' =>$dinas->nmDinas,
+                'asDinas' => $dinas->asDinas,
+                'asKab' => $asKab,
+                'kab' => $kab,
+                'asdiskab' => $asdiskab,
+                'alamat'    => $dinas->alamat,
+                "tahun"=> $cek['ta'],
+                'data' => $data,
+
+                "dateS"=>$dateS[2]." ".$this->getBulan($dateS[1])." ".$dateS[0] ,
+                "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
+                "no" =>"000.1.2.3",
+                'member' => $member,
+                'jabatanPimReal'=>$jabatanPimReal,
+                'pimpinan'=> $pimpinan,
+                'jabatanPim' => $jabatanPim,
+                // 'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],
+                'tglCetak'=> $this->getBulan($date[1])." ".$date[0],
+                'hari'  => $hari." (".Hsf::terbilang($hari).") "."Hari"
+            ];
+            $pdf = PDF::loadView('pdf.sppdSetda', $datax)
+                    ->setPaper('legal','portrait');
+            return $pdf->stream('sppd-Setda'.$data->no.'.pdf');
         }
         return response()->json([
             'exc' => false,

@@ -15317,9 +15317,18 @@ function FormDokumen(_ref) {
           className: "header",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
             children: "1. Surat Tugas - Permohonan SPD"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "btnGroup",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/pdf/SuratTugasSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                tglCetak: tglCetak
+              })))),
+              className: "btn2 bwarning ptb0",
+              target: "_blank",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                className: "mdi mdi-file-pdf-box fz25"
+              }), " KOP BUPATI"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/pdf/SuratTugasSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
                 tglCetak: tglCetak
               })))),
@@ -15327,8 +15336,8 @@ function FormDokumen(_ref) {
               target: "_blank",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
-              }), " Dokumen"]
-            })
+              }), " KOP SKPD"]
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "body",
@@ -15397,13 +15406,14 @@ function FormDokumen(_ref) {
             className: "btnGroup",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/pdf/sppdBupatiSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak
+                tglCetak: tglCetak,
+                sppdDaerah: 0
               })))),
               className: "btn2 bwarning ptb0",
               target: "_blank",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box fz25"
-              }), " Dokumen SETDA"]
+              }), "KOP SETDA"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/pdf/sppdBupati/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
                 tglCetak: tglCetak
@@ -15412,7 +15422,7 @@ function FormDokumen(_ref) {
               target: "_blank",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
-              }), " Dokumen"]
+              }), " KOP BUPATI"]
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -15488,8 +15498,8 @@ function FormDokumen(_ref) {
               className: "btn2 bwarning ptb0",
               target: "_blank",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "mdi mdi-file-pdf-box clight fz25"
-              }), " Dokumen Daerah"]
+                className: "mdi mdi-file-pdf-box fz25"
+              }), " Dalam Daerah"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/pdf/sppdSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
                 tglCetak: tglCetak,
@@ -15499,7 +15509,7 @@ function FormDokumen(_ref) {
               target: "_blank",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
-              }), " Dokumen"]
+              }), " Luar Daerah"]
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {

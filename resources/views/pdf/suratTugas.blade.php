@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Resume</title>
+    <!-- <link href="{{ asset('stylePDF.css') }}" rel="stylesheet"> -->
     <style>
         .page-break {
             page-break-after: always;
@@ -25,6 +26,7 @@
         .container{
             margin: 0 auto;
             display: block;
+            width: 90%;
             /* display: flex;
             flex-direction: column; */
         }
@@ -36,9 +38,11 @@
             width: 100%;
             margin-left: 60%;
         }
+        .pm0{padding: 0px; margin: 0px;}
         .p0{padding: 0px;}
-        .pwrap{padding: 0px 10px;}
+        .pwrap{padding: 0px 30px;}
         .tcenter{text-align: center;}
+        .tend{text-align: end;}
         .fz40{font-size: 40px;}
         .fz30{font-size: 30px;}
         .fz25{font-size: 25px;}
@@ -46,32 +50,59 @@
         .bbottom{border-bottom: 1px solid;}
 
         .capitalize{text-transform: capitalize;}
+
+        .noBold{font-weight: normal;}
     </style>
 </head>
-<body class="fz14">
+<body class="fz14" style="font-family: Arial, Helvetica, sans-serif;">
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
+
+        $kop='
+            <table>
+                <tr>
+                    <td class="w30p">
+                        <img src="logo/ksb.png" width="60px">
+                    </td>
+                    <td class="pwrap tcenter mKop">
+                        <h2 class=" tupper fz20 noBold pm0 " >
+                            PEMERINTAH '.$kab.'<br>
+                            <b>'.$dinas.'</b>
+                        </h2>
+                        <i style="font-size: medium;" class="pm0">'.$alamat.'</i>
+                    </td>
+                </tr>
+            </table>
+        ';
+
+        $tt='
+            <tr>
+                <td colspan="3" >
+                    <div class="right">
+                        <p class="w40p tcenter">
+                            '.$jabatanPim.' '.$asDinas.'<br>
+                            '.$kab.'
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <br>
+            <br>
+            <tr>
+                <td colspan="3" >
+                    <div class="right">
+                        <p class="w40p tcenter"><u><b>'.$pimpinan->nmAnggota.'</b></u><br>
+                        NIP. '.$pimpinan->nip.'</p>
+                    </div>
+                </td>
+            </tr>
+        ';
     @endphp
 
 
     <div class=" container">
-        <table>
-            <tr>
-                <td>
-                    <div class="w30p"><img src="logo/ksb.png" width="60px"></div>
-                </td>
-                <td>
-                    <div class="tcenter pwrap">
-                        <h2 class="tupper tcenter fz25" >
-                            PEMERINTAH {{$kab}}<br>
-                            {{$dinas}}<br>
-                            <label style="font-size: medium;"><i>{{$alamat}}</i></label>
-                        </h2>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        @php echo($kop); @endphp
         <hr>
         <br>
         <!-- <br> -->
@@ -170,76 +201,30 @@
                     @if(count($member)>4)
                         <div style="margin-left: 70px;">
                     @endif
-                        <p style="width: 650px;">
-                            Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
-                            <br>
-                            Demikian dan atas kebijakan Bapak dihaturkan terima kasih.
-                        </p>
+                    <p style="width: 600px;">
+                        Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
+                        <br>
+                        Demikian dan atas kebijakan Bapak dihaturkan terima kasih.
+                    </p>
                     @if(count($member)>4)
                         </div>
                     @endif
                 </td>
             </tr>
             <br>
-            <br>
-            <tr class="tcenter">
-                <td class="w10p"></td>
-                <td class="w60p"></td>
-                <td>
-                    @php echo($jabatanPim.' '.$asDinas); @endphp <br>
-                    {{$kab}}
-                </td>
-            </tr>
-            <br>
-            <br>
-            <br>
-            <tr class="tcenter">
-                <td class="w10p"></td>
-                <td class="w60p"></td>
-                <td>
-                    {{$pimpinan->nmAnggota}}<br>
-                    NIP. {{$pimpinan->nip}}
-                </td>
-            </tr>
+            @php echo($tt); @endphp
         </table>
     </div>
     <div class="page-break"></div>
     <div class=" container">
-        <table>
-            <tr>
-                <td>
-                    <div class="w30p"><img src="logo/ksb.png" width="60px"></div>
-                </td>
-                <td>
-                    <div class="tcenter pwrap">
-                        <h2 class="tupper tcenter fz25" >
-                            PEMERINTAH {{$kab}}<br>
-                            {{$dinas}}<br>
-                            <label style="font-size: medium;"><i>{{$alamat}}</i></label>
-                        </h2>
-                    </div>
-                </td>
-                <!-- <td>
-                    <div class="w30p"><img src="logo/ksb.png" width="60px"></div>
-                </td>
-                <td>
-                    <div class="tcenter pwrap">
-                        <h2 class="tupper">
-                            PEMERINTAH {{$kab}}<br>
-                            {{$dinas}}<br>
-                            <label style="font-size: medium;"><i>jl. Bung Karno No. 5 Komplek KTC - Taliwang 84355</i></label>
-                        </h2>
-                    </div>
-                </td> -->
-            </tr>
-        </table>
+        @php echo($kop); @endphp
         <hr>
         <br>
         <!-- <br> -->
         <table class="fz12" class="w100p">
             <tr class="tcenter ">
                 <td colspan="3">
-                    <b class="bbottom fz30">
+                    <b class="bbottom fz20">
                         SURAT TUGAS<br>
                     </b>
                     Nomor : {{$nomorTugas}}
@@ -326,7 +311,7 @@
             <tr>
                 <td class="w20p">Untuk</td>
                 <td colspan="2">
-                    <p style="text-align: justify;padding: 0px; margin: 0px;">
+                    <p style="text-align: justify;padding: 0px; margin: 0px;max-width:480px;">
                         : {{$data->maksud}} pada tanggal
                         {{$textTanggal}}
                         di {{$data->lokasi}}.
@@ -340,26 +325,7 @@
                 </td>
             </tr>
             <br>
-            <tr>
-                <td colspan="3" >
-                    <div class="right">
-                        <p class="w40p tcenter">
-                            @php echo($jabatanPim); @endphp  {{$asDinas}}<br>
-                            {{$kab}}
-                        </p>
-                    </div>
-                </td>
-            </tr>
-            <br>
-            <br>
-            <tr>
-                <td colspan="3" >
-                    <div class="right">
-                        <p class="w40p tcenter">{{$pimpinan->nmAnggota}}<br>
-                        NIP. {{$pimpinan->nip}}</p>
-                    </div>
-                </td>
-            </tr>
+            @php echo($tt); @endphp
         </table>
     </div>
 </body>

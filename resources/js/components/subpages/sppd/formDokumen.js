@@ -19,7 +19,6 @@ function FormDokumen({ dt, param, indWork, dwork }) {
     const date = new Date().setDate(new Date().getDate());
     const [ tglCetak, settglCetak] = useInput(new Date(date).toISOString().split('T')[0]);
 
-
     if (dt.length===0) {
         return <></>;
     }
@@ -227,9 +226,15 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                         <div className="btnGroup">
                             <Link
                                 to={`/pdf/SuratTugasSppd/${btoa(JSON.stringify({...param,tglCetak}))}`}
+                                className="btn2 bwarning ptb0"
+                                target="_blank">
+                                <span className="mdi mdi-file-pdf-box fz25" /> KOP BUPATI
+                            </Link>
+                            <Link
+                                to={`/pdf/SuratTugasSppd/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
-                                <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen
+                                <span className="mdi mdi-file-pdf-box clight fz25" /> KOP SKPD
                             </Link>
                         </div>
                     </div>
@@ -277,16 +282,16 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                         <h3>2. Surat Perjalanan Dinas (BUPATI)</h3>
                         <div className="btnGroup">
                             <Link
-                                to={`/pdf/sppdBupatiSetda/${btoa(JSON.stringify({...param,tglCetak}))}`}
+                                to={`/pdf/sppdBupatiSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:0}))}`}
                                 className="btn2 bwarning ptb0"
                                 target="_blank">
-                                <span className="mdi mdi-file-pdf-box fz25" /> Dokumen SETDA
+                                <span className="mdi mdi-file-pdf-box fz25" />KOP SETDA
                             </Link>
                             <Link
                                 to={`/pdf/sppdBupati/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
-                                <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen
+                                <span className="mdi mdi-file-pdf-box clight fz25" /> KOP BUPATI
                             </Link>
                         </div>
                     </div>
@@ -339,13 +344,13 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                                 to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:1}))}`}
                                 className="btn2 bwarning ptb0"
                                 target="_blank">
-                                <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen Daerah
+                                <span className="mdi mdi-file-pdf-box fz25" /> Dalam Daerah
                             </Link>
                             <Link
                                 to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:0}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
-                                <span className="mdi mdi-file-pdf-box clight fz25" /> Dokumen
+                                <span className="mdi mdi-file-pdf-box clight fz25" /> Luar Daerah
                             </Link>
                         </div>
                     </div>

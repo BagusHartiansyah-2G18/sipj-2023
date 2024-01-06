@@ -25,6 +25,7 @@
         .container{
             margin: 0 auto;
             display: block;
+            width: 90%;
             /* display: flex;
             flex-direction: column; */
         }
@@ -41,6 +42,7 @@
         td{
             padding: 5px;
         }
+        .pm0{padding: 0px; margin: 0px;}
         .p0{padding: 0px;}
         .right{
             width: 100%;
@@ -55,7 +57,7 @@
             margin: 0px;
         }
         .tupper{text-transform: uppercase;}
-        .pwrap{padding: 0px 10px;}
+        .pwrap{padding: 0px 30px;}
         .tcenter{text-align: center;}
         .tend{text-align: right;}
         .fz40{font-size: 40px;}
@@ -65,34 +67,37 @@
         .bbottom{border-bottom: 1px solid;}
 
         .capitalize{text-transform: capitalize;}
+        .noBold{font-weight: normal;}
     </style>
 </head>
-<body class="fz14">
+<body class="fz14" style="font-family: Arial, Helvetica, sans-serif;">
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
         $titik ='..............................................';
         $br="<br><br><br>";
+        $kop='
+            <table>
+                <tr>
+                    <td class="w30p">
+                        <img src="logo/ksb.png" width="60px">
+                    </td>
+                    <td class="pwrap tcenter mKop">
+                        <h2 class=" tupper fz20 noBold pm0 " >
+                            PEMERINTAH '.$kab.'<br>
+                            <b>'.$dinas.'</b>
+                        </h2>
+                        <i style="font-size: medium;" class="pm0">'.$alamat.'</i>
+                    </td>
+                </tr>
+            </table>
+        ';
+        $spaci4='&nbsp;&nbsp;&nbsp;&nbsp;';
     @endphp
 
     @foreach ($member as $dt)
         <div class=" container">
-            <table>
-                <tr>
-                    <td>
-                        <div class="w30p"><img src="logo/ksb.png" width="60px"></div>
-                    </td>
-                    <td>
-                        <div class="tcenter pwrap">
-                            <h2 style="text-transform: uppercase;" class="tcenter fz25">
-                                PEMERINTAH {{$kab}}<br>
-                                {{$dinas}}<br>
-                            </h2>
-                            <label style="font-size: medium;"><i>{{$alamat}}</i></label>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            @php echo($kop); @endphp
             <hr>
             <br>
             <!-- <br> -->
@@ -119,7 +124,7 @@
                         <b class="bbottom fz20">
                             SURAT PERJALANAN DINAS<br>
                         </b>
-                        <b class="fz30">(SPD)</b>
+                        <b class="fz20">(SPD)</b>
                     </td>
                 </tr>
                 <br>
@@ -141,7 +146,7 @@
                                 <td>Nama/NIP Pegawai yang Melaksanakan Perjalanan Dinas</td>
                                 <td colspan="2">
                                     {{$dt->nmAnggota}}<br>
-                                    {{$dt->nip}}
+                                    {{$dt->snip}}. {{$dt->nip}}
                                 </td>
                             </tr>
                             <tr>
@@ -292,7 +297,7 @@
                             <tr>
                                 <td class="p0">Pada Tanggal</td>
                                 <td class="p0">:</td>
-                                <td class="p0 tend">{{$tglCetak}}</td>
+                                <td class="p0 tend">@php echo($spaci4); @endphp {{$tglCetak}}</td>
                             </tr>
                         </table>
                     </td>
@@ -313,7 +318,7 @@
                     <td class="w50p"></td>
                     <td>
                         @if(count((array) $pimpinan)>2)
-                            {{$pimpinan->nmAnggota}}<br>
+                            <u><b>{{$pimpinan->nmAnggota}}</b></u><br>
                             NIP. {{$pimpinan->nip}}
                         @else
                             @php echo($pimpinan->nmAnggota) @endphp
@@ -491,14 +496,15 @@
                                     <b>
                                         <label class="tupper">@php echo($jabatanPim); @endphp</label>
                                         @php echo($br); @endphp
+                                        <br><br>
 
                                         @if(count((array) $pimpinan)>2)
-                                            {{$pimpinan->nmAnggota}}<br>
+                                            <u>{{$pimpinan->nmAnggota}}</u><br>
                                             NIP. {{$pimpinan->nip}}
                                         @else
                                             @php echo($pimpinan->nmAnggota) @endphp
                                         @endif
-                                    </b>
+                                    </br>
                                 </p>
                             </td>
                         </tr>

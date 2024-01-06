@@ -24,6 +24,7 @@
         .container{
             margin: 0 auto;
             display: block;
+            width: 90%;
             /* display: flex;
             flex-direction: column; */
         }
@@ -68,12 +69,13 @@
         .lowercase{text-transform: lowercase;}
     </style>
 </head>
-<body class="fz14">
+<body class="fz14"  style="font-family: Arial, Helvetica, sans-serif;">
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
         $titik ='..............................................';
         $br="<br><br><br>";
+        $spaci4='&nbsp;&nbsp;&nbsp;&nbsp;';
     @endphp
 
     @foreach ($member as $dt)
@@ -140,7 +142,7 @@
                                 <td>Nama/NIP Pegawai yang Melaksanakan Perjalanan Dinas</td>
                                 <td colspan="2">
                                     {{$dt->nmAnggota}}<br>
-                                    NIP. {{$dt->nip}}
+                                    {{$dt->snip}}. {{$dt->nip}}
                                 </td>
                             </tr>
                             <tr>
@@ -292,7 +294,7 @@
                             <tr>
                                 <td class="p0">Pada Tanggal</td>
                                 <td class="p0">:</td>
-                                <td class="p0 tend">{{$tglCetak}}</td>
+                                <td class="p0 tend"> @php echo($spaci4); @endphp {{$tglCetak}}</td>
                             </tr>
                         </table>
                     </td>
@@ -315,7 +317,7 @@
                     <td class="w10p"></td>
                     <td class="w50p"></td>
                     <td>
-                        @php echo($pimpinan->nmAnggota) @endphp
+                        <b>@php echo($pimpinan->nmAnggota) @endphp</b>
                     </td>
                 </tr>
             </table>
@@ -488,6 +490,7 @@
                                     <b>
                                         <label class="tupper">@php echo($pimpinan->nmJabatan) @endphp {{$kab}}</label>
                                         @php echo($br); @endphp
+                                        <br><br>
                                         @php echo($pimpinan->nmAnggota) @endphp
                                     </b>
                                 </p>

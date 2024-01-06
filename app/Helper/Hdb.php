@@ -589,7 +589,7 @@ class Hdb {
         return DB::select('
             select
                 a.no, a.date, a.status, a.kdBAnggota,
-                b.nip, b.nmAnggota, b.nip, b.nmJabatan, b.asJabatan, b.golongan, b.tingkatan,
+                b.nip, b.nmAnggota, b.nip, b.nmJabatan, b.asJabatan, b.golongan, b.tingkatan, b.snip,
                 c.nmBidang
             from work a
             join dinas_b_anggota b on
