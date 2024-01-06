@@ -225,7 +225,7 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                         <h3>1. Surat Tugas - Permohonan SPD</h3>
                         <div className="btnGroup">
                             <Link
-                                to={`/pdf/SuratTugasSppd/${btoa(JSON.stringify({...param,tglCetak}))}`}
+                                to={`/pdf/SuratTugasSppdx/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bwarning ptb0"
                                 target="_blank">
                                 <span className="mdi mdi-file-pdf-box fz25" /> KOP BUPATI

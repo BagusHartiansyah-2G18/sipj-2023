@@ -15320,7 +15320,7 @@ function FormDokumen(_ref) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "btnGroup",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-              to: "/pdf/SuratTugasSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+              to: "/pdf/SuratTugasSppdx/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
                 tglCetak: tglCetak
               })))),
               className: "btn2 bwarning ptb0",

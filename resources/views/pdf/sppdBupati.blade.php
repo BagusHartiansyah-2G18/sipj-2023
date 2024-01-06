@@ -34,6 +34,7 @@
         td{
             padding: 5px;
         }
+        .pm0{padding: 0px; margin: 0px;}
         .p0{padding: 0px;}
         .m0{margin: 0px;}
         .right{
@@ -81,7 +82,7 @@
     @foreach ($member as $dt)
         <div class=" container">
             <table class="w100p p0">
-                <tr>
+                <!-- <tr>
                     <td class="p0">
                         <div style="margin-left: 42.5%;">
                             <img src="logo/garuda.png" width="80px">
@@ -89,6 +90,17 @@
                         <h2 style="text-transform: uppercase;" class="tcenter fz25">
                             {{$dinas}} {{$kab}}
                         </h2>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td class="p0 tcenter">
+                        <div >
+                            <img src="logo/garuda.png" width="80px">
+                        </div>
+                        <h2 style="text-transform: uppercase;" class="tcenter fz25 pm0">
+                            BUPATI SUMBAWA BARAT
+                        </h2>
+                        <i style="font-size: small;" class="pm0 ">{{$alamat}}</i>
                     </td>
                 </tr>
             </table>

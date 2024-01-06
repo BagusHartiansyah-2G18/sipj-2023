@@ -7,9 +7,9 @@
         .page-break {
             page-break-after: always;
         }
-        .fz12{
-            font-size: 12px;
-        }
+        .fz12{font-size: 12px;}
+        .fz14{ font-size: 14px;}
+
         .w100p{width: 100%;}
         .w70p{width: 70%;}
         .w60p{width: 60%;}
@@ -42,7 +42,7 @@
         .capitalize{text-transform: capitalize;}
     </style>
 </head>
-<body>
+<body class="fz14" style="font-family: Arial, Helvetica, sans-serif;">
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
@@ -160,20 +160,20 @@
                                 <td class="w30p tcenter">
                                     MENGETAHUI / MENYETUJU <br>
                                     Pengguna Anggaran @php echo($spaceTT); @endphp
-                                    {{$kaban}} <br>
+                                    <b><u>{{$kaban}}</u></b> <br>
                                     NIP. {{$nipKaban}}
                                 </td>
                                 <td class="w30p tcenter">
                                     LUNAS DIBAYAR <br>
                                     Bendahara @php echo($spaceTT); @endphp
-                                    {{$bendahara}} <br>
+                                    <b><u>{{$bendahara}}</u></b> <br>
                                     NIP. {{$nipBendahara}}
                                 </td>
                                 <td class="w30p tcenter">
                                     Taliwang, @php echo($line); @endphp {{$tahun}}<br>
                                     Yang Menerima Uang, @php echo($spaceTT); @endphp
-                                    {{$dt->nmAnggota}} <br>
-                                    NIP. {{$dt->nip}}
+                                    <b><u>{{$dt->nmAnggota}}</u></b><br>
+                                    {{$dt->snip}}. {{$dt->nip}}
                                 </td>
                             </tr>
                         </table>
@@ -227,8 +227,8 @@
                                     Rp. {{number_format($totalJenis,0,',','.')}} <br><br>
                                     <div class="tcenter w50p">
                                         Bendahara Pengeluaran,@php echo($spaceTT); @endphp
-                                        {{$bendahara}} <br>
-                                        NIP. {{$bendahara}}
+                                        <b><u>{{$bendahara}}</u></b><br>
+                                        NIP. {{$nipBendahara}}
                                     </div>
                                 </td>
                                 <td class="w50p tcenter">
@@ -236,8 +236,8 @@
                                     Telah Menerima Uang Sebesar, <br>
                                     Rp. {{number_format($totalJenis,0,',','.')}} <br><br>
                                     Yang Menerima Uang,@php echo($spaceTT); @endphp
-                                    {{$dt->nmAnggota}} <br>
-                                    NIP. {{$dt->nip}}
+                                    <b><u>{{$dt->nmAnggota}}</u></b> <br>
+                                    {{$dt->snip}}. {{$dt->nip}}
 
                                 </td>
                             </tr>
@@ -275,7 +275,7 @@
                                 Kepala {{$asDinas}} <br>
                                 {{$asKab}} @php echo($spaceTT); @endphp
 
-                                {{$kaban}} <br>
+                                <b><u>{{$kaban}}</u></b> <br>
                                 NIP. {{$nipKaban}}
                             </div>
                         </div>

@@ -217,6 +217,159 @@
     </div>
     <div class="page-break"></div>
     <div class=" container">
+        <!-- @php echo($kop); @endphp -->
+        <!-- garuda.png -->
+        <table class="w100p p0">
+            <tr>
+                <td class="p0 tcenter">
+                    <div >
+                        <img src="logo/garuda.png" width="80px">
+                    </div>
+                    <h2 style="text-transform: uppercase;" class="tcenter fz25 pm0">
+                        BUPATI SUMBAWA BARAT
+                    </h2>
+                    <i style="font-size: small;" class="pm0 ">{{$alamat}}</i>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <br>
+        <!-- <br> -->
+        <table class="fz12" class="w100p">
+            <tr class="tcenter ">
+                <td colspan="3">
+                    <b class="bbottom fz20">
+                        SURAT TUGAS<br>
+                    </b>
+                    Nomor : {{$nomorTugas}}
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="w20p">Nama</td><td>: {{$pimpinan->nmAnggota}}</td>
+            </tr>
+            <tr>
+                <td>NIP</td><td>: {{$pimpinan->nip}}</td>
+            </tr>
+            <tr>
+                <td>Jabatan</td><td>: @php echo($pimpinan->nmJabatan); @endphp {{$asdiskab}}</td>
+            </tr>
+            <br>
+            <tr class="tcenter ">
+                <td colspan="3">
+                    <b class="fz20">MEMERINTAHKAN<br></b>
+                </td>
+            </tr>
+            <tr>
+                <td class="w20p">Kepada</td><td>:</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div style="margin-left: 70px;">
+                    <ul>
+                        <!-- @foreach ($member as $dt)
+                            <ol style="list-style: disc;">
+                                <Table>
+                                    <tr><td>{{$loop->index+1}}. </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
+                                    <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
+                                    <tr><td></td><td>Jabatan</td><td>: {{$dt->nmJabatan}} {{$asdiskab}}</td></tr>
+                                    <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
+                                    <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
+                                </Table>
+                            </ol>
+                        @endforeach -->
+                        @php
+                            $tamp=0; $tamHtml="";
+                            $newMember = array();
+                            foreach ($member as $key => $value) {
+                                if($value->tingkatan < 4){
+                                    array_push($newMember,$value);
+                                }
+                            }
+                        @endphp
+                        @foreach ($newMember as $dt)
+                            <ol style="list-style: disc;">
+                                <Table>
+                                    <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
+                                    <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
+                                    <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
+                                    <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
+                                    <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
+                                </Table>
+                            </ol>
+                            @if(count($member)>4)
+                                @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
+                                    <div class="page-break"></div>
+                                    @php $tamp=0; @endphp
+                                @elseif(($tamp+1)%8 === 0)
+                                    @if($tamHtml!='')
+                                        @php $tamp=0; $tamHtml=''; @endphp
+                                    @endif
+
+                                    <!-- loop member >9 -->
+                                    @if($loop->index+1!=count($member))
+                                        <div class="page-break"></div>
+                                    @endif
+                                @endif
+                                @php $tamp++; @endphp
+                            @else
+                                <!-- @for($a=4-count($member); $a>0; $a--)
+                                    <div style="min-height: 130px;"></div>
+                                @endfor -->
+                            @endif
+
+                            <!-- (@php echo($tamp); @endphp) -->
+                            <!-- cek enter terakhir loop  -->
+                            <!-- @if($loop->index+1 == count($member) && count($member)>4)
+                                @for($a=8-$tamp; $a>0; $a--)
+                                    <div style="min-height: 130px;"></div>
+                                @endfor
+                            @endif -->
+                        @endforeach
+                    </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="w20p">Untuk</td>
+                <td colspan="2">
+                    <p style="text-align: justify;padding: 0px; margin: 0px;max-width:480px;">
+                        : {{$data->maksud}} pada tanggal
+                        {{$textTanggal}}
+                        di {{$data->lokasi}}.
+                    </p>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td colspan="3" >
+                    <div class="right">
+                        <p class="w40p tcenter">
+                            BUPATI SUMBAWA BARAT
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <br>
+            <br>
+            <tr>
+                <td colspan="3" >
+                    <div class="right">
+                        <p class="w40p tcenter"><b>{{$pimpinan1->nmAnggota}}</b><br>
+                        <!-- NIP. '.$pimpinan->nip.'</p> -->
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="page-break"></div>
+    <div class=" container">
         @php echo($kop); @endphp
         <hr>
         <br>
@@ -264,8 +417,16 @@
                                 </Table>
                             </ol>
                         @endforeach -->
-                        @php $tamp=0; $tamHtml=""; @endphp
-                        @foreach ($member as $dt)
+                        @php
+                            $tamp=0; $tamHtml="";
+                            $newMember = array();
+                            foreach ($member as $key => $value) {
+                                if($value->tingkatan > 3){
+                                    array_push($newMember,$value);
+                                }
+                            }
+                        @endphp
+                        @foreach ($newMember as $dt)
                             <ol style="list-style: disc;">
                                 <Table>
                                     <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>

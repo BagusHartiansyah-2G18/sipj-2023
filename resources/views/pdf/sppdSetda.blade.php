@@ -87,7 +87,7 @@
                             PEMERINTAH '.$kab.'<br>
                             <b>'.$dinas.'</b>
                         </h2>
-                        <i style="font-size: medium;" class="pm0">'.$alamat.'</i>
+                        <i style="font-size: small;" class="pm0">'.$alamat.'</i>
                     </td>
                 </tr>
             </table>
