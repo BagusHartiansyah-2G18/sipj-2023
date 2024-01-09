@@ -167,49 +167,76 @@ class PdfGenerator extends Controller
             // echo("<pre>");
             // return print_r($member);
             // getPimpinan
-            $pimpinan = Hdb::getAnggotaJabatan([
-                "kdDinas"=>$param['kdDinas'],
-                "tahun"=>$param['tahun'],
-                "status"=>"pimpinan"
-            ])[0];
-            $jabatanPim = $pimpinan->nmJabatan;
-            if(!empty($data->pimOpd) && $data->pimOpd!='Manual'){
-                // get Pimpinan selected
-                $split = explode("|",$data->pimOpd);
-                $selectPim = Hdb::getOneAnggota([
-                    "kdDinas"=>$split[2],
-                    "tahun"=>$param['tahun'],
-                    "kdBAnggota"=>$split[0],
-                    "kdBidang"=>$split[1]
-                ])[0];
+            // $pimpinan = Hdb::getAnggotaJabatan([
+            //     "kdDinas"=>$param['kdDinas'],
+            //     "tahun"=>$param['tahun'],
+            //     "status"=>"pimpinan"
+            // ])[0];
+            // $jabatanPim = $pimpinan->nmJabatan;
+            // if(!empty($data->pimOpd) && $data->pimOpd!='Manual'){
+            //     // get Pimpinan selected
+            //     $split = explode("|",$data->pimOpd);
+            //     $selectPim = Hdb::getOneAnggota([
+            //         "kdDinas"=>$split[2],
+            //         "tahun"=>$param['tahun'],
+            //         "kdBAnggota"=>$split[0],
+            //         "kdBidang"=>$split[1]
+            //     ])[0];
 
-                if($selectPim->nmJabatan !=='Kepala'){
-                    $jabatanPim = "Plh. ".$jabatanPim;
-                    $pimpinan = $selectPim;
-                }
-
-                // if($selectPim->status === "kabid "){
-                //     $selectPim1 = Hdb::getAnggotaJabatan([
-                //         "kdDinas"=>$param['kdDinas'],
-                //         "tahun"=>$param['tahun'],
-                //         "status"=>"sekretaris"
-                //     ]);
+                // if($selectPim->nmJabatan !=='Kepala'){
+                //     $jabatanPim = "Plh. ".$jabatanPim;
+                //     $pimpinan = $selectPim;
                 // }
-            }else if($data->pimOpd=='Manual'){
-                $tamPimpinan = explode("&",$data->tdOPD);
-                $nmAnggota = $this->getArrayNewLineInText($tamPimpinan[1]);
-                if(count($nmAnggota)<2){
-                    return print_r('harus terdapat Data nama pimpinan dan data NIP pimpinan');
+
+            //     // if($selectPim->status === "kabid "){
+            //     //     $selectPim1 = Hdb::getAnggotaJabatan([
+            //     //         "kdDinas"=>$param['kdDinas'],
+            //     //         "tahun"=>$param['tahun'],
+            //     //         "status"=>"sekretaris"
+            //     //     ]);
+            //     // }
+            // }else if($data->pimOpd=='Manual'){
+            //     $tamPimpinan = explode("&",$data->tdOPD);
+            //     $nmAnggota = $this->getArrayNewLineInText($tamPimpinan[1]);
+            //     if(count($nmAnggota)<2){
+            //         return print_r('harus terdapat Data nama pimpinan dan data NIP pimpinan');
+            //     }
+            //     $pimpinan =  (object)[
+            //         'nmAnggota'=>$nmAnggota[0],
+            //         'nip'=>$nmAnggota[1],
+            //         'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0])
+            //     ];
+            //     $jabatanPim = $this->getNewLineInText($tamPimpinan[0]);
+            // }
+
+            //kepala SKPD
+            $pimpinan = $this->getTTPimpinan(
+                $param['kdDinas'],"pimpinan",$param['tahun'],
+                $data->pimOpd,$data->tdOPD
+            );
+            $jabatanPim = $pimpinan->nmJabatan;
+            if(!$pimpinan->manual){
+                if($pimpinan->nmJabatan !=='Kepala'){
+                    $jabatanPim = "Plh. ".$jabatanPim;
                 }
-                $pimpinan =  (object)[
-                    'nmAnggota'=>$nmAnggota[0],
-                    'nip'=>$nmAnggota[1],
-                    'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0])
-                ];
-                $jabatanPim = $this->getNewLineInText($tamPimpinan[0]);
             }
+            //kepala SETDA / Asisten
+            $subPimpinan = $this->getTTPimpinan(
+                $cek['setda'],"setda",$param['tahun'],
+                $data->pimSetda,$data->tdSETDA
+            );
+            $jabatanSetda = "a.n. Bupati Sumbawa Barat <br>";
+            if(!$subPimpinan->manual){
+                // return print_r($subPimpinan->nmJabatan);
+                if($subPimpinan->status !=='setda'){
+                    $jabatanSetda .="Sekretaris Daerah, <br> u.b. " ;
+                }
+            }
+            // echo("<pre>");
+            // return print_r($subPimpinan);
 
             $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
+            $setda = Hdb::getDinasOne( $cek['setda'],$param['tahun']);
             // echo("<pre>");
             // return print_r($dinas);
 
@@ -240,29 +267,27 @@ class PdfGenerator extends Controller
 
 
 
-
-            // return print_r($hari);
-
-            // return print_r($date);
-
             $tglCetak = $date[2]." ".$this->getBulan($date[1])." ".$date[0];
-            $asKab = 'Kab. Sumbawa Barat';
-            $kab = 'Kabupaten Sumbawa Barat';
-            $asdiskab= $dinas->asDinas.' '.$asKab;
+            // $asdiskab= $dinas->asDinas.' '.$asKab;
             $datax = [
-                'dinas' =>$dinas->nmDinas,
-                'asDinas' => $dinas->asDinas,
-                'alamat'    => $dinas->alamat,
-                'asKab' => $asKab,
-                'kab' => $kab,
-                'asdiskab' => $asdiskab,
+                // 'dinas' =>$dinas->nmDinas,
+                // 'asDinas' => $dinas->asDinas,
+                // 'alamat'    => $dinas->alamat,
+                // 'asKab' => $asKab,
+                'kab' => 'Kabupaten Sumbawa Barat',
+                'asdiskab' => 'Kab. Sumbawa Barat',
+
+                "dinas"=> $dinas,
+                // 'jabatanPim' => $jabatanPim,
+                'pimpinan'=> $pimpinan,
+                'jabatanDinas' => $jabatanPim, // kerena ada tambahan plh dll
+                "setda"=> $setda,
+                "subPimpinan"=>$subPimpinan,
+                'jabatanSetda' => $jabatanSetda,
 
                 "tahun"=> $date[0],
                 'data' => $data,
                 'member' => $member,
-
-                'pimpinan'=> $pimpinan,
-                'jabatanPim' => $jabatanPim,
 
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
@@ -303,80 +328,41 @@ class PdfGenerator extends Controller
             $member = Hdb::dworkAnggotaBidang($param);
             // echo("<pre>");
             // return print_r($member);
-            // getPimpinan
-            $pimpinan = Hdb::getAnggotaJabatan([
-                "kdDinas"=>$param['kdDinas'],
-                "tahun"=>$param['tahun'],
-                "status"=>"pimpinan"
-            ])[0];
+
+            //kepala SKPD
+            $pimpinan = $this->getTTPimpinan(
+                $param['kdDinas'],"pimpinan",$param['tahun'],
+                $data->pimOpd,$data->tdOPD
+            );
             $jabatanPim = $pimpinan->nmJabatan;
-            if(!empty($data->pimOpd) && $data->pimOpd!='Manual'){
-                // get Pimpinan selected
-                $split = explode("|",$data->pimOpd);
-                $selectPim = Hdb::getOneAnggota([
-                    "kdDinas"=>$split[2],
-                    "tahun"=>$param['tahun'],
-                    "kdBAnggota"=>$split[0],
-                    "kdBidang"=>$split[1]
-                ])[0];
-
-                if($selectPim->nmJabatan !=='Kepala'){
+            if(!$pimpinan->manual){
+                if($pimpinan->nmJabatan !=='Kepala'){
                     $jabatanPim = "Plh. ".$jabatanPim;
-                    $pimpinan = $selectPim;
                 }
-
-                // if($selectPim->status === "kabid "){
-                //     $selectPim1 = Hdb::getAnggotaJabatan([
-                //         "kdDinas"=>$param['kdDinas'],
-                //         "tahun"=>$param['tahun'],
-                //         "status"=>"sekretaris"
-                //     ]);
-                // }
-            }else if($data->pimOpd=='Manual'){
-                $tamPimpinan = explode("&",$data->tdOPD);
-                $nmAnggota = $this->getArrayNewLineInText($tamPimpinan[1]);
-                if(count($nmAnggota)<2){
-                    return print_r('harus terdapat Data nama pimpinan dan data NIP pimpinan');
+            }
+            //kepala SETDA / Asisten
+            $subPimpinan = $this->getTTPimpinan(
+                $cek['setda'],"setda",$param['tahun'],
+                $data->pimSetda,$data->tdSETDA
+            );
+            $jabatanSetda = "a.n. Bupati Sumbawa Barat <br>";
+            if(!$subPimpinan->manual){
+                // return print_r($subPimpinan->nmJabatan);
+                if($subPimpinan->status !=='setda'){
+                    $jabatanSetda .="Sekretaris Daerah, <br> u.b. " ;
                 }
-                $pimpinan =  (object)[
-                    'nmAnggota'=>$nmAnggota[0],
-                    'nip'=>$nmAnggota[1],
-                    'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0])
-                ];
-                $jabatanPim = $this->getNewLineInText($tamPimpinan[0]);
             }
 
-            // untuk kop bupati
-            // getPimpinan
-            $pimpinan1 = Hdb::getAnggotaJabatan([
+            $setdaPim = Hdb::getAnggotaJabatan([
                 "kdDinas"=>$cek['setda'],
                 "tahun"=>$param['tahun'],
-                "status"=>"bupati"
+                "status"=>"setda"
             ])[0];
-            $jabatanPim1 = $pimpinan1->nmJabatan;
-            if(!empty($data->pimBupati) && $data->pimBupati!='Manual'){
-                // get Pimpinan selected
-                $split = explode("|",$data->pimBupati);
-                $selectPim = Hdb::getOneAnggota([
-                    "kdDinas"=>$split[2],
-                    "tahun"=>$param['tahun'],
-                    "kdBAnggota"=>$split[0],
-                    "kdBidang"=>$split[1]
-                ])[0];
-
-                if($selectPim->nmJabatan !=='BUPATI'){
-                    $jabatanPim1 = $pimpinan1->nmJabatan;
-                    $pimpinan1 = $selectPim;
-                }
-            }else if($data->pimBupati=='Manual'){
-                $tamPimpinan = explode("&",$data->tdBUPATI);
-                $pimpinan1 =  (object)[
-                    'nmAnggota'=>$this->getNewLineInText($tamPimpinan[1]),
-                    'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0])
-                ] ;
-            }
+            // echo("<pre>");
+            // return print_r($subPimpinan);
 
             $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
+            $setda = Hdb::getDinasOne( $cek['setda'],$param['tahun']);
             // echo("<pre>");
             // return print_r($dinas);
 
@@ -407,32 +393,28 @@ class PdfGenerator extends Controller
 
 
 
-
-            // return print_r($hari);
-
-            // return print_r($date);
-
             $tglCetak = $date[2]." ".$this->getBulan($date[1])." ".$date[0];
-            $asKab = 'Kab. Sumbawa Barat';
-            $kab = 'Kabupaten Sumbawa Barat';
-            $asdiskab= $dinas->asDinas.' '.$asKab;
+            // $asdiskab= $dinas->asDinas.' '.$asKab;
             $datax = [
-                'dinas' =>$dinas->nmDinas,
-                'asDinas' => $dinas->asDinas,
-                'alamat'    => $dinas->alamat,
-                'asKab' => $asKab,
-                'kab' => $kab,
-                'asdiskab' => $asdiskab,
+                // 'dinas' =>$dinas->nmDinas,
+                // 'asDinas' => $dinas->asDinas,
+                // 'alamat'    => $dinas->alamat,
+                // 'asKab' => $asKab,
+                'kab' => 'Kabupaten Sumbawa Barat',
+                'asdiskab' => 'Kab. Sumbawa Barat',
+
+                "dinas"=> $dinas,
+                // 'jabatanPim' => $jabatanPim,
+                'pimpinan'=> $pimpinan,
+                'jabatanDinas' => $jabatanPim, // kerena ada tambahan plh dll
+                "setda"=> $setda, //bisa setda / asisten2
+                "subPimpinan"=>$subPimpinan,
+                'jabatanSetda' => $jabatanSetda,
+                "setdaPim"=>$setdaPim, //asli sekretaris daerah
 
                 "tahun"=> $date[0],
                 'data' => $data,
                 'member' => $member,
-
-                'pimpinan'=> $pimpinan,
-                'jabatanPim' => $jabatanPim,
-
-                'pimpinan1'=> $pimpinan1,
-                'jabatanPim1' => $jabatanPim1,
 
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
@@ -468,56 +450,22 @@ class PdfGenerator extends Controller
             $param["where"]= ' and a.kdBAnggota =""';
             $data =Hdb::dwork($param)[0];
 
-            $param["where"]= ' and a.kdBAnggota !=""
-                and b.tingkatan>3
-            ';
+            $param["where"]= ' and a.kdBAnggota !=""';  // and b.tingkatan>3
             $member = Hdb::dworkAnggotaBidang($param);
 
-            // getPimpinan
-            $pimpinan = Hdb::getAnggotaJabatan([
-                "kdDinas"=>$cek['setda'],
-                "tahun"=>$param['tahun'],
-                "status"=>"setda"
-            ])[0];
-            $jabatanPimReal= $pimpinan->nmJabatan;
-            $jabatanPim =$pimpinan->nmJabatan;
-            if(!empty($data->pimSetda) && $data->pimSetda!='Manual'){
-                // get Pimpinan selected
-                $split = explode("|",$data->pimSetda);
-                $selectPim = Hdb::getOneAnggota([
-                    "kdDinas"=>$split[2],
-                    "tahun"=>$param['tahun'],
-                    "kdBAnggota"=>$split[0],
-                    "kdBidang"=>$split[1]
-                ])[0];
-                if($selectPim->status !=='setda'){
-                    $jabatanPimReal = $selectPim->nmJabatan;
-                    if($param['sppdDaerah']){
-                        $jabatanPim = "An. BUPATI SUMBAWA BARAT <br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
-                    }else{
-                        $jabatanPim .= "<br> <label style='text-transform: capitalize'>Plh.</label> ".$selectPim->nmJabatan;
-                    }
 
-                    $pimpinan = $selectPim;
+            $pimpinan = $this->getTTPimpinan(
+                $param['kdDinas'],"pimpinan",$param['tahun'],
+                $data->pimOpd,$data->tdOPD
+            );
+            $jabatanPim = "a.n. Bupati Sumbawa Barat <br> Sekretaris Daerah, <br> u.b. ";
+            if(!$pimpinan->manual){
+                if($pimpinan->status !=='pimpinan'){
+                    $jabatanPim.=" KEPALA BAPPEDA, <br> plh. ";
                 }
-
-                // if($selectPim->status === "kabid "){
-                //     $selectPim1 = Hdb::getAnggotaJabatan([
-                //         "kdDinas"=>$param['kdDinas'],
-                //         "tahun"=>$param['tahun'],
-                //         "status"=>"sekretaris"
-                //     ]);
-                // }
-            }else if($data->pimSetda=='Manual'){
-                $tamPimpinan = explode("&",$data->tdSETDA);
-                $pimpinan =  (object)[
-                    'nmAnggota'=>$this->getNewLineInText($tamPimpinan[1]),
-                    'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0])
-                ];
-                $jabatanPim = $this->getNewLineInText($tamPimpinan[0]);
             }
 
-            $dinas = Hdb::getDinasOne($cek['setda'],$param['tahun']);
+            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
 
             if(count($member)>0){
                 foreach ($member as $key => $value) {
@@ -558,7 +506,7 @@ class PdfGenerator extends Controller
                 "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
                 "no" =>"000.1.2.3",
                 'member' => $member,
-                'jabatanPimReal'=>$jabatanPimReal,
+                // 'jabatanPimReal'=>$jabatanPimReal,
                 'pimpinan'=> $pimpinan,
                 'jabatanPim' => $jabatanPim,
                 'tglCetak'=> $this->getBulan($date[1])." ".$date[0],
@@ -816,6 +764,44 @@ class PdfGenerator extends Controller
             'msg' => $cek['msg']
         ], 200);
     }
+
+
+    function getTTPimpinan($kdDinas,$status,$tahun, $_pim,$_td){ //_ artinya isi manual
+        // 1. data pimpinan asli
+        $pimpinan = Hdb::getAnggotaJabatan([
+            "kdDinas"=>$kdDinas,
+            "tahun"=>$tahun,
+            "status"=>$status
+        ])[0];
+        $pimpinan->manual=0;
+        if(!empty($_pim) && $_pim!='Manual'){
+            // 2. data plh pimpinan
+            $split = explode("|",$_pim);
+            $pimpinan = Hdb::getOneAnggota([
+                "kdDinas"=>$split[2],
+                "tahun"=>$tahun,
+                "kdBAnggota"=>$split[0],
+                "kdBidang"=>$split[1]
+            ])[0];
+            $pimpinan->manual=0;
+        }else if($_pim=='Manual'){
+            // 3. data manual pimpinan
+            $tamPimpinan = explode("&",$_td); //td = tampung data
+            $nmAnggota = $this->getArrayNewLineInText($tamPimpinan[1]);
+            if(count($nmAnggota)<3){
+                return print_r('harus terdapat Data nama, Golongan dan NIP pimpinan');
+            }
+            $pimpinan =  (object)[
+                'nmAnggota'=>$nmAnggota[0],
+                'golongan'=>$nmAnggota[1],
+                'nip'=>$nmAnggota[2],
+                'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0]),
+                'manual'=>1
+            ];
+        }
+        return $pimpinan;
+    }
+
     function getTingkat($num){
         switch ($num) {
             case 2: return 'B';

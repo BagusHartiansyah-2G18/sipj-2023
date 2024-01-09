@@ -222,19 +222,77 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                 </div>
                 <div className="form1 bwhite">
                     <div className="header">
-                        <h3>1. Surat Tugas - Permohonan SPD</h3>
+                        <h3>Surat Tugas - Permohonan SPD</h3>
                         <div className="btnGroup">
                             <Link
                                 to={`/pdf/SuratTugasSppdx/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bwarning ptb0"
                                 target="_blank">
-                                <span className="mdi mdi-file-pdf-box fz25" /> KOP BUPATI
+                                <span className="mdi mdi-file-pdf-box fz25" /> SKPD - SETDA
                             </Link>
                             <Link
                                 to={`/pdf/SuratTugasSppd/${btoa(JSON.stringify({...param,tglCetak}))}`}
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
-                                <span className="mdi mdi-file-pdf-box clight fz25" /> KOP SKPD
+                                <span className="mdi mdi-file-pdf-box clight fz25" /> SKPD - Asisten
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="body">
+                        <div className="flexR w100p justifySA">
+                            <div className={`ptb10px ${(onSetda ? 'w45p':'w100p')} `}>
+                                <label className="fbold">Pimpinan</label><br></br>
+                                <Select
+                                    options={dsetda}
+                                    placeholder="Select"
+                                    value={setda}
+                                    onChange={actSetPimpinanSetda}
+                                    isSearchable={true}
+                                />
+                            </div>
+                            {
+                                (
+                                    onSetda ?
+                                    <div className="pwrap w45p borderL borderLeftTB10px">
+                                        <div className="doubleInput ptb10px borderB">
+                                            <label>Keterangan Penanda Tangan</label>
+                                            <div className="iconInput2 ">
+                                                <textarea rows={3} className="borderR10px pwrap w100p" value={ketSetda} onChange={setketSetda}></textarea>
+                                            </div>
+                                        </div>
+                                        <div className="doubleInput ptb10px borderB">
+                                            <label>Nama Penanda Tangan</label>
+                                            <div className="iconInput2 ">
+                                                <textarea rows={3} className="borderR10px pwrap w100p" value={namaSetda} onChange={setnamaSetda}></textarea>
+                                            </div>
+                                        </div>
+                                        <div className="btnGroup">
+                                            <button className="btn2 bwarning"  onClick={()=>saveTandaTangan('SETDA')}>perbarui</button>
+                                        </div>
+                                    </div>
+                                    :''
+                                )
+                            }
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="form1 bwhite">
+                    <div className="header">
+                        <h3>Surat Perjalanan Dinas (SKPD)</h3>
+                        <div className="btnGroup">
+                            <Link
+                                to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:1}))}`}
+                                className="btn2 bwarning ptb0"
+                                target="_blank">
+                                <span className="mdi mdi-file-pdf-box fz25" /> SPD Dalam Daerah
+                            </Link>
+                            <Link
+                                to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:0}))}`}
+                                className="btn2 bsuccess clight ptb0"
+                                target="_blank">
+                                <span className="mdi mdi-file-pdf-box clight fz25" /> SPD Luar Daerah
                             </Link>
                         </div>
                     </div>
@@ -277,7 +335,7 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                     </div>
                 </div>
 
-                <div className="form1 bwhite">
+                {/* <div className="form1 bwhite">
                     <div className="header">
                         <h3>2. Surat Perjalanan Dinas (BUPATI)</h3>
                         <div className="btnGroup">
@@ -334,69 +392,13 @@ function FormDokumen({ dt, param, indWork, dwork }) {
 
 
                     </div>
-                </div>
+                </div> */}
+
+
 
                 <div className="form1 bwhite">
                     <div className="header">
-                        <h3>3. Surat Perjalanan Dinas (SETDA)</h3>
-                        <div className="btnGroup">
-                            <Link
-                                to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:1}))}`}
-                                className="btn2 bwarning ptb0"
-                                target="_blank">
-                                <span className="mdi mdi-file-pdf-box fz25" /> Dalam Daerah
-                            </Link>
-                            <Link
-                                to={`/pdf/sppdSetda/${btoa(JSON.stringify({...param,tglCetak, sppdDaerah:0}))}`}
-                                className="btn2 bsuccess clight ptb0"
-                                target="_blank">
-                                <span className="mdi mdi-file-pdf-box clight fz25" /> Luar Daerah
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="body">
-                        <div className="flexR w100p justifySA">
-                            <div className={`ptb10px ${(onSetda ? 'w45p':'w100p')} `}>
-                                <label className="fbold">Pimpinan</label><br></br>
-                                <Select
-                                    options={dsetda}
-                                    placeholder="Select"
-                                    value={setda}
-                                    onChange={actSetPimpinanSetda}
-                                    isSearchable={true}
-                                />
-                            </div>
-                            {
-                                (
-                                    onSetda ?
-                                    <div className="pwrap w45p borderL borderLeftTB10px">
-                                        <div className="doubleInput ptb10px borderB">
-                                            <label>Keterangan Penanda Tangan</label>
-                                            <div className="iconInput2 ">
-                                                <textarea rows={3} className="borderR10px pwrap w100p" value={ketSetda} onChange={setketSetda}></textarea>
-                                            </div>
-                                        </div>
-                                        <div className="doubleInput ptb10px borderB">
-                                            <label>Nama Penanda Tangan</label>
-                                            <div className="iconInput2 ">
-                                                <textarea rows={3} className="borderR10px pwrap w100p" value={namaSetda} onChange={setnamaSetda}></textarea>
-                                            </div>
-                                        </div>
-                                        <div className="btnGroup">
-                                            <button className="btn2 bwarning"  onClick={()=>saveTandaTangan('SETDA')}>perbarui</button>
-                                        </div>
-                                    </div>
-                                    :''
-                                )
-                            }
-                        </div>
-
-                    </div>
-                </div>
-
-                <div className="form1 bwhite">
-                    <div className="header">
-                        <h3>4. Kwitansi</h3>
+                        <h3>Kwitansi</h3>
                         <div className="btnGroup">
                             <Link
                                 to={`/pdf/kwitansiSppd/${btoa(JSON.stringify({...param,tglCetak,noSPPD}))}`}

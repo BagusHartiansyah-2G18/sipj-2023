@@ -15,6 +15,7 @@
         .w100p{width: 100%;}
         .w70p{width: 70%;}
         .w60p{width: 60%;}
+        .w55p{width: 55%;}
         .w50p{width: 50%;}
         .w40p{width: 40%;}
         .w30p{width: 30%;}
@@ -37,6 +38,10 @@
         .right{
             width: 100%;
             margin-left: 60%;
+        }
+        .rightPanjang{
+            width: 100%;
+            margin-left: 45%;
         }
         .pm0{padding: 0px; margin: 0px;}
         .p0{padding: 0px;}
@@ -68,9 +73,25 @@
                     <td class="pwrap tcenter mKop">
                         <h2 class=" tupper fz20 noBold pm0 " >
                             PEMERINTAH '.$kab.'<br>
-                            <b>'.$dinas.'</b>
+                            <b>'.$dinas->nmDinas.'</b>
                         </h2>
-                        <i style="font-size: small;" class="pm0">'.$alamat.'</i>
+                        <i style="font-size: small;" class="pm0">'.$dinas->alamat.'</i>
+                    </td>
+                </tr>
+            </table>
+        ';
+        $kopSetda='
+            <table>
+                <tr>
+                    <td class="w30p">
+                        <img src="logo/ksb.png" width="60px">
+                    </td>
+                    <td class="pwrap tcenter mKop">
+                        <h2 class=" tupper fz20 noBold pm0 " >
+                            PEMERINTAH '.$kab.'<br>
+                            <b>'.$setda->nmDinas.'</b>
+                        </h2>
+                        <i style="font-size: small;" class="pm0">'.$setda->alamat.'</i>
                     </td>
                 </tr>
             </table>
@@ -81,7 +102,7 @@
                 <td colspan="3" >
                     <div class="right">
                         <p class="w40p tcenter">
-                            '.$jabatanPim.' '.$asDinas.'<br>
+                            '.$jabatanDinas.' '.$dinas->asDinas.'<br>
                             '.$kab.'
                         </p>
                     </div>
@@ -93,7 +114,42 @@
                 <td colspan="3" >
                     <div class="right">
                         <p class="w40p tcenter"><u><b>'.$pimpinan->nmAnggota.'</b></u><br>
+                        '.$pimpinan->golongan.'<br>
                         NIP. '.$pimpinan->nip.'</p>
+                    </div>
+                </td>
+            </tr>
+        ';
+        $ttSetda='
+            <tr>
+                <td colspan="3" >
+                    <div class="rightPanjang tcenter">
+                        <table style="margin-left: 15%;">
+                            <tr>
+                                <td>Dikeluarkan di</td><td>:</td>
+                                <td>Taliwang</td>
+                            </tr>
+                            <tr>
+                                <td>Pada Tanggal</td><td>:</td>
+                                <td>'.$tglCetak.'</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p class="w55p">
+                            '.$jabatanSetda.$subPimpinan->nmJabatan.',
+                            <!-- <br>'.$kab.' -->
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <br>
+            <br>
+            <tr>
+                <td colspan="3" >
+                    <div class="rightPanjang">
+                        <p class="w60p tcenter"><u><b>'.$subPimpinan->nmAnggota.'</b></u><br>
+                        '.$subPimpinan->golongan.'<br>
+                        NIP. '.$subPimpinan->nip.'</p>
                     </div>
                 </td>
             </tr>
@@ -128,7 +184,7 @@
             </tr>
             <tr>
                 <td>Hal</td>
-                <td>: <b>Permohonan SPD</b></td>
+                <td>: Mohon Penerbitan Surat Tugas</td>
                 <td>
                     Taliwang
                 </td>
@@ -217,11 +273,11 @@
     </div>
     <div class="page-break"></div>
     <div class=" container">
-        @php echo($kop); @endphp
+        @php echo($kopSetda); @endphp
         <hr>
         <br>
         <!-- <br> -->
-        <table class="fz12" class="w100p">
+        <table class="w100p">
             <tr class="tcenter ">
                 <td colspan="3">
                     <b class="bbottom fz20">
@@ -232,13 +288,13 @@
             </tr>
             <br>
             <tr>
-                <td class="w20p">Nama</td><td>: {{$pimpinan->nmAnggota}}</td>
+                <td class="w20p">Nama</td><td class="w2p">:</td><td >{{$subPimpinan->nmAnggota}}</td>
             </tr>
             <tr>
-                <td>NIP</td><td>: {{$pimpinan->nip}}</td>
+                <td>NIP</td><td>:</td><td> {{$subPimpinan->nip}}</td>
             </tr>
             <tr>
-                <td>Jabatan</td><td>: @php echo($pimpinan->nmJabatan); @endphp {{$asdiskab}}</td>
+                <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan->nmJabatan); @endphp {{$asdiskab}}</td>
             </tr>
             <br>
             <tr class="tcenter ">
@@ -270,7 +326,7 @@
                                 <Table>
                                     <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
                                     <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
-                                    <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
+                                    <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$dinas->asDinas}} {{$asdiskab}}</td></tr>
                                     <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
                                     <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
                                 </Table>
@@ -325,7 +381,7 @@
                 </td>
             </tr>
             <br>
-            @php echo($tt); @endphp
+            @php echo($ttSetda); @endphp
         </table>
     </div>
 </body>

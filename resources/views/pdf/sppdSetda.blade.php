@@ -135,10 +135,8 @@
                                 <td class="w5p">1</td>
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td colspan="2">
-                                    <b style="text-transform: uppercase;">
-                                        @php echo($jabatanPimReal); @endphp <br>
-                                        <!-- {{$kab}} -->
-                                    </b>
+                                        @php echo($pimpinan->nmJabatan." ".$asDinas); @endphp
+                                        {{$kab}}
                                 </td>
                             </tr>
                             <tr>
@@ -307,7 +305,7 @@
                     <td class="w10p"></td>
                     <td class="w50p"></td>
                     <td style="text-transform: uppercase;">
-                        @php echo($jabatanPim); @endphp
+                        @php echo($jabatanPim.$pimpinan->asJabatan.' '.$asDinas); @endphp
                     </td>
                 </tr>
                 <br>
@@ -319,6 +317,7 @@
                     <td>
                         @if(count((array) $pimpinan)>2)
                             <u><b>{{$pimpinan->nmAnggota}}</b></u><br>
+                            {{$pimpinan->golongan}}<br>
                             NIP. {{$pimpinan->nip}}
                         @else
                             @php echo($pimpinan->nmAnggota) @endphp
@@ -494,12 +493,14 @@
                                 </p>
                                 <p class="tcenter">
                                     <b>
-                                        <label class="tupper">@php echo($jabatanPim); @endphp</label>
+                                        <label class="tupper">
+                                        @php echo($jabatanPim.$pimpinan->asJabatan.' '.$asDinas); @endphp</label>
                                         @php echo($br); @endphp
                                         <br><br>
 
                                         @if(count((array) $pimpinan)>2)
                                             <u>{{$pimpinan->nmAnggota}}</u><br>
+                                            {{$pimpinan->golongan}}<br>
                                             NIP. {{$pimpinan->nip}}
                                         @else
                                             @php echo($pimpinan->nmAnggota) @endphp
