@@ -136,7 +136,14 @@
                                 <td class="w5p">1</td>
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td colspan="2">
-                                        @php echo($jabatanPim." ".$asDinas); @endphp
+                                        @php
+                                            $ub = substr($jabatanPim,0,2);
+                                            if($ub=="ub"){
+                                                echo(substr($jabatanPim,4)." ".$asDinas);
+                                            }else{
+                                                echo($jabatanPim." ".$asDinas);
+                                            }
+                                        @endphp
                                         {{$kab}}
                                 </td>
                             </tr>
