@@ -138,9 +138,9 @@
                                     <b style="text-transform: uppercase;">
 <!--                                         @php echo($jabatanPimReal); @endphp <br> -->
                                         @php
-                                            $ub = substr($jabatanPim,0,1);
+                                            $ub = substr($jabatanPim,0,2);
                                             if($ub=="ub"){
-                                                echo(substr($jabatanPim,2)." ".$asDinas);
+                                                echo(substr($jabatanPim,4)." ".$asDinas);
                                             }else{
                                                 echo($jabatanPim." ".$asDinas);
                                             }
