@@ -164,50 +164,6 @@ class PdfGenerator extends Controller
             $param["where"]= ' and a.kdBAnggota !=""';
             // Anggota Bidang
             $member = Hdb::dworkAnggotaBidang($param);
-            // echo("<pre>");
-            // return print_r($member);
-            // getPimpinan
-            // $pimpinan = Hdb::getAnggotaJabatan([
-            //     "kdDinas"=>$param['kdDinas'],
-            //     "tahun"=>$param['tahun'],
-            //     "status"=>"pimpinan"
-            // ])[0];
-            // $jabatanPim = $pimpinan->nmJabatan;
-            // if(!empty($data->pimOpd) && $data->pimOpd!='Manual'){
-            //     // get Pimpinan selected
-            //     $split = explode("|",$data->pimOpd);
-            //     $selectPim = Hdb::getOneAnggota([
-            //         "kdDinas"=>$split[2],
-            //         "tahun"=>$param['tahun'],
-            //         "kdBAnggota"=>$split[0],
-            //         "kdBidang"=>$split[1]
-            //     ])[0];
-
-                // if($selectPim->nmJabatan !=='Kepala'){
-                //     $jabatanPim = "Plh. ".$jabatanPim;
-                //     $pimpinan = $selectPim;
-                // }
-
-            //     // if($selectPim->status === "kabid "){
-            //     //     $selectPim1 = Hdb::getAnggotaJabatan([
-            //     //         "kdDinas"=>$param['kdDinas'],
-            //     //         "tahun"=>$param['tahun'],
-            //     //         "status"=>"sekretaris"
-            //     //     ]);
-            //     // }
-            // }else if($data->pimOpd=='Manual'){
-            //     $tamPimpinan = explode("&",$data->tdOPD);
-            //     $nmAnggota = $this->getArrayNewLineInText($tamPimpinan[1]);
-            //     if(count($nmAnggota)<2){
-            //         return print_r('harus terdapat Data nama pimpinan dan data NIP pimpinan');
-            //     }
-            //     $pimpinan =  (object)[
-            //         'nmAnggota'=>$nmAnggota[0],
-            //         'nip'=>$nmAnggota[1],
-            //         'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0])
-            //     ];
-            //     $jabatanPim = $this->getNewLineInText($tamPimpinan[0]);
-            // }
 
             //kepala SKPD
             $pimpinan = $this->getTTPimpinan(
@@ -216,8 +172,8 @@ class PdfGenerator extends Controller
             );
             $jabatanPim = $pimpinan->nmJabatan;
             if(!$pimpinan->manual){
-                if($pimpinan->nmJabatan !=='Kepala'){
-                    $jabatanPim = "Plh. ".$jabatanPim;
+                if($pimpinan->status !=='pimpinan'){
+                    $jabatanPim = "Plh. ".$pimpinan->nmJabatanR;
                 }
             }
             //kepala SETDA / Asisten
@@ -336,10 +292,11 @@ class PdfGenerator extends Controller
             );
             $jabatanPim = $pimpinan->nmJabatan;
             if(!$pimpinan->manual){
-                if($pimpinan->nmJabatan !=='Kepala'){
-                    $jabatanPim = "Plh. ".$jabatanPim;
+                if($pimpinan->status !=='pimpinan'){
+                    $jabatanPim = "Plh. ".$pimpinan->nmJabatanR;
                 }
             }
+
             //kepala SETDA / Asisten
             $subPimpinan = $this->getTTPimpinan(
                 $cek['setda'],"setda",$param['tahun'],
@@ -458,10 +415,10 @@ class PdfGenerator extends Controller
                 $param['kdDinas'],"pimpinan",$param['tahun'],
                 $data->pimOpd,$data->tdOPD
             );
-            $jabatanPim = "a.n. Bupati Sumbawa Barat <br> Sekretaris Daerah, <br> u.b. ";
+            $jabatanPim = "<span class='tlower'>ub.</span> ".$pimpinan->nmJabatan;
             if(!$pimpinan->manual){
                 if($pimpinan->status !=='pimpinan'){
-                    $jabatanPim.=" KEPALA BAPPEDA, <br> plh. ";
+                    $jabatanPim="<span class='tlower'>plh.</span> ".$pimpinan->nmJabatan;
                 }
             }
 
@@ -774,6 +731,7 @@ class PdfGenerator extends Controller
             "status"=>$status
         ])[0];
         $pimpinan->manual=0;
+        $tamJabatanSKPD = $pimpinan->nmJabatan;
         if(!empty($_pim) && $_pim!='Manual'){
             // 2. data plh pimpinan
             $split = explode("|",$_pim);
@@ -799,6 +757,7 @@ class PdfGenerator extends Controller
                 'manual'=>1
             ];
         }
+        $pimpinan->nmJabatanR = $tamJabatanSKPD;
         return $pimpinan;
     }
 

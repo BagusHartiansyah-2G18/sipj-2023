@@ -57,6 +57,7 @@
             margin: 0px;
         }
         .tupper{text-transform: uppercase;}
+        .tlower{text-transform: lowercase;}
         .pwrap{padding: 0px 30px;}
         .tcenter{text-align: center;}
         .tend{text-align: right;}
@@ -135,7 +136,7 @@
                                 <td class="w5p">1</td>
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td colspan="2">
-                                        @php echo($pimpinan->nmJabatan." ".$asDinas); @endphp
+                                        @php echo($jabatanPim." ".$asDinas); @endphp
                                         {{$kab}}
                                 </td>
                             </tr>
@@ -305,7 +306,7 @@
                     <td class="w10p"></td>
                     <td class="w50p"></td>
                     <td style="text-transform: uppercase;">
-                        @php echo($jabatanPim.$pimpinan->asJabatan.' '.$asDinas); @endphp
+                        <span class="tlower">a.n.</span> Bupati Sumbawa Barat <br> Sekretaris Daerah,<br> @php echo($jabatanPim.' '.$asDinas); @endphp
                     </td>
                 </tr>
                 <br>
@@ -494,7 +495,10 @@
                                 <p class="tcenter">
                                     <b>
                                         <label class="tupper">
-                                        @php echo($jabatanPim.$pimpinan->asJabatan.' '.$asDinas); @endphp</label>
+                                            <span class="tlower">a.n.</span>
+                                            Bupati Sumbawa Barat <br> Sekretaris Daerah,<br>
+                                            @php echo($jabatanPim.' '.$asDinas); @endphp
+                                        </label>
                                         @php echo($br); @endphp
                                         <br><br>
 
