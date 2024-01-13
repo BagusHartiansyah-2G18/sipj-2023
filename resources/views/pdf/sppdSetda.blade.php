@@ -137,8 +137,12 @@
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td colspan="2">
                                         @php
-                                            $ub = substr($jabatanPim,0,2);
-                                            echo(substr($jabatanPim,1,5));
+                                            $ub = explode("ub",$jabatanPim);
+                                            if(count($ub)>1){
+                                                echo(substr($jabatanPim,31)." ".$asDinas);
+                                            }else{
+                                                echo($jabatanPim." ".$asDinas);
+                                            }
                                         @endphp
                                         {{$kab}}
                                 </td>
