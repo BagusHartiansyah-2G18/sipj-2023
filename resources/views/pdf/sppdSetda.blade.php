@@ -139,11 +139,6 @@
                                         @php
                                             $ub = substr($jabatanPim,0,2);
                                             echo(substr($jabatanPim,1,5));
-<!--                                             if($ub=="ub"){
-                                                echo(substr($jabatanPim,4)." ".$asDinas);
-                                            }else{
-                                                echo($jabatanPim." ".$asDinas);
-                                            } -->
                                         @endphp
                                         {{$kab}}
                                 </td>
