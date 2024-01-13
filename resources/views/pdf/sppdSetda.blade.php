@@ -138,6 +138,7 @@
                                 <td colspan="2">
                                         @php
                                             $ub = substr($jabatanPim,0,2);
+                                            echo($ub."/./");
                                             if($ub=="ub"){
                                                 echo(substr($jabatanPim,4)." ".$asDinas);
                                             }else{
