@@ -136,7 +136,15 @@
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td colspan="2">
                                     <b style="text-transform: uppercase;">
-                                        @php echo($jabatanPimReal); @endphp <br>
+<!--                                         @php echo($jabatanPimReal); @endphp <br> -->
+                                        @php
+                                            $ub = substr($jabatanPim,0,1);
+                                            if($ub=="ub"){
+                                                echo(substr($jabatanPim,2)." ".$asDinas);
+                                            }else{
+                                                echo($jabatanPim." ".$asDinas);
+                                            }
+                                        @endphp
                                         <!-- {{$kab}} -->
                                     </b>
                                 </td>
