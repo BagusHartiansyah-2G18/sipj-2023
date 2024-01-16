@@ -14479,15 +14479,6 @@ function FormData(_ref) {
                 className: "mdi mdi-pencil-box cdark fz25"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-              className: "btn2 bdanger",
-              title: "Hapus",
-              onClick: function onClick() {
-                return del(v);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                className: "mdi mdi-delete-forever clight fz25"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
               className: "btn2 bprimary clight",
               title: "Open Form",
               onClick: function onClick() {

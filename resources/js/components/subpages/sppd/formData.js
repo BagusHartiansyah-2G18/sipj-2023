@@ -29,7 +29,7 @@ function FormData({ dt, modalC, param, dataEntri }) {
                             <div className="btnGroup">
                                 {/* {tambahan} */}
                                 <button className="btn2 bwarning" title="Perbarui" onClick={()=>upd(v)}><span className="mdi mdi-pencil-box cdark fz25" /></button>
-                                <button className="btn2 bdanger" title="Hapus"  onClick={()=>del(v)}><span className="mdi mdi-delete-forever clight fz25" /></button>
+                                {/* <button className="btn2 bdanger" title="Hapus"  onClick={()=>del(v)}><span className="mdi mdi-delete-forever clight fz25" /></button> */}
                                 {/* <button className="btn2 bsuccess clight" title="Hapus"  onClick={()=>xnextStep(v)}>Next Step</button> */}
                                 <button className="btn2 bprimary clight" title="Open Form" onClick={()=>dataEntri(v)}>Open Form</button>
                             </div>
