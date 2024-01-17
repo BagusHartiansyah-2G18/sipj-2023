@@ -20,7 +20,7 @@
         .w10p{width: 10%;}
         .w5p{width: 5%;}
         .w2p{width: 2%;}
-
+        .pm0{padding: 0px; margin: 0px;}
         .container{
             margin: 0 auto;
             display: block;
@@ -44,8 +44,10 @@
 </head>
 <body class="fz14" style="font-family: Arial, Helvetica, sans-serif;">
     @php
-        $spaceTT = '<br><br><br><br>';
+        $spaceTT = '<br><br><br><br><br>';
         $line ='____________________';
+        $space=str_repeat('&nbsp;', 25);
+        $hurup="abcdefghijklmnopqrstupwxyz";
     @endphp
 
 
@@ -89,7 +91,7 @@
                     <td>UNTUK PEMBAYARAN</td>
                     <td>:</td>
                     <td>
-                        <p style="text-align: justify;">
+                        <p style="text-align: justify;" class="pm0">
                             {{
                                 $uraian." ke ".
                                 $tujuan." An. ".
@@ -100,18 +102,21 @@
                                 " pada Kegiatan ".
                                 $keg." ".
                                 " pada Sub Kegiatan ".
-                                $sub." "
+                                $sub." ".
+                                " pada ".$dinas.
+                                " tahun anggaran ".$tahun
                             }}
                         </p>
-                        <br><br>
+                        <br>
+                        <!-- <br> -->
                         <table >
                             <tr>
-                                <td>sesuai SPPD No.</td>
-                                <td>{{$no}} Tanggal :</td>
+                                <td>sesuai SPPD No. {{$no}}</td>
+                                <td style="text-align: right;"> Tanggal :</td>
                                 <td>{{$tglSppd}}</td>
                                 <td>dengan perincian sbb :</td>
                             </tr>
-                            <br>
+                            <!-- <br> -->
                             @php
                                 $num = 1;
                                 $totalSubJenis = 0;
@@ -124,8 +129,8 @@
                                 @endphp
                                 @foreach ($dt1->uraian as $ind2 => $dt2)
                                     <tr>
-                                        <td colspan="2">{{$num.". ".$dt2->uraian." ".( $ind1 == 0 ? $dt->tingkat:'')." (".$dt2->volume." x ".$dt2->satuan.")"}}</td>
-                                        <td>{{ number_format($dt2->nilai,0,',','.')}}</td>
+                                        <td colspan="2">{{$hurup[$num-1].". ".$dt2->uraian." ".( $ind1 == 0 ? $dt->tingkat:'')}} {{($dt2->volume > 1 || $dt1->kdDP !="dp-2" ? " (".$dt2->volume." x ".$dt2->satuan.")":"")}}</td>
+                                        <td style="text-align: center;">{{number_format($dt2->nilai,0,',','.')}}</td>
                                         <td>Rp. {{number_format(($dt2->nilai*$dt2->volume),0,',','.')}}</td>
                                     </tr>
                                     @php
@@ -170,7 +175,7 @@
                                     NIP. {{$nipBendahara}}
                                 </td>
                                 <td class="w30p tcenter">
-                                    Taliwang, @php echo($line); @endphp {{$tahun}}<br>
+                                    Taliwang, @php echo($space); @endphp {{$tahun}}<br>
                                     Yang Menerima Uang, @php echo($spaceTT); @endphp
                                     <b><u>{{$dt->nmAnggota}}</u></b><br>
                                     {{$dt->snip}}. {{$dt->nip}}
@@ -189,7 +194,7 @@
                 <tr>
                     <td>Lampiran SPPD Nomor</td>
                     <td>:</td>
-                    <td>{{$noSppd}}</td>
+                    <td>{{$no}}</td>
                 </tr>
                 <tr>
                     <td>Tanggal</td>
@@ -232,7 +237,7 @@
                                     </div>
                                 </td>
                                 <td class="w50p tcenter">
-                                    Taliwang, @php echo($line); @endphp {{$tahun}}<br>
+                                    Taliwang, @php echo($space); @endphp {{$tahun}}<br>
                                     Telah Menerima Uang Sebesar, <br>
                                     Rp. {{number_format($totalJenis,0,',','.')}} <br><br>
                                     Yang Menerima Uang,@php echo($spaceTT); @endphp

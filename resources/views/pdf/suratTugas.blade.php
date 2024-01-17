@@ -268,7 +268,7 @@
                             <div style="margin-left: 70px;">
                         @endif
                         <p style="width: 600px;">
-                            Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
+                            Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asKab}} Tahun Anggaran {{$tahun}}.
                             <br>
                             Demikian dan atas kebijakan Bapak dihaturkan terima kasih.
                         </p>
@@ -304,7 +304,7 @@
                     <td>NIP</td><td>:</td><td> {{$subPimpinan->nip}}</td>
                 </tr>
                 <tr>
-                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan->nmJabatan); @endphp {{$asdiskab}}</td>
+                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan->nmJabatan); @endphp {{$asKab}}</td>
                 </tr>
                 <br>
                 <tr class="tcenter ">
@@ -336,7 +336,7 @@
                                     <Table>
                                         <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
                                         <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
-                                        <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$dinas->asDinas}} {{$asdiskab}}</td></tr>
+                                        <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
                                         <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
                                         <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
                                     </Table>
@@ -387,7 +387,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
+                        Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asKab}} Tahun Anggaran {{$tahun}}.
                     </td>
                 </tr>
                 <br>
@@ -507,7 +507,7 @@
                             <div style="margin-left: 70px;">
                         @endif
                         <p style="width: 600px;">
-                            Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
+                            Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asKab}} Tahun Anggaran {{$tahun}}.
                             <br>
                             Demikian dan atas kebijakan Bapak dihaturkan terima kasih.
                         </p>
@@ -543,7 +543,7 @@
                     <td>NIP</td><td>:</td><td> {{$subPimpinan->nip}}</td>
                 </tr>
                 <tr>
-                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan->nmJabatan); @endphp {{$asdiskab}}</td>
+                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan->nmJabatan); @endphp {{$asKab}}</td>
                 </tr>
                 <br>
                 <tr class="tcenter ">
@@ -575,7 +575,7 @@
                                     <Table>
                                         <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
                                         <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
-                                        <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$dinas->asDinas}} {{$asdiskab}}</td></tr>
+                                        <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
                                         <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
                                         <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
                                     </Table>
@@ -626,7 +626,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asdiskab}} Tahun Anggaran {{$tahun}}.
+                        Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asKab}} Tahun Anggaran {{$tahun}}.
                     </td>
                 </tr>
                 <br>

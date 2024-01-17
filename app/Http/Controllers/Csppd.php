@@ -102,7 +102,7 @@ class Csppd extends Controller
                 'lokasi'=> 'required',
 
                 'date'=> 'required',
-                'dateE'=> 'required',
+                // 'dateE'=> 'required',
                 'maksud'=> 'required',
                 'angkut'=> 'required',
 
@@ -174,18 +174,18 @@ class Csppd extends Controller
         $user =Auth::user();
         $cek = $this->portal($user);
         if($cek['exc']){
-            
+
             $request->validate([
                 'kdDinas' => 'required',
                 'kdBidang' => 'required',
                 'kdSub' => 'required',
                 'kdJudul' => 'required',
 
-                'noOld'=> 'required', 
+                'noOld'=> 'required',
                 'lokasi'=> 'required',
 
                 'date'=> 'required',
-                'dateE'=> 'required',
+                // 'dateE'=> 'required',
                 'maksud'=> 'required',
                 'angkut'=> 'required',
 

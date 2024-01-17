@@ -138,6 +138,7 @@ Route::controller(Csppd::class)->name('api.')->prefix('api/sppd')->group(functio
 Route::controller(PdfGenerator::class)->name('pdf.')->prefix('pdf')->group(function(){
     Route::get('/kwitansiSppd/{val}','kwitansiSppd')->name('kwitansiSppd');
     Route::get('/SuratTugasSppd/{val}','SuratTugasSppd')->name('SuratTugasSppd');
+    Route::get('/SuratTugasSppdDaerah/{val}','SuratTugasSppdDaerah')->name('SuratTugasSppdDaerah');
     Route::get('/SuratTugasSppdx/{val}','SuratTugasSppdx')->name('SuratTugasSppdx');
     Route::get('/sppdSetda/{val}','sppdSetda')->name('sppdSetda');
     Route::get('/sppdBupati/{val}','sppdBupati')->name('sppdBupati');

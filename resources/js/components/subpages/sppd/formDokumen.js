@@ -43,7 +43,7 @@ function FormDokumen({ dt, param, indWork, dwork }) {
     const [onBupati, setonBupati] = useState(0);
 
 
-    const [noSPPD, setNoSPPD] = useInput(dwork.noSPPD);
+    const [noSPPD, setNoSPPD] = useInput('-');
 
 
     const dopd      = sfLib.coptionSelect({
@@ -235,6 +235,12 @@ function FormDokumen({ dt, param, indWork, dwork }) {
                                 className="btn2 bsuccess clight ptb0"
                                 target="_blank">
                                 <span className="mdi mdi-file-pdf-box clight fz25" /> SKPD - Asisten
+                            </Link>
+                            <Link
+                                to={`/pdf/SuratTugasSppdDaerah/${btoa(JSON.stringify({...param,tglCetak}))}`}
+                                className="btn2 bprimary clight ptb0"
+                                target="_blank">
+                                <span className="mdi mdi-file-pdf-box  fz25" /> Dalam Daerah
                             </Link>
                         </div>
                     </div>

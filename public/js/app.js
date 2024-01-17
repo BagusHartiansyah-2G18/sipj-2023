@@ -15075,7 +15075,7 @@ function FormDokumen(_ref) {
     _useState12 = _slicedToArray(_useState11, 2),
     onBupati = _useState12[0],
     setonBupati = _useState12[1];
-  var _useInput15 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(dwork.noSPPD),
+  var _useInput15 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)('-'),
     _useInput16 = _slicedToArray(_useInput15, 2),
     noSPPD = _useInput16[0],
     setNoSPPD = _useInput16[1];
@@ -15328,6 +15328,15 @@ function FormDokumen(_ref) {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: "mdi mdi-file-pdf-box clight fz25"
               }), " SKPD - Asisten"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/pdf/SuratTugasSppdDaerah/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                tglCetak: tglCetak
+              })))),
+              className: "btn2 bprimary clight ptb0",
+              target: "_blank",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                className: "mdi mdi-file-pdf-box  fz25"
+              }), " Dalam Daerah"]
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
