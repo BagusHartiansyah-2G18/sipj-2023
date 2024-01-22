@@ -255,7 +255,7 @@
                                 <td>Rp. {{number_format($totalJenis,0,',','.')}}</td>
                             </tr>
                             <tr>
-                                <td>Yang telah dibayarkan semua</td>
+                                <td>Yang telah dibayarkan semula</td>
                                 <td>:</td>
                                 <td>Rp. -</td>
                             </tr>
