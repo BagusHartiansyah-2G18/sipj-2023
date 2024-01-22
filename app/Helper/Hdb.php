@@ -588,7 +588,7 @@ class Hdb {
         }
         return DB::select('
             select
-                a.no, a.date, a.status, a.kdBAnggota,
+                a.no, a.date, a.status, a.kdBAnggota,a.noSPPD,
                 b.nip, b.nmAnggota, b.nip, b.nmJabatan, b.asJabatan, b.golongan, b.tingkatan, b.snip,
                 c.nmBidang
             from work a

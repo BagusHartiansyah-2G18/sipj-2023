@@ -109,7 +109,7 @@ class PdfGenerator extends Controller
                 'sub'    => $data->nmSub,
                 'uraian' => $data->nama,
                 'tujuan' => $data->tempatE,
-                "no" =>"000.1.2.3/".$param['noSPPD'],
+                "no" =>"000.1.2.3/",
                 // 'noSppd' => $param['no'],
                 'tglSppd' => $date[2]." ".$this->getBulan($date[1])." ".$date[0],
 

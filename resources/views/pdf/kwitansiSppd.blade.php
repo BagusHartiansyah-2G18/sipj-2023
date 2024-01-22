@@ -58,7 +58,8 @@
 
                     <tr>
                         <td class="w50p">Nomor Rekening</td>
-                        <td>{{$noRek}}</td>
+                        <!-- <td>{{$noRek}}</td> -->
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Dibukukan Tanggal</td>
@@ -103,7 +104,7 @@
                                 $keg." ".
                                 " pada Sub Kegiatan ".
                                 $sub." ".
-                                " pada ".$dinas.
+                                "pada ".ucwords(strtolower($dinas)).
                                 " tahun anggaran ".$tahun
                             }}
                         </p>
@@ -111,9 +112,9 @@
                         <!-- <br> -->
                         <table >
                             <tr>
-                                <td>sesuai SPPD No. {{$no}}</td>
-                                <td style="text-align: right;"> Tanggal :</td>
-                                <td>{{$tglSppd}}</td>
+                                <td>sesuai SPPD No. {{$no}} {{$dt->noSPPD}}</td>
+                                <td colspan="2" style="text-align: right;"> Tanggal :</td>
+                                <td >{{$tglSppd}}</td>
                                 <td>dengan perincian sbb :</td>
                             </tr>
                             <!-- <br> -->
@@ -129,7 +130,8 @@
                                 @endphp
                                 @foreach ($dt1->uraian as $ind2 => $dt2)
                                     <tr>
-                                        <td colspan="2">{{$hurup[$num-1].". ".$dt2->uraian." ".( $ind1 == 0 ? $dt->tingkat:'')}} {{($dt2->volume > 1 || $dt1->kdDP !="dp-2" ? " (".$dt2->volume." x ".$dt2->satuan.")":"")}}</td>
+                                        <td colspan="2">{{$hurup[$num-1].". ".$dt2->uraian." ".( $ind1 == 0 ? $dt->tingkat:'')}}</td>
+                                        <td>{{($dt2->volume > 1 || $dt1->kdDP !="dp-2" ? " (".$dt2->volume." x ".$dt2->satuan.")":"")}}</td>
                                         <td style="text-align: center;">{{number_format($dt2->nilai,0,',','.')}}</td>
                                         <td>Rp. {{number_format(($dt2->nilai*$dt2->volume),0,',','.')}}</td>
                                     </tr>
@@ -144,12 +146,13 @@
                                 @endphp
                             @endforeach
                             <tr>
-                                <td colspan="3">Jumlah</td>
+                                <td colspan="5"><hr></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">Jumlah</td>
                                 <td>Rp. {{number_format($totalJenis,0,',','.')}}</td>
                             </tr>
                         </table>
-
-                        <hr>
                     </td>
                 </tr>
                 <tr>
@@ -194,7 +197,7 @@
                 <tr>
                     <td>Lampiran SPPD Nomor</td>
                     <td>:</td>
-                    <td>{{$no}}</td>
+                    <td>{{$no}} {{$dt->noSPPD}}</td>
                 </tr>
                 <tr>
                     <td>Tanggal</td>
@@ -214,10 +217,22 @@
                                 <tr>
                                     <td>{{$loop->index+1}}</td>
                                     <td>{{$dt1->nmDP}}</td>
-                                    <td>Rp. {{number_format($totalPerJenis[$loop->index],0,',','.')}}</td>
+                                    <td>
+                                        <label>Rp. </label>
+                                        <label style="float: right;">{{number_format($totalPerJenis[$loop->index],0,',','.')}}</label>
+                                    </td>
                                     <td></td>
                                 </tr>
                             @endforeach
+                            <tr>
+                                <td></td>
+                                <td><b>JUMLAH</b></td>
+                                <td>
+                                    <label>Rp. </label>
+                                    <label style="float: right; font-weight: bold;">{{number_format($totalJenis,0,',','.')}}</label>
+                                </td>
+                                <td></td>
+                            </tr>
                         </table>
                     </td>
                 </tr>
