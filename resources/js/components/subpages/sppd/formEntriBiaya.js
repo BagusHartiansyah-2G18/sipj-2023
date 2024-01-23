@@ -131,8 +131,8 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
             kdSub : dt[ind].kdSub,
             kdJudul:dt[ind].kdJudul,
             noSppd,
-            indAnggota :ind,
-            ind:dt[ind].xind
+            ind: indWork,
+            index:dt[ind].xind
         }))
         // mclose();
     }

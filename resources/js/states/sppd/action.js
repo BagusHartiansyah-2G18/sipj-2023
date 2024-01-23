@@ -359,7 +359,7 @@ function updWorkAnggota(body){
       try {
         const dt = await api.POST({url:"sppd/updWorkAnggota",body});
         dispatch({
-          type : actType.anggota,
+          type : actType.crudWork,
           payload:{
             ...body,
             type:actType.updWorkAnggota
@@ -371,7 +371,7 @@ function updWorkAnggota(body){
       }
       // dispatch(hideLoading());
     };
-  }
+}
 function delWorkUraian(body){
   return async (dispatch) => {
     // dispatch(showLoading());

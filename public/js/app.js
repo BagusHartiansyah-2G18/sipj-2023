@@ -15700,8 +15700,8 @@ function FormEntriBiaya(_ref) {
       kdSub: dt[ind].kdSub,
       kdJudul: dt[ind].kdJudul,
       noSppd: noSppd,
-      indAnggota: ind,
-      ind: dt[ind].xind
+      ind: indWork,
+      index: dt[ind].xind
     }));
     // mclose();
   };
@@ -20952,7 +20952,7 @@ function updWorkAnggota(body) {
           case 3:
             dt = _context17.sent;
             dispatch({
-              type: actType.anggota,
+              type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
                 type: actType.updWorkAnggota
               })
@@ -21083,10 +21083,6 @@ function selectAnggota(_ref) {
             return _objectSpread(_objectSpread({}, v), {}, {
               aktif: v.aktif ? 0 : 1
             });
-          case _action__WEBPACK_IMPORTED_MODULE_0__.actType.updWorkAnggota:
-            return _objectSpread(_objectSpread({}, v), {}, {
-              noSPPD: act.noSppd
-            });
         }
       }
       return v;
@@ -21198,6 +21194,23 @@ function selectdwork(_ref2) {
         if (i === act.ind) {
           return _objectSpread(_objectSpread({}, v), {}, {
             anggota: anggota.length > 0 ? anggota : dt.anggota
+          });
+        }
+        return v;
+      });
+      break;
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.updWorkAnggota:
+      dwork = dt.dwork.map(function (v, i) {
+        if (i === act.ind) {
+          return _objectSpread(_objectSpread({}, v), {}, {
+            anggota: v.anggota.map(function (v1, i1) {
+              if (i1 === act.index) {
+                return _objectSpread(_objectSpread({}, v1), {}, {
+                  noSPPD: act.noSppd
+                });
+              }
+              return v1;
+            })
           });
         }
         return v;

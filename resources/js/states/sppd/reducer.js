@@ -34,11 +34,6 @@ function selectAnggota({ dt, act }){
                 ...v,
                 aktif:(v.aktif?0:1)
                 }
-            case actType.updWorkAnggota:
-                return {
-                    ...v,
-                    noSPPD:act.noSppd
-                }
         }
       }
       return v;
@@ -158,6 +153,25 @@ function selectdwork({ dt, act }){
         }
         return v;
       })
+    break;
+    case actType.updWorkAnggota:
+        dwork = dt.dwork.map((v,i)=>{
+            if(i=== act.ind){
+              return{
+                ...v,
+                anggota:v.anggota.map((v1,i1)=>{
+                    if(i1=== act.index){
+                        return{
+                          ...v1,
+                          noSPPD:act.noSppd,
+                        }
+                      }
+                      return v1
+                })
+              }
+            }
+            return v;
+        })
     break;
     case actType.workDelAnggota:
       dwork = dt.dwork.map((v,i)=>{
