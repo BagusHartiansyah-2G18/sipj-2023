@@ -92,12 +92,12 @@
                     <td class="tdB"><b class="capitalize">{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</b></td>
                 </tr>
                 <tr>
-                    <td>UNTUK PEMBAYARAN</td>
-                    <td>:</td>
+                    <td style="vertical-align: top;">UNTUK PEMBAYARAN</td>
+                    <td style="vertical-align: top;">:</td>
                     <td>
                         <p style="text-align: justify;" class="pm0">
                             {{
-                                $uraian." ke ".
+                                "Biaya ".substr($uraian,7)." ke ".
                                 $tujuan." An. ".
                                 $dt->nmAnggota." jabatan ".
                                 $dt->nmJabatan." ".
@@ -111,8 +111,14 @@
                                 " Tahun Anggaran ".$tahun
                             }}
                         </p>
-                        <br>
                         <!-- <br> -->
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
                         <table >
                             <tr>
                                 <td>sesuai SPPD No. {{$no}} {{$dt->noSPPD}}</td>
