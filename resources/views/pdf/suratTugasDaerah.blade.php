@@ -181,7 +181,7 @@
                 <br>
                 <tr>
                     <td>Nomor</td>
-                    <td>: {{$nomor}}</td>
+                    <td>: @php echo($nomor)  @endphp</td>
                     <td>Kepada</td>
                 </tr>
                 <tr>
@@ -293,7 +293,7 @@
                         <b class="bbottom fz20">
                             SURAT TUGAS<br>
                         </b>
-                        Nomor : {{$nomorTugas}}
+                        Nomor : @php echo($nomorTugas)  @endphp
                     </td>
                 </tr>
                 <br>

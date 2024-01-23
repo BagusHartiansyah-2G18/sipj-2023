@@ -63,7 +63,7 @@
     @php
         $spaceTT = '<br><br><br><br>';
         $line ='____________________';
-
+        $spaci4='&nbsp;&nbsp;&nbsp;&nbsp;';
         $kop='
             <table>
                 <tr>
@@ -182,7 +182,7 @@
                 <br>
                 <tr>
                     <td>Nomor</td>
-                    <td>: {{$nomor}}</td>
+                    <td>: @php echo($nomor); @endphp</td>
                     <td>Kepada</td>
                 </tr>
                 <tr>
@@ -294,7 +294,7 @@
                         <b class="bbottom fz20">
                             SURAT TUGAS<br>
                         </b>
-                        Nomor : {{$nomorTugas}}
+                        Nomor : @php echo($nomorTugas);  @endphp
                     </td>
                 </tr>
                 <br>
@@ -415,7 +415,7 @@
                 <tr>
                     <td colspan="3" >
                         <div class="rightPanjang">
-                            <p class="w55p tcenter"><b>{{$setdaPim->nmAnggota}}</b><br>
+                            <p class="w55p tcenter"><b><u>{{$setdaPim->nmAnggota}}</u></b><br>
                             {{$setdaPim->golongan}} <br>
                             NIP. {{$setdaPim->nip}}</p>
                         </div>
@@ -449,7 +449,7 @@
                 <br>
                 <tr>
                     <td>Nomor</td>
-                    <td>: {{$nomor}}</td>
+                    <td>: @php echo($nomor); @endphp</td>
                     <td>Kepada</td>
                 </tr>
                 <tr>
@@ -561,7 +561,7 @@
                         <b class="bbottom fz20">
                             SURAT TUGAS<br>
                         </b>
-                        Nomor : {{$nomorTugas}}
+                        Nomor : @php echo($nomorTugas); @endphp
                     </td>
                 </tr>
                 <br>

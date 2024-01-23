@@ -223,7 +223,7 @@ class PdfGenerator extends Controller
                 $textTanggal .= " ".$this->getBulan($dateS[1])." ".$dateS[0] ;
             }
 
-
+            $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
             $tglCetak = $date[2]." ".$this->getBulan($date[1])." ".$date[0];
             // $asdiskab= $dinas->asDinas.' '.$asKab;
@@ -250,8 +250,8 @@ class PdfGenerator extends Controller
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
 
-                'nomor' =>"000.1.2.3/_____/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
-                'nomorTugas' =>"800.1.11.1/_____/".$this->getRomawi($date[1])."/".$date[0]
+                'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
+                'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
             ];
             $pdf = PDF::loadView('pdf.suratTugas', $datax)
                     ->setPaper('legal','portrait');
@@ -350,7 +350,7 @@ class PdfGenerator extends Controller
                 $textTanggal .= " ".$this->getBulan($dateS[1])." ".$dateS[0] ;
             }
 
-
+            $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
             $tglCetak = $date[2]." ".$this->getBulan($date[1])." ".$date[0];
             // $asdiskab= $dinas->asDinas.' '.$asKab;
@@ -378,8 +378,8 @@ class PdfGenerator extends Controller
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
 
-                'nomor' =>"000.1.2.3/_____/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
-                'nomorTugas' =>"800.1.11.1/_____/".$this->getRomawi($date[1])."/".$date[0]
+                'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
+                'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
             ];
             $pdf = PDF::loadView('pdf.suratTugasx', $datax)
                     ->setPaper('legal','portrait');
@@ -470,7 +470,7 @@ class PdfGenerator extends Controller
                 $textTanggal .= " ".$this->getBulan($dateS[1])." ".$dateS[0] ;
             }
 
-
+            $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
             $tglCetak = $date[2]." ".$this->getBulan($date[1])." ".$date[0];
             // $asdiskab= $dinas->asDinas.' '.$asKab;
@@ -497,8 +497,8 @@ class PdfGenerator extends Controller
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
 
-                'nomor' =>"000.1.2.3/_____/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
-                'nomorTugas' =>"800.1.11.1/_____/".$this->getRomawi($date[1])."/".$date[0]
+                'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
+                'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
             ];
             $pdf = PDF::loadView('pdf.suratTugasDaerah', $datax)
                     ->setPaper('legal','portrait');
