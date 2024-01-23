@@ -86,7 +86,7 @@
                 <tr>
                     <td>BANYAKNYA UANG</td>
                     <td>:</td>
-                    <td><b class="capitalize">{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</b></td>
+                    <td border="1"><b class="capitalize">{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</b></td>
                 </tr>
                 <tr>
                     <td>UNTUK PEMBAYARAN</td>
@@ -158,7 +158,7 @@
                 <tr>
                     <td>TERBILANG</td>
                     <td>:</td>
-                    <td>RP. {{number_format($totalJenis,0,',','.')}}</td>
+                    <td border="1">RP. {{number_format($totalJenis,0,',','.')}}</td>
                 </tr>
                 <br>
                 <tr>
@@ -166,7 +166,7 @@
                         <table class="w100p" >
                             <tr>
                                 <td class="w30p tcenter">
-                                    MENGETAHUI / MENYETUJU <br>
+                                    MENGETAHUI / MENYETUJUI <br>
                                     Pengguna Anggaran @php echo($spaceTT); @endphp
                                     <b><u>{{$kaban}}</u></b> <br>
                                     NIP. {{$nipKaban}}
@@ -209,9 +209,9 @@
                         <table class="w100p" border="1">
                             <tr>
                                 <td class="w2p">No</td>
-                                <td class="w30p">PERINCIAN BIAYA</td>
-                                <td class="w30p">JUMLAH</td>
-                                <td class="w30p">KETERANGAN</td>
+                                <td class="w30p tcenter">PERINCIAN BIAYA</td>
+                                <td class="w30p tcenter">JUMLAH</td>
+                                <td class="w30p tcenter">KETERANGAN</td>
                             </tr>
                             @foreach ($dt->ddukung as $dt1)
                                 <tr>
