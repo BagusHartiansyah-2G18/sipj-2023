@@ -30,6 +30,9 @@
         table{
             box-sizing: 1.5px;
         }
+        .tdB{
+            border: 1px solid black; padding-left: 10px;
+        }
         .right{
             width: 100%;
             margin-left: 60%;
@@ -86,7 +89,7 @@
                 <tr>
                     <td>BANYAKNYA UANG</td>
                     <td>:</td>
-                    <td border="1"><b class="capitalize">{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</b></td>
+                    <td class="tdB"><b class="capitalize">{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</b></td>
                 </tr>
                 <tr>
                     <td>UNTUK PEMBAYARAN</td>
@@ -158,9 +161,12 @@
                 <tr>
                     <td>TERBILANG</td>
                     <td>:</td>
-                    <td border="1">RP. {{number_format($totalJenis,0,',','.')}}</td>
+                    <td ><b>RP. {{number_format($totalJenis,0,',','.')}}</b></td>
                 </tr>
-                <br>
+                <tr>
+                    <td colspan="3"><br></td>
+                </tr>
+                <!--  -->
                 <tr>
                     <td colspan="3">
                         <table class="w100p" >
@@ -244,7 +250,7 @@
                                 <td class="w50p ">
                                     <br>
                                     Telah dibayarkan uang sebesar <br>
-                                    Rp. {{number_format($totalJenis,0,',','.')}} <br><br>
+                                    Rp. {{number_format($totalJenis,0,',','.')}}<br><br>
                                     <div class="tcenter w50p">
                                         Bendahara Pengeluaran,@php echo($spaceTT); @endphp
                                         <b><u>{{$bendahara}}</u></b><br>
@@ -254,7 +260,8 @@
                                 <td class="w50p tcenter">
                                     Taliwang, @php echo($space); @endphp {{$tahun}}<br>
                                     Telah Menerima Uang Sebesar, <br>
-                                    Rp. {{number_format($totalJenis,0,',','.')}} <br><br>
+                                    Rp. {{number_format($totalJenis,0,',','.')}}<br><br>
+                                    <!-- Rp. {{number_format($totalJenis,0,',','.')}} <br><br> -->
                                     Yang Menerima Uang,@php echo($spaceTT); @endphp
                                     <b><u>{{$dt->nmAnggota}}</u></b> <br>
                                     {{$dt->snip}}. {{$dt->nip}}
