@@ -108,7 +108,7 @@
                                 " pada Sub Kegiatan ".
                                 $sub." ".
                                 "pada ".ucwords(strtolower($dinas)).
-                                " tahun anggaran ".$tahun
+                                " Tahun Anggaran ".$tahun
                             }}
                         </p>
                         <br>
@@ -161,7 +161,7 @@
                 <tr>
                     <td>TERBILANG</td>
                     <td>:</td>
-                    <td ><b>RP. {{number_format($totalJenis,0,',','.')}}</b></td>
+                    <td ><b>Rp. {{number_format($totalJenis,0,',','.')}}</b></td>
                 </tr>
                 <tr>
                     <td colspan="3"><br></td>
