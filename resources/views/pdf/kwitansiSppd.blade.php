@@ -89,7 +89,7 @@
                 <tr>
                     <td>BANYAKNYA UANG</td>
                     <td>:</td>
-                    <td class="tdB"><b class="capitalize">{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</b></td>
+                    <td class="tdB"><b class="capitalize"><i>{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</i></b></td>
                 </tr>
                 <tr>
                     <td style="vertical-align: top;">UNTUK PEMBAYARAN</td>
