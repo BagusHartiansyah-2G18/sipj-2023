@@ -131,6 +131,8 @@ Route::controller(Csppd::class)->name('api.')->prefix('api/sppd')->group(functio
 
     Route::post('/addWorkUraian','addWorkUraian')->name('addWorkUraian');
     Route::post('/updWorkUraian','updWorkUraian')->name('updWorkUraian');
+    Route::post('/updWorkAnggota','updWorkAnggota')->name('updWorkAnggota');
+
     Route::post('/delWorkUraian','delWorkUraian')->name('delWorkUraian');
 });
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->prefix('home')->groi;
@@ -143,8 +145,6 @@ Route::controller(PdfGenerator::class)->name('pdf.')->prefix('pdf')->group(funct
     Route::get('/sppdSetda/{val}','sppdSetda')->name('sppdSetda');
     Route::get('/sppdBupati/{val}','sppdBupati')->name('sppdBupati');
     Route::get('/sppdBupatiSetda/{val}','sppdBupatiSetda')->name('sppdBupatiSetda');
-
-
 });
 
 

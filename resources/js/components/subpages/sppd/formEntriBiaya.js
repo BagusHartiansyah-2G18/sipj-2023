@@ -1,11 +1,13 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 
-import { workDelAnggota, addWorkUraian, updWorkUraian, delWorkUraian } from '../../../states/sppd/action';
+import { workDelAnggota, addWorkUraian, updWorkUraian, delWorkUraian, updWorkAnggota } from '../../../states/sppd/action';
 import sfHtml from "../../mfc/sfHtml";
 import { setHtml, modalClose } from '../../../states/sfHtml/action';
 
 import FormUraian from "./sub/formUraian";
+import FormNoSppd from "./sub/formNoSpp";
+
 import PropTypes from "prop-types";
 
 function FormEntriBiaya({ dt, param, modalC, indWork }) {
@@ -13,6 +15,7 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
     function mclose(){
         dispatch(modalClose());
     }
+
     // delete nama staf
     const del = (i) =>{
         modalC(
@@ -118,6 +121,21 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
         }))
         mclose();
     }
+    const updNomorSppd = ({ ind, noSppd }) =>{
+        // console.log(dt[ind]);
+        dispatch(updWorkAnggota({
+            kdBAnggota:dt[ind].kdBAnggota,
+            kdBidang: dt[ind].kdBidang,
+            no : dt[ind].no,
+            kdDinas :dt[ind].kdDinas,
+            kdSub : dt[ind].kdSub,
+            kdJudul:dt[ind].kdJudul,
+            noSppd,
+            indAnggota :ind,
+            ind:dt[ind].xind
+        }))
+        // mclose();
+    }
 
     if (dt.length===0) {
         return <></>;
@@ -142,6 +160,14 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
                                     </div>
                                 </div>
                                 <div className="body">
+                                    {
+                                        <FormNoSppd
+                                            key={"nosppd"+i}
+                                            ind ={i}
+                                            updNomorSppd={updNomorSppd}
+                                            dt={v}>
+                                        </FormNoSppd>
+                                    }
                                     {
                                         v.ddukung.map((v1,i1)=>{
                                             return (

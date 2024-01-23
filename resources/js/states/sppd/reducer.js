@@ -29,11 +29,16 @@ function selectAnggota({ dt, act }){
     anggota: dt.anggota.map((v,i)=>{
       if(i=== act.ind){
         switch (act.type) {
-          case actType.anggotaSelect:
-            return {
-              ...v,
-              aktif:(v.aktif?0:1)
-            }
+            case actType.anggotaSelect:
+                return {
+                ...v,
+                aktif:(v.aktif?0:1)
+                }
+            case actType.updWorkAnggota:
+                return {
+                    ...v,
+                    noSPPD:act.noSppd
+                }
         }
       }
       return v;
@@ -294,7 +299,8 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
             ...param,
             xind: i,
             kdBAnggota: v.kdBAnggota,
-            ddukung:(v1.ddukung==undefined? dpendukung: v1.ddukung)
+            ddukung:(v1.ddukung==undefined? dpendukung: v1.ddukung),
+            noSPPD :v1.noSPPD
             // uraian:(v1.uraian==undefined? []: v1.uraian)
         });
         add=false;

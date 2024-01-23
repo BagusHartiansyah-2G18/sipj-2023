@@ -11,6 +11,7 @@ const actType = {
   del     : 'delete'+nm,
   anggota: "anggota",
   anggotaSelect: "anggotaSelect",
+  updWorkAnggota: "updWorkAnggota",
   crudWork: "crudWork",
   workSetAnggota:'workSetAnggota',
   workDelAnggota:'workDelAnggota',
@@ -352,6 +353,25 @@ function updWorkUraian(body){
     // dispatch(hideLoading());
   };
 }
+function updWorkAnggota(body){
+    return async (dispatch) => {
+      // dispatch(showLoading());
+      try {
+        const dt = await api.POST({url:"sppd/updWorkAnggota",body});
+        dispatch({
+          type : actType.anggota,
+          payload:{
+            ...body,
+            type:actType.updWorkAnggota
+          }
+        });
+        toast.success('berhasil diperbarui');
+      } catch (error) {
+        alert(error.message);
+      }
+      // dispatch(hideLoading());
+    };
+  }
 function delWorkUraian(body){
   return async (dispatch) => {
     // dispatch(showLoading());
@@ -405,6 +425,7 @@ export {
 
     anggotaSelect,
     addedWorkStaf,
+    updWorkAnggota,
 
     addWorkUraian,
     updWorkUraian,

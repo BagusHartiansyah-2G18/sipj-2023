@@ -12,7 +12,6 @@ function FormUraian( { dt , onUpded, onDeled, value } ){
     const [total, settotal] = useState((dt.nilai === 0 || dt.volume === 0 ? 0 : dt.nilai*dt.volume ));
 
     const upded = () =>{
-        console.log('sses');
         try {
             const hitung = (Number(volume)* Number(nilai))
             settotal(hitung);

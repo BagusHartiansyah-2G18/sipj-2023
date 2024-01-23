@@ -57,7 +57,8 @@ function SPPD(){
     //     setview(4);
     // }
     // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
-    // console.log(view);
+    // console.log(_sppd.dwork[indWork]);
+
     return (
         <>
             <HeaderPage1
@@ -121,7 +122,7 @@ function SPPD(){
                                 view===3 &&
                                 <FormEntriBiaya
                                     dt={_sppd.dwork[indWork].anggota.filter(v=>v.xind!=undefined)}
-                                    param={{ ...param, no :_sppd.dwork[indWork].no }}
+                                    param={{ ...param, no :_sppd.dwork[indWork].no, noSppd :_sppd.dwork[indWork].noSppd }}
                                     modalC={setmodalC}
                                     indWork={indWork}
                                 ></FormEntriBiaya>

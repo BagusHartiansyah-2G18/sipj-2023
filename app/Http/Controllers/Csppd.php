@@ -496,6 +496,49 @@ class Csppd extends Controller
             'msg' => $cek['msg']
         ], 200);
     }
+    public function updWorkAnggota(Request $request){
+        $user =Auth::user();
+        $cek = $this->portal($user);
+        if($cek['exc']){
+            $request->validate([
+                'kdDinas' => 'required',
+                'kdBidang' => 'required',
+                'kdSub' => 'required',
+                'kdJudul' => 'required',
+                'no'=> 'required',
+                "kdBAnggota"=> 'required',
+                "noSppd"=> 'required'
+            ]);
+            if(
+                DB::table('work')
+                ->where('kdDinas',$request->kdDinas)
+                ->where('kdBidang',$request->kdBidang)
+                ->where('kdSub',$request->kdSub)
+                ->where('kdJudul',$request->kdJudul)
+                ->where('taWork',$cek['ta'])
+                ->where('kdBAnggota',$request->kdBAnggota)
+                ->where('no',$request->no)
+                ->update([
+                    'noSPPD' => $request->noSppd,
+                ])
+            ){
+                return response()->json([
+                    'exc' => true,
+                    'data' => []
+                ], 200);
+            }
+
+            return response()->json([
+                'exc' => false,
+                'msg' => 'execute query error !!!'
+            ], 200);
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
+
 
     public function addWorkUraian(Request $request){
         $user =Auth::user();
