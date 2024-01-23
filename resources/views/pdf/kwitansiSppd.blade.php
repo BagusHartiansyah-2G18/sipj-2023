@@ -30,6 +30,9 @@
         table{
             box-sizing: 1.5px;
         }
+        .tdB{
+            border: 1px solid black; padding-left: 10px;
+        }
         .right{
             width: 100%;
             margin-left: 60%;
@@ -86,15 +89,15 @@
                 <tr>
                     <td>BANYAKNYA UANG</td>
                     <td>:</td>
-                    <td border="1"><b class="capitalize">{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</b></td>
+                    <td class="tdB"><b class="capitalize"><i>{{(strlen($textTotal[$loop->index])===7? '-': $textTotal[$loop->index])}}</i></b></td>
                 </tr>
                 <tr>
-                    <td>UNTUK PEMBAYARAN</td>
-                    <td>:</td>
+                    <td style="vertical-align: top;">UNTUK PEMBAYARAN</td>
+                    <td style="vertical-align: top;">:</td>
                     <td>
                         <p style="text-align: justify;" class="pm0">
                             {{
-                                $uraian." ke ".
+                                "Biaya ".substr($uraian,7)." ke ".
                                 $tujuan." An. ".
                                 $dt->nmAnggota." jabatan ".
                                 $dt->nmJabatan." ".
@@ -105,11 +108,17 @@
                                 " pada Sub Kegiatan ".
                                 $sub." ".
                                 "pada ".ucwords(strtolower($dinas)).
-                                " tahun anggaran ".$tahun
+                                " Tahun Anggaran ".$tahun
                             }}
                         </p>
-                        <br>
                         <!-- <br> -->
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
                         <table >
                             <tr>
                                 <td>sesuai SPPD No. {{$no}} {{$dt->noSPPD}}</td>
@@ -158,9 +167,12 @@
                 <tr>
                     <td>TERBILANG</td>
                     <td>:</td>
-                    <td border="1">RP. {{number_format($totalJenis,0,',','.')}}</td>
+                    <td ><b>Rp. {{number_format($totalJenis,0,',','.')}}</b></td>
                 </tr>
-                <br>
+                <tr>
+                    <td colspan="3"><br></td>
+                </tr>
+                <!--  -->
                 <tr>
                     <td colspan="3">
                         <table class="w100p" >
@@ -244,7 +256,7 @@
                                 <td class="w50p ">
                                     <br>
                                     Telah dibayarkan uang sebesar <br>
-                                    Rp. {{number_format($totalJenis,0,',','.')}} <br><br>
+                                    Rp. {{number_format($totalJenis,0,',','.')}}<br><br>
                                     <div class="tcenter w50p">
                                         Bendahara Pengeluaran,@php echo($spaceTT); @endphp
                                         <b><u>{{$bendahara}}</u></b><br>
@@ -254,7 +266,8 @@
                                 <td class="w50p tcenter">
                                     Taliwang, @php echo($space); @endphp {{$tahun}}<br>
                                     Telah Menerima Uang Sebesar, <br>
-                                    Rp. {{number_format($totalJenis,0,',','.')}} <br><br>
+                                    Rp. {{number_format($totalJenis,0,',','.')}}<br><br>
+                                    <!-- Rp. {{number_format($totalJenis,0,',','.')}} <br><br> -->
                                     Yang Menerima Uang,@php echo($spaceTT); @endphp
                                     <b><u>{{$dt->nmAnggota}}</u></b> <br>
                                     {{$dt->snip}}. {{$dt->nip}}
