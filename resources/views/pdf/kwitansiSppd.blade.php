@@ -71,7 +71,7 @@
                     </tr>
                 </table>
             </div>
-            <table  class="fz12 w100p ">
+            <table  class="fz12 w100p " style="border-collapse: collapse;">
 
                 <tr>
                     <td class="w20p"></td>
