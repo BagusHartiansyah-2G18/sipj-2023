@@ -134,7 +134,7 @@
                         <table border="1" class="w100p">
                             <tr>
                                 <td class="w5p">1</td>
-                                <td class="w40p">Pejabat yang Memberi Perintah</td>
+                                <td class="w40p">Pejabat Pembuat Komitmen</td>
                                 <td colspan="2">
                                         @php
                                             $ub = explode("ub",$jabatanPim);
