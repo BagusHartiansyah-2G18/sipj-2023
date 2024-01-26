@@ -35,17 +35,19 @@ class PdfGenerator extends Controller
             // return print_r($param['no']);
             $param["where"]= ' and d.kdBAnggota =""';
 
-            DB::table('work')
-            ->where('kdDinas',$param['kdDinas'])
-            ->where('kdBidang',$param['kdBidang'])
-            ->where('kdSub',$param['kdSub'])
-            ->where('kdJudul',$param['kdJudul'])
-            ->where('taWork',$cek['ta'])
-            ->where('no',$param['no'])
-            ->where('kdBAnggota','')
-            ->update([
-                'noSPPD'=> $param['noSPPD'],
-            ]);
+            // DB::table('work')
+            // ->where('kdDinas',$param['kdDinas'])
+            // ->where('kdBidang',$param['kdBidang'])
+            // ->where('kdSub',$param['kdSub'])
+            // ->where('kdJudul',$param['kdJudul'])
+            // ->where('taWork',$cek['ta'])
+            // ->where('no',$param['no'])
+            // ->where('kdBAnggota','')
+            // ->update([
+            //     'noSPPD'=> $param['noSPPD'],
+            // ]);
+            // echo("<pre>");
+            // return print_r(Hdb::getDataSppdKegiatan($param));
 
             $data =Hdb::getDataSppdKegiatan($param)[0];
             $param["where"]= ' and a.kdBAnggota !=""';

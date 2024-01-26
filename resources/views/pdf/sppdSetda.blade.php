@@ -108,6 +108,10 @@
                         <div class="right">
                             <table class="w40p">
                                 <tr>
+                                    <td class="p0">Lembar Ke</td>
+                                    <td class="p0">:</td>
+                                </tr>
+                                <tr>
                                     <td class="p0">Kode No.</td>
                                     <td class="p0">:  {{$no}}</td>
                                 </tr>
@@ -123,7 +127,7 @@
                 <tr class="tcenter">
                     <td colspan="3" >
                         <b class="bbottom fz20">
-                            SURAT PERJALANAN DINAS<br>
+                            SURAT PERJALANAN DINAS
                         </b>
                         <b class="fz20">(SPD)</b>
                     </td>

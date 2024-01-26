@@ -507,7 +507,8 @@ class Hdb {
                 a.kdSub="'.$v['kdSub'].'" and
                 a.kdBidang="'.$v['kdBidang'].'" and
                 a.kdDinas="'.$v['kdDinas'].'" and
-                a.taJudul="'.$v['tahun'].'"
+                a.taJudul="'.$v['tahun'].'" and
+                d.no="'.$v['no'].'"
                 '.$v['where'].'
         ');
     }
