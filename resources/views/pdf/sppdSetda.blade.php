@@ -321,7 +321,8 @@
                     <td class="w10p"></td>
                     <td class="w50p"></td>
                     <td style="text-transform: uppercase;">
-                        <span class="tlower">a.n.</span> Bupati Sumbawa Barat <br> Sekretaris Daerah,<br> @php echo($jabatanPim.' '.$asDinas); @endphp
+                       <!--  <span class="tlower">a.n.</span> Bupati Sumbawa Barat <br> Sekretaris Daerah,<br> @php echo($jabatanPim.' '.$asDinas); @endphp -->
+                        Pejabat Pembuat Komitmen
                     </td>
                 </tr>
                 <br>
