@@ -320,7 +320,7 @@
                 <tr class="tcenter">
                     <td class="w10p"></td>
                     <td class="w50p"></td>
-                    <td style="text-transform: uppercase;">
+                    <td class="capitalize">
                        <!--  <span class="tlower">a.n.</span> Bupati Sumbawa Barat <br> Sekretaris Daerah,<br> @php echo($jabatanPim.' '.$asDinas); @endphp -->
                         Pejabat Pembuat Komitmen
                     </td>
