@@ -97,13 +97,13 @@
             </table>
         ';
 
+        $ttJabatan = $jabatanDinas.' '.$dinas->asDinas.'<br>'.$kab;
         $tt='
             <tr>
                 <td colspan="3" >
                     <div class="right">
                         <p class="w40p tcenter">
-                            '.$jabatanDinas.' '.$dinas->asDinas.'<br>
-                            '.$kab.'
+                            '.$ttJabatan.'
                         </p>
                     </div>
                 </td>
@@ -120,6 +120,7 @@
                 </td>
             </tr>
         ';
+        $ttJabatanSetda = $jabatanSetda.$subPimpinan->nmJabatan.'<br>'.$kab;
         $ttSetda='
             <tr>
                 <td colspan="3" >
@@ -136,7 +137,7 @@
                         </table>
                         <br>
                         <p class="w55p">
-                            '.$jabatanSetda.$subPimpinan->nmJabatan.',
+                            '.$ttJabatanSetda.',
                             <!-- <br>'.$kab.' -->
                         </p>
                     </div>
@@ -188,7 +189,7 @@
                     <td>Lamp</td>
                     <td>: -</td>
                     <td>
-                        Yth. Bupati Sumbawa Barat<br>
+                        Yth. @php echo($ttJabatan)  @endphp<br>
                         di-
                     </td>
                 </tr>

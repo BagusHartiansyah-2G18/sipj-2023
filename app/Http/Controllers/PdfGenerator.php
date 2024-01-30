@@ -185,6 +185,7 @@ class PdfGenerator extends Controller
                 $cek['setda'],"setda",$param['tahun'],
                 $data->pimSetda,$data->tdSETDA
             );
+            $jabatanSetda = "";
             $jabatanSetda = "a.n. Bupati Sumbawa Barat <br>";
             if(!$subPimpinan->manual){
                 // return print_r($subPimpinan->nmJabatan);
@@ -192,6 +193,7 @@ class PdfGenerator extends Controller
                     $jabatanSetda .="Sekretaris Daerah, <br> u.b. " ;
                 }
             }
+            $jabatanSetda = "";
             // echo("<pre>");
             // return print_r($subPimpinan);
 
@@ -439,6 +441,7 @@ class PdfGenerator extends Controller
                     $jabatanSetda .="Sekretaris Daerah, <br> u.b. " ;
                 }
             }
+            $jabatanSetda = "";
             // echo("<pre>");
             // return print_r($subPimpinan);
 

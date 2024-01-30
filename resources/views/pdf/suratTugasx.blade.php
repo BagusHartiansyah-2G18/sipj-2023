@@ -97,13 +97,13 @@
             </table>
         ';
 
+        $ttJabatan = $jabatanDinas.' '.$dinas->asDinas.'<br>'.$kab;
         $tt='
             <tr>
                 <td colspan="3" >
                     <div class="right">
                         <p class="w40p tcenter">
-                            '.$jabatanDinas.' '.$dinas->asDinas.'<br>
-                            '.$kab.'
+                            '.$ttJabatan.'
                         </p>
                     </div>
                 </td>
@@ -120,6 +120,7 @@
                 </td>
             </tr>
         ';
+        $ttJabatanSetda = $jabatanSetda.$subPimpinan->nmJabatan;
         $ttSetda='
             <tr>
                 <td colspan="3" >
@@ -136,7 +137,43 @@
                         </table>
                         <br>
                         <p class="w55p">
-                            '.$jabatanSetda.$subPimpinan->nmJabatan.',
+                            '.$ttJabatanSetda.',
+                            <!-- <br>'.$kab.' -->
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <br>
+            <br>
+            <tr>
+                <td colspan="3" >
+                    <div class="rightPanjang">
+                        <p class="w60p tcenter"><u><b>'.$subPimpinan->nmAnggota.'</b></u><br>
+                        '.$subPimpinan->golongan.'<br>
+                        NIP. '.$subPimpinan->nip.'</p>
+                    </div>
+                </td>
+            </tr>
+        ';
+
+        $ttJabatanSub = $subPimpinan->nmJabatan.'<br>'.$kab;
+        $ttSubSetda='
+            <tr>
+                <td colspan="3" >
+                    <div class="rightPanjang tcenter">
+                        <table style="margin-left: 15%;">
+                            <tr>
+                                <td>Dikeluarkan di</td><td>:</td>
+                                <td>Taliwang</td>
+                            </tr>
+                            <tr>
+                                <td>Pada Tanggal</td><td>:</td>
+                                <td>'.$tglCetak.'</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p class="w55p">
+                            '.$ttJabatanSub.',
                             <!-- <br>'.$kab.' -->
                         </p>
                     </div>
@@ -189,7 +226,7 @@
                     <td>Lamp</td>
                     <td>: -</td>
                     <td>
-                        Yth. Bupati Sumbawa Barat<br>
+                        Yth. @php echo($ttJabatan); @endphp<br>
                         di-
                     </td>
                 </tr>
@@ -405,7 +442,9 @@
                                 </tr>
                             </table>
                             <p class="w55p tcenter">
-                            a.n. Bupati Sumbawa Barat <br>Sekretaris Daerah,
+                                <!-- a.n. Bupati Sumbawa Barat <br> -->
+                                Sekretaris Daerah,
+                                <br>{{$kab}}
                             </p>
                         </div>
                     </td>
@@ -456,7 +495,7 @@
                     <td>Lamp</td>
                     <td>: -</td>
                     <td>
-                        Yth. Bupati Sumbawa Barat<br>
+                        Yth. @php echo($ttJabatan); @endphp<br>
                         di-
                     </td>
                 </tr>
@@ -667,7 +706,7 @@
                     </td>
                 </tr>
                 <br>
-                @php echo($ttSetda); @endphp
+                @php echo($ttSubSetda); @endphp
             </table>
         </div>
     @endif
