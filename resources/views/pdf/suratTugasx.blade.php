@@ -226,7 +226,7 @@
                     <td>Lamp</td>
                     <td>: -</td>
                     <td>
-                        Yth. @php echo($ttJabatan); @endphp<br>
+                        Yth. Sekretaris Daerah {{$kab}}<br>
                         di-
                     </td>
                 </tr>
@@ -495,7 +495,7 @@
                     <td>Lamp</td>
                     <td>: -</td>
                     <td>
-                        Yth. @php echo($ttJabatan); @endphp<br>
+                        Yth. @php echo($ttJabatanSub); @endphp<br>
                         di-
                     </td>
                 </tr>

@@ -189,7 +189,7 @@
                     <td>Lamp</td>
                     <td>: -</td>
                     <td>
-                        Yth. @php echo($ttJabatan)  @endphp<br>
+                        Yth. @php echo($ttJabatanSetda)  @endphp<br>
                         di-
                     </td>
                 </tr>

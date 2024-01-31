@@ -186,14 +186,14 @@ class PdfGenerator extends Controller
                 $data->pimSetda,$data->tdSETDA
             );
             $jabatanSetda = "";
-            $jabatanSetda = "a.n. Bupati Sumbawa Barat <br>";
+            // $jabatanSetda = "a.n. Bupati Sumbawa Barat <br>";
             if(!$subPimpinan->manual){
                 // return print_r($subPimpinan->nmJabatan);
                 if($subPimpinan->status !=='setda'){
-                    $jabatanSetda .="Sekretaris Daerah, <br> u.b. " ;
+                    $jabatanSetda .="Plh. Sekretaris Daerah, <br> " ;
                 }
             }
-            $jabatanSetda = "";
+            // $jabatanSetda = "";
             // echo("<pre>");
             // return print_r($subPimpinan);
 
