@@ -218,7 +218,7 @@
                 <br>
                 <tr>
                     <td>Nomor <br>Lamp<br>Hal</td>
-                    <td>: @php echo($nomor)  @endphp <br>:<br>:Permohonan Penerbitan Surat Tugas</td>
+                    <td>: @php echo($nomor)  @endphp <br>: -<br>: Permohonan Penerbitan Surat Tugas</td>
                     <td>Kepada</td>
                 </tr>
                 <tr>
@@ -450,7 +450,7 @@
                 <br>
                 <tr>
                     <td>Nomor <br>Lamp<br>Hal</td>
-                    <td>: @php echo($nomor)  @endphp <br>:<br>:Permohonan Penerbitan Surat Tugas</td>
+                    <td>: @php echo($nomor)  @endphp <br> -<br>: Permohonan Penerbitan Surat Tugas</td>
                     <td>Kepada</td>
                 </tr>
                 <tr>
