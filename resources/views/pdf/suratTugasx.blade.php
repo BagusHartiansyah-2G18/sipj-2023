@@ -501,7 +501,7 @@
                 </tr>
                 <tr>
                     <td>Hal</td>
-                    <td>: Mohon Penerbitan Surat Tugas</td>
+                    <td>: Permohonan Penerbitan Surat Tugas</td>
                     <td>
                         Taliwang
                     </td>
