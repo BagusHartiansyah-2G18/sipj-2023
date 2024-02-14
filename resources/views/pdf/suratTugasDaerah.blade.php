@@ -181,25 +181,19 @@
                 </tr>
                 <br>
                 <tr>
-                    <td>Nomor</td>
-                    <td>: @php echo($nomor)  @endphp</td>
+                    <td>Nomor <br>Lamp<br>Hal</td>
+                    <td>: @php echo($nomor)  @endphp <br>: -<br>: Permohonan Penerbitan Surat Tugas</td>
                     <td>Kepada</td>
                 </tr>
                 <tr>
-                    <td>Lamp</td>
-                    <td>: -</td>
+                    <td></td>
+                    <td></td>
                     <td>
                         Yth. @php echo($ttJabatanSetda)  @endphp<br>
-                        di-
+                        di- <br>Taliwang
                     </td>
                 </tr>
-                <tr>
-                    <td>Hal</td>
-                    <td>: Mohon Penerbitan Surat Tugas</td>
-                    <td>
-                        Taliwang
-                    </td>
-                </tr>
+                
                 <br>
                 <tr>
                     <td></td>
