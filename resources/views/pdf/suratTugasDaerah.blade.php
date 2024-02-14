@@ -284,7 +284,7 @@
         </div>
         <div class="page-break"></div>
         <div class=" container">
-            @php echo($kopSetda); @endphp
+            @php echo($kopSetda); $tamp =0; @endphp
             <hr>
             <br>
             <!-- <br> -->
@@ -335,7 +335,7 @@
                             @foreach ($member as $dt)
                                 <ol style="list-style: disc;">
                                     <Table>
-                                        <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
+                                        <tr><td>{{$loop->index+1}}. </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
                                         <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
                                         <tr><td></td><td>Jabatan</td><td>: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
                                         <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>

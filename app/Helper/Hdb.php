@@ -604,7 +604,9 @@ class Hdb {
                 b.taBAnggota = c.taDBidang
             '.$where.'
             GROUP BY a.no, a.kdBAnggota, a.kdBidang, a.kdDinas, a.taWork, a.kdSub, a.kdJudul
-            order by b.tingkatan, b.nip asc
+            order by b.tingkatan, substr(b.nip,1,4) desc
+            -- , b.nip asc 
+            -- order by b.nip desc
         ');
     }
     function workAdded($v){

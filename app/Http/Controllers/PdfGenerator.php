@@ -216,7 +216,7 @@ class PdfGenerator extends Controller
             $dateS = explode("-",$data->date);
             $dateE = [];
             $textTanggal = $dateS[2];
-            if(!empty($data->dateE)){
+            if(!empty($data->dateE) && $data->dateE!=$data->date){
                 $dateE = explode("-",$data->dateE);
                 if($dateS[1]==$dateE[1]){
                     $textTanggal.=" s/d ".$dateE[2]." ".$this->getBulan($dateS[1])." ".$dateE[0] ;
@@ -343,7 +343,7 @@ class PdfGenerator extends Controller
             $dateS = explode("-",$data->date);
             $dateE = [];
             $textTanggal = $dateS[2];
-            if(!empty($data->dateE)){
+            if(!empty($data->dateE) && $data->dateE!=$data->date){
                 $dateE = explode("-",$data->dateE);
                 if($dateS[1]==$dateE[1]){
                     $textTanggal.=" s/d ".$dateE[2]." ".$this->getBulan($dateS[1])." ".$dateE[0] ;
@@ -464,7 +464,7 @@ class PdfGenerator extends Controller
             $dateS = explode("-",$data->date);
             $dateE = [];
             $textTanggal = $dateS[2];
-            if(!empty($data->dateE)){
+            if(!empty($data->dateE) && $data->dateE!=$data->date){
                 $dateE = explode("-",$data->dateE);
                 if($dateS[1]==$dateE[1]){
                     $textTanggal.=" s/d ".$dateE[2]." ".$this->getBulan($dateS[1])." ".$dateE[0] ;

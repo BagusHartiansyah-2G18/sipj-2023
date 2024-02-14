@@ -321,7 +321,7 @@
         </div>
         <div class="page-break"></div>
         <div class=" container">
-            @php echo($kopSetda); @endphp
+            @php echo($kopSetda);$tamp =0; @endphp
             <hr>
             <br>
             <!-- <br> -->
@@ -590,7 +590,7 @@
         </div>
         <div class="page-break"></div>
         <div class=" container">
-            @php echo($kopSetda); @endphp
+            @php echo($kopSetda);$tamp =0; @endphp
             <hr>
             <br>
             <!-- <br> -->

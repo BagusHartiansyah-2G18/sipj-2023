@@ -320,7 +320,7 @@
         </div>
         <div class="page-break"></div>
         <div class=" container">
-            @php echo($kopSetda); @endphp
+            @php echo($kopSetda);$tamp =0; @endphp
             <hr>
             <br>
             <!-- <br> -->
@@ -444,7 +444,7 @@
     @endphp
     @if(count($newMember)>0)
         <div class=" container">
-            @php echo($kop); @endphp
+            @php echo($kop);   @endphp
             <hr>
             <br>
             <!-- <br> -->
@@ -559,7 +559,7 @@
         </div>
         <div class="page-break"></div>
         <div class=" container">
-            @php echo($kopSetda); @endphp
+            @php echo($kopSetda);$tamp =0;  @endphp
             <hr>
             <br>
             <!-- <br> -->
