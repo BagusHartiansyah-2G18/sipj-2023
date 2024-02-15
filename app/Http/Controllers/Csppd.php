@@ -143,22 +143,25 @@ class Csppd extends Controller
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
-                'kdDBidang' => 'required',
+                'kdBidang' => 'required',
                 'kdSub' => 'required',
                 'kdJudul' => 'required',
+                'dt' => 'required',
                 'no'=> 'required',
-                'date'=> 'required',
-                'kdBAnggota' => 'required',
-            ]);
-            $data =Hdb::workAdduser([
-                $request->no,
-                $request->kdDinas,
-                $request->kdDBidang,
-                $cek['ta'],
-                $request->kdSub,
-                $request->kdJudul,
-                $request->kdBAnggota,
-            ]);
+                'date'=> 'required', 
+            ]); 
+            foreach ($request->dt as $key => $value) {
+                $data =Hdb::workAdduser([
+                    $request->no,
+                    $request->kdDinas,
+                    $value['kdDBidang'],
+                    $cek['ta'],
+                    $request->kdSub,
+                    $request->kdJudul,
+                    $value['kdBAnggota'],
+                ]);
+            }
+            
 
             return response()->json([
                 'exc' => true,

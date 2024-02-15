@@ -57,6 +57,7 @@
         .capitalize{text-transform: capitalize;}
 
         .noBold{font-weight: normal;}
+        .verTop{vertical-align: top;}
     </style>
 </head>
 <body class="fz14" style="font-family: Arial, Helvetica, sans-serif;">
@@ -245,12 +246,19 @@
                                 @php $tamp=0; $tamHtml=""; @endphp
                                 @foreach ($newMember as $dt)
                                     <ol style="list-style: disc;">
-                                        <Table>
+                                        <!-- <Table>
                                             <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
                                             <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
                                             <tr><td></td><td>Jabatan</td><td >: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
                                             <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
                                             <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
+                                        </Table> -->
+                                        <Table>
+                                            <tr><td >{{$loop->index+1}}.   </td><td class="verTop">Nama</td><td>:</td><td>{{$dt->nmAnggota}}</td></tr>
+                                            <tr><td></td><td class="verTop">NIP</td><td>:</td><td> {{$dt->nip}}</td></tr>
+                                            <tr><td></td><td class="verTop">Jabatan</td><td class="verTop">:</td><td> {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{ $asdiskab}}</td></tr>
+                                            <tr><td></td><td class="verTop">Golongan</td><td>:</td><td> {{$dt->golongan}}</td></tr>
+                                            <tr><td></td><td class="verTop">Tingkat</td><td>:</td><td> {{($dt->tingkat)}}</td></tr>
                                         </Table>
                                     </ol>
                                     @if(count($member)>4)
@@ -406,10 +414,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="w20p">Untuk</td>
+                    <!-- <td class="w20p">Untuk</td> -->
+                    <td class="w20p verTop">Untuk <span style="float:right;">:</span></td>
                     <td colspan="2">
                         <p style="text-align: justify;padding: 0px; margin: 0px;max-width:480px;">
-                            : {{$data->maksud}} pada tanggal
+                            {{$data->maksud}} pada tanggal
                             {{$textTanggal}}
                             di {{$data->lokasi}}.
                         </p>
@@ -507,12 +516,19 @@
                                 @php $tamp=0; $tamHtml=""; @endphp
                                 @foreach ($newMember as $dt)
                                     <ol style="list-style: disc;">
-                                        <Table>
+                                        <!-- <Table>
                                             <tr><td>{{$loop->index+1}}.   </td><td>Nama</td><td>: {{$dt->nmAnggota}}</td></tr>
                                             <tr><td></td><td>NIP</td><td>: {{$dt->nip}}</td></tr>
                                             <tr><td></td><td>Jabatan</td><td >: {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{$asdiskab}}</td></tr>
                                             <tr><td></td><td>Golongan</td><td>: {{$dt->golongan}}</td></tr>
                                             <tr><td></td><td>Tingkat</td><td>: {{($dt->tingkat)}}</td></tr>
+                                        </Table> -->
+                                        <Table>
+                                            <tr><td >{{$loop->index+1}}.   </td><td class="verTop">Nama</td><td>:</td><td>{{$dt->nmAnggota}}</td></tr>
+                                            <tr><td></td><td class="verTop">NIP</td><td>:</td><td> {{$dt->nip}}</td></tr>
+                                            <tr><td></td><td class="verTop">Jabatan</td><td class="verTop">:</td><td> {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{ $asdiskab}}</td></tr>
+                                            <tr><td></td><td class="verTop">Golongan</td><td>:</td><td> {{$dt->golongan}}</td></tr>
+                                            <tr><td></td><td class="verTop">Tingkat</td><td>:</td><td> {{($dt->tingkat)}}</td></tr>
                                         </Table>
                                     </ol>
                                     @if(count($member)>4)
@@ -677,10 +693,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="w20p">Untuk</td>
+                    <!-- <td class="w20p">Untuk</td> -->
+                    <td class="w20p verTop">Untuk <span style="float:right;">:</span></td>
                     <td colspan="2">
                         <p style="text-align: justify;padding: 0px; margin: 0px;max-width:480px;">
-                            : {{$data->maksud}} pada tanggal
+                            {{$data->maksud}} pada tanggal
                             {{$textTanggal}}
                             di {{$data->lokasi}}.
                         </p>

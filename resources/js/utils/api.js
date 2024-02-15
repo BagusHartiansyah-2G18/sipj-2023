@@ -26,6 +26,7 @@ const api = (() => {
           },
           body: JSON.stringify(body),
         });
+        // response
         const responseJson = await response.json();
         const { exc, msg='-' } = responseJson;
         if (!exc) {

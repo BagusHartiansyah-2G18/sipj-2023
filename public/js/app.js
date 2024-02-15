@@ -20653,50 +20653,41 @@ function addedWorkStaf(_ref10) {
     ind = _ref10.ind,
     param = _ref10.param;
   return /*#__PURE__*/function () {
-    var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(dispatch) {
-      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
-        while (1) switch (_context11.prev = _context11.next) {
+    var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(dispatch) {
+      var dtx;
+      return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+        while (1) switch (_context10.prev = _context10.next) {
           case 0:
-            // dispatch(showLoading());
-            try {
-              dt.forEach( /*#__PURE__*/function () {
-                var _ref12 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(v) {
-                  return _regeneratorRuntime().wrap(function _callee10$(_context10) {
-                    while (1) switch (_context10.prev = _context10.next) {
-                      case 0:
-                        _context10.next = 2;
-                        return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-                          url: "sppd/addedUser",
-                          body: _objectSpread(_objectSpread({}, param), v)
-                        });
-                      case 2:
-                      case "end":
-                        return _context10.stop();
-                    }
-                  }, _callee10);
-                }));
-                return function (_x11) {
-                  return _ref12.apply(this, arguments);
-                };
-              }());
-              dispatch({
-                type: actType.crudWork,
-                payload: {
-                  ind: ind,
-                  dt: dt,
-                  param: param,
-                  type: actType.workSetAnggota
-                }
-              });
-            } catch (error) {
-              react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(error.message);
-            }
-            // dispatch(hideLoading());
-          case 1:
+            _context10.prev = 0;
+            _context10.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "sppd/addedUser",
+              body: _objectSpread(_objectSpread({}, param), {}, {
+                dt: dt
+              })
+            });
+          case 3:
+            dtx = _context10.sent;
+            dispatch({
+              type: actType.crudWork,
+              payload: {
+                ind: ind,
+                dt: dt,
+                param: param,
+                type: actType.workSetAnggota
+              }
+            });
+            _context10.next = 10;
+            break;
+          case 7:
+            _context10.prev = 7;
+            _context10.t0 = _context10["catch"](0);
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context10.t0.message);
+          case 10:
           case "end":
-            return _context11.stop();
+            return _context10.stop();
         }
-      }, _callee11);
+      }, _callee10, null, [[0, 7]]);
     }));
     return function (_x10) {
       return _ref11.apply(this, arguments);
@@ -20743,23 +20734,23 @@ var coldata = [{
     return row.lokasi;
   }
 }];
-function workSetAnggota(_ref13) {
-  var ind = _ref13.ind,
-    param = _ref13.param;
+function workSetAnggota(_ref12) {
+  var ind = _ref12.ind,
+    param = _ref12.param;
   return /*#__PURE__*/function () {
-    var _ref14 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(dispatch) {
+    var _ref13 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(dispatch) {
       var dt;
-      return _regeneratorRuntime().wrap(function _callee12$(_context12) {
-        while (1) switch (_context12.prev = _context12.next) {
+      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+        while (1) switch (_context11.prev = _context11.next) {
           case 0:
-            _context12.prev = 0;
-            _context12.next = 3;
+            _context11.prev = 0;
+            _context11.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
               url: "sppd/getAnggotaSelected",
               body: param
             });
           case 3:
-            dt = _context12.sent;
+            dt = _context11.sent;
             dispatch({
               type: actType.crudWork,
               payload: {
@@ -20769,28 +20760,28 @@ function workSetAnggota(_ref13) {
                 type: actType.workSetAnggota
               }
             });
-            _context12.next = 9;
+            _context11.next = 9;
             break;
           case 7:
-            _context12.prev = 7;
-            _context12.t0 = _context12["catch"](0);
+            _context11.prev = 7;
+            _context11.t0 = _context11["catch"](0);
           case 9:
           case "end":
-            return _context12.stop();
+            return _context11.stop();
         }
-      }, _callee12, null, [[0, 7]]);
+      }, _callee11, null, [[0, 7]]);
     }));
-    return function (_x12) {
-      return _ref14.apply(this, arguments);
+    return function (_x11) {
+      return _ref13.apply(this, arguments);
     };
   }();
 }
-function anggotaSelect(_ref15) {
-  var ind = _ref15.ind;
+function anggotaSelect(_ref14) {
+  var ind = _ref14.ind;
   return /*#__PURE__*/function () {
-    var _ref16 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13(dispatch) {
-      return _regeneratorRuntime().wrap(function _callee13$(_context13) {
-        while (1) switch (_context13.prev = _context13.next) {
+    var _ref15 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(dispatch) {
+      return _regeneratorRuntime().wrap(function _callee12$(_context12) {
+        while (1) switch (_context12.prev = _context12.next) {
           case 0:
             try {
               dispatch({
@@ -20806,19 +20797,58 @@ function anggotaSelect(_ref15) {
             // dispatch(hideLoading());
           case 1:
           case "end":
-            return _context13.stop();
+            return _context12.stop();
         }
-      }, _callee13);
+      }, _callee12);
     }));
-    return function (_x13) {
-      return _ref16.apply(this, arguments);
+    return function (_x12) {
+      return _ref15.apply(this, arguments);
     };
   }();
 }
-function workDelAnggota(_ref17) {
-  var ind = _ref17.ind,
-    index = _ref17.index,
-    param = _ref17.param;
+function workDelAnggota(_ref16) {
+  var ind = _ref16.ind,
+    index = _ref16.index,
+    param = _ref16.param;
+  return /*#__PURE__*/function () {
+    var _ref17 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee13$(_context13) {
+        while (1) switch (_context13.prev = _context13.next) {
+          case 0:
+            _context13.prev = 0;
+            _context13.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "sppd/delAnggotaSelected",
+              body: param
+            });
+          case 3:
+            dt = _context13.sent;
+            dispatch({
+              type: actType.crudWork,
+              payload: {
+                ind: ind,
+                index: index,
+                type: actType.workDelAnggota
+              }
+            });
+            _context13.next = 9;
+            break;
+          case 7:
+            _context13.prev = 7;
+            _context13.t0 = _context13["catch"](0);
+          case 9:
+          case "end":
+            return _context13.stop();
+        }
+      }, _callee13, null, [[0, 7]]);
+    }));
+    return function (_x13) {
+      return _ref17.apply(this, arguments);
+    };
+  }();
+}
+function addWorkUraian(body) {
   return /*#__PURE__*/function () {
     var _ref18 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14(dispatch) {
       var dt;
@@ -20828,36 +20858,37 @@ function workDelAnggota(_ref17) {
             _context14.prev = 0;
             _context14.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/delAnggotaSelected",
-              body: param
+              url: "sppd/addWorkUraian",
+              body: body
             });
           case 3:
             dt = _context14.sent;
             dispatch({
               type: actType.crudWork,
-              payload: {
-                ind: ind,
-                index: index,
-                type: actType.workDelAnggota
-              }
+              payload: _objectSpread(_objectSpread({}, body), {}, {
+                dt: dt,
+                type: actType.setUraian
+              })
             });
-            _context14.next = 9;
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil ditambahkan');
+            _context14.next = 11;
             break;
-          case 7:
-            _context14.prev = 7;
+          case 8:
+            _context14.prev = 8;
             _context14.t0 = _context14["catch"](0);
-          case 9:
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context14.t0.message);
+          case 11:
           case "end":
             return _context14.stop();
         }
-      }, _callee14, null, [[0, 7]]);
+      }, _callee14, null, [[0, 8]]);
     }));
     return function (_x14) {
       return _ref18.apply(this, arguments);
     };
   }();
 }
-function addWorkUraian(body) {
+function updWorkUraian(body) {
   return /*#__PURE__*/function () {
     var _ref19 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee15(dispatch) {
       var dt;
@@ -20867,7 +20898,7 @@ function addWorkUraian(body) {
             _context15.prev = 0;
             _context15.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/addWorkUraian",
+              url: "sppd/updWorkUraian",
               body: body
             });
           case 3:
@@ -20875,17 +20906,16 @@ function addWorkUraian(body) {
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
-                dt: dt,
-                type: actType.setUraian
+                type: actType.updUraian
               })
             });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil ditambahkan');
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
             _context15.next = 11;
             break;
           case 8:
             _context15.prev = 8;
             _context15.t0 = _context15["catch"](0);
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.error(_context15.t0.message);
+            alert(_context15.t0.message);
           case 11:
           case "end":
             return _context15.stop();
@@ -20897,7 +20927,7 @@ function addWorkUraian(body) {
     };
   }();
 }
-function updWorkUraian(body) {
+function updWorkAnggota(body) {
   return /*#__PURE__*/function () {
     var _ref20 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee16(dispatch) {
       var dt;
@@ -20907,7 +20937,7 @@ function updWorkUraian(body) {
             _context16.prev = 0;
             _context16.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/updWorkUraian",
+              url: "sppd/updWorkAnggota",
               body: body
             });
           case 3:
@@ -20915,7 +20945,7 @@ function updWorkUraian(body) {
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
-                type: actType.updUraian
+                type: actType.updWorkAnggota
               })
             });
             react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
@@ -20936,7 +20966,7 @@ function updWorkUraian(body) {
     };
   }();
 }
-function updWorkAnggota(body) {
+function delWorkUraian(body) {
   return /*#__PURE__*/function () {
     var _ref21 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee17(dispatch) {
       var dt;
@@ -20946,7 +20976,7 @@ function updWorkAnggota(body) {
             _context17.prev = 0;
             _context17.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/updWorkAnggota",
+              url: "sppd/delWorkUraian",
               body: body
             });
           case 3:
@@ -20954,10 +20984,10 @@ function updWorkAnggota(body) {
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
-                type: actType.updWorkAnggota
+                type: actType.delUraian
               })
             });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil diperbarui');
+            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil dihapus');
             _context17.next = 11;
             break;
           case 8:
@@ -20972,45 +21002,6 @@ function updWorkAnggota(body) {
     }));
     return function (_x17) {
       return _ref21.apply(this, arguments);
-    };
-  }();
-}
-function delWorkUraian(body) {
-  return /*#__PURE__*/function () {
-    var _ref22 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee18(dispatch) {
-      var dt;
-      return _regeneratorRuntime().wrap(function _callee18$(_context18) {
-        while (1) switch (_context18.prev = _context18.next) {
-          case 0:
-            _context18.prev = 0;
-            _context18.next = 3;
-            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
-              url: "sppd/delWorkUraian",
-              body: body
-            });
-          case 3:
-            dt = _context18.sent;
-            dispatch({
-              type: actType.crudWork,
-              payload: _objectSpread(_objectSpread({}, body), {}, {
-                type: actType.delUraian
-              })
-            });
-            react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('berhasil dihapus');
-            _context18.next = 11;
-            break;
-          case 8:
-            _context18.prev = 8;
-            _context18.t0 = _context18["catch"](0);
-            alert(_context18.t0.message);
-          case 11:
-          case "end":
-            return _context18.stop();
-        }
-      }, _callee18, null, [[0, 8]]);
-    }));
-    return function (_x18) {
-      return _ref22.apply(this, arguments);
     };
   }();
 }

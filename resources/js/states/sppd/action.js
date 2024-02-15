@@ -205,9 +205,7 @@ function addedWorkStaf({ dt, ind, param  }){
   return async (dispatch) => {
     // dispatch(showLoading());
     try {
-      dt.forEach(async(v)=>{
-        await api.POST({url:"sppd/addedUser",body:{  ...param,...v} });
-      });
+      const dtx = await api.POST({url:"sppd/addedUser",body:{  ...param,dt} });
       dispatch({
         type : actType.crudWork,
         payload : {
