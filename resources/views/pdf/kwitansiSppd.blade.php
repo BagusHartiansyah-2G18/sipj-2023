@@ -61,8 +61,8 @@
 
                     <tr>
                         <td class="w50p">Nomor Rekening</td>
-                        <!-- <td>{{$noRek}}</td> -->
-                        <td></td>
+                        <td>{{$noRek}}</td>
+<!--                         <td></td> -->
                     </tr>
                     <tr>
                         <td>Dibukukan Tanggal</td>
