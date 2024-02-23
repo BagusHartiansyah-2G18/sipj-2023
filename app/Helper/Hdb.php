@@ -492,6 +492,7 @@ class Hdb {
             join work d on
                 a.kdJudul = d.kdJudul and
                 a.kdDinas = d.kdDinas and
+                a.kdSUb = d.kdSub and
                 a.kdBidang = d.kdBidang and
                 a.taJudul = d.taWork
             join psub b on
