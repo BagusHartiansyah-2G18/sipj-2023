@@ -324,6 +324,7 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
       xdt.push(v);
     }
   });
+    console.log(dataTerpilih,xdt);
   // if(dataTerpilih.length != xdt.length){
   //   console.log(dataTerpilih,xdt);
   //   // toast.error('terjadi kesalahan pengelolaan data');
