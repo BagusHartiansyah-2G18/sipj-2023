@@ -293,6 +293,7 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
             ...v,
             ...param,
             xind: i,
+            kdBidang:v1.kdBidang,
             kdBAnggota: v.kdBAnggota,
             ddukung:(v1.ddukung==undefined? dpendukung: v1.ddukung)
             // uraian:(v1.uraian==undefined? []: v1.uraian)
