@@ -312,6 +312,7 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
             ...v,
             ...param,
             xind: i,
+            kdBidang:v1.kdBidang,
             kdBAnggota: v.kdBAnggota,
             ddukung:(v1.ddukung==undefined? dpendukung: v1.ddukung),
             noSPPD :v1.noSPPD
@@ -324,7 +325,7 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
       xdt.push(v);
     }
   });
-    console.log(dataTerpilih,xdt);
+    // console.log(dataTerpilih,xdt);
   // if(dataTerpilih.length != xdt.length){
   //   console.log(dataTerpilih,xdt);
   //   // toast.error('terjadi kesalahan pengelolaan data');

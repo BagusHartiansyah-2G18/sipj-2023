@@ -21337,6 +21337,7 @@ function concatDataAnggotaSelected(_ref3) {
       if (v1.kdBAnggota === v.kdBAnggota && v1.kdDBidang === v.kdDBidang) {
         xdt.push(_objectSpread(_objectSpread(_objectSpread({}, v), param), {}, {
           xind: i,
+          kdBidang: v1.kdBidang,
           kdBAnggota: v.kdBAnggota,
           ddukung: v1.ddukung == undefined ? dpendukung : v1.ddukung,
           noSPPD: v1.noSPPD
@@ -21350,6 +21351,7 @@ function concatDataAnggotaSelected(_ref3) {
       xdt.push(v);
     }
   });
+  // console.log(dataTerpilih,xdt);
   // if(dataTerpilih.length != xdt.length){
   //   console.log(dataTerpilih,xdt);
   //   // toast.error('terjadi kesalahan pengelolaan data');
