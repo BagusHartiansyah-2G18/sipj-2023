@@ -52,10 +52,10 @@ function SPPD(){
         setindWork(i);
         setview(0);
     }
-    if(indWork<0){
-        stepSetAnggota({no:'13'});
-        setview(3);
-    }
+    // if(indWork<0){
+    //     stepSetAnggota({no:'13'});
+    //     setview(3);
+    // }
     // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
     // console.log(_sppd.dwork[indWork]);
 
