@@ -68,6 +68,8 @@ class PdfGenerator extends Controller
                         foreach ($member[$key]->ddukung as $key1 => $value1) {
                             $param["kdBAnggota"]=$value->kdBAnggota;
                             $param["kdDP"]=$value1->kdDP;
+                            $param["kdBidang"]=$value->kdBidang;
+                            // return print_r($value);
                             $member[$key]->ddukung[$key1]->uraian = Hdb::dworkUraian($param);
 
                             foreach ($member[$key]->ddukung[$key1]->uraian as $key2 => $value2) {

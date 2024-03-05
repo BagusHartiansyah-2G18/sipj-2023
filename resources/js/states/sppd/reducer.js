@@ -302,12 +302,13 @@ function selectdwork({ dt, act }){
 
 function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung }){
   let xdt = [], add=false;
-//   console.log(allData,dataTerpilih);
+  // console.log(allData,dataTerpilih);
   allData.forEach((v,i)=>{
     add=true;
     dataTerpilih.forEach((v1) => {
-      if(v1.kdBAnggota===v.kdBAnggota && v1.kdDBidang===v.kdDBidang){
-
+      
+      if(v1.kdBAnggota===v.kdBAnggota && v1.kdBidang===v.kdDBidang){
+        // console.log(v1.kdBAssnggota,v.kdBAnggota , v1.kdBidang,v.kdDBidang);
         xdt.push({
             ...v,
             ...param,
@@ -331,6 +332,6 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
   //   // toast.error('terjadi kesalahan pengelolaan data');
   //   return [];
   // }
-//   console.log(xdt);
+  // console.log(xdt);
   return xdt;
 }

@@ -59,6 +59,7 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
             volume: '',
             satuan: '',
             nilai:'',
+            kdBidang:dt[ianggota].kdBidang,
             kdBAnggota:dt[ianggota].kdBAnggota,
             kdJPJ: dt[ianggota].ddukung[idukung].kdJPJ,
             kdDP: dt[ianggota].ddukung[idukung].kdDP,
@@ -70,6 +71,7 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
     const updDPendukung = ({ iuraian, ianggota, idukung, kdUraian, uraian, volume, satuan, nilai  }) =>{
         dispatch(updWorkUraian({
             ...param,
+            kdBidang:dt[ianggota].kdBidang,
             kdBAnggota:dt[ianggota].kdBAnggota,
             kdJPJ: dt[ianggota].ddukung[idukung].kdJPJ,
             kdDP: dt[ianggota].ddukung[idukung].kdDP,

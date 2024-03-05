@@ -15621,6 +15621,7 @@ function FormEntriBiaya(_ref) {
       volume: '',
       satuan: '',
       nilai: '',
+      kdBidang: dt[ianggota].kdBidang,
       kdBAnggota: dt[ianggota].kdBAnggota,
       kdJPJ: dt[ianggota].ddukung[idukung].kdJPJ,
       kdDP: dt[ianggota].ddukung[idukung].kdDP,
@@ -15639,6 +15640,7 @@ function FormEntriBiaya(_ref) {
       satuan = _ref2.satuan,
       nilai = _ref2.nilai;
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.updWorkUraian)(_objectSpread(_objectSpread({}, param), {}, {
+      kdBidang: dt[ianggota].kdBidang,
       kdBAnggota: dt[ianggota].kdBAnggota,
       kdJPJ: dt[ianggota].ddukung[idukung].kdJPJ,
       kdDP: dt[ianggota].ddukung[idukung].kdDP,
@@ -17799,10 +17801,12 @@ function SPPD() {
     setindWork(i);
     setview(0);
   };
-  // if(indWork<0){
-  //     stepSetAnggota({no:'1'});
-  //     setview(4);
-  // }
+  if (indWork < 0) {
+    stepSetAnggota({
+      no: '13'
+    });
+    setview(3);
+  }
   // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
   // console.log(_sppd.dwork[indWork]);
 
@@ -21330,11 +21334,12 @@ function concatDataAnggotaSelected(_ref3) {
     dpendukung = _ref3.dpendukung;
   var xdt = [],
     add = false;
-  //   console.log(allData,dataTerpilih);
+  // console.log(allData,dataTerpilih);
   allData.forEach(function (v, i) {
     add = true;
     dataTerpilih.forEach(function (v1) {
-      if (v1.kdBAnggota === v.kdBAnggota && v1.kdDBidang === v.kdDBidang) {
+      if (v1.kdBAnggota === v.kdBAnggota && v1.kdBidang === v.kdDBidang) {
+        // console.log(v1.kdBAssnggota,v.kdBAnggota , v1.kdBidang,v.kdDBidang);
         xdt.push(_objectSpread(_objectSpread(_objectSpread({}, v), param), {}, {
           xind: i,
           kdBidang: v1.kdBidang,
@@ -21357,7 +21362,7 @@ function concatDataAnggotaSelected(_ref3) {
   //   // toast.error('terjadi kesalahan pengelolaan data');
   //   return [];
   // }
-  //   console.log(xdt);
+  // console.log(xdt);
   return xdt;
 }
 

@@ -449,6 +449,8 @@ class Csppd extends Controller
                         foreach ($anggotaWork[$key]->ddukung as $key1 => $value1) {
                             $param["kdBAnggota"]=$value->kdBAnggota;
                             $param["kdDP"]=$value1->kdDP;
+                            $param["kdBidang"]=$value->kdBidang;
+                            // return print_r(Hdb::dworkUraian($param));
                             $anggotaWork[$key]->ddukung[$key1]->uraian = Hdb::dworkUraian($param);
                         }
                     }
