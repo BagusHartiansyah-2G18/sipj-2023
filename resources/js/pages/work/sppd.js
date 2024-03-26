@@ -104,6 +104,7 @@ function SPPD(){
                                     dt={_sppd.dwork[indWork]}
                                     indWork={indWork}
                                     param={param}
+                                    next={setview}
                                 ></FormAnggotaSppd>
                             )
                         }

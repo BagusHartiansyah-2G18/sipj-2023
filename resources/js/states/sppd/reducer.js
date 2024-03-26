@@ -153,6 +153,7 @@ function selectdwork({ dt, act }){
         }
         return v;
       })
+      // console.log(dwork);
     break;
     case actType.updWorkAnggota:
         dwork = dt.dwork.map((v,i)=>{
@@ -171,7 +172,7 @@ function selectdwork({ dt, act }){
               }
             }
             return v;
-        })
+        }) 
     break;
     case actType.workDelAnggota:
       dwork = dt.dwork.map((v,i)=>{
@@ -302,13 +303,13 @@ function selectdwork({ dt, act }){
 
 function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung }){
   let xdt = [], add=false;
-  // console.log(allData,dataTerpilih);
+  // console.log(dataTerpilih);
   allData.forEach((v,i)=>{
     add=true;
     dataTerpilih.forEach((v1) => {
-      
-      if(v1.kdBAnggota===v.kdBAnggota && v1.kdBidang===v.kdDBidang){
-        // console.log(v1.kdBAssnggota,v.kdBAnggota , v1.kdBidang,v.kdDBidang);
+      // console.log( v1.kdBAnggota,v.kdBAnggota, v1.kdBidang,v.kdDBidang);
+      if(v1.kdBAnggota===v.kdBAnggota && (v1.kdBidang==undefined? v1.kdDBidang:v1.kdBidang)===v.kdDBidang){
+        // console.log(v);
         xdt.push({
             ...v,
             ...param,
@@ -326,6 +327,7 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
       xdt.push(v);
     }
   });
+  // console.log(xdt);
     // console.log(dataTerpilih,xdt);
   // if(dataTerpilih.length != xdt.length){
   //   console.log(dataTerpilih,xdt);

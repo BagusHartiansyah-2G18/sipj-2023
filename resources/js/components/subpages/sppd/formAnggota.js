@@ -9,7 +9,7 @@ import Tabel1 from "../../tabel/tabel1";
 import PropTypes from "prop-types";
 
 
-function FormAnggotaSppd({ dt, param, indWork }) {
+function FormAnggotaSppd({ dt, param, indWork, next}) {
     const dispatch = useDispatch();
     const [search, setSearch] = useInput('');
 
@@ -20,7 +20,7 @@ function FormAnggotaSppd({ dt, param, indWork }) {
         setcountDtX(selectedCount);
         setdataTamX(selectedRows);
     }
-    const createFormEntriStaf = () =>{
+    const createFormEntriStaf = () =>{ 
         dispatch(addedWorkStaf({
             ind: indWork,
             param:{
@@ -30,7 +30,7 @@ function FormAnggotaSppd({ dt, param, indWork }) {
             },
             dt : dataTamX
         }));
-        setcountDtX(0);
+        setcountDtX(0); 
     }
     return (
         <div className="form0 bwhite">
@@ -84,5 +84,6 @@ FormAnggotaSppd.propTypes = {
     dt : PropTypes.object.isRequired,
     param : PropTypes.object.isRequired,
     indWork : PropTypes.number.isRequired,
+    next: PropTypes.func.isRequired
 }
 export default FormAnggotaSppd;

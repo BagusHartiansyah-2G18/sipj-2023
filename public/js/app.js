@@ -14096,7 +14096,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function FormAnggotaSppd(_ref) {
   var dt = _ref.dt,
     param = _ref.param,
-    indWork = _ref.indWork;
+    indWork = _ref.indWork,
+    next = _ref.next;
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__.useInput)(''),
     _useInput2 = _slicedToArray(_useInput, 2),
@@ -14183,7 +14184,8 @@ function FormAnggotaSppd(_ref) {
 FormAnggotaSppd.propTypes = {
   dt: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().object).isRequired,
   param: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().object).isRequired,
-  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().number).isRequired
+  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().number).isRequired,
+  next: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().func).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormAnggotaSppd);
 
@@ -17837,7 +17839,8 @@ function SPPD() {
       }), view === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formAnggota__WEBPACK_IMPORTED_MODULE_5__["default"], {
         dt: _sppd.dwork[indWork],
         indWork: indWork,
-        param: param
+        param: param,
+        next: setview
       })]
     }), indWork >= 0 && _sppd.dwork[indWork].anggota != undefined && _sppd.dwork[indWork].anggota.filter(function (v) {
       return v.xind != undefined;
@@ -21191,6 +21194,7 @@ function selectdwork(_ref2) {
         }
         return v;
       });
+      // console.log(dwork);
       break;
     case _action__WEBPACK_IMPORTED_MODULE_0__.actType.updWorkAnggota:
       dwork = dt.dwork.map(function (v, i) {
@@ -21332,12 +21336,13 @@ function concatDataAnggotaSelected(_ref3) {
     dpendukung = _ref3.dpendukung;
   var xdt = [],
     add = false;
-  // console.log(allData,dataTerpilih);
+  // console.log(dataTerpilih);
   allData.forEach(function (v, i) {
     add = true;
     dataTerpilih.forEach(function (v1) {
-      if (v1.kdBAnggota === v.kdBAnggota && v1.kdBidang === v.kdDBidang) {
-        // console.log(v1.kdBAssnggota,v.kdBAnggota , v1.kdBidang,v.kdDBidang);
+      // console.log( v1.kdBAnggota,v.kdBAnggota, v1.kdBidang,v.kdDBidang);
+      if (v1.kdBAnggota === v.kdBAnggota && (v1.kdBidang == undefined ? v1.kdDBidang : v1.kdBidang) === v.kdDBidang) {
+        // console.log(v);
         xdt.push(_objectSpread(_objectSpread(_objectSpread({}, v), param), {}, {
           xind: i,
           kdBidang: v1.kdBidang,
@@ -21354,6 +21359,7 @@ function concatDataAnggotaSelected(_ref3) {
       xdt.push(v);
     }
   });
+  // console.log(xdt);
   // console.log(dataTerpilih,xdt);
   // if(dataTerpilih.length != xdt.length){
   //   console.log(dataTerpilih,xdt);
