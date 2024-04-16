@@ -107,6 +107,8 @@ class Hdb {
                 ->where('kdDinas',$v['kdDinas'])
                 ->where('kdBidang',$v['kdBidang'])
                 ->where('taBAnggota',$v['tahun'])
+                ->where('aktif',1)
+                ->orderBy("urutan")
                 ->get();
         return $data;
     }
@@ -158,8 +160,9 @@ class Hdb {
                 b.kdDinas = a.kdDinas and
                 b.taDBidang = a.taBAnggota
             where a.kdDinas="'.$v['kdDinas'].'" and
-                a.taBAnggota="'.$v['tahun'].'"
-            order by a.tingkatan asc
+                a.taBAnggota="'.$v['tahun'].'" and
+                a.aktif=1
+            order by a.urutan asc
         ');
     }
     function getAnggotaJabatan($v){
@@ -325,13 +328,11 @@ class Hdb {
                     select sum(a1.volume * a1.nilai)
                     from workuraian a1
                     join work b1 on
-                        a1.kdDinas = b1.kdDinas and
-                        a1.kdBidang = b1.kdBidang and
+                        a1.kdDinas = b1.kdDinas and 
                         a1.kdSub = b1.kdSub and
                         a1.taWork = b1.taWork
                     where a1.kdDinas="'.$v['kdDinas'].'" and
                     a1.kdSub = "'.$v['kdSub'].'" and
-                    a1.kdBidang = "'.$v['kdBidang'].'" and
                     a1.taWork  = "'.$v['tahun'].'" and
                     b1.status ="final" and
                     b1.kdJudul=a.kdJudul
@@ -343,16 +344,16 @@ class Hdb {
                 a.kdApbd6 = c.kdApbd6 and
                 a.taJudul = c.taApbd6
             left join triwulan d on
-                a.kdDinas = d.kdDinas and
-                a.kdBidang = d.kdBidang and
+                a.kdDinas = d.kdDinas and 
                 a.kdSub = d.kdSub and
                 a.kdJudul = d.kdJudul and
                 a.taJudul = d.taJudul
             where a.kdDinas = "'.$v['kdDinas'].'" and
             a.kdSub = "'.$v['kdSub'].'" and
-            a.kdBidang = "'.$v['kdBidang'].'" and
+            
             a.taJudul = "'.$v['tahun'].'"
         ');
+        // a.kdBidang = "'.$v['kdBidang'].'" and
     }
     function rincianAdded($v){
         $getKD=DB::select('
@@ -404,45 +405,7 @@ class Hdb {
 
     // sppd
     function getDataSppd($v){
-    //     return print_r('
-    //     select
-    //         a.kdJudul, a.nama, a.total,
-    //         b.kdSub, b.nmSub,
-    //         c.tw1, c.tw2, c.tw3, c.tw4,
-    //         (
-    //             select sum(a1.volume * a1.nilai)
-    //             from workuraian a1
-    //             join work b1 on
-    //                 a1.kdDinas = b1.kdDinas and
-    //                 a1.kdBidang = b1.kdBidang and
-    //                 a1.kdSub = b1.kdSub and
-    //                 a1.taWork = b1.taWork
-    //             where a1.kdDinas="'.$v['kdDinas'].'" and
-    //             a1.kdSub = "'.$v['kdSub'].'" and
-    //             a1.kdBidang = "'.$v['kdBidang'].'" and
-    //             a1.taWork  = "'.$v['tahun'].'" and
-    //             b1.status ="final" and
-    //             b1.kdJudul=a.kdJudul
-    //         ) as realisasi
-    //     from  ubjudul a
-    //     join triwulan c on
-    //         a.kdDinas = c.kdDinas and
-    //         a.kdBidang = c.kdBidang and
-    //         a.kdJudul = c.kdJudul and
-    //         a.taJudul = c.taJudul
-    //     join psub b on
-    //         a.kdSub = b.kdSub and
-    //         a.taJudul = b.taSub and
-    //         a.kdBidang = b.kdBidang and
-    //         a.kdDinas = b.kdDinas
-    //     where
-    //         a.kdJudul="'.$v['kdJudul'].'" and
-    //         a.kdSub="'.$v['kdSub'].'" and
-    //         a.kdBidang="'.$v['kdBidang'].'" and
-    //         a.kdDinas="'.$v['kdDinas'].'" and
-    //         a.taJudul="'.$v['tahun'].'"
-    // ');
-        return DB::select('
+        $que='
             select
                 a.kdJudul, a.nama, a.total,
                 b.kdSub, b.nmSub,
@@ -465,21 +428,21 @@ class Hdb {
             from  ubjudul a
             left join  triwulan c on
                 a.kdDinas = c.kdDinas and
-                a.kdBidang = c.kdBidang and
                 a.kdJudul = c.kdJudul and
                 a.taJudul = c.taJudul
             join psub b on
                 a.kdSub = b.kdSub and
-                a.taJudul = b.taSub and
-                a.kdBidang = b.kdBidang and
+                a.taJudul = b.taSub and 
                 a.kdDinas = b.kdDinas
             where
                 a.kdJudul="'.$v['kdJudul'].'" and
                 a.kdSub="'.$v['kdSub'].'" and
-                a.kdBidang="'.$v['kdBidang'].'" and
+                b.kdBidang="'.$v['kdBidang'].'" and
                 a.kdDinas="'.$v['kdDinas'].'" and
                 a.taJudul="'.$v['tahun'].'"
-        ');
+        ';
+        // return print_r($que);
+        return DB::select($que);
     }
     function getDataSppdKegiatan($v){
         return DB::select('
@@ -492,13 +455,11 @@ class Hdb {
             join work d on
                 a.kdJudul = d.kdJudul and
                 a.kdDinas = d.kdDinas and
-                a.kdSUb = d.kdSub and
-                a.kdBidang = d.kdBidang and
+                a.kdSUb = d.kdSub and 
                 a.taJudul = d.taWork
             join psub b on
                 a.kdSub = b.kdSub and
-                a.taJudul = b.taSub and
-                a.kdBidang = b.kdBidang and
+                a.taJudul = b.taSub and 
                 a.kdDinas = b.kdDinas
             left join pkegiatan c on
                 c.kdKeg = b.kdKeg and
@@ -506,7 +467,7 @@ class Hdb {
             where
                 a.kdJudul="'.$v['kdJudul'].'" and
                 a.kdSub="'.$v['kdSub'].'" and
-                a.kdBidang="'.$v['kdBidang'].'" and
+                b.kdBidang="'.$v['kdBidang'].'" and
                 a.kdDinas="'.$v['kdDinas'].'" and
                 a.taJudul="'.$v['tahun'].'" and
                 d.no="'.$v['no'].'"
@@ -521,9 +482,9 @@ class Hdb {
         if(isset($v['kdDinas'])){
             $where.=' where a.kdDinas="'.$v['kdDinas'].'"';
         }
-        if(isset($v['kdBidang'])){
-            $where.=' and a.kdBidang="'.$v['kdBidang'].'"';
-        }
+        // if(isset($v['kdBidang'])){
+        //     $where.=' and a.kdBidang="'.$v['kdBidang'].'"';
+        // }
         if(isset($v['kdSub'])){
             $where.=' and a.kdSub="'.$v['kdSub'].'"';
         }
@@ -542,6 +503,7 @@ class Hdb {
         if(isset($v['where'])){
             $where.=$v['where'];
         }
+        // print_r($where);
         return DB::select('
             select
                 a.no, a.date, a.status, a.kdBAnggota, a.kdBidang , a.kdBidang as kdDBidang, a.tujuan, a.noBuku, a.tglBuku, a.file,
@@ -559,6 +521,7 @@ class Hdb {
                 ) as total
             from work a
             '.$where.'
+            order by a.no desc
 
         ');
     }

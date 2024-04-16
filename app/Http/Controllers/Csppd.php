@@ -28,7 +28,7 @@ class Csppd extends Controller
                 "kdJudul"=>$baseEND->{'kdJudul'},
                 "tahun"=>$cek['ta']
             ];
-
+            // return Hdb::getDataSppd($param);
             $data =Hdb::getDataSppd($param);
             $anggota = Hdb::getAllBidangAnggota($param);
             $dpendukung = Hdb::jenisDataDukung($cek);
@@ -664,8 +664,7 @@ class Csppd extends Controller
             ]);
             if(
                 DB::table('workuraian')
-                ->where('kdDinas',$request->kdDinas)
-                ->where('kdBidang',$request->kdBidang)
+                ->where('kdDinas',$request->kdDinas) 
                 ->where('kdSub',$request->kdSub)
                 ->where('kdJudul',$request->kdJudul)
                 ->where('taWork',$cek['ta'])

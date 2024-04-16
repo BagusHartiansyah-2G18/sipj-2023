@@ -31,6 +31,7 @@ function FormAnggotaSppd({ dt, param, indWork, next}) {
             dt : dataTamX
         }));
         setcountDtX(0); 
+        next(3);
     }
     return (
         <div className="form0 bwhite">

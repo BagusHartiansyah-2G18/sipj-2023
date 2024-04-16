@@ -345,7 +345,8 @@ function getDataViewSubBidang({ dt, terpilih, kdDBidang, search }){
         });
     }else{
         data = dt.filter((v)=>{
-            if(v.kdBidang.length === 0){
+             
+            if(v.kdBidang==null || v.kdBidang.length === 0){
                 return v;
             }
         });

@@ -11322,7 +11322,7 @@ function getDataViewSubBidang(_ref4) {
     });
   } else {
     data = dt.filter(function (v) {
-      if (v.kdBidang.length === 0) {
+      if (v.kdBidang == null || v.kdBidang.length === 0) {
         return v;
       }
     });
@@ -14127,6 +14127,7 @@ function FormAnggotaSppd(_ref) {
       dt: dataTamX
     }));
     setcountDtX(0);
+    next(3);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "form0 bwhite",
@@ -21542,8 +21543,8 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var api = function () {
-  // const BASE_URL = 'http://localhost:8000/';
-  var BASE_URL = 'https://sipj.bappedaksb.com/';
+  var BASE_URL = 'http://localhost:8000/';
+  // const BASE_URL = 'https://sipj.bappedaksb.com/';
   function GET(_x) {
     return _GET.apply(this, arguments);
   }
