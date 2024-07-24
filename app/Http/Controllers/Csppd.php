@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Helper\Hdb;
+use App\Helper\Mfc;
+
 use Dotenv\Validator;
 use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
@@ -13,12 +15,15 @@ use Psy\Readline\Hoa\FileReadWrite;
 
 class Csppd extends Controller
 {
+    private $Mfc, $Hdb;
     public function __construct(){
+        $this->Mfc = new Mfc();
+        $this->Hdb = new Hdb();
         $this->middleware('auth');
     }
     public function index($param){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($param)));
             $param = [
@@ -28,46 +33,46 @@ class Csppd extends Controller
                 "kdJudul"=>$baseEND->{'kdJudul'},
                 "tahun"=>$cek['ta']
             ];
-            // return Hdb::getDataSppd($param);
-            $data =Hdb::getDataSppd($param);
-            $anggota = Hdb::getAllBidangAnggota($param);
-            $dpendukung = Hdb::jenisDataDukung($cek);
+            // return $this->Hdb->getDataSppd($param);
+            $data =$this->Hdb->getDataSppd($param);
+            $anggota = $this->Hdb->getAllBidangAnggota($param);
+            $dpendukung = $this->Hdb->jenisDataDukung($cek);
             $param['kdBAnggota']='';
-            $dwork = Hdb::dwork($param);
+            $dwork = $this->Hdb->dwork($param);
             $pimpinan=[
-                "dinas" => Hdb::getAnggotaJabatan([
+                "dinas" => $this->Hdb->getAnggotaJabatan([
                     "kdDinas"=>$param['kdDinas'],
                     "tahun"=>$param['tahun'],
                     "status"=>"pimpinan"
                 ]),
-                "plhdinas" => Hdb::getAnggotaJabatan([
+                "plhdinas" => $this->Hdb->getAnggotaJabatan([
                     "kdDinas"=>$param['kdDinas'],
                     "tahun"=>$param['tahun'],
                     "status"=>"sekretaris"
                 ]),
-                "plhdinas1" => Hdb::getAnggotaJabatan([
+                "plhdinas1" => $this->Hdb->getAnggotaJabatan([
                     "kdDinas"=>$param['kdDinas'],
                     "tahun"=>$param['tahun'],
                     "status"=>"kabid"
                 ]),
 
-                "setda" => Hdb::getAnggotaJabatan([
+                "setda" => $this->Hdb->getAnggotaJabatan([
                     "kdDinas"=>$cek['setda'],
                     "tahun"=>$param['tahun'],
                     "status"=>"setda"
                 ]),
-                "plhsetda" => Hdb::getAnggotaJabatan([
+                "plhsetda" => $this->Hdb->getAnggotaJabatan([
                     "kdDinas"=>$cek['setda'],
                     "tahun"=>$param['tahun'],
                     "status"=>"asisten"
                 ]),
 
-                "bupati" => Hdb::getAnggotaJabatan([
+                "bupati" => $this->Hdb->getAnggotaJabatan([
                     "kdDinas"=>$cek['setda'],
                     "tahun"=>$param['tahun'],
                     "status"=>"bupati"
                 ]),
-                "plhbupati" => Hdb::getAnggotaJabatan([
+                "plhbupati" => $this->Hdb->getAnggotaJabatan([
                     "kdDinas"=>$cek['setda'],
                     "tahun"=>$param['tahun'],
                     "status"=>"wabup"
@@ -90,9 +95,9 @@ class Csppd extends Controller
         ], 200);
     }
     public function added(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
-        if($cek['exc']){
+        
+        $cek = $this->Mfc->portal(); 
+        if($cek['exc']){ 
             $request->validate([
                 'kdDinas' => 'required',
                 'kdBidang' => 'required',
@@ -110,7 +115,7 @@ class Csppd extends Controller
                 'tempatE'=> 'required',
                 'anggaran'=> 'required',
             ]);
-            $data =Hdb::workAdded([
+            $data =$this->Hdb->workAdded([
                 $request->kdDinas,$request->kdBidang,
 
                 $request->maksud,$request->angkut,$request->tempatS,$request->tempatE,
@@ -129,7 +134,7 @@ class Csppd extends Controller
             ];
             return response()->json([
                 'exc' => true,
-                'data' =>  Hdb::dwork($param)
+                'data' =>  $this->Hdb->dwork($param)
             ], 200);
         }
         return response()->json([
@@ -138,8 +143,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function addedUser(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
@@ -151,7 +156,7 @@ class Csppd extends Controller
                 'date'=> 'required', 
             ]); 
             foreach ($request->dt as $key => $value) {
-                $data =Hdb::workAdduser([
+                $data =$this->Hdb->workAdduser([
                     $request->no,
                     $request->kdDinas,
                     $value['kdDBidang'],
@@ -174,8 +179,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function upded(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
 
             $request->validate([
@@ -232,8 +237,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function deled(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
@@ -267,8 +272,8 @@ class Csppd extends Controller
     }
 
     public function nextStep(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
@@ -308,8 +313,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function setPimpinan(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'col' => 'required',
@@ -351,8 +356,8 @@ class Csppd extends Controller
     }
 
     public function step3(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request = $request->all();
             $namaFile = $this->_uploadImage($request['files']['data'],$request['files']['nama']);
@@ -388,8 +393,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function uploadDasar(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request = $request->all();
             $namaFile ='';
@@ -425,8 +430,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function getAnggotaSelected(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
@@ -439,22 +444,22 @@ class Csppd extends Controller
             $param["tahun"]= $cek['ta'];
             $param["where"]= ' and a.kdBAnggota !=""';
 
-            $anggotaWork = Hdb::dwork($param);
+            $anggotaWork = $this->Hdb->dwork($param);
             $param["where"]='';
             if(count($anggotaWork)>0){
                 foreach ($anggotaWork as $key => $value) {
                     $param["kdBAnggota"]=$value->kdBAnggota;
-                    $anggotaWork[$key]->ddukung = Hdb::jenisDataDukung($cek);
+                    $anggotaWork[$key]->ddukung = $this->Hdb->jenisDataDukung($cek);
                     if(count($anggotaWork[$key]->ddukung)>0){
                         foreach ($anggotaWork[$key]->ddukung as $key1 => $value1) {
                             $param["kdBAnggota"]=$value->kdBAnggota;
                             $param["kdDP"]=$value1->kdDP;
                             $param["kdBidang"]=$value->kdBidang;
-                            // return print_r(Hdb::dworkUraian($param));
-                            $anggotaWork[$key]->ddukung[$key1]->uraian = Hdb::dworkUraian($param);
+                            // return print_r($this->Hdb->dworkUraian($param));
+                            $anggotaWork[$key]->ddukung[$key1]->uraian = $this->Hdb->dworkUraian($param);
                         }
                     }
-                    // $anggotaWork[$key]->uraian = Hdb::dworkUraian($param);
+                    // $anggotaWork[$key]->uraian = $this->Hdb->dworkUraian($param);
                 }
             }
             return response()->json([
@@ -468,8 +473,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function delAnggotaSelected(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
@@ -502,18 +507,25 @@ class Csppd extends Controller
         ], 200);
     }
     public function updWorkAnggota(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
-            $request->validate([
-                'kdDinas' => 'required',
-                'kdBidang' => 'required',
-                'kdSub' => 'required',
-                'kdJudul' => 'required',
-                'no'=> 'required',
-                "kdBAnggota"=> 'required',
-                "noSppd"=> 'required'
-            ]);
+            try {
+                $request->validate([
+                    'kdDinas' => 'required',
+                    'kdBidang' => 'required',
+                    'kdSub' => 'required',
+                    'kdJudul' => 'required',
+                    'no'=> 'required',
+                    "kdBAnggota"=> 'required',
+                    "noSppd"=> 'required'
+                ]);
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'exc' => false,
+                    'msg' => "Data Tidak Valid"
+                ], 200);
+            }
             if(
                 DB::table('work')
                 ->where('kdDinas',$request->kdDinas)
@@ -546,8 +558,8 @@ class Csppd extends Controller
 
 
     public function addWorkUraian(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
@@ -560,7 +572,7 @@ class Csppd extends Controller
                 'kdBAnggota'=> 'required',
                 'kdDP'=> 'required',
             ]);
-            $data =Hdb::workUraianedded([
+            $data =$this->Hdb->workUraianedded([
                 $request->kdJPJ,
                 $request->kdDP,
                 $request->kdDinas,
@@ -581,7 +593,7 @@ class Csppd extends Controller
             $param["tahun"]= $cek['ta'];
             return response()->json([
                 'exc' => true,
-                'data' => Hdb::dworkUraian($param)
+                'data' => $this->Hdb->dworkUraian($param)
             ], 200);
         }
         return response()->json([
@@ -590,8 +602,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function updWorkUraian(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',
@@ -648,8 +660,8 @@ class Csppd extends Controller
         ], 200);
     }
     public function delWorkUraian(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $request->validate([
                 'kdDinas' => 'required',

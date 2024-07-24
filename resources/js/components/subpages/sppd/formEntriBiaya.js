@@ -9,6 +9,7 @@ import FormUraian from "./sub/formUraian";
 import FormNoSppd from "./sub/formNoSpp";
 
 import PropTypes from "prop-types";
+import { start } from "@popperjs/core";
 
 function FormEntriBiaya({ dt, param, modalC, indWork }) {
     const dispatch = useDispatch();
@@ -53,13 +54,14 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
     }
 
     const addDPendukung = (ianggota,idukung) =>{
+        const kdBidang = (dt[ianggota].kdBidang==undefined? dt[ianggota].kdDBidang:dt[ianggota].kdBidang);
         dispatch(addWorkUraian({
             ...param,
             uraian: '',
             volume: '',
             satuan: '',
             nilai:'',
-            kdBidang:dt[ianggota].kdBidang,
+            kdBidang:kdBidang,
             kdBAnggota:dt[ianggota].kdBAnggota,
             kdJPJ: dt[ianggota].ddukung[idukung].kdJPJ,
             kdDP: dt[ianggota].ddukung[idukung].kdDP,
@@ -69,9 +71,10 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
         }))
     }
     const updDPendukung = ({ iuraian, ianggota, idukung, kdUraian, uraian, volume, satuan, nilai  }) =>{
+        const kdBidang = (dt[ianggota].kdBidang==undefined? dt[ianggota].kdDBidang:dt[ianggota].kdBidang);
         dispatch(updWorkUraian({
             ...param,
-            kdBidang:dt[ianggota].kdBidang,
+            kdBidang:kdBidang,
             kdBAnggota:dt[ianggota].kdBAnggota,
             kdJPJ: dt[ianggota].ddukung[idukung].kdJPJ,
             kdDP: dt[ianggota].ddukung[idukung].kdDP,
@@ -124,10 +127,10 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
         mclose();
     }
     const updNomorSppd = ({ ind, noSppd }) =>{
-        // console.log(dt[ind]);
+        const kdBidang = (dt[ind].kdBidang==undefined? dt[ind].kdDBidang:dt[ind].kdBidang);
         dispatch(updWorkAnggota({
             kdBAnggota:dt[ind].kdBAnggota,
-            kdBidang: dt[ind].kdBidang,
+            kdBidang: kdBidang,
             no : dt[ind].no,
             kdDinas :dt[ind].kdDinas,
             kdSub : dt[ind].kdSub,
@@ -137,11 +140,11 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
             index:dt[ind].xind
         }))
         // mclose();
-    }
-
+    } 
     if (dt.length===0) {
         return <></>;
-    }
+    } 
+    // console.log(dt);
     return (
         <div className="form1 bwhite boxShadow1px ">
             <div className="header binfo cwhite">
@@ -167,7 +170,8 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
                                             key={"nosppd"+i}
                                             ind ={i}
                                             updNomorSppd={updNomorSppd}
-                                            dt={v}>
+                                            dt={v}
+                                            start={{start:true}}>
                                         </FormNoSppd>
                                     }
                                     {

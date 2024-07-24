@@ -28,6 +28,7 @@ const actType = {
 
   actRincian: 'actRincian',
   actTriwulan: 'actTriwulan',
+  __listKDRekening:'__listKDRekening',
 };
 function setDT(dt) {
     return {
@@ -238,7 +239,7 @@ const colBidang = [
   },{
       name: 'Nama Bidang',
       selector: row => row.nmBidang,
-      width : "250px"
+      // width : "250px"
   },{
       name: 'Singkatan',
       selector: row => row.asBidang,
@@ -530,6 +531,31 @@ function actTriwulan(v){
   };
 }
 
+function __listKDRekening({kdDF}) {
+  return async (dispatch) => {
+    try {
+      const dt = await api.__api('vd/'+(btoa(JSON.stringify({...api.paramNoted,kdDF}))));
+      dispatch({
+        type: actType.__listKDRekening,
+        payload: dt
+      });
+    } catch (error) { 
+      alert(error.message);
+    }
+  }; 
+}
+function actGenerateAutoRekening(v){
+  return async (dispatch) => {
+    // dispatch(showLoading());
+    try {
+      const dt = await api.POST({url:"rincian/actGenerateAutoRekening",body: v});
+      return toast.success("Berhasil Mengerjakan Menjalankan Perintah !!!"); 
+    } catch (error) {
+      toast(error.message);
+      throw error.message;
+    }
+  };
+}
 export {
     actType,
     setDT,
@@ -571,4 +597,7 @@ export {
 
     cbStatus,
     cbTingkatan,
+
+    __listKDRekening,
+    actGenerateAutoRekening,
 }

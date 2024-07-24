@@ -536,5 +536,8 @@
 
         </tr>
     </table>
+    <script>
+        window.print();
+    </script>
 </body>
 </html>

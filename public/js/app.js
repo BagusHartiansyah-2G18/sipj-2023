@@ -9338,8 +9338,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Dashboard */ "./resources/js/pages/Dashboard.js");
 /* harmony import */ var _components_dashboard_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/dashboard/Navbar */ "./resources/js/components/dashboard/Navbar.js");
 /* harmony import */ var _components_dashboard_Header1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/dashboard/Header1 */ "./resources/js/components/dashboard/Header1.js");
@@ -9351,12 +9351,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_BidangSubKegiatan__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/BidangSubKegiatan */ "./resources/js/pages/BidangSubKegiatan.js");
 /* harmony import */ var _pages_BidangEntriBelanja__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/BidangEntriBelanja */ "./resources/js/pages/BidangEntriBelanja.js");
 /* harmony import */ var _pages_work_sppd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/work/sppd */ "./resources/js/pages/work/sppd.js");
-/* harmony import */ var _pages_Fitur__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/Fitur */ "./resources/js/pages/Fitur.js");
-/* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
-/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
-/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
-/* harmony import */ var _states__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./states */ "./resources/js/states/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_work_tenagaAhli__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/work/tenagaAhli */ "./resources/js/pages/work/tenagaAhli.js");
+/* harmony import */ var _pages_Fitur__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/Fitur */ "./resources/js/pages/Fitur.js");
+/* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
+/* harmony import */ var _states__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./states */ "./resources/js/states/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /* eslint-disable react/no-deprecated */
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -9398,6 +9399,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function MyApp() {
   var _useSelector = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
       return state;
@@ -9405,76 +9407,79 @@ function MyApp() {
     _html = _useSelector._html;
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_15__.setAll)({
+    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_16__.setAll)({
       leftBar: 0,
       // indMenu : ind,
       // menuSub : 'dashboard',
       url: window.location.origin
     }));
-    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_15__.session)());
-    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_15__.changeMenu)(window.location.pathname));
+    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_16__.session)());
+    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_16__.changeMenu)(window.location.pathname));
   }, [dispatch]);
   if (_html.sess === undefined) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {});
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {});
   }
   var sess = _html.sess;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_dashboard_Header1__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("main", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_dashboard_Header1__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("main", {
       className: "flexR blight",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_components_dashboard_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_dashboard_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
         className: "pwrap w100p",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
           className: "w95p m0auto mxh100p pbottom100px",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Routes, {
-            children: [_html.indMenu === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Routes, {
+            children: [_html.indMenu === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                 path: "/home/dashboard",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-              }), sess.kdJaba !== '1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+              }), sess.kdJaba !== '1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                   path: "/home/dinas",
-                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Dinas__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dinas__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                   path: "/home/rekeningBelanja",
-                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_RekeningBelanja__WEBPACK_IMPORTED_MODULE_9__["default"], {})
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_RekeningBelanja__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                   path: "/home/jenisP",
-                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_JenisPertanggungJawab__WEBPACK_IMPORTED_MODULE_10__["default"], {})
+                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_JenisPertanggungJawab__WEBPACK_IMPORTED_MODULE_10__["default"], {})
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                 path: "/home/subkegiatan",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Subkegiatan__WEBPACK_IMPORTED_MODULE_8__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Subkegiatan__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                 path: "*",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
               })]
-            }), _html.indMenu === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+            }), _html.indMenu === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                 path: "home/work/subBidang",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_BidangSubKegiatan__WEBPACK_IMPORTED_MODULE_11__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_BidangSubKegiatan__WEBPACK_IMPORTED_MODULE_11__["default"], {})
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                 path: "home/work/rincianBelanja",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_BidangEntriBelanja__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_BidangEntriBelanja__WEBPACK_IMPORTED_MODULE_12__["default"], {})
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                 path: "home/work/Fitur",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_Fitur__WEBPACK_IMPORTED_MODULE_14__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Fitur__WEBPACK_IMPORTED_MODULE_15__["default"], {})
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
                 path: "home/work/sppd/:value",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_pages_work_sppd__WEBPACK_IMPORTED_MODULE_13__["default"], {})
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_work_sppd__WEBPACK_IMPORTED_MODULE_13__["default"], {})
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+                path: "home/work/ta/:value",
+                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_work_tenagaAhli__WEBPACK_IMPORTED_MODULE_14__["default"], {})
               })]
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_16__.ToastContainer, {})]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_17__.ToastContainer, {})]
       })]
     })]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);
 if (document.getElementById('app')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_1__.Provider, {
-    store: _states__WEBPACK_IMPORTED_MODULE_18__["default"],
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.BrowserRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(MyApp, {})
+  react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_1__.Provider, {
+    store: _states__WEBPACK_IMPORTED_MODULE_19__["default"],
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_22__.BrowserRouter, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(MyApp, {})
     })
   }), document.getElementById('app'));
 }
@@ -10084,11 +10089,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var sfLib = function () {
+  var nmBulan = ["JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"];
   function coptionSelect(_ref) {
     var dt = _ref.dt,
       row = _ref.row,
       _ref$xind = _ref.xind,
       xind = _ref$xind === void 0 ? false : _ref$xind;
+    // sfLib.coptionSelect({
+    //     dt:duser,
+    //     xind:true,
+    //     row:{label:'nmAnggota', value:'value'},
+    // })
     var xdt = [];
     dt.forEach(function (val, ind) {
       xdt.push({
@@ -10157,11 +10168,15 @@ var sfLib = function () {
     }
     return c.join("");
   }
+  function __namaBulan(bulan) {
+    return nmBulan[bulan - 1];
+  }
   return {
     coptionSelect: coptionSelect,
     objToCB: objToCB,
     _$: _$,
-    readFile: readFile
+    readFile: readFile,
+    __namaBulan: __namaBulan
   };
 }();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sfLib);
@@ -10223,11 +10238,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function FormBelanja(_ref) {
   var dt = _ref.dt,
     modalC = _ref.modalC,
     ind = _ref.ind,
-    updDataBidang = _ref.updDataBidang;
+    updDataBidang = _ref.updDataBidang,
+    generateAuto = _ref.generateAuto;
   var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(''),
     _useInput2 = _slicedToArray(_useInput, 2),
     search = _useInput2[0],
@@ -10632,10 +10649,25 @@ function FormBelanja(_ref) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
               children: "Uraian Belanja & Pembagian Triwulan"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: add,
-            children: "Form"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "btnGroup",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn2 blight blight",
+              onClick: function onClick() {
+                return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_7__.openFormEntri)('eyJrZE1lbWJlciI6Ik13PT0iLCJrZE5vdGUiOiIxNk1GQzEjMiIsInRpbmdrYXQiOiIyIiwia2RGb3JtIjoiMyJ9');
+              },
+              children: "Form Catatan Rekening"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn2 blight bsuccess",
+              onClick: function onClick() {
+                return generateAuto();
+              },
+              children: "generate AUTO"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn2 blight ",
+              onClick: add,
+              children: "Form"
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "body",
@@ -11465,8 +11497,8 @@ function SelectDataUtama(_ref) {
     width: '150px'
   }]);
   var getLink = function getLink(v) {
-    switch (v.nmJPJ) {
-      case 'SPPD':
+    switch (v.kdJenis) {
+      case 'jp-1':
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
           to: "/home/work/sppd/".concat(btoa(JSON.stringify({
             kdDinas: v.kdDinas,
@@ -11476,7 +11508,21 @@ function SelectDataUtama(_ref) {
           }))),
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
             className: "btn2 cprimary",
-            title: "triwulan",
+            title: "SPPD",
+            children: "Realisasikan"
+          })
+        });
+      case 'jp-3':
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+          to: "/home/work/ta/".concat(btoa(JSON.stringify({
+            kdDinas: v.kdDinas,
+            kdBidang: v.kdBidang,
+            kdSub: v.kdSub,
+            kdJudul: v.kdJudul
+          }))),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            className: "btn2 cprimary",
+            title: "Tenaga Ahli",
             children: "Realisasikan"
           })
         });
@@ -15578,6 +15624,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 
 
+
 function FormEntriBiaya(_ref) {
   var dt = _ref.dt,
     param = _ref.param,
@@ -15619,12 +15666,13 @@ function FormEntriBiaya(_ref) {
     mclose();
   };
   var addDPendukung = function addDPendukung(ianggota, idukung) {
+    var kdBidang = dt[ianggota].kdBidang == undefined ? dt[ianggota].kdDBidang : dt[ianggota].kdBidang;
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.addWorkUraian)(_objectSpread(_objectSpread({}, param), {}, {
       uraian: '',
       volume: '',
       satuan: '',
       nilai: '',
-      kdBidang: dt[ianggota].kdBidang,
+      kdBidang: kdBidang,
       kdBAnggota: dt[ianggota].kdBAnggota,
       kdJPJ: dt[ianggota].ddukung[idukung].kdJPJ,
       kdDP: dt[ianggota].ddukung[idukung].kdDP,
@@ -15642,8 +15690,9 @@ function FormEntriBiaya(_ref) {
       volume = _ref2.volume,
       satuan = _ref2.satuan,
       nilai = _ref2.nilai;
+    var kdBidang = dt[ianggota].kdBidang == undefined ? dt[ianggota].kdDBidang : dt[ianggota].kdBidang;
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.updWorkUraian)(_objectSpread(_objectSpread({}, param), {}, {
-      kdBidang: dt[ianggota].kdBidang,
+      kdBidang: kdBidang,
       kdBAnggota: dt[ianggota].kdBAnggota,
       kdJPJ: dt[ianggota].ddukung[idukung].kdJPJ,
       kdDP: dt[ianggota].ddukung[idukung].kdDP,
@@ -15696,10 +15745,10 @@ function FormEntriBiaya(_ref) {
   var updNomorSppd = function updNomorSppd(_ref4) {
     var ind = _ref4.ind,
       noSppd = _ref4.noSppd;
-    // console.log(dt[ind]);
+    var kdBidang = dt[ind].kdBidang == undefined ? dt[ind].kdDBidang : dt[ind].kdBidang;
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.updWorkAnggota)({
       kdBAnggota: dt[ind].kdBAnggota,
-      kdBidang: dt[ind].kdBidang,
+      kdBidang: kdBidang,
       no: dt[ind].no,
       kdDinas: dt[ind].kdDinas,
       kdSub: dt[ind].kdSub,
@@ -15714,6 +15763,7 @@ function FormEntriBiaya(_ref) {
   if (dt.length === 0) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {});
   }
+  // console.log(dt);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "form1 bwhite boxShadow1px ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
@@ -15754,7 +15804,10 @@ function FormEntriBiaya(_ref) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_sub_formNoSpp__WEBPACK_IMPORTED_MODULE_6__["default"], {
               ind: i,
               updNomorSppd: updNomorSppd,
-              dt: v
+              dt: v,
+              start: {
+                start: true
+              }
             }, "nosppd" + i), v.ddukung.map(function (v1, i1) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "ptb10px",
@@ -16361,11 +16414,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function FormNoSppd(_ref) {
   var updNomorSppd = _ref.updNomorSppd,
     ind = _ref.ind,
-    dt = _ref.dt;
-  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(dt.noSPPD != undefined ? dt.noSPPD : ''),
+    dt = _ref.dt,
+    start = _ref.start;
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(),
     _useInput2 = _slicedToArray(_useInput, 2),
     noSppd = _useInput2[0],
     setnoSppd = _useInput2[1];
+  if (start.start) {
+    start.start = false;
+    setnoSppd({
+      target: {
+        value: dt.noSPPD != undefined && dt.noSPPD != null ? dt.noSPPD : ''
+      }
+    });
+  }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "ptb10px",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -16778,6 +16840,902 @@ FormUrusan.propTypes = {
 
 /***/ }),
 
+/***/ "./resources/js/components/subpages/tenagaAhli/feData.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/subpages/tenagaAhli/feData.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
+/* harmony import */ var _listStaf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./listStaf */ "./resources/js/components/subpages/tenagaAhli/listStaf.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+function TAFEdata(_ref) {
+  var form = _ref.form,
+    xadded = _ref.xadded,
+    xupded = _ref.xupded,
+    close = _ref.close,
+    duser = _ref.duser,
+    userOps = _ref.userOps;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState2 = _slicedToArray(_useState, 2),
+    user = _useState2[0],
+    _user = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    userSelected = _useState4[0],
+    _userSelected = _useState4[1];
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(''),
+    _useInput2 = _slicedToArray(_useInput, 2),
+    bulanS = _useInput2[0],
+    _bulanS = _useInput2[1];
+  var _useInput3 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(''),
+    _useInput4 = _slicedToArray(_useInput3, 2),
+    bulanE = _useInput4[0],
+    _bulanE = _useInput4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState6 = _slicedToArray(_useState5, 2),
+    totVol = _useState6[0],
+    _totVol = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState8 = _slicedToArray(_useState7, 2),
+    fbe = _useState8[0],
+    _fbe = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState10 = _slicedToArray(_useState9, 2),
+    ket = _useState10[0],
+    _ket = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState12 = _slicedToArray(_useState11, 2),
+    volume = _useState12[0],
+    _volume = _useState12[1];
+  if (form.start != undefined && form.start) {
+    var row = form.row;
+    var fvolume = JSON.parse(row.volume);
+    _bulanS({
+      target: {
+        value: row.taSPJ + '-' + (fvolume[0] < 10 ? '0' + fvolume[0] : fvolume[0])
+      }
+    });
+    _fbe(1);
+    if (fvolume.length == 2) {
+      _bulanE({
+        target: {
+          value: row.taSPJ + '-' + (fvolume[1] < 10 ? '0' + fvolume[1] : fvolume[1])
+        }
+      });
+    }
+    _volume(fvolume);
+    _totVol(row.totVol);
+    // _user(duser.filter(v=>v.label==row.an).map((v,i)=>v));
+    _userSelected(row.data);
+    _ket(row.keterangan);
+    form.start = false;
+  }
+  var chgBulanS = function chgBulanS(v) {
+    _bulanS(v);
+    _fbe(1);
+    hitungBulan({
+      bulan: v
+    });
+  };
+  var chgBulanE = function chgBulanE(v) {
+    _bulanE(v);
+    hitungBulan({
+      bulan: v,
+      start: 0
+    });
+  };
+  var hitungBulan = function hitungBulan(_ref2) {
+    var bulan = _ref2.bulan,
+      _ref2$start = _ref2.start,
+      start = _ref2$start === void 0 ? 1 : _ref2$start;
+    if (start) {
+      try {
+        console.log(bulanE);
+        if (bulanE.split("-").length != 2) {
+          throw "Bulum terisi";
+        }
+        ;
+        return proses2Bulan(bulan.target.value, bulanE);
+      } catch (error) {
+        volume[0] = __valBulan(bulan.target.value);
+        _totVol(1);
+        return _ket(" 1 BULAN ( " + _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].__namaBulan(__valBulan(bulan.target.value)) + " )");
+      }
+    } else {
+      try {
+        if (bulanS.split("-").length != 2) {
+          throw "Bulum terisi";
+        } else {
+          if (bulan.target.value.split("-").length != 2) {
+            _volume(volume.splice(0, 1));
+            _totVol(1);
+            return _ket(" 1 BULAN ( " + _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].__namaBulan(__valBulan(bulanS)) + " )");
+          }
+          return proses2Bulan(bulanS, bulan.target.value);
+        }
+      } catch (error) {
+        _ket("");
+        // return toast.error("kondisi ini error !!!");
+      }
+    }
+  };
+
+  var proses2Bulan = function proses2Bulan(start, end) {
+    start = __valBulan(start);
+    end = __valBulan(end);
+    volume[0] = start;
+    volume[1] = end;
+    var tot = end - start + 1;
+    if (tot < 0) {
+      react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.error("mohon untuk menyesuaikan ulang, kesalahan input !!!");
+      return chgBulanE({
+        target: {}
+      });
+    }
+    if (tot == 1) {
+      _totVol(1);
+      return _ket(" 1 BULAN ( " + _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].__namaBulan(start) + " )");
+    }
+    _totVol(tot);
+    return _ket(" ".concat(tot, " BULAN ( ").concat(_mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].__namaBulan(start), " - ").concat(_mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].__namaBulan(end), " )"));
+  };
+  var __valBulan = function __valBulan(val) {
+    var tahun = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    if (tahun) {
+      return parseInt(val.split("-")[0]);
+    }
+    return parseInt(val.split("-")[1]);
+  };
+  var xadd = function xadd() {
+    xadded({
+      user: userSelected,
+      keterangan: ket,
+      totVol: totVol,
+      totSatuan: 'Bulan',
+      volume: volume
+    });
+    reset();
+  };
+  var xupd = function xupd() {
+    xupded({
+      user: userSelected,
+      keterangan: ket,
+      totVol: totVol,
+      totSatuan: 'Bulan',
+      volume: volume
+    });
+    reset();
+  };
+  var reset = function reset() {
+    _bulanS({
+      target: {
+        value: ''
+      }
+    });
+    _bulanE({
+      target: {
+        value: ''
+      }
+    });
+    _user('');
+    _ket('');
+    _userSelected([]);
+  };
+  var _staf = function _staf(_ref3) {
+    var value = _ref3.value,
+      label = _ref3.label;
+    _user({
+      value: value,
+      label: label
+    });
+    _userSelected([].concat(_toConsumableArray(userSelected), [duser[value]]));
+  };
+  var delStaf = function delStaf(indUser) {
+    _userSelected(userSelected.filter(function (v, i) {
+      return i != indUser;
+    }));
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "header ".concat(form.ins ? 'bprimary clight' : 'bwarning cdark', " "),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "icon",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "mdi mdi-clock-edit-outline fz25"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h3", {
+          className: "",
+          children: [form.ins ? 'Entri' : 'Perbarui', " Data"]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        className: "btn2 blight cmuted",
+        onClick: close,
+        children: "Close"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "body",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "flexC w95p justifySA pwrap",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "ptb10px ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            className: "fbold",
+            children: "Nama Staf / Pegawai"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            options: userOps,
+            placeholder: "Pilih Staf / Pegawai",
+            value: user,
+            onChange: _staf,
+            isSearchable: true
+          })]
+        }), userSelected.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "borderB",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_listStaf__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            dstaf: userSelected,
+            ondel: delStaf
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "doubleInput ptb10px",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            children: "Dari Bulan"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "iconInput2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              className: "borderR10px",
+              type: "month",
+              value: bulanS,
+              onChange: chgBulanS,
+              placeholder: "1-12"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+              className: "mdi mdi-calendar ".concat(form.ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          })]
+        }), fbe == 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "doubleInput ptb10px",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            children: "Hingga Bulan"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "iconInput2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              className: "borderR10px",
+              type: "month",
+              value: bulanE,
+              onChange: chgBulanE,
+              placeholder: "1-12"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+              className: "mdi mdi-calendar ".concat(form.ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          })]
+        }), ket != '' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "doubleInput ptb10px",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            children: "keterangan :"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: "iconInput2",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              children: ket
+            })
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "footer posEnd",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "btnGroup",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+          className: "btn2",
+          onClick: close,
+          children: "Close"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+          className: "btn2 ".concat(form.ins ? 'bprimary' : 'bwarning'),
+          onClick: form.ins ? xadd : xupd,
+          children: form.ins ? 'Entri' : 'Perbarui'
+        })]
+      })
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TAFEdata);
+
+/***/ }),
+
+/***/ "./resources/js/components/subpages/tenagaAhli/formData.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/subpages/tenagaAhli/formData.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
+/* harmony import */ var _states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../states/tenagaAhli/action */ "./resources/js/states/tenagaAhli/action.js");
+/* harmony import */ var _tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../tabel/tabel1 */ "./resources/js/components/tabel/tabel1.js");
+/* harmony import */ var _feData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./feData */ "./resources/js/components/subpages/tenagaAhli/feData.js");
+/* harmony import */ var _mfc_sfLib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
+/* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+function TAformData(_ref) {
+  var data = _ref.data,
+    duser = _ref.duser,
+    param = _ref.param,
+    formProses = _ref.formProses;
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(''),
+    _useInput2 = _slicedToArray(_useInput, 2),
+    search = _useInput2[0],
+    _search = _useInput2[1];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      onOff: 1,
+      ins: 1,
+      ind: -1
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    form = _useState2[0],
+    _form = _useState2[1];
+  var coll = [{
+    name: 'No',
+    selector: function selector(row, i) {
+      return i + 1;
+    },
+    width: '50px'
+  }, {
+    name: 'A.N',
+    selector: function selector(row) {
+      return row.an;
+    }
+  }, {
+    name: 'Keterangan',
+    selector: function selector(row) {
+      return row.keterangan;
+    }
+  }, {
+    name: 'status',
+    selector: function selector(row) {
+      return (0,_states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_3__.__tahapan)(row.status);
+    }
+  }, {
+    cell: function cell(row, i) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        className: "btnGroup",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          className: "btn2 bwarning",
+          title: "Perbarui",
+          onClick: function onClick() {
+            return upd({
+              row: row,
+              i: i
+            });
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+            className: "mdi mdi-pencil-box cdark fz25"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          className: "btn2 bprimary clight",
+          title: "Open Form",
+          onClick: function onClick() {
+            return formProses({
+              row: row,
+              i: i
+            });
+          },
+          children: "Form Proses SPJ"
+        })]
+      });
+    },
+    ignoreRowClick: true,
+    allowOverflow: true,
+    button: true,
+    width: '250px'
+  }];
+  var add = function add() {
+    _form(_objectSpread(_objectSpread({}, form), {}, {
+      ins: 1,
+      onOff: 0
+    }));
+  };
+  var xadded = function xadded(_ref2) {
+    var user = _ref2.user,
+      keterangan = _ref2.keterangan,
+      totVol = _ref2.totVol,
+      totSatuan = _ref2.totSatuan,
+      volume = _ref2.volume;
+    dispatch((0,_states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_3__._sjp)(_objectSpread(_objectSpread({}, param), {}, {
+      data: btoa(JSON.stringify(user)),
+      an: user[0][0].label,
+      volume: JSON.stringify(volume),
+      satuan: totSatuan,
+      totSatuan: totSatuan,
+      totVol: totVol,
+      keterangan: keterangan
+    })));
+    formClose();
+  };
+  var upd = function upd(_ref3) {
+    var row = _ref3.row,
+      i = _ref3.i;
+    _form(_objectSpread(_objectSpread({}, form), {}, {
+      ins: 0,
+      onOff: 0,
+      start: true,
+      row: row,
+      i: i
+    }));
+  };
+  var xupded = function xupded(_ref4) {
+    var user = _ref4.user,
+      keterangan = _ref4.keterangan,
+      totVol = _ref4.totVol,
+      totSatuan = _ref4.totSatuan,
+      volume = _ref4.volume;
+    dispatch((0,_states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_3__.updSjp)(_objectSpread(_objectSpread(_objectSpread({}, param), data[form.i]), {}, {
+      data: btoa(JSON.stringify(user)),
+      an: user[0][0].label,
+      volume: JSON.stringify(volume),
+      satuan: totSatuan,
+      totSatuan: totSatuan,
+      totVol: totVol,
+      keterangan: keterangan,
+      ind: form.i,
+      no: form.row.no
+    })));
+    formClose();
+  };
+  function formClose() {
+    _form(_objectSpread(_objectSpread({}, form), {}, {
+      ins: 1,
+      onOff: 1
+    }));
+  }
+  if (Object.keys(form).length == 0) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {});
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: form.onOff ? 'formActionLeft' : 'formActionLeftAct',
+    id: "formActionLeft",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      className: "form1 bwhite boxShadow1px ",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        className: "header bprimary clight",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          className: "icon",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+            className: "mdi mdi-office-building-marker fz25 "
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+            children: "FR Tenaga Ahli"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          className: "btnGroup",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+            className: "btn2 blight bsuccess",
+            onClick: function onClick() {
+              return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_7__.openFormEntri)('eyJrZE1lbWJlciI6Ik13PT0iLCJrZE5vdGUiOiIxNk1GQzEjMSIsInRpbmdrYXQiOiIyIiwia2RGb3JtIjoiMSJ9');
+            },
+            children: "Form Entri Staf"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+            className: "btn2 blight blight cprimary",
+            onClick: add,
+            children: "Entri"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        className: "body",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          search: search,
+          oncSearch: _search,
+          columns: coll,
+          data: data.filter(function (item) {
+            if (search === "") {
+              return item;
+            } else if (item.no.toLowerCase().includes(search.toLowerCase())) {
+              return item;
+            }
+          })
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "form2 hmax bwhite updGrid2to1 ".concat(form.onOff && 'dnone'),
+      id: "itemFormLeft",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_feData__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        form: form,
+        close: formClose,
+        xadded: xadded,
+        xupded: xupded,
+        duser: duser,
+        userOps: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_6__["default"].coptionSelect({
+          dt: duser,
+          xind: true,
+          row: {
+            label: 0
+          }
+        }).map(function (v) {
+          return _objectSpread(_objectSpread({}, v), {}, {
+            label: v.label.label
+          });
+        })
+      })
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TAformData);
+
+/***/ }),
+
+/***/ "./resources/js/components/subpages/tenagaAhli/formListDoc.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/subpages/tenagaAhli/formListDoc.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
+/* harmony import */ var _states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../states/tenagaAhli/action */ "./resources/js/states/tenagaAhli/action.js");
+/* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
+/* harmony import */ var _tabel_tabel1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../tabel/tabel1 */ "./resources/js/components/tabel/tabel1.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+function TAformListDoc(_ref) {
+  var ddoc = _ref.ddoc,
+    dselect = _ref.dselect,
+    checkListForm = _ref.checkListForm;
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(''),
+    _useInput2 = _slicedToArray(_useInput, 2),
+    search = _useInput2[0],
+    _search = _useInput2[1];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      onOff: 1,
+      ins: 1,
+      ind: -1
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    form = _useState2[0],
+    _form = _useState2[1];
+  var __param = function __param() {
+    var _dselect$row = dselect.row,
+      kdDinas = _dselect$row.kdDinas,
+      kdBidang = _dselect$row.kdBidang,
+      kdSub = _dselect$row.kdSub,
+      kdJudul = _dselect$row.kdJudul,
+      no = _dselect$row.no,
+      taSPJ = _dselect$row.taSPJ;
+    return {
+      kdDinas: kdDinas,
+      kdBidang: kdBidang,
+      kdSub: kdSub,
+      kdJudul: kdJudul,
+      no: no,
+      taSPJ: taSPJ
+    };
+  };
+  __param();
+  var __dokumen = function __dokumen(_ref2) {
+    var row = _ref2.row,
+      i = _ref2.i;
+    switch (row[0].dt[2]) {
+      case 'jd-1':
+        return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.newTab)('dspj/kwitansi/' + btoa(JSON.stringify(__param())));
+      case 'jd-2':
+        return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.newTab)('dspj/tandaTerima/' + btoa(JSON.stringify(__param())));
+      case 'jd-3':
+        return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.newTab)('dspj/daftarNominatif/' + btoa(JSON.stringify(__param())));
+      case 'jd-5':
+        return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.newTab)('dspj/pindahBukuanPajak/' + btoa(JSON.stringify(__param())));
+      case 'jd-6':
+        return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.newTab)('dspj/pindahBukuanRekening/' + btoa(JSON.stringify(__param())));
+      case 'jd-7':
+        return checkListForm();
+      default:
+        return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.newTab)('kwitansi/');
+    }
+  };
+  var coll = [{
+    name: 'No',
+    selector: function selector(row, i) {
+      return i + 1;
+    },
+    width: '50px'
+  }, {
+    name: 'Nama Dokumen',
+    selector: function selector(row) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+          children: row[0].label
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), row[0].dt[1]]
+      });
+    }
+  }, {
+    cell: function cell(row, i) {
+      if (parseInt(row[1].value)) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "btnGroup",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            className: "btn2 bsuccess clight",
+            title: "Open Form",
+            onClick: function onClick() {
+              return __dokumen({
+                row: row,
+                i: i
+              });
+            },
+            children: "view Dokumen"
+          })
+        });
+      }
+      return "Belum tersedia";
+    },
+    ignoreRowClick: true,
+    allowOverflow: true,
+    button: true,
+    width: '250px'
+  }];
+  if (Object.keys(form).length == 0) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {});
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    className: "form1 bwhite boxShadow1px ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "header bprimary clight",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "icon",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+          className: "mdi mdi-office-building-marker fz25 "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+          children: "Dokumen Keperluan SPJ"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "body",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        search: search,
+        oncSearch: _search,
+        columns: coll,
+        data: ddoc.filter(function (item) {
+          if (search === "") {
+            return item;
+          } else if (item.no.toLowerCase().includes(search.toLowerCase())) {
+            return item;
+          }
+        })
+      })
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TAformListDoc);
+
+/***/ }),
+
+/***/ "./resources/js/components/subpages/tenagaAhli/formSPMCheklist.js":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/subpages/tenagaAhli/formSPMCheklist.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+function TAformSPMCheckList(_ref) {
+  var mclose = _ref.mclose,
+    checkList = _ref.checkList;
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(''),
+    _useInput2 = _slicedToArray(_useInput, 2),
+    noSPM = _useInput2[0],
+    _noSPM = _useInput2[1];
+  var _useInput3 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(''),
+    _useInput4 = _slicedToArray(_useInput3, 2),
+    nilai = _useInput4[0],
+    _nilai = _useInput4[1];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "form1 bwhite",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "header bsuccess",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+        children: "Form Cetak Check List SPM"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "btnGroup",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "btn2 bdark clight",
+          onClick: mclose,
+          children: "Close"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "body  ptb10px",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flexC mlr10px ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+          className: "",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "mdi mdi-cloud-search cprimary "
+          }), "Nomor / TGL SPM"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          className: "borderR10px w90p",
+          type: "text",
+          value: noSPM,
+          onChange: _noSPM,
+          placeholder: "52.07/03.0 ..../ 04 Juni 2024"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flexC mlr10px ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+          className: "",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "mdi mdi-cloud-search cprimary "
+          }), "Nilai SPM"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          className: "borderR10px w90p",
+          type: "text",
+          value: nilai,
+          onChange: _nilai,
+          placeholder: "5.000.000"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "flexC w90p ptb10px ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "btnGroup posEnd",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            className: "btn2 bsuccess",
+            title: "Simpan",
+            onClick: function onClick() {
+              return (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_1__.newTab)('dspj/checkListSPM/' + btoa(JSON.stringify(_objectSpread({
+                noSPM: noSPM,
+                nilai: nilai
+              }, checkList))));
+            },
+            children: "Preview Dokumen"
+          })
+        })
+      })]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TAformSPMCheckList);
+
+/***/ }),
+
+/***/ "./resources/js/components/subpages/tenagaAhli/listStaf.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/subpages/tenagaAhli/listStaf.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function TAlistStaf(_ref) {
+  var dstaf = _ref.dstaf,
+    ondel = _ref.ondel;
+  return dstaf.map(function (v, i) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flexR justifySB",
+      style: {
+        alignItems: "center"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+        children: i + 1 + ". " + v[0].label
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        className: "btn2 bdanger",
+        onClick: function onClick() {
+          return ondel(i);
+        },
+        children: " Batalkan"
+      })]
+    }, i);
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: "Bagus H"
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TAlistStaf);
+
+/***/ }),
+
 /***/ "./resources/js/components/tabel/tabel1.js":
 /*!*************************************************!*\
   !*** ./resources/js/components/tabel/tabel1.js ***!
@@ -16973,6 +17931,9 @@ function BidangEntriBelanja() {
     setmodalC = _useState4[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_5__.getrincianDinas)());
+    dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_5__.__listKDRekening)({
+      kdDF: '894670f302d1a5e91437de1d32e7d35d'
+    }));
   }, [dispatch]);
   var updDataBidang = function updDataBidang(v) {
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_5__.getDataBidang)(v));
@@ -16981,6 +17942,11 @@ function BidangEntriBelanja() {
   if (_dinas.length === 0 || _dinas[0].bidang.length === 0 || _dinas[0].bidang[0].sub == undefined) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {});
   }
+  var generateAuto = function generateAuto() {
+    dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_5__.actGenerateAutoRekening)({
+      data: btoa(JSON.stringify(_dinas[0].listRekening))
+    }));
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
       page: 'Belanja Bidang',
@@ -16990,7 +17956,8 @@ function BidangEntriBelanja() {
       dt: _dinas,
       modalC: setmodalC,
       ind: ind,
-      updDataBidang: updDataBidang
+      updDataBidang: updDataBidang,
+      generateAuto: generateAuto
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_3__["default"], {
       children: modalC
     })]
@@ -17757,7 +18724,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function SPPD() {
   var _useSelector = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
       return state;
@@ -17804,13 +18770,11 @@ function SPPD() {
     setindWork(i);
     setview(0);
   };
-  // if(indWork<0){
-  //     stepSetAnggota({no:'13'});
-  //     setview(3);
+  // if(indWork>0){
+  //     console.log(_sppd.dwork[indWork].anggota);
   // }
   // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
-  // console.log(_sppd.dwork[indWork]);
-
+  // console.log(_sppd.dwork[indWork]); 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
       page: 'Perjalanan Dinas',
@@ -17883,6 +18847,135 @@ function SPPD() {
 
 /***/ }),
 
+/***/ "./resources/js/pages/work/tenagaAhli.js":
+/*!***********************************************!*\
+  !*** ./resources/js/pages/work/tenagaAhli.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/dashboard/HeaderPage1 */ "./resources/js/components/dashboard/HeaderPage1.js");
+/* harmony import */ var _components_subpages_sppd_formInformasi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/subpages/sppd/formInformasi */ "./resources/js/components/subpages/sppd/formInformasi.js");
+/* harmony import */ var _components_subpages_tenagaAhli_formData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/subpages/tenagaAhli/formData */ "./resources/js/components/subpages/tenagaAhli/formData.js");
+/* harmony import */ var _components_subpages_tenagaAhli_formListDoc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/subpages/tenagaAhli/formListDoc */ "./resources/js/components/subpages/tenagaAhli/formListDoc.js");
+/* harmony import */ var _components_Modal_modal1__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Modal/modal1 */ "./resources/js/components/Modal/modal1.js");
+/* harmony import */ var _states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../states/tenagaAhli/action */ "./resources/js/states/tenagaAhli/action.js");
+/* harmony import */ var _components_subpages_tenagaAhli_formSPMCheklist__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/subpages/tenagaAhli/formSPMCheklist */ "./resources/js/components/subpages/tenagaAhli/formSPMCheklist.js");
+/* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TenagaAhli() {
+  var _useSelector = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+      return state;
+    }),
+    _ta = _useSelector._ta,
+    _html = _useSelector._html;
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.useParams)(),
+    value = _useParams.value;
+  var param = JSON.parse(atob(value));
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    modalC = _useState2[0],
+    _modalC = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    dselect = _useState4[0],
+    _dselect = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    dispatch((0,_states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_7__.__sjp)(value));
+    dispatch((0,_states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_7__.__user)({
+      kdDF: '4d14177b0fe753d53c11ee2ef1ee2af1'
+    }));
+    dispatch((0,_states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_7__.__doc)({
+      kdDF: 'e1731c146ca5a7e30b7585105aaeb224'
+    }));
+    dispatch((0,_states_tenagaAhli_action__WEBPACK_IMPORTED_MODULE_7__.__checkList)({
+      kdDF: 'e76ec11da35af7d8e4d28d5946a9acb5'
+    }));
+  }, [dispatch]);
+  if (Object.keys(_ta).length < 2) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {});
+  }
+  var basic = _ta.basic,
+    data = _ta.data,
+    duser = _ta.duser,
+    ddoc = _ta.ddoc,
+    checkList = _ta.checkList;
+  var formProses = function formProses(_ref) {
+    var row = _ref.row,
+      i = _ref.i;
+    _dselect({
+      row: row,
+      i: i
+    });
+  };
+  var checkListForm = function checkListForm() {
+    _modalC( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_subpages_tenagaAhli_formSPMCheklist__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      mclose: mclose,
+      checkList: {
+        checkList: checkList,
+        param: param
+      }
+    }));
+    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_9__.setHtml)({
+      modal: true
+    }));
+  };
+  function mclose() {
+    dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_9__.modalClose)());
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      page: 'Tenaga Ahli',
+      pageKet: 'Pemberkasan administrasi Tenaga Ahli',
+      icon: 'mdi-office-building-marker cdark'
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_subpages_sppd_formInformasi__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      dt: basic
+    }), _ta.duser != undefined && _ta.duser.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_subpages_tenagaAhli_formData__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      duser: duser,
+      param: param,
+      data: data,
+      formProses: formProses
+    }), dselect != '' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_subpages_tenagaAhli_formListDoc__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      ddoc: ddoc,
+      dselect: dselect,
+      checkListForm: checkListForm
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: modalC
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TenagaAhli);
+
+/***/ }),
+
 /***/ "./resources/js/states/dinas/action.js":
 /*!*********************************************!*\
   !*** ./resources/js/states/dinas/action.js ***!
@@ -17892,6 +18985,8 @@ function SPPD() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __listKDRekening: () => (/* binding */ __listKDRekening),
+/* harmony export */   actGenerateAutoRekening: () => (/* binding */ actGenerateAutoRekening),
 /* harmony export */   actRincian: () => (/* binding */ actRincian),
 /* harmony export */   actTriwulan: () => (/* binding */ actTriwulan),
 /* harmony export */   actType: () => (/* binding */ actType),
@@ -17962,7 +19057,8 @@ var actType = {
   selectSubKeg: 'selectSubKeg',
   delselectSubKeg: 'delselectSubKeg',
   actRincian: 'actRincian',
-  actTriwulan: 'actTriwulan'
+  actTriwulan: 'actTriwulan',
+  __listKDRekening: '__listKDRekening'
 };
 function setDT(dt) {
   return {
@@ -18512,8 +19608,8 @@ var colBidang = [{
   name: 'Nama Bidang',
   selector: function selector(row) {
     return row.nmBidang;
-  },
-  width: "250px"
+  }
+  // width : "250px"
 }, {
   name: 'Singkatan',
   selector: function selector(row) {
@@ -19015,6 +20111,74 @@ function actTriwulan(v) {
     };
   }();
 }
+function __listKDRekening(_ref32) {
+  var kdDF = _ref32.kdDF;
+  return /*#__PURE__*/function () {
+    var _ref33 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee23(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee23$(_context23) {
+        while (1) switch (_context23.prev = _context23.next) {
+          case 0:
+            _context23.prev = 0;
+            _context23.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].__api('vd/' + btoa(JSON.stringify(_objectSpread(_objectSpread({}, _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].paramNoted), {}, {
+              kdDF: kdDF
+            }))));
+          case 3:
+            dt = _context23.sent;
+            dispatch({
+              type: actType.__listKDRekening,
+              payload: dt
+            });
+            _context23.next = 10;
+            break;
+          case 7:
+            _context23.prev = 7;
+            _context23.t0 = _context23["catch"](0);
+            alert(_context23.t0.message);
+          case 10:
+          case "end":
+            return _context23.stop();
+        }
+      }, _callee23, null, [[0, 7]]);
+    }));
+    return function (_x23) {
+      return _ref33.apply(this, arguments);
+    };
+  }();
+}
+function actGenerateAutoRekening(v) {
+  return /*#__PURE__*/function () {
+    var _ref34 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee24(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee24$(_context24) {
+        while (1) switch (_context24.prev = _context24.next) {
+          case 0:
+            _context24.prev = 0;
+            _context24.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: "rincian/actGenerateAutoRekening",
+              body: v
+            });
+          case 3:
+            dt = _context24.sent;
+            return _context24.abrupt("return", react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success("Berhasil Mengerjakan Menjalankan Perintah !!!"));
+          case 7:
+            _context24.prev = 7;
+            _context24.t0 = _context24["catch"](0);
+            (0,react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast)(_context24.t0.message);
+            throw _context24.t0.message;
+          case 11:
+          case "end":
+            return _context24.stop();
+        }
+      }, _callee24, null, [[0, 7]]);
+    }));
+    return function (_x24) {
+      return _ref34.apply(this, arguments);
+    };
+  }();
+}
 
 
 /***/ }),
@@ -19241,6 +20405,15 @@ function dinasReducer() {
         }
         return v;
       });
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.__listKDRekening:
+      return dt.map(function (v, i) {
+        if (i == 0) {
+          return _objectSpread(_objectSpread({}, v), {}, {
+            listRekening: action.payload
+          });
+        }
+        return v;
+      });
     default:
       return dt;
   }
@@ -19328,13 +20501,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 /* harmony import */ var _dinas_reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dinas/reducer */ "./resources/js/states/dinas/reducer.js");
 /* harmony import */ var _subKegiatan_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./subKegiatan/reducer */ "./resources/js/states/subKegiatan/reducer.js");
 /* harmony import */ var _rekeningB_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rekeningB/reducer */ "./resources/js/states/rekeningB/reducer.js");
 /* harmony import */ var _jenisP_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./jenisP/reducer */ "./resources/js/states/jenisP/reducer.js");
 /* harmony import */ var _sfHtml_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sfHtml/reducer */ "./resources/js/states/sfHtml/reducer.js");
 /* harmony import */ var _sppd_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sppd/reducer */ "./resources/js/states/sppd/reducer.js");
+/* harmony import */ var _tenagaAhli_reducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tenagaAhli/reducer */ "./resources/js/states/tenagaAhli/reducer.js");
 
 
 
@@ -19342,14 +20516,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_6__.configureStore)({
+
+var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_7__.configureStore)({
   reducer: {
     _dinas: _dinas_reducer__WEBPACK_IMPORTED_MODULE_0__["default"],
     _sub: _subKegiatan_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
     _rek: _rekeningB_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
     _jenis: _jenisP_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
     _html: _sfHtml_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
-    _sppd: _sppd_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]
+    _sppd: _sppd_reducer__WEBPACK_IMPORTED_MODULE_5__["default"],
+    _ta: _tenagaAhli_reducer__WEBPACK_IMPORTED_MODULE_6__["default"]
   }
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (store);
@@ -19949,6 +21125,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeMenuSub: () => (/* binding */ changeMenuSub),
 /* harmony export */   logout: () => (/* binding */ logout),
 /* harmony export */   modalClose: () => (/* binding */ modalClose),
+/* harmony export */   newTab: () => (/* binding */ newTab),
+/* harmony export */   openFormEntri: () => (/* binding */ openFormEntri),
 /* harmony export */   session: () => (/* binding */ session),
 /* harmony export */   setAll: () => (/* binding */ setAll),
 /* harmony export */   setHtml: () => (/* binding */ setHtml),
@@ -20187,6 +21365,12 @@ function listMenu(_ref7) {
       });
     })
   }];
+}
+function openFormEntri(url) {
+  window.open(_utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].UrlFormEntri + url);
+}
+function newTab(url) {
+  window.open(_utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].BASE_URL + url);
 }
 
 
@@ -21349,10 +22533,9 @@ function concatDataAnggotaSelected(_ref3) {
           kdBidang: v1.kdBidang,
           kdBAnggota: v.kdBAnggota,
           ddukung: v1.ddukung == undefined ? dpendukung : v1.ddukung,
-          noSPPD: v1.noSPPD
-          // uraian:(v1.uraian==undefined? []: v1.uraian)
+          noSPPD: v1.noSPPD,
+          uraian: v.uraian == undefined ? [] : v.uraian
         }));
-
         add = false;
       }
     });
@@ -21527,6 +22710,347 @@ function subReducer() {
 
 /***/ }),
 
+/***/ "./resources/js/states/tenagaAhli/action.js":
+/*!**************************************************!*\
+  !*** ./resources/js/states/tenagaAhli/action.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __checkList: () => (/* binding */ __checkList),
+/* harmony export */   __doc: () => (/* binding */ __doc),
+/* harmony export */   __sjp: () => (/* binding */ __sjp),
+/* harmony export */   __tahapan: () => (/* binding */ __tahapan),
+/* harmony export */   __user: () => (/* binding */ __user),
+/* harmony export */   _sjp: () => (/* binding */ _sjp),
+/* harmony export */   actType: () => (/* binding */ actType),
+/* harmony export */   updSjp: () => (/* binding */ updSjp)
+/* harmony export */ });
+/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/api */ "./resources/js/utils/api.js");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var _components_mfc_sfLib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+/* eslint-disable no-unused-vars */
+
+
+
+var tahapan = ["proses dokumen", "tuntas"];
+var actType = {
+  __user: "__user",
+  __doc: "__doc",
+  __checkList: "__checkList",
+  __sjp: "__sjp",
+  _sjp: "_sjp",
+  updSjp: "updSjp"
+};
+function __user(_ref) {
+  var kdDF = _ref.kdDF;
+  return /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            _context.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].__api('vd/' + btoa(JSON.stringify(_objectSpread(_objectSpread({}, _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].paramNoted), {}, {
+              kdDF: kdDF
+            }))));
+          case 3:
+            dt = _context.sent;
+            dispatch({
+              type: actType.__user,
+              payload: dt
+            });
+            _context.next = 10;
+            break;
+          case 7:
+            _context.prev = 7;
+            _context.t0 = _context["catch"](0);
+            alert(_context.t0.message);
+          case 10:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[0, 7]]);
+    }));
+    return function (_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+}
+function __doc(_ref3) {
+  var kdDF = _ref3.kdDF;
+  return /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.prev = 0;
+            _context2.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].__api('vd/' + btoa(JSON.stringify(_objectSpread(_objectSpread({}, _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].paramNoted), {}, {
+              kdDF: kdDF
+            }))));
+          case 3:
+            dt = _context2.sent;
+            dispatch({
+              type: actType.__doc,
+              payload: dt
+            });
+            _context2.next = 10;
+            break;
+          case 7:
+            _context2.prev = 7;
+            _context2.t0 = _context2["catch"](0);
+            alert(_context2.t0.message);
+          case 10:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2, null, [[0, 7]]);
+    }));
+    return function (_x2) {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+}
+function __checkList(_ref5) {
+  var kdDF = _ref5.kdDF;
+  return /*#__PURE__*/function () {
+    var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+        while (1) switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.prev = 0;
+            _context3.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].__api('vd/' + btoa(JSON.stringify(_objectSpread(_objectSpread({}, _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].paramNoted), {}, {
+              kdDF: kdDF
+            }))));
+          case 3:
+            dt = _context3.sent;
+            dispatch({
+              type: actType.__checkList,
+              payload: dt
+            });
+            _context3.next = 10;
+            break;
+          case 7:
+            _context3.prev = 7;
+            _context3.t0 = _context3["catch"](0);
+            alert(_context3.t0.message);
+          case 10:
+          case "end":
+            return _context3.stop();
+        }
+      }, _callee3, null, [[0, 7]]);
+    }));
+    return function (_x3) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+}
+function __sjp(v) {
+  return /*#__PURE__*/function () {
+    var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(dispatch) {
+      var dt;
+      return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+        while (1) switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.prev = 0;
+            _context4.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].GET({
+              url: 'spj/get/' + v
+            });
+          case 3:
+            dt = _context4.sent;
+            dispatch({
+              type: actType.__sjp,
+              payload: _objectSpread({}, dt)
+            });
+            _context4.next = 10;
+            break;
+          case 7:
+            _context4.prev = 7;
+            _context4.t0 = _context4["catch"](0);
+            alert(_context4.t0.message);
+          case 10:
+          case "end":
+            return _context4.stop();
+        }
+      }, _callee4, null, [[0, 7]]);
+    }));
+    return function (_x4) {
+      return _ref7.apply(this, arguments);
+    };
+  }();
+}
+function _sjp(v) {
+  return /*#__PURE__*/function () {
+    var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(dispatch) {
+      var data;
+      return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+        while (1) switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.prev = 0;
+            _context5.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: 'spj/set',
+              body: v
+            });
+          case 3:
+            data = _context5.sent;
+            dispatch({
+              type: actType._sjp,
+              payload: data
+            });
+            _context5.next = 10;
+            break;
+          case 7:
+            _context5.prev = 7;
+            _context5.t0 = _context5["catch"](0);
+            alert(_context5.t0.message);
+          case 10:
+          case "end":
+            return _context5.stop();
+        }
+      }, _callee5, null, [[0, 7]]);
+    }));
+    return function (_x5) {
+      return _ref8.apply(this, arguments);
+    };
+  }();
+}
+function updSjp(v) {
+  return /*#__PURE__*/function () {
+    var _ref9 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(dispatch) {
+      var data;
+      return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+        while (1) switch (_context6.prev = _context6.next) {
+          case 0:
+            _context6.prev = 0;
+            _context6.next = 3;
+            return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+              url: 'spj/upd',
+              body: v
+            });
+          case 3:
+            data = _context6.sent;
+            dispatch({
+              type: actType.updSjp,
+              payload: _objectSpread(_objectSpread({}, v), {}, {
+                data: JSON.parse(atob(v.data))
+              })
+            });
+            _context6.next = 10;
+            break;
+          case 7:
+            _context6.prev = 7;
+            _context6.t0 = _context6["catch"](0);
+            alert(_context6.t0.message);
+          case 10:
+          case "end":
+            return _context6.stop();
+        }
+      }, _callee6, null, [[0, 7]]);
+    }));
+    return function (_x6) {
+      return _ref9.apply(this, arguments);
+    };
+  }();
+}
+function __tahapan(status) {
+  return tahapan[parseInt(status) - 1];
+}
+
+
+/***/ }),
+
+/***/ "./resources/js/states/tenagaAhli/reducer.js":
+/*!***************************************************!*\
+  !*** ./resources/js/states/tenagaAhli/reducer.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./action */ "./resources/js/states/tenagaAhli/action.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+/* eslint-disable no-case-declarations */
+
+
+function taReducer() {
+  var dt = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  switch (action.type) {
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.__user:
+      return _objectSpread(_objectSpread({}, dt), {}, {
+        duser: action.payload.map(function (v, i) {
+          return JSON.parse(atob(v.data));
+        })
+      });
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.__doc:
+      return _objectSpread(_objectSpread({}, dt), {}, {
+        ddoc: action.payload.map(function (v, i) {
+          return JSON.parse(atob(v.data));
+        })
+      });
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.__checkList:
+      return _objectSpread(_objectSpread({}, dt), {}, {
+        checkList: action.payload
+      });
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.__sjp:
+      return _objectSpread(_objectSpread(_objectSpread({}, dt), action.payload), {}, {
+        data: action.payload.data.map(function (v1, i1) {
+          return _objectSpread(_objectSpread({}, v1), {}, {
+            data: JSON.parse(atob(v1.data))
+          });
+        })
+      });
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType._sjp:
+      return _objectSpread(_objectSpread({}, dt), {}, {
+        data: action.payload.map(function (v1, i1) {
+          return _objectSpread(_objectSpread({}, v1), {}, {
+            data: JSON.parse(atob(v1.data))
+          });
+        })
+      });
+    case _action__WEBPACK_IMPORTED_MODULE_0__.actType.updSjp:
+      return _objectSpread(_objectSpread({}, dt), {}, {
+        data: dt.data.map(function (v1, i1) {
+          if (i1 == action.payload.ind) {
+            return action.payload;
+          }
+          return v1;
+        })
+      });
+    default:
+      return dt;
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (taReducer);
+
+/***/ }),
+
 /***/ "./resources/js/utils/api.js":
 /*!***********************************!*\
   !*** ./resources/js/utils/api.js ***!
@@ -21543,8 +23067,14 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var api = function () {
-  // const BASE_URL = 'http://localhost:8000/';
-  var BASE_URL = 'https://sipj.bappedaksb.com/';
+  var BASE_URL = 'http://localhost:3000/';
+  // const BASE_URL = 'https://sipj.bappedaksb.com/';
+  var urlNoted = 'http://localhost:8000/';
+  var BASE_URL_Sub = urlNoted + 'api/';
+  var UrlFormEntri = urlNoted + 'formPreview/';
+  var paramNoted = {
+    mfc: 'f1d7d6e3cbe3ccb885885fefe962b447'
+  };
   function GET(_x) {
     return _GET.apply(this, arguments);
   }
@@ -21671,6 +23201,46 @@ var api = function () {
     }));
     return _POSTData.apply(this, arguments);
   }
+  function __api(_x4) {
+    return _api.apply(this, arguments);
+  }
+  function _api() {
+    _api = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(url) {
+      var response, responseJson, exc, _responseJson$msg4, msg, data;
+      return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+        while (1) switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return fetch("".concat(BASE_URL_Sub + url), {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+              // body: JSON.stringify(body),
+            });
+          case 2:
+            response = _context4.sent;
+            _context4.next = 5;
+            return response.json();
+          case 5:
+            responseJson = _context4.sent;
+            exc = responseJson.exc, _responseJson$msg4 = responseJson.msg, msg = _responseJson$msg4 === void 0 ? '-' : _responseJson$msg4;
+            if (exc) {
+              _context4.next = 9;
+              break;
+            }
+            throw new Error(msg + "=> " + url);
+          case 9:
+            data = responseJson.data;
+            return _context4.abrupt("return", data);
+          case 11:
+          case "end":
+            return _context4.stop();
+        }
+      }, _callee4);
+    }));
+    return _api.apply(this, arguments);
+  }
   var act = {
     dt: 'data',
     add: 'entri',
@@ -21681,7 +23251,11 @@ var api = function () {
     GET: GET,
     POST: POST,
     POSTData: POSTData,
-    act: act
+    act: act,
+    __api: __api,
+    paramNoted: paramNoted,
+    UrlFormEntri: UrlFormEntri,
+    BASE_URL: BASE_URL
   };
 }();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (api);

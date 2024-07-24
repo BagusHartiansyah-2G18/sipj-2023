@@ -9,7 +9,7 @@ import Modal1 from '../components/Modal/modal1';
 
 import FormBelanja from "../components/subpages/BidangEntri/Belanja";
 
-import { getrincianDinas, getDataBidang } from '../states/dinas/action';
+import { getrincianDinas, getDataBidang, __listKDRekening,actGenerateAutoRekening } from '../states/dinas/action';
 
 function BidangEntriBelanja(){
     const { _dinas } = useSelector((state) => state);
@@ -20,6 +20,7 @@ function BidangEntriBelanja(){
 
     useEffect(() => {
         dispatch(getrincianDinas());
+        dispatch(__listKDRekening({kdDF:'894670f302d1a5e91437de1d32e7d35d'}));
 
     }, [dispatch]);
     const updDataBidang = (v) =>{
@@ -29,7 +30,12 @@ function BidangEntriBelanja(){
 
     if(_dinas.length===0 || _dinas[0].bidang.length === 0 || _dinas[0].bidang[0].sub == undefined){
         return <></>;
-    }
+    } 
+    const generateAuto=()=>{
+        dispatch(
+            actGenerateAutoRekening({data:btoa(JSON.stringify(_dinas[0].listRekening))})
+        );
+    } 
     return (
         <>
             <HeaderPage1
@@ -42,6 +48,7 @@ function BidangEntriBelanja(){
                 modalC={setmodalC}
                 ind={ind}
                 updDataBidang={updDataBidang}
+                generateAuto={generateAuto}
             ></FormBelanja>
             <Modal1
                 children ={modalC}

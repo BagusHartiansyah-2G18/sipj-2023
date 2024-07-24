@@ -10,6 +10,9 @@ use App\Http\Controllers\Cjenis;
 use App\Http\Controllers\Crincian;
 use App\Http\Controllers\Csppd;
 use App\Http\Controllers\PdfGenerator;
+use App\Http\Controllers\Cspj;
+use App\Http\Controllers\PDFspj;
+
 use Facade\FlareClient\Http\Response;
 use Illuminate\Support\Facades\Storage;
 
@@ -77,11 +80,7 @@ Route::controller(Cdinas::class)->name('api.')->prefix('api/dinas')->group(funct
     Route::get('/dinasDataBidang/{kdDinas}','dinasDataBidang')->name('dinasDataBidang');
     Route::get('/dinasDataBidangSub/{kdDinas}','dinasDataBidangSub')->name('dinasDataBidangSub');
     Route::get('/getSubBidang/{kdDinas}/{kdBidang}','getSubBidang')->name('getSubBidang');
-    Route::get('/getUraianSub/{kdDinas}/{kdBidang}/{kdSub}','getUraianSub')->name('getUraianSub');
-
-
-
-
+    Route::get('/getUraianSub/{kdDinas}/{kdBidang}/{kdSub}','getUraianSub')->name('getUraianSub'); 
 });
 Route::controller(Csub::class)->name('api.')->prefix('api/sub')->group(function(){
     Route::get('/','index')->name('index');
@@ -111,6 +110,11 @@ Route::controller(Crincian::class)->name('api.')->prefix('api/rincian')->group(f
 
     Route::post('/addedTriwulan','addedTriwulan')->name('addedTriwulan');
     Route::post('/updedTriwulan','updedTriwulan')->name('updedTriwulan');
+
+    Route::post('/actGenerateAutoRekening','actGenerateAutoRekening')->name('actGenerateAutoRekening');
+
+
+    
 });
 
 Route::controller(Csppd::class)->name('api.')->prefix('api/sppd')->group(function(){
@@ -146,7 +150,21 @@ Route::controller(PdfGenerator::class)->name('pdf.')->prefix('pdf')->group(funct
     Route::get('/sppdBupati/{val}','sppdBupati')->name('sppdBupati');
     Route::get('/sppdBupatiSetda/{val}','sppdBupatiSetda')->name('sppdBupatiSetda');
 });
+Route::controller(Cspj::class)->name('spj.')->prefix('api/spj')->group(function(){
+    Route::get('/get/{val}','getSpj')->name('getSpj');
+    Route::post('/set','setSpj')->name('setSpj'); 
+    Route::post('/upd','updSpj')->name('updSpj');  
+});
 
+Route::controller(PDFspj::class)->name('dspj.')->prefix('dspj')->group(function(){
+    Route::get('/kwitansi/{val}','kwitansi')->name('kwitansi'); 
+    Route::get('/tandaTerima/{val}','tandaTerima')->name('tandaTerima'); 
+    Route::get('/daftarNominatif/{val}','daftarNominatif')->name('daftarNominatif');
+    Route::get('/pindahBukuanPajak/{val}','pindahBukuanPajak')->name('pindahBukuanPajak');
+    Route::get('/pindahBukuanRekening/{val}','pindahBukuanRekening')->name('pindahBukuanRekening'); 
+    Route::get('/checkListSPM/{val}','checkListSPM')->name('checkListSPM');  
+    
+});
 
 Route::get('storage/{filename}', function ($filename){
     $files ="app/public/pdf/sppd/".$filename;

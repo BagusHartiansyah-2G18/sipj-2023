@@ -13,10 +13,11 @@ import { colRincian, actRincian, actTriwulan, getDataSubBidang, getDataUraianSub
 import Tabel1 from "../../tabel/tabel1";
 import { setHtml, setLeftBar, modalClose } from '../../../states/sfHtml/action';
 import { toast } from "react-toastify";
+import { openFormEntri } from '../../../states/sfHtml/action';
 
 import PropTypes from "prop-types";
 
-function FormBelanja({ dt, modalC, ind, updDataBidang }) {
+function FormBelanja({ dt, modalC, ind, updDataBidang, generateAuto }) {
     const [search, setSearch] = useInput('');
     const dispatch = useDispatch();
     const [onOff, setOnOff] = useState(1);
@@ -295,7 +296,11 @@ function FormBelanja({ dt, modalC, ind, updDataBidang }) {
                             <span className="mdi mdi-office-building-marker fz25 "></span>
                             <h3>Uraian Belanja & Pembagian Triwulan</h3>
                         </div>
-                        <button className="btn2 blight cmuted" onClick={add}>Form</button>
+                        <div className="btnGroup">
+                            <button className="btn2 blight blight" onClick={()=>openFormEntri('eyJrZE1lbWJlciI6Ik13PT0iLCJrZE5vdGUiOiIxNk1GQzEjMiIsInRpbmdrYXQiOiIyIiwia2RGb3JtIjoiMyJ9')}>Form Catatan Rekening</button>
+                            <button className="btn2 blight bsuccess" onClick={()=>generateAuto()}>generate AUTO</button>
+                            <button className="btn2 blight " onClick={add}>Form</button>
+                        </div>
                     </div>
                     <div className="body">
                         <div className="justifyEnd mtb10px">

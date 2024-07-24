@@ -35,6 +35,7 @@ import JenisPertanggungJawab from './pages/JenisPertanggungJawab';
 import BidangSubKegiatan from './pages/BidangSubKegiatan';
 import BidangEntriBelanja from './pages/BidangEntriBelanja';
 import SPPD from './pages/work/sppd';
+import TenagaAhli from './pages/work/tenagaAhli';
 import Fitur from './pages/Fitur';
 
 import { setAll, session, changeMenu} from "./states/sfHtml/action";
@@ -98,6 +99,8 @@ function MyApp() {
                                             <Route path="home/work/rincianBelanja" element={<BidangEntriBelanja /> } />
                                             <Route path="home/work/Fitur" element={<Fitur /> } />
                                             <Route path="home/work/sppd/:value" element={<SPPD /> } />
+                                            <Route path="home/work/ta/:value" element={<TenagaAhli /> } />
+                                            
                                             {/* <Route path="home/work/Fitur" element={<Fitur /> } /> */}
                                         </>
                                     )

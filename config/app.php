@@ -234,6 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Hdb' => App\Helpers\Hdb::class,
         'Hsf' => App\Helpers\Hsf::class,
+        'Mfc' => App\Helpers\Mfc::class,
 
         'PDF' => Barryvdh\DomPDF\Facade::class,//Add this code
     ],

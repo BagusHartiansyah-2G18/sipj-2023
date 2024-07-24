@@ -219,6 +219,17 @@ function dinasReducer(dt = [], action = {}) {
           }
           return v;
         })
+      
+      case actType.__listKDRekening:
+        return dt.map((v,i)=>{
+          if(i==0){
+            return {
+              ...v,
+              listRekening:action.payload
+            }
+          }
+          return v; 
+        })
         default:
           return dt;
     }

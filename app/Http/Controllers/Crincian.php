@@ -4,16 +4,21 @@ namespace App\Http\Controllers;
 use App\Helper\Hdb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;  
+use Illuminate\Support\Facades\DB;
+use App\Helper\Mfc;
+
 
 class Crincian extends Controller
 {
+    private $Mfc, $Hdb;
     public function __construct(){
+        $this->Mfc = new Mfc();
+        $this->Hdb = new Hdb();
         $this->middleware('auth');
     } 
     public function added(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta'];
             try {
@@ -34,10 +39,10 @@ class Crincian extends Controller
             }
             
             $request['tahun'] = $tahun;
-            $data =Hdb::rincianAdded($request); 
+            $data =$this->Hdb->rincianAdded($request); 
             return response()->json([
                 'exc' => true,
-                'data' => Hdb::getRincian($request)
+                'data' => $this->Hdb->getRincian($request)
             ], 200);
         }
         return response()->json([
@@ -46,8 +51,8 @@ class Crincian extends Controller
         ], 200);
     }
     public function upded(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta'];
             $request->validate([
@@ -86,8 +91,8 @@ class Crincian extends Controller
         ], 200);
     }
     public function deled(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta'];
             $request->validate([
@@ -118,8 +123,8 @@ class Crincian extends Controller
     } 
 
     public function addedTriwulan(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta'];
             $request->validate([
@@ -133,7 +138,7 @@ class Crincian extends Controller
                 'tw4'=> 'required',
             ]);
             $request['tahun'] = $tahun;
-            $data =Hdb::triwulanAdded($request); 
+            $data =$this->Hdb->triwulanAdded($request); 
             return response()->json([
                 'exc' => true,
                 'data' => []
@@ -145,8 +150,8 @@ class Crincian extends Controller
         ], 200);
     } 
     public function updedTriwulan(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta'];
             $request->validate([
@@ -188,6 +193,42 @@ class Crincian extends Controller
             'msg' => $cek['msg']
         ], 200);
     } 
+
+    public function actGenerateAutoRekening(Request $request ){
+        
+        $cek = $this->Mfc->portal();  
+        if($cek['exc']){
+            $tahun = $cek['ta'];
+            $valid = $request->validate([
+                'data'=> 'required', 
+            ]); 
+            
+            $data =json_decode(base64_decode($valid['data']));
+            $upd = "update ubjudul set kdJenis = ";
+            $query = "";
+            foreach ($data as $key => $value) {
+                $datax= json_decode(base64_decode($value->data)); 
+                $query.= $upd."'".$datax[2]->dt[0]."' where kdApbd6='".$datax[0]->label."' and taJudul='".$tahun."';";
+            }
+            // return $this->Mfc->log($query);
+            if(DB::unprepared($query)){
+                return response()->json([
+                    'exc' => true,
+                    'data' => [
+                        "query"=>$query
+                    ]
+                ], 200);
+            } 
+            return response()->json([
+                'exc' => false,
+                'msg' => $query
+            ], 200);
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
     function portal($user){
         if(!empty($user->kdDinas)){
             return [

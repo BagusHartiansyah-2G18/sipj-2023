@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Helper\Mfc;
+use App\Models\User;
 
 use App\Helper\Hdb;
 use Illuminate\Support\Facades\DB;
@@ -9,18 +11,21 @@ use Illuminate\Support\Facades\Auth;
 
 class Csub extends Controller
 {
+    private $Mfc, $Hdb;
     public function __construct(){
+        $this->Mfc = new Mfc();
+        $this->Hdb = new Hdb();
         $this->middleware('auth');
     }
     public function index(){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta'];
             return response()->json([
                 'exc' => true,
-                'data' => Hdb::getSubAll([
-                    "kdDinas"=>$user->kdDinas,
+                'data' => $this->Hdb->getSubAll([
+                    "kdDinas"=>$cek['user']->kdDinas,
                     "tahun"=>$tahun,
                 ])
             ], 200);
@@ -31,13 +36,13 @@ class Csub extends Controller
         ], 200);
     }
     public function sub($kdDinas){
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta'];
             return response()->json([
                 'exc' => true,
-                'data' => Hdb::getSub([
+                'data' => $this->Hdb->getSub([
                     "kdDinas"=>$kdDinas,
                     "tahun"=>$tahun,
                 ])
@@ -49,8 +54,8 @@ class Csub extends Controller
         ], 200);
     }
     public function setSubBidang(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta']; 
             try {
@@ -92,8 +97,8 @@ class Csub extends Controller
         ], 200);
     }
     public function delSubBidang(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();  
         if($cek['exc']){
             $tahun = $cek['ta']; 
             try {
@@ -136,7 +141,7 @@ class Csub extends Controller
         ], 200);
     }
     function portal($user){
-        if(!empty($user->kdDinas)){
+        if(!empty($cek['user']->kdDinas)){
             return [
                 "exc"=>true,
                 "ta"=>"2024"

@@ -145,6 +145,12 @@ function listMenu({ jenis }){
   ]
 }
 
+function openFormEntri(url){
+  window.open(api.UrlFormEntri+url)
+}
+function newTab(url){
+  window.open(api.BASE_URL+url)
+}
 export {
     actType,
 
@@ -158,4 +164,6 @@ export {
     session,
     changeMenu,
     changeMenuSub,
+    openFormEntri,
+    newTab
 }

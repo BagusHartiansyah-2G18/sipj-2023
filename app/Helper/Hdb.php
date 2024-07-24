@@ -12,7 +12,7 @@ class Hdb {
     }
 
     // dinas
-    function getDinas($user,$tahun){
+    function getDinas($user,$tahun){ 
         $data =[];
         if($user->kdJaba==3){
             $data = DB::table('dinas')
@@ -317,7 +317,7 @@ class Hdb {
     }
 
     // rincian Belanja
-    function getRincian($v){
+    function getRincian($v){ 
         return DB::select('
             select
                 a.nama, a.total, a.kdJudul, a.kdJenis, a.kdApbd6,
@@ -349,8 +349,8 @@ class Hdb {
                 a.kdJudul = d.kdJudul and
                 a.taJudul = d.taJudul
             where a.kdDinas = "'.$v['kdDinas'].'" and
-            a.kdSub = "'.$v['kdSub'].'" and
-            
+            a.kdSub = "'.$v['kdSub'].'" and 
+            a.tahapan = 3 and 
             a.taJudul = "'.$v['tahun'].'"
         ');
         // a.kdBidang = "'.$v['kdBidang'].'" and
@@ -450,7 +450,8 @@ class Hdb {
                 a.kdJudul, a.nama, a.total, a.kdApbd6,
                 b.kdSub, b.nmSub,
                 c.nmKeg, c.kdKeg,
-                d.total as totWork, d.date,d.tujuan, d.tempatE
+                d.total as totWork, d.date,d.tujuan, d.tempatE,
+                e.nmApbd6
             from  ubjudul a
             join work d on
                 a.kdJudul = d.kdJudul and
@@ -461,9 +462,48 @@ class Hdb {
                 a.kdSub = b.kdSub and
                 a.taJudul = b.taSub and 
                 a.kdDinas = b.kdDinas
+            join apbd6 e on 
+                a.kdApbd6 = e.kdApbd6 and
+                a.taJudul = e.taApbd6
             left join pkegiatan c on
                 c.kdKeg = b.kdKeg and
                 c.taKeg = b.taSub
+            where
+                a.kdJudul="'.$v['kdJudul'].'" and
+                a.kdSub="'.$v['kdSub'].'" and
+                b.kdBidang="'.$v['kdBidang'].'" and
+                a.kdDinas="'.$v['kdDinas'].'" and
+                a.taJudul="'.$v['tahun'].'" 
+                
+                '.$v['where'].'
+        ');
+        //and d.no="'.$v['no'].'"
+    }
+
+    function getDataSPJKegiatan($v){ 
+        return DB::select('
+            select
+                a.kdJudul, a.nama, a.total, a.kdApbd6,
+                b.kdSub, b.nmSub,
+                c.nmKeg, c.kdKeg,
+                d.data, d.volume, d.satuan, d.totVol, d.totSatuan, d.keterangan,
+                e.nmApbd6
+            from  ubjudul a
+            join spjs d on
+                a.kdJudul = d.kdJudul and
+                a.kdDinas = d.kdDinas and
+                a.kdSUb = d.kdSub and 
+                a.taJudul = d.taSPJ
+            join psub b on
+                a.kdSub = b.kdSub and
+                a.taJudul = b.taSub and 
+                a.kdDinas = b.kdDinas
+            left join pkegiatan c on
+                c.kdKeg = b.kdKeg and
+                c.taKeg = b.taSub
+            join apbd6 e on 
+                a.kdApbd6 = e.kdApbd6 and
+                a.taJudul = e.taApbd6
             where
                 a.kdJudul="'.$v['kdJudul'].'" and
                 a.kdSub="'.$v['kdSub'].'" and
@@ -474,7 +514,6 @@ class Hdb {
                 '.$v['where'].'
         ');
     }
-
 
 
     function dwork($v){
@@ -551,6 +590,7 @@ class Hdb {
         if(isset($v['where'])){
             $where.=$v['where'];
         }
+         
         return DB::select('
             select
                 a.no, a.date, a.status, a.kdBAnggota,a.noSPPD,a.kdBidang ,
@@ -689,6 +729,45 @@ class Hdb {
             from workuraian a
             '.$where.'
         ');
+    }
+
+
+    // Tenaga AHli
+    function getDataJudulSub($v){
+        $que='
+            select
+                a.kdJudul, a.nama, a.total,
+                b.kdSub, b.nmSub ,
+                (
+                    select sum(a1.volume * a1.nilai)
+                    from workuraian a1
+                    join work b1 on
+                        a1.kdDinas = b1.kdDinas and
+                        a1.kdBidang = b1.kdBidang and
+                        a1.kdSub = b1.kdSub and
+                        a1.taWork = b1.taWork
+                    where a1.kdDinas="'.$v['kdDinas'].'" and
+                    a1.kdSub = "'.$v['kdSub'].'" and
+                    a1.kdBidang = "'.$v['kdBidang'].'" and
+                    a1.taWork  = "'.$v['tahun'].'" and
+                    b1.status ="final" and
+                    b1.kdJudul=a.kdJudul
+                ) as realisasi
+            from  ubjudul a 
+            join psub b on
+                a.kdSub = b.kdSub and
+                a.taJudul = b.taSub and 
+                a.kdDinas = b.kdDinas
+            where
+                a.kdJudul="'.$v['kdJudul'].'" and
+                a.kdSub="'.$v['kdSub'].'" and
+                b.kdBidang="'.$v['kdBidang'].'" and
+                a.kdDinas="'.$v['kdDinas'].'" and
+                a.taJudul="'.$v['tahun'].'"  and 
+                a.tahapan = 3
+        ';
+        // return ($que);
+        return DB::select($que);
     }
 }
 

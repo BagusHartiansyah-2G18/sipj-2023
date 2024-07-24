@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Helper\Hdb;
+use App\Helper\Mfc;
+use App\Models\User;
+
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,18 +14,21 @@ use Illuminate\Support\Facades\DB;
 
 class Cdinas extends Controller
 {
+    private $Mfc, $Hdb;
     public function __construct(){
-        $this->middleware('auth');
+        $this->Mfc = new Mfc();
+        $this->Hdb = new Hdb(); 
+        $this->middleware('auth'); 
     }
     public function sess(){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             return response()->json([
                 'exc' => true,
                 'data' =>[
-                    "user" => $user,
-                    "jenis" =>Hdb::jenisP()
+                    "user" => Auth::user(),
+                    "jenis" =>$this->Hdb->jenisP()
                 ]
             ], 200);
         }
@@ -32,17 +38,17 @@ class Cdinas extends Controller
         ], 200);
     }
     public function index(){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
-            $data =Hdb::getDinas($user,$tahun);
-            $data[0]->bidang = Hdb::getDBidang([
+            $data =$this->Hdb->getDinas($cek['user'],$tahun);
+            $data[0]->bidang = $this->Hdb->getDBidang([
                 "kdDinas" =>$data[0]->kdDinas,
                 "tahun" => $tahun
             ]);
             if(count($data[0]->bidang)>0){
-                $data[0]->bidang[0]->anggota= Hdb::getDAnggota([
+                $data[0]->bidang[0]->anggota= $this->Hdb->getDAnggota([
                     "kdDinas" =>  $data[0]->kdDinas,
                     "kdBidang"=> $data[0]->bidang[0]->kdDBidang,
                     "tahun"   =>$tahun
@@ -59,8 +65,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function added(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             try {
@@ -77,7 +83,7 @@ class Cdinas extends Controller
                     'msg' => $th->getMessage()
                 ], 200);
             }
-            $data =Hdb::dinasAdded([
+            $data =$this->Hdb->dinasAdded([
                 $request->kdDinas,
                 $request->nmDinas,
                 $request->asDinas,
@@ -93,8 +99,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function upded(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             try {
@@ -138,8 +144,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function deled(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             $request->validate([
@@ -169,16 +175,16 @@ class Cdinas extends Controller
     }
 
     public function bidang($kdDinas){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
-            $data =Hdb::getDBidang([
+            $data =$this->Hdb->getDBidang([
                 "kdDinas" =>$kdDinas,
                 "tahun" => $tahun
             ]);
             if (count($data)>0) {
-                $data[0]->anggota=Hdb::getDAnggota([
+                $data[0]->anggota=$this->Hdb->getDAnggota([
                     "kdDinas" =>  $kdDinas,
                     "kdBidang"=> $data[0]->kdDBidang,
                     "tahun"   => $tahun
@@ -195,8 +201,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function addedBidang(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             try {
@@ -211,13 +217,13 @@ class Cdinas extends Controller
                     'msg' => $th->getMessage()
                 ], 200);
             }
-            if (Hdb::bidangAdded($request->kdDinas, $request->nmBidang, $request->asBidang, $tahun)) {
-                $data =Hdb::getDBidang([
+            if ($this->Hdb->bidangAdded($request->kdDinas, $request->nmBidang, $request->asBidang, $tahun)) {
+                $data =$this->Hdb->getDBidang([
                     "kdDinas" =>$request->kdDinas,
                     "tahun" => $tahun
                 ]);
                 if (count($data)>0) {
-                    $data[0]->anggota=Hdb::getDAnggota([
+                    $data[0]->anggota=$this->Hdb->getDAnggota([
                         "kdDinas" =>  $request->kdDinas,
                         "kdBidang"=> $data[0]->kdDBidang,
                         "tahun"   => $tahun
@@ -240,8 +246,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function updedBidang(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             try {
@@ -286,8 +292,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function deledBidang(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             $request->validate([
@@ -320,13 +326,13 @@ class Cdinas extends Controller
 
 
     public function anggota($kdDinas,$kdDBidang){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             return response()->json([
                 'exc' => true,
-                'data' => Hdb::getDAnggota([
+                'data' => $this->Hdb->getDAnggota([
                     "kdDinas" =>  $kdDinas,
                     "kdBidang"=> $kdDBidang,
                     "tahun"   => $tahun
@@ -339,8 +345,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function addedAnggota(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             try {
@@ -363,7 +369,7 @@ class Cdinas extends Controller
             }
 
             if (
-                Hdb::AnggotaAdded(
+                $this->Hdb->AnggotaAdded(
                     $request->kdDinas,
                     $request->kdDBidang,
                     $request->nmAnggota,
@@ -378,7 +384,7 @@ class Cdinas extends Controller
             ){
                 return response()->json([
                     'exc' => true,
-                    'data' => Hdb::getDAnggota([
+                    'data' => $this->Hdb->getDAnggota([
                         "kdDinas" =>  $request->kdDinas,
                         "kdBidang"=> $request->kdDBidang,
                         "tahun"   => $tahun
@@ -398,8 +404,8 @@ class Cdinas extends Controller
     }
     public function updedAnggota(Request $request){
 
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             try {
@@ -455,8 +461,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function deledAnggota(Request $request){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             $request->validate([
@@ -486,21 +492,22 @@ class Cdinas extends Controller
     }
 
     public function dinasBidangSub(){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
-            $tahun = $cek['ta'];
-            $data =Hdb::getDinas($user,$tahun);
+            $tahun = $cek['ta'];  
+            $data =$this->Hdb->getDinas($cek['user'],$tahun);
+            
             $param = [
                 "kdDinas" =>$data[0]->kdDinas,
                 "tahun" => $tahun,
             ];
-            if($user->kdJaba == 1){
-                $param["kdBidang"] = $user->kdBidang;
+            if($cek['user']->kdJaba == 1){
+                $param["kdBidang"] = $cek['user']->kdBidang;
             }
-            $data[0]->bidang = Hdb::getDBidang($param);
+            $data[0]->bidang = $this->Hdb->getDBidang($param);
             $param["kdBidang"] ='';
-            $data[0]->sub = Hdb::getSub($param);
+            $data[0]->sub = $this->Hdb->getSub($param);
             return response()->json([
                 'exc' => true,
                 'data' => $data
@@ -512,19 +519,19 @@ class Cdinas extends Controller
         ], 200);
     }
     public function dinasDataBidangSub($kdDinas){ // all data 1 list
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             $param = [
                 "kdDinas" =>$kdDinas,
                 "tahun" => $tahun,
             ];
-            $bidang= Hdb::getDBidang($param);
+            $bidang= $this->Hdb->getDBidang($param);
             $sub=array();
             if(count($bidang)>0){
                 $param["kdBidang"] ='';
-                $sub = Hdb::getSub($param);
+                $sub = $this->Hdb->getSub($param);
             }
             return response()->json([
                 'exc' => true,
@@ -540,15 +547,15 @@ class Cdinas extends Controller
         ], 200);
     }
     public function dinasDataBidang($kdDinas){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             $param = [
                 "kdDinas" =>$kdDinas,
                 "tahun" => $tahun,
             ];
-            $bidang= Hdb::getDBidang($param);
+            $bidang= $this->Hdb->getDBidang($param);
             return response()->json([
                 'exc' => true,
                 'data' => $bidang
@@ -560,8 +567,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function getSubBidang($kdDinas,$kdBidang){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             $param = [
@@ -569,10 +576,10 @@ class Cdinas extends Controller
                 "tahun" => $tahun,
                 "kdBidang"=> $kdBidang,
             ];
-            $sub = Hdb::getSub($param);
+            $sub = $this->Hdb->getSub($param);
             if(count($sub)>0){
                 $param["kdSub"] = $sub[0]->kdSub;
-                $sub[0]->rincian = Hdb::getRincian($param);
+                $sub[0]->rincian = $this->Hdb->getRincian($param);
             }
 
 
@@ -587,8 +594,8 @@ class Cdinas extends Controller
         ], 200);
     }
     public function getUraianSub($kdDinas,$kdBidang,$kdSub){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             $param = [
@@ -597,7 +604,7 @@ class Cdinas extends Controller
                 "kdBidang"=> $kdBidang,
                 "kdSub"=>$kdSub
             ];
-            $rincian = Hdb::getRincian($param);
+            $rincian = $this->Hdb->getRincian($param);
             return response()->json([
                 'exc' => true,
                 'data' => $rincian
@@ -610,12 +617,12 @@ class Cdinas extends Controller
     }
 
     public function rincian(){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
             try {
-                $data =Hdb::getDinasJoined($user,$tahun);
+                $data =$this->Hdb->getDinasJoined($cek['user'],$tahun);
                 if(count($data)==0){
                     throw " Fitur ini membutuhkan data Dinas";
                 }
@@ -624,25 +631,25 @@ class Cdinas extends Controller
                     "tahun" => $tahun,
                     "kdBidang"=>''
                 ];
-                if($user->kdJaba == 1){
-                    $param["kdBidang"] = $user->kdBidang;
+                if($cek['user']->kdJaba == 1){
+                    $param["kdBidang"] = $cek['user']->kdBidang;
                 }
-                $data[0]->bidang = Hdb::getDBidang($param);
-                $data[0]->jenis = Hdb::jenisP();
-                $data[0]->apbd = Hdb::apbd($param);
+                $data[0]->bidang = $this->Hdb->getDBidang($param);
+                $data[0]->jenis = $this->Hdb->jenisP();
+                $data[0]->apbd = $this->Hdb->apbd($param);
                 if(count($data[0]->bidang)==0){
                     throw new Exception(" Fitur ini membutuhkan data Bidang", 1);
                 }
                 if(empty($param["kdBidang"])){
                     $param["kdBidang"] = $data[0]->bidang[0]->kdDBidang;
                 }
-                $data[0]->bidang[0]->sub = Hdb::getSub($param);
+                $data[0]->bidang[0]->sub = $this->Hdb->getSub($param);
                 if(count($data[0]->bidang[0]->sub)==0){
                     throw new Exception(" Fitur ini membutuhkan data Sub kegiatan", 1);
                 }
 
-                $param["kdSub"] = $data[0]->bidang[0]->sub[0]->kdSub;
-                $data[0]->bidang[0]->sub[0]->rincian = Hdb::getRincian($param);
+                $param["kdSub"] = $data[0]->bidang[0]->sub[0]->kdSub; 
+                $data[0]->bidang[0]->sub[0]->rincian = $this->Hdb->getRincian($param);
 
                 return response()->json([
                     'exc' => true,
@@ -661,16 +668,5 @@ class Cdinas extends Controller
         ], 200);
     }
 
-    function portal($user){
-        if(!empty($user->kdDinas)){
-            return [
-                "exc"=>true,
-                "ta"=>"2024"
-            ];
-        }
-        return [
-            "exc"=>false,
-            "msg"=>" user can't Dinas !!!"
-        ];
-    }
+     
 }

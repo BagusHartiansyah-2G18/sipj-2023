@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Helper\Mfc;
 
 use App\Helper\Hdb;
 use Illuminate\Http\Request;
@@ -9,17 +10,19 @@ use Illuminate\Support\Facades\DB;
 
 class Cjenis extends Controller
 {
+    private $Mfc, $Hdb;
     public function __construct(){
-        // $this->middleware('auth');
+        $this->Mfc = new Mfc();
+        $this->Hdb = new Hdb();
+        $this->middleware('auth');
     }
-    public function index(){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+    public function index(){  
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta'];
-            $data =Hdb::jenisP();
+            $data =$this->Hdb->jenisP();
             if(count($data)>0){
-                $data[0]->dukung = Hdb::jenisDataDukung([
+                $data[0]->dukung = $this->Hdb->jenisDataDukung([
                     "kdJPJ" =>  $data[0]->kdJPJ,
                 ]); 
             }
@@ -34,13 +37,13 @@ class Cjenis extends Controller
         ], 200);
     }
     public function added(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $request->validate([
                 'nmJPJ'=> 'required',
             ]);  
-            $data =Hdb::jenisAdded($request->nmJPJ);
+            $data =$this->Hdb->jenisAdded($request->nmJPJ);
             return $this->index();
         }
         return response()->json([
@@ -49,8 +52,8 @@ class Cjenis extends Controller
         ], 200);
     }
     public function upded(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $request->validate([
                 'kdJPJ'=> 'required',
@@ -75,8 +78,8 @@ class Cjenis extends Controller
         ], 200);
     }
     public function deled(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $request->validate([
                 'kdJPJ'=> 'required',
@@ -100,13 +103,13 @@ class Cjenis extends Controller
     }
 
     public function dataDukung($jenisP){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $tahun = $cek['ta']; 
             return response()->json([
                 'exc' => true,
-                'data' => Hdb::jenisDataDukung([
+                'data' => $this->Hdb->jenisDataDukung([
                             "kdJPJ" =>  $jenisP,
                         ])
             ], 200);
@@ -117,14 +120,14 @@ class Cjenis extends Controller
         ], 200);
     }
     public function addedDukung(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $request->validate([
                 'kdJPJ'=> 'required',
                 'nmDP'=> 'required',
             ]);  
-            $data =Hdb::jenisDukungAdded($request->kdJPJ,$request->nmDP);
+            $data =$this->Hdb->jenisDukungAdded($request->kdJPJ,$request->nmDP);
             return $this->dataDukung($request->kdJPJ);
         }
         return response()->json([
@@ -133,8 +136,8 @@ class Cjenis extends Controller
         ], 200);
     }
     public function updedDukung(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $request->validate([
                 'kdJPJ'=> 'required',
@@ -161,8 +164,8 @@ class Cjenis extends Controller
         ], 200);
     }
     public function deledDukung(Request $request){ 
-        $user =Auth::user();
-        $cek = $this->portal($user); 
+        
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $request->validate([
                 'kdJPJ'=> 'required',

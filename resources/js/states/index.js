@@ -5,6 +5,7 @@ import rekReducer from './rekeningB/reducer';
 import jenisReducer from './jenisP/reducer';
 import htmlReducer from './sfHtml/reducer';
 import sppdReducer from './sppd/reducer';
+import taReducer from './tenagaAhli/reducer';
 
 const store = configureStore({
     reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
       _jenis:jenisReducer,
       _html:htmlReducer,
       _sppd:sppdReducer,
+      _ta:taReducer,
     },
 });
   

@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Resume</title>
-    <style>
+    <!-- <style>
         .page-break {
             page-break-after: always;
         }
@@ -43,9 +43,11 @@
         .bbottom{border-bottom: 1px solid;}
 
         .capitalize{text-transform: capitalize;}
-    </style>
+    </style> -->
+    <link rel="stylesheet" href="{{url('css/sf.css')}}" >
+
 </head>
-<body class="fz14" style="font-family: Arial, Helvetica, sans-serif;">
+<body class="fzU" style="font-family: Arial, Helvetica, sans-serif;">
     @php
         $spaceTT = '<br><br><br><br><br>';
         $line ='____________________';
@@ -55,12 +57,12 @@
 
 
     @foreach ($data as $dt)
-        <div class=" container">
-            <div class="right">
-                <table border="1" class="fz12" width="300px">
+        <div class=" container w100p">
+            <div style="display:grid; justify-content: end;">
+                <table  class="fz12 bTabel" >
 
                     <tr>
-                        <td class="w50p">Nomor Rekening</td>
+                        <td class="">Nomor Rekening</td>
                         <td>{{$noRek}}</td>
 <!--                         <td></td> -->
                     </tr>
@@ -74,8 +76,7 @@
                     </tr>
                 </table>
             </div>
-            <table  class="fz12 w100p " style="border-collapse: collapse;">
-
+            <table  class="fz12 w100p " style="border-collapse: collapse;"> 
                 <tr>
                     <td class="w20p"></td>
                     <td class="w2p"></td>
@@ -217,8 +218,8 @@
                     <td>{{$tglSppd}}</td>
                 </tr>
                 <tr>
-                    <td colspan="3" border="0">
-                        <table class="w100p" border="1">
+                    <td colspan="3"  >
+                        <table class="w100p bTabel">
                             <tr>
                                 <td class="w2p">No</td>
                                 <td class="w30p tcenter">PERINCIAN BIAYA</td>
@@ -320,5 +321,9 @@
             <div class="page-break"></div>
         @endif
     @endforeach
+
+    <script>
+        window.print();
+    </script>
 </body>
 </html>

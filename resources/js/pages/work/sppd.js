@@ -1,6 +1,5 @@
 /* eslint-disable react/no-children-prop */
-import React, { useEffect }  from "react";
-import { useState } from 'react';
+import React, { useEffect, useState }  from "react"; 
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -52,13 +51,11 @@ function SPPD(){
         setindWork(i);
         setview(0);
     }
-    // if(indWork<0){
-    //     stepSetAnggota({no:'13'});
-    //     setview(3);
+    // if(indWork>0){
+    //     console.log(_sppd.dwork[indWork].anggota);
     // }
     // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
-    // console.log(_sppd.dwork[indWork]);
-
+    // console.log(_sppd.dwork[indWork]); 
     return (
         <>
             <HeaderPage1

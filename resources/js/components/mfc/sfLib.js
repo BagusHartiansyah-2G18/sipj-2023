@@ -1,6 +1,15 @@
 const sfLib =(()=>{
-
+    const nmBulan =[
+        "JANUARI","FEBRUARI","MARET","APRIL",
+        "MEI","JUNI","JULI","AGUSTUS","SEPTEMBER",
+        "OKTOBER","NOVEMBER","DESEMBER"
+    ]
     function coptionSelect({dt,row,xind=false}){
+        // sfLib.coptionSelect({
+        //     dt:duser,
+        //     xind:true,
+        //     row:{label:'nmAnggota', value:'value'},
+        // })
         let xdt=[];
         dt.forEach((val,ind) => {
            xdt.push({
@@ -68,11 +77,15 @@ const sfLib =(()=>{
         }
         return c.join("");
     }
+    function __namaBulan(bulan) {
+        return nmBulan[bulan-1];
+    }
     return {
         coptionSelect,
         objToCB,
         _$,
         readFile,
+        __namaBulan,
     }
 })();
 export default sfLib;

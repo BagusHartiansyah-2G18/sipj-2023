@@ -2,8 +2,15 @@ import React from "react";
 import { useInput } from '../../../../hooks/useInput';
 import PropTypes from "prop-types";
 
-function FormNoSppd( { updNomorSppd, ind, dt } ){
-    const [noSppd, setnoSppd] = useInput((dt.noSPPD !=undefined ? dt.noSPPD:''));
+function FormNoSppd( { updNomorSppd, ind, dt, start } ){ 
+    const [noSppd, setnoSppd] = useInput();
+    if(start.start){
+        start.start=false; 
+        setnoSppd({target:{
+            value:(dt.noSPPD !=undefined && dt.noSPPD !=null ? dt.noSPPD:'') 
+        }})
+        
+    }
 
     return (
         <div className="ptb10px">

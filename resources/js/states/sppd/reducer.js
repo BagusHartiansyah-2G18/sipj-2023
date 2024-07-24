@@ -135,7 +135,7 @@ function selectdwork({ dt, act }){
       dwork = dt.dwork.filter((v,i)=>i!=act.ind);
     break;
     case actType.workSetAnggota:
-      let anggota=[];
+      let anggota=[]; 
       if(act.dt.length>0){
         anggota = concatDataAnggotaSelected({
           dataTerpilih: act.dt,
@@ -143,7 +143,7 @@ function selectdwork({ dt, act }){
           param: act.param,
           dpendukung: dt.dpendukung,
         })
-      }
+      }  
       dwork = dt.dwork.map((v,i)=>{
         if(i=== act.ind){
           return{
@@ -294,7 +294,7 @@ function selectdwork({ dt, act }){
         return v;
       })
     break;
-  }
+  }   
   return {
     ...dt,
     dwork
@@ -317,8 +317,8 @@ function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung })
             kdBidang:v1.kdBidang,
             kdBAnggota: v.kdBAnggota,
             ddukung:(v1.ddukung==undefined? dpendukung: v1.ddukung),
-            noSPPD :v1.noSPPD
-            // uraian:(v1.uraian==undefined? []: v1.uraian)
+            noSPPD :v1.noSPPD,
+            uraian:(v.uraian==undefined? []: v.uraian)
         });
         add=false;
       }

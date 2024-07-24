@@ -65,9 +65,9 @@ function SelectDataUtama({ dt, ind, updDataBidang }) {
             width: '150px'
         }
     ];
-    const getLink=(v)=>{
-        switch (v.nmJPJ) {
-            case 'SPPD':
+    const getLink=(v)=>{ 
+        switch (v.kdJenis) {
+            case 'jp-1':
                 return (
                     <Link to={`/home/work/sppd/${btoa(JSON.stringify({
                         kdDinas: v.kdDinas,
@@ -75,7 +75,18 @@ function SelectDataUtama({ dt, ind, updDataBidang }) {
                         kdSub: v.kdSub,
                         kdJudul: v.kdJudul
                     }))}`} >
-                        <button className="btn2 cprimary" title="triwulan">Realisasikan</button>
+                        <button className="btn2 cprimary" title="SPPD">Realisasikan</button>
+                    </Link>
+                );
+            case 'jp-3':
+                return (
+                    <Link to={`/home/work/ta/${btoa(JSON.stringify({
+                        kdDinas: v.kdDinas,
+                        kdBidang: v.kdBidang,
+                        kdSub: v.kdSub,
+                        kdJudul: v.kdJudul
+                    }))}`} >
+                        <button className="btn2 cprimary" title="Tenaga Ahli">Realisasikan</button>
                     </Link>
                 );
             default:

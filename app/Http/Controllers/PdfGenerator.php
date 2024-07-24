@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helper\Hdb;
 use App\Helper\Hsf;
+use App\Helper\Mfc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -13,20 +14,25 @@ use function PHPUnit\Framework\returnSelf;
 
 class PdfGenerator extends Controller
 {
+    private $Mfc, $Hdb, $Hsf;
     public function __construct(){
+        $this->Mfc = new Mfc();
+        $this->Hdb = new Hdb();
+        $this->Hsf = new Hsf();
         $this->middleware('auth');
     }
     public function kwitansiSppd($val){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
+            // return print_r($baseEND);
             $param = [
                 "kdDinas"=>$baseEND->{'kdDinas'},
                 "kdBidang"=>$baseEND->{'kdBidang'},
                 "kdSub"=>$baseEND->{'kdSub'},
                 "kdJudul"=>$baseEND->{'kdJudul'},
-                "no"=>$baseEND->{'no'},
+                // "no"=>$baseEND->{'noSPPD'},
                 "tahun"=>$cek['ta'],
                 "kdJPJ"=>'jp-1',
                 "tglCetak"=>$baseEND->{'tglCetak'},
@@ -47,14 +53,16 @@ class PdfGenerator extends Controller
             //     'noSPPD'=> $param['noSPPD'],
             // ]);
             // echo("<pre>");
-            // return print_r(Hdb::getDataSppdKegiatan($param));
+            // return print_r($this->Hdb->getDataSppdKegiatan($param));
 
-            $data =Hdb::getDataSppdKegiatan($param)[0];
+            $data =$this->Hdb->getDataSppdKegiatan($param)[0];
             $param["where"]= ' and a.kdBAnggota !=""';
             unset($param['kdBidang']);
-            $member = Hdb::dworkAnggotaBidang($param);
-
-            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
+            // unset($param['kdBidang']);
+            $member = $this->Hdb->dworkAnggotaBidang($param);
+            
+            // return $this->Mfc->log($member);
+            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
 
             $total=[];
 
@@ -63,14 +71,14 @@ class PdfGenerator extends Controller
                     $xtotal=0;
                     $param["kdBAnggota"]=$value->kdBAnggota;
                     $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
-                    $member[$key]->ddukung = Hdb::jenisDataDukung($param);
+                    $member[$key]->ddukung = $this->Hdb->jenisDataDukung($param);
                     if(count($member[$key]->ddukung)>0){
                         foreach ($member[$key]->ddukung as $key1 => $value1) {
                             $param["kdBAnggota"]=$value->kdBAnggota;
                             $param["kdDP"]=$value1->kdDP;
                             $param["kdBidang"]=$value->kdBidang;
                             // return print_r($value);
-                            $member[$key]->ddukung[$key1]->uraian = Hdb::dworkUraian($param);
+                            $member[$key]->ddukung[$key1]->uraian = $this->Hdb->dworkUraian($param);
 
                             foreach ($member[$key]->ddukung[$key1]->uraian as $key2 => $value2) {
                                 $xtotal+=$value2->nilai*$value2->volume;
@@ -78,7 +86,7 @@ class PdfGenerator extends Controller
                         }
                     }
                     $total[$key]=$xtotal;
-                    // $anggotaWork[$key]->uraian = Hdb::dworkUraian($param);
+                    // $anggotaWork[$key]->uraian = $this->Hdb->dworkUraian($param);
                 }
             }
 
@@ -89,7 +97,7 @@ class PdfGenerator extends Controller
 
             $textTotal=[];
             foreach ($total as $key => $value) {
-                $textTotal[$key]=Hsf::terbilang($value)." Rupiah";
+                $textTotal[$key]=$this->Hsf->terbilang($value)." Rupiah";
             }
             // return print_r($data);
             $asKab = 'Kabupaten Sumbawa Barat';
@@ -115,7 +123,7 @@ class PdfGenerator extends Controller
                 'tujuan' => $data->tempatE,
                 "no" =>"000.1.2.3/",
                 // 'noSppd' => $param['no'],
-                'tglSppd' => $date[2]." ".$this->getBulan($date[1])." ".$date[0],
+                'tglSppd' => $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0],
 
                 'kaban' => 'Data Pimpinan 0',
                 'nipKaban' => '-',
@@ -128,7 +136,7 @@ class PdfGenerator extends Controller
 
 
             $param['status']=' and a.status!="lainnya"';
-            $danggota =Hdb::getAllBidangAnggota($param);
+            $danggota =$this->Hdb->getAllBidangAnggota($param);
             foreach ($danggota as $key => $value) {
                 if($value->status=='pimpinan'){
                     $datax['kaban']= $value->nmAnggota;
@@ -138,6 +146,9 @@ class PdfGenerator extends Controller
                     $datax['nipBendahara']=$value->nip;
                 }
             }
+            // echo("<pre>");
+            // return print_r($datax);
+            return view('pdf.kwitansiSppd', $datax);
             $pdf = PDF::loadView('pdf.kwitansiSppd', $datax)
                     ->setPaper('legal','portrait');
             return $pdf->stream('kwitansi-'.$datax['noRek']."-".$param['no'].'.pdf');
@@ -149,8 +160,8 @@ class PdfGenerator extends Controller
     }
 
     public function SuratTugasSppd($val){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
             $param = [
@@ -165,11 +176,11 @@ class PdfGenerator extends Controller
             $param["where"]= ' and a.kdBAnggota =""';
 
             // dwork
-            $data =Hdb::dwork($param)[0];
+            $data =$this->Hdb->dwork($param)[0];
 
             $param["where"]= ' and a.kdBAnggota !=""';
             // Anggota Bidang
-            $member = Hdb::dworkAnggotaBidang($param);
+            $member = $this->Hdb->dworkAnggotaBidang($param);
 
             //kepala SKPD
             $pimpinan = $this->getTTPimpinan(
@@ -199,8 +210,8 @@ class PdfGenerator extends Controller
             // echo("<pre>");
             // return print_r($subPimpinan);
 
-            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
-            $setda = Hdb::getDinasOne( $cek['setda'],$param['tahun']);
+            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
+            $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']);
             // echo("<pre>");
             // return print_r($dinas);
 
@@ -215,27 +226,32 @@ class PdfGenerator extends Controller
             // Array ( [0] => 2023 [1] => 08 [2] => 27 )
 
             $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+            if(strlen($data->dateE)>1){
+                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+                $hari++;
+            }
+
             $dateS = explode("-",$data->date);
             $dateE = [];
             $textTanggal = $dateS[2];
             if(!empty($data->dateE) && $data->dateE!=$data->date){
                 $dateE = explode("-",$data->dateE);
                 if($dateS[1]==$dateE[1]){
-                    $textTanggal.=" s/d ".$dateE[2]." ".$this->getBulan($dateS[1])." ".$dateE[0] ;
+                    $textTanggal.=" s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateE[0] ;
                 }else{
-                    $textTanggal.=" ".$this->getBulan($dateS[1])." s/d ".$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ;
+                    $textTanggal.=" ".$this->Mfc->__bulan($dateS[1])." s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ;
                 }
             }else{
-                $textTanggal .= " ".$this->getBulan($dateS[1])." ".$dateS[0] ;
+                $textTanggal .= " ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ;
             }
 
             $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
-            $tglCetak = $date[2]." ".$this->getBulan($date[1])." ".$date[0];
+            $tglCetak = $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0];
             // $asdiskab= $dinas->asDinas.' '.$asKab;
             $datax = [
                 // 'dinas' =>$dinas->nmDinas,
-                // 'asDinas' => $dinas->asDinas,
+                'asDinas' => $dinas->asDinas,
                 // 'alamat'    => $dinas->alamat,
                 'asKab' => 'Kab. Sumbawa Barat',
                 'kab' => 'Kabupaten Sumbawa Barat',
@@ -255,10 +271,13 @@ class PdfGenerator extends Controller
 
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
-
-                'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
+                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari",
+                
+                // /".$this->getRomawi($date[1])."
+                'nomor' =>"000.1.2.3/".$spaci."/ <span class='tupper'>".$dinas->asDinas."</span> /".$date[0],
                 'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
             ];
+            return view('pdf.suratTugas', $datax);
             $pdf = PDF::loadView('pdf.suratTugas', $datax)
                     ->setPaper('legal','portrait');
             return $pdf->stream('Surat-Tugas-Sppd-'.$data->no.'.pdf');
@@ -269,8 +288,8 @@ class PdfGenerator extends Controller
         ], 200);
     }
     public function SuratTugasSppdx($val){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
             $param = [
@@ -285,11 +304,11 @@ class PdfGenerator extends Controller
             $param["where"]= ' and a.kdBAnggota =""';
 
             // dwork
-            $data =Hdb::dwork($param)[0];
+            $data =$this->Hdb->dwork($param)[0];
 
             $param["where"]= ' and a.kdBAnggota !=""';
             // Anggota Bidang
-            $member = Hdb::dworkAnggotaBidang($param);
+            $member = $this->Hdb->dworkAnggotaBidang($param);
             // echo("<pre>");
             // return print_r($member);
 
@@ -318,7 +337,7 @@ class PdfGenerator extends Controller
                 }
             }
 
-            $setdaPim = Hdb::getAnggotaJabatan([
+            $setdaPim = $this->Hdb->getAnggotaJabatan([
                 "kdDinas"=>$cek['setda'],
                 "tahun"=>$param['tahun'],
                 "status"=>"setda"
@@ -326,8 +345,8 @@ class PdfGenerator extends Controller
             // echo("<pre>");
             // return print_r($subPimpinan);
 
-            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
-            $setda = Hdb::getDinasOne( $cek['setda'],$param['tahun']);
+            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
+            $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']);
             // echo("<pre>");
             // return print_r($dinas);
 
@@ -342,27 +361,31 @@ class PdfGenerator extends Controller
             // Array ( [0] => 2023 [1] => 08 [2] => 27 )
 
             $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+            if(strlen($data->dateE)>1){
+                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+                $hari++;
+            }
             $dateS = explode("-",$data->date);
             $dateE = [];
             $textTanggal = $dateS[2];
             if(!empty($data->dateE) && $data->dateE!=$data->date){
                 $dateE = explode("-",$data->dateE);
                 if($dateS[1]==$dateE[1]){
-                    $textTanggal.=" s/d ".$dateE[2]." ".$this->getBulan($dateS[1])." ".$dateE[0] ;
+                    $textTanggal.=" s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateE[0] ;
                 }else{
-                    $textTanggal.=" ".$this->getBulan($dateS[1])." s/d ".$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ;
+                    $textTanggal.=" ".$this->Mfc->__bulan($dateS[1])." s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ;
                 }
             }else{
-                $textTanggal .= " ".$this->getBulan($dateS[1])." ".$dateS[0] ;
+                $textTanggal .= " ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ;
             }
 
             $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
-            $tglCetak = $date[2]." ".$this->getBulan($date[1])." ".$date[0];
+            $tglCetak = $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0];
             // $asdiskab= $dinas->asDinas.' '.$asKab;
             $datax = [
                 // 'dinas' =>$dinas->nmDinas,
-                // 'asDinas' => $dinas->asDinas,
+                'asDinas' => $dinas->asDinas,
                 // 'alamat'    => $dinas->alamat,
                 'asKab' => 'Kab. Sumbawa Barat',
                 'kab' => 'Kabupaten Sumbawa Barat',
@@ -383,10 +406,13 @@ class PdfGenerator extends Controller
 
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
-
-                'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
+                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari",
+                // ".$this->getRomawi($date[1])."/
+                'nomor' =>"000.1.2.3/".$spaci."/<span class='tupper'>".$dinas->asDinas."</span>/".$date[0],
+                // 'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$date[0],
                 'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
             ];
+            return view('pdf.suratTugasx', $datax);
             $pdf = PDF::loadView('pdf.suratTugasx', $datax)
                     ->setPaper('legal','portrait');
             return $pdf->stream('Surat-Tugas-Sppd-'.$data->no.'.pdf');
@@ -398,8 +424,8 @@ class PdfGenerator extends Controller
     }
 
     public function SuratTugasSppdDaerah($val){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
             $param = [
@@ -411,15 +437,19 @@ class PdfGenerator extends Controller
                 "tahun"=>$cek['ta'],
                 "tglCetak"=>$baseEND->{'tglCetak'}
             ];
+            // $param["where"]= ' and d.kdBAnggota =""'; 
+            // $subRek =$this->Hdb->getDataSppdKegiatan($param)[0];
+            // unset($param['kdBidang']);
             $param["where"]= ' and a.kdBAnggota =""';
 
+            // return print_r($subRek);
             // dwork
-            $data =Hdb::dwork($param)[0];
+            $data =$this->Hdb->dwork($param)[0];
 
             $param["where"]= ' and a.kdBAnggota !=""';
             // Anggota Bidang
-            $member = Hdb::dworkAnggotaBidang($param);
-
+            $member = $this->Hdb->dworkAnggotaBidang($param);
+            
             //kepala SKPD
             $pimpinan = $this->getTTPimpinan(
                 $param['kdDinas'],"pimpinan",$param['tahun'],
@@ -447,8 +477,8 @@ class PdfGenerator extends Controller
             // echo("<pre>");
             // return print_r($subPimpinan);
 
-            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
-            $setda = Hdb::getDinasOne( $cek['setda'],$param['tahun']);
+            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
+            $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']);
             // echo("<pre>");
             // return print_r($dinas);
 
@@ -463,27 +493,32 @@ class PdfGenerator extends Controller
             // Array ( [0] => 2023 [1] => 08 [2] => 27 )
 
             $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+            if(strlen($data->dateE)>1){
+                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+                $hari++;
+            }
+
             $dateS = explode("-",$data->date);
             $dateE = [];
             $textTanggal = $dateS[2];
             if(!empty($data->dateE) && $data->dateE!=$data->date){
                 $dateE = explode("-",$data->dateE);
                 if($dateS[1]==$dateE[1]){
-                    $textTanggal.=" s/d ".$dateE[2]." ".$this->getBulan($dateS[1])." ".$dateE[0] ;
+                    $textTanggal.=" s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateE[0] ;
                 }else{
-                    $textTanggal.=" ".$this->getBulan($dateS[1])." s/d ".$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ;
+                    $textTanggal.=" ".$this->Mfc->__bulan($dateS[1])." s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ;
                 }
             }else{
-                $textTanggal .= " ".$this->getBulan($dateS[1])." ".$dateS[0] ;
+                $textTanggal .= " ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ;
             }
 
             $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
-            $tglCetak = $date[2]." ".$this->getBulan($date[1])." ".$date[0];
+            $tglCetak = $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0];
             // $asdiskab= $dinas->asDinas.' '.$asKab;
             $datax = [
                 // 'dinas' =>$dinas->nmDinas,
-                // 'asDinas' => $dinas->asDinas,
+                'asDinas' => $dinas->asDinas,
                 // 'alamat'    => $dinas->alamat,
                 'asKab' => 'Kab. Sumbawa Barat',
                 'kab' => 'Kabupaten Sumbawa Barat',
@@ -503,10 +538,14 @@ class PdfGenerator extends Controller
 
                 'tglCetak'=> $tglCetak,
                 "textTanggal"=>$textTanggal ,
-
-                'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$this->getRomawi($date[1])."/".$date[0],
+                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari",
+                // ".$this->getRomawi($date[1])." /".$dinas->asDinas."
+                'nomor' =>"000.1.2.3/".$spaci."/<span class='tupper'>".$dinas->asDinas."</span>/".$date[0],
                 'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
             ];
+            // echo("<pre>");
+            // return print_r($datax);
+            return view('pdf.suratTugasDaerah', $datax);
             $pdf = PDF::loadView('pdf.suratTugasDaerah', $datax)
                     ->setPaper('legal','portrait');
             return $pdf->stream('Surat-Tugas-Sppd-'.$data->no.'.pdf');
@@ -518,8 +557,8 @@ class PdfGenerator extends Controller
     }
 
     public function sppdSetda($val){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
             $param = [
@@ -533,10 +572,10 @@ class PdfGenerator extends Controller
                 "sppdDaerah"=>$baseEND->{'sppdDaerah'}
             ];
             $param["where"]= ' and a.kdBAnggota =""';
-            $data =Hdb::dwork($param)[0];
+            $data =$this->Hdb->dwork($param)[0];
 
             $param["where"]= ' and a.kdBAnggota !=""';  // and b.tingkatan>3
-            $member = Hdb::dworkAnggotaBidang($param);
+            $member = $this->Hdb->dworkAnggotaBidang($param);
 
 
             $pimpinan = $this->getTTPimpinan(
@@ -551,7 +590,7 @@ class PdfGenerator extends Controller
                 }
             }
 
-            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
+            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
 
             if(count($member)>0){
                 foreach ($member as $key => $value) {
@@ -590,19 +629,21 @@ class PdfGenerator extends Controller
                 "tahun"=> $cek['ta'],
                 'data' => $data,
 
-                "dateS"=>$dateS[2]." ".$this->getBulan($dateS[1])." ".$dateS[0] ,
-                "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
+                "dateS"=>((int)$dateS[2])." ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ,
+                "dateE"=>((int)$dateE[2])." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ,
                 "no" =>"000.1.2.3",
                 'member' => $member,
                 // 'jabatanPimReal'=>$jabatanPimReal,
                 'pimpinan'=> $pimpinan,
                 'jabatanPim' => $jabatanPim,
-                'tglCetak'=> $this->getBulan($date[1])." ".$date[0],
-                'hari'  => $hari." (".Hsf::terbilang($hari).") "."Hari"
+                'jabatanPim1' => $pimpinan->nmJabatan,
+                'tglCetak'=> $this->Mfc->__bulan($date[1])." ".$date[0],
+                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari"
             ];
-            $pdf = PDF::loadView('pdf.sppdSetda', $datax)
-                    ->setPaper('legal','portrait');
-            return $pdf->stream('sppd-Setda'.$data->no.'.pdf');
+            return view('pdf.sppdSetda', $datax);
+            // $pdf = PDF::loadView('pdf.sppdSetda', $datax)
+            //         ->setPaper('legal','portrait');
+            // return $pdf->stream('sppd-Setda'.$data->no.'.pdf');
         }
         return response()->json([
             'exc' => false,
@@ -611,8 +652,8 @@ class PdfGenerator extends Controller
     }
 
     public function sppdBupati($val){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
             $param = [
@@ -625,15 +666,15 @@ class PdfGenerator extends Controller
                 "tglCetak"=>$baseEND->{'tglCetak'}
             ];
             $param["where"]= ' and a.kdBAnggota =""';
-            $data =Hdb::dwork($param)[0];
+            $data =$this->Hdb->dwork($param)[0];
 
             $param["where"]= ' and a.kdBAnggota !=""
                 and b.tingkatan<=3
             ';
-            $member = Hdb::dworkAnggotaBidang($param);
+            $member = $this->Hdb->dworkAnggotaBidang($param);
 
             // getPimpinan
-            $pimpinan = Hdb::getAnggotaJabatan([
+            $pimpinan = $this->Hdb->getAnggotaJabatan([
                 "kdDinas"=>$cek['setda'],
                 "tahun"=>$param['tahun'],
                 "status"=>"bupati"
@@ -642,7 +683,7 @@ class PdfGenerator extends Controller
             if(!empty($data->pimBupati) && $data->pimBupati!='Manual'){
                 // get Pimpinan selected
                 $split = explode("|",$data->pimBupati);
-                $selectPim = Hdb::getOneAnggota([
+                $selectPim = $this->Hdb->getOneAnggota([
                     "kdDinas"=>$split[2],
                     "tahun"=>$param['tahun'],
                     "kdBAnggota"=>$split[0],
@@ -655,7 +696,7 @@ class PdfGenerator extends Controller
                 }
 
                 // if($selectPim->status === "kabid "){
-                //     $selectPim1 = Hdb::getAnggotaJabatan([
+                //     $selectPim1 = $this->Hdb->getAnggotaJabatan([
                 //         "kdDinas"=>$param['kdDinas'],
                 //         "tahun"=>$param['tahun'],
                 //         "status"=>"sekretaris"
@@ -671,7 +712,7 @@ class PdfGenerator extends Controller
             }
             // $member = [$member[0]];
 
-            $dinas = Hdb::getDinasOne($param['kdDinas'],$param['tahun']);
+            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
 
             if(count($member)>0){
                 foreach ($member as $key => $value) {
@@ -710,14 +751,14 @@ class PdfGenerator extends Controller
                 'alamat'    => $dinas->alamat,
                 "tahun"=> $cek['ta'],
                 'data' => $data,
-                "dateS"=>$dateS[2]." ".$this->getBulan($dateS[1])." ".$dateS[0] ,
-                "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
+                "dateS"=>$dateS[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ,
+                "dateE"=>$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ,
                 "no" =>"000.1.2.3",
                 'member' => $member,
                 'pimpinan'=> $pimpinan,
-                // 'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],
-                'tglCetak'=>$this->getBulan($date[1])." ".$date[0],
-                'hari'  => $hari." (".Hsf::terbilang($hari).") "."Hari"
+                // 'tglCetak'=> $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0],
+                'tglCetak'=>$this->Mfc->__bulan($date[1])." ".$date[0],
+                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."Hari"
             ];
             $pdf = PDF::loadView('pdf.sppdBupati', $datax)
                     ->setPaper('legal','portrait');
@@ -729,8 +770,8 @@ class PdfGenerator extends Controller
         ], 200);
     }
     public function sppdBupatiSetda($val){
-        $user =Auth::user();
-        $cek = $this->portal($user);
+        
+        $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
             $param = [
@@ -744,15 +785,15 @@ class PdfGenerator extends Controller
                 "sppdDaerah"=>$baseEND->{'sppdDaerah'}
             ];
             $param["where"]= ' and a.kdBAnggota =""';
-            $data =Hdb::dwork($param)[0];
+            $data =$this->Hdb->dwork($param)[0];
 
             $param["where"]= ' and a.kdBAnggota !=""
                 and b.tingkatan<=3
             ';
-            $member = Hdb::dworkAnggotaBidang($param);
+            $member = $this->Hdb->dworkAnggotaBidang($param);
 
             // getPimpinan
-            $pimpinan = Hdb::getAnggotaJabatan([
+            $pimpinan = $this->Hdb->getAnggotaJabatan([
                 "kdDinas"=>$cek['setda'],
                 "tahun"=>$param['tahun'],
                 "status"=>"setda"
@@ -763,7 +804,7 @@ class PdfGenerator extends Controller
             if(!empty($data->pimSetda) && $data->pimSetda!='Manual'){
                 // get Pimpinan selected
                 $split = explode("|",$data->pimSetda);
-                $selectPim = Hdb::getOneAnggota([
+                $selectPim = $this->Hdb->getOneAnggota([
                     "kdDinas"=>$split[2],
                     "tahun"=>$param['tahun'],
                     "kdBAnggota"=>$split[0],
@@ -781,7 +822,7 @@ class PdfGenerator extends Controller
                 }
 
                 // if($selectPim->status === "kabid "){
-                //     $selectPim1 = Hdb::getAnggotaJabatan([
+                //     $selectPim1 = $this->Hdb->getAnggotaJabatan([
                 //         "kdDinas"=>$param['kdDinas'],
                 //         "tahun"=>$param['tahun'],
                 //         "status"=>"sekretaris"
@@ -796,7 +837,7 @@ class PdfGenerator extends Controller
                 $jabatanPim = $this->getNewLineInText($tamPimpinan[0]);
             }
 
-            $dinas = Hdb::getDinasOne($cek['setda'],$param['tahun']);
+            $dinas = $this->Hdb->getDinasOne($cek['setda'],$param['tahun']);
 
             if(count($member)>0){
                 foreach ($member as $key => $value) {
@@ -832,16 +873,16 @@ class PdfGenerator extends Controller
                 "tahun"=> $cek['ta'],
                 'data' => $data,
 
-                "dateS"=>$dateS[2]." ".$this->getBulan($dateS[1])." ".$dateS[0] ,
-                "dateE"=>$dateE[2]." ".$this->getBulan($dateE[1])." ".$dateE[0] ,
+                "dateS"=>$dateS[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ,
+                "dateE"=>$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ,
                 "no" =>"000.1.2.3",
                 'member' => $member,
                 'jabatanPimReal'=>$jabatanPimReal,
                 'pimpinan'=> $pimpinan,
                 'jabatanPim' => $jabatanPim,
-                // 'tglCetak'=> $date[2]." ".$this->getBulan($date[1])." ".$date[0],
-                'tglCetak'=> $this->getBulan($date[1])." ".$date[0],
-                'hari'  => $hari." (".Hsf::terbilang($hari).") "."Hari"
+                // 'tglCetak'=> $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0],
+                'tglCetak'=> $this->Mfc->__bulan($date[1])." ".$date[0],
+                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."Hari"
             ];
             $pdf = PDF::loadView('pdf.sppdSetda', $datax)
                     ->setPaper('legal','portrait');
@@ -856,7 +897,7 @@ class PdfGenerator extends Controller
 
     function getTTPimpinan($kdDinas,$status,$tahun, $_pim,$_td){ //_ artinya isi manual
         // 1. data pimpinan asli
-        $pimpinan = Hdb::getAnggotaJabatan([
+        $pimpinan = $this->Hdb->getAnggotaJabatan([
             "kdDinas"=>$kdDinas,
             "tahun"=>$tahun,
             "status"=>$status
@@ -866,7 +907,7 @@ class PdfGenerator extends Controller
         if(!empty($_pim) && $_pim!='Manual'){
             // 2. data plh pimpinan
             $split = explode("|",$_pim);
-            $pimpinan = Hdb::getOneAnggota([
+            $pimpinan = $this->Hdb->getOneAnggota([
                 "kdDinas"=>$split[2],
                 "tahun"=>$tahun,
                 "kdBAnggota"=>$split[0],
