@@ -288,6 +288,7 @@ class PdfGenerator extends Controller
                 "tahun"=>$cek['ta'],
                 "tglCetak"=>$baseEND->{'tglCetak'}
             ]; 
+            return $this->Mfc->log($this->__DataSuratTugasPermohonan($param,$cek));
             return view('pdf.suratTugasx',$this->__DataSuratTugasPermohonan($param,$cek)); 
         }
         return response()->json([
