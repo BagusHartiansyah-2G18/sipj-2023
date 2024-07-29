@@ -68,7 +68,7 @@
             <tr>
                 <td colspan="3" >
                     <div class="'.$penyesuaian.'">
-                        Taliwang, @php echo($spaci4); @endphp '.$tglCetak.'
+                        Taliwang, '.$spaci4.$tglCetak.'
                         <br>
                         <p class="w55p">
                             '.$ttJabatanSetda.',
@@ -96,7 +96,7 @@
             <tr>
                 <td colspan="3" >
                     <div class="'.$penyesuaian.'">
-                        Taliwang, @php echo($spaci4); @endphp '.$tglCetak.'
+                        Taliwang, '.$spaci4.$tglCetak.'
                         <br>
                         <p class="w55p">
                             '.$ttJabatanSetdaStaf.', 
