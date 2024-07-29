@@ -681,7 +681,7 @@ class PdfGenerator extends Controller
             }
             
         } 
-        $pimpinan->asJabatan = $asJabatan;
+        $pimpinan['asJabatan'] = $asJabatan;
         return $pimpinan;
     }
 
