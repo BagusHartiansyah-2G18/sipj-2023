@@ -670,20 +670,19 @@ class PdfGenerator extends Controller
         $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
         $asJabatan = $pimpinan->asJabatan;
 
-        $pimpinan =[];
+        
         if(!empty($_pim)){
-            $pimpinan = json_decode(base64_decode($_pim));    
+            // $pimpinan =[];  
+            $pimpinan = json_decode(base64_decode($_pim));  
+            
             // $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
             if($pimpinan->manual == "yes"){
                 $pimpinan->nmJabatan=$this->getNewLineInText($pimpinan->nmJabatan);
                 $pimpinan->jabatanx=$this->getNewLineInText($pimpinan->nmJabatan);  
             }else{
                 $pimpinan->jabatanx=$pimpinan->nmJabatan;  
-            }
-            
-        }else{
-            $pimpinan['jabatanx']=$pimpinan->nmJabatan;  
-        }
+            } 
+        } 
         $pimpinan['asJabatan'] = $asJabatan;
         return $pimpinan;
     }
