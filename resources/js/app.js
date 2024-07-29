@@ -64,59 +64,52 @@ function MyApp() {
     const sess = _html.sess;
     return (
         <>
-            <HeaderM></HeaderM>
-            <main className="flexR blight">
-                <Navbar />
-                <div className='pwrap w100p'>
-                    <div className='w95p m0auto mxh100p pbottom100px'>
-                        <Routes>
-                            {
-                                (
-                                    _html.indMenu === 0  &&
-                                    (
-                                        <>
-                                            <Route path="/home/dashboard" element={<Dashboard /> } />
-                                            {
-                                                ( sess.kdJaba !== '1' &&
-                                                    <>
-                                                        <Route path="/home/dinas" element={<Dinas /> } />
-                                                        <Route path="/home/rekeningBelanja" element={<RekeningBelanja /> } />
-                                                        <Route path="/home/jenisP" element={<JenisPertanggungJawab /> } />
-                                                    </>
-                                                )
-                                            }
-                                            <Route path="/home/subkegiatan" element={<Subkegiatan /> } />
-                                            <Route path="*" element={<Dashboard /> } />
-                                        </>
-                                    )
-                                )
-                            }{
-                                (
-                                    _html.indMenu === 1  &&
-                                    (
-                                        <>
-                                            <Route path="home/work/subBidang" element={<BidangSubKegiatan /> } />
-                                            <Route path="home/work/rincianBelanja" element={<BidangEntriBelanja /> } />
-                                            <Route path="home/work/Fitur" element={<Fitur /> } />
-                                            <Route path="home/work/sppd/:value" element={<SPPD /> } />
-                                            <Route path="home/work/ta/:value" element={<TenagaAhli /> } />
-                                            
-                                            {/* <Route path="home/work/Fitur" element={<Fitur /> } /> */}
-                                        </>
-                                    )
-                                )
-                            }
+            <HeaderM></HeaderM> 
+            <main className='MDcontainer bwhite'>
+                <Navbar /> 
+                <Routes>
+                    {
+                        (
+                            _html.indMenu === 0  &&
+                            (
+                                <>
+                                    <Route path="/home/dashboard" element={<Dashboard /> } />
+                                    {
+                                        ( sess.kdJaba !== '1' &&
+                                            <>
+                                                <Route path="/home/dinas" element={<Dinas /> } />
+                                                <Route path="/home/rekeningBelanja" element={<RekeningBelanja /> } />
+                                                <Route path="/home/jenisP" element={<JenisPertanggungJawab /> } />
+                                            </>
+                                        )
+                                    }
+                                    <Route path="/home/subkegiatan" element={<Subkegiatan /> } />
+                                    <Route path="*" element={<Dashboard /> } />
+                                </>
+                            )
+                        )
+                    }{
+                        (
+                            _html.indMenu === 1  &&
+                            (
+                                <>
+                                    <Route path="home/work/subBidang" element={<BidangSubKegiatan /> } />
+                                    <Route path="home/work/rincianBelanja" element={<BidangEntriBelanja /> } />
+                                    <Route path="home/work/Fitur" element={<Fitur /> } />
+                                    <Route path="home/work/sppd/:value" element={<SPPD /> } />
+                                    <Route path="home/work/ta/:value" element={<TenagaAhli /> } />
+                                    
+                                    {/* <Route path="home/work/Fitur" element={<Fitur /> } /> */}
+                                </>
+                            )
+                        )
+                    }
 
-                        </Routes>
-                    </div>
-                    <ToastContainer></ToastContainer>
-                    {/* <Footer1
-                        text='Bappeda @2024'
-                    ></Footer1> */}
-                </div>
+                </Routes>
+                <ToastContainer></ToastContainer>
             </main>
-        </>
-    );
+        </ >
+    ); 
 }
 
 export default MyApp;

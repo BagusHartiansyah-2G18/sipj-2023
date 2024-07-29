@@ -1,0 +1,72 @@
+@use '../../abstracts/variable' as _;
+@use '../../abstracts/mixPosition' as _pos;
+@use '../../abstracts/style' as _sty;
+
+@forward '../../base/padMar';
+ 
+
+#listBerita{
+    @include _pos.flexC();
+    justify-content: center;
+    & div{ @extend .mwrap;}
+    & img{
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    } 
+}
+#listInfoPembangunan{ 
+    @include _pos.gridC(repeat(2,1fr));
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-items: center;
+    & div{
+        @include _sty.pwrap5();
+        // background-color: map-get(_.$c,"light");
+        border: 1px solid map-get(_.$c,"light");
+        width: max-content;
+        & img{
+            max-height: 150px;
+        }
+    }
+}
+
+@media only screen and (min-width: 650px){
+    #listBerita{
+        @include _pos.gridC(repeat(3,32%));
+        row-gap: 10px;
+        column-gap: 10px;
+        justify-content: center;
+        & img{
+            width: 100%;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        } 
+    }
+    #listInfoPembangunan{ 
+        @include _pos.gridC(repeat(3,1fr)); 
+        & div{
+            @include _sty.pwrap5();
+            // background-color: map-get(_.$c,"light");
+            border: 1px solid map-get(_.$c,"light");
+            width: max-content;
+            & img{
+                max-height: 150px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 800px) { 
+
+     
+}
+
+@media screen and (min-width: 850px) { 
+ 
+}
+
+@media screen and (min-width: 1200px) { 
+}
+
+@media screen and (min-width: 1600px) { 
+}

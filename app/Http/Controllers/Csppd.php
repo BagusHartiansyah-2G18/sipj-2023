@@ -35,6 +35,7 @@ class Csppd extends Controller
             ];
             // return $this->Hdb->getDataSppd($param);
             $data =$this->Hdb->getDataSppd($param);
+            // return $this->Mfc->log($data);
             $anggota = $this->Hdb->getAllBidangAnggota($param);
             $dpendukung = $this->Hdb->jenisDataDukung($cek);
             $param['kdBAnggota']='';
@@ -318,8 +319,7 @@ class Csppd extends Controller
         if($cek['exc']){
             $request->validate([
                 'col' => 'required',
-                'value' => 'required',
-
+                'value' => 'required', 
                 'kdDinas' => 'required',
                 'kdBidang' => 'required',
                 'kdSub' => 'required',
@@ -358,7 +358,7 @@ class Csppd extends Controller
     public function step3(Request $request){
         
         $cek = $this->Mfc->portal(); 
-        if($cek['exc']){
+        if($cek['exc']){ 
             $request = $request->all();
             $namaFile = $this->_uploadImage($request['files']['data'],$request['files']['nama']);
             if(
@@ -377,6 +377,16 @@ class Csppd extends Controller
                     'file' => $namaFile
                 ])
             ){
+                DB::table('work')
+                ->where('kdDinas',$request['kdDinas']) 
+                ->where('kdSub',$request['kdSub'])
+                ->where('kdJudul',$request['kdJudul'])
+                ->where('taWork',$cek['ta'])
+                ->where('no',$request['no'])
+                ->whereNotNull('kdBAnggota')
+                ->update([
+                    'status'=> $request['status'] 
+                ]);
                 return response()->json([
                     'exc' => true,
                     'data' => []
@@ -429,6 +439,37 @@ class Csppd extends Controller
             'msg' => $cek['msg']
         ], 200);
     }
+    public function uploadDataVerifikasiStaf(Request $request){ 
+        $cek = $this->Mfc->portal(); 
+        if($cek['exc']){
+            $request = $request->all(); 
+            $dtUpd =['fileD'=> $request['fileD']];  
+            if(
+                DB::table('work')
+                ->where('kdDinas',$request['kdDinas'])
+                ->where('kdBidang',$request['kdBidang'])
+                ->where('kdSub',$request['kdSub'])
+                ->where('kdJudul',$request['kdJudul'])
+                ->where('taWork',$cek['ta'])
+                ->where('no',$request['no'])
+                ->where('kdBAnggota',$request['kdBAnggota'])
+                ->update($dtUpd)
+            ){
+                return response()->json([
+                    'exc' => true,
+                    'data' => []
+                ], 200);
+            }
+            return response()->json([
+                'exc' => false,
+                'msg' => 'query Error'
+            ], 200);
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
     public function getAnggotaSelected(Request $request){
         
         $cek = $this->Mfc->portal(); 
@@ -444,7 +485,7 @@ class Csppd extends Controller
             $param["tahun"]= $cek['ta'];
             $param["where"]= ' and a.kdBAnggota !=""';
 
-            $anggotaWork = $this->Hdb->dwork($param);
+            $anggotaWork = $this->Hdb->dworkAnggotaBidang($param);
             $param["where"]='';
             if(count($anggotaWork)>0){
                 foreach ($anggotaWork as $key => $value) {

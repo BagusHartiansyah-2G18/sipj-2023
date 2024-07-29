@@ -1,0 +1,88 @@
+@use '../abstracts/variabel' as _;
+
+.fzS{ @include _.fz('s')}
+.fzM{ @include _.fz('m')}
+.fzL{ @include _.fz('l')}
+.fzXl{ @include _.fz('xl')}
+.fzL1{ @include _.fz('l1')}
+.fzL2{ @include _.fz('l2')}
+.fzL3{ @include _.fz('l3')}
+.fzL4{ @include _.fz('l4')}
+.fzL5{ @include _.fz('l5')}
+.fzL6{ @include _.fz('l6')}
+.fz100{ @include _.fz('100')}
+.fzJapp{@include _.fz('l2')}
+.fzSapp{ @include _.fz('m')}
+
+.fnunito{
+    font-family: 'Nunito', sans-serif;
+}
+.farial{
+    font-family: 'Arial',Helvetica, sans-serif;
+}
+.fBebasNeue{
+    @font-face {
+      font-family:'BebasNeue';
+      src: url('../font/Bebas_Neue/BebasNeue-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "BebasNeue", BebasNeue-Regular;
+}
+.fPoppins{
+    @font-face {
+      font-family:'Poppins';
+      src: url('../font/Poppins/Poppins-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "Poppins", Poppins-Regular;
+}
+
+.fpacifico{
+    @font-face {
+      font-family:'pacifico';
+      src: url('../font/Pacifico/Pacifico-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "pacifico", Pacifico-Regular;
+}
+.fcookie{
+    @font-face {
+      font-family:'Cookie';
+      src: url('../font/Cookie/Cookie-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "Cookie", Cookie-Regular;
+}
+.fdamion{
+    @font-face {
+      font-family:'Damion';
+      src: url('../font/Damion/Damion-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "Damion", Damion-Regular;
+}
+.ftaprom{
+    @font-face {
+      font-family:'Taprom';
+      src: url('../font/Taprom/Taprom-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "Taprom", Taprom-Regular;
+}
+
+.tcapital{text-transform: capitalize;}
+.tupper{text-transform: uppercase;}
+.tbold{font-weight: bold;}
+.tjustify{text-align: justify;}
+.tcenter{text-align: center;}
+.tstart{text-align: start;}
+.tend{text-align: end;}
+
+
+

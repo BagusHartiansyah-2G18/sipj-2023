@@ -1,0 +1,119 @@
+@use '../../abstracts/variabel' as _;
+@forward '../../base/index';
+
+.bweb_informasi{ 
+    height: 100vh;
+    min-height: 600px;
+    & .menuLogo{
+        height: 150px;
+        @extend .pwrap-10, .jcSE, .aiC, .w60p;
+        & img{
+            height: 50%;
+        }
+    }
+    & .brand{
+        text-transform: uppercase; 
+        font-weight: bold; 
+        width: 100%;
+        margin-top: 10%;
+        & .judul{
+            color: map-get(_.$c,'light');
+            @extend .fzL3;
+        }
+        & .subjudul{ 
+            color: map-get(_.$c,'lightE');
+            @extend .fzXl, .tbold;
+        }
+        & .subjudul1{ 
+            color: map-get(_.$c,'lightE1');
+        }
+    }
+    & .informasi{
+        position: unset;
+        bottom: 0px;
+        display: grid;
+        width: 80%;
+        @extend .cwhite, .pwrap-10, .fzL, .alfaDark;
+        grid-template-columns: repeat(1, 100%);
+        grid-gap: 20px;
+        & span{
+            @extend .fPoppins,.cwarning, .fzXl;
+        }
+        & a{
+            @extend .cwhite;
+        }
+        #sosial{display: none}
+    }
+}  
+.bwebFooter{
+    @extend .pwrap-10, .bdark, .w100p;
+    & label{
+        text-align: center;
+        @extend .w100p;
+    }
+}
+.boxApp{
+    @extend .flexR, .bwhite ,.radius-10 ,.boxS, .mnw400;
+} 
+
+@media only screen and (min-width: 650px){ 
+    .bweb_informasi .informasi{
+        position: absolute;
+        grid-template-columns: repeat(3, 33%);
+    } 
+}
+@media screen and (min-width: 800px) { 
+    .bweb_informasi .menuLogo{
+        @include _.jc(space-between);
+        width: 100%;
+    }
+    .bweb_informasi .informasi #sosial{display: block}
+}
+
+@media screen and (min-width: 850px) { 
+    .wtext{
+        @include _.wmin(150px);
+    }
+    .boxApp{
+        width: 300px;
+        @include _.wmin(300px);
+    }
+    .gr_13{
+        @include _.gridC(repeat(2,50%));
+    } 
+}
+@media screen and (min-width: 1000px) { 
+    .wtext{
+        @include _.wmin(250px);
+    }
+    .boxApp{
+        width: 400px;
+        @include _.wmin(400px);
+    }
+    .gr_13{
+        @include _.gridC(repeat(2,50%));
+    } 
+}
+
+@media screen and (min-width: 1200px) { 
+    .wtext{
+        @include _.wmin(150px);
+    }
+    .boxApp{
+        width: 300px;
+        @include _.wmin(300px);
+    }
+    .gr_13{
+        @include _.gridC(repeat(3,33%));
+    } 
+}
+
+@media screen and (min-width: 1300px) { 
+    .wtext{
+        @include _.wmin(250px);
+    }
+    .boxApp{
+        width: 400px;
+        @include _.wmin(400px);
+    }
+}

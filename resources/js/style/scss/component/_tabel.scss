@@ -1,0 +1,164 @@
+@use '../abstracts/variabel' as _;
+@forward '../base/index';
+
+.noBorder{
+    border: 0px;
+    & tr{border: 0px;}
+    & td{border: 0px;}
+}
+
+.grid-4c{
+    @include _.gridC(repeat(2,50%));
+    width: 100%;
+    grid-gap: 2%;
+
+    @media screen and (min-width:800px) {
+        grid-template-columns: repeat(3,32%) !important;
+    }
+    @media screen and (min-width:1200px) {
+        grid-template-columns: repeat(4,23%) !important;
+    }
+}
+.grid-2c{
+    @include _.gridC(repeat(1,98%));
+    width: 100%;
+    grid-gap: 2%;
+    & .cimg {
+        width: 100%;
+        & img{width: 100%;}
+    }
+    @media screen and (min-width:800px) {
+        grid-template-columns: repeat(2,50%) !important;
+    } 
+}
+
+
+.grid-2c-timeline{
+    @include _.gridC(repeat(2,47%));
+    width: 100%;
+    grid-column-gap: 6%;
+}
+
+.view1{
+    position: relative;
+    ::after{
+        position: absolute;
+        content: "";
+        // border-left: 1px solid black;
+        width: 2px;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+        background: #E47A2E;
+    }
+
+    & .cimg{ //container image
+        @extend .flex;
+        @extend .mwrap-10;
+        // @extend .jcE;
+        @extend .radius-10;
+        // @extend .bmutedG-opa2End;
+        > img{
+            // width: 200px;
+            height: 250px;
+            @extend .radius-10;
+            // @extend .boval;
+            // background-color: burlywood;
+            // @extend .bmutedG-opa2End;
+            // box-shadow: inset 0px 0px 20px 4px #2e2e2e;
+        }
+    }
+    & .form{
+        @extend .mwrap-10;
+        @extend .radius-10;
+        @include _.hmax(250px);
+        border-left: 3px solid map-get(_.$c,'dark');
+    }
+}
+.tblCollapse, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.gr_13{
+    @include _.gridC(repeat(1,80%));
+    grid-gap : 30px;
+    grid-row: 20px;
+    @media screen and (min-width: 850px) {  
+        .gr_13{
+            @include _.gridC(repeat(2,50%));
+        } 
+    }
+    @media screen and (min-width: 1000px) {  
+        .gr_13{
+            @include _.gridC(repeat(3,33%));
+        } 
+    }
+    @media screen and (min-width: 1300px) {  
+        .gr_13{
+            @include _.gridC(repeat(4,25%));
+        }
+    }
+}
+
+
+
+.grid-col3{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    & label{
+        @extend .tcenter;
+    }
+
+    button{
+        @extend .radius-10;
+    }
+}
+
+.Flex-b45p{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    & .list{
+        flex-grow: 2; 
+        min-width: 45%;
+    }
+}
+.Flex-b100{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    & .list{
+        flex-grow: 2; 
+        min-width: 100px;
+    }
+}
+.Flex-b150{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    & .list{
+        flex-grow: 2; 
+        min-width: 150px;
+    }
+}
+.Flex-b250{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    & .list{
+        flex-grow: 2; 
+        min-width: 250px;
+    }
+}
+
+.Flex-b750{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    & .list{
+        flex-grow: 2; 
+        min-width: 750px;
+    }
+}

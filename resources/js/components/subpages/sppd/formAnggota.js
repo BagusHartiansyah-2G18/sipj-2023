@@ -34,16 +34,20 @@ function FormAnggotaSppd({ dt, param, indWork, next}) {
         next(3);
     }
     return (
-        <div className="form0 bwhite">
-            <div className="">
-                <div className="form1 bwhite boxShadow1px ">
-                    <div className="header binfo clight">
-                        <div className="icon">
-                            <span className="mdi mdi-office-building-marker fz25 "></span>
-                            <h3><b>2. Penentuan Pegawai yang ditugaskan</b></h3>
-                        </div>
+        <div className="Mcontainer ">
+            <div className="body " >
+                <div class="FM1 ">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>pemilihan Pegawai Yang Bertugas</b> 
+                            </h2>
+                        </div>  
                     </div>
-                    <div className="body">
+                    <div class="body bdark pm0 bsolid1 " style={{width:"unset", borderRadius:"0px" }}><br/>
                         <Tabel1
                             search={search}
                             oncSearch={setSearch}
@@ -63,7 +67,7 @@ function FormAnggotaSppd({ dt, param, indWork, next}) {
                                 (countDtX !== 0 &&
                                     <>
                                         <hr></hr>
-                                        <div className="flexR justifySB algI">
+                                        <div className="flexR jcSE aiC">
                                             <h2>{countDtX+ ` pegawai terpilih`} </h2>
                                             <div className="btnGroup">
                                                 <button className="btn2 bprimary clight" onClick={createFormEntriStaf}>Buatkan Dokumen</button>
@@ -74,10 +78,10 @@ function FormAnggotaSppd({ dt, param, indWork, next}) {
                                 )
                             }
                         ></Tabel1>
-                    </div>
+                    </div> 
                 </div>
             </div>
-        </div>
+        </div>  
     );
 }
 

@@ -121,24 +121,25 @@ function nextStep(body){
     // dispatch(hideLoading());
   };
 }
-function setPimpinan(body){
-    return async (dispatch) => {
-      // dispatch(showLoading());
-      try {
-        const dt = await api.POST({url:"sppd/setPimpinan",body});
-        dispatch({
-          type : actType.crudWork,
-          payload:{
-            ...body,
-            type:actType.nextStep.setPimpinan
-          }
-        });
-        toast.success('berhasil diperbarui');
-      } catch (error) {
-        alert(error.message);
-      }
-      // dispatch(hideLoading());
-    };
+function setPimpinan(body){ 
+  return async (dispatch) => {
+    // dispatch(showLoading());
+    try {
+      const dt = await api.POST({url:"sppd/setPimpinan",body:{...body,value:btoa(JSON.stringify(body.value)) }}); 
+      dispatch({
+        type : actType.crudWork,
+        payload:{
+          ...body,
+          value:btoa(JSON.stringify(body.value)),
+          type:actType.nextStep.setPimpinan
+        }
+      });
+      toast.success('berhasil diperbarui');
+    } catch (error) {
+      alert(error.message);
+    }
+    // dispatch(hideLoading());
+  };
 }
 function setTandaTanganManual(body){
     return async (dispatch) => {
@@ -184,7 +185,7 @@ function uploadDasar(body){
     return async (dispatch) => {
       // dispatch(showLoading());
       try {
-        const fileD = await api.POST({url:"sppd/uploadDasar",body});
+        const fileD = await api.POST({url:"sppd/uploadDasar",body}); 
         dispatch({
           type : actType.crudWork,
           payload:{
@@ -194,6 +195,7 @@ function uploadDasar(body){
             type:actType.nextStep.dasar
           }
         });
+        return fileD;
       } catch (error) {
         // alert(error.message);
       }
@@ -366,8 +368,7 @@ function updWorkAnggota(body){
         toast.success('berhasil diperbarui');
       } catch (error) {
         alert(error.message);
-      }
-      // dispatch(hideLoading());
+      } 
     };
 }
 function delWorkUraian(body){
@@ -388,6 +389,14 @@ function delWorkUraian(body){
     }
     // dispatch(hideLoading());
   };
+}
+async function uploadDataVerifikasiStaf(body){
+  try {
+    const dt = await api.POST({url:"sppd/uploadDataVerifikasiStaf",body});  
+    toast.success("Berhasil Memperbarui data...")
+  } catch (error) {
+    alert(error.message);
+  } 
 }
 
 const cbDasar = [
@@ -429,5 +438,6 @@ export {
     updWorkUraian,
     delWorkUraian,
 
+    uploadDataVerifikasiStaf,
     cbDasar,
 }

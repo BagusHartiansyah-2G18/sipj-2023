@@ -20,7 +20,7 @@ function Dinas() {
     const [index, setIndex] = useState(0);
     const dispatch = useDispatch();
     const [modalC, setmodalC] = useState('');
-    const [view, setview] = useState(1);
+    const [view, setview] = useState(0);
     const changeDinas=({ kdDinas, indx})=>{
         // console.log(_dinas, indx);
         if(_dinas[indx].bidang === undefined){
@@ -47,89 +47,78 @@ function Dinas() {
     if(_dinas.length===0){
         return (<></>)        ;
     }
+    const menus=()=>{ 
+        return(
+            <div class="btnGroup">
+                <button class={"btn2  "+ (view ==0 ? 'bsuccess3':'')} onClick={()=>setview(0)}><b>Dinas</b></button>
+                <button class={"btn2  "+ (view ==1 ? 'bsuccess3':'')} onClick={()=>setview(1)}><b>Bidang</b></button>
+                <button class={"btn2  "+ (view ==2 ? 'bsuccess3':'')} onClick={()=>setview(2)}><b>Anggota Bidang</b></button>
+                {/* <button class={"btn blight "+ (view ==4 ? 'borderTInfo-5':'')}><b>User Sistem</b></button> */}
+            </div> 
+        ); 
+    }
     return (
-        <>
-            <HeaderPage1
-                page={'Dinas'}
-                pageKet={'Pengelolaan Data Dinas'}
-                icon={'mdi-office-building-marker cdark'}
-            ></HeaderPage1>
-            <div className="binfo pwrap borderR10px">
-                <div className="mh100p"></div>
-                <div className="galeryList bwhite">
-                    <div className="item blight unselect borderpurpleT5px">
-                        <span className="mdi mdi-home-analytics cdark binfo fziconS"></span>
-                        <h2 className="judul">Dinas</h2>
-                        <button className="btn2 bprimary clight justifyC fz20 mw150px" onClick={()=>setview(0)} >view</button>
-                    </div>
-                    <div className="item blight select  borderpurpleB5px">
-                        <span className="mdi mdi-home-group cdark binfo fziconS"></span>
-                        <h2 className="judul">Bidang</h2>
-                        <button className="btn2 bprimary clight justifyC fz20 mw150px" onClick={()=>setview(1)}>view</button>
-                    </div>
-                    <div className="item blight unselect borderpurpleT5px">
-                        <span className="mdi mdi-home-assistant cdark binfo fziconS"></span>
-                        <h2 className="judul">Anggota Bidang</h2>
-                        <button className="btn2 bprimary clight justifyC fz20 mw150px" onClick={()=>setview(2)}>view</button>
-                    </div>
-                    <div className="item blight select borderpurpleB5px">
-                        <span className="mdi mdi-account-school cdark binfo fziconS"></span>
-                        <h2 className="judul">User Sistem</h2>
-                        <button className="btn2 bprimary clight justifyC fz20 mw150px" onClick={()=>setview(3)}>view</button>
-                    </div>
+        <div className="Mcontainer">
+            <div className="body pm0"> 
+                <HeaderPage1
+                    page={'Pengisian data SKPD'}
+                    pageKet={'Informasi SKPD, Bidang dan Pegawai / Staf'}
+                    icon={'mdi-office-building-marker '}
+                    menu={menus()}
+                ></HeaderPage1>
+                <div className="bodyFlexRow800"> 
+                    {
+                        (
+                            view === 0 &&
+                            <FormDinas
+                                dt={_dinas}
+                                modalC={setContentModal}
+                            ></FormDinas>
+                        )
+                    }
+                    {
+                        (
+                            view === 1 &&
+                            <FormBidang
+                                dt={_dinas}
+                                changeDinas={changeDinas}
+                                modalC={setContentModal}
+                                ind={ind}
+                            ></FormBidang>
+                        )
+                    }
+                    {
+                        (
+                            (Object.keys(_dinas[ind]).length>0 && _dinas[ind].bidang!=undefined && _dinas[ind].bidang.length>0) && view === 2 &&
+                            <FormAnggota
+                                dt={_dinas[ind].bidang}
+                                index={index}
+                                ind={ind}
+                                kdDinas={_dinas[ind].kdDinas}
+                                modalC={setContentModal}
+                                changeBidang={changeBidang}
+                            ></FormAnggota>
+                        )
+                    }
+                    {
+                        (
+                            (Object.keys(_dinas[ind]).length>0 && _dinas[ind].bidang!=undefined && _dinas[ind].bidang.length>0) && view === 3  &&
+                            <FormMember
+                                dt={_dinas[ind].bidang}
+                                index={index}
+                                ind={ind}
+                                kdDinas={_dinas[ind].kdDinas}
+                                modalC={setContentModal}
+                                changeBidang={changeBidang}
+                            ></FormMember>
+                        )
+                    }
+                    <Modal1
+                        children ={modalC}
+                    ></Modal1>
                 </div>
-            </div>
-            <div className="hheader"></div>
-            {
-                (
-                    view === 0 &&
-                    <FormDinas
-                        dt={_dinas}
-                        modalC={setContentModal}
-                    ></FormDinas>
-                )
-            }
-            {
-                (
-                    view === 1 &&
-                    <FormBidang
-                        dt={_dinas}
-                        changeDinas={changeDinas}
-                        modalC={setContentModal}
-                        ind={ind}
-                    ></FormBidang>
-                )
-            }
-            {
-                (
-                    (Object.keys(_dinas[ind]).length>0 && _dinas[ind].bidang!=undefined && _dinas[ind].bidang.length>0) && view === 2 &&
-                    <FormAnggota
-                        dt={_dinas[ind].bidang}
-                        index={index}
-                        ind={ind}
-                        kdDinas={_dinas[ind].kdDinas}
-                        modalC={setContentModal}
-                        changeBidang={changeBidang}
-                    ></FormAnggota>
-                )
-            }
-            {
-                (
-                    (Object.keys(_dinas[ind]).length>0 && _dinas[ind].bidang!=undefined && _dinas[ind].bidang.length>0) && view === 3  &&
-                    <FormMember
-                        dt={_dinas[ind].bidang}
-                        index={index}
-                        ind={ind}
-                        kdDinas={_dinas[ind].kdDinas}
-                        modalC={setContentModal}
-                        changeBidang={changeBidang}
-                    ></FormMember>
-                )
-            }
-             <Modal1
-                children ={modalC}
-            ></Modal1>
-        </>
-    );
+            </div> 
+        </div>
+    ); 
 }
 export default Dinas;

@@ -22,11 +22,9 @@
                         <img src="/logo/ksb.png" width="60px">
                     </td>
                     <td class="pwrap tcenter mKop w85p">
-                        <h2 class=" tupper fz20 noBold pm0 " >
-                            PEMERINTAH '.$kab.'<br>
-                            <b>'.$dinas.'</b>
-                        </h2>
-                        <i style="font-size: small;" class="pm0">'.$alamat.'</i>
+                        <label class="fzK">PEMERINTAH '.$kab.'</label><br>
+                        <label class="fzD"><b>'.$pimpinan->nmDinas.'</b></label><br> 
+                        <label class="pm0">'.$pimpinan->alamat.'</label>    
                     </td>
                 </tr>
             </table>
@@ -38,12 +36,12 @@
         <div class=" container">
             @php echo($kop); @endphp
             <hr> 
-            <table class="fz12 w100p">
+            <table class=" w100p">
                 <tr>
                     <td></td>
                     <td></td>
                     <td>
-                        <table class="ml30p" style="padding-right:40px">
+                        <table class="ml30p" style="padding-right:10px">
                             
                             <tr>
                                 <td class="p0">Kode No.</td>
@@ -73,15 +71,14 @@
                                 <td class="w5p">1</td>
                                 <td class="w40p">Pejabat Pembuat Komitmen</td>
                                 <td colspan="2">
-                                    <span id="titik2">:</span>
-                                        @php
-                                            $ub = explode("ub",$jabatanPim);
-                                            if(count($ub)>1){
-                                                echo(substr($jabatanPim,31)." ".$asDinas);
-                                            }else{
-                                                echo($jabatanPim." ".$asDinas);
-                                            }
-                                        @endphp
+                                    <div class="flexR">
+                                        <span id="titik2">:</span>
+                                        <label>
+                                            @php
+                                                echo $pimpinan->nmJabatan;
+                                            @endphp
+                                        </label>
+                                    </div> 
                                 </td>
                             </tr>
                             <tr>
@@ -90,8 +87,8 @@
                                 <td colspan="2">
                                     <div class="flexR">
                                         <span id="titik2">:</span>
-                                        <label>{{$dt->nmAnggota}} /<br>
-                                            {{$dt->snip}}. {{$dt->nip}}
+                                        <label>{{$dt['nmAnggota']}} /<br>
+                                            {{$dt['snip']}}. {{$dt['nip']}}
                                         </label>
                                     </div>
                                 </td> 
@@ -107,9 +104,16 @@
                                 </td>
                                 <td colspan="2">
                                     <ul>
-                                        <li id="addTitik2">a. {{(empty($dt->golongan)?'-':$dt->golongan)}}</li>
-                                        <li id="addTitik2">b. {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)."/".$asDinas}}</li>
-                                        <li id="addTitik2">c. {{$dt->tingkat}}</li>
+                                        <li id="addTitik2">a. {{$dt['golongan']}}</li>
+                                        <li >
+                                                <div class="flexR">
+                                                    <span id="titik2" style="min-width:24px">: &nbsp;b.</span>
+                                                    <label>
+                                                        {{$dt['nmJabatan']}} 
+                                                    </label>
+                                            </div>
+                                        </li>
+                                        <li id="addTitik2">c. {{$dt['tingkat']}}</li>
                                     </ul>
                                 </td>
                             </tr>
@@ -251,15 +255,10 @@
                     <td class="w50p"></td>
                     <td class="capitalize">
                         @php
-                            if(count($ub)>1){
-                                echo(substr($jabatanPim,31)." ".$asDinas.",");
-                            }else{
-                                echo($jabatanPim." ".$asDinas.",");
-                            }
+                            echo($pimpinan->nmJabatan.",");
                             echo($spaceTT);
                         @endphp
                         
-                        <!-- <span class="tlower">a.n.</span> Bupati Sumbawa Barat <br> Sekretaris Daerah,<br> @php echo($jabatanPim.' '.$asDinas); @endphp -->
                     </td>
                 </tr>
                 <tr class="">
@@ -445,12 +444,8 @@
                                     </p>
                                     <p class="">
                                         <label class="capitalize" >
-                                                <!-- <span class="tlower">a.n.</span>
-                                                Bupati Sumbawa Barat <br> Sekretaris Daerah,<br>
-                                                @php echo($jabatanPim.' '.$asDinas); @endphp -->
-                                                <!-- Pejabat Pembuat Komitmen -->
                                                 @php
-                                                echo($jabatanPim1." ".$asDinas.","); 
+                                                    echo($pimpinan->nmJabatan.","); 
                                                 @endphp
                                             </label>
                                             @php echo($br); @endphp

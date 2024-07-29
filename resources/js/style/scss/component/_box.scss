@@ -1,0 +1,64 @@
+@use '../abstracts/variabel' as _;
+@forward '../base/index';
+
+.BiconText{
+    @extend .flexC;
+    @extend .boxSLeft;
+    @extend .radius-10;
+    margin-bottom: 5%;
+    & .box{
+        @extend .pwrap-5p;
+        @extend .jcC;
+        @extend .radius-10;
+    }
+}
+.boxShadow{
+    @extend .mh80;
+    @extend .boxS;
+}
+
+
+.Bicon3coll{
+    @extend .flexC, .jcC, .pwrap-5, .boxS, .mxw300, .radius-10; 
+    // text-align: center;
+    & .judul{
+        @extend .w70p, .pwrap-5, .fPoppins;
+        
+    }
+    & h2{@extend .pm0, .fzL1, .tcapital, .farial;  }
+}
+
+.modal1 { 
+	background: white;
+	max-width: 400px; 
+	border-radius: 20px;
+	border: 0;
+	box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+	animation: fadeInModal1 1s ease both;
+    @extend .p0;
+	&::backdrop {
+		animation: fadeIn 1s ease both;
+		background: rgba(0,0,0,0.6);
+		z-index: 2;
+		// backdrop-filter: blur(20px);
+	}
+    @media screen and (min-width:1200px) {
+        min-width: 700px;
+    }
+}
+@keyframes fadeInModal1 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.box2C{
+    @extend .flexR, .jcSB, .pwrap-10, .radius-10;
+    .left{
+        @extend .flexR;
+    }
+
+}

@@ -1,0 +1,149 @@
+@use '../../abstracts/variable' as _;
+@use '../../abstracts/mixPosition' as _pos;
+@use '../../abstracts/style' as _sty;
+
+@forward '../../base/padMar';
+
+.headerBappeda{
+    height: 150px;
+    width: 100%;
+    @include _pos.gridC();
+    // background-color: rgb(83, 83, 83);
+    background-image: url('/public/header.jpeg');
+    background-position-y: center;
+    // margin: auto;
+    align-content: center; 
+    .bottom{ 
+        width: 100%;
+        @include _pos.flexC();
+        text-align: center;
+        & img{
+            display: none;
+            height: 100px;
+        }
+        & .brand{
+            text-transform: uppercase; 
+            font-weight: bold; 
+            width: 100%;
+            & .judul{
+                color: map-get(_.$c,'light');
+                font-size: 30px;
+            }
+            & .subjudul{ 
+                color: map-get(_.$c,'lightE');
+            }
+            & .subjudul1{ 
+                color: map-get(_.$c,'lightE1');
+            }
+        }
+        & #menu{
+            font-size: 30px; 
+            @include _sty.links(); 
+            color: map-get(_.$c,'light');
+        }
+    }
+}
+
+.navBappeda{
+    height:max-content;
+    @include _pos.gridC(repeat(2,1fr));
+    @include _pos.algC();
+    display: none;
+    & li{ 
+        display: inline-flex;
+        @include _sty.links();
+        color: map-get(_.$c,'light');
+        @include _pos.algI();
+        text-transform: uppercase;
+    }
+}
+
+#maincontent{
+    overflow: auto; 
+    margin-bottom: 40px;
+    // max-width: 800px;
+}
+#sideBar{
+    display: none;
+    border-left: 1px solid map-get(_.$c,'dark');
+
+    & #mainSideBar{
+        width: 90%;
+        margin: auto; 
+        @include _pos.flexC();
+        row-gap: 15px;
+        & img{
+            width: 95%;
+            margin: auto;
+        }
+    }
+}
+
+#footerBappeda{
+    width: 100%;
+    text-align: center;
+    color: map-get(_.$c,'light');
+    background-color:map-get(_.$c,'dark');
+    @extend .pwrap;
+}
+
+@media only screen and (min-width: 650px){
+    .headerBappeda{
+        @include _pos.flexC();
+        position: relative; 
+        & .bottom {
+            width: 80%;
+            left: 10%;
+            @include _pos.flexR();
+            @include _pos.absolute(('b':10px)); 
+            img {display: unset !important ; }
+            .brand{
+                text-align: left; @include _.pad(0% 10px);
+                & .judul{
+                    color: map-get(_.$c,'light');
+                    font-size: 25px;
+                }
+            }
+            & #menu{ 
+                display: none;
+                // align-content: center; 
+                // justify-content: space-between; 
+            }
+        }
+    } 
+    .navBappeda{ 
+        @include _pos.gridC(repeat(3,1fr));  
+    }
+}
+@media screen and (min-width: 800px) { 
+
+    .navBappeda{ 
+        @include _pos.gridC(repeat(4,1fr));  
+    }
+}
+
+@media screen and (min-width: 850px) { 
+    
+
+    .navBappeda{ 
+        // @include _pos.gridC(repeat(4,1fr));  
+        display: flex;
+        justify-content: space-between;
+    }
+    #maincontent{
+        width: 80%;
+    }
+    #sideBar{
+        display: block;
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1200px) { 
+    #maincontent{
+        max-width: 90%;
+    } 
+}
+
+@media screen and (min-width: 1600px) { 
+}

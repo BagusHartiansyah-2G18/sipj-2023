@@ -84,8 +84,8 @@ table tr td{
 .fz20{font-size: 20px;}
 /* <ol style="list-style: disc;"> */
 .fzK{font-size: 18px; text-transform: uppercase;}
-.fzD{font-size: 22px; text-transform: uppercase;}
-.fzU{font-size: 16px;}
+.fzD{font-size: 20px; text-transform: uppercase;}
+.fzU{font-size: 14px;}
 .bbottom{border-bottom: 1px solid;}
 
 .capitalize{text-transform: capitalize;}

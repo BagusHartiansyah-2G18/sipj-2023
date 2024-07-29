@@ -1,4 +1,5 @@
 import api from "../../utils/api";
+const BASE_URL = api.BASE_URL;
 const actType = {
     setAll : "ALL",
     leftBar: "leftBar",
@@ -151,9 +152,48 @@ function openFormEntri(url){
 function newTab(url){
   window.open(api.BASE_URL+url)
 }
+const checkForm=(dt)=>{
+  // type, minLength, value
+  try {
+    dt.map((v,i)=>{
+        switch (v.type) {
+          case "text": 
+            cfMinLength({...v,ind:i});
+          break;
+          case "email": 
+            cfEmail({...v,ind:i});
+          break;
+        }
+    })
+
+    return {
+      cf:1,
+      msg:'',
+      ind:-1
+    }
+  } catch (error) {
+    return {
+      cf:0,
+      ...error
+    }
+  }
+}
+const cfMinLength=({value, name ,minLength, ind})=>{
+  if(String(value).length>=minLength){
+    return true;
+  }
+  throw {msg: (name!=undefined ? name:'value')+" harus terisi minimal "+minLength+" huruf", ind}
+}
+const cfEmail=({value,minLength, ind})=>{
+  cfMinLength({value,minLength, ind});
+  if(String(value).split("@").length>1){
+    return true;
+  }
+  throw {msg: (name!=undefined ? name:'value email')+' harus menggunakan tanda @ ', ind}
+}
 export {
     actType,
-
+    BASE_URL,
     setAll,
     setLeftBar,
 
@@ -165,5 +205,6 @@ export {
     changeMenu,
     changeMenuSub,
     openFormEntri,
-    newTab
+    newTab,
+    checkForm
 }

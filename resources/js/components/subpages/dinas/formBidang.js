@@ -116,19 +116,50 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
         setSelectedOptions(data);
     }
     return (
-        <>
-            <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
-                <div className="form1 bwhite boxShadow1px">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-home-group fz25 "></span>
-                            <h3>Data Bidang</h3>
-                        </div>
-                        <button className="btn2 blight cmuted" onClick={add}>Entri</button>
+        <div className="Mcontainer2Form ">
+            <div className="right-1" >
+                <div class="FM1">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bdark">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Form Entri Bidang</b> 
+                            </h2>
+                        </div> 
                     </div>
-                    <div className="body">
-                        <div className="justifyEnd mtb10px">
-                            <div className="w30p ">
+                    <div class="body bdark pwrap_5 flexC jcSA" style={{width:"unset", minHeight:"200px"  }}><br/>
+                        <div className="iconInput2 ptb10px">
+                            <input className="borderR10px" type="text" value={nmBidang} onChange={setnmBidang} placeholder="Nama Bidang" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>
+                        <div className="iconInput2 ptb10px">
+                            <input className="borderR10px" type="text" value={asBidang} onChange={setasBidang} placeholder="Bidang Alias" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>
+                        
+                        <div className="list jcE">
+                            <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div className="left">
+                <div class="FM1">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bdark">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Data Bidang</b> 
+                            </h2>
+                        </div> 
+                    </div>
+                    <div class="body bdark pm0 bsolid1" style={{width:"unset", borderRadius:"0px"  }}><br/>
+                        <div className="jcE pwrap-10 cdark">
+                            <div className="w40p ">
                                 <Select
                                     options={sfLib.coptionSelect({
                                         dt,
@@ -142,57 +173,33 @@ function FormBidang({dt,changeDinas,ind, modalC}) {
                                 />
                             </div>
                         </div>
-                        {
-                            (
-                                dt[ind].bidang!==undefined &&
-                                <Tabel1
-                                    search={search}
-                                    oncSearch={setSearch}
-                                    columns={coll}
-                                    data={dt[ind].bidang.filter((item) => {
-                                            if (search === "") {
-                                                return item;
-                                            } else if (
-                                                item.nmBidang.toLowerCase().includes(search.toLowerCase())
-                                            ) {
-                                                return item;
-                                            }
-                                        })}
-                                ></Tabel1>
-                            )
-                        }
-
-                    </div>
-                    {/* <div className="footer"></div> */}
-                </div>
-                <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-home-group fz25"></span>
-                            <h3 className="">{(ins?'Entri':'Perbarui')} Bidang</h3>
-                        </div>
-                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
-                    </div>
-                    <div className="w95p m0auto">
-                        <div className="iconInput2 ptb10px">
-                            <input className="borderR10px" type="text" value={nmBidang} onChange={setnmBidang} placeholder="Nama Bidang" />
-                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
-                        </div>
-                        <div className="iconInput2 ptb10px">
-                            <input className="borderR10px" type="text" value={asBidang} onChange={setasBidang} placeholder="Bidang Alias" />
-                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
-                        </div>
-                    </div>
-                    <div className="footer posEnd">
-                        <div className="btnGroup">
-                            <button className="btn2"  onClick={close}>Close</button>
-                            <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
+                            
+                        <div className=" ">
+                            {
+                                (
+                                    dt[ind].bidang!==undefined &&
+                                    <Tabel1
+                                        search={search}
+                                        oncSearch={setSearch}
+                                        columns={coll}
+                                        data={dt[ind].bidang.filter((item) => {
+                                                if (search === "") {
+                                                    return item;
+                                                } else if (
+                                                    item.nmBidang.toLowerCase().includes(search.toLowerCase())
+                                                ) {
+                                                    return item;
+                                                }
+                                            })}
+                                    ></Tabel1>
+                                )
+                            }
                         </div>
                     </div>
                 </div>
             </div>
-        </>
-    );
+        </div>
+    );  
 }
 FormBidang.propTypes = {
     dt : PropTypes.array.isRequired,

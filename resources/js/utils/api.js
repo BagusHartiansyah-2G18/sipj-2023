@@ -1,5 +1,6 @@
 const api = (() => {
     // const BASE_URL = 'http://localhost:3000/';
+    // const urlNoted = 'http://localhost:8000/';
     const BASE_URL = 'https://sipj.bappedaksb.com/';
     const urlNoted = 'https://noted.bappedaksb.com/';
     const BASE_URL_Sub = urlNoted+'api/';

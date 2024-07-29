@@ -1,0 +1,46 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+@forward '../base/index';
+
+.headerPage1{
+    @include _pos.flexC(); 
+    gap: 30px;
+    @include _pos.justifyC(false,space-between);
+    @include _.mar(30px 0px 4% 0px);
+    & .title{
+        @include _pos.flexR();
+        @include _pos.algI();
+        & .mdi{
+            @include _.mar(0px 10px 0px 0px);
+            @include _.pad(5px);
+            border-radius: 5px;
+            @include _sty.shadow(1px 2px 2px 2px);
+        }
+        & .page{
+            @include _pos.flexC();
+            & h2{
+                @extend .pm0;
+            }
+            & span{
+                @extend .fz15;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    
+}
+@media only screen and (min-width: 840px) {
+    .headerPage1{
+        @include _pos.flexR();
+    }
+}
+@media only screen and (min-width: 1007px) {
+    
+}
+@media only screen and (min-width:1200px ) {
+    
+}

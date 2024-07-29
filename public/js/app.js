@@ -9422,55 +9422,49 @@ function MyApp() {
   var sess = _html.sess;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_dashboard_Header1__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("main", {
-      className: "flexR blight",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_dashboard_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-        className: "pwrap w100p",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-          className: "w95p m0auto mxh100p pbottom100px",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Routes, {
-            children: [_html.indMenu === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                path: "/home/dashboard",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-              }), sess.kdJaba !== '1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                  path: "/home/dinas",
-                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dinas__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                  path: "/home/rekeningBelanja",
-                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_RekeningBelanja__WEBPACK_IMPORTED_MODULE_9__["default"], {})
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                  path: "/home/jenisP",
-                  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_JenisPertanggungJawab__WEBPACK_IMPORTED_MODULE_10__["default"], {})
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                path: "/home/subkegiatan",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Subkegiatan__WEBPACK_IMPORTED_MODULE_8__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                path: "*",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-              })]
-            }), _html.indMenu === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                path: "home/work/subBidang",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_BidangSubKegiatan__WEBPACK_IMPORTED_MODULE_11__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                path: "home/work/rincianBelanja",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_BidangEntriBelanja__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                path: "home/work/Fitur",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Fitur__WEBPACK_IMPORTED_MODULE_15__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                path: "home/work/sppd/:value",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_work_sppd__WEBPACK_IMPORTED_MODULE_13__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
-                path: "home/work/ta/:value",
-                element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_work_tenagaAhli__WEBPACK_IMPORTED_MODULE_14__["default"], {})
-              })]
+      className: "MDcontainer bwhite",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_dashboard_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Routes, {
+        children: [_html.indMenu === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+            path: "/home/dashboard",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          }), sess.kdJaba !== '1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+              path: "/home/dinas",
+              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dinas__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+              path: "/home/rekeningBelanja",
+              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_RekeningBelanja__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+              path: "/home/jenisP",
+              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_JenisPertanggungJawab__WEBPACK_IMPORTED_MODULE_10__["default"], {})
             })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_17__.ToastContainer, {})]
-      })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+            path: "/home/subkegiatan",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Subkegiatan__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+            path: "*",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          })]
+        }), _html.indMenu === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+            path: "home/work/subBidang",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_BidangSubKegiatan__WEBPACK_IMPORTED_MODULE_11__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+            path: "home/work/rincianBelanja",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_BidangEntriBelanja__WEBPACK_IMPORTED_MODULE_12__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+            path: "home/work/Fitur",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_Fitur__WEBPACK_IMPORTED_MODULE_15__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+            path: "home/work/sppd/:value",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_work_sppd__WEBPACK_IMPORTED_MODULE_13__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Route, {
+            path: "home/work/ta/:value",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_pages_work_tenagaAhli__WEBPACK_IMPORTED_MODULE_14__["default"], {})
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_17__.ToastContainer, {})]
     })]
   });
 }
@@ -9520,7 +9514,7 @@ function Modal1(_ref) {
     _html = _useSelector._html;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react_modal__WEBPACK_IMPORTED_MODULE_1___default()), {
     id: "dialog1",
-    className: "modal1 ".concat(cls, " m0auto"),
+    className: "modal1 ".concat(cls, " m10pAuto"),
     isOpen: _html.modal,
     contentLabel: "Modal",
     ariaHideApp: false,
@@ -9613,7 +9607,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var icon = [{
   ic: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-    className: "mdi mdi-database cwarning fz25"
+    className: "mdi mdi-database cwarning fzXl"
   }),
   url: ''
 }, {
@@ -9642,82 +9636,58 @@ function HeaderM() {
   var updMenu = function updMenu(v) {
     dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_2__.changeMenu)(v));
   };
+  // <div className="Info">
+
+  //     {
+  //         (_html.leftBar?
+  //             <button className="btn2" id="menu" onClick={()=>onOffLeftBar(0)}><span className="mdi mdi-menu clight fziconS"></span></button>
+  //             :<button className="btn2" id="menu"  onClick={()=>onOffLeftBar(1)}><span className="mdi mdi-close clight fziconS"></span></button>
+  //         )
+  //     }
+
+  // </div>
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("header", {
-    id: "mfc2",
-    className: "posRelative",
+    className: "MDheader pwrap_5 bsuccess3 stickyHeader",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "header ",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flexR algI pwrap",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          src: _html.url + '/logo/ksb.png'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "flex clight ",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-            children: "BAPPEDA"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-            children: "Badan Perencanaan Pembangunan Daerah"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-            children: "Sumbawa Barat"
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "algI",
-        children: _html.leftBar ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-          className: "btn2",
-          id: "menu",
-          onClick: function onClick() {
-            return onOffLeftBar(0);
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-            className: "mdi mdi-menu clight fziconS"
-          })
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-          className: "btn2",
-          id: "menu",
-          onClick: function onClick() {
-            return onOffLeftBar(1);
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-            className: "mdi mdi-close clight fziconS"
-          })
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "body w95p",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "btnGroup",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-          className: "mdi mdi-web cdark mdi-spin bwarning mdiLeftGroup"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-          className: "btn2",
+      className: "Iapp",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+        src: _html.url + '/logo/ksb.png'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "fPoppins flexC asC ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          className: "pm0 fzJapp ",
           children: "SIPJ"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "pm0 fzSapp fpacifico",
+          children: "BAPPEDA"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "navbar updGrid2to3",
-        children: _html.menu.map(function (v, i) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-            className: "menu",
-            to: setUrlMenu(i),
-            onClick: function onClick() {
-              return updMenu(setUrlMenu(i));
-            },
-            children: [icon[i].ic, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-              className: " titmenu ".concat(_html.indMenu === i && 'cprimary fbold'),
-              children: v.nm
-            })]
-          }, "menus".concat(i));
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "user",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
-          className: "btn1 cdark",
-          onClick: exeLogout,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-            className: "mdi mdi-logout cdanger fz25"
-          }), "Logout"]
-        })
       })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "menu",
+      children: _html.menu.map(function (v, i) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: setUrlMenu(i),
+          onClick: function onClick() {
+            return updMenu(setUrlMenu(i));
+          },
+          children: [icon[i].ic, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "  ".concat(_html.indMenu === i ? ' cwhite fbold' : ' csuccess '),
+            children: v.nm
+          })]
+        }, "menus".concat(i));
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "Info",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "btnGroup",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "btn bdark",
+          onClick: exeLogout,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "mdi mdi-logout cdanger fzL2"
+          })
+        })
+      })
     })]
   });
 }
@@ -9757,22 +9727,25 @@ __webpack_require__.r(__webpack_exports__);
 function HeaderPage1(_ref) {
   var page = _ref.page,
     pageKet = _ref.pageKet,
-    icon = _ref.icon;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "headerPage1",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "title",
+    icon = _ref.icon,
+    _ref$menu = _ref.menu,
+    menu = _ref$menu === void 0 ? '' : _ref$menu;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "box2C bdark",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "left aiC",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: "mdi ".concat(icon, " bwhite fz25")
+        className: "mdi  ".concat(icon, "  fzL4")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "page",
+        className: "",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          className: "pm0",
           children: page
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
           children: pageKet
         })]
       })]
-    })
+    }), menu]
   });
 }
 HeaderPage1.propTypes = {
@@ -9800,6 +9773,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -9814,176 +9793,207 @@ function Navbar() {
     _html = _useSelector._html;
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var sess = _html.sess;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState2 = _slicedToArray(_useState, 2),
+    on = _useState2[0],
+    _on = _useState2[1];
   function selectMenuSub(_ref) {
     var menuSub = _ref.menuSub;
     dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_2__.changeMenuSub)({
       menuSub: menuSub
     }));
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "w20p ".concat(_html.leftBar && 'dnone', " "),
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "leftBar2",
-      id: "liftBar2",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          src: "".concat(_html.url, "/logo/boy.png")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          className: "",
-          children: "Bagus Hartiansyah"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-          className: "",
-          children: "Staff PPID"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
-        children: [_html.indMenu === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/home/dashboard",
-              onClick: function onClick() {
-                return selectMenuSub({
-                  menuSub: 'dashboard'
-                });
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                className: actSubMenu('dashboard', _html.menuSub),
-                children: "Dashboard"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "mdi mdi-calendar cdark fz25"
-              })]
-            })
-          }), sess.kdJaba !== '1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+  var logs = function logs(v) {
+    _on(!on);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+      id: "keyOnOffed",
+      className: on ? 'OnBtn' : '',
+      onClick: logs,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "arrow"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+      type: "checkbox",
+      id: "keyOnOff",
+      "aria-hidden": "true",
+      checked: on,
+      style: {
+        display: "none"
+      }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      id: "MDCnav",
+      className: "bdark ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "user",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            src: "".concat(_html.url, "/logo/boy.png")
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "flexC asC ",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+              children: "Bagus Hartiansyah"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "fpacifico",
+              children: "Staff PPID"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+          className: "ul-menu1 jcS ",
+          style: {
+            flexDirection: "column"
+          },
+          children: [_html.indMenu === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                to: "/home/member",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                  children: "Member"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi mdi-account cdark fz25"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                to: "/home/dinas",
+                to: "/home/dashboard",
+                className: actSubMenu('dashboard', _html.menuSub),
                 onClick: function onClick() {
                   return selectMenuSub({
-                    menuSub: 'dinas'
+                    menuSub: 'dashboard'
                   });
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "mdi mdi-calendar fzXl"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  children: "Dashboard"
+                })]
+              })
+            }), sess.kdJaba !== '1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  to: "/home/member",
+                  className: actSubMenu('member', _html.menuSub),
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "mdi mdi-account fzXl"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                    children: "Member"
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  to: "/home/dinas",
                   className: actSubMenu('dinas', _html.menuSub),
-                  children: "Dinas"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi mdi-office-building-marker fz25 cdark"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                to: "/home/rekeningBelanja",
-                onClick: function onClick() {
-                  return selectMenuSub({
-                    menuSub: 'rekeningBelanja'
-                  });
-                },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  onClick: function onClick() {
+                    return selectMenuSub({
+                      menuSub: 'dinas'
+                    });
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "mdi mdi-office-building-marker fzXl"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                    children: "Dinas"
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  to: "/home/rekeningBelanja",
                   className: actSubMenu('rekeningBelanja', _html.menuSub),
-                  children: "Rekening Belanja"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi mdi-account cdark fz25"
-                })]
-              })
+                  onClick: function onClick() {
+                    return selectMenuSub({
+                      menuSub: 'rekeningBelanja'
+                    });
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "mdi mdi-account fzXl"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                    children: "Rekening Belanja"
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  to: "/home/jenisP",
+                  className: actSubMenu('jenisP', _html.menuSub),
+                  onClick: function onClick() {
+                    return selectMenuSub({
+                      menuSub: 'jenisP'
+                    });
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "mdi mdi-chart-bar fzXl"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                    children: "Jenis PJ"
+                  })]
+                })
+              })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                to: "/home/jenisP",
+                to: "/home/subkegiatan",
+                className: actSubMenu('subkegiatan', _html.menuSub),
                 onClick: function onClick() {
                   return selectMenuSub({
-                    menuSub: 'jenisP'
+                    menuSub: 'subkegiatan'
                   });
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                  className: actSubMenu('jenisP', _html.menuSub),
-                  children: "Jenis PJ"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi mdi-chart-bar cdark fz25"
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "mdi mdi-office-building-cog-outline fzXl "
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  children: "Sub Kegiatan"
                 })]
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/home/subkegiatan",
-              onClick: function onClick() {
-                return selectMenuSub({
-                  menuSub: 'subkegiatan'
-                });
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                className: actSubMenu('subkegiatan', _html.menuSub),
-                children: "Sub Kegiatan"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "mdi mdi-office-building-cog-outline fz25 cdark"
-              })]
-            })
-          })]
-        }), _html.indMenu === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/home/work/subBidang",
-              onClick: function onClick() {
-                return selectMenuSub({
-                  menuSub: 'subBidang'
-                });
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          }), _html.indMenu === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                to: "/home/work/subBidang",
                 className: actSubMenu('subBidang', _html.menuSub),
-                children: "Sub Bidang"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "mdi mdi-account cdark fz25"
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/home/work/rincianBelanja",
-              onClick: function onClick() {
-                return selectMenuSub({
-                  menuSub: 'rincianBelanja'
-                });
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                onClick: function onClick() {
+                  return selectMenuSub({
+                    menuSub: 'subBidang'
+                  });
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "mdi mdi-account fzXl"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  children: "Sub Bidang"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                to: "/home/work/rincianBelanja",
                 className: actSubMenu('rincianBelanja', _html.menuSub),
-                children: "Rincian Belanja"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "mdi mdi-account cdark fz25"
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/home/work/fitur",
-              onClick: function onClick() {
-                return selectMenuSub({
-                  menuSub: 'fitur'
-                });
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                onClick: function onClick() {
+                  return selectMenuSub({
+                    menuSub: 'rincianBelanja'
+                  });
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "mdi mdi-account fzXl"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  children: "Rincian Belanja"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                to: "/home/work/fitur",
                 className: actSubMenu('fitur', _html.menuSub),
-                children: "Fitur"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "mdi mdi-account cdark fz25"
-              })]
-            })
+                onClick: function onClick() {
+                  return selectMenuSub({
+                    menuSub: 'fitur'
+                  });
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "mdi mdi-account fzXl"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  children: "SPJ"
+                })]
+              })
+            })]
           })]
         })]
-      })]
-    })
+      })
+    })]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);
 function actSubMenu(menu, menuAct) {
   // const pathname = window.location.pathname;
   if (menuAct === menu) {
-    return 'cprimary fbold';
+    return 'cwhite fbold ';
   }
-  return '';
+  return 'csuccess';
 }
 
 /***/ }),
@@ -10634,20 +10644,138 @@ function FormBelanja(_ref) {
     mclose();
   };
   // console.log(dt);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-      className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-      id: "formActionLeft",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: "form1 bwhite boxShadow1px",
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+    className: "Mcontainer2Form",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      className: "right-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        "class": "FM1 ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "header bprimary clight",
+          "class": "header ",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-              className: "mdi mdi-office-building-marker fz25 "
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
-              children: "Uraian Belanja & Pembagian Triwulan"
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("b", {
+                children: "Entri Uraian Belanja"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+            className: "btn2 blight cmuted",
+            onClick: close,
+            children: "Close"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          "class": "body bdark  pwrap-5 flexC jcSA",
+          style: {
+            width: "unset",
+            minHeight: "300px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "labelInput2 ptb10px ",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              className: "mw100px ",
+              children: "Rekening"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              className: "cdark",
+              options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
+                dt: dt[ind].apbd,
+                row: {
+                  label: 'nmApbd6',
+                  value: 'kdApbd6'
+                }
+                // xind:true
+              }),
+
+              placeholder: "Select Rekening",
+              value: selApbd,
+              onChange: setselApbd,
+              isSearchable: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "iconInput2 ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+              className: "borderR10px",
+              type: "text",
+              value: nama,
+              onChange: setnama,
+              placeholder: "Uraian"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "iconInput2 ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+              className: "borderR10px",
+              type: "number",
+              value: total,
+              onChange: settotal,
+              placeholder: "Total"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "labelInput2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              className: "mw100px",
+              children: "Jenis"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              className: "cdark",
+              options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
+                dt: dt[0].jenis,
+                row: {
+                  label: 'nmJPJ',
+                  value: 'kdJPJ'
+                }
+                // xind:true
+              }),
+
+              placeholder: "Select Jenis",
+              value: selJenis,
+              onChange: setselJenis,
+              isSearchable: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "list jcE",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "btnGroup",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                className: "btn2",
+                onClick: close,
+                children: "Close"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
+                onClick: ins ? xadded : xupded,
+                children: ins ? 'Entri' : 'Perbarui'
+              })]
+            })
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      className: "left ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          "class": "header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("b", {
+                children: "Rincian Belanja - Triwulan "
+              })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
             className: "btnGroup",
@@ -10663,22 +10791,23 @@ function FormBelanja(_ref) {
                 return generateAuto();
               },
               children: "generate AUTO"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-              className: "btn2 blight ",
-              onClick: add,
-              children: "Form"
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "body",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-            className: "justifyEnd mtb10px",
+          "class": "body bdark pm0 bsolid1 ",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "jcE pwrap-10",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "w45p labelInput2",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                 className: "mw100px",
                 children: "Dinas"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                className: "cdark",
                 options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
                   dt: dt,
                   row: {
@@ -10695,13 +10824,14 @@ function FormBelanja(_ref) {
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-            className: "justifyEnd mtb10px",
+            className: "jcE pwrap-10",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "w45p labelInput2",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                 className: "mw100px",
                 children: "Bidang"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                className: "cdark",
                 options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
                   dt: dt[ind].bidang,
                   row: {
@@ -10718,13 +10848,14 @@ function FormBelanja(_ref) {
               })]
             })
           }), dt[ind].bidang[index].sub != undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-            className: "justifyEnd mtb10px",
+            className: "jcE pwrap-10",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "w45p labelInput2",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                 className: "mw100px",
                 children: "Sub Kegiatan"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                className: "cdark",
                 options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
                   dt: dt[ind].bidang[index].sub,
                   row: {
@@ -10749,7 +10880,7 @@ function FormBelanja(_ref) {
             data: dt[ind].bidang[index].sub[index_1].rincian,
             btnAction: Object.keys(triwulan).length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                className: "flexR3",
+                className: "grid-col3",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   className: "doubleInput ptb10px",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
@@ -10815,127 +10946,28 @@ function FormBelanja(_ref) {
                     })]
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("hr", {
-                className: "opa2"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                className: "btnGroup justifyEnd",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-                  className: "btn2",
-                  onClick: closeTriwulan,
-                  children: "Close"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-                  className: "btn2 bwarning",
-                  onClick: saveTriwulan,
-                  children: "Perbarui"
-                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                className: "list jcE",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                  className: "btnGroup justifyEnd",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                    className: "btn2",
+                    onClick: closeTriwulan,
+                    children: "Close"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                    className: "btn2 bwarning",
+                    onClick: saveTriwulan,
+                    children: "Perbarui"
+                  })]
+                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("hr", {
                 className: "opa2"
               })]
             })
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
-        id: "itemFormLeft",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-              className: "mdi mdi-clock-edit-outline fz25"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("h3", {
-              className: "",
-              children: [ins ? 'Entri' : 'Perbarui', " Uraian"]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: close,
-            children: "Close"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "w95p m0auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: " labelInput2 ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
-              className: "mw100px",
-              children: "Rekening"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
-              className: "w90p",
-              options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-                dt: dt[ind].apbd,
-                row: {
-                  label: 'nmApbd6',
-                  value: 'kdApbd6'
-                }
-                // xind:true
-              }),
-
-              placeholder: "Select Rekening",
-              value: selApbd,
-              onChange: setselApbd,
-              isSearchable: true
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "iconInput2 ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
-              className: "borderR10px",
-              type: "text",
-              value: nama,
-              onChange: setnama,
-              placeholder: "Uraian"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "iconInput2 ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
-              className: "borderR10px",
-              type: "number",
-              value: total,
-              onChange: settotal,
-              placeholder: "Total"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "labelInput2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
-              className: "mw100px",
-              children: "Jenis"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_10__["default"], {
-              className: " w90p",
-              options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-                dt: dt[0].jenis,
-                row: {
-                  label: 'nmJPJ',
-                  value: 'kdJPJ'
-                }
-                // xind:true
-              }),
-
-              placeholder: "Select Jenis",
-              value: selJenis,
-              onChange: setselJenis,
-              isSearchable: true
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-          className: "footer posEnd",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "btnGroup",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-              className: "btn2",
-              onClick: close,
-              children: "Close"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-              className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
-              onClick: ins ? xadded : xupded,
-              children: ins ? 'Entri' : 'Perbarui'
-            })]
-          })
-        })]
-      })]
-    })
+      })
+    })]
   });
 }
 FormBelanja.propTypes = {
@@ -11186,32 +11218,95 @@ function FormListSubKegiatan(_ref) {
     close();
     mclose();
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-      id: "formActionLeft",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "form1 bwhite boxShadow1px",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "mdi mdi-office-building-marker fz25 "
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-              children: "Data Sub Kegiatan"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: "Mcontainer2Form",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "right-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header ",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Form Pemilihan Sub Kegiatan"
+              })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: add,
-            children: "Form"
-          })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "body",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "justifyEnd mtb10px",
+          "class": "body bdark pm0 bsolid1",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), dt[ind].sub !== undefined && dt[ind].bidang[index] != undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            cinput: "",
+            search: search1,
+            oncSearch: setSearch1,
+            columns: coll,
+            selectRow: true,
+            checkboxSelection: selectDataForm,
+            data: getDataViewSubBidang({
+              dt: dt[ind].sub,
+              terpilih: 0,
+              kdDBidang: dt[ind].bidang[index].kdDBidang,
+              search: search1
+            }),
+            btnAction: countDt !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "flexR justifySB algI",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h2", {
+                  children: [countDt + " Sub Kegiatan", " "]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                  className: "btnGroup",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    className: "btn2 bprimary clight",
+                    onClick: msgAdd,
+                    children: "Tambahkan Data"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("hr", {})]
+            })
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "left ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Sub Kegiatan Terpilih "
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1 ",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "jcE pwrap-10",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-              className: "w30p ",
+              className: "w40p ",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
                   dt: dt,
@@ -11229,9 +11324,9 @@ function FormListSubKegiatan(_ref) {
               })
             })
           }), dt[ind].bidang != undefined && dt[ind].bidang.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "justifyEnd mtb10px",
+            className: "jcE pwrap-10 cdark",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-              className: "w30p ",
+              className: "w40p ",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
                   dt: dt[ind].bidang,
@@ -11248,89 +11343,39 @@ function FormListSubKegiatan(_ref) {
                 isSearchable: true
               })
             })
-          }), dt[ind].sub !== undefined && dt[ind].bidang[index] != undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            search: search,
-            oncSearch: setSearch,
-            columns: coll,
-            checkboxSelection: selectDataTerpilih,
-            data: getDataViewSubBidang({
-              dt: dt[ind].sub,
-              terpilih: 1,
-              kdDBidang: dt[ind].bidang[index].kdDBidang,
-              search: search
-            }),
-            btnAction: countDtX !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "flexR justifySB algI",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h2", {
-                  children: [countDtX + " Sub Kegiatan", " "]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                  className: "btnGroup",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                    className: "btn2 bdanger clight",
-                    onClick: msgDel,
-                    children: "Hapus Data"
-                  })
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("hr", {})]
-            })
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
-        id: "itemFormLeft",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "mdi mdi-clock-edit-outline fz25"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-              className: "",
-              children: "Form Pemilihan Sub Kegiatan Bidang"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: close,
-            children: "Close"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "w95p m0auto",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "mtb10px",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "",
             children: dt[ind].sub !== undefined && dt[ind].bidang[index] != undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              cinput: "",
-              search: search1,
-              oncSearch: setSearch1,
+              search: search,
+              oncSearch: setSearch,
               columns: coll,
-              selectRow: true,
-              checkboxSelection: selectDataForm,
+              checkboxSelection: selectDataTerpilih,
               data: getDataViewSubBidang({
                 dt: dt[ind].sub,
-                terpilih: 0,
+                terpilih: 1,
                 kdDBidang: dt[ind].bidang[index].kdDBidang,
-                search: search1
+                search: search
               }),
-              btnAction: countDt !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              btnAction: countDtX !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "flexR justifySB algI",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h2", {
-                    children: [countDt + " Sub Kegiatan", " "]
+                    children: [countDtX + " Sub Kegiatan", " "]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                     className: "btnGroup",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                      className: "btn2 bprimary clight",
-                      onClick: msgAdd,
-                      children: "Tambahkan Data"
+                      className: "btn2 bdanger clight",
+                      onClick: msgDel,
+                      children: "Hapus Data"
                     })
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("hr", {})]
               })
             })
-          })
+          })]
         })]
-      })]
-    })
+      })
+    })]
   });
 }
 FormListSubKegiatan.propTypes = {
@@ -11531,27 +11576,38 @@ function SelectDataUtama(_ref) {
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "form1 bwhite boxShadow1px",
+    "class": "FM1 ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "header bprimary clight",
+      "class": "header",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-          className: "mdi mdi-office-building-marker fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-          children: "Uraian Belanja & Pembagian Triwulan"
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+          className: "btn bnone",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+            children: "Rincian Belanja SPJ"
+          })
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "body",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "justifyEnd mtb10px",
+      "class": "body bdark pm0 bsolid1 ",
+      style: {
+        width: "unset",
+        borderRadius: "0px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "jcE pwrap-10",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "w45p labelInput2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
             className: "mw100px",
             children: "Dinas"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            className: "cdark",
             options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].coptionSelect({
               dt: dt,
               row: {
@@ -11568,13 +11624,14 @@ function SelectDataUtama(_ref) {
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "justifyEnd mtb10px",
+        className: "jcE pwrap-10",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "w45p labelInput2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
             className: "mw100px",
             children: "Bidang"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            className: "cdark",
             options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].coptionSelect({
               dt: dt[ind].bidang,
               row: {
@@ -11606,7 +11663,7 @@ function SelectDataUtama(_ref) {
         ExpandedComponent: function ExpandedComponent(_ref2) {
           var data = _ref2.data;
           return data.rincian === undefined || data.rincian.length == 0 ? data.rincian === undefined ? selectSub(data.kdSub) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "pwrap msgLabelIcon",
+            className: "jcC pwrap-10",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
               children: "Sub ini tidak memiliki rincian belanja"
             })
@@ -11673,7 +11730,6 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -11969,80 +12025,34 @@ function FormAnggota(_ref) {
     // changeBidang({ kdDinas : dt[data.value].kdDinas, ind : data.value})
     setSelectedOptions(data);
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-      id: "formActionLeft",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "form1 bwhite boxShadow1px",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "mdi mdi-home-assistant fz25 "
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-              children: "Data Anggota Bidang"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: add,
-            children: "Entri"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "body",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "justifyEnd mtb10px",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-              className: "w30p ",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_7__["default"].coptionSelect({
-                  dt: dt,
-                  row: {
-                    label: 'nmBidang'
-                  },
-                  xind: true
-                }),
-                placeholder: "Select Bidang",
-                value: selectedOptions,
-                onChange: selectBidang,
-                isSearchable: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: "Mcontainer2Form ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "right-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
               })
-            })
-          }), Object.keys(dt[index]).length !== 0 && dt[index].anggota !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            search: search,
-            oncSearch: setSearch,
-            columns: coll,
-            data: dt[index].anggota.filter(function (item) {
-              if (search === "") {
-                return item;
-              } else if (item.nmAnggota.toLowerCase().includes(search.toLowerCase())) {
-                return item;
-              }
-            })
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
-        id: "itemFormLeft",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "mdi mdi-clock-edit-outline fz25"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h3", {
-              className: "",
-              children: [ins ? 'Entri' : 'Perbarui', " Dinas"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Form Entri Anggota"
+              })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: close,
-            children: "Close"
-          })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "w95p m0auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark pwrap_5",
+          style: {
+            width: "unset"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
             className: "doubleInput ptb10px",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
               children: "Nama Pegawai"
@@ -12144,24 +12154,78 @@ function FormAnggota(_ref) {
               onChange: setselStatus,
               isSearchable: true
             })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "footer posEnd",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "btnGroup",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-              className: "btn2",
-              onClick: close,
-              children: "Close"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "list jcE",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
               className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
               onClick: ins ? xadded : xupded,
               children: ins ? 'Entri' : 'Perbarui'
+            })
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "left",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Data Anggota Bidang"
+              })
             })]
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "jcE pwrap-10",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "w40p ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_7__["default"].coptionSelect({
+                  dt: dt,
+                  row: {
+                    label: 'nmBidang'
+                  },
+                  xind: true
+                }),
+                placeholder: "Select Bidang",
+                value: selectedOptions,
+                onChange: selectBidang,
+                isSearchable: true
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: " ",
+            children: Object.keys(dt[index]).length !== 0 && dt[index].anggota !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              search: search,
+              oncSearch: setSearch,
+              columns: coll,
+              data: dt[index].anggota.filter(function (item) {
+                if (search === "") {
+                  return item;
+                } else if (item.nmAnggota.toLowerCase().includes(search.toLowerCase())) {
+                  return item;
+                }
+              })
+            })
+          })]
         })]
-      })]
-    })
+      })
+    })]
   });
 }
 FormAnggota.propTypes = {
@@ -12209,7 +12273,6 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -12415,82 +12478,35 @@ function FormBidang(_ref) {
     });
     setSelectedOptions(data);
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-      id: "formActionLeft",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "form1 bwhite boxShadow1px",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "mdi mdi-home-group fz25 "
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-              children: "Data Bidang"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: add,
-            children: "Entri"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "body",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "justifyEnd mtb10px",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-              className: "w30p ",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_5__["default"].coptionSelect({
-                  dt: dt,
-                  row: {
-                    label: 'nmDinas',
-                    value: 'kdDinas'
-                  }
-                  // xind:true
-                }),
-
-                placeholder: "Select Dinas",
-                value: selectedOptions,
-                onChange: selectDinas,
-                isSearchable: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: "Mcontainer2Form ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "right-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
               })
-            })
-          }), dt[ind].bidang !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            search: search,
-            oncSearch: setSearch,
-            columns: coll,
-            data: dt[ind].bidang.filter(function (item) {
-              if (search === "") {
-                return item;
-              } else if (item.nmBidang.toLowerCase().includes(search.toLowerCase())) {
-                return item;
-              }
-            })
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
-        id: "itemFormLeft",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "mdi mdi-home-group fz25"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h3", {
-              className: "",
-              children: [ins ? 'Entri' : 'Perbarui', " Bidang"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Form Entri Bidang"
+              })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: close,
-            children: "Close"
-          })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "w95p m0auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark pwrap_5 flexC jcSA",
+          style: {
+            width: "unset",
+            minHeight: "200px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
             className: "iconInput2 ptb10px",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
               className: "borderR10px",
@@ -12512,24 +12528,80 @@ function FormBidang(_ref) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
               className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
             })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "footer posEnd",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "btnGroup",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-              className: "btn2",
-              onClick: close,
-              children: "Close"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "list jcE",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
               className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
               onClick: ins ? xadded : xupded,
               children: ins ? 'Entri' : 'Perbarui'
+            })
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "left",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Data Bidang"
+              })
             })]
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "jcE pwrap-10 cdark",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "w40p ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_5__["default"].coptionSelect({
+                  dt: dt,
+                  row: {
+                    label: 'nmDinas',
+                    value: 'kdDinas'
+                  }
+                  // xind:true
+                }),
+
+                placeholder: "Select Dinas",
+                value: selectedOptions,
+                onChange: selectDinas,
+                isSearchable: true
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: " ",
+            children: dt[ind].bidang !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              search: search,
+              oncSearch: setSearch,
+              columns: coll,
+              data: dt[ind].bidang.filter(function (item) {
+                if (search === "") {
+                  return item;
+                } else if (item.nmBidang.toLowerCase().includes(search.toLowerCase())) {
+                  return item;
+                }
+              })
+            })
+          })]
         })]
-      })]
-    })
+      })
+    })]
   });
 }
 FormBidang.propTypes = {
@@ -12573,7 +12645,6 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -12789,63 +12860,35 @@ function FormDinas(_ref) {
     }));
     close(1);
   };
-  // console.log();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-      id: "formActionLeft",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "form1 bwhite boxShadow1px",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-              className: "mdi mdi-home-analytics fziconS "
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-              children: "Data Dinas"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    className: "Mcontainer2Form",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "right-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          "class": "header ",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
+                children: "Form Entri"
+              })
             })]
-          }), _html.sess.kdJaba > 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: add,
-            children: "Entri"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          className: "body",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            search: search,
-            oncSearch: setSearch,
-            columns: coll,
-            data: dt.filter(function (item) {
-              if (search === "") {
-                return item;
-              } else if (item.nmDinas.toLowerCase().includes(search.toLowerCase())) {
-                return item;
-              }
-            })
           })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
-        id: "itemFormLeft",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "header bprimary clight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-              className: "mdi mdi-home-analytics fz25"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h3", {
-              className: "",
-              children: [ins ? 'Entri' : 'Perbarui', " Dinas"]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-            className: "btn2 blight cmuted",
-            onClick: close,
-            children: "Close"
-          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "w95p m0auto",
-          children: [ins ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          "class": "body bdark pwrap_5 flexC jcSA",
+          style: {
+            width: "unset",
+            minHeight: "350px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), ins ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "iconInput2 ptb10px",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
               className: "borderR10px",
@@ -12900,24 +12943,60 @@ function FormDinas(_ref) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
               className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
             })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          className: "footer posEnd",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "btnGroup",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-              className: "btn2",
-              onClick: close,
-              children: "Close"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "list jcE",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
               className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
               onClick: ins ? xadded : xupded,
               children: ins ? 'Entri' : 'Perbarui'
+            })
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "left ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          "class": "header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
+                children: "Data Dinas "
+              })
             })]
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1 ",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              search: search,
+              oncSearch: setSearch,
+              columns: coll,
+              data: dt.filter(function (item) {
+                if (search === "") {
+                  return item;
+                } else if (item.nmDinas.toLowerCase().includes(search.toLowerCase())) {
+                  return item;
+                }
+              })
+            })
+          })]
         })]
-      })]
-    })
+      })
+    })]
   });
 }
 FormDinas.propTypes = {
@@ -13531,86 +13610,96 @@ function FormJenis(_ref) {
     close();
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-    id: "formActionLeft",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: "form1 bwhite boxShadow1px ",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "header bprimary clight",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "icon",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            className: "mdi mdi-office-building-marker fz25 "
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-            children: "Daftar Jenis Pertanggung Jawaban"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-          className: "btn2 blight cmuted",
-          onClick: add,
-          children: "Entri"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "body",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          search: search,
-          oncSearch: setSearch,
-          columns: coll,
-          data: dt.filter(function (item) {
-            if (search === "") {
-              return item;
-            } else if (item.nmJPJ.toLowerCase().includes(search.toLowerCase())) {
-              return item;
-            }
+    className: "Mcontainer2Form ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "right",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        "class": "FM1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+              className: "btn bdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
+                children: "Form Entri Jenis"
+              })
+            })]
           })
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
-      id: "itemFormLeft",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "header bprimary clight",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "icon",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            className: "mdi mdi-clock-edit-outline fz25"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-            className: "",
-            children: "Daftar Jenis"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          "class": "body bdark pwrap_5",
+          style: {
+            width: "unset"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "iconInput2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+              className: "borderR10px",
+              type: "text",
+              value: nmJPJ,
+              onChange: setnmJPJ,
+              placeholder: "Nama Jenis"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "list jcE",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+              className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
+              onClick: ins ? added : upded,
+              children: ins ? 'Entri' : 'Perbarui'
+            })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-          className: "btn2 blight cmuted",
-          onClick: close,
-          children: "Close"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "w95p m0auto ptb10px",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "iconInput2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-            className: "borderR10px",
-            type: "text",
-            value: nmJPJ,
-            onChange: setnmJPJ,
-            placeholder: "Nama Jenis"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "left",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        "class": "FM1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+              className: "btn bdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
+                children: "Daftar Jenis Pertanggung Jawaban"
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: " ",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              search: search,
+              oncSearch: setSearch,
+              columns: coll,
+              data: dt.filter(function (item) {
+                if (search === "") {
+                  return item;
+                } else if (item.nmJPJ.toLowerCase().includes(search.toLowerCase())) {
+                  return item;
+                }
+              })
+            })
           })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "footer posEnd",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "btnGroup",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-            className: "btn2",
-            onClick: close,
-            children: "Close"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-            className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
-            onClick: ins ? added : upded,
-            children: ins ? 'Entri' : 'Perbarui'
-          })]
-        })
-      })]
+        })]
+      })
     })]
   });
 }
@@ -13828,106 +13917,116 @@ function FormJenisPendukung(_ref) {
     reset(true);
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-    className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-    id: "formActionLeft",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: "form1 bwhite boxShadow1px ",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "header bprimary clight",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "icon",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-            className: "mdi mdi-office-building-marker fz25 "
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: "Data Jenis Pendukung"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-          className: "btn2 blight cmuted",
-          onClick: add,
-          children: "Entri"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "body",
+    className: "Mcontainer2Form",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "right",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "justifyEnd mtb10px",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "w30p ",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_5__["default"].coptionSelect({
-                dt: dt,
-                row: {
-                  label: 'nmJPJ'
-                },
-                xind: true
-              }),
-              placeholder: "Select Jenis ",
-              value: selectedOptions,
-              onChange: selectJenis,
-              isSearchable: true
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Form Entri Sub Jenis"
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark pwrap_5",
+          style: {
+            width: "unset"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "iconInput2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+              className: "borderR10px",
+              type: "text",
+              value: nmDP,
+              onChange: setnmDP,
+              placeholder: "Nama Sub Jenis"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "list jcE",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
+              onClick: ins ? added : upded,
+              children: ins ? 'Entri' : 'Perbarui'
             })
-          })
-        }), dt[ind].dukung !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          search: search,
-          oncSearch: setSearch,
-          columns: coll
-          // onOffSearch={false}
-          ,
-          data: dt[ind].dukung.filter(function (item) {
-            if (search === "") {
-              return item;
-            } else if (item.nmDP.toLowerCase().includes(search.toLowerCase())) {
-              return item;
-            }
-          })
+          })]
         })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
-      id: "itemFormLeft",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "header bprimary clight",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "icon",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-            className: "mdi mdi-clock-edit-outline fz25"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            className: "",
-            children: "Entri Sub Jenis"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "left",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Data Pendukung"
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "jcE mtb10px",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "w40p cdark",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_5__["default"].coptionSelect({
+                  dt: dt,
+                  row: {
+                    label: 'nmJPJ'
+                  },
+                  xind: true
+                }),
+                placeholder: "Select Jenis ",
+                value: selectedOptions,
+                onChange: selectJenis,
+                isSearchable: true
+              })
+            })
+          }), dt[ind].dukung !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: " ",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              search: search,
+              oncSearch: setSearch,
+              columns: coll
+              // onOffSearch={false}
+              ,
+              data: dt[ind].dukung.filter(function (item) {
+                if (search === "") {
+                  return item;
+                } else if (item.nmDP.toLowerCase().includes(search.toLowerCase())) {
+                  return item;
+                }
+              })
+            })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-          className: "btn2 blight cmuted",
-          onClick: close,
-          children: "Close"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-        className: "w95p m0auto ptb10px",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "iconInput2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-            className: "borderR10px",
-            type: "text",
-            value: nmDP,
-            onChange: setnmDP,
-            placeholder: "Nama Sub Jenis"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-            className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-        className: "footer posEnd",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "btnGroup",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-            className: "btn2",
-            onClick: close,
-            children: "Close"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-            className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
-            onClick: ins ? added : upded,
-            children: ins ? 'Entri' : 'Perbarui'
-          })]
-        })
-      })]
+      })
     })]
   });
 }
@@ -13982,36 +14081,49 @@ function FormApbd(_ref) {
     search = _useInput2[0],
     setSearch = _useInput2[1];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "form1 bwhite boxShadow1px w40p hmax",
+    "class": "FM1 ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "header bprimary clight",
+      "class": "header bwhite",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-          className: "mdi mdi-office-building-marker fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-          children: "Daftar Induk Rekening"
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+          className: "btn bdark",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
+            children: "List Turunan Rekening"
+          })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "body",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        search: search,
-        oncSearch: setSearch,
-        columns: _states_rekeningB_action__WEBPACK_IMPORTED_MODULE_1__.colApbd,
-        onOffSearch: false,
-        data: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].objToCB({
-          dt: dt,
-          label: ['nmApbd1', 'nmApbd2', 'nmApbd3', 'nmApbd4', 'nmApbd5', 'nmApbd6'],
-          value: ['kdApbd1', 'kdApbd2', 'kdApbd3', 'kdApbd4', 'kdApbd5', 'kdApbd6']
-        }).filter(function (item) {
-          if (search === "") {
-            return item;
-          } else if (item.label.toLowerCase().includes(search.toLowerCase())) {
-            return item;
-          }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      "class": "body bdark pm0 bsolid1 ",
+      style: {
+        width: "unset",
+        borderRadius: "0px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: " ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          search: search,
+          oncSearch: setSearch,
+          columns: _states_rekeningB_action__WEBPACK_IMPORTED_MODULE_1__.colApbd,
+          onOffSearch: false,
+          data: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].objToCB({
+            dt: dt,
+            label: ['nmApbd1', 'nmApbd2', 'nmApbd3', 'nmApbd4', 'nmApbd5', 'nmApbd6'],
+            value: ['kdApbd1', 'kdApbd2', 'kdApbd3', 'kdApbd4', 'kdApbd5', 'kdApbd6']
+          }).filter(function (item) {
+            if (search === "") {
+              return item;
+            } else if (item.label.toLowerCase().includes(search.toLowerCase())) {
+              return item;
+            }
+          })
         })
-      })
+      })]
     })]
   });
 }
@@ -14061,32 +14173,45 @@ function FormApbd6(_ref) {
     search = _useInput2[0],
     setSearch = _useInput2[1];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "form1 bwhite boxShadow1px w50p",
+    "class": "FM1 ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "header bprimary clight",
+      "class": "header bwhite",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "mdi mdi-office-building-marker fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-          children: "Data Rekening Belanja"
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          className: "btn bdark",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
+            children: "List Rekening"
+          })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "body",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        search: search,
-        oncSearch: setSearch,
-        columns: _states_rekeningB_action__WEBPACK_IMPORTED_MODULE_1__.colAbpd6,
-        selectData: selectSub,
-        data: dt.filter(function (item) {
-          if (search === "") {
-            return item;
-          } else if (item.nmApbd6.toLowerCase().includes(search.toLowerCase())) {
-            return item;
-          }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      "class": "body bdark pm0 bsolid1 ",
+      style: {
+        width: "unset",
+        borderRadius: "0px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: " ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          search: search,
+          oncSearch: setSearch,
+          columns: _states_rekeningB_action__WEBPACK_IMPORTED_MODULE_1__.colAbpd6,
+          selectData: selectSub,
+          data: dt.filter(function (item) {
+            if (search === "") {
+              return item;
+            } else if (item.nmApbd6.toLowerCase().includes(search.toLowerCase())) {
+              return item;
+            }
+          })
         })
-      })
+      })]
     })]
   });
 }
@@ -14176,26 +14301,34 @@ function FormAnggotaSppd(_ref) {
     next(3);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    className: "form0 bwhite",
+    className: "Mcontainer ",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "",
+      className: "body ",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "form1 bwhite boxShadow1px ",
+        "class": "FM1 ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "header binfo clight",
+          "class": "header bwhite",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "icon",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-              className: "mdi mdi-office-building-marker fz25 "
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
-                children: "2. Penentuan Pegawai yang ditugaskan"
+                children: "pemilihan Pegawai Yang Bertugas"
               })
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "body",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1 ",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
             search: search,
             oncSearch: setSearch,
             columns: _states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.colAnggota,
@@ -14209,7 +14342,7 @@ function FormAnggotaSppd(_ref) {
             }),
             btnAction: countDtX !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "flexR justifySB algI",
+                className: "flexR jcSE aiC",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h2", {
                   children: [countDtX + " pegawai terpilih", " "]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -14222,7 +14355,7 @@ function FormAnggotaSppd(_ref) {
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {})]
             })
-          })
+          })]
         })]
       })
     })
@@ -14255,11 +14388,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mfc/sfHtml */ "./resources/js/components/mfc/sfHtml.js");
 /* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _mfc_sfLib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var _formInfoSppd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./formInfoSppd */ "./resources/js/components/subpages/sppd/formInfoSppd.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -14272,6 +14407,8 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -14312,14 +14449,14 @@ function FormDasar(_ref) {
     dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.modalClose)());
   }
   var saved = function saved() {
-    if (files === '-') {
+    if (files.nama == '') {
       return react_toastify__WEBPACK_IMPORTED_MODULE_5__.toast.error('Mohon untuk menambahkan dokumen !!!');
     }
     modalC(_mfc_sfHtml__WEBPACK_IMPORTED_MODULE_3__["default"].modalForm({
       label: "Konfirmasi",
       mclose: mclose,
-      clsH: " bwarning",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      clsH: "bwarning cdark tupper tbold",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
         children: "perbarui data Dasar Kegiatan ?"
       }),
       footer: _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_3__["default"].modalBtn({
@@ -14336,71 +14473,91 @@ function FormDasar(_ref) {
       ind: indWork,
       files: files,
       dasar: dasar.value
-    })));
+    }))).then(function (resp) {
+      setfiles({
+        nama: resp
+      });
+    });
     mclose();
     setview(1);
   };
   if (dt === undefined || dt === null) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {});
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {});
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-    className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-    id: "formActionLeft",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: "form1 bwhite boxShadow1px ",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "header binfo cwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "icon",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            className: "mdi mdi-circle-slice-2 fz25 "
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
-              children: "1. Upload Dasar Kegiatan Perjalanan Dinas"
-            })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: "Mcontainer2Form ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "right-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        "class": "FM1 ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body pwrap_5 ",
+          style: {
+            width: "unset"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_formInfoSppd__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            dt: dt
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "left",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "header bwhite",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Dasar SPPD"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("button", {
             className: "btn2 bprimary clight",
             onClick: function onClick() {
               return saved();
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
               className: "mdi mdi-check-circle  fz25"
             }), " Save"]
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "body",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "flexC w80p",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-            className: "flexR justifySB",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "labelInput2  ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark bsolid1 ",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "doubleInput cdark ptb10px",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+              className: "mw100px",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-file-send cprimary fziconS"
+              }), "Dasar"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              options: _states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.cbDasar,
+              placeholder: "Select Dasar",
+              value: dasar,
+              onChange: setdasar,
+              isSearchable: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "flexR jcSB aiC",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "doubleInput  ptb10px",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
                 className: "mw100px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "mdi mdi-file-send cprimary fziconS"
-                }), "Dasar"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                options: _states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.cbDasar,
-                placeholder: "Select Dasar",
-                value: dasar,
-                onChange: setdasar,
-                isSearchable: true
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "flexR justifySB",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "labelInput2 ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-                className: "mw100px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                   className: "mdi mdi-file-upload cprimary fziconS"
                 }), "Dokumen"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                 className: "borderR10px",
                 type: "file",
                 value: "",
@@ -14408,29 +14565,30 @@ function FormDasar(_ref) {
                   return _mfc_sfLib__WEBPACK_IMPORTED_MODULE_6__["default"].readFile(e.target, setfiles);
                 }
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-              children: files != '' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "pwrap boxShadow1px borderR10px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            }), files != '' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
+                to: _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.BASE_URL + "viewDasar/" + files.nama,
+                "class": "cwhite",
+                target: "_blank",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                   className: "mdi mdi-cloud-upload cprimary fziconS justifyC"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h5", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
-                    children: dt.dasar
-                  }), "-", files.nama]
-                })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                  children: dt.dasar
+                }), "-", files.nama]
               })
             })]
-          })]
-        })
-      })]
-    })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {})]
+        })]
+      })
+    })]
   });
 }
 FormDasar.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
-  param: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
-  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().number).isRequired,
-  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func).isRequired
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().object).isRequired,
+  param: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().object).isRequired,
+  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().number).isRequired,
+  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().func).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormDasar);
 
@@ -14454,10 +14612,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../tabel/tabel1 */ "./resources/js/components/tabel/tabel1.js");
 /* harmony import */ var _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mfc/sfHtml */ "./resources/js/components/mfc/sfHtml.js");
 /* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _formInformasi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./formInformasi */ "./resources/js/components/subpages/sppd/formInformasi.js");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -14487,8 +14647,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
+
 function FormData(_ref) {
   var dt = _ref.dt,
+    di = _ref.di,
     modalC = _ref.modalC,
     param = _ref.param,
     dataEntri = _ref.dataEntri;
@@ -14516,18 +14680,18 @@ function FormData(_ref) {
     cell: function cell(v) {
       switch (v.status) {
         case _states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.actType.nextStep.start:
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
             className: "btnGroup",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
               className: "btn2 bwarning",
               title: "Perbarui",
               onClick: function onClick() {
                 return upd(v);
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
                 className: "mdi mdi-pencil-box cdark fz25"
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
               className: "btn2 bprimary clight",
               title: "Open Form",
               onClick: function onClick() {
@@ -14537,16 +14701,16 @@ function FormData(_ref) {
             })]
           });
         case _states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.actType.nextStep.step1:
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
             className: "btnGroup",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
               className: "btn2 bprimary clight",
               title: "Open Form",
               onClick: function onClick() {
                 return dataEntri(v);
               },
               children: "Open Form"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
               to: "/pdf/sppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
                 no: v.no,
                 tujuan: v.tujuan
@@ -14557,8 +14721,8 @@ function FormData(_ref) {
             })]
           });
         case _states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.actType.nextStep.step3:
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
-            to: "/storage/".concat(v.file),
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
+            to: "/viewArsip/".concat(v.file),
             className: "btn2 bsuccess clight ptb0",
             target: "_blank",
             children: "Document"
@@ -14655,6 +14819,51 @@ function FormData(_ref) {
     setOnOff(0);
   };
   var xadded = function xadded() {
+    var _checkForm = (0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_6__.checkForm)([{
+        type: "text",
+        minLength: 10,
+        value: maksud,
+        name: "Maksud Perjalanan"
+      }, {
+        type: "text",
+        minLength: 5,
+        value: tempatS,
+        name: "Tempat Berangkat"
+      }, {
+        type: "text",
+        minLength: 5,
+        value: tempatE,
+        name: "Tempat Tujuan"
+      }, {
+        type: "text",
+        minLength: 5,
+        value: lokasi,
+        name: "Tempat Kegiatan "
+      }, {
+        type: "text",
+        minLength: 5,
+        value: date,
+        name: "Alat Angkut"
+      }, {
+        type: "text",
+        minLength: 5,
+        value: dateE,
+        name: "Tanggal Berangkat"
+      }, {
+        type: "text",
+        minLength: 3,
+        value: angkut,
+        name: "Tanggal Kembali"
+      }, {
+        type: "text",
+        minLength: 3,
+        value: anggaran,
+        name: "Anggaran"
+      }]),
+      cf = _checkForm.cf,
+      msg = _checkForm.msg,
+      ind = _checkForm.ind;
+    if (!cf) return react_toastify__WEBPACK_IMPORTED_MODULE_8__.toast.error(msg);
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.added)(_objectSpread({
       // no,
       lokasi: lokasi,
@@ -14675,7 +14884,7 @@ function FormData(_ref) {
     modalC(_mfc_sfHtml__WEBPACK_IMPORTED_MODULE_5__["default"].modalForm({
       label: "Konfirmasi",
       mclose: mclose,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
         children: "Apa benar ingin Mengapus data ini ?"
       }),
       footer: _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_5__["default"].modalBtn({
@@ -14703,8 +14912,8 @@ function FormData(_ref) {
     modalC(_mfc_sfHtml__WEBPACK_IMPORTED_MODULE_5__["default"].modalForm({
       label: "Konfirmasi",
       mclose: mclose,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("p", {
-        children: ["Apa benar ingin melanjutkan pada tahapan berikutnya ?", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), "aksi ini akan mengunci data ini sehingga tidak dapat disesuaikan kembali"]
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("p", {
+        children: ["Apa benar ingin melanjutkan pada tahapan berikutnya ?", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), "aksi ini akan mengunci data ini sehingga tidak dapat disesuaikan kembali"]
       }),
       footer: _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_5__["default"].modalBtn({
         mclose: mclose,
@@ -14796,793 +15005,240 @@ function FormData(_ref) {
     close();
   };
   if (dt === undefined || dt === null) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {});
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {});
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-    id: "formActionLeft",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: "form1 bwhite boxShadow1px ",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "header bprimary clight",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "icon",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            className: "mdi mdi-office-building-marker fz25 "
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-            children: "Form Data Perjalanan Dinas"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+    className: "Mcontainer2Form",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      className: "right-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          "class": "header ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("b", {
+                children: [ins ? 'Entri' : 'Perbarui', " Data"]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+            className: "btn2 blight cmuted",
+            onClick: add,
+            children: "Entri"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-          className: "btn2 blight cmuted",
-          onClick: add,
-          children: "Entri"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          "class": "body pwrap_5 bdark flexC jcSA",
+          style: {
+            width: "unset",
+            minHeight: "350px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "doubleInput pwrap__10 bdahedB1",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Maksud Perjalanan"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              className: "iconInput2 ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+                rows: 3,
+                className: "borderR10px pwrap w100p",
+                value: maksud,
+                onChange: setmaksud
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "doubleInput bdahedB1",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Tempat"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "double",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                className: "labelInput1 mw45p",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+                  children: "Berangkat"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                  className: "iconInput2 pwrap__10",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+                    className: "borderR10px",
+                    type: "text",
+                    value: tempatS,
+                    onChange: settempatS,
+                    placeholder: "Berangkat"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                    className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                className: "labelInput1 mw45p",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+                  children: "Tujuan"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                  className: "iconInput2 pwrap__10",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+                    className: "borderR10px w80p",
+                    type: "text",
+                    value: tempatE,
+                    onChange: settempatE,
+                    placeholder: "Tujuan"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                    className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+                  })]
+                })]
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "doubleInput pwrap__10 bdahedB1",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Tempat Kegiatan"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "iconInput2 ",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+                className: "borderR10px",
+                type: "text",
+                value: lokasi,
+                onChange: setlokasi,
+                placeholder: "Tempat Kegiatan"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "doubleInput pwrap__10 bdahedB1",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Alat Angkut"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "iconInput2 ",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+                className: "borderR10px",
+                type: "text",
+                value: angkut,
+                onChange: setangkut,
+                placeholder: "Alat Angkut"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "doubleInput bdahedB1",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Tanggal"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "double",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                className: "labelInput1 mw45p",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+                  children: "Berangkat"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+                  className: "wunset",
+                  type: "date",
+                  value: date,
+                  onChange: setdate,
+                  placeholder: "Tanggal SPPD"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                className: "labelInput1 mw45p",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+                  children: "Kembali"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+                  className: "  wunset",
+                  type: "date",
+                  value: dateE,
+                  onChange: setdateE,
+                  placeholder: "Tanggal SPPD"
+                })]
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "doubleInput pwrap__10 bdahedB1",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Anggaran"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "iconInput2 ",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+                className: "borderR10px",
+                type: "text",
+                value: anggaran,
+                onChange: setanggaran,
+                placeholder: "Anggaran"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "list jcE",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "btnGroup",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                className: "btn2",
+                onClick: close,
+                children: "Close"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
+                onClick: ins ? xadded : xupded,
+                children: ins ? 'Entri' : 'Perbarui'
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "body",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          search: search,
-          oncSearch: setSearch,
-          columns: coll,
-          data: dt.filter(function (item) {
-            if (search === "") {
-              return item;
-            } else if (item.no.toLowerCase().includes(search.toLowerCase())) {
-              return item;
-            }
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      className: "left ",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_formInformasi__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        dt: di
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          "class": "header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("b", {
+                children: "List Perjalanan Dinas "
+              })
+            })]
           })
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: "form2 hmax bwhite updGrid2to1 ".concat(onOff && 'dnone'),
-      id: "itemFormLeft",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "header ".concat(ins ? 'bprimary' : 'bwarning', " clight"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "icon",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            className: "mdi mdi-clock-edit-outline fz25"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h3", {
-            className: "",
-            children: [ins ? 'Entri' : 'Perbarui', " Data"]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-          className: "btn2 blight cmuted",
-          onClick: close,
-          children: "Close"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "w95p m0auto ",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "doubleInput ptb10px borderB",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-            children: "Maksud Perjalanan"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-            className: "iconInput2 ",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("textarea", {
-              rows: 3,
-              className: "borderR10px pwrap w100p",
-              value: maksud,
-              onChange: setmaksud
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1 ",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            search: search,
+            oncSearch: setSearch,
+            columns: coll,
+            data: dt.filter(function (item) {
+              if (search === "") {
+                return item;
+              } else if (item.no.toLowerCase().includes(search.toLowerCase())) {
+                return item;
+              }
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "doubleInput borderB",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-            children: "Tempat"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "double",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "labelInput1 w45p",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                children: "Berangkat"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "iconInput2 ptb10px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                  className: "borderR10px",
-                  type: "text",
-                  value: tempatS,
-                  onChange: settempatS,
-                  placeholder: "Berangkat"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-                })]
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "labelInput1 w45p",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                children: "Tujuan"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "iconInput2 ptb10px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                  className: "borderR10px w80p",
-                  type: "text",
-                  value: tempatE,
-                  onChange: settempatE,
-                  placeholder: "Tujuan"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-                })]
-              })]
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "doubleInput ptb10px borderB",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-            children: "Tempat Kegiatan"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "iconInput2 ",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              className: "borderR10px",
-              type: "text",
-              value: lokasi,
-              onChange: setlokasi,
-              placeholder: "Tempat Kegiatan"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "doubleInput ptb10px borderB",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-            children: "Alat Angkut"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "iconInput2 ",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              className: "borderR10px",
-              type: "text",
-              value: angkut,
-              onChange: setangkut,
-              placeholder: "Alat Angkut"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "doubleInput borderB",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-            children: "Tanggal"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "double",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "labelInput1",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                children: "Berangkat"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                className: "borderR10px",
-                type: "date",
-                value: date,
-                onChange: setdate,
-                placeholder: "Tanggal SPPD"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "labelInput1",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                children: "Kembali"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                className: "borderR10px",
-                type: "date",
-                value: dateE,
-                onChange: setdateE,
-                placeholder: "Tanggal SPPD"
-              })]
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "doubleInput ptb10px borderB",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-            children: "Anggaran"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "iconInput2 ",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              className: "borderR10px",
-              type: "text",
-              value: anggaran,
-              onChange: setanggaran,
-              placeholder: "Anggaran"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-              className: "mdi mdi-cloud-search ".concat(ins ? 'cprimary' : 'cwarning', " ")
-            })]
-          })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "footer posEnd",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "btnGroup",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-            className: "btn2",
-            onClick: close,
-            children: "Close"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-            className: "btn2 ".concat(ins ? 'bprimary' : 'bwarning'),
-            onClick: ins ? xadded : xupded,
-            children: ins ? 'Entri' : 'Perbarui'
-          })]
-        })
       })]
     })]
   });
 }
 FormData.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().array).isRequired,
-  param: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
-  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func).isRequired,
-  dataEntri: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func).isRequired
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().array).isRequired,
+  param: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().object).isRequired,
+  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().func).isRequired,
+  dataEntri: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().func).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormData);
-
-/***/ }),
-
-/***/ "./resources/js/components/subpages/sppd/formDokumen.js":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/subpages/sppd/formDokumen.js ***!
-  \**************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
-/* harmony import */ var _states_sppd_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../states/sppd/action */ "./resources/js/states/sppd/action.js");
-/* harmony import */ var _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-
-
-
-
-function FormDokumen(_ref) {
-  var dt = _ref.dt,
-    param = _ref.param,
-    indWork = _ref.indWork,
-    dwork = _ref.dwork;
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
-    _useState2 = _slicedToArray(_useState, 2),
-    dinas = _useState2[0],
-    setdinas = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
-    _useState4 = _slicedToArray(_useState3, 2),
-    setda = _useState4[0],
-    setsetda = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
-    _useState6 = _slicedToArray(_useState5, 2),
-    bupati = _useState6[0],
-    setbupati = _useState6[1];
-  var date = new Date().setDate(new Date().getDate());
-  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(new Date(date).toISOString().split('T')[0]),
-    _useInput2 = _slicedToArray(_useInput, 2),
-    tglCetak = _useInput2[0],
-    settglCetak = _useInput2[1];
-  if (dt.length === 0) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {});
-  }
-  var opsIsiManual = [{
-    value: 'Manual',
-    nmAnggota: 'Isi Manual',
-    label: 'Isi Manual'
-  }];
-  var _useInput3 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
-    _useInput4 = _slicedToArray(_useInput3, 2),
-    ketOPD = _useInput4[0],
-    setketOPD = _useInput4[1];
-  var _useInput5 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
-    _useInput6 = _slicedToArray(_useInput5, 2),
-    namaOPD = _useInput6[0],
-    setnamaOPD = _useInput6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-    _useState8 = _slicedToArray(_useState7, 2),
-    onOPD = _useState8[0],
-    setonOPD = _useState8[1];
-  var _useInput7 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
-    _useInput8 = _slicedToArray(_useInput7, 2),
-    ketSetda = _useInput8[0],
-    setketSetda = _useInput8[1];
-  var _useInput9 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
-    _useInput10 = _slicedToArray(_useInput9, 2),
-    namaSetda = _useInput10[0],
-    setnamaSetda = _useInput10[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-    _useState10 = _slicedToArray(_useState9, 2),
-    onSetda = _useState10[0],
-    setonSetda = _useState10[1];
-  var _useInput11 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
-    _useInput12 = _slicedToArray(_useInput11, 2),
-    ketBupati = _useInput12[0],
-    setketBupati = _useInput12[1];
-  var _useInput13 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(),
-    _useInput14 = _slicedToArray(_useInput13, 2),
-    namaBupati = _useInput14[0],
-    setnamaBupati = _useInput14[1];
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-    _useState12 = _slicedToArray(_useState11, 2),
-    onBupati = _useState12[0],
-    setonBupati = _useState12[1];
-  var _useInput15 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)('-'),
-    _useInput16 = _slicedToArray(_useInput15, 2),
-    noSPPD = _useInput16[0],
-    setNoSPPD = _useInput16[1];
-  var dopd = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-    dt: dt.dinas.concat(dt.plhdinas).concat(dt.plhdinas1).concat(opsIsiManual),
-    row: {
-      label: 'nmAnggota',
-      value: 'value'
-    }
-  });
-  var dbupati = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-    dt: dt.bupati.concat(dt.plhbupati).concat(opsIsiManual),
-    row: {
-      label: 'nmAnggota',
-      value: 'value'
-    }
-  });
-  var dsetda = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_4__["default"].coptionSelect({
-    dt: dt.setda.concat(dt.plhsetda).concat(opsIsiManual),
-    row: {
-      label: 'nmAnggota',
-      value: 'value'
-    }
-  });
-  if (dinas === undefined && dwork.pimOpd !== undefined) {
-    if (dwork.pimOpd === 'Manual') {
-      setdinas(_objectSpread({}, opsIsiManual[0]));
-      isiManualForm({
-        dari: 'OPD',
-        isi: dwork.tdOPD
-      });
-    } else {
-      var i = dopd.findIndex(function (val) {
-        return val.value === dwork.pimOpd;
-      });
-      setdinas(_objectSpread({}, dopd[i]));
-    }
-  }
-  if (bupati === undefined && dwork.pimBupati !== undefined) {
-    if (dwork.pimBupati === 'Manual') {
-      setbupati(_objectSpread({}, opsIsiManual[0]));
-      isiManualForm({
-        dari: 'BUPATI',
-        isi: dwork.tdBUPATI
-      });
-    } else {
-      var _i2 = dbupati.findIndex(function (val) {
-        return val.value === dwork.pimBupati;
-      });
-      setbupati(_objectSpread({}, dbupati[_i2]));
-    }
-  }
-  if (setda === undefined && dwork.pimSetda !== undefined) {
-    if (dwork.pimSetda === 'Manual') {
-      setsetda(_objectSpread({}, opsIsiManual[0]));
-      isiManualForm({
-        dari: 'SETDA',
-        isi: dwork.tdSETDA
-      });
-    } else {
-      var _i3 = dsetda.findIndex(function (val) {
-        return val.value === dwork.pimSetda;
-      });
-      setsetda(_objectSpread({}, dsetda[_i3]));
-    }
-  }
-  var actSetPimpinanDinas = function actSetPimpinanDinas(v) {
-    if (v.value === 'Manual') {
-      isiManualForm({
-        dari: 'OPD',
-        isi: dwork.tdOPD
-      });
-    } else {
-      setonOPD(0);
-    }
-    setdinas(v);
-    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
-      col: "pimOpd",
-      value: v.value
-    }, param), {}, {
-      ind: indWork
-    })));
-  };
-  var actSetPimpinanBupati = function actSetPimpinanBupati(v) {
-    if (v.value === 'Manual') {
-      isiManualForm({
-        dari: 'BUPATI',
-        isi: dwork.tdBUPATI
-      });
-    } else {
-      setonBupati(0);
-    }
-    setbupati(v);
-    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
-      col: "pimBupati",
-      value: v.value
-    }, param), {}, {
-      ind: indWork
-    })));
-  };
-  var actSetPimpinanSetda = function actSetPimpinanSetda(v) {
-    if (v.value === 'Manual') {
-      isiManualForm({
-        dari: 'SETDA',
-        isi: dwork.tdSETDA
-      });
-    } else {
-      setonSetda(0);
-    }
-    setsetda(v);
-    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setPimpinan)(_objectSpread(_objectSpread({
-      col: "pimSetda",
-      value: v.value
-    }, param), {}, {
-      ind: indWork
-    })));
-  };
-  function isiManualForm(_ref2) {
-    var dari = _ref2.dari,
-      isi = _ref2.isi;
-    var split = [];
-    if (isi == null || isi.length < 4) {
-      split.push('', '');
-    } else {
-      split = isi.split('&');
-    }
-    switch (dari) {
-      case 'OPD':
-        setonOPD(1);
-        setketOPD({
-          target: {
-            value: split[0]
-          }
-        });
-        setnamaOPD({
-          target: {
-            value: split[1]
-          }
-        });
-        break;
-      case 'SETDA':
-        setonSetda(1);
-        setketSetda({
-          target: {
-            value: split[0]
-          }
-        });
-        setnamaSetda({
-          target: {
-            value: split[1]
-          }
-        });
-        break;
-      default:
-        setonBupati(1);
-        setketBupati({
-          target: {
-            value: split[0]
-          }
-        });
-        setnamaBupati({
-          target: {
-            value: split[1]
-          }
-        });
-        break;
-    }
-  }
-  var saveTandaTangan = function saveTandaTangan(dari) {
-    var col, value;
-    switch (dari) {
-      case 'OPD':
-        col = 'tdOPD';
-        value = ketOPD + "&" + namaOPD;
-        break;
-      case 'SETDA':
-        col = 'tdSETDA';
-        value = ketSetda + "&" + namaSetda;
-        break;
-      default:
-        col = 'tdBUPATI';
-        value = ketBupati + "&" + namaBupati;
-        break;
-    }
-    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.setTandaTanganManual)(_objectSpread(_objectSpread({
-      col: col,
-      value: value
-    }, param), {}, {
-      ind: indWork
-    })));
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "form1 bwhite boxShadow1px ",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "header binfo cwhite",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-          className: "mdi mdi-circle-slice-7 fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
-            children: "4. Progres Dokumen"
-          })
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: " w95p m0auto ptb10px",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "ptb10px",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "doubleInput ptb10px",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-            children: "Tanggal Cetak"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "iconInput2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-              className: "borderR10px",
-              type: "date",
-              value: tglCetak,
-              onChange: settglCetak,
-              placeholder: "Nama Anggota"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-              className: "mdi mdi-calendar cprimary "
-            })]
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "form1 bwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-            children: "Surat Tugas - Permohonan SPD"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "btnGroup",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-              to: "/pdf/SuratTugasSppdx/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak
-              })))),
-              className: "btn2 bwarning ptb0",
-              target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "mdi mdi-file-pdf-box fz25"
-              }), " SKPD - SETDA"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-              to: "/pdf/SuratTugasSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak
-              })))),
-              className: "btn2 bsuccess clight ptb0",
-              target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "mdi mdi-file-pdf-box clight fz25"
-              }), " SKPD - Asisten"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-              to: "/pdf/SuratTugasSppdDaerah/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak
-              })))),
-              className: "btn2 bprimary clight ptb0",
-              target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "mdi mdi-file-pdf-box  fz25"
-              }), " Dalam Daerah"]
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "body",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "flexR w100p justifySA",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "ptb10px ".concat(onSetda ? 'w45p' : 'w100p', " "),
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                className: "fbold",
-                children: "Pimpinan"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                options: dsetda,
-                placeholder: "Select",
-                value: setda,
-                onChange: actSetPimpinanSetda,
-                isSearchable: true
-              })]
-            }), onSetda ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "pwrap w45p borderL borderLeftTB10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "doubleInput ptb10px borderB",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                  children: "Keterangan Penanda Tangan"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "iconInput2 ",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
-                    rows: 3,
-                    className: "borderR10px pwrap w100p",
-                    value: ketSetda,
-                    onChange: setketSetda
-                  })
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "doubleInput ptb10px borderB",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                  children: "Nama Penanda Tangan"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "iconInput2 ",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
-                    rows: 3,
-                    className: "borderR10px pwrap w100p",
-                    value: namaSetda,
-                    onChange: setnamaSetda
-                  })
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "btnGroup",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                  className: "btn2 bwarning",
-                  onClick: function onClick() {
-                    return saveTandaTangan('SETDA');
-                  },
-                  children: "perbarui"
-                })
-              })]
-            }) : '']
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "form1 bwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-            children: "Surat Perjalanan Dinas (SKPD)"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "btnGroup",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-              to: "/pdf/sppdSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak,
-                sppdDaerah: 1
-              })))),
-              className: "btn2 bwarning ptb0",
-              target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "mdi mdi-file-pdf-box fz25"
-              }), " SPD Dalam Daerah"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-              to: "/pdf/sppdSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak,
-                sppdDaerah: 0
-              })))),
-              className: "btn2 bsuccess clight ptb0",
-              target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "mdi mdi-file-pdf-box clight fz25"
-              }), " SPD Luar Daerah"]
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "body",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "flexR w100p justifySA",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "ptb10px ".concat(onOPD ? 'w45p' : 'w100p', " "),
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                className: "fbold",
-                children: "Pimpinan"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                options: dopd,
-                placeholder: "Select",
-                value: dinas,
-                onChange: actSetPimpinanDinas,
-                isSearchable: true
-              })]
-            }), onOPD ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "pwrap w45p borderL borderLeftTB10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "doubleInput ptb10px borderB",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                  children: "Keterangan Penanda Tangan"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "iconInput2 ",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
-                    rows: 3,
-                    className: "borderR10px pwrap w100p",
-                    value: ketOPD,
-                    onChange: setketOPD
-                  })
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "doubleInput ptb10px borderB",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                  children: "Nama Penanda Tangan"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "iconInput2 ",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
-                    rows: 3,
-                    className: "borderR10px pwrap w100p",
-                    value: namaOPD,
-                    onChange: setnamaOPD
-                  })
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "btnGroup",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                  className: "btn2 bwarning",
-                  onClick: function onClick() {
-                    return saveTandaTangan('OPD');
-                  },
-                  children: "perbarui"
-                })
-              })]
-            }) : '']
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "form1 bwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-            children: "Kwitansi"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            className: "btnGroup",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-              to: "/pdf/kwitansiSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
-                tglCetak: tglCetak,
-                noSPPD: noSPPD
-              })))),
-              className: "btn2 bsuccess clight ptb0",
-              target: "_blank",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "mdi mdi-file-pdf-box clight fz25"
-              }), " Dokumen"]
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "body",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "doubleInput ptb10px borderB",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-              children: "No SPPD"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "iconInput2 ",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                className: "borderR10px",
-                type: "text",
-                value: noSPPD,
-                onChange: setNoSPPD,
-                placeholder: "000.1.2.3/....."
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "mdi mdi-cloud-search cdark "
-              })]
-            })]
-          })
-        })]
-      })]
-    })]
-  });
-}
-FormDokumen.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().object).isRequired,
-  param: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().object).isRequired,
-  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().number).isRequired,
-  dwork: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().object).isRequired
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormDokumen);
 
 /***/ }),
 
@@ -15604,9 +15260,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
 /* harmony import */ var _sub_formUraian__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sub/formUraian */ "./resources/js/components/subpages/sppd/sub/formUraian.js");
 /* harmony import */ var _sub_formNoSpp__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sub/formNoSpp */ "./resources/js/components/subpages/sppd/sub/formNoSpp.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _sub_formVerifikasiStaf__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sub/formVerifikasiStaf */ "./resources/js/components/subpages/sppd/sub/formVerifikasiStaf.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -15634,13 +15291,11 @@ function FormEntriBiaya(_ref) {
   function mclose() {
     dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_4__.modalClose)());
   }
-
-  // delete nama staf
   var del = function del(i) {
     modalC(_mfc_sfHtml__WEBPACK_IMPORTED_MODULE_3__["default"].modalForm({
       label: "Konfirmasi",
       mclose: mclose,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
         children: "Apa benar ingin memhapus data ini ?"
       }),
       footer: _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_3__["default"].modalBtn({
@@ -15711,7 +15366,7 @@ function FormEntriBiaya(_ref) {
     modalC(_mfc_sfHtml__WEBPACK_IMPORTED_MODULE_3__["default"].modalForm({
       label: "Konfirmasi",
       mclose: mclose,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
         children: "Apa benar ingin memhapus data ini ?"
       }),
       footer: _mfc_sfHtml__WEBPACK_IMPORTED_MODULE_3__["default"].modalBtn({
@@ -15761,99 +15416,150 @@ function FormEntriBiaya(_ref) {
   };
 
   if (dt.length === 0) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {});
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {});
   }
-  // console.log(dt);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    className: "form1 bwhite boxShadow1px ",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "header binfo cwhite",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-          className: "mdi mdi-office-building-marker fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
-            children: "3. Form Rincian Biaya (KWITANSI)"
-          })
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: " w95p m0auto ptb10px",
-      children: dt.map(function (v, i) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "form1 bwhite",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "header",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-              children: v.nmAnggota
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-              className: "btnGroup",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
-                className: "btn2 bdanger clight",
-                onClick: function onClick() {
-                  return del(i);
-                },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "mdi mdi-delete-forever clight fz25"
-                }), " Hapus"]
+  var updManualStaf = function updManualStaf(v) {
+    (0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.uploadDataVerifikasiStaf)(_objectSpread(_objectSpread({
+      fileD: btoa(JSON.stringify(v))
+    }, param), {}, {
+      kdBAnggota: dt[v.ind].kdBAnggota,
+      kdBidang: dt[v.ind].kdBidang
+    }));
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "body",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Verifikasi Data - Data Kwitansi"
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "body",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_sub_formNoSpp__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              ind: i,
-              updNomorSppd: updNomorSppd,
-              dt: v,
-              start: {
-                start: true
-              }
-            }, "nosppd" + i), v.ddukung.map(function (v1, i1) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "ptb10px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                  className: " flexR justifySB",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
-                    className: "btn7 ",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                      className: "mdi mdi-login binfo clight fziconS"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
-                      className: "cdark",
-                      children: v1.nmDP
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body bdark pm0 bsolid1 ",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), dt.map(function (v, i) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "Mcontainer2Form",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                className: "right-1",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_sub_formVerifikasiStaf__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                  value: _objectSpread({}, v),
+                  saved: updManualStaf,
+                  ind: i
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                className: "left ",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  "class": "FM1 ",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    "class": "header bwhite",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      "class": "cdark flexR",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                        className: "btn bnone",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                          className: "mdi mdi-star-crescent cwarning fzXl"
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+                        className: "  pl0 aiE fBebasNeue",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                          children: v.nmAnggota
+                        })
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                      className: "btnGroup",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("button", {
+                        className: "btn2 bdanger clight",
+                        onClick: function onClick() {
+                          return del(i);
+                        },
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                          className: "mdi mdi-delete-forever clight fz25"
+                        }), " Hapus"]
+                      })
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-                    className: "btn2 bprimary clight",
-                    onClick: function onClick() {
-                      return addDPendukung(i, i1);
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    "class": "body blight bsolid1 ",
+                    style: {
+                      width: "unset",
+                      borderRadius: "0px"
                     },
-                    children: "Entri"
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_sub_formNoSpp__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      ind: i,
+                      updNomorSppd: updNomorSppd,
+                      dt: v,
+                      start: {
+                        start: true
+                      }
+                    }, "nosppd" + i), v.ddukung.map(function (v1, i1) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        className: "ptb10px",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          className: " flexR jcSB",
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("button", {
+                            className: "btn7 ",
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                              className: "mdi mdi-login binfo clight fziconS"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+                              className: "cdark",
+                              children: v1.nmDP
+                            })]
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            className: "btn2 bprimary clight",
+                            onClick: function onClick() {
+                              return addDPendukung(i, i1);
+                            },
+                            children: "Entri"
+                          })]
+                        }), v1.uraian != undefined && v1.uraian.map(function (v2, i2) {
+                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_sub_formUraian__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                            dt: _objectSpread(_objectSpread({}, v2), {}, {
+                              nmDP: v1.nmDP
+                            }),
+                            onUpded: updDPendukung,
+                            onDeled: delDPendukung,
+                            value: {
+                              iuraian: i2,
+                              ianggota: i,
+                              idukung: i1,
+                              kdUraian: v2.kdUraian
+                            }
+                          }, 'uraian' + i2);
+                        })]
+                      }, 'dukung' + i1);
+                    })]
                   })]
-                }), v1.uraian != undefined && v1.uraian.map(function (v2, i2) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_sub_formUraian__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                    dt: v2,
-                    onUpded: updDPendukung,
-                    onDeled: delDPendukung,
-                    value: {
-                      iuraian: i2,
-                      ianggota: i,
-                      idukung: i1,
-                      kdUraian: v2.kdUraian
-                    }
-                  }, 'uraian' + i2);
-                })]
-              }, 'dukung' + i1);
-            })]
+                })
+              })]
+            });
           })]
-        }, 'user' + i);
+        })]
       })
-    })]
+    })
   });
 }
 FormEntriBiaya.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().array).isRequired,
-  param: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().object).isRequired,
-  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().number).isRequired,
-  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().func).isRequired
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().array).isRequired,
+  param: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
+  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().number).isRequired,
+  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormEntriBiaya);
 
@@ -15878,8 +15584,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _states_sfHtml_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../states/sfHtml/action */ "./resources/js/states/sfHtml/action.js");
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
 /* harmony import */ var _mfc_sfLib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -15915,6 +15622,7 @@ function FormFinishSppd(_ref) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
     _useState2 = _slicedToArray(_useState, 1),
     onOff = _useState2[0];
+  var no = dt.no;
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(dt.file),
     _useState4 = _slicedToArray(_useState3, 2),
     files = _useState4[0],
@@ -15927,6 +15635,11 @@ function FormFinishSppd(_ref) {
     _useInput4 = _slicedToArray(_useInput3, 2),
     tglBuku = _useInput4[0],
     settglBuku = _useInput4[1];
+  var date = new Date().setDate(new Date().getDate());
+  var _useInput5 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__.useInput)(new Date(date).toISOString().split('T')[0]),
+    _useInput6 = _slicedToArray(_useInput5, 2),
+    tglCetak = _useInput6[0],
+    settglCetak = _useInput6[1];
   function mclose() {
     dispatch((0,_states_sfHtml_action__WEBPACK_IMPORTED_MODULE_5__.modalClose)());
   }
@@ -15964,24 +15677,189 @@ function FormFinishSppd(_ref) {
   if (dt === undefined || dt === null) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {});
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-    className: onOff ? 'formActionLeft' : 'formActionLeftAct',
-    id: "formActionLeft",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: "form1 bwhite boxShadow1px ",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "header bprimary clight",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "icon",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-            className: "mdi mdi-office-building-marker fz25 "
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
-              children: "3. Form Pengarsipan & Penguncian Data"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: "Mcontainer2Form",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "right-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          "class": "header bwhite",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Cetak Dokumen"
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          className: "body bdark",
+          style: {
+            width: "unset",
+            padding: "10px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "ptb10px ",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "doubleInput ptb10px",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                children: "Tanggal Cetak"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "iconInput2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  className: "borderR10px",
+                  type: "date",
+                  value: tglCetak,
+                  onChange: settglCetak,
+                  placeholder: "Nama Anggota"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                  className: "mdi mdi-calendar cprimary "
+                })]
+              })]
             })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "doubleInput ",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+              children: "Dokumen Surat Tugas - Permohonan"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "Flex-b250 double",
+              style: {
+                gap: "10px"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+                to: "/pdf/SuratTugasSppdx/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                  tglCetak: tglCetak,
+                  no: no
+                })))),
+                className: "list bprimary1 radius-10",
+                target: "_blank",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  "class": "btn-inline  aiC jcC ",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-file-pdf-box clight fzL6"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+                    style: {
+                      lineHeight: "20px"
+                    },
+                    children: ["Luar Daerah", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), "( SKPD - SEKDA )"]
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+                to: "/pdf/SuratTugasSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                  tglCetak: tglCetak,
+                  no: no
+                })))),
+                className: "list bprimary1 radius-10",
+                target: "_blank",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  "class": "btn-inline  aiC jcC ",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-file-pdf-box clight fzL6"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+                    style: {
+                      lineHeight: "20px"
+                    },
+                    children: ["Luar Daerah", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), "( SKPD - Plh. SEKDA, Asisten )"]
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+                to: "/pdf/SuratTugasSppdDaerah/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                  tglCetak: tglCetak,
+                  no: no
+                })))),
+                className: "list bprimary1 radius-10",
+                target: "_blank",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  "class": "btn-inline  aiC jcC ",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-file-pdf-box clight fzL6"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+                    style: {
+                      lineHeight: "20px"
+                    },
+                    children: ["Dalam Daerah", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), "( SKPD - Asisten  )"]
+                  })]
+                })
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "doubleInput ",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+              children: "Dokumen Lainnya"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "Flex-b250 double",
+              style: {
+                gap: "10px"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+                to: "/pdf/sppdSetda/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                  tglCetak: tglCetak,
+                  no: no,
+                  sppdDaerah: 0
+                })))),
+                className: "list bprimary1 radius-10",
+                target: "_blank",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  "class": "btn-inline  aiC jcC ",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-file-pdf-box clight fzL6"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+                    style: {
+                      lineHeight: "20px"
+                    },
+                    children: ["( SPD )", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), "Surat Perjalanan Dinas "]
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+                to: "/pdf/kwitansiSppd/".concat(btoa(JSON.stringify(_objectSpread(_objectSpread({}, param), {}, {
+                  tglCetak: tglCetak,
+                  no: no
+                })))),
+                className: "list bprimary1 radius-10",
+                target: "_blank",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  "class": "btn-inline  aiC jcC ",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-file-pdf-box clight fzL6"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                    style: {
+                      lineHeight: "20px"
+                    },
+                    children: "Kwitansi"
+                  })]
+                })
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {})]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "left ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "FM1 ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "header bwhite",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            "class": "cdark flexR",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              className: "btn bnone",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mdi mdi-star-crescent cwarning fzXl"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: "  pl0 aiE fBebasNeue",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+                children: "Arsip dan Penguncian Data"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("button", {
             className: "btn2 bsuccess clight",
             onClick: function onClick() {
               return saved();
@@ -15989,84 +15867,207 @@ function FormFinishSppd(_ref) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
               className: "mdi mdi-check-circle  fz25"
             }), " Save"]
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-        className: "body",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "flexC w80p",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "flexR justifySB",
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          "class": "body  bsolid1 ",
+          style: {
+            width: "unset",
+            borderRadius: "0px"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "flexC w80p",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-              className: "labelInput2 ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
-                className: "mw100px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                  className: "mdi mdi-cloud-search cprimary "
-                }), "No Buku"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                className: "borderR10px",
-                type: "text",
-                value: noBuku,
-                onChange: setnoBuku,
-                placeholder: "No Buku"
+              className: "flexR justifySB",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "labelInput2 ptb10px",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+                  className: "mw100px",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-cloud-search cprimary "
+                  }), "No Buku"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  className: "borderR10px",
+                  type: "text",
+                  value: noBuku,
+                  onChange: setnoBuku,
+                  placeholder: "No Buku"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "labelInput2 ptb10px",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+                  className: "mw200px",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-cloud-search cprimary "
+                  }), "Tanggal Buku"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  className: "borderR10px",
+                  type: "text",
+                  value: tglBuku,
+                  onChange: settglBuku,
+                  placeholder: "Tanggal diBukukan"
+                })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-              className: "labelInput2 ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
-                className: "mw200px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                  className: "mdi mdi-cloud-search cprimary "
-                }), "Tanggal Buku"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                className: "borderR10px",
-                type: "text",
-                value: tglBuku,
-                onChange: settglBuku,
-                placeholder: "Tanggal diBukukan"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "flexR justifySB",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-              className: "labelInput2 ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
-                className: "mw100px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                  className: "mdi mdi-cloud-search cprimary "
-                }), "Dokumen"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                className: "borderR10px",
-                type: "file",
-                value: "",
-                onChange: function onChange(e) {
-                  return _mfc_sfLib__WEBPACK_IMPORTED_MODULE_7__["default"].readFile(e.target, setfiles);
-                },
-                placeholder: "uraian"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-              children: files != '-' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "pwrap boxShadow1px borderR10px",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                  className: "mdi mdi-cloud-search cprimary fziconS justifyC"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h5", {
-                  children: files.nama
+              className: "flexR justifySB",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "labelInput2 ptb10px",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+                  className: "mw100px",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-cloud-search cprimary "
+                  }), "Dokumen"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  className: "borderR10px",
+                  type: "file",
+                  value: "",
+                  onChange: function onChange(e) {
+                    return _mfc_sfLib__WEBPACK_IMPORTED_MODULE_7__["default"].readFile(e.target, setfiles);
+                  },
+                  placeholder: "uraian"
                 })]
-              })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                children: files != '-' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  className: "pwrap boxShadow1px borderR10px",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                    className: "mdi mdi-cloud-search cprimary fziconS justifyC"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h5", {
+                    children: files.nama
+                  })]
+                })
+              })]
             })]
-          })]
-        })
-      })]
-    })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {})]
+        })]
+      })
+    })]
   });
 }
 FormFinishSppd.propTypes = {
-  dt: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
-  param: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object).isRequired,
-  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().number).isRequired,
-  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func).isRequired
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object).isRequired,
+  param: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object).isRequired,
+  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().number).isRequired,
+  modalC: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().func).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormFinishSppd);
+
+/***/ }),
+
+/***/ "./resources/js/components/subpages/sppd/formInfoSppd.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/subpages/sppd/formInfoSppd.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FormInfoSpppd)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function FormInfoSpppd(_ref) {
+  var dt = _ref.dt;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: " ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "Flex-b45p jcSB",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        "class": "list flexR  aiC",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          "class": "mdi mdi-numeric-0-box-multiple csuccess3  fzL2 ",
+          children: " "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+          "class": "pwrap_10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+            children: "No"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+            className: "tbold",
+            children: [dt.no, " "]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        "class": "list flexR aiC jcE",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+          "class": "pwrap_10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+            children: "Tujuan"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "tbold",
+            children: dt.tempatE
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          "class": "mdi mdi-home-export-outline csuccess3  fzL2 ",
+          children: " "
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "Flex-b45p jcSB",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        "class": "list flexR   aiC",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          "class": "mdi mdi-home csuccess3  fzL2 ",
+          children: " "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+          "class": "pwrap_10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+            children: "Tempat Kegiatan"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "tbold",
+            children: dt.lokasi
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        "class": "list flexR   aiC jcE",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+          "class": "pwrap_10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+            children: "Status"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+            className: "tbold",
+            children: [dt.status, " "]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          "class": "mdi mdi-lightbulb-question csuccess3  fzL2 ",
+          children: " "
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "Flex-b45p jcSB",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        "class": "list flexR  aiC",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          "class": "mdi mdi-airplane-clock csuccess3  fzL2 ",
+          children: " "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+          "class": "pwrap_10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+            children: "Tgl Berangkat"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "tbold",
+            children: dt.date
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        "class": "list flexR   aiC jcE",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+          "class": "pwrap_10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+            children: "Tgl Kembali"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "tbold",
+            children: dt.dateE
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          "class": "mdi mdi-airplane-clock mdi-flip-h  csuccess3  fzL2 ",
+          children: " "
+        })]
+      })]
+    })]
+  });
+}
 
 /***/ }),
 
@@ -16094,21 +16095,30 @@ __webpack_require__.r(__webpack_exports__);
 function FormInformasi(_ref) {
   var dt = _ref.dt;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "form1 bwhite boxShadow1px ",
+    "class": "FM1 ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "header bwarning",
+      "class": "header",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          className: "mdi mdi-office-building-marker fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-          children: "Informasi"
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          className: "btn bnone",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
+            children: "Informasi"
+          })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "body",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "flexR3",
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      "class": "body bdark pm0 bsolid1 ",
+      style: {
+        width: "unset"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "flexC",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
             style: {
@@ -16117,52 +16127,49 @@ function FormInformasi(_ref) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
               className: "ptb10px",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-                className: "fbold",
-                children: "Sub Kegiatan"
+                className: "tbold",
+                children: "Sub Kegiatan :"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                className: "fzXl",
                 children: dt.nmSub
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
               className: "ptb10px",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-                className: "fbold",
-                children: "Uraian Belanja"
+                className: "tbold",
+                children: "Uraian Belanja :"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                className: "fzXl",
                 children: dt.nama
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                className: "flexR algI",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                  className: " boxShadow1px bprimary justifyC  wkotakS algI",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                    className: "mdi mdi-cart cwhite  fziconS "
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
-                  className: "pa",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-                    className: "fbold",
-                    children: "Sisa"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-                    children: ["Rp.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("small", {
-                      children: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_1__["default"]._$(dt.total - dt.realisasi)
-                    })]
-                  })]
-                })]
-              })
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "flexC justifySE",
+          className: "grid-col3",
+          style: {
+            gap: "0px"
+          },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "flexR algI",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: " boxShadow1px bsuccess justifyC rotasi45 wkotakS algI",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                className: "mdi mdi-currency-usd cwhite rotasiM45 fziconS "
-              })
+            className: "flexR bprimary aiC",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "mdi mdi-cart cwhite  fzL2 "
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
-              className: "pa",
+              className: "pwrap_10",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                className: "fbold",
+                children: "Sisa"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                children: ["Rp.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("small", {
+                  children: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_1__["default"]._$(dt.total - dt.realisasi)
+                })]
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "flexR bsuccess aiC",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "mdi mdi-currency-usd cwhite rotasiM45 fzL2 "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
+              className: "pwrap_10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
                 className: "fbold",
                 children: "Alokasi"
@@ -16173,14 +16180,11 @@ function FormInformasi(_ref) {
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "flexR algI",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: " boxShadow1px bdanger justifyC rotasi45 wkotakS algI",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                className: "mdi mdi-currency-usd-off cwhite rotasiM45 fziconS "
-              })
+            className: "flexR bdanger aiC",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "mdi mdi-currency-usd-off cwhite rotasiM45 fzL2 "
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
-              className: "pa",
+              className: "pwrap_10",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
                 className: "fbold",
                 children: "Realisasi"
@@ -16192,7 +16196,7 @@ function FormInformasi(_ref) {
             })]
           })]
         })]
-      })
+      })]
     })]
   });
 }
@@ -16200,6 +16204,271 @@ FormInformasi.propTypes = {
   dt: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormInformasi);
+
+/***/ }),
+
+/***/ "./resources/js/components/subpages/sppd/formPillihPimpinan.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/subpages/sppd/formPillihPimpinan.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _states_sppd_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../states/sppd/action */ "./resources/js/states/sppd/action.js");
+/* harmony import */ var _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mfc/sfLib */ "./resources/js/components/mfc/sfLib.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var _sub_formVerifikasiPimpinan__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sub/formVerifikasiPimpinan */ "./resources/js/components/subpages/sppd/sub/formVerifikasiPimpinan.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
+
+
+
+
+
+
+function FormPilihPimpinan(_ref) {
+  var dt = _ref.dt,
+    param = _ref.param,
+    indWork = _ref.indWork,
+    dwork = _ref.dwork;
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  var realDOpd = dt.dinas.concat(dt.plhdinas).concat(dt.plhdinas1);
+  var dopd = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].coptionSelect({
+    dt: realDOpd,
+    row: {
+      label: 'nmAnggota',
+      value: 'value'
+    },
+    xind: true
+  });
+  var realSetda = dt.setda.concat(dt.plhsetda);
+  var dsetda = _mfc_sfLib__WEBPACK_IMPORTED_MODULE_3__["default"].coptionSelect({
+    dt: realSetda,
+    row: {
+      label: 'nmAnggota',
+      value: 'value'
+    },
+    xind: true
+  });
+  var xind = dwork.pimOpd == null ? _objectSpread(_objectSpread({}, dopd[0]), {}, {
+    ind: 0
+  }) : false;
+  if (!xind) {
+    xind = JSON.parse(atob(dwork.pimOpd));
+  }
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(xind),
+    _useState2 = _slicedToArray(_useState, 2),
+    dinas = _useState2[0],
+    setdinas = _useState2[1];
+  xind = dwork.pimSetda == null ? _objectSpread(_objectSpread({}, dsetda[0]), {}, {
+    ind: 0
+  }) : false;
+  if (!xind) {
+    xind = JSON.parse(atob(dwork.pimSetda));
+  }
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(xind),
+    _useState4 = _slicedToArray(_useState3, 2),
+    setda = _useState4[0],
+    setsetda = _useState4[1];
+  if (dt.length === 0) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: " "
+    });
+  }
+  var actSetPimpinanDinas = function actSetPimpinanDinas(v) {
+    setdinas(v);
+    var _realDOpd$v$value = realDOpd[v.value],
+      nip = _realDOpd$v$value.nip,
+      nmAnggota = _realDOpd$v$value.nmAnggota,
+      nmJabatan = _realDOpd$v$value.nmJabatan,
+      golongan = _realDOpd$v$value.golongan;
+    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.setPimpinan)(_objectSpread(_objectSpread({
+      col: "pimOpd",
+      value: _objectSpread(_objectSpread({
+        nip: nip,
+        nmAnggota: nmAnggota,
+        nmJabatan: nmJabatan,
+        golongan: golongan,
+        ind: v.value
+      }, v), {}, {
+        manual: "no"
+      })
+    }, param), {}, {
+      ind: indWork,
+      manual: "no"
+    })));
+  };
+  var actSetPimpinanSetda = function actSetPimpinanSetda(v) {
+    setsetda(v);
+    var _realSetda$v$value = realSetda[v.value],
+      nip = _realSetda$v$value.nip,
+      nmAnggota = _realSetda$v$value.nmAnggota,
+      nmJabatan = _realSetda$v$value.nmJabatan,
+      golongan = _realSetda$v$value.golongan;
+    dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.setPimpinan)(_objectSpread(_objectSpread({
+      col: "pimSetda",
+      value: _objectSpread(_objectSpread({
+        nip: nip,
+        nmAnggota: nmAnggota,
+        nmJabatan: nmJabatan,
+        golongan: golongan,
+        ind: v.value
+      }, v), {}, {
+        manual: "no"
+      })
+    }, param), {}, {
+      ind: indWork
+    })));
+  };
+  function isiManualForm(v) {
+    if (v.kunci == "pimSetda") {
+      setsetda(v);
+    } else {
+      setdinas(v);
+    }
+    return dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.setPimpinan)(_objectSpread(_objectSpread({
+      col: v.kunci,
+      value: _objectSpread(_objectSpread({}, v), {}, {
+        manual: "yes",
+        start: true
+      })
+    }, param), {}, {
+      ind: indWork
+    })));
+  }
+  var pimpinan = function pimpinan() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "Mcontainer2Form",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "right-1",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_sub_formVerifikasiPimpinan__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          dt: _objectSpread(_objectSpread({}, Object.keys(setda).length > 3 ? setda : _objectSpread(_objectSpread({}, realSetda[setda.value]), setda)), {}, {
+            start: true
+          }),
+          saved: isiManualForm,
+          kunci: "pimSetda"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "left ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          "class": "FM1 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            "class": "header bwhite",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              "class": "cdark flexR",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                className: "btn bnone",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                  className: "mdi mdi-star-crescent cwarning fzXl"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+                className: "  pl0 aiE fBebasNeue",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("b", {
+                  children: ["Pilih Pimpinan ", "(PEMBERI PERINTAH)"]
+                })
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            "class": "body  bsolid1 ",
+            style: {
+              width: "unset",
+              borderRadius: "0px"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              options: dsetda,
+              placeholder: "Select",
+              value: setda,
+              onChange: actSetPimpinanSetda,
+              isSearchable: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {})]
+          })]
+        })
+      })]
+    });
+  };
+  var pimpinanSKPD = function pimpinanSKPD() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "Mcontainer2Form",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "right-1",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_sub_formVerifikasiPimpinan__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          dt: _objectSpread(_objectSpread({}, Object.keys(dinas).length > 3 ? dinas : _objectSpread(_objectSpread({}, realDOpd[dinas.value]), dinas)), {}, {
+            start: true
+          }),
+          saved: isiManualForm
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "left ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          "class": "FM1 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            "class": "header bwhite",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              "class": "cdark flexR",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                className: "btn bnone",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                  className: "mdi mdi-star-crescent cwarning fzXl"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+                className: "  pl0 aiE fBebasNeue",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("b", {
+                  children: ["Pilih Pimpinan ", "( PEMOHON SURAT TUGAS )"]
+                })
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            "class": "body  bsolid1 ",
+            style: {
+              width: "unset",
+              borderRadius: "0px"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              options: dopd,
+              placeholder: "Select",
+              value: dinas,
+              onChange: actSetPimpinanDinas,
+              isSearchable: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {})]
+          })]
+        })
+      })]
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [pimpinan(), pimpinanSKPD()]
+  });
+}
+FormPilihPimpinan.propTypes = {
+  dt: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().object).isRequired,
+  param: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().object).isRequired,
+  indWork: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().number).isRequired,
+  dwork: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().object).isRequired
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormPilihPimpinan);
 
 /***/ }),
 
@@ -16224,155 +16493,67 @@ __webpack_require__.r(__webpack_exports__);
 
 function FormTahapan(_ref) {
   var dt = _ref.dt,
+    view = _ref.view,
     setview = _ref.setview;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "form0 bwhite",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "ribbon ribbon-center ribbon-success",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: "bsuccess fbold",
-        children: "Informasi Perjalanan Dinas"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "",
+    "class": "FM1 ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      "class": "header",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "flexR3 pwrap",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              className: "fbold",
-              children: "No"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              children: dt.no
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              className: "fbold",
-              children: "Tujuan"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              children: dt.tempatE
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              className: "fbold",
-              children: "Tanggal"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-              children: [dt.date, " - ", dt.dateE]
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              className: "fbold",
-              children: "Maksud Perjalanan"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              children: dt.maksud
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              className: "fbold",
-              children: "Lokasi"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              children: dt.lokasi
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-            className: "ptb10px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              className: "fbold",
-              children: "Anggaran"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              children: dt.anggaran
-            })]
-          })]
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          className: "btn bnone",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b", {
+            children: "Informasi"
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "pwrap binfo borderR10px",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "mh50p"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "galeryList bwhite",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "item blight unselect borderpurpleT5px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "mdi mdi-circle-slice-2 cdark binfo fziconS"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-              className: "judul",
-              children: "Dasar SPPD"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-              className: "btn2 binfo clight justifyC fz20 mw150px",
-              onClick: function onClick() {
-                return setview(1);
-              },
-              children: dt.dasar != '' && dt.fileD != '' ? 'Finish' : 'view'
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "item blight select borderpurpleB5px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "mdi mdi-circle-slice-4 cdark binfo fziconS"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-              className: "judul",
-              children: "Pilih Pegawai"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-              className: "btn2 binfo clight justifyC fz20 mw150px",
-              onClick: function onClick() {
-                return setview(2);
-              },
-              children: dt.anggota != undefined && dt.anggota.filter(function (v) {
-                return v.xind != undefined;
-              }).length > 0 ? 'Finish' : 'view'
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "item blight borderpurpleT5px borderpurpleB5px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "mdi mdi-circle-slice-5 cdark binfo fziconS"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-              className: "judul",
-              children: "Kwitansi"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-              className: "btn2 binfo clight justifyC fz20 mw150px",
-              onClick: function onClick() {
-                return setview(3);
-              },
-              children: "view"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "item blight unselect borderpurpleT5px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "mdi mdi-circle-slice-7 cdark binfo fziconS"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-              className: "judul",
-              children: "Progres Dokumen"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-              className: "btn2 binfo clight justifyC fz20 mw150px",
-              onClick: function onClick() {
-                return setview(4);
-              },
-              children: "view"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "item blight select borderpurpleB5px",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "mdi mdi-circle-slice-8 cdark binfo fziconS"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-              className: "judul",
-              children: "Finish"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-              className: "btn2 binfo clight justifyC fz20 mw150px",
-              onClick: function onClick() {
-                return setview(5);
-              },
-              children: "view"
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "mh50p"
+        "class": "btnGroup",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          "class": "btn2  " + (view == 1 ? 'bsuccess3' : ''),
+          onClick: function onClick() {
+            return setview(1);
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b", {
+            children: "Dasar SPPD"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          "class": "btn2  " + (view == 2 ? 'bsuccess3' : ''),
+          onClick: function onClick() {
+            return setview(2);
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b", {
+            children: "Pemilihan Pegawai"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          "class": "btn2  " + (view == 3 ? 'bsuccess3' : ''),
+          onClick: function onClick() {
+            return setview(3);
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b", {
+            children: "Verifikasi Data"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          "class": "btn2  " + (view == 4 ? 'bsuccess3' : ''),
+          onClick: function onClick() {
+            return setview(4);
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b", {
+            children: "Dokumen"
+          })
         })]
       })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      "class": "body bdark pm0 bsolid1 grid-col3",
+      style: {
+        width: "unset"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {})
     })]
   });
 }
@@ -16431,9 +16612,9 @@ function FormNoSppd(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "ptb10px",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: " flexR justifySB",
+      className: "flexR jcSB",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
-        className: "btn7 ",
+        className: "btn7",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: "mdi mdi-login binfo clight fziconS"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
@@ -16444,43 +16625,33 @@ function FormNoSppd(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "ptb10px",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "body w95p m0auto  borderR10px",
+        className: "body w95p m0auto bdashed1",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "flexR justifySB",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "flexC w80p",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "labelInput2 ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
-                className: "",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                  className: "mdi mdi-cloud-search cprimary "
-                }), "Nomor"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-                className: "borderR10px",
-                type: "text",
-                value: noSppd,
-                onChange: setnoSppd,
-                placeholder: "Nomor"
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "flexC w20p ptb10px ",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "btnGroup posEnd",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                className: "btn2 bsuccess",
-                title: "Simpan",
-                onClick: function onClick() {
-                  return updNomorSppd({
-                    ind: ind,
-                    noSppd: noSppd
-                  });
-                },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                  className: "mdi  mdi-check-circle clight fz25"
-                })
-              })
+          className: "flexR jcSB aiC",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "labelInput2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                className: "mdi mdi-cloud-search cprimary "
+              }), "Nomor"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              className: "borderR10px",
+              type: "text",
+              value: noSppd,
+              onChange: setnoSppd,
+              placeholder: "Nomor"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "btn2 bsuccess",
+            title: "Simpan",
+            onClick: function onClick() {
+              return updNomorSppd({
+                ind: ind,
+                noSppd: noSppd
+              });
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "mdi  mdi-check-circle clight fzXl"
             })
           })]
         })
@@ -16538,7 +16709,7 @@ function FormUraian(_ref) {
     onUpded = _ref.onUpded,
     onDeled = _ref.onDeled,
     value = _ref.value;
-  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(dt.uraian === '-' ? '' : dt.uraian),
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(dt.uraian === '-' ? dt.nmDP : dt.uraian),
     _useInput2 = _slicedToArray(_useInput, 2),
     uraian = _useInput2[0],
     seturaian = _useInput2[1];
@@ -16567,111 +16738,108 @@ function FormUraian(_ref) {
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "ptb10px",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "body w95p m0auto  borderR10px",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flexR justifySB",
+    className: "w95p m0auto bdashed1",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flexR jcSB",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flexC w80p",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "flexC w80p",
+          className: "labelInput2  ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "mdi mdi-cloud-search cprimary "
+            }), "Uraian"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            className: " borderR10px",
+            type: "text",
+            value: uraian,
+            onChange: seturaian,
+            placeholder: "uraian"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "jcSB",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "labelInput2 ptb10px",
+            className: "labelInput2  flexC",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
               className: "",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                 className: "mdi mdi-cloud-search cprimary "
-              }), "uraian"]
+              }), "Volume"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+              className: "borderR10px",
+              type: "number",
+              value: volume,
+              onChange: setvolume,
+              onKeyUp: upded,
+              placeholder: "Volume"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "labelInput2  flexC",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+              className: "",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                className: "mdi mdi-cloud-search cprimary "
+              }), "Satuan"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
               className: "borderR10px",
               type: "text",
-              value: uraian,
-              onChange: seturaian,
-              placeholder: "uraian"
+              value: satuan,
+              onChange: setsatuan,
+              placeholder: "Satuan"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "flexR justifySB",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              className: "labelInput2 ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-                className: "",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi mdi-cloud-search cprimary "
-                }), "Volume"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-                className: "borderR10px",
-                type: "number",
-                value: volume,
-                onChange: setvolume,
-                onKeyUp: upded,
-                placeholder: "Volume"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              className: "labelInput2 ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-                className: "",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi mdi-cloud-search cprimary "
-                }), "Satuan"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-                className: "borderR10px",
-                type: "text",
-                value: satuan,
-                onChange: setsatuan,
-                placeholder: "Satuan"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              className: "labelInput2 ptb10px",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-                className: "",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  className: "mdi mdi-cloud-search cprimary "
-                }), "Nilai"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-                className: "borderR10px",
-                type: "number",
-                value: nilai,
-                onChange: setnilai,
-                onKeyUp: upded,
-                placeholder: "Nilai"
-              })]
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "flexC w20p ptb10px ",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-            className: "pwrap",
-            children: ["Total = Rp. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
-              children: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_2__["default"]._$(total)
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "btnGroup pwrap posEnd",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-              className: "btn2 bsuccess",
-              title: "Simpan",
-              onClick: function onClick() {
-                onUpded(_objectSpread(_objectSpread({}, value), {}, {
-                  uraian: uraian,
-                  volume: volume,
-                  satuan: satuan,
-                  nilai: nilai
-                }));
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "mdi  mdi-check-circle clight fz25"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-              className: "btn2 bdanger clight",
-              title: "Hapus",
-              onClick: function onClick() {
-                onDeled(value);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "mdi mdi-delete-forever clight fz25"
-              })
+            className: "labelInput2  flexC",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+              className: "",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                className: "mdi mdi-cloud-search cprimary "
+              }), "Nilai"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+              className: "borderR10px",
+              type: "number",
+              value: nilai,
+              onChange: setnilai,
+              onKeyUp: upded,
+              placeholder: "Nilai"
             })]
           })]
         })]
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flexC w20p jcSA aiC",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+          className: "pwrap",
+          children: ["Total = Rp. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+            children: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_2__["default"]._$(total)
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "btnGroup pwrap posEnd",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            className: "btn2 bsuccess",
+            title: "Simpan",
+            onClick: function onClick() {
+              onUpded(_objectSpread(_objectSpread({}, value), {}, {
+                uraian: uraian,
+                volume: volume,
+                satuan: satuan,
+                nilai: nilai
+              }));
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "mdi  mdi-check-circle clight fz25"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            className: "btn2 bdanger clight",
+            title: "Hapus",
+            onClick: function onClick() {
+              onDeled(value);
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "mdi mdi-delete-forever clight fz25"
+            })
+          })]
+        })]
+      })]
     })
   });
 }
@@ -16682,6 +16850,385 @@ FormUraian.propTypes = {
   onDeled: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormUraian);
+
+/***/ }),
+
+/***/ "./resources/js/components/subpages/sppd/sub/formVerifikasiPimpinan.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/subpages/sppd/sub/formVerifikasiPimpinan.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+function FormVerifiikasiPimpinan(_ref) {
+  var dt = _ref.dt,
+    saved = _ref.saved,
+    _ref$kunci = _ref.kunci,
+    kunci = _ref$kunci === void 0 ? "pimOpd" : _ref$kunci;
+  var nip = dt.nip,
+    nmAnggota = dt.nmAnggota,
+    nmJabatan = dt.nmJabatan,
+    golongan = dt.golongan;
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(),
+    _useInput2 = _slicedToArray(_useInput, 2),
+    nipOPD = _useInput2[0],
+    _nipOPD = _useInput2[1];
+  var _useInput3 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(),
+    _useInput4 = _slicedToArray(_useInput3, 2),
+    namaOPD = _useInput4[0],
+    _namaOPD = _useInput4[1];
+  var _useInput5 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(),
+    _useInput6 = _slicedToArray(_useInput5, 2),
+    jabatanOPD = _useInput6[0],
+    _jabatanOPD = _useInput6[1];
+  var _useInput7 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(),
+    _useInput8 = _slicedToArray(_useInput7, 2),
+    pangkatOPD = _useInput8[0],
+    _pangkatOPD = _useInput8[1];
+  if (dt.start) {
+    _nipOPD({
+      target: {
+        value: nip
+      }
+    });
+    _namaOPD({
+      target: {
+        value: nmAnggota
+      }
+    });
+    _jabatanOPD({
+      target: {
+        value: nmJabatan
+      }
+    });
+    _pangkatOPD({
+      target: {
+        value: golongan
+      }
+    });
+    dt.start = false;
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    "class": "FM1 ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      "class": "header bwhite",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          className: "btn bnone",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
+            children: "Verifikasi Data"
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "btnGroup",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          className: "btn2 bwarning",
+          onClick: function onClick() {
+            return saved(_objectSpread(_objectSpread({}, dt), {}, {
+              nip: nipOPD,
+              nmAnggota: namaOPD,
+              nmJabatan: jabatanOPD,
+              golongan: pangkatOPD,
+              kunci: kunci
+            }));
+          },
+          children: "perbarui"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "body bdark",
+      style: {
+        width: "unset"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        "class": "doubleInput  bdahedB1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          children: "Nama"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          "class": "iconInput2 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            className: " borderR10px",
+            type: "text",
+            value: namaOPD,
+            onChange: _namaOPD,
+            placeholder: "Bagus H.."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            "class": "mdi mdi-cloud-search cprimary "
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        "class": "doubleInput  bdahedB1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          children: "NIP"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          "class": "iconInput2 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            className: " borderR10px",
+            type: "text",
+            value: nipOPD,
+            onChange: _nipOPD,
+            placeholder: "1202"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            "class": "mdi mdi-cloud-search cprimary "
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        "class": "doubleInput  bdahedB1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          children: "Jabatan"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          "class": "iconInput2 ",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textarea", {
+            rows: 3,
+            className: "borderR10px pwrap w100p",
+            value: jabatanOPD,
+            onChange: _jabatanOPD
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        "class": "doubleInput  bdahedB1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          children: "Pangkat/Gol"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          "class": "iconInput2 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            className: " borderR10px",
+            type: "text",
+            value: pangkatOPD,
+            onChange: _pangkatOPD,
+            placeholder: "Pembina"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            "class": "mdi mdi-cloud-search cprimary "
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormVerifiikasiPimpinan);
+
+/***/ }),
+
+/***/ "./resources/js/components/subpages/sppd/sub/formVerifikasiStaf.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/subpages/sppd/sub/formVerifikasiStaf.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FormVerifikasiStaf)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../hooks/useInput */ "./resources/js/hooks/useInput.js");
+/* harmony import */ var _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../states/dinas/action */ "./resources/js/states/dinas/action.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
+
+
+function FormVerifikasiStaf(_ref) {
+  var value = _ref.value,
+    saved = _ref.saved,
+    ind = _ref.ind;
+  var _ref2 = value.fileD != undefined && value.fileD.length > 2 ? _objectSpread(_objectSpread({}, value), JSON.parse(atob(value.fileD))) : value,
+    nmAnggota = _ref2.nmAnggota,
+    golongan = _ref2.golongan,
+    nmJabatan = _ref2.nmJabatan,
+    nip = _ref2.nip,
+    tingkatan = _ref2.tingkatan;
+  var _useInput = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(nmAnggota),
+    _useInput2 = _slicedToArray(_useInput, 2),
+    nama = _useInput2[0],
+    _nama = _useInput2[1];
+  var _useInput3 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(golongan),
+    _useInput4 = _slicedToArray(_useInput3, 2),
+    gol = _useInput4[0],
+    _gol = _useInput4[1];
+  var _useInput5 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(nmJabatan),
+    _useInput6 = _slicedToArray(_useInput5, 2),
+    jabatan = _useInput6[0],
+    _jabatan = _useInput6[1];
+  var _useInput7 = (0,_hooks_useInput__WEBPACK_IMPORTED_MODULE_1__.useInput)(nip),
+    _useInput8 = _slicedToArray(_useInput7, 2),
+    fnip = _useInput8[0],
+    _fnip = _useInput8[1];
+  var findex = _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbTingkatan.findIndex(function (v) {
+    return v.value == tingkatan;
+  });
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      value: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbTingkatan[findex].value,
+      label: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbTingkatan[findex].label
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    tingkat = _useState2[0],
+    settingkat = _useState2[1];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    "class": "FM1 ",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      "class": "header bwhite",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "btn bnone",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+            children: "Verifikasi Data "
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        "class": "btnGroup",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+          "class": "btn2 bsuccess ",
+          onClick: function onClick() {
+            return saved({
+              nmAnggota: nama,
+              golongan: gol,
+              nmJabatan: jabatan,
+              nip: fnip,
+              ind: ind,
+              tingkatan: tingkat.value
+            });
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            "class": "mdi mdi-account-check  fzXl"
+          }), " Perbarui Data"]
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      "class": "body blight flexC jcSA",
+      style: {
+        width: "unset",
+        padding: "10px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        "class": "doubleInput  bdahedB1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: "Nama"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          "class": "iconInput2 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            className: " borderR10px",
+            type: "text",
+            value: nama,
+            onChange: _nama,
+            placeholder: "Bagus H.."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            "class": "mdi mdi-cloud-search cprimary "
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        "class": "doubleInput  bdahedB1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: "Pangkat/Gol"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          "class": "iconInput2 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            className: " borderR10px",
+            type: "text",
+            value: gol,
+            onChange: _gol,
+            placeholder: "IT dev"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            "class": "mdi mdi-cloud-search cprimary "
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        "class": "doubleInput  bdahedB1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: "NIP"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          "class": "iconInput2 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            className: " borderR10px",
+            type: "text",
+            value: fnip,
+            onChange: _fnip,
+            placeholder: "0012"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            "class": "mdi mdi-cloud-search cprimary "
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        "class": "doubleInput  bdahedB1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: "Jabatan"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          "class": "iconInput2 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            className: " borderR10px",
+            type: "text",
+            value: jabatan,
+            onChange: _jabatan,
+            placeholder: "dev"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            "class": "mdi mdi-cloud-search cprimary "
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "doubleInput ptb10px",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: "Tingkatan"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          options: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbTingkatan,
+          placeholder: "Select Tingkatan",
+          value: tingkat,
+          onChange: settingkat,
+          isSearchable: true
+        })]
+      })]
+    })]
+  });
+}
 
 /***/ }),
 
@@ -16724,20 +17271,30 @@ function FormSub(_ref) {
     search = _useInput2[0],
     setSearch = _useInput2[1];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "form1 bwhite boxShadow1px",
+    "class": "FM1 ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "header bprimary clight",
+      "class": "header ",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "mdi mdi-office-building-marker fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-          children: "Data Sub Kegiatan"
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          className: "btn bnone",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
+            children: "Data Kegiatan"
+          })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "body",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      "class": "body bdark pm0 bsolid1",
+      style: {
+        width: "unset",
+        borderRadius: "0px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_3__["default"], {
         search: search,
         oncSearch: setSearch,
         columns: _states_subKegiatan_action__WEBPACK_IMPORTED_MODULE_1__.colSub,
@@ -16749,7 +17306,7 @@ function FormSub(_ref) {
             return item;
           }
         })
-      })
+      })]
     })]
   });
 }
@@ -16801,20 +17358,30 @@ function FormUrusan(_ref) {
     search = _useInput2[0],
     setSearch = _useInput2[1];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "form1 bwhite boxShadow1px",
+    "class": "FM1 ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "header bprimary clight",
+      "class": "header ",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "icon",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-          className: "mdi mdi-office-building-marker fz25 "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-          children: "Data Urusan Pemerintahan"
+        "class": "cdark flexR",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+          className: "btn bnone",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: "mdi mdi-star-crescent cwarning fzXl"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+          className: "  pl0 aiE fBebasNeue",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
+            children: "Data Urusan Pemerintahan"
+          })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "body",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      "class": "body bdark pm0 bsolid1",
+      style: {
+        width: "unset",
+        borderRadius: "0px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tabel_tabel1__WEBPACK_IMPORTED_MODULE_3__["default"], {
         search: search,
         oncSearch: setSearch,
         columns: _states_subKegiatan_action__WEBPACK_IMPORTED_MODULE_1__.colUrusan,
@@ -16829,7 +17396,7 @@ function FormUrusan(_ref) {
             return item;
           }
         })
-      })
+      })]
     })]
   });
 }
@@ -17782,7 +18349,7 @@ function Tabel1(_ref) {
     selectData = _ref$selectData === void 0 ? function () {} : _ref$selectData;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [btnAction != undefined && btnAction, search != undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "justifyEnd",
+      className: "jcE pwrap-10",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "iconInput2 ".concat(cinput),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
@@ -17796,6 +18363,7 @@ function Tabel1(_ref) {
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_data_table_component__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      className: "",
       pagination: pagination,
       columns: columns,
       data: data,
@@ -17929,6 +18497,10 @@ function BidangEntriBelanja() {
     _useState4 = _slicedToArray(_useState3, 2),
     modalC = _useState4[0],
     setmodalC = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState6 = _slicedToArray(_useState5, 2),
+    view = _useState6[0],
+    setview = _useState6[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_5__.getrincianDinas)());
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_5__.__listKDRekening)({
@@ -17947,20 +18519,42 @@ function BidangEntriBelanja() {
       data: btoa(JSON.stringify(_dinas[0].listRekening))
     }));
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      page: 'Belanja Bidang',
-      pageKet: 'Daftar Belanja Bidang',
-      icon: 'mdi-office-building-marker cdark'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_BidangEntri_Belanja__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      dt: _dinas,
-      modalC: setmodalC,
-      ind: ind,
-      updDataBidang: updDataBidang,
-      generateAuto: generateAuto
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: modalC
-    })]
+  var menus = function menus() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      "class": "btnGroup",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+        "class": "btn2  " + (view == 0 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(0);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+          children: "Rincian Belanja"
+        })
+      })
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "body pm0",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        page: 'Fitur Rincian Belanja',
+        pageKet: 'Memdaftarkan Jenis SPJ, Pembagian 3 Bulanan dan Entri Rincian',
+        icon: 'mdi-office-building-marker ',
+        menu: menus()
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "bodyFlexRow800",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_BidangEntri_Belanja__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          dt: _dinas,
+          modalC: setmodalC,
+          ind: ind,
+          updDataBidang: updDataBidang,
+          generateAuto: generateAuto
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: modalC
+        })]
+      })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BidangEntriBelanja);
@@ -18016,6 +18610,10 @@ function BidangSubKegiatan() {
     _useState4 = _slicedToArray(_useState3, 2),
     modalC = _useState4[0],
     setmodalC = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState6 = _slicedToArray(_useState5, 2),
+    view = _useState6[0],
+    setview = _useState6[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_5__.getDinasBidang)());
   }, [dispatch]);
@@ -18026,22 +18624,44 @@ function BidangSubKegiatan() {
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_5__.getDataBidangSub)(v));
     setInd(v.ind);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      page: 'Sub Kegiatan Bidang',
-      pageKet: 'daftar Sub Kegiatan Bidang',
-      icon: 'mdi-office-building-marker cdark'
-    }), Object.keys(_dinas[ind]).length != 0 &&
-    /*#__PURE__*/
-    // _dinas[ind].bidang.length>0 &&
-    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_BidangKegiatan_formListKegiatan__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      ind: ind,
-      dt: _dinas,
-      modalC: setmodalC,
-      updDataBidang: updDataBidang
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: modalC
-    })]
+  var menus = function menus() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      "class": "btnGroup",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+        "class": "btn2  " + (view == 0 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(0);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+          children: "Pemilihan Sub"
+        })
+      })
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "body pm0",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        page: 'Pemilihan Sub Kegiatan',
+        pageKet: 'menyesuaikan dengan bidang terkait',
+        icon: 'mdi-office-building-marker ',
+        menu: menus()
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "bodyFlexRow800",
+        children: [Object.keys(_dinas[ind]).length != 0 &&
+        /*#__PURE__*/
+        // _dinas[ind].bidang.length>0 &&
+        (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_BidangKegiatan_formListKegiatan__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          ind: ind,
+          dt: _dinas,
+          modalC: setmodalC,
+          updDataBidang: updDataBidang
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: modalC
+        })]
+      })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BidangSubKegiatan);
@@ -18076,18 +18696,15 @@ function Dashboard() {
     }));
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "row justify-content-center mt-3",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "col-md-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          children: "Dashboard page"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-          onClick: testModal,
-          children: "modal show"
-        })]
-      })
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "body pm0",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+        children: "Dashboard page"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        onClick: testModal,
+        children: "modal show"
+      })]
     })
   });
 }
@@ -18154,7 +18771,7 @@ function Dinas() {
     _useState6 = _slicedToArray(_useState5, 2),
     modalC = _useState6[0],
     setmodalC = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
     _useState8 = _slicedToArray(_useState7, 2),
     view = _useState8[0],
     setview = _useState8[1];
@@ -18187,102 +18804,74 @@ function Dinas() {
   if (_dinas.length === 0) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {});
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      page: 'Dinas',
-      pageKet: 'Pengelolaan Data Dinas',
-      icon: 'mdi-office-building-marker cdark'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-      className: "binfo pwrap borderR10px",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: "mh100p"
+  var menus = function menus() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      "class": "btnGroup",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+        "class": "btn2  " + (view == 0 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(0);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("b", {
+          children: "Dinas"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+        "class": "btn2  " + (view == 1 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(1);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("b", {
+          children: "Bidang"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+        "class": "btn2  " + (view == 2 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(2);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("b", {
+          children: "Anggota Bidang"
+        })
+      })]
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      className: "body pm0",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        page: 'Pengisian data SKPD',
+        pageKet: 'Informasi SKPD, Bidang dan Pegawai / Staf',
+        icon: 'mdi-office-building-marker ',
+        menu: menus()
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: "galeryList bwhite",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "item blight unselect borderpurpleT5px",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-            className: "mdi mdi-home-analytics cdark binfo fziconS"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
-            className: "judul",
-            children: "Dinas"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-            className: "btn2 bprimary clight justifyC fz20 mw150px",
-            onClick: function onClick() {
-              return setview(0);
-            },
-            children: "view"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "item blight select  borderpurpleB5px",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-            className: "mdi mdi-home-group cdark binfo fziconS"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
-            className: "judul",
-            children: "Bidang"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-            className: "btn2 bprimary clight justifyC fz20 mw150px",
-            onClick: function onClick() {
-              return setview(1);
-            },
-            children: "view"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "item blight unselect borderpurpleT5px",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-            className: "mdi mdi-home-assistant cdark binfo fziconS"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
-            className: "judul",
-            children: "Anggota Bidang"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-            className: "btn2 bprimary clight justifyC fz20 mw150px",
-            onClick: function onClick() {
-              return setview(2);
-            },
-            children: "view"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "item blight select borderpurpleB5px",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-            className: "mdi mdi-account-school cdark binfo fziconS"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
-            className: "judul",
-            children: "User Sistem"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-            className: "btn2 bprimary clight justifyC fz20 mw150px",
-            onClick: function onClick() {
-              return setview(3);
-            },
-            children: "view"
-          })]
+        className: "bodyFlexRow800",
+        children: [view === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formDinas__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          dt: _dinas,
+          modalC: setContentModal
+        }), view === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formBidang__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          dt: _dinas,
+          changeDinas: changeDinas,
+          modalC: setContentModal,
+          ind: ind
+        }), Object.keys(_dinas[ind]).length > 0 && _dinas[ind].bidang != undefined && _dinas[ind].bidang.length > 0 && view === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formAnggota__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          dt: _dinas[ind].bidang,
+          index: index,
+          ind: ind,
+          kdDinas: _dinas[ind].kdDinas,
+          modalC: setContentModal,
+          changeBidang: changeBidang
+        }), Object.keys(_dinas[ind]).length > 0 && _dinas[ind].bidang != undefined && _dinas[ind].bidang.length > 0 && view === 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formMember__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          dt: _dinas[ind].bidang,
+          index: index,
+          ind: ind,
+          kdDinas: _dinas[ind].kdDinas,
+          modalC: setContentModal,
+          changeBidang: changeBidang
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          children: modalC
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-      className: "hheader"
-    }), view === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formDinas__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      dt: _dinas,
-      modalC: setContentModal
-    }), view === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formBidang__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      dt: _dinas,
-      changeDinas: changeDinas,
-      modalC: setContentModal,
-      ind: ind
-    }), Object.keys(_dinas[ind]).length > 0 && _dinas[ind].bidang != undefined && _dinas[ind].bidang.length > 0 && view === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formAnggota__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      dt: _dinas[ind].bidang,
-      index: index,
-      ind: ind,
-      kdDinas: _dinas[ind].kdDinas,
-      modalC: setContentModal,
-      changeBidang: changeBidang
-    }), Object.keys(_dinas[ind]).length > 0 && _dinas[ind].bidang != undefined && _dinas[ind].bidang.length > 0 && view === 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_subpages_dinas_formMember__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      dt: _dinas[ind].bidang,
-      index: index,
-      ind: ind,
-      kdDinas: _dinas[ind].kdDinas,
-      modalC: setContentModal,
-      changeBidang: changeBidang
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      children: modalC
-    })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dinas);
@@ -18331,6 +18920,10 @@ function Fitur() {
     _useState2 = _slicedToArray(_useState, 2),
     ind = _useState2[0],
     setInd = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState4 = _slicedToArray(_useState3, 2),
+    view = _useState4[0],
+    setview = _useState4[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_dinas_action__WEBPACK_IMPORTED_MODULE_4__.getrincianDinas)());
   }, [dispatch]);
@@ -18341,16 +18934,35 @@ function Fitur() {
   if (_dinas.length === 0 || _dinas[0].bidang.length === 0 || _dinas[0].bidang[0].sub == undefined) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {});
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      page: 'Pertanggung Jawaban',
-      pageKet: 'Daftar sub kegiatan Dan uraian Belanja',
-      icon: 'mdi-office-building-marker cdark'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_subpages_Fitur_SelectDataUtama__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      dt: _dinas,
-      ind: ind,
-      updDataBidang: updDataBidang
-    })]
+  var menus = function menus() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      "class": "btnGroup",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        "class": "btn2  " + (view == 0 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(0);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
+          children: "Rincian Belanja"
+        })
+      })
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "body pm0",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        page: 'Rincian Sub Kegiatan',
+        pageKet: 'Pemilihan rincian belanja untuk pembuatan SPJ',
+        icon: 'mdi-office-building-marker ',
+        menu: menus()
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_subpages_Fitur_SelectDataUtama__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        dt: _dinas,
+        ind: ind,
+        updDataBidang: updDataBidang
+      })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Fitur);
@@ -18411,6 +19023,10 @@ function JenisP() {
   function setContentModal(v) {
     setmodalC(v);
   }
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState6 = _slicedToArray(_useState5, 2),
+    view = _useState6[0],
+    setview = _useState6[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_jenisP_action__WEBPACK_IMPORTED_MODULE_2__.getDT)());
   }, [dispatch]);
@@ -18492,24 +19108,54 @@ function JenisP() {
         break;
     }
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      page: 'Jenis Pertanggung Jawaban',
-      pageKet: 'Basis Data',
-      icon: 'mdi-office-building-marker cdark'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_subpages_jenisP_formJenis__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      dt: _jenis,
-      actFormJenis: actFormJenis,
-      modalC: setContentModal
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_subpages_jenisP_formJenisPendukung__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      dt: _jenis,
-      changeJenis: changeJenis,
-      actFormJenisDukungan: actFormJenisDukungan,
-      ind: ind,
-      modalC: setContentModal
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      children: modalC
-    })]
+  var menus = function menus() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      "class": "acC grid-col3 ",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+        "class": "btn2  " + (view == 0 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(0);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
+          children: "Jenis SPJ"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+        "class": "btn2  " + (view == 1 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(1);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
+          children: "Sub Jenis"
+        })
+      })]
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "body pm0",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        page: 'Informasi Jenis SPJ',
+        pageKet: 'data dan bagian pendukungnya',
+        icon: 'mdi-office-building-marker cdark',
+        menu: menus()
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "bodyFlexRow800",
+        children: view == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_subpages_jenisP_formJenis__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          dt: _jenis,
+          actFormJenis: actFormJenis,
+          modalC: setContentModal
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_subpages_jenisP_formJenisPendukung__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          dt: _jenis,
+          changeJenis: changeJenis,
+          actFormJenisDukungan: actFormJenisDukungan,
+          ind: ind,
+          modalC: setContentModal
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: modalC
+      })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (JenisP);
@@ -18549,7 +19195,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function RekeningBelanja() {
   var _useSelector = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
       return state;
@@ -18560,6 +19205,10 @@ function RekeningBelanja() {
     ind = _useState2[0],
     setInd = _useState2[1];
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState4 = _slicedToArray(_useState3, 2),
+    view = _useState4[0],
+    setview = _useState4[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_rekeningB_action__WEBPACK_IMPORTED_MODULE_2__.getDT)());
   }, [dispatch]);
@@ -18572,21 +19221,49 @@ function RekeningBelanja() {
     });
     setInd(i);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      page: 'Rekening Belanja',
-      pageKet: 'daftar Rekening Belanja OPD',
-      icon: 'mdi-office-building-marker cdark'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "flexR justifySB",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_rekeningBelanja_formApbd6__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        dt: _rek,
-        selectSub: selectSub
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_rekeningBelanja_formApbd__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        className: " w40p",
-        dt: _rek[ind]
+  var menus = function menus() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      "class": "acC grid-col3 ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+        "class": "btn2  " + (view == 0 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(0);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+          children: "Rekening"
+        })
+      })
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "body",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        page: 'Informasi Rekening Belanja',
+        pageKet: 'untuk Rincian Belanja SKPD',
+        icon: 'mdi-office-building-marker ',
+        menu: menus()
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "bodyFlexRow800",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "Mcontainer2Form",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "right",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_rekeningBelanja_formApbd__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              className: " w40p",
+              dt: _rek[ind]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "left",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_rekeningBelanja_formApbd6__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              dt: _rek,
+              selectSub: selectSub
+            })
+          })]
+        })
       })]
-    })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RekeningBelanja);
@@ -18637,6 +19314,10 @@ function Subkegiatan() {
     ind = _useState2[0],
     setInd = _useState2[1];
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState4 = _slicedToArray(_useState3, 2),
+    view = _useState4[0],
+    setview = _useState4[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_subKegiatan_action__WEBPACK_IMPORTED_MODULE_2__.getDT)());
   }, [dispatch]);
@@ -18649,17 +19330,48 @@ function Subkegiatan() {
     });
     setInd(i);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      page: 'SUB KEGIATAN',
-      pageKet: 'daftar Urusan, Bidang, Program, Kegiatan, Sub Kegiatan',
-      icon: 'mdi-office-building-marker cdark'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_subKegiatan_formUrusan__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      dt: _sub[ind]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_subKegiatan_formSub__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      dt: _sub,
-      selectSub: selectSub
-    })]
+  var menus = function menus() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      "class": "btnGroup",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+        "class": "btn2  " + (view == 0 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return setview(0);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+          children: "Program - Sub Kegiatan"
+        })
+      })
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "body pm0",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        page: 'Informasi Kegiatan',
+        pageKet: 'meliputi data Urusan, Bidang, Program, Kegiatan, Sub Kegiatan',
+        icon: 'mdi-office-building-marker cdark',
+        menu: menus()
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "bodyFlexRow800",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "Mcontainer2Form",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "right-1",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_subKegiatan_formUrusan__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              dt: _sub[ind]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "left ",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_subpages_subKegiatan_formSub__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              dt: _sub,
+              selectSub: selectSub
+            })
+          })]
+        })
+      })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Subkegiatan);
@@ -18679,20 +19391,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/dashboard/HeaderPage1 */ "./resources/js/components/dashboard/HeaderPage1.js");
 /* harmony import */ var _states_sppd_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../states/sppd/action */ "./resources/js/states/sppd/action.js");
-/* harmony import */ var _components_subpages_sppd_formInformasi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/subpages/sppd/formInformasi */ "./resources/js/components/subpages/sppd/formInformasi.js");
-/* harmony import */ var _components_subpages_sppd_formAnggota__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/subpages/sppd/formAnggota */ "./resources/js/components/subpages/sppd/formAnggota.js");
-/* harmony import */ var _components_subpages_sppd_formData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/subpages/sppd/formData */ "./resources/js/components/subpages/sppd/formData.js");
-/* harmony import */ var _components_Modal_modal1__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Modal/modal1 */ "./resources/js/components/Modal/modal1.js");
-/* harmony import */ var _components_subpages_sppd_formEntriBiaya__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/subpages/sppd/formEntriBiaya */ "./resources/js/components/subpages/sppd/formEntriBiaya.js");
-/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
-/* harmony import */ var _components_subpages_sppd_formFinishSppd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/subpages/sppd/formFinishSppd */ "./resources/js/components/subpages/sppd/formFinishSppd.js");
-/* harmony import */ var _components_subpages_sppd_formTahapan__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/subpages/sppd/formTahapan */ "./resources/js/components/subpages/sppd/formTahapan.js");
-/* harmony import */ var _components_subpages_sppd_formDasar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/subpages/sppd/formDasar */ "./resources/js/components/subpages/sppd/formDasar.js");
-/* harmony import */ var _components_subpages_sppd_formDokumen__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/subpages/sppd/formDokumen */ "./resources/js/components/subpages/sppd/formDokumen.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_subpages_sppd_formAnggota__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/subpages/sppd/formAnggota */ "./resources/js/components/subpages/sppd/formAnggota.js");
+/* harmony import */ var _components_subpages_sppd_formData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/subpages/sppd/formData */ "./resources/js/components/subpages/sppd/formData.js");
+/* harmony import */ var _components_Modal_modal1__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Modal/modal1 */ "./resources/js/components/Modal/modal1.js");
+/* harmony import */ var _components_subpages_sppd_formEntriBiaya__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/subpages/sppd/formEntriBiaya */ "./resources/js/components/subpages/sppd/formEntriBiaya.js");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var _components_subpages_sppd_formFinishSppd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/subpages/sppd/formFinishSppd */ "./resources/js/components/subpages/sppd/formFinishSppd.js");
+/* harmony import */ var _components_subpages_sppd_formTahapan__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/subpages/sppd/formTahapan */ "./resources/js/components/subpages/sppd/formTahapan.js");
+/* harmony import */ var _components_subpages_sppd_formDasar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/subpages/sppd/formDasar */ "./resources/js/components/subpages/sppd/formDasar.js");
+/* harmony import */ var _components_subpages_sppd_formPillihPimpinan__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/subpages/sppd/formPillihPimpinan */ "./resources/js/components/subpages/sppd/formPillihPimpinan.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -18723,13 +19434,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function SPPD() {
   var _useSelector = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
       return state;
     }),
     _sppd = _useSelector._sppd;
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_15__.useParams)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_14__.useParams)(),
     value = _useParams.value;
   var param = JSON.parse(atob(value));
 
@@ -18738,25 +19448,29 @@ function SPPD() {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
     _useState2 = _slicedToArray(_useState, 2),
-    view = _useState2[0],
-    setview = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(-1),
+    viewInduk = _useState2[0],
+    _viewInduk = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
     _useState4 = _slicedToArray(_useState3, 2),
-    indWork = _useState4[0],
-    setindWork = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    view = _useState4[0],
+    setview = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(-1),
     _useState6 = _slicedToArray(_useState5, 2),
-    modalC = _useState6[0],
-    setmodalC = _useState6[1];
+    indWork = _useState6[0],
+    setindWork = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState8 = _slicedToArray(_useState7, 2),
+    modalC = _useState8[0],
+    setmodalC = _useState8[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_3__.getDT)(value));
   }, [dispatch]);
   if (Object.keys(_sppd).length === 0) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {});
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {});
   }
   var stepSetAnggota = function stepSetAnggota(v) {
     if (_sppd.anggota == undefined || _sppd.anggota.length == 0) {
-      return react_toastify__WEBPACK_IMPORTED_MODULE_9__.toast.error('Bidang ini tidak memiliki daftar Staf');
+      return react_toastify__WEBPACK_IMPORTED_MODULE_8__.toast.error('Bidang ini tidak memiliki daftar Staf');
     }
     var i = _sppd.dwork.findIndex(function (val) {
       return val.no === v.no;
@@ -18768,79 +19482,204 @@ function SPPD() {
       })
     }));
     setindWork(i);
-    setview(0);
+    _viewInduk(1);
+    setview(1);
   };
-  // if(indWork>0){
-  //     console.log(_sppd.dwork[indWork].anggota);
-  // }
-  // const listAnggota = _sppd.anggota.filter(v=>v.aktif);
-  // console.log(_sppd.dwork[indWork]); 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      page: 'Perjalanan Dinas',
-      pageKet: 'Pemberkasan administrasi perjalanan dinas',
-      icon: 'mdi-office-building-marker cdark'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formInformasi__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      dt: _sppd.basic[0]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formData__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      dt: _sppd.dwork,
-      modalC: setmodalC,
-      param: param,
-      dataEntri: stepSetAnggota
-    }), indWork >= 0 && _sppd.dwork[indWork].anggota != undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formTahapan__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        dt: _sppd.dwork[indWork],
-        setview: setview
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
-        className: "mh50p"
-      }), view === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formDasar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-        dt: _sppd.dwork[indWork],
-        indWork: indWork,
+  // if(indWork<0){
+  //     stepSetAnggota({
+  //         "no": "1",
+  //         "date": "2024-07-17",
+  //         "status": "berproses",
+  //         "kdBAnggota": "",
+  //         "kdBidang": "1",
+  //         "kdDBidang": "1",
+  //         "tujuan": "-",
+  //         "noBuku": "-",
+  //         "tglBuku": "-",
+  //         "file": "-",
+  //         "maksud": "percobaan pembuatan sistem, untuk memstikan bentuk datanya",
+  //         "angkut": "Darat",
+  //         "tempatS": "Taliwang",
+  //         "tempatE": "Sumbawa",
+  //         "dateE": "2024-07-10",
+  //         "anggaran": "DPA Bappeda",
+  //         "keterangan": "",
+  //         "lokasi": "Sumbawa",
+  //         "fileD": "",
+  //         "dasar": "",
+  //         "pimOpd": null,
+  //         "pimBupati": null,
+  //         "pimSetda": null,
+  //         "tdOPD": null,
+  //         "tdBUPATI": null,
+  //         "tdSETDA": null,
+  //         "noSPPD": null,
+  //         "total": null
+  //     });
+  //     // console.log(_sppd.dwork[indWork].anggota);
+  // } 
+  var menuInduk = function menuInduk() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+      "class": "btnGroup",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+        "class": "btn2  " + (viewInduk == 0 ? 'bsuccess3' : ''),
+        onClick: function onClick() {
+          return _viewInduk(0);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("b", {
+          children: "Data SPPD"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+        "class": "btn2  " + (viewInduk == 1 ? 'bsuccess3' : ''),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("b", {
+          children: "Execute SPPD"
+        })
+      })]
+    });
+  };
+  var executeSPPD = function executeSPPD() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+      "class": "FM1 ",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+        "class": "header bdark",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+          "class": " flexR",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+            className: "btn bnone",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("span", {
+              className: "mdi mdi-star-crescent cwarning fzXl"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h2", {
+            className: "  pl0 aiE fBebasNeue",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("b", {
+              children: [_sppd.dwork[indWork].maksud, "( Informasi )"]
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+          "class": "btnGroup",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+            "class": "btn2  " + (view == 1 ? 'bsuccess3' : ''),
+            onClick: function onClick() {
+              return setview(1);
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("b", {
+              children: "Dasar SPPD"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+            "class": "btn2  " + (view == 2 ? 'bsuccess3' : ''),
+            onClick: function onClick() {
+              return setview(2);
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("b", {
+              children: "Pemilihan Pegawai"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+            "class": "btn2  " + (view == 3 ? 'bsuccess3' : ''),
+            onClick: function onClick() {
+              return setview(3);
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("b", {
+              children: "Verifikasi Data"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+            "class": "btn2  " + (view == 4 ? 'bsuccess3' : ''),
+            onClick: function onClick() {
+              return setview(4);
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("b", {
+              children: "Pemilihan Pimpinan"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("button", {
+            "class": "btn2  " + (view == 5 ? 'bsuccess3' : ''),
+            onClick: function onClick() {
+              return setview(5);
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("b", {
+              children: "Cetak Dokumen"
+            })
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+        "class": "body blight pm0 bsolid1",
+        style: {
+          width: "unset"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
+          children: [indWork >= 0 && _sppd.dwork[indWork].anggota != undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+              className: "mh50p"
+            }), view === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_subpages_sppd_formDasar__WEBPACK_IMPORTED_MODULE_11__["default"], {
+              dt: _sppd.dwork[indWork],
+              indWork: indWork,
+              modalC: setmodalC,
+              param: _objectSpread(_objectSpread({}, param), {}, {
+                no: _sppd.dwork[indWork].no
+              }),
+              setview: setview
+            }), view === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_subpages_sppd_formAnggota__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              dt: _sppd.dwork[indWork],
+              indWork: indWork,
+              param: param,
+              next: setview
+            })]
+          }), indWork >= 0 && _sppd.dwork[indWork].anggota != undefined && _sppd.dwork[indWork].anggota.filter(function (v) {
+            return v.xind != undefined;
+          }).length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
+            children: [view === 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_subpages_sppd_formEntriBiaya__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              dt: _sppd.dwork[indWork].anggota.filter(function (v) {
+                return v.xind != undefined;
+              }),
+              param: _objectSpread(_objectSpread({}, param), {}, {
+                no: _sppd.dwork[indWork].no,
+                noSppd: _sppd.dwork[indWork].noSppd
+              }),
+              modalC: setmodalC,
+              indWork: indWork
+            }), view === 4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_subpages_sppd_formPillihPimpinan__WEBPACK_IMPORTED_MODULE_12__["default"], {
+              dt: _sppd.pimpinan,
+              param: _objectSpread(_objectSpread({}, param), {}, {
+                no: _sppd.dwork[indWork].no
+              }),
+              dwork: _sppd.dwork[indWork],
+              indWork: indWork
+            }), view === 5 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_subpages_sppd_formFinishSppd__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              dt: _sppd.dwork[indWork],
+              indWork: indWork,
+              modalC: setmodalC,
+              param: param
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
+            children: view > 3 && indWork >= 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+              className: "flexR bwarning jcC",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("b", {
+                className: "pwrap-10  ",
+                children: "Mohon untuk menambahkan data pewagai yang ditugaskan !!!"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("br", {})]
+            })
+          })]
+        })]
+      })]
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+    className: "Mcontainer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+      className: "body pm0",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_dashboard_HeaderPage1__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        page: 'Pembuatan SPJ SPPD',
+        pageKet: 'Data Agenda dan Fitur SPPD',
+        icon: 'mdi-office-building-marker ',
+        menu: menuInduk()
+      }), viewInduk == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_subpages_sppd_formData__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        dt: _sppd.dwork,
+        di: _sppd.basic[0],
         modalC: setmodalC,
-        param: _objectSpread(_objectSpread({}, param), {}, {
-          no: _sppd.dwork[indWork].no
-        }),
-        setview: setview
-      }), view === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formAnggota__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        dt: _sppd.dwork[indWork],
-        indWork: indWork,
         param: param,
-        next: setview
+        dataEntri: stepSetAnggota
+      }) : executeSPPD(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: modalC
       })]
-    }), indWork >= 0 && _sppd.dwork[indWork].anggota != undefined && _sppd.dwork[indWork].anggota.filter(function (v) {
-      return v.xind != undefined;
-    }).length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
-      children: [view === 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formEntriBiaya__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        dt: _sppd.dwork[indWork].anggota.filter(function (v) {
-          return v.xind != undefined;
-        }),
-        param: _objectSpread(_objectSpread({}, param), {}, {
-          no: _sppd.dwork[indWork].no,
-          noSppd: _sppd.dwork[indWork].noSppd
-        }),
-        modalC: setmodalC,
-        indWork: indWork
-      }), view === 4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formDokumen__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        dt: _sppd.pimpinan,
-        param: _objectSpread(_objectSpread({}, param), {}, {
-          no: _sppd.dwork[indWork].no
-        }),
-        dwork: _sppd.dwork[indWork],
-        indWork: indWork
-      }), view === 5 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_subpages_sppd_formFinishSppd__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        dt: _sppd.dwork[indWork],
-        indWork: indWork,
-        modalC: setmodalC,
-        param: param
-      })]
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
-      children: view > 3 && indWork >= 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("b", {
-        className: "pwrap bwarning",
-        children: "Mohon untuk menambahkan data pewagai yang ditugaskan !!!"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Modal_modal1__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      children: modalC
-    })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SPPD);
@@ -21120,9 +21959,11 @@ function rekReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BASE_URL: () => (/* binding */ BASE_URL),
 /* harmony export */   actType: () => (/* binding */ actType),
 /* harmony export */   changeMenu: () => (/* binding */ changeMenu),
 /* harmony export */   changeMenuSub: () => (/* binding */ changeMenuSub),
+/* harmony export */   checkForm: () => (/* binding */ checkForm),
 /* harmony export */   logout: () => (/* binding */ logout),
 /* harmony export */   modalClose: () => (/* binding */ modalClose),
 /* harmony export */   newTab: () => (/* binding */ newTab),
@@ -21143,6 +21984,7 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+var BASE_URL = _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].BASE_URL;
 var actType = {
   setAll: "ALL",
   leftBar: "leftBar",
@@ -21372,6 +22214,64 @@ function openFormEntri(url) {
 function newTab(url) {
   window.open(_utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].BASE_URL + url);
 }
+var checkForm = function checkForm(dt) {
+  // type, minLength, value
+  try {
+    dt.map(function (v, i) {
+      switch (v.type) {
+        case "text":
+          cfMinLength(_objectSpread(_objectSpread({}, v), {}, {
+            ind: i
+          }));
+          break;
+        case "email":
+          cfEmail(_objectSpread(_objectSpread({}, v), {}, {
+            ind: i
+          }));
+          break;
+      }
+    });
+    return {
+      cf: 1,
+      msg: '',
+      ind: -1
+    };
+  } catch (error) {
+    return _objectSpread({
+      cf: 0
+    }, error);
+  }
+};
+var cfMinLength = function cfMinLength(_ref8) {
+  var value = _ref8.value,
+    name = _ref8.name,
+    minLength = _ref8.minLength,
+    ind = _ref8.ind;
+  if (String(value).length >= minLength) {
+    return true;
+  }
+  throw {
+    msg: (name != undefined ? name : 'value') + " harus terisi minimal " + minLength + " huruf",
+    ind: ind
+  };
+};
+var cfEmail = function cfEmail(_ref9) {
+  var value = _ref9.value,
+    minLength = _ref9.minLength,
+    ind = _ref9.ind;
+  cfMinLength({
+    value: value,
+    minLength: minLength,
+    ind: ind
+  });
+  if (String(value).split("@").length > 1) {
+    return true;
+  }
+  throw {
+    msg: (name != undefined ? name : 'value email') + ' harus menggunakan tanda @ ',
+    ind: ind
+  };
+};
 
 
 /***/ }),
@@ -21445,6 +22345,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   updWorkUraian: () => (/* binding */ updWorkUraian),
 /* harmony export */   upded: () => (/* binding */ upded),
 /* harmony export */   uploadDasar: () => (/* binding */ uploadDasar),
+/* harmony export */   uploadDataVerifikasiStaf: () => (/* binding */ uploadDataVerifikasiStaf),
 /* harmony export */   workDelAnggota: () => (/* binding */ workDelAnggota),
 /* harmony export */   workSetAnggota: () => (/* binding */ workSetAnggota)
 /* harmony export */ });
@@ -21690,13 +22591,16 @@ function setPimpinan(body) {
             _context6.next = 3;
             return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
               url: "sppd/setPimpinan",
-              body: body
+              body: _objectSpread(_objectSpread({}, body), {}, {
+                value: btoa(JSON.stringify(body.value))
+              })
             });
           case 3:
             dt = _context6.sent;
             dispatch({
               type: actType.crudWork,
               payload: _objectSpread(_objectSpread({}, body), {}, {
+                value: btoa(JSON.stringify(body.value)),
                 type: actType.nextStep.setPimpinan
               })
             });
@@ -21822,16 +22726,15 @@ function uploadDasar(body) {
                 type: actType.nextStep.dasar
               }
             });
-            _context9.next = 9;
-            break;
-          case 7:
-            _context9.prev = 7;
+            return _context9.abrupt("return", fileD);
+          case 8:
+            _context9.prev = 8;
             _context9.t0 = _context9["catch"](0);
-          case 9:
+          case 10:
           case "end":
             return _context9.stop();
         }
-      }, _callee9, null, [[0, 7]]);
+      }, _callee9, null, [[0, 8]]);
     }));
     return function (_x9) {
       return _ref9.apply(this, arguments);
@@ -22195,6 +23098,38 @@ function delWorkUraian(body) {
     };
   }();
 }
+function uploadDataVerifikasiStaf(_x18) {
+  return _uploadDataVerifikasiStaf.apply(this, arguments);
+}
+function _uploadDataVerifikasiStaf() {
+  _uploadDataVerifikasiStaf = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee18(body) {
+    var dt;
+    return _regeneratorRuntime().wrap(function _callee18$(_context18) {
+      while (1) switch (_context18.prev = _context18.next) {
+        case 0:
+          _context18.prev = 0;
+          _context18.next = 3;
+          return _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].POST({
+            url: "sppd/uploadDataVerifikasiStaf",
+            body: body
+          });
+        case 3:
+          dt = _context18.sent;
+          react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success("Berhasil Memperbarui data...");
+          _context18.next = 10;
+          break;
+        case 7:
+          _context18.prev = 7;
+          _context18.t0 = _context18["catch"](0);
+          alert(_context18.t0.message);
+        case 10:
+        case "end":
+          return _context18.stop();
+      }
+    }, _callee18, null, [[0, 7]]);
+  }));
+  return _uploadDataVerifikasiStaf.apply(this, arguments);
+}
 var cbDasar = [{
   label: 'Undangan',
   value: 'Undangan'
@@ -22314,7 +23249,6 @@ function selectdwork(_ref2) {
             fileD: act.fileD,
             dasar: act.dasar,
             pimOpd: act.col === 'pimOpd' ? act.value : v.pimOpd,
-            pimBupati: act.col === 'pimBupati' ? act.value : v.pimBupati,
             pimSetda: act.col === 'pimSetda' ? act.value : v.pimSetda
           });
         }
@@ -22521,14 +23455,11 @@ function concatDataAnggotaSelected(_ref3) {
     dpendukung = _ref3.dpendukung;
   var xdt = [],
     add = false;
-  // console.log(dataTerpilih);
   allData.forEach(function (v, i) {
     add = true;
     dataTerpilih.forEach(function (v1) {
-      // console.log( v1.kdBAnggota,v.kdBAnggota, v1.kdBidang,v.kdDBidang);
       if (v1.kdBAnggota === v.kdBAnggota && (v1.kdBidang == undefined ? v1.kdDBidang : v1.kdBidang) === v.kdDBidang) {
-        // console.log(v);
-        xdt.push(_objectSpread(_objectSpread(_objectSpread({}, v), param), {}, {
+        xdt.push(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, v1), v), param), {}, {
           xind: i,
           kdBidang: v1.kdBidang,
           kdBAnggota: v.kdBAnggota,
@@ -23068,6 +23999,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var api = function () {
   // const BASE_URL = 'http://localhost:3000/';
+  // const urlNoted = 'http://localhost:8000/';
   var BASE_URL = 'https://sipj.bappedaksb.com/';
   var urlNoted = 'https://noted.bappedaksb.com/';
   var BASE_URL_Sub = urlNoted + 'api/';

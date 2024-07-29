@@ -1,0 +1,261 @@
+@use '../abstracts/variabel' as _;
+@forward '../base/index';
+
+.bodyMBG{ 
+    background-image:url("/daun.png");
+    background-size: cover; 
+}
+.bodyM{
+    margin: auto;
+    background-color: rgba($color: #000000, $alpha: .2);
+    @extend .boxSLeft; 
+}
+
+.minHeader{
+    // background-image: url('/svg/bg-1.svg');
+    background-image: url('/bgweb.png');
+    background-size: cover;
+    height: 250px;
+    @extend .flexC, .pwrap-3p;
+    & .headerM{ 
+        @extend .flexR, .jcSB;
+        
+    }
+    & .infoLogin{ 
+        & .info{ 
+            visibility: hidden;
+        }
+    }
+    @media screen and (min-width:600px) {
+        height: 350px !important;
+    }
+    @media screen and (min-width:800px) {
+        height: 450px !important;
+        @include _.hmin(200px);
+        & .infoLogin .info{ 
+            visibility: unset; 
+        }
+        & .headerM{
+            min-height: 100px;
+        }
+    }
+    @media screen and (min-width:1000px) {
+        height: 550px !important;
+        & .headerM{
+            min-height: 150px;
+        }
+    }
+    @media screen and (min-width:1200px) {
+        height: 650px !important;
+        & .headerM{
+            min-height: 250px;
+        }
+    }
+    @media screen and (min-width:1400px) {
+        height: 750px !important; 
+    }
+}
+.minHeaderBg{
+    // background-image: url('/svg/bg-1-flip.svg');
+    background-image: url('/bgWeb2.png');
+    background-size: cover;  
+}
+
+
+
+.navM{
+    @extend .flex;
+    > li{
+        display: inline;
+        @extend .pLink, .fzL2, .fBebasNeue, .tupper, .tbold;
+        cursor: pointer;
+    }
+}
+
+
+.containerHome{
+    @extend .flexC, .pwrap-3p, .bwhite;
+    // background-image: url('/svg/bg-2.svg');
+    // background-image: url('/bgWeb2.png');
+    // background-color: white;
+    // @extend .blight08;
+
+    background-position: center;
+
+    border-bottom: 1px solid rgb(190, 175, 175);
+}
+
+.wrapContact{
+    @extend .flexC, .pwrap-3p, .jcC, .aiC, .tcenter;
+    
+    @include _.hmin(250px);
+    & img{
+        @extend .boval, .pwrap-10;
+    }
+    @media screen and (min-width: 800px)  {
+        flex-direction: row;
+        & div {
+            max-width: 400px;
+        }
+    }
+}
+
+
+// dashboard
+.headerM1{
+    @extend .flexR, .jcSB, .bhijauBlueG;
+    & .wrap{
+        width: 100%;
+    }
+    & .btnOnoff{
+        display: none;
+        @extend .aiC, .mxw300;
+    }
+    & ul{
+        & li{
+            display: inline-flex;
+            @extend .pwrap-10;
+            > .textIcon{
+                @extend .flexC;
+
+            }
+            & span{
+                @extend .jcC, .fzXl;
+            }
+        }
+    }
+}
+
+.userInfo{
+    @extend .flexC; 
+    & #ui_bg{
+        display: none;
+        @extend .mh500, .jcC, .clight, .aiC,.fpacifico, .fzL4, .radius_10, .mauto;
+        // background-color: rgb(0 17 211 / 13%); 
+    }
+    & .boxProfil{ 
+        border-bottom: 3px solid darkgreen; 
+        @extend .positionR-b40,  .pwrap-2p, .bwhite,.mauto;
+        position: unset;
+    }
+    & #ui_profil{
+        @extend .flexR, .jcSB;
+        
+        & #profil{
+            @extend .flexR;
+            min-width: 300px;
+            > img{
+                height: 100px;
+            }
+        }
+        & #logout{
+            @extend .aiC;
+            
+        }
+        & #menu{
+            margin-top: 20px; 
+           
+            @extend .jcC;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        
+        #ui_bg{
+            width: 800px;
+            display: flex !important;
+            min-height: 300px !important;
+           
+        }
+
+        .boxProfil{
+            position: relative !important;
+            width: 90%;
+            max-width: 800px;
+            border-radius:10px !important;
+            flex-direction: row;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & #logout{
+                display: none !important;
+            }
+        }
+        .btnOnoff{
+            // visibility: hidden;
+            display: grid !important;
+        }
+        .listNode{
+            grid-template-columns: repeat(2,44%);
+            justify-content: space-between;
+        }
+        .bgForm{
+            width: 90%;
+            margin: auto;
+            border-radius: 10px;
+            padding: 15px 5px;
+        }
+    }
+
+    @media screen and (min-width: 1000px)  {
+        #ui_bg{
+            width: 1000px; 
+            min-height: 400px !important; 
+        }
+        .boxProfil{
+            width: 90%;
+            max-width: 1000px;
+        }
+    }
+    @media screen and (min-width: 1200px)  {
+        #ui_bg{
+            width: 1200px; 
+            min-height: 500px !important;
+           
+        }
+        .boxProfil{
+            width: 90%;
+            max-width: 1100px;
+        }
+    }
+    @media screen and (min-width: 1201px)  {
+        #ui_bg{ 
+            width:100%;
+            max-width: unset;
+            min-height: 500px !important; 
+        }
+        .boxProfil{
+            width:90%;
+            max-width: unset;
+        }
+    }
+    
+}
+
+.bgForm{
+    // @extend .bdark;
+    // background-color: #e2e2e27d;
+    background-color: #343a403f !important ;
+    // border: 1px solid white;
+}
+
+.listNode{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    justify-content: center;
+}
+@media screen and (min-width: 600px) { 
+   
+}
+@media screen and (min-width: 800px) { 
+    // #ui_bg{
+    //     display: flex !important;
+    //     min-height: 300px !important;
+    // }
+    
+}
+@media screen and (min-width: 1000px) { 
+    .listNode{
+        grid-template-columns: repeat(4,22%);
+    }
+}

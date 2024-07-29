@@ -14,6 +14,7 @@ function Fitur() {
     const dispatch = useDispatch();
 
     const [ind, setInd] = useState(0);
+    const [view, setview] = useState(0);
 
     useEffect(() => {
         dispatch(getrincianDinas());
@@ -28,42 +29,29 @@ function Fitur() {
     if(_dinas.length===0 || _dinas[0].bidang.length === 0 || _dinas[0].bidang[0].sub == undefined){
         return <></>;
     }
+    const menus=()=>{ 
+        return(
+            <div class="btnGroup">
+                <button class={"btn2  "+ (view ==0 ? 'bsuccess3':'')} onClick={()=>setview(0)}><b>Rincian Belanja</b></button>
+            </div> 
+        ); 
+    }
     return (
-        <>
-            <HeaderPage1
-                page={'Pertanggung Jawaban'}
-                pageKet={'Daftar sub kegiatan Dan uraian Belanja'}
-                icon={'mdi-office-building-marker cdark'}
-            ></HeaderPage1>
-
-            {/* <div className="form0 bwhite">
-                <div className="ribbon ribbon-center ribbon-success">
-                    <span className="bsuccess">DAFTAR FITUR Jenis Pertanggung Jawaban</span>
-                </div>
-                <div className="w95p m0auto">
-                    <div className="flexR3 mwrap">
-                        <button className="btn7 " to={`/home/work/sppd`}>
-                            <span className="mdi mdi-login bprimary clight fziconS"></span>
-                            <h2 className="cdark">Perjalanan Dinas</h2>
-                        </button>
-                        <button className="btn7 " to={`/home/work/makanMinum`}>
-                            <span className="mdi mdi-login bwarning clight fziconS"></span>
-                            <h2 className="cdark">Makan Minum</h2>
-                        </button>
-                        <button className="btn7 " to={`/home/work/kontrak`}>
-                            <span className="mdi mdi-login bsuccess clight fziconS"></span>
-                            <h2 className="cdark">Kontrak</h2>
-                        </button>
-                    </div>
-                </div>
-            </div> */}
-            <SelectDataUtama
-                dt={_dinas}
-                ind={ind}
-                updDataBidang={updDataBidang}
-            ></SelectDataUtama>
-
-        </>
-    );
+        <div className="Mcontainer">
+            <div className="body pm0"> 
+                <HeaderPage1
+                    page={'Rincian Sub Kegiatan'}
+                    pageKet={'Pemilihan rincian belanja untuk pembuatan SPJ'}
+                    icon={'mdi-office-building-marker '}
+                    menu={menus()}
+                ></HeaderPage1>
+                <SelectDataUtama
+                    dt={_dinas}
+                    ind={ind}
+                    updDataBidang={updDataBidang}
+                ></SelectDataUtama> 
+            </div> 
+        </div>
+    );  
 }
 export default Fitur;

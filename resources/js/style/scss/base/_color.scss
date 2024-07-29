@@ -1,0 +1,138 @@
+@use '../abstracts/variabel' as _;
+
+.bwhite{ @include _.cB('white')}
+.cwhite{@include _.c('white')}
+.tsWhite{ text-shadow: 0 0  20px #00fffb, 0  0 40px #0081bc; }
+// text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+.bwhite02{@include _.cB('white02')}
+.bwhite04{@include _.cB('white04')}
+.bwhite06{@include _.cB('white06')}
+.bwhite08{@include _.cB('white08')}
+
+.blight{@include _.cB('light'); @include _.c('dark'); }
+.blight04{ background-color: rgba(map-get(_.$c,'light'), 0.4);}
+.blight08{ background-color: rgba(map-get(_.$c,'light'), 0.8);}
+.blightG-opa2{@include _.cGradient(left, rgba(map-get(_.$c,'light'),0), rgba(map-get(_.$c,'light'),0.8)); @extend .cwhite;}
+.blightG-opa2End{@include _.cGradient(right, rgba(map-get(_.$c,'light'),0), rgba(map-get(_.$c,'light'),0.8)); @extend .cwhite;}
+
+.clight{@include _.c('light')}
+
+.bblack{@include _.cB('black') }
+.cblack{@include _.c('black')}
+
+.bprimary{@include _.cB('primary'); @extend .cwhite; }
+.bprimary1{@include _.cB('primary1'); @extend .cwhite; }
+
+.cprimary{@include _.c('primary')}
+.tsPrimary{ text-shadow: 0 0 20px map-get(_.$c,'primary1'), 0 0 40px map-get(_.$c,'primary'); }
+
+.bprimaryG-opa2{@include _.cGradient(left, rgba(map-get(_.$c,'primary1'),0.2), rgba(map-get(_.$c,'primary'),0.8)); @extend .cwhite;}
+.bprimaryG-opa2End{@include _.cGradient(right, rgba(map-get(_.$c,'primary1'),0.2), rgba(map-get(_.$c,'primary'),0.8)); @extend .cwhite;}
+.borderBprimary-1{border-bottom: 1px solid map-get(_.$c,'primary1');}
+
+
+.bwarning{@include _.cB('warning'); @extend .cwhite;}
+.cwarning{@include _.c('warning')}
+.bwarningG{@include _.cGradient(left, map-get(_.$c,'warning') ,map-get(_.$c,'warning1')); @extend .cwhite;}
+.bwarningG-opa2{@include _.cGradient(left, rgba(map-get(_.$c,'warning1'),0.2), rgba(map-get(_.$c,'warning'),0.8)); @extend .cwhite;}
+.bwarningG-opa2End{@include _.cGradient(right, rgba(map-get(_.$c,'warning1'),0.2), rgba(map-get(_.$c,'warning'),0.8)); @extend .cwhite;}
+.borderBWarning-1{border-bottom: 1px solid map-get(_.$c,'warning1');}
+.borderBWarning-5{border-bottom: 5px solid map-get(_.$c,'warning1');}
+
+.binfo{@include _.cB('info'); @extend .cwhite;}
+.binfo1{@include _.cB('info1'); @extend .cwhite;}
+.binfo3{@include _.cB('info3'); @extend .cdark;}
+
+.binfoG{@include _.cGradient(left, map-get(_.$c,'info') ,map-get(_.$c,'info1')); @extend .cwhite;}
+.binfoG-opa2{@include _.cGradient(left, rgba(map-get(_.$c,'info1'),0.2), rgba(map-get(_.$c,'info'),0.8)); @extend .cwhite;}
+.binfoG-opa2End{@include _.cGradient(right, rgba(map-get(_.$c,'info1'),0.2), rgba(map-get(_.$c,'info'),0.8)); @extend .cwhite;}
+.borderInfo-1{border: 1px solid map-get(_.$c,'info1');}
+.borderBInfo-1{border-bottom: 1px solid map-get(_.$c,'info1');}
+.borderBInfo-5{border-bottom: 5px solid map-get(_.$c,'info1');}
+.borderTInfo-5{border-top: 5px solid map-get(_.$c,'info1');}
+.borderTBInfo-5{
+    border-bottom: 5px solid map-get(_.$c,'info1');
+    border-top: 5px solid map-get(_.$c,'info1');
+}
+
+.cinfo{@include _.c('info')}
+.tsInfo{ text-shadow: 0 0 20px #00fffb, 0 0 40px #0081bc; }
+
+.borderInfoT5px{border-top: 5px solid map-get(_.$c,'info1');}
+.borderInfoB5px{border-bottom: 5px solid map-get(_.$c,'info1');}
+
+.bsuccess{@include _.cB('success'); @extend .cwhite; }
+.bsuccess1{@include _.cB('success1'); @extend .cwhite; }
+.bsuccess2{@include _.cB('success2'); @extend .cdark; }
+.bsuccess3{@include _.cB('success3'); @extend .cwhite; }
+.bsuccess4{@include _.cB('success4'); @extend .cdark; }
+.bsuccess5{@include _.cB('success5'); @extend .cwhite; }
+.csuccess{@include _.c('success')}
+.csuccess1{@include _.c('success1'); }
+.csuccess2{@include _.c('success2');}
+.csuccess3{@include _.c('success3');  }
+.csuccess4{@include _.c('success4'); }
+.csuccess5{@include _.c('success5'); }
+
+
+.bsuccessG{@include _.cGradient(left, map-get(_.$c,'success') ,map-get(_.$c,'success1')); @extend .cwhite;}
+.bsuccessG-opa2{@include _.cGradient(left, rgba(map-get(_.$c,'success1'),0.2), rgba(map-get(_.$c,'success'),0.8)); @extend .cwhite;}
+.bsuccessG-opa2End{@include _.cGradient(right, rgba(map-get(_.$c,'success1'),0.2), rgba(map-get(_.$c,'success'),0.8)); @extend .cwhite;}
+.borderBSuccess-1{border-bottom: 1px solid map-get(_.$c,'success1');}
+.borderBSuccess-5{border-bottom: 5px solid map-get(_.$c,'success1');}
+.borderTSuccess-5{border-top: 5px solid map-get(_.$c,'success1');}
+.borderTBSuccess-5{
+    border-bottom: 5px solid map-get(_.$c,'success');
+    border-top: 5px solid map-get(_.$c,'success');
+}
+
+.bdanger{@include _.cB('danger')}
+.cdanger{@include _.c('danger')}
+
+.bdark{@include _.cB('dark'); @extend .clight;}
+.cdark{@include _.c('dark')}
+.tsDark{ text-shadow: 0px -2px #000, 0 1px #000000 }
+
+
+
+.bsecondary{@include _.cB('secondary');@extend .clight; }
+.csecondary{@include _.c('secondary')}
+
+.bmuted{@include _.cB('muted'); @extend .clight; }
+.bmuted04{ background-color: rgba(map-get(_.$c,'muted'), 0.4); @extend .clight; }
+.bmuted08{ background-color: rgba(map-get(_.$c,'muted'), 0.8); @extend .clight; }
+.cmuted{@include _.c('muted')}
+.bmutedG{@include _.cGradient(left, map-get(_.$c,'muted') ,map-get(_.$c,'muted1')); @extend .clight;}
+.bmutedG-opa2{@include _.cGradient(left, rgba(map-get(_.$c,'muted1'),0.2), rgba(map-get(_.$c,'muted'),0.8)); @extend .clight;}
+.bmutedG-opa2End{@include _.cGradient(right, rgba(map-get(_.$c,'muted1'),0.2), rgba(map-get(_.$c,'muted'),0.8)); @extend .clight;}
+.borderBMuted-1{border-bottom: 1px solid map-get(_.$c,'muted1');}
+.borderBMuted-5{border-bottom: 5px solid map-get(_.$c,'muted1');}
+
+
+.bpurple{@include _.cB('purple') }
+.bpurple1{@include _.cB('purple1')}
+.cpurple{@include _.c('purple')}
+
+.borderpurpleT5px{border-top: 5px solid map-get(_.$c,'purple1');}
+.borderpurpleB5px{border-bottom: 5px solid map-get(_.$c,'purple1');}
+
+.borange{@include _.cB('orange')}
+.corange{@include _.c('orange')}
+
+.bcoklat{@include _.cB('orange')}
+.ccoklat{@include _.c('coklat')}
+
+// batas
+
+
+.bnone{background: none;}
+
+
+// gradient
+.bhijauBlueG{@include _.cGradient(right, map-get(_.$c,'success') ,map-get(_.$c,'info1')); @extend .clight;}
+
+.alfaDark{background-color: rgba(map-get(_.$c,'dark'), 0.5);}
+.alfaInfo2{background-color: rgba(map-get(_.$c,'info2'), 0.9);}
+.alfaCoklat{background-color: rgba(map-get(_.$c,'coklat'), 0.5);}
+

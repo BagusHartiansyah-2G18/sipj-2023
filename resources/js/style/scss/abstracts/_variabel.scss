@@ -1,0 +1,146 @@
+$c: (
+    'primary':#007bff,
+    'primary1':#095f81,
+    'secondary': #6c757d,
+    'success': #28a745,
+    'success1': #076b20,
+    'success2':#E3FEF7,
+    'success3':#135D66,
+    'success4':#77B0AA,
+    'success5':#003C43,
+
+    'danger': #dc3545,
+    'info': #17a2b8,
+    'info1':#347a96,
+    'info2':#2C3E50,
+    'info3': #f1fafb,
+
+    'dark': #343a40,
+    'muted': #6c757d,
+    'muted1': #3a3f44,
+    'light': #e2e2e2,
+    
+    'white': #fff,
+    'white02': rgba(255, 255, 255, 0.2),
+    'white04': rgba(255, 255, 255, 0.4),
+    'white06': rgba(255, 255, 255, 0.6),
+    'white08': rgba(255, 255, 255, 0.8),
+
+    'black': #000,
+    'warning': #f1b100,
+    'warning1': #7a4606,
+
+    'purple': #A555EC,
+    'purple1': #7d43af,
+    'orange':darkorange,
+
+    'coklat': rgb(93 47 3),
+);
+$px:(
+    's':10px,
+    'm':12px,
+    'l':14px,
+    'xl':16px,
+    'l1':20px,
+    'l2':25px,
+    'l3':30px,
+    'l4':40px,
+    'l5':50px,
+    'l6':60px,
+    '100':100px
+);
+
+@mixin cB($v:'dark'){ background-color:map-get($c,$v) !important;}
+@mixin c($v:'dark'){color:map-get($c,$v) !important;}
+@mixin cOpacity($v:'dark', $opa: 0.2, $cb:true){
+    @if ($cb){
+        background-color: rgba(map-get($c,$v), $opa);
+    } @else{
+        color: rgba(map-get($c,$v), $opa);
+    }
+}
+@mixin cGradient($v : top,$v1:rgba(map-get($c,'dark'),0.9) ,$v2: rgba(map-get($c,'light'),0.1), $cb:true){
+    //to top bottom rr
+    // background-image: linear-gradient(to $v, $v1, $v2);
+    @if ($cb){
+        // background-color: rgba(map-get($c,$v), $opa);
+        background-image: linear-gradient(to $v, $v1, $v2);
+    } @else{
+        color: linear-gradient(to $v, $v1, $v2);
+    }
+}
+
+// text box
+@mixin shadow($v : 0px 3px,$c :#888888,$text:false){
+    @if ($text){
+        text-shadow: $v $c;
+    } @else {
+        box-shadow: $v $c;
+    }
+    // box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+}
+@mixin skew($v: 45deg, $y : true){
+    @if $y {
+        transform: skewY($v);
+    } @else{
+        transform: skewX($v);
+    }
+}
+@mixin rotasi($v: 45deg){ transform: rotate($v);}
+@mixin border($v:2px,$c1:'dark'){border: $v solid map-get($c,$c1);}
+
+@mixin hmax($v:100%){max-height: $v;}
+@mixin hmin($v:100px){min-height: $v;}
+@mixin wmax($v:100%){max-width: $v;}
+@mixin wmin($v:450px){min-width: $v;}
+
+@mixin arah($map:('l': 20px, 'r': 20px, 't': 20px, 'b': 20px)){
+    bottom: map-get($map, 'b');
+    right: map-get($map, 'r');
+    top: map-get($map, 't');
+    left: map-get($map, 'l');
+}
+@mixin gridC($colom:false){
+    display: grid;
+    @if ($colom){
+        grid-template-columns: $colom;
+    }
+}
+@mixin gridR($row:false){
+    display: grid;
+    @if ($row){
+        grid-template-rows: $row;
+    }
+
+}
+
+@mixin jc($v:center){
+    display: flex;
+    justify-content: $v;
+}
+@mixin ai($v:center){
+    display: flex;
+    align-items: $v;
+}
+@mixin ac($v:center){
+    display: flex;
+    align-content: $v;
+} 
+@mixin as($v:center){
+    display: flex;
+    align-self:$v;
+} 
+
+@mixin scroll($max:false){
+    overflow: auto;
+    @if($max){
+        @include hmax($max);
+    }
+    -ms-overflow-style: none;   /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin fz($v:'m'){font-size: map-get($px, $v);}

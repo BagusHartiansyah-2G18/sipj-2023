@@ -1,0 +1,73 @@
+@use '../abstracts/variabel' as _;
+@forward '../base/index';
+
+.sliderM{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    @extend .mauto;
+    padding: 0px 20px;
+    & .cimg{ //container image
+        @extend .flex;
+        @extend .mwrap-10;
+        @extend .radius-10;
+        > img{
+            height: 250px;
+            @extend .radius-10;
+        }
+    }
+    & .form{
+        @extend .mwrap-10;
+        @extend .radius-10;
+        @include _.hmax(250px);
+        @include _.wmax(500px);
+        border-left: 3px solid map-get(_.$c,'dark');
+    }
+
+    & #kiri,#kanan{
+        position: absolute;
+        top: 50%;
+        box-shadow: inset 0px 0px 20px 4px #91b7c3;
+        border: none;
+        @extend .boval;
+    }
+    & #kiri{
+        left: -10px;
+    }
+    & #kanan{
+        right: -10px;
+    }
+
+    .form:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    @media screen and (min-width:800px) {
+
+        & #kiri{
+            left: -20px;
+        }
+        & #kanan{
+            right: -20px;
+        }
+    }
+    @media screen and (min-width:1000px) {
+
+        & #kiri{
+            left: -30px;
+        }
+        & #kanan{
+            right: -30px;
+        }
+    }
+}
+
+
+

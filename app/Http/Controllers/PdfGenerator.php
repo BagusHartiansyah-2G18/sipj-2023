@@ -32,33 +32,17 @@ class PdfGenerator extends Controller
                 "kdBidang"=>$baseEND->{'kdBidang'},
                 "kdSub"=>$baseEND->{'kdSub'},
                 "kdJudul"=>$baseEND->{'kdJudul'},
-                // "no"=>$baseEND->{'noSPPD'},
+                "no"=>$baseEND->{'no'},
                 "tahun"=>$cek['ta'],
                 "kdJPJ"=>'jp-1',
-                "tglCetak"=>$baseEND->{'tglCetak'},
-                "noSPPD"=>$baseEND->{'noSPPD'}
+                "tglCetak"=>$baseEND->{'tglCetak'}, 
             ];
             // return print_r($param['no']);
             $param["where"]= ' and d.kdBAnggota =""';
-
-            // DB::table('work')
-            // ->where('kdDinas',$param['kdDinas'])
-            // ->where('kdBidang',$param['kdBidang'])
-            // ->where('kdSub',$param['kdSub'])
-            // ->where('kdJudul',$param['kdJudul'])
-            // ->where('taWork',$cek['ta'])
-            // ->where('no',$param['no'])
-            // ->where('kdBAnggota','')
-            // ->update([
-            //     'noSPPD'=> $param['noSPPD'],
-            // ]);
-            // echo("<pre>");
-            // return print_r($this->Hdb->getDataSppdKegiatan($param));
-
+ 
             $data =$this->Hdb->getDataSppdKegiatan($param)[0];
             $param["where"]= ' and a.kdBAnggota !=""';
-            unset($param['kdBidang']);
-            // unset($param['kdBidang']);
+            unset($param['kdBidang']); 
             $member = $this->Hdb->dworkAnggotaBidang($param);
             
             // return $this->Mfc->log($member);
@@ -159,128 +143,131 @@ class PdfGenerator extends Controller
         ], 200);
     }
 
-    public function SuratTugasSppd($val){
+    function __DataSuratTugasPermohonan($param,$cek){
+        // dwork
+        $param["where"]= ' and a.kdBAnggota =""';
+        $data =$this->Hdb->dwork($param)[0]; 
+
+        // Anggota Bidang
+        $param["where"]= ' and a.kdBAnggota !=""';
+        $member = $this->Hdb->dworkAnggotaBidang($param); 
+
+         
+        // keperluan kop  dan kepala SKPD
+        $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']); 
+        $pimpinan = $this->getTTPimpinan(
+            $param['kdDinas'],"pimpinan",$param['tahun'],
+            $data->pimOpd,$dinas->nmDinas
+        ); 
+        $pimpinan->nmDinas= $dinas->nmDinas;
+        $pimpinan->alamat= $dinas->alamat;
+
+        //kepala SETDA / Asisten
+        $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']); 
+        $subPimpinan = $this->getTTPimpinan(
+            $cek['setda'],"setda",$param['tahun'],
+            $data->pimSetda,$setda->nmDinas
+        ); 
+        $subPimpinan->nmDinas= $setda->nmDinas;
+        $subPimpinan->alamat= $setda->alamat; 
+
         
+
+        
+
+        // seleksi data member 
+        $newMember = [];
+        if(count($member)>0){
+            foreach ($member as $key => $value) {
+                if(empty($value->fileD)){ 
+                    $newMember[$key]['nmAnggota']=$value->nmAnggota;
+                    $newMember[$key]['nmJabatan']=$value->nmJabatan;
+                    $newMember[$key]['golongan']=$value->golongan;
+                    $newMember[$key]['nip']=$value->nip;
+                    $newMember[$key]['tingkatan']=$value->tingkatan;
+                    $newMember[$key]['snip']=$value->snip;    
+                    $newMember[$key]['tingkat']=$this->getTingkat($value->tingkatan);
+                }else{
+                    $fileD = json_decode(base64_decode($value->fileD)); 
+                    $newMember[$key]['nmAnggota']=$fileD->nmAnggota;
+                    $newMember[$key]['nmJabatan']=$fileD->nmJabatan;
+                    $newMember[$key]['golongan']=$fileD->golongan;
+                    $newMember[$key]['nip']=$fileD->nip;
+                    $newMember[$key]['tingkatan']=$fileD->tingkatan;
+                    $newMember[$key]['tingkat']=$this->getTingkat($fileD->tingkatan);
+                    $newMember[$key]['snip']=$value->snip;    
+                }  
+                
+            }
+        }  
+        // tglCetak 
+        $date =  explode("-",$param['tglCetak']);
+
+        $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+        if(strlen($data->dateE)>1){
+            $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+            $hari++;
+        }
+        $dateS = explode("-",$data->date);
+        $dateE = [];
+        $textTanggal = $dateS[2];
+        if(!empty($data->dateE) && $data->dateE!=$data->date){
+            $dateE = explode("-",$data->dateE);
+            if($dateS[1]==$dateE[1]){
+                $textTanggal.=" s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateE[0] ;
+            }else{
+                $textTanggal.=" ".$this->Mfc->__bulan($dateS[1])." s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ;
+            }
+        }else{
+            $textTanggal .= " ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ;
+        }
+
+        $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        $tglCetak = $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0]; 
+        return [ 
+            'asDinas' => $dinas->asDinas, 
+            'asKab' => 'Kab. Sumbawa Barat',
+            'kab' => 'Kabupaten Sumbawa Barat',
+            'asdiskab' => $dinas->asDinas.' Kab. Sumbawa Barat',
+            
+            'pimpinan'=> $pimpinan,  
+            "setda"=> $setda, //bisa setda / asisten2
+            "subPimpinan"=>$subPimpinan,  
+
+            "tahun"=> $date[0],
+            'data' => $data,
+            'member' => $newMember,
+
+            'tglCetak'=> $tglCetak,
+            "textTanggal"=>$textTanggal ,
+            'tglCetak'=> $this->Mfc->__bulan($date[1])." ".$date[0],
+            "dateS"=>((int)$dateS[2])." ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ,
+            "dateE"=>((int)$dateE[2])." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ,
+
+            'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari",
+            // ".$this->getRomawi($date[1])."/
+            "no" =>"000.1.2.3", // untuk kwitansi - SPD
+            'nomor' =>"000.1.2.3/".$spaci."/<span class='tupper'>".$dinas->asDinas."</span>/".$date[0],
+            // 'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$date[0],
+            'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0],
+ 
+            'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari"
+        ];
+    }
+
+    public function SuratTugasSppd($val){ 
         $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
             $param = [
                 "kdDinas"=>$baseEND->{'kdDinas'},
-                // "kdBidang"=>$baseEND->{'kdBidang'},
                 "kdSub"=>$baseEND->{'kdSub'},
                 "kdJudul"=>$baseEND->{'kdJudul'},
                 "no"=>$baseEND->{'no'},
                 "tahun"=>$cek['ta'],
                 "tglCetak"=>$baseEND->{'tglCetak'}
             ];
-            $param["where"]= ' and a.kdBAnggota =""';
-
-            // dwork
-            $data =$this->Hdb->dwork($param)[0];
-
-            $param["where"]= ' and a.kdBAnggota !=""';
-            // Anggota Bidang
-            $member = $this->Hdb->dworkAnggotaBidang($param);
-
-            //kepala SKPD
-            $pimpinan = $this->getTTPimpinan(
-                $param['kdDinas'],"pimpinan",$param['tahun'],
-                $data->pimOpd,$data->tdOPD
-            );
-            $jabatanPim = $pimpinan->nmJabatan;
-            if(!$pimpinan->manual){
-                if($pimpinan->status !=='pimpinan'){
-                    $jabatanPim = "Plh. ".$pimpinan->nmJabatanR;
-                }
-            }
-            //kepala SETDA / Asisten
-            $subPimpinan = $this->getTTPimpinan(
-                $cek['setda'],"setda",$param['tahun'],
-                $data->pimSetda,$data->tdSETDA
-            );
-            $jabatanSetda = "";
-            // $jabatanSetda = "a.n. Bupati Sumbawa Barat <br>";
-            if(!$subPimpinan->manual){
-                // return print_r($subPimpinan->nmJabatan);
-                if($subPimpinan->status !=='setda'){
-                    $jabatanSetda .="Plh. Sekretaris Daerah, <br> " ;
-                }
-            }
-            // $jabatanSetda = "";
-            // echo("<pre>");
-            // return print_r($subPimpinan);
-
-            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
-            $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']);
-            // echo("<pre>");
-            // return print_r($dinas);
-
-            if(count($member)>0){
-                foreach ($member as $key => $value) {
-                    $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
-                }
-            }
-
-            // $member = array_merge($member, $member);
-            $date =  explode("-",$param['tglCetak']);
-            // Array ( [0] => 2023 [1] => 08 [2] => 27 )
-
-            $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-            if(strlen($data->dateE)>1){
-                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-                $hari++;
-            }
-
-            $dateS = explode("-",$data->date);
-            $dateE = [];
-            $textTanggal = $dateS[2];
-            if(!empty($data->dateE) && $data->dateE!=$data->date){
-                $dateE = explode("-",$data->dateE);
-                if($dateS[1]==$dateE[1]){
-                    $textTanggal.=" s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateE[0] ;
-                }else{
-                    $textTanggal.=" ".$this->Mfc->__bulan($dateS[1])." s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ;
-                }
-            }else{
-                $textTanggal .= " ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ;
-            }
-
-            $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-
-            $tglCetak = $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0];
-            // $asdiskab= $dinas->asDinas.' '.$asKab;
-            $datax = [
-                // 'dinas' =>$dinas->nmDinas,
-                'asDinas' => $dinas->asDinas,
-                // 'alamat'    => $dinas->alamat,
-                'asKab' => 'Kab. Sumbawa Barat',
-                'kab' => 'Kabupaten Sumbawa Barat',
-                'asdiskab' => $dinas->asDinas.' Kab. Sumbawa Barat',
-
-                "dinas"=> $dinas,
-                // 'jabatanPim' => $jabatanPim,
-                'pimpinan'=> $pimpinan,
-                'jabatanDinas' => $jabatanPim, // kerena ada tambahan plh dll
-                "setda"=> $setda,
-                "subPimpinan"=>$subPimpinan,
-                'jabatanSetda' => $jabatanSetda,
-
-                "tahun"=> $date[0],
-                'data' => $data,
-                'member' => $member,
-
-                'tglCetak'=> $tglCetak,
-                "textTanggal"=>$textTanggal ,
-                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari",
-                
-                // /".$this->getRomawi($date[1])."
-                'nomor' =>"000.1.2.3/".$spaci."/ <span class='tupper'>".$dinas->asDinas."</span> /".$date[0],
-                'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
-            ];
-            return view('pdf.suratTugas', $datax);
-            $pdf = PDF::loadView('pdf.suratTugas', $datax)
-                    ->setPaper('legal','portrait');
-            return $pdf->stream('Surat-Tugas-Sppd-'.$data->no.'.pdf');
+            return view('pdf.suratTugas',$this->__DataSuratTugasPermohonan($param,$cek));
         }
         return response()->json([
             'exc' => false,
@@ -292,137 +279,22 @@ class PdfGenerator extends Controller
         $cek = $this->Mfc->portal(); 
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
+           
             $param = [
-                "kdDinas"=>$baseEND->{'kdDinas'},
-                // "kdBidang"=>$baseEND->{'kdBidang'},
+                "kdDinas"=>$baseEND->{'kdDinas'}, 
                 "kdSub"=>$baseEND->{'kdSub'},
                 "kdJudul"=>$baseEND->{'kdJudul'},
                 "no"=>$baseEND->{'no'},
                 "tahun"=>$cek['ta'],
                 "tglCetak"=>$baseEND->{'tglCetak'}
-            ];
-            $param["where"]= ' and a.kdBAnggota =""';
-
-            // dwork
-            $data =$this->Hdb->dwork($param)[0];
-
-            $param["where"]= ' and a.kdBAnggota !=""';
-            // Anggota Bidang
-            $member = $this->Hdb->dworkAnggotaBidang($param);
-            // echo("<pre>");
-            // return print_r($member);
-
-            //kepala SKPD
-            $pimpinan = $this->getTTPimpinan(
-                $param['kdDinas'],"pimpinan",$param['tahun'],
-                $data->pimOpd,$data->tdOPD
-            );
-            $jabatanPim = $pimpinan->nmJabatan;
-            if(!$pimpinan->manual){
-                if($pimpinan->status !=='pimpinan'){
-                    $jabatanPim = "Plh. ".$pimpinan->nmJabatanR;
-                }
-            }
-
-            //kepala SETDA / Asisten
-            $subPimpinan = $this->getTTPimpinan(
-                $cek['setda'],"setda",$param['tahun'],
-                $data->pimSetda,$data->tdSETDA
-            );
-            $jabatanSetda = "a.n. Bupati Sumbawa Barat <br>";
-            if(!$subPimpinan->manual){
-                // return print_r($subPimpinan->nmJabatan);
-                if($subPimpinan->status !=='setda'){
-                    $jabatanSetda .="Sekretaris Daerah, <br> u.b. " ;
-                }
-            }
-
-            $setdaPim = $this->Hdb->getAnggotaJabatan([
-                "kdDinas"=>$cek['setda'],
-                "tahun"=>$param['tahun'],
-                "status"=>"setda"
-            ])[0];
-            // echo("<pre>");
-            // return print_r($subPimpinan);
-
-            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
-            $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']);
-            // echo("<pre>");
-            // return print_r($dinas);
-
-            if(count($member)>0){
-                foreach ($member as $key => $value) {
-                    $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
-                }
-            }
-
-            // $member = array_merge($member, $member);
-            $date =  explode("-",$param['tglCetak']);
-            // Array ( [0] => 2023 [1] => 08 [2] => 27 )
-
-            $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-            if(strlen($data->dateE)>1){
-                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-                $hari++;
-            }
-            $dateS = explode("-",$data->date);
-            $dateE = [];
-            $textTanggal = $dateS[2];
-            if(!empty($data->dateE) && $data->dateE!=$data->date){
-                $dateE = explode("-",$data->dateE);
-                if($dateS[1]==$dateE[1]){
-                    $textTanggal.=" s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateE[0] ;
-                }else{
-                    $textTanggal.=" ".$this->Mfc->__bulan($dateS[1])." s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ;
-                }
-            }else{
-                $textTanggal .= " ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ;
-            }
-
-            $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-
-            $tglCetak = $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0];
-            // $asdiskab= $dinas->asDinas.' '.$asKab;
-            $datax = [
-                // 'dinas' =>$dinas->nmDinas,
-                'asDinas' => $dinas->asDinas,
-                // 'alamat'    => $dinas->alamat,
-                'asKab' => 'Kab. Sumbawa Barat',
-                'kab' => 'Kabupaten Sumbawa Barat',
-                'asdiskab' => $dinas->asDinas.' Kab. Sumbawa Barat',
-
-                "dinas"=> $dinas,
-                // 'jabatanPim' => $jabatanPim,
-                'pimpinan'=> $pimpinan,
-                'jabatanDinas' => $jabatanPim, // kerena ada tambahan plh dll
-                "setda"=> $setda, //bisa setda / asisten2
-                "subPimpinan"=>$subPimpinan,
-                'jabatanSetda' => $jabatanSetda,
-                "setdaPim"=>$setdaPim, //asli sekretaris daerah
-
-                "tahun"=> $date[0],
-                'data' => $data,
-                'member' => $member,
-
-                'tglCetak'=> $tglCetak,
-                "textTanggal"=>$textTanggal ,
-                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari",
-                // ".$this->getRomawi($date[1])."/
-                'nomor' =>"000.1.2.3/".$spaci."/<span class='tupper'>".$dinas->asDinas."</span>/".$date[0],
-                // 'nomor' =>"000.1.2.3/".$spaci."/".$dinas->asDinas."/".$date[0],
-                'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
-            ];
-            return view('pdf.suratTugasx', $datax);
-            $pdf = PDF::loadView('pdf.suratTugasx', $datax)
-                    ->setPaper('legal','portrait');
-            return $pdf->stream('Surat-Tugas-Sppd-'.$data->no.'.pdf');
+            ]; 
+            return view('pdf.suratTugasx',$this->__DataSuratTugasPermohonan($param,$cek)); 
         }
         return response()->json([
             'exc' => false,
             'msg' => $cek['msg']
         ], 200);
-    }
-
+    } 
     public function SuratTugasSppdDaerah($val){
         
         $cek = $this->Mfc->portal(); 
@@ -437,118 +309,7 @@ class PdfGenerator extends Controller
                 "tahun"=>$cek['ta'],
                 "tglCetak"=>$baseEND->{'tglCetak'}
             ];
-            // $param["where"]= ' and d.kdBAnggota =""'; 
-            // $subRek =$this->Hdb->getDataSppdKegiatan($param)[0];
-            // unset($param['kdBidang']);
-            $param["where"]= ' and a.kdBAnggota =""';
-
-            // return print_r($subRek);
-            // dwork
-            $data =$this->Hdb->dwork($param)[0];
-
-            $param["where"]= ' and a.kdBAnggota !=""';
-            // Anggota Bidang
-            $member = $this->Hdb->dworkAnggotaBidang($param);
-            
-            //kepala SKPD
-            $pimpinan = $this->getTTPimpinan(
-                $param['kdDinas'],"pimpinan",$param['tahun'],
-                $data->pimOpd,$data->tdOPD
-            );
-            $jabatanPim = $pimpinan->nmJabatan;
-            if(!$pimpinan->manual){
-                if($pimpinan->status !=='pimpinan'){
-                    $jabatanPim = "Plh. ".$pimpinan->nmJabatanR;
-                }
-            }
-            //kepala SETDA / Asisten
-            $subPimpinan = $this->getTTPimpinan(
-                $cek['setda'],"setda",$param['tahun'],
-                $data->pimSetda,$data->tdSETDA
-            );
-            $jabatanSetda = "a.n. Bupati Sumbawa Barat <br>";
-            if(!$subPimpinan->manual){
-                // return print_r($subPimpinan->nmJabatan);
-                if($subPimpinan->status !=='setda'){
-                    $jabatanSetda .="Sekretaris Daerah, <br> u.b. " ;
-                }
-            }
-            $jabatanSetda = "";
-            // echo("<pre>");
-            // return print_r($subPimpinan);
-
-            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
-            $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']);
-            // echo("<pre>");
-            // return print_r($dinas);
-
-            if(count($member)>0){
-                foreach ($member as $key => $value) {
-                    $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
-                }
-            }
-
-            // $member = array_merge($member, $member);
-            $date =  explode("-",$param['tglCetak']);
-            // Array ( [0] => 2023 [1] => 08 [2] => 27 )
-
-            $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-            if(strlen($data->dateE)>1){
-                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-                $hari++;
-            }
-
-            $dateS = explode("-",$data->date);
-            $dateE = [];
-            $textTanggal = $dateS[2];
-            if(!empty($data->dateE) && $data->dateE!=$data->date){
-                $dateE = explode("-",$data->dateE);
-                if($dateS[1]==$dateE[1]){
-                    $textTanggal.=" s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateS[1])." ".$dateE[0] ;
-                }else{
-                    $textTanggal.=" ".$this->Mfc->__bulan($dateS[1])." s/d ".$dateE[2]." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ;
-                }
-            }else{
-                $textTanggal .= " ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ;
-            }
-
-            $spaci = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-
-            $tglCetak = $date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0];
-            // $asdiskab= $dinas->asDinas.' '.$asKab;
-            $datax = [
-                // 'dinas' =>$dinas->nmDinas,
-                'asDinas' => $dinas->asDinas,
-                // 'alamat'    => $dinas->alamat,
-                'asKab' => 'Kab. Sumbawa Barat',
-                'kab' => 'Kabupaten Sumbawa Barat',
-                'asdiskab' => $dinas->asDinas.' Kab. Sumbawa Barat',
-
-                "dinas"=> $dinas,
-                // 'jabatanPim' => $jabatanPim,
-                'pimpinan'=> $pimpinan,
-                'jabatanDinas' => $jabatanPim, // kerena ada tambahan plh dll
-                "setda"=> $setda,
-                "subPimpinan"=>$subPimpinan,
-                'jabatanSetda' => $jabatanSetda,
-
-                "tahun"=> $date[0],
-                'data' => $data,
-                'member' => $member,
-
-                'tglCetak'=> $tglCetak,
-                "textTanggal"=>$textTanggal ,
-                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari",
-                // ".$this->getRomawi($date[1])." /".$dinas->asDinas."
-                'nomor' =>"000.1.2.3/".$spaci."/<span class='tupper'>".$dinas->asDinas."</span>/".$date[0],
-                'nomorTugas' =>"800.1.11.1/".$spaci."/".$this->getRomawi($date[1])."/".$date[0]
-            ];
-            // echo("<pre>");
-            // return print_r($datax);
-            return view('pdf.suratTugasDaerah', $datax);
-            $pdf = PDF::loadView('pdf.suratTugasDaerah', $datax)
-                    ->setPaper('legal','portrait');
-            return $pdf->stream('Surat-Tugas-Sppd-'.$data->no.'.pdf');
+            return view('pdf.suratTugasDaerah',$this->__DataSuratTugasPermohonan($param,$cek)); 
         }
         return response()->json([
             'exc' => false,
@@ -571,6 +332,9 @@ class PdfGenerator extends Controller
                 "tglCetak"=>$baseEND->{'tglCetak'},
                 "sppdDaerah"=>$baseEND->{'sppdDaerah'}
             ];
+
+            // return $this->Mfc->log($this->__DataSuratTugasPermohonan($param,$cek));
+            return view('pdf.sppdSetda',$this->__DataSuratTugasPermohonan($param,$cek));  
             $param["where"]= ' and a.kdBAnggota =""';
             $data =$this->Hdb->dwork($param)[0];
 
@@ -895,41 +659,29 @@ class PdfGenerator extends Controller
     }
 
 
-    function getTTPimpinan($kdDinas,$status,$tahun, $_pim,$_td){ //_ artinya isi manual
+    function getTTPimpinan($kdDinas,$status,$tahun, $_pim,$nmDinas){ //_ artinya isi manual
         // 1. data pimpinan asli
         $pimpinan = $this->Hdb->getAnggotaJabatan([
             "kdDinas"=>$kdDinas,
             "tahun"=>$tahun,
             "status"=>$status
-        ])[0];
-        $pimpinan->manual=0;
-        $tamJabatanSKPD = $pimpinan->nmJabatan;
-        if(!empty($_pim) && $_pim!='Manual'){
-            // 2. data plh pimpinan
-            $split = explode("|",$_pim);
-            $pimpinan = $this->Hdb->getOneAnggota([
-                "kdDinas"=>$split[2],
-                "tahun"=>$tahun,
-                "kdBAnggota"=>$split[0],
-                "kdBidang"=>$split[1]
-            ])[0];
-            $pimpinan->manual=0;
-        }else if($_pim=='Manual'){
-            // 3. data manual pimpinan
-            $tamPimpinan = explode("&",$_td); //td = tampung data
-            $nmAnggota = $this->getArrayNewLineInText($tamPimpinan[1]);
-            if(count($nmAnggota)<3){
-                return print_r('harus terdapat Data nama, Golongan dan NIP pimpinan');
+        ])[0];   
+        $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
+        $asJabatan = $pimpinan->asJabatan;
+
+        $pimpinan =[];
+        if(!empty($_pim)){
+            $pimpinan = json_decode(base64_decode($_pim));    
+            // $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
+            if($pimpinan->manual == "yes"){
+                $pimpinan->nmJabatan=$this->getNewLineInText($pimpinan->nmJabatan);
+                $pimpinan->jabatanx=$this->getNewLineInText($pimpinan->nmJabatan);  
+            }else{
+                $pimpinan->jabatanx=$pimpinan->nmJabatan;  
             }
-            $pimpinan =  (object)[
-                'nmAnggota'=>$nmAnggota[0],
-                'golongan'=>$nmAnggota[1],
-                'nip'=>$nmAnggota[2],
-                'nmJabatan'=>$this->getNewLineInText($tamPimpinan[0]),
-                'manual'=>1
-            ];
-        }
-        $pimpinan->nmJabatanR = $tamJabatanSKPD;
+            
+        } 
+        $pimpinan->asJabatan = $asJabatan;
         return $pimpinan;
     }
 

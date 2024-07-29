@@ -109,50 +109,21 @@ function FormDinas({dt, modalC}) {
         dispatch(upded({ kdDinas, nmDinas, asDinas, kadis, nip, ind }));
         close(1);
     }
-    // console.log();
     return (
-        <>
-            <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
-                <div className="form1 bwhite boxShadow1px">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-home-analytics fziconS "></span>
-                            <h3>Data Dinas</h3>
-                        </div>
-                        {
-                            (
-                                _html.sess.kdJaba>2 &&
-                                <button className="btn2 blight cmuted" onClick={add}>Entri</button>
-                            )
-                        }
+        <div className="Mcontainer2Form">
+            <div className="right-1" >
+                <div class="FM1 ">
+                    <div class="header ">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Form Entri</b> 
+                            </h2>
+                        </div> 
                     </div>
-                    <div className="body">
-                        <Tabel1
-                            search={search}
-                            oncSearch={setSearch}
-                            columns={coll}
-                            data={dt.filter((item) => {
-                                    if (search === "") {
-                                        return item;
-                                    } else if (
-                                        item.nmDinas.toLowerCase().includes(search.toLowerCase())
-                                    ) {
-                                        return item;
-                                    }
-                                })}
-                        ></Tabel1>
-                    </div>
-                    {/* <div className="footer"></div> */}
-                </div>
-                <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-home-analytics fz25"></span>
-                            <h3 className="">{(ins?'Entri':'Perbarui')} Dinas</h3>
-                        </div>
-                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
-                    </div>
-                    <div className="w95p m0auto">
+                    <div class="body bdark pwrap_5 flexC jcSA" style={{width:"unset", minHeight:"350px" }}><br/>
                         {
                             (
                                 ins ?
@@ -178,18 +149,47 @@ function FormDinas({dt, modalC}) {
                             <input className="borderR10px" type="text" value={nip} onChange={setnip} placeholder="NIP" />
                             <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
                         </div>
-                    </div>
-                    <div className="footer posEnd">
-                        <div className="btnGroup">
-                            <button className="btn2"  onClick={close}>Close</button>
+                        
+                        <div className="list jcE">
                             <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div className="left ">
+                <div class="FM1 ">
+                    <div class="header">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Data Dinas </b> 
+                            </h2>
+                        </div> 
+                    </div>
+                    <div class="body bdark pm0 bsolid1 " style={{width:"unset", borderRadius:"0px" }}><br/>
+                        <div className="">
+                            <Tabel1
+                                search={search}
+                                oncSearch={setSearch}
+                                columns={coll}
+                                data={dt.filter((item) => {
+                                        if (search === "") {
+                                            return item;
+                                        } else if (
+                                            item.nmDinas.toLowerCase().includes(search.toLowerCase())
+                                        ) {
+                                            return item;
+                                        }
+                                    })}
+                            ></Tabel1>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
-
-    );
+        </div>
+    ); 
 }
 FormDinas.propTypes = {
     dt : PropTypes.array.isRequired,

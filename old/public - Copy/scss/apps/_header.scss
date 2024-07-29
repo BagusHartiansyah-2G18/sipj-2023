@@ -1,0 +1,172 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+@forward '../base/index';
+@forward '../component/index';
+@forward 'headerResponsive';
+
+
+body#mfc{
+    @extend .pm0;
+}
+
+header#mfcProfil{
+    @extend .pwrap;
+    @extend .hheader;
+    @extend .bdark;
+    @extend .cwhite;
+    @include _pos.flexR();
+    @include _pos.algC();
+    @include _pos.relative();
+    border-top: 30px solid #17a2b8;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    & .navbar{
+        @include _pos.gridC(repeat(2,50%)); 
+        width: 100%;
+        & .menu{
+            @include _pos.flexC();
+            @include _pos.algI();
+            cursor: pointer;
+        }
+        & .titmenu{ 
+            @extend .dnone;
+        }
+        & .end{
+            @include _pos.justifyC(false,end);
+        }
+    }
+    & .center{
+        height: 80px;
+        @include _.mar(auto);
+        & div{
+            padding: 20px;
+            @include _pos.relative();
+            top: -20px;
+            width: 80px;
+            background-color: #17a2b8;
+            border-radius: 50%;
+            height: 100%;
+            & img{
+                background-color: white;
+                border-radius: 50%;
+                height: 100%;
+            }
+        }
+    }
+}
+header#mfc1{
+    @include _pos.flexR();
+    width: 100%;
+    height: 70px; 
+    @include _.bc('dark');
+    @include _pos.algI();
+    & .left{
+        width: 20%;
+        max-width: 300px;
+        @include _pos.justifyC(flex,space-between);
+        @include _pos.algI();
+        & h2{
+            display: block;
+            @extend .fpacifico;
+            text-shadow: map-get(_.$c,'info') 1px 0 10px;
+        }
+    }
+    & .center{
+        width: 60%;
+        height: 100%;
+        @include _pos.justifyC(flex);
+        // margin-left: 5%;
+        @include _pos.algI(flex);
+        & img{
+            @include _pos.relative();
+            top: 10px;
+            height: 100px;
+        }
+        & div{
+            @include _pos.flexC();
+            @include _.c('light');
+            & h2, p{
+                @extend .pm0;
+            }
+        }
+    }
+    & .right{
+        width: 20%;
+        height: 100%;
+        @include _pos.flexR();
+        @include _pos.justifyC(false,space-evenly);
+        @include _pos.algI();
+    }
+}
+header#mfc2{
+    @include _pos.flexC();
+    width: 100%;
+    @include _pos.algI();
+    @extend .boxShadow1px;
+    & .header{
+        @include _pos.flexR();
+        @include _pos.justifyC(false,space-between);
+        width: 100%;
+        @include _.bc('dark');
+        height: 80px; 
+        & img{
+            height: 100%;
+        }
+        & h2{
+            display: block;
+            @extend .fcookie;
+            @extend .fz15;
+            // text-shadow: map-get(_.$c,'info') 1px 0 10px;
+        } 
+        & p, h2{
+            @extend .m0;
+            @extend .plr10px;
+            @extend .fcookie;
+        }
+    }
+    & .body{
+        @include _pos.gridC(repeat(2,50%));
+        gap: 15px;
+        row-gap: 15px;
+        @extend .justifySB; 
+        @extend .bwhite;
+        @extend .pwrap;
+        & .navbar{
+            @include _pos.flexR();
+            @include _pos.algI();
+            gap: 15px;
+            & .menu{
+                @include _pos.flexC();
+                @include _pos.algI();
+                cursor: pointer;
+            }
+        }
+        & .user{
+            @extend .justifyEnd;
+        }
+        & .updGrid2to3{
+            grid-area: 3 ;
+            grid-column: 1/4;
+            @include _.mar(0px auto);
+        }
+    }
+     
+}
+
+
+@media only screen and (min-width: 640px) {
+    header#mfc2 .body{
+        @include _pos.flexR();
+    } 
+}
+@media only screen and (min-width: 840px) {
+    
+}
+@media only screen and (min-width: 1007px) {
+    
+}
+@media only screen and (min-width:1200px ) {
+    
+}

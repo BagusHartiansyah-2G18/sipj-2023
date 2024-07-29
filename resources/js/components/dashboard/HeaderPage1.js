@@ -1,21 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function HeaderPage1({page,pageKet,icon}){
+function HeaderPage1({page,pageKet,icon, menu=''}){
     return (
-        <div className="headerPage1">
-            <div className="title">
-                <span className={`mdi ${icon} bwhite fz25`}></span>
-                <div className="page">
-                    <h2>{page}</h2>
+        <div className="box2C bdark">
+            <div className="left aiC">
+                <span className={`mdi  ${icon}  fzL4`}></span>
+                <div className="">
+                    <h2 className="pm0">{page}</h2>
                     <span>{pageKet}</span>
                 </div>
             </div>
-            {/* <div className="btnGroup">
-                <button className="btn2">31 Hari</button>
-                <button className="btn2">5 jam</button>
-                <button className="btn2">45 menit</button>
-            </div> */}
+            {menu}
         </div>
     )
 }

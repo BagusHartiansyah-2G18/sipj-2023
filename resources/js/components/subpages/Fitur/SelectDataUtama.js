@@ -94,18 +94,23 @@ function SelectDataUtama({ dt, ind, updDataBidang }) {
         }
     }
     return (
-        <div className="form1 bwhite boxShadow1px">
-            <div className="header bprimary clight">
-                <div className="icon">
-                    <span className="mdi mdi-office-building-marker fz25 "></span>
-                    <h3>Uraian Belanja & Pembagian Triwulan</h3>
-                </div>
+        <div class="FM1 ">
+            <div class="header">
+                <div class="cdark flexR">
+                    <button className="btn bnone">
+                        <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                    </button>
+                    <h2 className="  pl0 aiE fBebasNeue">
+                        <b>Rincian Belanja SPJ</b> 
+                    </h2>
+                </div> 
             </div>
-            <div className="body">
-                <div className="justifyEnd mtb10px">
+            <div class="body bdark pm0 bsolid1 " style={{width:"unset", borderRadius:"0px" }}><br/>
+                <div className="jcE pwrap-10">
                     <div className="w45p labelInput2">
                         <label className="mw100px">Dinas</label>
                         <Select
+                            className="cdark"
                             options={sfLib.coptionSelect({
                                 dt,
                                 row:{label:'nmDinas',value:'kdDinas'},
@@ -118,76 +123,75 @@ function SelectDataUtama({ dt, ind, updDataBidang }) {
                         />
                     </div>
                 </div>
-                <div className="justifyEnd mtb10px">
+                <div className="jcE pwrap-10">
                     <div className="w45p labelInput2">
-                        <label className="mw100px">Bidang</label>
-                        <Select
-                            options={sfLib.coptionSelect({
-                                dt : dt[ind].bidang,
-                                row:{label:'nmBidang',value:'kdDBidang'},
-                                // xind:true
-                            })}
-                            placeholder="Select Bidang"
-                            value={selBidang}
-                            onChange={selectBidang}
-                            isSearchable={true}
-                        />
-                    </div>
-                </div>
-                <hr className="opa2"></hr>
-                {
-                    (
-                        dt[ind].bidang[index].sub !== undefined &&
-                        <Tabel1
-                            search={search}
-                            oncSearch={setSearch}
-                            columns={colSub}
-                            data={dt[ind].bidang[index].sub.filter((item) => {
-                                    if (search === "") {
-                                        return item;
-                                    } else if (
-                                        item.nmSub.toLowerCase().includes(search.toLowerCase())
-                                    ) {
-                                        return item;
-                                    }
+                            <label className="mw100px">Bidang</label>
+                            <Select
+                                className="cdark"
+                                options={sfLib.coptionSelect({
+                                    dt : dt[ind].bidang,
+                                    row:{label:'nmBidang',value:'kdDBidang'},
+                                    // xind:true
                                 })}
-                            ExpandedComponent={({ data })=>{
-                                return (
-                                    (
-                                        data.rincian === undefined  || data.rincian.length==0?
+                                placeholder="Select Bidang"
+                                value={selBidang}
+                                onChange={selectBidang}
+                                isSearchable={true}
+                            />
+                        </div>
+                    </div>
+                    <hr className="opa2"></hr>
+                    {
+                        (
+                            dt[ind].bidang[index].sub !== undefined &&
+                            <Tabel1
+                                search={search}
+                                oncSearch={setSearch}
+                                columns={colSub}
+                                data={dt[ind].bidang[index].sub.filter((item) => {
+                                        if (search === "") {
+                                            return item;
+                                        } else if (
+                                            item.nmSub.toLowerCase().includes(search.toLowerCase())
+                                        ) {
+                                            return item;
+                                        }
+                                    })}
+                                ExpandedComponent={({ data })=>{
+                                    return (
                                         (
-                                            data.rincian === undefined ?
-                                            selectSub(data.kdSub) :
-                                            <div className="pwrap msgLabelIcon">
-                                                <b>Sub ini tidak memiliki rincian belanja</b>
+                                            data.rincian === undefined  || data.rincian.length==0?
+                                            (
+                                                data.rincian === undefined ?
+                                                selectSub(data.kdSub) :
+                                                <div className="jcC pwrap-10">
+                                                    <b>Sub ini tidak memiliki rincian belanja</b>
+                                                </div>
+                                            ) :
+                                            <div className="mtb10px">
+                                                <div className="w90p m0auto">
+                                                    <Tabel1
+                                                        columns={coll}
+                                                        data={data.rincian.map(v=>{
+                                                            return {
+                                                                ...v,
+                                                                kdDinas: data.kdDinas,
+                                                                kdBidang: data.kdBidang,
+                                                                kdSub: data.kdSub,
+                                                            }
+                                                        })}
+                                                    ></Tabel1>
+                                                </div>
                                             </div>
-                                        ) :
-                                        <div className="mtb10px">
-                                            <div className="w90p m0auto">
-                                                <Tabel1
-                                                    columns={coll}
-                                                    data={data.rincian.map(v=>{
-                                                        return {
-                                                            ...v,
-                                                            kdDinas: data.kdDinas,
-                                                            kdBidang: data.kdBidang,
-                                                            kdSub: data.kdSub,
-                                                        }
-                                                    })}
-                                                ></Tabel1>
-                                            </div>
-                                        </div>
+                                        )
                                     )
-                                )
-                            }}
-                        ></Tabel1>
-                    )
-                }
-
+                                }}
+                            ></Tabel1>
+                        )
+                    } 
             </div>
         </div>
-
-    );
+    );  
 }
 
 SelectDataUtama.propTypes = {

@@ -1,0 +1,41 @@
+@use '../abstracts/variabel' as _;
+@forward '../base/index';
+
+// A adl apps 
+.Abg{
+    background-image: url('/bgWeb3.png');
+    background-size: cover;
+    @extend  .w100p,.h50p;
+    @media screen and (min-width:800px) {
+        height: 450px;   
+    } 
+    @media screen and (min-width:1200px) {
+        height: 750px;   
+    }
+}
+.Flogin{
+    @extend .h50p,.flexC,.pwrap-5, .jcSB, .w100p;  
+    & form{
+        @extend .flexC, .jcSE, .h80p;
+    }
+    @media screen and (min-width:800px) {
+        min-width: 400px; 
+        width: 30%;
+        height: 450px;   
+    }
+    @media screen and (min-width:1200px) { 
+        width: 30%;
+        height: 750px;
+        padding: 7% 10px;
+
+    }
+}
+#formLogin{
+    @extend .h900, .boxS, .pm0, .radius-10; 
+    @media screen and (min-width:800px) { 
+        height: 450px;   
+    }
+    @media screen and (min-width:1200px) { 
+        height: 750px;   
+    }
+}

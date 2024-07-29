@@ -193,19 +193,70 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
         mclose();
     }
     return (
-        <>
-            <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
-                <div className="form1 bwhite boxShadow1px">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-office-building-marker fz25 "></span>
-                            <h3>Data Sub Kegiatan</h3>
-                        </div>
-                        <button className="btn2 blight cmuted" onClick={add}>Form</button>
+        <div className="Mcontainer2Form">
+            <div className="right-1" >
+                <div class="FM1 ">
+                    <div class="header ">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Form Pemilihan Sub Kegiatan</b> 
+                            </h2>
+                        </div> 
                     </div>
-                    <div className="body">
-                        <div className="justifyEnd mtb10px">
-                            <div className="w30p ">
+                    <div class="body bdark pm0 bsolid1" style={{width:"unset", borderRadius:"0px" }}><br/>
+                        {
+                            (
+                                dt[ind].sub !== undefined && dt[ind].bidang[index]!=undefined &&
+                                <Tabel1
+                                    cinput=""
+                                    search={search1}
+                                    oncSearch={setSearch1}
+                                    columns={coll}
+                                    selectRow={true}
+                                    checkboxSelection={selectDataForm}
+                                    data={getDataViewSubBidang({
+                                        dt : dt[ind].sub,
+                                        terpilih : 0,
+                                        kdDBidang : dt[ind].bidang[index].kdDBidang,
+                                        search:search1
+                                    })}
+                                    btnAction={
+                                        (countDt !== 0 &&
+                                            <>
+                                                <div className="flexR justifySB algI">
+                                                    <h2>{countDt+ ` Sub Kegiatan`} </h2>
+                                                    <div className="btnGroup">
+                                                        <button className="btn2 bprimary clight" onClick={msgAdd}>Tambahkan Data</button>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+                                            </>
+                                        )
+                                    }
+                                ></Tabel1>
+                            )
+                        } 
+                    </div>
+                </div>
+            </div>
+            <div className="left ">
+                <div class="FM1 ">
+                    <div class="header">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Sub Kegiatan Terpilih </b> 
+                            </h2>
+                        </div> 
+                    </div>
+                    <div class="body bdark pm0 bsolid1 " style={{width:"unset", borderRadius:"0px" }}><br/>
+                        <div className="jcE pwrap-10">
+                            <div className="w40p ">
                                 <Select
                                     options={sfLib.coptionSelect({
                                         dt,
@@ -222,8 +273,8 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
                         {
                             (
                                 dt[ind].bidang!=undefined && dt[ind].bidang.length>0 &&
-                                <div className="justifyEnd mtb10px">
-                                    <div className="w30p ">
+                                <div className="jcE pwrap-10 cdark">
+                                    <div className="w40p ">
                                         <Select
                                             options={sfLib.coptionSelect({
                                                 dt : dt[ind].bidang,
@@ -238,92 +289,43 @@ function FormListSubKegiatan({ dt, modalC, ind, updDataBidang }) {
                                     </div>
                                 </div>
                             )
-                        }
-                        {
-
-                            (
-                                dt[ind].sub !== undefined && dt[ind].bidang[index]!=undefined &&
-                                <Tabel1
-                                    search={search}
-                                    oncSearch={setSearch}
-                                    columns={coll}
-                                    checkboxSelection={selectDataTerpilih}
-                                    data={getDataViewSubBidang({
-                                        dt : dt[ind].sub,
-                                        terpilih : 1,
-                                        kdDBidang : dt[ind].bidang[index].kdDBidang,
-                                        search
-                                    })}
-                                    btnAction={
-                                        (countDtX !== 0 &&
-                                            <>
-                                                <hr></hr>
-                                                <div className="flexR justifySB algI">
-                                                    <h2>{countDtX+ ` Sub Kegiatan`} </h2>
-                                                    <div className="btnGroup">
-                                                        <button className="btn2 bdanger clight" onClick={msgDel}>Hapus Data</button>
-                                                    </div>
+                        } 
+                        <div className="">
+                        {(
+                            dt[ind].sub !== undefined && dt[ind].bidang[index]!=undefined &&
+                            <Tabel1
+                                search={search}
+                                oncSearch={setSearch}
+                                columns={coll}
+                                checkboxSelection={selectDataTerpilih}
+                                data={getDataViewSubBidang({
+                                    dt : dt[ind].sub,
+                                    terpilih : 1,
+                                    kdDBidang : dt[ind].bidang[index].kdDBidang,
+                                    search
+                                })}
+                                btnAction={
+                                    (countDtX !== 0 &&
+                                        <>
+                                            <hr></hr>
+                                            <div className="flexR justifySB algI">
+                                                <h2>{countDtX+ ` Sub Kegiatan`} </h2>
+                                                <div className="btnGroup">
+                                                    <button className="btn2 bdanger clight" onClick={msgDel}>Hapus Data</button>
                                                 </div>
-                                                <hr></hr>
-                                            </>
-                                        )
-                                    }
-                                ></Tabel1>
-                            )
-                        }
-
-                    </div>
-                </div>
-                <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-clock-edit-outline fz25"></span>
-                            <h3 className="">Form Pemilihan Sub Kegiatan Bidang</h3>
+                                            </div>
+                                            <hr></hr>
+                                        </>
+                                    )
+                                }
+                            ></Tabel1>
+                        )} 
                         </div>
-                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
-                    </div>
-                    <div className="w95p m0auto">
-                        <div className="mtb10px">
-                            {
-                                (
-                                    dt[ind].sub !== undefined && dt[ind].bidang[index]!=undefined &&
-                                    <Tabel1
-                                        cinput=""
-                                        search={search1}
-                                        oncSearch={setSearch1}
-                                        columns={coll}
-                                        selectRow={true}
-                                        checkboxSelection={selectDataForm}
-                                        data={getDataViewSubBidang({
-                                            dt : dt[ind].sub,
-                                            terpilih : 0,
-                                            kdDBidang : dt[ind].bidang[index].kdDBidang,
-                                            search:search1
-                                        })}
-                                        btnAction={
-                                            (countDt !== 0 &&
-                                                <>
-                                                    <div className="flexR justifySB algI">
-                                                        <h2>{countDt+ ` Sub Kegiatan`} </h2>
-                                                        <div className="btnGroup">
-                                                            <button className="btn2 bprimary clight" onClick={msgAdd}>Tambahkan Data</button>
-                                                        </div>
-                                                    </div>
-                                                    <hr></hr>
-                                                </>
-                                            )
-                                        }
-                                    ></Tabel1>
-                                )
-                            }
-                        </div>
-
                     </div>
                 </div>
             </div>
-        </>
-
-    );
+        </div>
+    );  
 }
 
 FormListSubKegiatan.propTypes = {

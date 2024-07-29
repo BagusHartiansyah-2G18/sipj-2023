@@ -8,14 +8,18 @@ import PropTypes from "prop-types";
 function FormSub({ dt, selectSub }) {
     const [search, setSearch] = useInput('');
     return (
-        <div className="form1 bwhite boxShadow1px">
-            <div className="header bprimary clight">
-                <div className="icon">
-                    <span className="mdi mdi-office-building-marker fz25 "></span>
-                    <h3>Data Sub Kegiatan</h3>
-                </div>
+        <div class="FM1 ">
+            <div class="header ">
+                <div class="cdark flexR">
+                    <button className="btn bnone">
+                        <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                    </button>
+                    <h2 className="  pl0 aiE fBebasNeue">
+                        <b>Data Kegiatan</b> 
+                    </h2>
+                </div> 
             </div>
-            <div className="body">
+            <div class="body bdark pm0 bsolid1" style={{width:"unset", borderRadius:"0px" }}><br/>
                 <Tabel1
                     search={search}
                     oncSearch={setSearch}
@@ -32,8 +36,8 @@ function FormSub({ dt, selectSub }) {
                         })}
                 ></Tabel1>
             </div>
-            {/* <div className="footer"></div> */}
-        </div>
+        </div> 
+         
     );
 }
 FormSub.propTypes = {

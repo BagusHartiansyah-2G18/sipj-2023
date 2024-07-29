@@ -18,6 +18,7 @@ function BidangSubKegiatan(){
 
     const [ind, setInd] = useState(0);
     const [modalC, setmodalC] = useState('');
+    const [view, setview] = useState(0);
 
     useEffect(() => {
         dispatch(getDinasBidang());
@@ -31,29 +32,42 @@ function BidangSubKegiatan(){
         dispatch(getDataBidangSub(v));
         setInd(v.ind);
     }
+    const menus=()=>{ 
+        return(
+            <div class="btnGroup">
+                <button class={"btn2  "+ (view ==0 ? 'bsuccess3':'')} onClick={()=>setview(0)}><b>Pemilihan Sub</b></button>
+            </div> 
+        ); 
+    }
+    
     return (
-        <>
-            <HeaderPage1
-                page={'Sub Kegiatan Bidang'}
-                pageKet={'daftar Sub Kegiatan Bidang'}
-                icon={'mdi-office-building-marker cdark'}
-            ></HeaderPage1>
-            {
-                (
-                    Object.keys(_dinas[ind]).length != 0 &&
-                    // _dinas[ind].bidang.length>0 &&
-                    <FormListSubKegiatan
-                        ind={ind}
-                        dt={_dinas}
-                        modalC={setmodalC}
-                        updDataBidang={updDataBidang}
-                    ></FormListSubKegiatan>
-                )
-            }
-            <Modal1
-                children ={modalC}
-            ></Modal1>
-        </>
-    );
+        <div className="Mcontainer">
+            <div className="body pm0"> 
+                <HeaderPage1
+                    page={'Pemilihan Sub Kegiatan'}
+                    pageKet={'menyesuaikan dengan bidang terkait'}
+                    icon={'mdi-office-building-marker '}
+                    menu={menus()}
+                ></HeaderPage1>
+                <div className="bodyFlexRow800"> 
+                    {
+                        (
+                            Object.keys(_dinas[ind]).length != 0 &&
+                            // _dinas[ind].bidang.length>0 &&
+                            <FormListSubKegiatan
+                                ind={ind}
+                                dt={_dinas}
+                                modalC={setmodalC}
+                                updDataBidang={updDataBidang}
+                            ></FormListSubKegiatan>
+                        )
+                    }
+                    <Modal1
+                        children ={modalC}
+                    ></Modal1>
+                </div>
+            </div> 
+        </div>
+    );  
 }
 export default BidangSubKegiatan;

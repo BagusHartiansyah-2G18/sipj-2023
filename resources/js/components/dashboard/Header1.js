@@ -5,7 +5,7 @@ import { logout, changeMenu } from '../../states/sfHtml/action';
 import {Link} from "react-router-dom";
 
 const icon = [
-    {ic : <span className="mdi mdi-database cwarning fz25"></span>, url : ''},
+    {ic : <span className="mdi mdi-database cwarning fzXl"></span>, url : ''},
     {ic : <span className="mdi mdi-file-document-edit csuccess fz25"></span>, url : ''},
     {ic : <span className="mdi mdi-file-document csuccess fz25"></span>, url : ''}
 ]
@@ -21,48 +21,44 @@ function HeaderM() {
     const updMenu = (v) =>{
         dispatch(changeMenu(v))
     }
-    return (
-        <header id="mfc2" className="posRelative">
-            <div className="header ">
-                <div className="flexR algI pwrap">
-                    <img src={_html.url+'/logo/ksb.png'} />
-                    <div className="flex clight ">
-                        <h2>BAPPEDA</h2>
-                        <p>Badan Perencanaan Pembangunan Daerah</p>
-                        <p>Sumbawa Barat</p>
-                    </div>
-                </div>
-                <div className="algI">
-                    {
-                        (_html.leftBar?
-                            <button className="btn2" id="menu" onClick={()=>onOffLeftBar(0)}><span className="mdi mdi-menu clight fziconS"></span></button>
-                            :<button className="btn2" id="menu"  onClick={()=>onOffLeftBar(1)}><span className="mdi mdi-close clight fziconS"></span></button>
-                        )
-                    }
+    // <div className="Info">
+        
+    //     {
+    //         (_html.leftBar?
+    //             <button className="btn2" id="menu" onClick={()=>onOffLeftBar(0)}><span className="mdi mdi-menu clight fziconS"></span></button>
+    //             :<button className="btn2" id="menu"  onClick={()=>onOffLeftBar(1)}><span className="mdi mdi-close clight fziconS"></span></button>
+    //         )
+    //     }
 
-                </div>
+    // </div>
+    return (
+        <header  className="MDheader pwrap_5 bsuccess3 stickyHeader">
+            <div className="Iapp">
+                <img src={_html.url+'/logo/ksb.png'} /> 
+                <div className="fPoppins flexC asC ">
+                    <h2 className="pm0 fzJapp ">SIPJ</h2> 
+                    <p className="pm0 fzSapp fpacifico">BAPPEDA</p>
+                </div> 
             </div>
-            <div className="body w95p">
+            <div className="menu">
+                {
+                    _html.menu.map((v,i)=>{
+                        return (
+                            <Link  key={`menus${i}`} to={setUrlMenu(i)} onClick={()=>updMenu(setUrlMenu(i))}>
+                                {icon[i].ic}
+                                <span className={`  ${(_html.indMenu === i ? ' cwhite fbold':' csuccess ')}`}>{v.nm}</span>
+                            </Link>
+                        )
+                    })
+                }
+            </div>
+            <div className="Info"> 
                 <div className="btnGroup">
-                    <span className="mdi mdi-web cdark mdi-spin bwarning mdiLeftGroup"></span>
-                    <button className="btn2">SIPJ</button>
-                </div>
-                <div className="navbar updGrid2to3">
-                    {
-                        _html.menu.map((v,i)=>{
-                            return (
-                                <Link className="menu" key={`menus${i}`} to={setUrlMenu(i)} onClick={()=>updMenu(setUrlMenu(i))}>
-                                    {icon[i].ic}
-                                    <span className={` titmenu ${(_html.indMenu === i && 'cprimary fbold')}`}>{v.nm}</span>
-                                </Link>
-                            )
-                        })
-                    }
-                </div>
-                <div className="user">
-                    <button className="btn1 cdark" onClick={exeLogout}>
-                        <span className="mdi mdi-logout cdanger fz25"></span>
-                        Logout
+                    {/* <button className="btn bnone cdark" onClick={exeLogout}>
+                        <span className="mdi mdi-logout cdanger fz25"></span> 
+                    </button> */}
+                    <button className="btn bdark" onClick={exeLogout}>
+                        <span className="mdi mdi-logout cdanger fzL2"></span>  
                     </button>
                 </div>
             </div>

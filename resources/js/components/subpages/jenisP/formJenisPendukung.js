@@ -124,78 +124,85 @@ function FormJenisPendukung({ dt, ind, changeJenis, actFormJenisDukungan, modalC
 
 
     return (
-        <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
-            <div className="form1 bwhite boxShadow1px ">
-                <div className="header bprimary clight">
-                    <div className="icon">
-                        <span className="mdi mdi-office-building-marker fz25 "></span>
-                        <h3>Data Jenis Pendukung</h3>
+        <div className="Mcontainer2Form">
+            <div className="right" >
+                <div class="FM1">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bdark">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Form Entri Sub Jenis</b> 
+                            </h2>
+                        </div> 
                     </div>
-                    <button className="btn2 blight cmuted" onClick={add}>Entri</button>
+                    <div class="body bdark pwrap_5" style={{width:"unset" }}><br/>
+                        <div className="iconInput2">
+                            <input className="borderR10px" type="text" value={nmDP} onChange={setnmDP} placeholder="Nama Sub Jenis" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>  
+                        <div className="list jcE">
+                            <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?added:upded)}>{(ins?'Entri':'Perbarui')}</button>
+                        </div> 
+                    </div>
                 </div>
-                <div className="body">
-                    <div className="justifyEnd mtb10px">
-                        <div className="w30p ">
-                            <Select
-                                options={sfLib.coptionSelect({
-                                    dt:dt,
-                                    row:{label:'nmJPJ'},
-                                    xind:true
-                                })}
-                                placeholder="Select Jenis "
-                                value={selectedOptions}
-                                onChange={selectJenis}
-                                isSearchable={true}
-                            />
+            </div>
+            <div className="left">
+                <div class="FM1">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bdark">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Data Pendukung</b> 
+                            </h2>
+                        </div> 
+                    </div>
+                    <div class="body bdark pm0 bsolid1" style={{width:"unset", borderRadius:"0px" }}><br/> 
+                        <div className="jcE mtb10px">
+                            <div className="w40p cdark">
+                                <Select
+                                    options={sfLib.coptionSelect({
+                                        dt:dt,
+                                        row:{label:'nmJPJ'},
+                                        xind:true
+                                    })}
+                                    placeholder="Select Jenis "
+                                    value={selectedOptions}
+                                    onChange={selectJenis}
+                                    isSearchable={true}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    {
-                        (
-                            dt[ind].dukung!==undefined &&
-                            <Tabel1
-                                search={search}
-                                oncSearch={setSearch}
-                                columns={coll}
-                                // onOffSearch={false}
-                                data={dt[ind].dukung.filter((item) => {
-                                            if (search === "") {
-                                                return item;
-                                            } else if (
-                                                item.nmDP.toLowerCase().includes(search.toLowerCase())
-                                            ) {
-                                                return item;
-                                            }
-                                        }
-                                    )}
-                            ></Tabel1>
-                        )
-                    }
-
-                </div>
-                {/* <div className="footer"></div> */}
-            </div>
-            <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
-                <div className="header bprimary clight">
-                    <div className="icon">
-                        <span className="mdi mdi-clock-edit-outline fz25"></span>
-                        <h3 className="">Entri Sub Jenis</h3>
-                    </div>
-                    <button className="btn2 blight cmuted" onClick={close}>Close</button>
-                </div>
-                <div className="w95p m0auto ptb10px">
-                    <div className="iconInput2">
-                        <input className="borderR10px" type="text" value={nmDP} onChange={setnmDP} placeholder="Nama Sub Jenis" />
-                        <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
-                    </div>
-                </div>
-                <div className="footer posEnd">
-                    <div className="btnGroup">
-                        <button className="btn2"  onClick={close}>Close</button>
-                        <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?added:upded)}>{(ins?'Entri':'Perbarui')}</button>
+                        {
+                            (
+                                dt[ind].dukung!==undefined &&
+                                <div className=" ">
+                                    <Tabel1
+                                            search={search}
+                                            oncSearch={setSearch}
+                                            columns={coll}
+                                            // onOffSearch={false}
+                                            data={dt[ind].dukung.filter((item) => {
+                                                        if (search === "") {
+                                                            return item;
+                                                        } else if (
+                                                            item.nmDP.toLowerCase().includes(search.toLowerCase())
+                                                        ) {
+                                                            return item;
+                                                        }
+                                                    }
+                                                )}
+                                        ></Tabel1>
+                                </div>
+                            )
+                        } 
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  
     );
 }
 FormJenisPendukung.propTypes = {

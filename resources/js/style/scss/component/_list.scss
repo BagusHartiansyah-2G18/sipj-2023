@@ -1,0 +1,22 @@
+@use '../abstracts/variabel' as _;
+@forward '../base/index';
+
+
+.ul-menu1{
+    @extend .flexR,.pm0;
+    & li{
+        // @extend .pm0;
+        margin: 0%;
+        @extend .pwrap_2p;
+        display: inline;
+        @extend .pwrap-3p;
+        & label{
+            @extend .jcC, .fzXl;
+            cursor: pointer;
+        }
+        & a{ 
+            @extend .flexR, .aiC;
+            span{padding-right: 5px;}
+        }
+    }
+} 

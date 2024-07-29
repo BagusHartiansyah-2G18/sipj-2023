@@ -1,0 +1,37 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+@forward '../base/index';
+
+.msgLabelIcon{
+    // <div class="msgLabelIcon">
+    //     <label>12</label>
+    //     <span class="material-icons ">mail</span>
+    // </div>
+    @include _pos.flexC();
+    cursor: pointer;
+    text-align: center;
+}  
+.modal1 { 
+	background: white;
+	max-width: 400px; 
+	border-radius: 20px;
+	border: 0;
+	box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+	animation: fadeInModal1 1s ease both;
+    @include _.pad(0px);
+	&::backdrop {
+		animation: fadeIn 1s ease both;
+		background: rgba(0,0,0,0.6);
+		z-index: 2;
+		// backdrop-filter: blur(20px);
+	}
+}
+@keyframes fadeInModal1 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

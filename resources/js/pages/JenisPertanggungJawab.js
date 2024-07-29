@@ -21,6 +21,7 @@ function JenisP() {
     function setContentModal(v){
         setmodalC(v);
     }
+    const [view, setview] = useState(0);
 
     useEffect(() => {
         dispatch(getDT());
@@ -60,30 +61,45 @@ function JenisP() {
             break;
         }
     }
-
+    const menus=()=>{ 
+        return(
+            <div class="acC grid-col3 ">
+                <button class={"btn2  "+ (view ==0 ? 'bsuccess3':'')} onClick={()=>setview(0)}><b>Jenis SPJ</b></button>
+                <button class={"btn2  "+ (view ==1 ? 'bsuccess3':'')}  onClick={()=>setview(1)}><b>Sub Jenis</b></button>  
+             </div> 
+        ); 
+    }
     return (
-        <>
-            <HeaderPage1
-                page={'Jenis Pertanggung Jawaban'}
-                pageKet={'Basis Data'}
-                icon={'mdi-office-building-marker cdark'}
-            ></HeaderPage1>
-            <FormJenis
-                dt={_jenis}
-                actFormJenis={actFormJenis}
-                modalC={setContentModal}
-            ></FormJenis>
-            <FormJenisPendukung
-                dt={_jenis}
-                changeJenis={changeJenis}
-                actFormJenisDukungan={actFormJenisDukungan}
-                ind={ind}
-                modalC={setContentModal}
-            ></FormJenisPendukung>
-            <Modal1
-                children ={modalC}
-            ></Modal1>
-        </>
+        <div className="Mcontainer">
+            <div className="body pm0"> 
+                <HeaderPage1
+                    page={'Informasi Jenis SPJ'}
+                    pageKet={'data dan bagian pendukungnya'}
+                    icon={'mdi-office-building-marker cdark'}
+                    menu={menus()}
+                ></HeaderPage1>
+                <div className="bodyFlexRow800">
+                    {(
+                        view == 0 ?
+                        <FormJenis
+                            dt={_jenis}
+                            actFormJenis={actFormJenis}
+                            modalC={setContentModal}
+                        ></FormJenis>
+                        :<FormJenisPendukung
+                            dt={_jenis}
+                            changeJenis={changeJenis}
+                            actFormJenisDukungan={actFormJenisDukungan}
+                            ind={ind}
+                            modalC={setContentModal}
+                        ></FormJenisPendukung>
+                    )}
+                </div>  
+                <Modal1
+                    children ={modalC}
+                ></Modal1>
+            </div>
+        </div> 
     );
 }
 export default JenisP;

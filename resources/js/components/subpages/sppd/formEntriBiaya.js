@@ -1,23 +1,22 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 
-import { workDelAnggota, addWorkUraian, updWorkUraian, delWorkUraian, updWorkAnggota } from '../../../states/sppd/action';
+import { workDelAnggota, addWorkUraian, updWorkUraian, delWorkUraian, updWorkAnggota, uploadDataVerifikasiStaf } from '../../../states/sppd/action';
 import sfHtml from "../../mfc/sfHtml";
 import { setHtml, modalClose } from '../../../states/sfHtml/action';
 
 import FormUraian from "./sub/formUraian";
 import FormNoSppd from "./sub/formNoSpp";
+import FormVerifikasiStaf from "./sub/formVerifikasiStaf";
 
-import PropTypes from "prop-types";
-import { start } from "@popperjs/core";
+import PropTypes from "prop-types"; 
+
 
 function FormEntriBiaya({ dt, param, modalC, indWork }) {
     const dispatch = useDispatch();
     function mclose(){
         dispatch(modalClose());
-    }
-
-    // delete nama staf
+    } 
     const del = (i) =>{
         modalC(
             sfHtml.modalForm({
@@ -143,83 +142,115 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
     } 
     if (dt.length===0) {
         return <></>;
+    }  
+    const updManualStaf=(v)=>{   
+        uploadDataVerifikasiStaf({
+            fileD:btoa(JSON.stringify(v)),
+            ...param, 
+            kdBAnggota:dt[v.ind].kdBAnggota,
+            kdBidang:dt[v.ind].kdBidang
+        });
     } 
-    // console.log(dt);
     return (
-        <div className="form1 bwhite boxShadow1px ">
-            <div className="header binfo cwhite">
-                <div className="icon">
-                    <span className="mdi mdi-office-building-marker fz25 "></span>
-                    <h3><b>3. Form Rincian Biaya (KWITANSI)</b></h3>
-                </div>
-            </div>
-            <div className=" w95p m0auto ptb10px">
-                {
-                    dt.map((v,i)=>{
-                        return (
-                            <div className="form1 bwhite" key={'user'+i}>
-                                <div className="header">
-                                    <h3>{v.nmAnggota}</h3>
-                                    <div className="btnGroup">
-                                        <button className="btn2 bdanger clight" onClick={()=>del(i)}><span className="mdi mdi-delete-forever clight fz25" /> Hapus</button>
-                                    </div>
-                                </div>
-                                <div className="body">
-                                    {
-                                        <FormNoSppd
-                                            key={"nosppd"+i}
-                                            ind ={i}
-                                            updNomorSppd={updNomorSppd}
-                                            dt={v}
-                                            start={{start:true}}>
-                                        </FormNoSppd>
-                                    }
-                                    {
-                                        v.ddukung.map((v1,i1)=>{
-                                            return (
-                                                <div className="ptb10px" key={'dukung'+i1}>
-                                                    <div className=" flexR justifySB">
-                                                        <button className="btn7 ">
-                                                            <span className="mdi mdi-login binfo clight fziconS"></span>
-                                                            <h2 className="cdark">{v1.nmDP}</h2>
+        <div className="Mcontainer">
+            <div className="body">
+                <div class="FM1 ">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Verifikasi Data - Data Kwitansi</b> 
+                            </h2>
+                        </div> 
+                    </div>
+                    <div class="body bdark pm0 bsolid1 " style={{width:"unset", borderRadius:"0px" }}><br/>
+                        {
+                            dt.map((v,i)=>{
+                                return (
+                                    <div className="Mcontainer2Form">
+                                        <div className="right-1" >
+                                            <FormVerifikasiStaf
+                                                value={{...v}}
+                                                saved={updManualStaf}
+                                                ind ={i}
+                                            ></FormVerifikasiStaf>
+                                        </div>
+                                        <div className="left ">
+                                            <div class="FM1 ">
+                                                <div class="header bwhite">
+                                                    <div class="cdark flexR">
+                                                        <button className="btn bnone">
+                                                            <span className="mdi mdi-star-crescent cwarning fzXl"></span>
                                                         </button>
-                                                        <button className="btn2 bprimary clight" onClick={()=>addDPendukung(i,i1)}>Entri</button>
+                                                        <h2 className="  pl0 aiE fBebasNeue">
+                                                            <b>{v.nmAnggota}</b> 
+                                                        </h2>
+                                                    </div> 
+                                                    <div className="btnGroup">
+                                                        <button className="btn2 bdanger clight" onClick={()=>del(i)}><span className="mdi mdi-delete-forever clight fz25" /> Hapus</button>
                                                     </div>
+                                                </div>
+                                                <div class="body blight bsolid1 " style={{width:"unset", borderRadius:"0px" }}><br/>
                                                     {
-                                                        (
-                                                            v1.uraian!= undefined &&
-                                                            v1.uraian.map((v2,i2)=>{
+                                                        <FormNoSppd
+                                                            key={"nosppd"+i}
+                                                            ind ={i}
+                                                            updNomorSppd={updNomorSppd}
+                                                            dt={v}
+                                                            start={{start:true}}>
+                                                        </FormNoSppd>
+                                                    }
+                                                    {
+                                                        v.ddukung.map((v1,i1)=>{ 
+                                                            return (
+                                                                <div className="ptb10px" key={'dukung'+i1}>
+                                                                    <div className=" flexR jcSB">
+                                                                        <button className="btn7 ">
+                                                                            <span className="mdi mdi-login binfo clight fziconS"></span>
+                                                                            <h2 className="cdark">{v1.nmDP}</h2>
+                                                                        </button>
+                                                                        <button className="btn2 bprimary clight" onClick={()=>addDPendukung(i,i1)}>Entri</button>
+                                                                    </div>
+                                                                    {
+                                                                        (
+                                                                            v1.uraian!= undefined &&
+                                                                            v1.uraian.map((v2,i2)=>{
 
-                                                                return (
-                                                                    <FormUraian
-                                                                        key={'uraian'+i2}
-                                                                        dt={v2}
-                                                                        onUpded={updDPendukung}
-                                                                        onDeled={delDPendukung}
-                                                                        value={{
-                                                                            iuraian: i2,
-                                                                            ianggota : i,
-                                                                            idukung: i1,
-                                                                            kdUraian: v2.kdUraian
-                                                                        }}
-                                                                    ></FormUraian>
-                                                                );
-                                                            })
-                                                        )
+                                                                                return (
+                                                                                    <FormUraian
+                                                                                        key={'uraian'+i2}
+                                                                                        dt={{...v2, nmDP:v1.nmDP}}
+                                                                                        onUpded={updDPendukung}
+                                                                                        onDeled={delDPendukung}
+                                                                                        value={{
+                                                                                            iuraian: i2,
+                                                                                            ianggota : i,
+                                                                                            idukung: i1,
+                                                                                            kdUraian: v2.kdUraian
+                                                                                        }}
+                                                                                    ></FormUraian>
+                                                                                );
+                                                                            })
+                                                                        )
+                                                                    }
+                                                                </div>
+                                                            )
+                                                        })
                                                     }
                                                 </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        );
-                    })
-                }
+                                            </div> 
+                                        </div>
+                                    </div> 
+                                );
+                            })
+                        }
+                    </div>
+                </div> 
             </div>
-            {/* <div className="footer"></div> */}
-        </div>
-    );
+        </div> 
+    );  
 }
 FormEntriBiaya.propTypes = {
     dt : PropTypes.array.isRequired,

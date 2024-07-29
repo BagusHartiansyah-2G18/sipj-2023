@@ -287,26 +287,93 @@ function FormBelanja({ dt, modalC, ind, updDataBidang, generateAuto }) {
         mclose();
     }
     // console.log(dt);
+
     return (
-        <>
-            <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
-                <div className="form1 bwhite boxShadow1px">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-office-building-marker fz25 "></span>
-                            <h3>Uraian Belanja & Pembagian Triwulan</h3>
+        <div className="Mcontainer2Form">
+            <div className="right-1" >
+                <div class="FM1 ">
+                    <div class="header ">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Entri Uraian Belanja</b> 
+                            </h2>
+                        </div> 
+                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
+                    </div>
+                    <div class="body bdark  pwrap-5 flexC jcSA" style={{width:"unset", minHeight:"300px" }}><br/>
+                        <div className="labelInput2 ptb10px ">
+                            <label className="mw100px ">Rekening</label>
+                            <Select
+                                className="cdark"
+                                options={sfLib.coptionSelect({
+                                    dt: dt[ind].apbd,
+                                    row:{label:'nmApbd6',value:'kdApbd6'},
+                                    // xind:true
+                                })}
+                                placeholder="Select Rekening"
+                                value={selApbd}
+                                onChange={setselApbd}
+                                isSearchable={true}
+                            />
                         </div>
+                        <div className="iconInput2 ptb10px">
+                            <input className="borderR10px" type="text" value={nama} onChange={setnama} placeholder="Uraian" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>
+                        <div className="iconInput2 ptb10px">
+                            <input className="borderR10px" type="number" value={total} onChange={settotal} placeholder="Total" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div>
+                        <div className="labelInput2">
+                            <label className="mw100px">Jenis</label>
+                            <Select
+                                className="cdark"
+                                options={sfLib.coptionSelect({
+                                    dt : dt[0].jenis,
+                                    row:{label:'nmJPJ',value:'kdJPJ'},
+                                    // xind:true
+                                })}
+                                placeholder="Select Jenis"
+                                value={selJenis}
+                                onChange={setselJenis}
+                                isSearchable={true}
+                            />
+                        </div>
+                        <div className="list jcE">
+                            <div className="btnGroup">
+                                <button className="btn2"  onClick={close}>Close</button>
+                                <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div className="left ">
+                <div class="FM1 ">
+                    <div class="header">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Rincian Belanja - Triwulan </b> 
+                            </h2>
+                        </div> 
                         <div className="btnGroup">
                             <button className="btn2 blight blight" onClick={()=>openFormEntri('eyJrZE1lbWJlciI6Ik13PT0iLCJrZE5vdGUiOiIxNk1GQzEjMiIsInRpbmdrYXQiOiIyIiwia2RGb3JtIjoiMyJ9')}>Form Catatan Rekening</button>
                             <button className="btn2 blight bsuccess" onClick={()=>generateAuto()}>generate AUTO</button>
-                            <button className="btn2 blight " onClick={add}>Form</button>
-                        </div>
+                        </div> 
                     </div>
-                    <div className="body">
-                        <div className="justifyEnd mtb10px">
+                    <div class="body bdark pm0 bsolid1 " style={{width:"unset", borderRadius:"0px" }}><br/>
+                        <div className="jcE pwrap-10">
                             <div className="w45p labelInput2">
                                 <label className="mw100px">Dinas</label>
                                 <Select
+                                    className="cdark"
                                     options={sfLib.coptionSelect({
                                         dt,
                                         row:{label:'nmDinas',value:'kdDinas'},
@@ -319,10 +386,11 @@ function FormBelanja({ dt, modalC, ind, updDataBidang, generateAuto }) {
                                 />
                             </div>
                         </div>
-                        <div className="justifyEnd mtb10px">
+                        <div className="jcE pwrap-10">
                             <div className="w45p labelInput2">
                                 <label className="mw100px">Bidang</label>
                                 <Select
+                                    className="cdark"
                                     options={sfLib.coptionSelect({
                                         dt : dt[ind].bidang,
                                         row:{label:'nmBidang',value:'kdDBidang'},
@@ -337,10 +405,11 @@ function FormBelanja({ dt, modalC, ind, updDataBidang, generateAuto }) {
                         </div>
                         {
                             ( dt[ind].bidang[index].sub != undefined &&
-                                <div className="justifyEnd mtb10px">
+                                <div className="jcE pwrap-10">
                                     <div className="w45p labelInput2">
                                         <label className="mw100px">Sub Kegiatan</label>
                                         <Select
+                                            className="cdark"
                                             options={sfLib.coptionSelect({
                                                 dt : dt[ind].bidang[index].sub,
                                                 row:{label:'nmSub',value:'kdSub'},
@@ -369,7 +438,7 @@ function FormBelanja({ dt, modalC, ind, updDataBidang, generateAuto }) {
                                             Object.keys(triwulan).length===0?
                                             <></>:
                                             <>
-                                                <div className="flexR3">
+                                                <div className="grid-col3">
                                                     <div className="doubleInput ptb10px">
                                                         <label>triwulan 1</label>
                                                         <div className="iconInput2">
@@ -398,13 +467,14 @@ function FormBelanja({ dt, modalC, ind, updDataBidang, generateAuto }) {
                                                             <span className={`mdi mdi-cloud-search cwarning `}></span>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <hr className="opa2"></hr>
-                                                <div className="btnGroup justifyEnd">
-                                                    <button className="btn2"  onClick={closeTriwulan}>Close</button>
-                                                    <button className={`btn2 bwarning`}  onClick={saveTriwulan}>Perbarui</button>
-                                                </div>
-                                                <hr className="opa2"></hr>
+                                                </div> 
+                                                <div className="list jcE">
+                                                    <div className="btnGroup justifyEnd">
+                                                        <button className="btn2"  onClick={closeTriwulan}>Close</button>
+                                                        <button className={`btn2 bwarning`}  onClick={saveTriwulan}>Perbarui</button>
+                                                    </div>
+                                                </div> 
+                                                <hr className="opa2"></hr> 
                                             </>
                                         )
                                     }
@@ -414,65 +484,9 @@ function FormBelanja({ dt, modalC, ind, updDataBidang, generateAuto }) {
 
                     </div>
                 </div>
-                <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-clock-edit-outline fz25"></span>
-                            <h3 className="">{(ins?'Entri':'Perbarui')} Uraian</h3>
-                        </div>
-                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
-                    </div>
-                    <div className="w95p m0auto">
-                        <div className=" labelInput2 ptb10px">
-                            <label className="mw100px">Rekening</label>
-                            <Select
-                                className="w90p"
-                                options={sfLib.coptionSelect({
-                                    dt: dt[ind].apbd,
-                                    row:{label:'nmApbd6',value:'kdApbd6'},
-                                    // xind:true
-                                })}
-                                placeholder="Select Rekening"
-                                value={selApbd}
-                                onChange={setselApbd}
-                                isSearchable={true}
-                            />
-                        </div>
-                        <div className="iconInput2 ptb10px">
-                            <input className="borderR10px" type="text" value={nama} onChange={setnama} placeholder="Uraian" />
-                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
-                        </div>
-                        <div className="iconInput2 ptb10px">
-                            <input className="borderR10px" type="number" value={total} onChange={settotal} placeholder="Total" />
-                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
-                        </div>
-                        <div className="labelInput2">
-                            <label className="mw100px">Jenis</label>
-                            <Select
-                                className=" w90p"
-                                options={sfLib.coptionSelect({
-                                    dt : dt[0].jenis,
-                                    row:{label:'nmJPJ',value:'kdJPJ'},
-                                    // xind:true
-                                })}
-                                placeholder="Select Jenis"
-                                value={selJenis}
-                                onChange={setselJenis}
-                                isSearchable={true}
-                            />
-                        </div>
-                    </div>
-                    <div className="footer posEnd">
-                        <div className="btnGroup">
-                            <button className="btn2"  onClick={close}>Close</button>
-                            <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </>
-
-    );
+        </div>
+    );   
 }
 
 FormBelanja.propTypes = {

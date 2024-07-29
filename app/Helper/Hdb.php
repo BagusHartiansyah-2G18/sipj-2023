@@ -151,7 +151,7 @@ class Hdb {
         // }
         return DB::select('
             select
-                a.kdBAnggota, a.nmAnggota, a.nmJabatan, a.nip, a.status,
+                a.kdBAnggota, a.nmAnggota, a.nmJabatan, a.nip, a.status, a.tingkatan,a.golongan,
                 b.nmBidang, b.asBidang, b.kdDBidang,
                 0 as aktif
             from dinas_b_anggota a
@@ -171,6 +171,7 @@ class Hdb {
                 ->where('kdDinas',$v['kdDinas'])
                 ->where('taBAnggota',$v['tahun'])
                 ->where('status',$v['status'])
+                ->where('aktif','1')
                 ->get();
         return $data;
     }
@@ -335,7 +336,8 @@ class Hdb {
                     a1.kdSub = "'.$v['kdSub'].'" and
                     a1.taWork  = "'.$v['tahun'].'" and
                     b1.status ="final" and
-                    b1.kdJudul=a.kdJudul
+                    b1.kdJudul=a.kdJudul  AND
+                    b1.kdBAnggota =""
                 ) as realisasi
             from ubjudul a
             join jenispj b on
@@ -415,15 +417,15 @@ class Hdb {
                     from workuraian a1
                     join work b1 on
                         a1.kdDinas = b1.kdDinas and
-                        a1.kdBidang = b1.kdBidang and
                         a1.kdSub = b1.kdSub and
-                        a1.taWork = b1.taWork
+                        a1.taWork = b1.taWork and
+                        a1.kdJudul= b1.kdJudul
                     where a1.kdDinas="'.$v['kdDinas'].'" and
                     a1.kdSub = "'.$v['kdSub'].'" and
-                    a1.kdBidang = "'.$v['kdBidang'].'" and
                     a1.taWork  = "'.$v['tahun'].'" and
                     b1.status ="final" and
-                    b1.kdJudul=a.kdJudul
+                    b1.kdJudul=a.kdJudul AND
+                    b1.kdBAnggota =""
                 ) as realisasi
             from  ubjudul a
             left join  triwulan c on
@@ -439,9 +441,10 @@ class Hdb {
                 a.kdSub="'.$v['kdSub'].'" and
                 b.kdBidang="'.$v['kdBidang'].'" and
                 a.kdDinas="'.$v['kdDinas'].'" and
-                a.taJudul="'.$v['tahun'].'"
-        ';
-        // return print_r($que);
+                a.taJudul="'.$v['tahun'].'" AND
+                a.tahapan=3
+        '; 
+        // return $que;
         return DB::select($que);
     }
     function getDataSppdKegiatan($v){
@@ -546,14 +549,13 @@ class Hdb {
         return DB::select('
             select
                 a.no, a.date, a.status, a.kdBAnggota, a.kdBidang , a.kdBidang as kdDBidang, a.tujuan, a.noBuku, a.tglBuku, a.file,
-                maksud, angkut, tempatS, tempatE, dateE, anggaran, keterangan, lokasi, fileD, dasar, pimOpd, pimBupati, pimSetda,
-                tdOPD,tdBUPATI,tdSETDA,noSPPD,
+                a.maksud, a.angkut, a.tempatS, a.tempatE, a.dateE, a.anggaran, a.keterangan, a.lokasi, a.fileD, a.dasar, a.pimOpd, a.pimBupati, a.pimSetda,
+                a.tdOPD,a.tdBUPATI,a.tdSETDA,a.noSPPD,
                 (
                     select sum(a1.volume * a1.nilai)
                     from workuraian a1
                     where a1.kdDinas=a.kdDinas and
                     a1.kdSub = a.kdSub and
-                    a1.kdBidang = a.kdBidang and
                     a1.taWork  = a.taWork and
                     a1.kdJudul= a.kdJudul and
                     a1.noWork =a.no
@@ -593,7 +595,19 @@ class Hdb {
          
         return DB::select('
             select
-                a.no, a.date, a.status, a.kdBAnggota,a.noSPPD,a.kdBidang ,
+                a.no, a.date, a.status, a.kdBAnggota, a.kdBidang , a.kdBidang as kdDBidang, a.tujuan, a.noBuku, a.tglBuku, a.file,
+                a.maksud, a.angkut, a.tempatS, a.tempatE, a.dateE, a.anggaran, a.keterangan, a.lokasi, a.fileD, a.dasar, a.pimOpd, a.pimBupati, a.pimSetda,
+                a.tdOPD,a.tdBUPATI,a.tdSETDA,a.noSPPD,
+                (
+                    select sum(a1.volume * a1.nilai)
+                    from workuraian a1
+                    where a1.kdDinas=a.kdDinas and
+                    a1.kdSub = a.kdSub and
+                    a1.kdBidang = a.kdBidang and
+                    a1.taWork  = a.taWork and
+                    a1.kdJudul= a.kdJudul and
+                    a1.noWork =a.no
+                ) as total,
                 b.nip, b.nmAnggota, b.nip, b.nmJabatan, b.asJabatan, b.golongan, b.tingkatan, b.snip,
                 c.nmBidang
             from work a

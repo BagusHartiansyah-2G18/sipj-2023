@@ -17,6 +17,7 @@ function BidangEntriBelanja(){
 
     const [ind, setInd] = useState(0);
     const [modalC, setmodalC] = useState('');
+    const [view, setview] = useState(0);
 
     useEffect(() => {
         dispatch(getrincianDinas());
@@ -36,24 +37,36 @@ function BidangEntriBelanja(){
             actGenerateAutoRekening({data:btoa(JSON.stringify(_dinas[0].listRekening))})
         );
     } 
+    const menus=()=>{ 
+        return(
+            <div class="btnGroup">
+                <button class={"btn2  "+ (view ==0 ? 'bsuccess3':'')} onClick={()=>setview(0)}><b>Rincian Belanja</b></button>
+            </div> 
+        ); 
+    }
     return (
-        <>
-            <HeaderPage1
-                page={'Belanja Bidang'}
-                pageKet={'Daftar Belanja Bidang'}
-                icon={'mdi-office-building-marker cdark'}
-            ></HeaderPage1>
-            <FormBelanja
-                dt={_dinas}
-                modalC={setmodalC}
-                ind={ind}
-                updDataBidang={updDataBidang}
-                generateAuto={generateAuto}
-            ></FormBelanja>
-            <Modal1
-                children ={modalC}
-            ></Modal1>
-        </>
-    );
+        <div className="Mcontainer">
+            <div className="body pm0"> 
+                <HeaderPage1
+                    page={'Fitur Rincian Belanja'}
+                    pageKet={'Memdaftarkan Jenis SPJ, Pembagian 3 Bulanan dan Entri Rincian'}
+                    icon={'mdi-office-building-marker '}
+                    menu={menus()}
+                ></HeaderPage1>
+                <div className="bodyFlexRow800"> 
+                    <FormBelanja
+                        dt={_dinas}
+                        modalC={setmodalC}
+                        ind={ind}
+                        updDataBidang={updDataBidang}
+                        generateAuto={generateAuto}
+                    ></FormBelanja>
+                    <Modal1
+                        children ={modalC}
+                    ></Modal1>
+                </div>
+            </div> 
+        </div>
+    );   
 }
 export default BidangEntriBelanja;

@@ -45,6 +45,7 @@ Route::get('/nosession', function () {
 
 // });
 Auth::routes();
+ 
 Route::controller(HomeController::class)->name('home.')->prefix('home')->group(function(){
     Route::get('/','index')->name('index');
     Route::view('/{path?}', 'react')
@@ -124,6 +125,7 @@ Route::controller(Csppd::class)->name('api.')->prefix('api/sppd')->group(functio
     Route::post('/deled','deled')->name('deled');
 
     Route::post('/uploadDasar','uploadDasar')->name('uploadDasar');
+    Route::post('/uploadDataVerifikasiStaf','uploadDataVerifikasiStaf')->name('uploadDataVerifikasiStaf'); 
     Route::post('/nextStep','nextStep')->name('nextStep');
     Route::post('/setPimpinan','setPimpinan')->name('setPimpinan');
 
@@ -165,9 +167,13 @@ Route::controller(PDFspj::class)->name('dspj.')->prefix('dspj')->group(function(
     Route::get('/checkListSPM/{val}','checkListSPM')->name('checkListSPM');  
     
 });
-
-Route::get('storage/{filename}', function ($filename){
+Route::get('viewDasar/{filename}', function ($filename){
+    $files ="app/public/pdf/dasar/".$filename;
+    $path = storage_path($files);
+    return response()->download($path, $filename, [], 'inline');
+});
+Route::get('viewArsip/{filename}', function ($filename){
     $files ="app/public/pdf/sppd/".$filename;
     $path = storage_path($files);
-    return response()->download($path, 'example.pdf', [], 'inline');
+    return response()->download($path, $filename, [], 'inline');
 });

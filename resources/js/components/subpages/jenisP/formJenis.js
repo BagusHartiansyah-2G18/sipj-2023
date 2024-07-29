@@ -110,56 +110,65 @@ function FormJenis({dt, actFormJenis, modalC }) {
         close();
     }
     return (
-        <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
-            <div className="form1 bwhite boxShadow1px ">
-                <div className="header bprimary clight">
-                    <div className="icon">
-                        <span className="mdi mdi-office-building-marker fz25 "></span>
-                        <h3>Daftar Jenis Pertanggung Jawaban</h3>
+        <div className="Mcontainer2Form ">
+            <div className="right" >
+                <div class="FM1">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bdark">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Form Entri Jenis</b> 
+                            </h2>
+                        </div> 
                     </div>
-                    <button className="btn2 blight cmuted" onClick={add}>Entri</button>
-                </div>
-                <div className="body">
-                    <Tabel1
-                        search={search}
-                        oncSearch={setSearch}
-                        columns={coll}
-                        data={dt.filter((item) => {
-                                    if (search === "") {
-                                        return item;
-                                    } else if (
-                                        item.nmJPJ.toLowerCase().includes(search.toLowerCase())
-                                    ) {
-                                        return item;
-                                    }
-                                }
-                            )}
-                    ></Tabel1>
-                </div>
-                {/* <div className="footer"></div> */}
-            </div>
-            <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
-                <div className="header bprimary clight">
-                    <div className="icon">
-                        <span className="mdi mdi-clock-edit-outline fz25"></span>
-                        <h3 className="">Daftar Jenis</h3>
-                    </div>
-                    <button className="btn2 blight cmuted" onClick={close}>Close</button>
-                </div>
-                <div className="w95p m0auto ptb10px">
-                    <div className="iconInput2">
-                        <input className="borderR10px" type="text" value={nmJPJ} onChange={setnmJPJ} placeholder="Nama Jenis" />
-                        <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
-                    </div>
-                </div>
-                <div className="footer posEnd">
-                    <div className="btnGroup">
-                        <button className="btn2"  onClick={close}>Close</button>
-                        <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?added:upded)}>{(ins?'Entri':'Perbarui')}</button>
+                    <div class="body bdark pwrap_5" style={{width:"unset" }}><br/>
+                        <div className="iconInput2">
+                            <input className="borderR10px" type="text" value={nmJPJ} onChange={setnmJPJ} placeholder="Nama Jenis" />
+                            <span className={`mdi mdi-cloud-search ${(ins?'cprimary':'cwarning')} `}></span>
+                        </div> 
+                        
+                        <div className="list jcE">
+                            <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?added:upded)}>{(ins?'Entri':'Perbarui')}</button>
+                        </div> 
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="left">
+                <div class="FM1">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bdark">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Daftar Jenis Pertanggung Jawaban</b> 
+                            </h2>
+                        </div> 
+                    </div>
+                    <div class="body bdark pm0 bsolid1" style={{width:"unset",borderRadius:"0px" }}><br/> 
+                        <div className=" ">
+                            <Tabel1
+                                search={search}
+                                oncSearch={setSearch}
+                                columns={coll}
+                                data={dt.filter((item) => {
+                                            if (search === "") {
+                                                return item;
+                                            } else if (
+                                                item.nmJPJ.toLowerCase().includes(search.toLowerCase())
+                                            ) {
+                                                return item;
+                                            }
+                                        }
+                                    )}
+                            ></Tabel1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
     );
 }
 FormJenis.propTypes = {

@@ -22,7 +22,7 @@ function Tabel1({
             {
                 (
                     search!=undefined &&
-                    <div className="justifyEnd">
+                    <div className="jcE pwrap-10">
                         <div className={`iconInput2 ${cinput}`}>
                             <input className="borderR10px" type="text" value={search} onChange={oncSearch}  placeholder="search..." />
                             <span className="mdi mdi-cloud-search "></span>
@@ -31,6 +31,7 @@ function Tabel1({
                 )
             }
             <DataTable
+                className=""
                 pagination={pagination}
                 columns={columns}
                 data={data}

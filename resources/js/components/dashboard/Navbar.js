@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import {Link} from "react-router-dom";
 import { changeMenuSub } from '../../states/sfHtml/action';
@@ -7,112 +7,108 @@ function Navbar() {
     const { _html } = useSelector((state) => state);
     const dispatch = useDispatch();
     const sess = _html.sess;
-    function selectMenuSub({menuSub}){
+    const [on,_on] = useState(0);
+    function selectMenuSub({menuSub}){ 
         dispatch(changeMenuSub({menuSub}))
     }
+    const logs=(v)=>{
+       _on(!on);
+    } 
     return (
-        <div className={`w20p ${_html.leftBar && 'dnone'} `}>
-            <div className="leftBar2" id="liftBar2">
-                <div className="icon">
-                    <img src={`${_html.url}/logo/boy.png`}/>
-                    <h2 className="">Bagus Hartiansyah</h2>
-                    <span className="">Staff PPID</span>
+        <div>
+            <button  id="keyOnOffed" className={(on?'OnBtn':'')} onClick={logs}><span className="arrow"></span></button>
+            <input type="checkbox" id="keyOnOff" aria-hidden="true" checked={on} style={{display:"none"}}></input>  
+            <div id="MDCnav" className="bdark ">  
+                <div className="content">
+                    <div className="user">
+                        <img src={`${_html.url}/logo/boy.png`}/>
+                        <div className="flexC asC ">
+                            <label>Bagus Hartiansyah</label>
+                            <span className="fpacifico">Staff PPID</span>
+                        </div>
+                    </div> 
+                    <ul className="ul-menu1 jcS " style={{flexDirection:"column"}}> 
+                        {
+                            (
+                                _html.indMenu === 0 &&
+                                <>
+                                    <li>
+                                        <Link to={`/home/dashboard`} className={actSubMenu('dashboard',_html.menuSub)} onClick={()=> selectMenuSub({menuSub:'dashboard'})}> 
+                                            <span className="mdi mdi-calendar fzXl"></span>
+                                            <label >Dashboard</label>
+                                        </Link>
+                                    </li>
+                                    { (sess.kdJaba !== '1' &&
+                                        <>
+                                            <li>
+                                                <Link to={`/home/member`} className={actSubMenu('member',_html.menuSub)}> 
+                                                    <span className="mdi mdi-account fzXl"></span>
+                                                    <label>Member</label>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link to={`/home/dinas`} className={actSubMenu('dinas',_html.menuSub)} onClick={()=> selectMenuSub({menuSub:'dinas'})}> 
+                                                    <span className="mdi mdi-office-building-marker fzXl"></span>
+                                                    <label >Dinas</label>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link to={`/home/rekeningBelanja`} className={actSubMenu('rekeningBelanja',_html.menuSub)} onClick={()=> selectMenuSub({menuSub:'rekeningBelanja'})}>
+                                                    <span className="mdi mdi-account fzXl"></span>
+                                                    <label >Rekening Belanja</label>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link to={`/home/jenisP`} className={actSubMenu('jenisP',_html.menuSub)} onClick={()=> selectMenuSub({menuSub:'jenisP'})}>
+                                                    <span className="mdi mdi-chart-bar fzXl"></span>
+                                                    <label >Jenis PJ</label>
+                                                </Link>
+                                            </li>
+                                        </>
+                                    )}
+                                    <li>
+                                        <Link to={`/home/subkegiatan`} className={actSubMenu('subkegiatan',_html.menuSub)} onClick={()=> selectMenuSub({menuSub:'subkegiatan'})}>
+                                            <span className="mdi mdi-office-building-cog-outline fzXl "></span>
+                                            <label >Sub Kegiatan</label>
+                                        </Link>
+                                    </li>
+                                </>
+                            )
+                        }
+                        {
+
+                            (
+                                _html.indMenu === 1 &&
+                                <>
+                                    <li>
+                                        <Link to={`/home/work/subBidang`} className={actSubMenu('subBidang',_html.menuSub)}onClick={()=> selectMenuSub({menuSub:'subBidang'})}>
+                                            <span className="mdi mdi-account fzXl"></span>
+                                            <label >Sub Bidang</label>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to={`/home/work/rincianBelanja`} className={actSubMenu('rincianBelanja',_html.menuSub)} onClick={()=> selectMenuSub({menuSub:'rincianBelanja'})}>
+                                            <span className="mdi mdi-account fzXl"></span>
+                                            <label >Rincian Belanja</label>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to={`/home/work/fitur`} className={actSubMenu('fitur',_html.menuSub)} onClick={()=> selectMenuSub({menuSub:'fitur'})}>
+                                            <span className="mdi mdi-account fzXl"></span>
+                                            <label >SPJ</label>
+                                        </Link>
+                                    </li> 
+                                </>
+                            )
+                        }
+
+
+                    </ul>
                 </div>
-                <ul>
-                    {
-                        (
-                            _html.indMenu === 0 &&
-                            <>
-                                <li>
-                                    <Link to={`/home/dashboard`} onClick={()=> selectMenuSub({menuSub:'dashboard'})}>
-                                        <label className={actSubMenu('dashboard',_html.menuSub)}>Dashboard</label>
-                                        <span className="mdi mdi-calendar cdark fz25"></span>
-                                    </Link>
-                                </li>
-                                { (sess.kdJaba !== '1' &&
-                                    <>
-                                        <li>
-                                            <Link to={`/home/member`}>
-                                                <label>Member</label>
-                                                <span className="mdi mdi-account cdark fz25"></span>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to={`/home/dinas`} onClick={()=> selectMenuSub({menuSub:'dinas'})}>
-                                                <label className={actSubMenu('dinas',_html.menuSub)}>Dinas</label>
-                                                <span className="mdi mdi-office-building-marker fz25 cdark"></span>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to={`/home/rekeningBelanja`} onClick={()=> selectMenuSub({menuSub:'rekeningBelanja'})}>
-                                                <label className={actSubMenu('rekeningBelanja',_html.menuSub)}>Rekening Belanja</label>
-                                                <span className="mdi mdi-account cdark fz25"></span>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to={`/home/jenisP`} onClick={()=> selectMenuSub({menuSub:'jenisP'})}>
-                                                <label className={actSubMenu('jenisP',_html.menuSub)}>Jenis PJ</label>
-                                                <span className="mdi mdi-chart-bar cdark fz25"></span>
-                                            </Link>
-                                        </li>
-                                    </>
-                                )}
-                                <li>
-                                    <Link to={`/home/subkegiatan`} onClick={()=> selectMenuSub({menuSub:'subkegiatan'})}>
-                                        <label className={actSubMenu('subkegiatan',_html.menuSub)}>Sub Kegiatan</label>
-                                        <span className="mdi mdi-office-building-cog-outline fz25 cdark"></span>
-                                    </Link>
-                                </li>
-                            </>
-                        )
-                    }
-                    {
-
-                        (
-                            _html.indMenu === 1 &&
-                            <>
-                                <li>
-                                    <Link to={`/home/work/subBidang`} onClick={()=> selectMenuSub({menuSub:'subBidang'})}>
-                                        <label className={actSubMenu('subBidang',_html.menuSub)}>Sub Bidang</label>
-                                        <span className="mdi mdi-account cdark fz25"></span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to={`/home/work/rincianBelanja`} onClick={()=> selectMenuSub({menuSub:'rincianBelanja'})}>
-                                        <label className={actSubMenu('rincianBelanja',_html.menuSub)}>Rincian Belanja</label>
-                                        <span className="mdi mdi-account cdark fz25"></span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to={`/home/work/fitur`} onClick={()=> selectMenuSub({menuSub:'fitur'})}>
-                                        <label className={actSubMenu('fitur',_html.menuSub)}>Fitur</label>
-                                        <span className="mdi mdi-account cdark fz25"></span>
-                                    </Link>
-                                </li>
-                                {/* {
-                                    (
-                                        sess.kdJaba === '3' &&
-                                        _html.menu[_html.indMenu].menu.map((v,i) => {
-                                            const xnm = String(v.nmJPJ).toLowerCase().replace(/\s/g, '');
-                                            return (
-                                                <li key={`subMenu`+i} onClick={()=> selectMenuSub({menuSub:xnm})}>
-                                                    <Link to={`/home/work/`+xnm}>
-                                                        <label className={actSubMenu(xnm,_html.menuSub)}>{v.nmJPJ}</label>
-                                                        <span className={`mdi ${ getIcon(xnm)} cdark fz25`}></span>
-                                                    </Link>
-                                                </li>
-                                            )
-                                        })
-                                    )
-                                } */}
-                            </>
-                        )
-                    }
-
-
-                </ul>
             </div>
+           
         </div>
+       
     );
 }
 
@@ -122,9 +118,9 @@ export default Navbar;
 function actSubMenu(menu,menuAct){
     // const pathname = window.location.pathname;
     if(menuAct === menu){
-        return 'cprimary fbold';
+        return 'cwhite fbold ';
     }
-    return '';
+    return 'csuccess';
 }
 
 

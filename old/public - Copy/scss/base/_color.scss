@@ -1,0 +1,56 @@
+@use '../abstracts/variable' as _;
+// background
+// color
+.bwhite{background-color: map-get(_.$c,'white') !important;}
+.cwhite{color: map-get(_.$c,'white') !important;}
+.blight{background-color: map-get(_.$c,'light') !important; }
+.clight{color: map-get(_.$c,'light') !important;}
+.bblack{background-color: map-get(_.$c,'black') !important;}
+.cblack{color: map-get(_.$c,'black') !important;}
+.bprimary{background-color: map-get(_.$c,'primary') !important;}
+.cprimary{color: map-get(_.$c,'primary') !important;}
+.bwarning{background-color: map-get(_.$c,'warning') !important;}
+.cwarning{color: map-get(_.$c,'warning') !important;}
+
+.binfo{background-color: map-get(_.$c,'info') !important;}
+.binfo1{background-color: map-get(_.$c,'info1') !important;}
+.cinfo{color: map-get(_.$c,'info') !important;}
+.borderInfoT5px{border-top: 5px solid map-get(_.$c,'info1');}
+.borderInfoB5px{border-bottom: 5px solid map-get(_.$c,'info1');} 
+
+.bsuccess{background-color: map-get(_.$c,'success') !important;}
+.csuccess{color: map-get(_.$c,'success') !important;}
+
+.bdanger{background-color: map-get(_.$c,'danger') !important;}
+.cdanger{color: map-get(_.$c,'danger') !important;}
+
+.bdark{background-color: map-get(_.$c,'dark') !important;}
+.cdark{color: map-get(_.$c,'dark') !important;}
+
+.bsecondary{background-color: map-get(_.$c,'secondary') !important;}
+.csecondary{color: map-get(_.$c,'secondary') !important;}
+
+.bmuted{background-color: map-get(_.$c,'muted') !important;}
+.cmuted{color: map-get(_.$c,'muted') !important;}
+
+.bpurple{background-color: map-get(_.$c,'purple') !important;}
+.bpurple1{background-color: map-get(_.$c,'purple1') !important;}
+.cpurple{color: map-get(_.$c,'purple') !important;}
+.borderpurpleT5px{border-top: 5px solid map-get(_.$c,'purple1');}
+.borderpurpleB5px{border-bottom: 5px solid map-get(_.$c,'purple1');}
+
+.borange{background-color: map-get(_.$c,'orange') !important;}
+.corange{color: map-get(_.$c,'orange') !important;}
+// batas 
+
+.bnone{background: none;}
+
+.opa1{opacity: 0.1;}
+.opa2{opacity: 0.2;}
+.opa3{opacity: 0.3;}
+.opa4{opacity: 0.4;}
+.opa5{opacity: 0.5;}
+.opa6{opacity: 0.6;}
+.opa7{opacity: 0.7;}
+.opa8{opacity: 0.8;}
+.opa9{opacity: 0.9;}

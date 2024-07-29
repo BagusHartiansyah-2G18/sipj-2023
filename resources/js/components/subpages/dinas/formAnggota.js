@@ -169,65 +169,21 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
         setSelectedOptions(data);
     }
     return (
-        <>
-            <div className={(onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
-                <div className="form1 bwhite boxShadow1px">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-home-assistant fz25 "></span>
-                            <h3>Data Anggota Bidang</h3>
-                        </div>
-                        <button className="btn2 blight cmuted" onClick={add}>Entri</button>
+        <div className="Mcontainer2Form ">
+            <div className="right-1" >
+                <div class="FM1">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bdark">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Form Entri Anggota</b> 
+                            </h2>
+                        </div> 
                     </div>
-                    <div className="body">
-                        <div className="justifyEnd mtb10px">
-                            <div className="w30p ">
-                                <Select
-                                    options={sfLib.coptionSelect({
-                                        dt:dt,
-                                        row:{label:'nmBidang'},
-                                        xind:true
-                                    })}
-                                    placeholder="Select Bidang"
-                                    value={selectedOptions}
-                                    onChange={selectBidang}
-                                    isSearchable={true}
-                                />
-                            </div>
-                        </div>
-                        {
-                            (
-                            (Object.keys(dt[index]).length!==0 && dt[index].anggota!==undefined) &&
-                                <Tabel1
-                                    search={search}
-                                    oncSearch={setSearch}
-                                    columns={coll}
-                                    data={dt[index].anggota.filter((item) => {
-                                            if (search === "") {
-                                                return item;
-                                            } else if (
-                                                item.nmAnggota.toLowerCase().includes(search.toLowerCase())
-                                            ) {
-                                                return item;
-                                            }
-                                        })}
-                                ></Tabel1>
-                            )
-                        }
-
-                    </div>
-                    {/* <div className="footer"></div> */}
-                </div>
-                <div className={`form2 hmax bwhite updGrid2to1 ${(onOff && 'dnone')}`} id="itemFormLeft">
-                    <div className="header bprimary clight">
-                        <div className="icon">
-                            <span className="mdi mdi-clock-edit-outline fz25"></span>
-                            <h3 className="">{(ins?'Entri':'Perbarui')} Dinas</h3>
-                        </div>
-                        <button className="btn2 blight cmuted" onClick={close}>Close</button>
-                    </div>
-                    <div className="w95p m0auto">
-                        <div className="doubleInput ptb10px">
+                    <div class="body bdark pwrap_5" style={{width:"unset" }}><br/>
+                    <div className="doubleInput ptb10px">
                             <label>Nama Pegawai</label>
                             <div className="iconInput2">
                                 <input className="borderR10px" type="text" value={nmAnggota} onChange={setnmAnggota} placeholder="Nama Anggota" />
@@ -282,18 +238,67 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
                                 isSearchable={true}
                             />
                         </div>
-
-                    </div>
-                    <div className="footer posEnd">
-                        <div className="btnGroup">
-                            <button className="btn2"  onClick={close}>Close</button>
+                        
+                        <div className="list jcE">
                             <button className={`btn2 ${(ins?'bprimary':'bwarning')}`}  onClick={(ins?xadded:xupded)}>{(ins?'Entri':'Perbarui')}</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div className="left">
+                <div class="FM1">
+                    <div class="header bwhite">
+                        <div class="cdark flexR">
+                            <button className="btn bdark">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>Data Anggota Bidang</b> 
+                            </h2>
+                        </div> 
+                    </div>
+                    <div class="body bdark pm0 bsolid1" style={{width:"unset", borderRadius:"0px"  }}><br/>
+                        <div className="jcE pwrap-10">
+                            <div className="w40p ">
+                                <Select
+                                    options={sfLib.coptionSelect({
+                                        dt:dt,
+                                        row:{label:'nmBidang'},
+                                        xind:true
+                                    })}
+                                    placeholder="Select Bidang"
+                                    value={selectedOptions}
+                                    onChange={selectBidang}
+                                    isSearchable={true}
+                                />
+                            </div>
+                        </div> 
+                        <div className=" ">
+                            {
+                                (
+                                (Object.keys(dt[index]).length!==0 && dt[index].anggota!==undefined) &&
+                                    <Tabel1
+                                        search={search}
+                                        oncSearch={setSearch}
+                                        columns={coll}
+                                        data={dt[index].anggota.filter((item) => {
+                                                if (search === "") {
+                                                    return item;
+                                                } else if (
+                                                    item.nmAnggota.toLowerCase().includes(search.toLowerCase())
+                                                ) {
+                                                    return item;
+                                                }
+                                            })}
+                                    ></Tabel1>
+                                )
+                            }
                         </div>
                     </div>
                 </div>
             </div>
-        </>
-    );
+        </div>
+    );  
 }
 FormAnggota.propTypes = {
     dt : PropTypes.array.isRequired,

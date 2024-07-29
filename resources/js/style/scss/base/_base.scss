@@ -1,0 +1,99 @@
+@use '../abstracts/variabel' as _;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.flex{display: flex;}
+.flexC{ @extend .flex; flex-direction: column; }
+.flexR{ @extend .flex; flex-direction: row; }
+
+// justifyContent
+.jcE{ @include _.jc(end)}
+.jcSB{  @include _.jc(space-between)}
+.jcSE{ @include _.jc(space-evenly)}
+.jcSA{ @include _.jc(space-around) }
+.jcC{ @include _.jc() }
+
+.aiS{ @include _.ai(start)}
+.aiE{ @include _.ai(end)}
+.aiC{ @include _.ai()}
+
+.acC{ @include _.ac()}
+.acE{ @include _.ac(end)}
+
+.asC{@include _.as()}
+
+
+.scroll{ @include _.scroll()} 
+.scroll-10{ @include _.scroll(10px)}
+.scroll-200{ @include _.scroll(200px)}
+.scroll-300{ @include _.scroll(300px)}
+.scroll-400{ @include _.scroll(400px)}
+.scroll-600{ @include _.scroll(600px)}
+.scroll-800{ @include _.scroll(800px)}
+
+.boxSLeft{
+    @include _.shadow(-2px -5px 5px 0px,map-get(_.$c,'dark'));
+}
+.boxS{
+    @include _.shadow(0px 1px 10px 1px,map-get(_.$c,'dark'));
+}
+.boxS1px{
+    @include _.shadow( 1px 1px 1px 1px,map-get(_.$c,'dark'));
+} 
+
+
+.positionR-b40{
+    position: relative;
+    @include _.arah(("b":40px));
+}
+
+.pointer{ cursor: pointer;}
+.borderNone{border: 0px;}
+.bdashedB1{
+    border-bottom: 1px;
+    border-bottom-style: dashed;
+}
+.bdashed1{
+    border: 1px;
+    border-style: dashed;
+}
+.bsolid1{
+    border: 1px;
+    border-style: solid;
+} 
+.hidden{visibility: hidden;}
+.stickyHeader{
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+.stickyNav{
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+}
+
+.abspiconR {
+    position: absolute;
+    z-index: 1;
+    bottom: unset;
+    right: 0px;
+    top: unset;
+    left: unset;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    border-left: 2px solid #e2e2e2;
+}
+.abspiconL{
+    position: absolute;
+    z-index: 1;
+    bottom: unset;
+    left: 0px;
+    top: unset;
+    right: unset;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    border-left: 2px solid #e2e2e2;
+  }

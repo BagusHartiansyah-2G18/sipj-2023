@@ -1,0 +1,96 @@
+@use '../../abstracts/variabel' as _;
+@forward '../../base/index';
+
+
+.MDheader{
+    @include _.gridC(repeat(2,50%));
+    row-gap:  5px;
+    @extend .aiC, .pwrap-10;
+    
+    .Iapp{
+        @extend .flexR;
+        img{
+            max-height: 80px;
+            display: none;
+            @media screen and (min-width:800px) {
+                display: inline;
+            }
+        } 
+        .name{
+            
+        }
+    }
+    .menu{
+        grid-area: 3 ; 
+        grid-column: 1/4; 
+        @extend .jcSE;
+        a{
+            @extend .flexC,.aiC, .fzXl;
+            :hover{
+                @extend .cwhite;
+            }
+        }
+    }
+    .Info{
+        @extend .jcE;
+    }
+
+    @media screen and (min-width:800px) {
+        grid-template-columns: repeat(3,33%);  
+        .menu{
+            grid-area:unset;
+        }
+    }
+}
+.MDcontainer{
+    @extend .mh85vh, .flexR;  
+    .OnBtn { 
+        left: 250px !important; 
+        z-index: 4;
+        transition: 0.5s;
+        > .arrow {
+            transform: rotate(-90deg);
+        } 
+    } 
+    #MDCnav{
+        width: 250px;
+        height: 100%;    
+        display: none;  
+        @extend  .pwrap-5;   
+        .user{
+            @extend .flexR;
+            img{
+                max-height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                // @extend .boxS;
+                margin-right: 10px;
+            }
+            margin-bottom: 20px;
+        }   
+    } 
+    .arrow {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 6px solid #fbfbfb;
+        transition: transform ease-in-out 0.3s; 
+        transform: rotate(90deg);
+    }
+    #keyOnOffed{ 
+        @extend .flexC, .bdark; 
+        position: absolute;
+        border-radius: 10%;
+        border: none;
+        padding: 10px;
+        top: 110px;
+        left: -10px;
+        cursor: pointer; 
+        
+    }
+    #keyOnOff:checked{   
+        + #MDCnav {  
+            display: block;    
+        }   
+    } 
+    
+}

@@ -14,31 +14,25 @@ function FormNoSppd( { updNomorSppd, ind, dt, start } ){
 
     return (
         <div className="ptb10px">
-            <div className=" flexR justifySB">
-                <button className="btn7 ">
+            <div className="flexR jcSB">
+                <button className="btn7">
                     <span className="mdi mdi-login binfo clight fziconS"></span>
                     <h2 className="cdark">Nomor SPPD</h2>
                 </button>
             </div>
             <div className="ptb10px">
-                <div className="body w95p m0auto  borderR10px">
-                <div className="flexR justifySB">
-                    <div className="flexC w80p">
-                        <div className="labelInput2 ptb10px">
-                            <label className=""><span className={`mdi mdi-cloud-search cprimary `}></span>Nomor</label>
+                <div className="body w95p m0auto bdashed1">
+                    <div className="flexR jcSB aiC">
+                        <div className="labelInput2">
+                            <label><span className={`mdi mdi-cloud-search cprimary `}></span>Nomor</label>
                             <input className="borderR10px" type="text" value={noSppd} onChange={setnoSppd} placeholder="Nomor" />
                         </div>
+                        <button className="btn2 bsuccess"
+                            title="Simpan"
+                            onClick={()=>updNomorSppd({ind,noSppd})}>
+                            <span className="mdi  mdi-check-circle clight fzXl" />
+                        </button>
                     </div>
-                    <div className="flexC w20p ptb10px ">
-                        <div className="btnGroup posEnd">
-                            <button className="btn2 bsuccess"
-                                title="Simpan"
-                                onClick={()=>updNomorSppd({ind,noSppd})}>
-                                <span className="mdi  mdi-check-circle clight fz25" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>

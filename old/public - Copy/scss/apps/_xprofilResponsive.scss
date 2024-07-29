@@ -1,0 +1,159 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+@media only screen and (min-width: 640px) {
+    .fz20{
+        font-size: 20px;
+    }
+    .fz15{
+        font-size: 15px;
+    }
+    header .navbar .menu{
+        @include _pos.flexC();
+    }
+    header .navbar .titmenu{
+        display: block !important;
+    } 
+
+
+    .container .iklan{
+        max-width: 500px !important;
+    }
+}
+@media only screen and (min-width: 840px) {
+    .container .iklan{
+        max-width: none !important;
+        width: 95%;
+    }
+    .container .iklan{
+        @include _pos.gridC(repeat(2,50%) ); 
+        // @include _pos.flexR();
+    }
+    .container .wrapiklan{
+        max-width: 500px !important;
+    }
+
+    .container .bgProfil{
+        height: 300px;
+    }
+    .container .iklan{
+        max-width: none !important;
+        width: 95%;
+    }
+    .container .iklan{
+        @include _pos.gridC(repeat(2,50%) ); 
+        // @include _pos.flexR();
+    }
+    .container .wrapiklan{
+        max-width: 500px !important;
+    }
+
+    .flowDev{
+        width: 95%;
+    }
+    .flowDev .wrap{
+        margin-bottom: 15px;
+    }
+    .flowDev .flow{
+        @include _pos.flexR();
+        @include _pos.justifyC(false,space-around);
+    }
+    .flowDev .flow .select{
+        @include _pos.relative();
+            @include _.bc('purple');
+            border-bottom: 5px solid map-get(_.$c,'purple1');
+            border-radius: 10px;
+            top: 20px;
+        }
+    .flowDev .flow .unselect{
+        @include _pos.relative();
+        @include _.bc('purple');
+        // border-top: 30px solid #f1b100;
+        // border-bottom: 30px solid #f1b100;
+        border-radius: 10px;
+        margin: 0px 5px;
+        border-top: 5px solid map-get(_.$c,'purple1');
+        top: -20px;
+        // border-bottom: 30px solid #f1b100;
+    }
+
+    .flowDev .flow .selectDev{
+        @include _pos.relative();
+            @include _.bc('info');
+            border-bottom: 5px solid map-get(_.$c,'info1');
+            border-radius: 10px;
+            top: 20px;
+        }
+    .flowDev .flow .unselectDev{
+        @include _pos.relative();
+        @include _.bc('info');
+        // border-top: 30px solid #f1b100;
+        // border-bottom: 30px solid #f1b100;
+        border-radius: 10px;
+        margin: 0px 5px;
+        border-top: 5px solid map-get(_.$c,'info1');
+        top: -20px;
+        // border-bottom: 30px solid #f1b100;
+    }
+
+    .bestProject{
+        width: 95%;
+    }
+    .bestProject .best{
+        @include _pos.flexR();
+    }
+    .bestProject .best .icon{
+        display: block;
+        height: 400px;
+    }
+    .bestProject .best .project{
+        width: 50%;
+    }
+    .bestProject .best .project .collom{
+        height: 400px;
+    }
+    .contactPersonSosial{
+        @include _pos.gridC(30%  32% 38%);
+    }
+    .updGrid2to3{
+        grid-area: 1 / 3 / 2 \\;
+    }
+    .contactPersonSosial .itemCPS{
+        width: 100%;
+    }
+    .contactPersonSosial .autoLR{
+        margin: 10% 5% 5% 5% !important; 
+    }
+}
+@media only screen and (min-width: 1007px) {
+    .container .bgProfil{
+        height: 400px;
+    }
+    
+}
+@media only screen and (min-width:1200px ) { 
+    .container .iklan{
+        @include _pos.gridC(repeat(3,1fr) ); 
+        width: 80%;
+    }
+    .flowDev{
+        width: 80%;
+    }
+    .bestProject{
+        width: 80%;
+    }
+    .bestProject .best .project .collom{
+        height: 500px;
+    }
+}
+@media only screen and (min-width:1400px ) {
+    .bestProject .best .project .collom{
+        height: 600px;
+    }
+}
+@media only screen and (min-width:1500px ) {
+    .bestProject .best .project .collom{
+        height: 700px;
+    }
+}

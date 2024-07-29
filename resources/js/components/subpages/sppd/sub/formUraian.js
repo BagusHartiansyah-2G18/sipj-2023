@@ -5,7 +5,7 @@ import sfLib from "../../../mfc/sfLib";
 import PropTypes from "prop-types";
 
 function FormUraian( { dt , onUpded, onDeled, value } ){
-    const [uraian, seturaian] = useInput((dt.uraian === '-' ? '' : dt.uraian));
+    const [uraian, seturaian] = useInput((dt.uraian === '-' ? dt.nmDP : dt.uraian));
     const [volume, setvolume] = useInput(dt.volume);
     const [satuan, setsatuan] = useInput((dt.satuan === '-' ? '' : dt.satuan));
     const [nilai, setnilai] = useInput(dt.nilai);
@@ -21,30 +21,29 @@ function FormUraian( { dt , onUpded, onDeled, value } ){
     }
 
     return (
-        <div className="ptb10px">
-            <div className="body w95p m0auto  borderR10px">
-                <div className="flexR justifySB">
-                    <div className="flexC w80p">
-                        <div className="labelInput2 ptb10px">
-                            <label className=""><span className={`mdi mdi-cloud-search cprimary `}></span>uraian</label>
-                            <input className="borderR10px" type="text" value={uraian} onChange={seturaian} placeholder="uraian" />
+        <div className="w95p m0auto bdashed1">
+                <div className="flexR jcSB">
+                    <div className="flexC w80p"> 
+                        <div className="labelInput2  ">
+                            <label className=""><span className={`mdi mdi-cloud-search cprimary `}></span>Uraian</label>
+                            <input className=" borderR10px" type="text" value={uraian} onChange={seturaian} placeholder="uraian" />
                         </div>
-                        <div className="flexR justifySB">
-                            <div className="labelInput2 ptb10px">
+                        <div className="jcSB">
+                            <div className="labelInput2  flexC">
                                 <label className=""><span className={`mdi mdi-cloud-search cprimary `}></span>Volume</label>
                                 <input className="borderR10px" type="number" value={volume} onChange={setvolume} onKeyUp={upded} placeholder="Volume" />
                             </div>
-                            <div className="labelInput2 ptb10px">
+                            <div className="labelInput2  flexC">
                                 <label className=""><span className={`mdi mdi-cloud-search cprimary `}></span>Satuan</label>
                                 <input className="borderR10px" type="text" value={satuan} onChange={setsatuan} placeholder="Satuan" />
                             </div>
-                            <div className="labelInput2 ptb10px">
+                            <div className="labelInput2  flexC">
                                 <label className=""><span className={`mdi mdi-cloud-search cprimary `}></span>Nilai</label>
                                 <input className="borderR10px" type="number" value={nilai} onChange={setnilai} onKeyUp={upded} placeholder="Nilai" />
                             </div>
                         </div>
                     </div>
-                    <div className="flexC w20p ptb10px ">
+                    <div className="flexC w20p jcSA aiC">
                         <label className="pwrap">Total = Rp. <small>{sfLib._$(total)}</small></label>
                         <div className="btnGroup pwrap posEnd">
                             <button className="btn2 bsuccess"
@@ -68,7 +67,6 @@ function FormUraian( { dt , onUpded, onDeled, value } ){
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 FormUraian.propTypes = {

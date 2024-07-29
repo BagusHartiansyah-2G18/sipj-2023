@@ -1,0 +1,78 @@
+.fz25{font-size: 20px;}
+.fz20{font-size: 15px;}
+.fz15{font-size: 12px;}
+.fz12{font-size: 10px;}
+.fz10{font-size: 8px;}
+
+
+.fziconS{font-size: 25px;}
+.fziconM{font-size: 35px;}
+.fziconR{font-size: 45px;}
+.fziconR1{font-size: 55px;}
+.fziconR2{font-size: 65px;}
+
+.fx1{
+  font-family: 'Nunito', sans-serif;
+}
+.fpacifico{
+    @font-face {
+      font-family:'pacifico';
+      src: url('../font/Pacifico/Pacifico-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "pacifico", Pacifico-Regular;
+}
+.fcookie{
+    @font-face {
+      font-family:'Cookie';
+      src: url('../font/Cookie/Cookie-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "Cookie", Cookie-Regular;
+}
+.fdamion{
+    @font-face {
+      font-family:'Damion';
+      src: url('../font/Damion/Damion-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "Damion", Damion-Regular;
+}
+.ftaprom{
+    @font-face {
+      font-family:'Taprom';
+      src: url('../font/Taprom/Taprom-Regular.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: "Taprom", Damion-Regular;
+}
+
+@media only screen and (min-width: 640px) {
+    
+}
+@media only screen and (min-width: 840px) {
+  .fz25{font-size: 25px !important;}
+  .fz20{font-size: 20px !important;}
+  .fz15{font-size: 15px !important;}
+  .fz12{font-size: 12px !important;}
+  .fz10{font-size: 10px !important;}
+  .fziconS{font-size: 30px !important;}
+  .fziconM{font-size: 45px !important;}
+  .fziconR{font-size: 55px !important;}
+  .fziconR1{font-size: 65px !important;}
+  .fziconR2{font-size: 75px !important;}
+}
+@media only screen and (min-width: 1007px) {
+    
+}
+@media only screen and (min-width:1200px ) {
+    
+}
+
+.fbold{
+  font-weight: bold;
+}

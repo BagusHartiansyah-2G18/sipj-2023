@@ -68,7 +68,7 @@ function selectdwork({ dt, act }){
     break;
     case actType.nextStep.dasar:
       dwork = dt.dwork.map((v,i)=>{
-        if(i=== act.ind){
+        if(i=== act.ind){ 
           return{
             ...v,
             fileD: act.fileD,
@@ -85,8 +85,7 @@ function selectdwork({ dt, act }){
             ...v,
             fileD: act.fileD,
             dasar: act.dasar,
-            pimOpd:(act.col==='pimOpd'? act.value:v.pimOpd),
-            pimBupati:(act.col==='pimBupati'? act.value:v.pimBupati),
+            pimOpd:(act.col==='pimOpd'? act.value:v.pimOpd), 
             pimSetda:(act.col==='pimSetda'? act.value:v.pimSetda),
           }
         }
@@ -302,15 +301,13 @@ function selectdwork({ dt, act }){
 }
 
 function concatDataAnggotaSelected({ dataTerpilih, allData, param, dpendukung }){
-  let xdt = [], add=false;
-  // console.log(dataTerpilih);
+  let xdt = [], add=false; 
   allData.forEach((v,i)=>{
     add=true;
-    dataTerpilih.forEach((v1) => {
-      // console.log( v1.kdBAnggota,v.kdBAnggota, v1.kdBidang,v.kdDBidang);
-      if(v1.kdBAnggota===v.kdBAnggota && (v1.kdBidang==undefined? v1.kdDBidang:v1.kdBidang)===v.kdDBidang){
-        // console.log(v);
+    dataTerpilih.forEach((v1) => { 
+      if(v1.kdBAnggota===v.kdBAnggota && (v1.kdBidang==undefined? v1.kdDBidang:v1.kdBidang)===v.kdDBidang){ 
         xdt.push({
+            ...v1,
             ...v,
             ...param,
             xind: i,

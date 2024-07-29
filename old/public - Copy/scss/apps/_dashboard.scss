@@ -1,0 +1,58 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty; 
+
+@forward '../base/index';
+@forward '../component/index';
+
+body {
+    @extend .fx1;
+    // @include _.flato('Lato-Regular');
+    padding: 0px;
+    margin: 0px;
+    @extend .cdark;
+    @extend .bwhite;
+    @extend .pm0;
+    // background-image: url('/slider/bg-g30.png');
+}  
+
+
+.wrapContainerForm{
+    @include _pos.flexR();
+    width: 100%;
+    & .wrapForm{
+        min-width: 300px;
+        width: 25%;
+        display: none; 
+        // min-height: 600px;
+        // @include _sty.shadow(1px 2px 2px 2px);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        // padding: 0px 0px;
+        animation: fadeInDashboard 1s ease both;
+    }
+}
+@keyframes fadeInDashboard {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.container2{
+    width: 90%;
+    @extend .m0auto;
+    @include _.pad(5%);
+    height: 100%;
+}
+
+.exampleItem{
+    @include _pos.gridC(repeat(3,1fr));
+    grid-gap: 10px;
+}
+.exampleItemC{
+    @include _pos.gridR(1fr);
+    grid-row: 10px;
+    width: 100%;
+}

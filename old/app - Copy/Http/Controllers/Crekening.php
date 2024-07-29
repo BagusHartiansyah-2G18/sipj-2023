@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Http\Controllers;
+use App\Helper\Mfc;
+
+use App\Helper\Hdb;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class Crekening extends Controller
+{
+    private $Mfc, $Hdb;
+    public function __construct(){
+        $this->Mfc = new Mfc();
+        $this->Hdb = new Hdb();
+        $this->middleware('auth');
+    }
+    public function index(){ 
+        
+        $cek = $this->Mfc->portal();  
+        if($cek['exc']){
+            $tahun = $cek['ta'];
+            return response()->json([
+                'exc' => true,
+                'data' => $this->Hdb->getRekening([ 
+                    "tahun"=>$tahun,
+                ])
+            ], 200);
+        }
+        return response()->json([
+            'exc' => false,
+            'msg' => $cek['msg']
+        ], 200);
+    }
+    function portal($user){
+        if(!empty($user->kdDinas)){
+            return [
+                "exc"=>true,
+                "ta"=>"2024"
+            ];
+        }
+        return [
+            "exc"=>false,
+            "msg"=>" user can't Dinas !!!"
+        ];
+    }
+}

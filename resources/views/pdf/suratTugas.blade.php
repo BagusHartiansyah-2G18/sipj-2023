@@ -18,8 +18,8 @@
                     </td>
                     <td class="pwrap tcenter mKop w85p">
                         <label class="fzK">PEMERINTAH '.$kab.'</label><br>
-                        <label class="fzD"><b>'.$dinas->nmDinas.'</b></label><br> 
-                        <label class="pm0">'.$dinas->alamat.'</label>    
+                        <label class="fzD"><b>'.$pimpinan->nmDinas.'</b></label><br> 
+                        <label class="pm0">'.$pimpinan->alamat.'</label>    
                     </td>
                 </tr>
             </table>
@@ -32,20 +32,19 @@
                     </td>
                     <td class="pwrap tcenter mKop w85p">
                         <label class="fzK">PEMERINTAH '.$kab.'</label><br>
-                        <label class="fzD"><b>'.$setda->nmDinas.'</b></label><br> 
-                        <label class="pm0">'.$setda->alamat.'</label>
+                        <label class="fzD"><b>'.$subPimpinan->nmDinas.'</b></label><br> 
+                        <label class="pm0">'.$subPimpinan->alamat.'</label>
                     </td>
                 </tr>
             </table>
         ';
 
-        $ttJabatan = $jabatanDinas.' '.$dinas->asDinas.'<br>'.$kab;
         $tt='
             <tr>
                 <td colspan="3" >
                     <div class="ml60p">
                         <p class=" capitalize ">
-                            '.$jabatanDinas." ".strtolower(explode(" ",$dinas->nmDinas)[0]).',  
+                            '.$pimpinan->jabatanx.',  
                         </p>
                     </div>
                 </td>
@@ -61,8 +60,7 @@
                 </td>
             </tr>
         ';
-        $ttJabatanSetda = $jabatanSetda.$subPimpinan->nmJabatan.'<br>'.$kab;
-        $ttJabatanSetda1 =$jabatanSetda.$subPimpinan->nmJabatan.'<br>'.$kab;
+        $ttJabatanSetda = $subPimpinan->nmJabatan.'<br>'.$kab;
 
         $penyesuaian = (strlen($ttJabatanSetda)>25 ? "ml45p":"ml50p");
  
@@ -120,6 +118,52 @@
                 </td>
             </tr>
         ';
+        function viewTabel($data){
+            $html='';
+            $tamp=0;
+            $tamHtml='';
+            $countAwal = (count($data)>7 ? 7:6);
+            $countNext = (count($data)>7 ? 12:9);
+            foreach ($data as $loop =>$dt){
+                $html.="
+                    <Table>
+                        <tr><td >".(count($data)>1 ? ($loop+1).'.':'')."</td><td class='verTop'>Nama</td><td>:</td><td>".$dt['nmAnggota']."</td></tr>
+                        <tr><td></td><td class='verTop'>Pangkat/Gol</td><td class='verTop'>:</td><td >".$dt['golongan']."</td></tr>
+                        <tr><td></td><td class='verTop'>NIP</td><td>:</td><td>".$dt['nip']."</td></tr>
+                        <tr><td></td><td class='verTop'>Jabatan</td><td>:</td><td>".$dt['nmJabatan']." "."</td></tr>
+                    </Table>
+                ";
+                if(count($data)>4){
+                    if(($loop+1)% $countAwal === 0 && ($loop+1)<=$countAwal){
+                        $html.='
+                            <div class="page-break"></div>
+                            <div style="width: 100%;">
+                        ';
+                        $tamp=0; $tamHtml='</div>';
+                    }elseif(($tamp+1)% $countNext === 0){
+                        if($tamHtml!=''){
+                            $html.=$tamHtml; 
+                            $tamp=0; $tamHtml='';
+                        }  
+                        if($loop+1!=count($data)){
+                            $html.='
+                                <div class="page-break"></div>
+                                <div style="width: 100%;">
+                            ';
+                            $tamp=0; $tamHtml='</div>';
+                        } 
+                    }
+                    $tamp++;
+                }
+                if($loop+1 == count($data) && count($data)>4){
+                    if($tamHtml!=''){
+                        $html.=$tamHtml;  
+                    } 
+                } 
+
+            } 
+            echo($html); 
+        }
     @endphp
 
 
@@ -127,7 +171,7 @@
         $tamp=0; $tamHtml="";
         $newMember = array();
         foreach ($member as $key => $value) {
-            if($value->tingkatan < 4){
+            if($value['tingkatan'] < 4){
                 array_push($newMember,$value);
             }
         }
@@ -154,7 +198,10 @@
                 <tr> 
                     <td colspan="2">
                         <br/>
-                        Yth. @php echo($ttJabatanSetda1)  @endphp<br>
+                        <div class="flexR">
+                            <p class="pm0">Yth.</p>
+                            <p class="pm0">@php echo($ttJabatanSetda)  @endphp</p>
+                        </div>
                         @php echo($spaci4); @endphp di <br>
                         @php echo($spaci4); @endphp Tempat
                         @php echo($spaceTT); @endphp
@@ -170,55 +217,10 @@
                             di {{$data->lokasi}}.
                             untuk itu mohon diterbitkan SPD atas nama :
                         </p>
-                        @php $tamp=0; $tamHtml=""; @endphp
-                            @foreach ($newMember as $dt) 
-                                    <Table>
-                                        <tr><td >{{(count($newMember)>1 ? ($loop->index+1).".":'')}}</td><td class="verTop">Nama</td><td>:</td><td>{{$dt->nmAnggota}}</td></tr>
-                                        <tr><td></td><td class="verTop">Pangkat/Gol</td><td class="verTop">:</td><td style=""> {{$dt->golongan}}</td></tr>
-                                        <tr><td></td><td class="verTop">NIP</td><td>:</td><td> {{$dt->nip}}</td></tr>
-                                        <!-- <tr><td></td><td class="verTop">Golongan</td><td>:</td><td> {{$dt->golongan}}</td></tr> -->
-                                        <tr><td></td><td class="verTop">Jabatan</td><td>:</td><td> {{($dt->nmJabatan)." ".$asDinas}}</td></tr>
-                                    </Table>  
-                                @if(count($newMember)>4)
-                                    @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
-                                        <div class="page-break"></div>
-                                        <div style="margin-left: 70px; width: 100%;">
-                                        @php $tamp=0; $tamHtml='</div>'; @endphp
-                                    @elseif(($tamp+1)%9 === 0)
-
-                                        @if($tamHtml!='')
-                                            @php echo($tamHtml); $tamp=0; $tamHtml=''; @endphp
-                                        @endif
-
-                                        <!-- loop member >9 -->
-                                        @if($loop->index+1!=count($newMember))
-                                            <div class="page-break"></div>
-                                            <div style="margin-left: 70px;width: 100%;">
-                                            @php $tamp=0; $tamHtml='</div>'; @endphp
-                                        @endif
-                                    @endif
-                                    @php $tamp++; @endphp
-                                @else
-                                    <!-- @if($loop->index+1 == count($member))
-                                        @for($a=4-count($member); $a>0; $a--)
-                                            <div style="min-height: 130px;"></div>
-                                        @endfor
-                                    @endif -->
-                                @endif
-
-                                <!-- (@php echo($tamp); @endphp) -->
-                                <!-- cek enter terakhir loop  -->
-                                @if($loop->index+1 == count($newMember) && count($newMember)>4)
-                                    @if($tamHtml!='')
-                                        @php echo($tamHtml); @endphp
-                                    @endif
-
-                                    <!-- for spaci anggota dan tanda tangan  -->
-                                    <!-- @for($a=8-$tamp; $a>0; $a--)
-                                        <div style="min-height: 130px;"></div>
-                                    @endfor -->
-                                @endif
-                            @endforeach
+                        @php 
+                            $tamp=0; $tamHtml=""; 
+                            viewTabel($newMember);
+                        @endphp 
                         <!-- <div style="min-height: 400px;"></div> -->
                         <br>
                         @if(count($newMember)>4)
@@ -280,43 +282,10 @@
                 <tr>
                     <td colspan="3">
                         <div style="margin-left: 70px;">
-                            @foreach ($newMember as $dt)
-                                <Table>
-                                    <tr><td >{{(count($newMember)>1 ? ($loop->index+1).".":'')}}</td><td class="verTop">Nama</td><td>:</td><td>{{$dt->nmAnggota}}</td></tr>
-                                    <tr><td></td><td class="verTop">Pangkat/Gol</td><td>:</td><td> {{$dt->golongan}}</td></tr>
-                                    <tr><td></td><td class="verTop">NIP</td><td>:</td><td> {{$dt->nip}}</td></tr>
-                                    <tr><td></td><td class="verTop">Jabatan</td><td class="verTop">:</td><td> {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{ $asdiskab}}</td></tr>
-                                    <!-- <tr><td></td><td class="verTop">Tingkat</td><td>:</td><td> {{($dt->tingkat)}}</td></tr> -->
-                                </Table>
-                                @if(count($newMember)>4)
-                                    @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
-                                        <div class="page-break"></div>
-                                        @php $tamp=0; @endphp
-                                    @elseif(($tamp+1)%8 === 0)
-                                        @if($tamHtml!='')
-                                            @php $tamp=0; $tamHtml=''; @endphp
-                                        @endif
-
-                                        <!-- loop member >9 -->
-                                        @if($loop->index+1!=count($newMember))
-                                            <div class="page-break"></div>
-                                        @endif
-                                    @endif
-                                    @php $tamp++; @endphp
-                                @else
-                                    <!-- @for($a=4-count($member); $a>0; $a--)
-                                        <div style="min-height: 130px;"></div>
-                                    @endfor -->
-                                @endif
-
-                                <!-- (@php echo($tamp); @endphp) -->
-                                <!-- cek enter terakhir loop  -->
-                                <!-- @if($loop->index+1 == count($member) && count($member)>4)
-                                    @for($a=8-$tamp; $a>0; $a--)
-                                        <div style="min-height: 130px;"></div>
-                                    @endfor
-                                @endif -->
-                            @endforeach
+                        @php 
+                            $tamp=0; $tamHtml=""; 
+                            viewTabel($newMember);
+                        @endphp  
                         </div>
                     </td>
                 </tr>
@@ -367,7 +336,7 @@
         $tamp=0; $tamHtml="";
         $newMember = array();
         foreach ($member as $key => $value) {
-            if($value->tingkatan >= 4){
+            if($value['tingkatan'] >= 4){
                 array_push($newMember,$value);
             }
         }
@@ -393,8 +362,11 @@
                 </tr> 
                 <tr> 
                     <td colspan="2">
-                        <br/> <br/>
-                        Yth. @php echo($ttJabatanSetda1)  @endphp<br>
+                        <br/>
+                        <div class="flexR">
+                            <p class="pm0">Yth.</p>
+                            <p class="pm0">@php echo($ttJabatanSetda)  @endphp</p>
+                        </div>
                         @php echo($spaci4); @endphp di <br>
                         @php echo($spaci4); @endphp Tempat
                         @php echo($spaceTT); @endphp
@@ -410,55 +382,11 @@
                             di {{$data->lokasi}}.
                             untuk itu mohon diterbitkan SPD atas nama :
                         </p>
-                        @php $tamp=0; $tamHtml=""; @endphp
-                        @foreach ($newMember as $dt)
-                            <Table>
-                                <tr><td >{{(count($newMember)>1 ? ($loop->index+1).".":'')}}</td><td class="verTop">Nama</td><td>:</td><td>{{$dt->nmAnggota}}</td></tr>
-                                <tr><td></td><td class="verTop">Pangkat/Gol</td><td class="verTop">:</td><td style=""> {{$dt->golongan}}</td></tr>
-                                <tr><td></td><td class="verTop">NIP</td><td>:</td><td> {{$dt->nip}}</td></tr>
-                                <!-- <tr><td></td><td class="verTop">Golongan</td><td>:</td><td> {{$dt->golongan}}</td></tr> -->
-                                <tr><td></td><td class="verTop">Jabatan</td><td>:</td><td> {{($dt->nmJabatan)." ".$asDinas}}</td></tr>
-                            </Table>
-                            @if(count($newMember)>4)
-                                @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
-                                    <div class="page-break"></div>
-                                    <div style="margin-left: 70px; width: 100%;">
-                                    @php $tamp=0; $tamHtml='</div>'; @endphp
-                                @elseif(($tamp+1)%9 === 0)
-
-                                    @if($tamHtml!='')
-                                        @php echo($tamHtml); $tamp=0; $tamHtml=''; @endphp
-                                    @endif
-
-                                    <!-- loop member >9 -->
-                                    @if($loop->index+1!=count($newMember))
-                                        <div class="page-break"></div>
-                                        <div style="margin-left: 70px;width: 100%;">
-                                        @php $tamp=0; $tamHtml='</div>'; @endphp
-                                    @endif
-                                @endif
-                                @php $tamp++; @endphp
-                            @else
-                                <!-- @if($loop->index+1 == count($member))
-                                    @for($a=4-count($member); $a>0; $a--)
-                                        <div style="min-height: 130px;"></div>
-                                    @endfor
-                                @endif -->
-                            @endif
-
-                            <!-- (@php echo($tamp); @endphp) -->
-                            <!-- cek enter terakhir loop  -->
-                            @if($loop->index+1 == count($newMember) && count($newMember)>4)
-                                @if($tamHtml!='')
-                                    @php echo($tamHtml); @endphp
-                                @endif
-
-                                <!-- for spaci anggota dan tanda tangan  -->
-                                <!-- @for($a=8-$tamp; $a>0; $a--)
-                                    <div style="min-height: 130px;"></div>
-                                @endfor -->
-                            @endif
-                        @endforeach
+                        @php 
+                            $tamp=0; $tamHtml=""; 
+                            viewTabel($newMember);
+                        @endphp
+                        
                         <!-- <div style="min-height: 400px;"></div> -->
                         <br>
                         @if(count($newMember)>4)
@@ -519,32 +447,10 @@
                 <tr>
                     <td colspan="3">
                         <div style="margin-left: 70px;">
-                            @foreach ($newMember as $dt)
-                                <Table>
-                                    <tr><td >{{(count($newMember)>1 ? ($loop->index+1).".":'')}}</td><td class="verTop">Nama</td><td>:</td><td>{{$dt->nmAnggota}}</td></tr>
-                                    <tr><td></td><td class="verTop">Pangkat/Gol</td><td>:</td><td> {{$dt->golongan}}</td></tr>
-                                    <tr><td></td><td class="verTop">NIP</td><td>:</td><td> {{$dt->nip}}</td></tr>
-                                    <tr><td></td><td class="verTop">Jabatan</td><td class="verTop">:</td><td> {{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)}} {{ $asdiskab}}</td></tr>
-                                    <!-- <tr><td></td><td class="verTop">Tingkat</td><td>:</td><td> {{($dt->tingkat)}}</td></tr> -->
-                                </Table>
-                                @if(count($newMember)>4)
-                                    @if(($loop->index+1)%5 === 0 && ($loop->index+1)<=5)
-                                        <div class="page-break"></div>
-                                        @php $tamp=0; @endphp
-                                    @elseif(($tamp+1)%8 === 0)
-                                        @if($tamHtml!='')
-                                            @php $tamp=0; $tamHtml=''; @endphp
-                                        @endif
-
-                                        <!-- loop member >9 -->
-                                        @if($loop->index+1!=count($newMember))
-                                            <div class="page-break"></div>
-                                        @endif
-                                    @endif
-                                    @php $tamp++; @endphp
-                                @else 
-                                @endif 
-                            @endforeach
+                            @php  
+                                viewTabel($newMember);
+                            @endphp 
+                            
                         </div>
                     </td>
                 </tr>

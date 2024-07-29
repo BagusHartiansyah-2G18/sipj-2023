@@ -8,7 +8,7 @@ function Modal1 ({ children, cls='mw600px mtop100px' }){
     const { _html } = useSelector((state) => state);
     return (
         <Modal id='dialog1'
-            className={`modal1 ${cls} m0auto`}
+            className={`modal1 ${cls} m10pAuto`}
             isOpen={_html.modal}
             contentLabel="Modal"
             ariaHideApp={false}

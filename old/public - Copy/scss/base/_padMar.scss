@@ -1,0 +1,54 @@
+@use '../abstracts/variable' as _;
+@use '../abstracts/mixPosition' as _pos;
+@use '../abstracts/style' as _sty;
+
+// code
+.ptb0{padding-top: 0px !important; padding-bottom:0px !important ;}
+.ptop50px{padding-top: 50px !important}
+.ptop100px{padding-top: 100px !important}
+.pbottom50px{padding-bottom: 50px !important}
+.pbottom100px{padding-bottom: 100px !important}
+.pa{@include _.pad(8px 16px);}
+.pwrap{@include _.pad(10px);}
+.povalBorder{
+    padding: 15px;
+    border-radius: 50%;
+}
+.plabel{padding: 0px 5px;}
+.piconR{padding: 10px 40px 10px 10px;}
+.piconL{padding: 10px 10px 10px 40px;}
+.abspiconR{
+    @include _pos.absolute(('l': unset, 'r': -0px, 't': unset, 'b': unset));
+    margin: 10px 0px;
+    padding: 0px 10px;
+    border-left: 2px solid map-get(_.$c,'light');
+}
+.abspiconL{
+    @include _pos.absolute(('l': 0px, 'r': unset, 't': unset, 'b': unset));
+    margin: 10px 0px;
+    padding: 0px 10px;
+    border-right: 2px solid map-get(_.$c,'light');
+}
+.plr10px{@include _.pad(0% 10px);}
+.ptb10px{padding: 10px 0px !important;}
+
+//campur
+
+.pm0{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+//margin
+.m0{margin: 0px !important}
+.mtop50px{margin-top: 50px !important}
+.mtop100px{margin-top: 100px !important}
+.mbottom50px{margin-bottom: 50px !important}
+.mbottom100px{margin-bottom: 100px !important}
+.mwrap{@include _.mar(3% 0px);}
+.mtb10px{margin: 10px 0px !important;}
+.mlr10px{@include _.mar(0% 10px);}
+.m0auto{margin: 0px auto;}
+.ml20px{margin-left: 20px;}
+.ma{@include _.mar(5px 0px);}
+
