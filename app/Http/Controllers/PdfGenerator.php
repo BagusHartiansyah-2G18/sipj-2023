@@ -288,7 +288,7 @@ class PdfGenerator extends Controller
                 "tahun"=>$cek['ta'],
                 "tglCetak"=>$baseEND->{'tglCetak'}
             ]; 
-            return $this->Mfc->log($this->__DataSuratTugasPermohonan($param,$cek));
+            // return $this->Mfc->log($this->__DataSuratTugasPermohonan($param,$cek));
             return view('pdf.suratTugasx',$this->__DataSuratTugasPermohonan($param,$cek)); 
         }
         return response()->json([
@@ -681,7 +681,9 @@ class PdfGenerator extends Controller
                 $pimpinan->jabatanx=$pimpinan->nmJabatan;  
             }
             
-        } 
+        }else{
+            $pimpinan['jabatanx']=$pimpinan->nmJabatan;  
+        }
         $pimpinan['asJabatan'] = $asJabatan;
         return $pimpinan;
     }
