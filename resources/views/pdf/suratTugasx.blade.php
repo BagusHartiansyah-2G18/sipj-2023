@@ -189,7 +189,7 @@
                 <tr>
                     <td class="w10p"></td>
                     <td class="w60p"></td>
-                    <td>Taliwang, {{$tglCetak}} </td>
+                    <td>Taliwang,  @php echo($spaci4); @endphp {{$tglCetak}} </td>
                 </tr> 
                 <tr>
                     <td>Nomor <br>Sifat <br>Lampiran<br>Hal</td>

@@ -151,9 +151,7 @@ class PdfGenerator extends Controller
         // Anggota Bidang
         $param["where"]= ' and a.kdBAnggota !=""';
         $member = $this->Hdb->dworkAnggotaBidang($param); 
-
-         
-        
+ 
         // keperluan kop  dan kepala SKPD
         $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']); 
         $pimpinan = $this->getTTPimpinan(
