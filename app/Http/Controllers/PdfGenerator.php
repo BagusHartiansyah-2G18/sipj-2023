@@ -168,6 +168,7 @@ class PdfGenerator extends Controller
             $cek['setda'],"setda",$param['tahun'],
             $data->pimSetda,$setda->nmDinas
         ); 
+        return $this->Mfc->log($subPimpinan);
         $subPimpinan->nmDinas= $setda->nmDinas;
         $subPimpinan->alamat= $setda->alamat; 
 
@@ -672,19 +673,20 @@ class PdfGenerator extends Controller
         
         if(!empty($_pim)){
             // $pimpinan =[];
-            $pimpinan = json_decode(base64_decode($_pim));    
+            $pimpinan = json_decode(base64_decode($_pim)); 
+            return $pimpinan;   
             // return $this->Mfc->log($pimpinan);
-
+            
             // $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
-            if($pimpinan['manual'] == "yes"){
-                $pimpinan['nmJabatan']=$this->getNewLineInText($pimpinan['nmJabatan']);
-                $pimpinan['jabatanx']=$this->getNewLineInText($pimpinan['nmJabatan']);  
+            if($pimpinan->manual == "yes"){
+                $pimpinan->nmJabatan=$this->getNewLineInText($pimpinan->nmJabatan);
+                $pimpinan->jabatanx=$this->getNewLineInText($pimpinan->nmJabatan);  
             }else{
-                $pimpinan['jabatanx']=$pimpinan->nmJabatan;  
+                $pimpinan->jabatanx=$pimpinan->nmJabatan;  
             }
-            $pimpinan['asJabatan'] = $asJabatan;
+            
         } 
-        
+        $pimpinan->asJabatan = $asJabatan;
         return $pimpinan;
     }
 
