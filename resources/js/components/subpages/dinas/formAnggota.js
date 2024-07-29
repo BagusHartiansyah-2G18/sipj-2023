@@ -221,6 +221,7 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
                         <div className="doubleInput ptb10px">
                             <label>Tingkatan</label>
                             <Select
+                                className="cdark"
                                 options={cbTingkatan}
                                 placeholder="Select Tingkatan"
                                 value={tingkat}
@@ -231,6 +232,7 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
                         <div className="doubleInput  ptb10px">
                             <label>Status</label>
                             <Select
+                                className="cdark"
                                 options={cbStatus}
                                 placeholder="Select Status"
                                 value={selStatus}
@@ -261,6 +263,7 @@ function FormAnggota({ dt, kdDinas, ind ,index, changeBidang, modalC }) {
                         <div className="jcE pwrap-10">
                             <div className="w40p ">
                                 <Select
+                                    className="cdark"
                                     options={sfLib.coptionSelect({
                                         dt:dt,
                                         row:{label:'nmBidang'},

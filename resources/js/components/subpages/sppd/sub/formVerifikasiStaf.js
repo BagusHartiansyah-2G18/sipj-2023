@@ -15,6 +15,16 @@ export default function FormVerifikasiStaf({ value, saved, ind }) {
     const findex = cbTingkatan.findIndex(v=> v.value == tingkatan); 
     const [ tingkat, settingkat] = useState({value:cbTingkatan[findex].value,label:cbTingkatan[findex].label});
 
+    if(value.start){
+        _nama({target:{value:nmAnggota}});
+        _gol({target:{value:golongan}});
+        _jabatan({target:{value:nmJabatan}});
+        _fnip({target:{value:nip}}); 
+        const findex1 = cbTingkatan.findIndex(v=> v.value == tingkatan); 
+        settingkat({value:cbTingkatan[findex1].value,label:cbTingkatan[findex1].label});
+        value.start =false;
+    }
+
     return (
         <div class="FM1 ">
             <div class="header bwhite">

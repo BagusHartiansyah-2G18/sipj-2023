@@ -144,11 +144,12 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
         return <></>;
     }  
     const updManualStaf=(v)=>{   
+        const kdBidang = (dt[v.ind].kdBidang==undefined? dt[v.ind].kdDBidang:dt[v.ind].kdBidang); 
         uploadDataVerifikasiStaf({
             fileD:btoa(JSON.stringify(v)),
             ...param, 
             kdBAnggota:dt[v.ind].kdBAnggota,
-            kdBidang:dt[v.ind].kdBidang
+            kdBidang:kdBidang
         });
     } 
     return (
@@ -172,7 +173,7 @@ function FormEntriBiaya({ dt, param, modalC, indWork }) {
                                     <div className="Mcontainer2Form">
                                         <div className="right-1" >
                                             <FormVerifikasiStaf
-                                                value={{...v}}
+                                                value={{...v, start:true}}
                                                 saved={updManualStaf}
                                                 ind ={i}
                                             ></FormVerifikasiStaf>

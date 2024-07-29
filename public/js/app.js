@@ -12137,6 +12137,7 @@ function FormAnggota(_ref) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
               children: "Tingkatan"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              className: "cdark",
               options: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbTingkatan,
               placeholder: "Select Tingkatan",
               value: tingkat,
@@ -12148,6 +12149,7 @@ function FormAnggota(_ref) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
               children: "Status"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              className: "cdark",
               options: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbStatus,
               placeholder: "Select Status",
               value: selStatus,
@@ -12195,6 +12197,7 @@ function FormAnggota(_ref) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               className: "w40p ",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                className: "cdark",
                 options: _mfc_sfLib__WEBPACK_IMPORTED_MODULE_7__["default"].coptionSelect({
                   dt: dt,
                   row: {
@@ -15419,11 +15422,12 @@ function FormEntriBiaya(_ref) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {});
   }
   var updManualStaf = function updManualStaf(v) {
+    var kdBidang = dt[v.ind].kdBidang == undefined ? dt[v.ind].kdDBidang : dt[v.ind].kdBidang;
     (0,_states_sppd_action__WEBPACK_IMPORTED_MODULE_2__.uploadDataVerifikasiStaf)(_objectSpread(_objectSpread({
       fileD: btoa(JSON.stringify(v))
     }, param), {}, {
       kdBAnggota: dt[v.ind].kdBAnggota,
-      kdBidang: dt[v.ind].kdBidang
+      kdBidang: kdBidang
     }));
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -15460,7 +15464,9 @@ function FormEntriBiaya(_ref) {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                 className: "right-1",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_sub_formVerifikasiStaf__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                  value: _objectSpread({}, v),
+                  value: _objectSpread(_objectSpread({}, v), {}, {
+                    start: true
+                  }),
                   saved: updManualStaf,
                   ind: i
                 })
@@ -17108,6 +17114,36 @@ function FormVerifikasiStaf(_ref) {
     _useState2 = _slicedToArray(_useState, 2),
     tingkat = _useState2[0],
     settingkat = _useState2[1];
+  if (value.start) {
+    _nama({
+      target: {
+        value: nmAnggota
+      }
+    });
+    _gol({
+      target: {
+        value: golongan
+      }
+    });
+    _jabatan({
+      target: {
+        value: nmJabatan
+      }
+    });
+    _fnip({
+      target: {
+        value: nip
+      }
+    });
+    var findex1 = _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbTingkatan.findIndex(function (v) {
+      return v.value == tingkatan;
+    });
+    settingkat({
+      value: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbTingkatan[findex1].value,
+      label: _states_dinas_action__WEBPACK_IMPORTED_MODULE_2__.cbTingkatan[findex1].label
+    });
+    value.start = false;
+  }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     "class": "FM1 ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
