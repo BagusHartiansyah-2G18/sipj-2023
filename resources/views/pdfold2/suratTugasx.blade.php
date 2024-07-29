@@ -18,8 +18,8 @@
                     </td>
                     <td class="pwrap tcenter mKop w85p">
                         <label class="fzK">PEMERINTAH '.$kab.'</label><br>
-                        <label class="fzD"><b>'.$pimpinan['nmDinas'].'</b></label><br> 
-                        <label class="pm0">'.$pimpinan['alamat'].'</label>  
+                        <label class="fzD"><b>'.$pimpinan->nmDinas.'</b></label><br> 
+                        <label class="pm0">'.$pimpinan->alamat.'</label>  
                     </td>
                 </tr>
             </table>
@@ -32,8 +32,8 @@
                     </td>
                     <td class="pwrap tcenter mKop w85p">
                         <label class="fzK">PEMERINTAH '.$kab.'</label><br>
-                        <label class="fzD"><b>'.$subPimpinan['nmDinas'].'</b></label><br> 
-                        <label class="pm0">'.$subPimpinan['alamat'].'</label>
+                        <label class="fzD"><b>'.$subPimpinan->nmDinas.'</b></label><br> 
+                        <label class="pm0">'.$subPimpinan->alamat.'</label>
                     </td>
                 </tr>
             </table>
@@ -57,14 +57,14 @@
                     <br>
                     <br>
                     <div class="ml60p">
-                        <p class="  ">'.$pimpinan['nmAnggota'].'<br>
-                        '.$pimpinan['golongan'].'<br>
-                        NIP. '.$pimpinan['nip'].'</p>
+                        <p class="  ">'.$pimpinan->nmAnggota.'<br>
+                        '.$pimpinan->golongan.'<br>
+                        NIP. '.$pimpinan->nip.'</p>
                     </div>
                 </td>
             </tr>
         ';
-        $ttJabatanSetda = $subPimpinan['nmJabatan'];
+        $ttJabatanSetda = $subPimpinan->nmJabatan;
         $penyesuaian = (strlen($ttJabatanSetda)>25 ? "ml45p":"ml50p");
 
         $ttSetda='
@@ -85,15 +85,15 @@
                     <br/><br/>
                     <br/><br/>
                     <div class="'.$penyesuaian.'">
-                        <p class="  "><u>'.$subPimpinan['nmAnggota'].'</u><br>
-                        <!-- '.$subPimpinan['golongan'].'<br> -->
-                        NIP. '.$subPimpinan['nip'].'</p>
+                        <p class="  "><u>'.$subPimpinan->nmAnggota.'</u><br>
+                        <!-- '.$subPimpinan->golongan.'<br> -->
+                        NIP. '.$subPimpinan->nip.'</p>
                     </div> 
                 </td>
             </tr>
         ';
 
-        $ttJabatanSub = $subPimpinan['nmJabatan'].'<br>'.$kab;
+        $ttJabatanSub = $subPimpinan->nmJabatan.'<br>'.$kab;
         $penyesuaian = (strlen($ttJabatanSub)>25 ? "ml45p":"ml50p"); 
         $ttSubSetda='
             <tr>
@@ -114,9 +114,9 @@
                     <br/><br/>
                     <br/><br/>
                     <div class="'.$penyesuaian.'">
-                        <p class=" "><u>'.$subPimpinan['nmAnggota'].'</u><br>
-                        <!-- '.$subPimpinan['golongan'].'<br> -->
-                        NIP. '.$subPimpinan['nip'].'</p>
+                        <p class=" "><u>'.$subPimpinan->nmAnggota.'</u><br>
+                        <!-- '.$subPimpinan->golongan.'<br> -->
+                        NIP. '.$subPimpinan->nip.'</p>
                     </div>
                 </td>
             </tr>
@@ -266,7 +266,7 @@
                     <td class="w20p">Nama</td><td>: {{$setda->kadis}}</td>
                 </tr>
                 <tr>
-                    <td>NIP</td><td>: {{$setda['nip']}}</td>
+                    <td>NIP</td><td>: {{$setda->nip}}</td>
                 </tr>
                 <tr>
                     <td>Jabatan</td><td>: Sekretaris Daerah {{$asKab}}</td>
@@ -341,9 +341,9 @@
                         <br/><br/>
                         <br/><br/>
                         <div class="ml60p">
-                            <p class=" ">{{$subPimpinan['nmAnggota']}}<br>
-                            {{$subPimpinan['golongan']}} <br>
-                            NIP. {{$subPimpinan['nip']}}</p>
+                            <p class=" ">{{$subPimpinan->nmAnggota}}<br>
+                            {{$subPimpinan->golongan}} <br>
+                            NIP. {{$subPimpinan->nip}}</p>
                         </div>
                     </td>
                 </tr>
@@ -445,13 +445,13 @@
                     </td> 
                 </tr>
                 <tr>
-                    <td class="w20p">Nama</td><td class="w2p">:</td><td >{{$subPimpinan['nmAnggota']}}</td>
+                    <td class="w20p">Nama</td><td class="w2p">:</td><td >{{$subPimpinan->nmAnggota}}</td>
                 </tr>
                 <tr>
-                    <td>NIP</td><td>:</td><td> {{$subPimpinan['nip']}}</td>
+                    <td>NIP</td><td>:</td><td> {{$subPimpinan->nip}}</td>
                 </tr>
                 <tr>
-                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan['nmJabatan']); @endphp {{$asKab}}</td>
+                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan->nmJabatan); @endphp {{$asKab}}</td>
                 </tr> 
                 <tr class="tcenter ">
                     <td colspan="3">

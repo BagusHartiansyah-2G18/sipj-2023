@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Resume</title>
+    <title>Resume</title> 
     <link rel="stylesheet" href="{{url('css/sf.css')}}" > 
 </head>
 <body class="fzU" style="font-family: Arial, Helvetica, sans-serif;">
@@ -18,8 +18,8 @@
                     </td>
                     <td class="pwrap tcenter mKop w85p">
                         <label class="fzK">PEMERINTAH '.$kab.'</label><br>
-                        <label class="fzD"><b>'.$pimpinan['nmDinas'].'</b></label><br> 
-                        <label class="pm0">'.$pimpinan['alamat'].'</label>  
+                        <label class="fzD"><b>'.$pimpinan->nmDinas.'</b></label><br> 
+                        <label class="pm0">'.$pimpinan->alamat.'</label>    
                     </td>
                 </tr>
             </table>
@@ -32,8 +32,8 @@
                     </td>
                     <td class="pwrap tcenter mKop w85p">
                         <label class="fzK">PEMERINTAH '.$kab.'</label><br>
-                        <label class="fzD"><b>'.$subPimpinan['nmDinas'].'</b></label><br> 
-                        <label class="pm0">'.$subPimpinan['alamat'].'</label>
+                        <label class="fzD"><b>'.$subPimpinan->nmDinas.'</b></label><br> 
+                        <label class="pm0">'.$subPimpinan->alamat.'</label>
                     </td>
                 </tr>
             </table>
@@ -43,30 +43,27 @@
             <tr>
                 <td colspan="3" >
                     <div class="ml60p">
-                        <p class="capitalize">
-                            '.$pimpinan->jabatanx.',
+                        <p class=" capitalize ">
+                            '.$pimpinan->jabatanx.',  
                         </p>
                     </div>
                 </td>
             </tr>
-            
             <tr>
                 <td colspan="3" >
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    <br><br><br><br>
                     <div class="ml60p">
-                        <p class="  ">'.$pimpinan['nmAnggota'].'<br>
-                        '.$pimpinan['golongan'].'<br>
-                        NIP. '.$pimpinan['nip'].'</p>
+                        <p class="  ">'.$pimpinan->nmAnggota.'<br>
+                        '.$pimpinan->golongan.'<br>
+                        NIP. '.$pimpinan->nip.'</p>
                     </div>
                 </td>
             </tr>
         ';
-        $ttJabatanSetda = $subPimpinan['nmJabatan'];
-        $penyesuaian = (strlen($ttJabatanSetda)>25 ? "ml45p":"ml50p");
+        $ttJabatanSetda = $subPimpinan->nmJabatan.'<br>'.$kab;
 
+        $penyesuaian = (strlen($ttJabatanSetda)>25 ? "ml45p":"ml50p");
+ 
         $ttSetda='
             <tr>
                 <td colspan="3" >
@@ -85,24 +82,24 @@
                     <br/><br/>
                     <br/><br/>
                     <div class="'.$penyesuaian.'">
-                        <p class="  "><u>'.$subPimpinan['nmAnggota'].'</u><br>
-                        <!-- '.$subPimpinan['golongan'].'<br> -->
-                        NIP. '.$subPimpinan['nip'].'</p>
-                    </div> 
+                        <p class="  "><u>'.$subPimpinan->nmAnggota.'</u><br>
+                        <!-- '.$subPimpinan->golongan.'<br> -->
+                        NIP. '.$subPimpinan->nip.'</p>
+                    </div>
                 </td>
             </tr>
         ';
 
-        $ttJabatanSub = $subPimpinan['nmJabatan'].'<br>'.$kab;
-        $penyesuaian = (strlen($ttJabatanSub)>25 ? "ml45p":"ml50p"); 
-        $ttSubSetda='
+        $ttJabatanSetdaStaf = $subPimpinan->nmJabatan.'<br>'.$kab;
+        $penyesuaian = (strlen($ttJabatanSetdaStaf)>25 ? "ml45p":"ml50p");
+         $ttSetdaStaf='
             <tr>
                 <td colspan="3" >
                     <div class="'.$penyesuaian.'">
                         Taliwang '.$tglCetak.'
                         <br>
                         <p class="w55p">
-                            '.$ttJabatanSub.', 
+                            '.$ttJabatanSetdaStaf.', 
                         </p>
                     </div>
                 </td>
@@ -114,9 +111,9 @@
                     <br/><br/>
                     <br/><br/>
                     <div class="'.$penyesuaian.'">
-                        <p class=" "><u>'.$subPimpinan['nmAnggota'].'</u><br>
-                        <!-- '.$subPimpinan['golongan'].'<br> -->
-                        NIP. '.$subPimpinan['nip'].'</p>
+                        <p class=" "><u>'.$subPimpinan->nmAnggota.'</u><br>
+                        <!-- '.$subPimpinan->golongan.'<br> -->
+                        NIP. '.$subPimpinan->nip.'</p>
                     </div>
                 </td>
             </tr>
@@ -170,7 +167,6 @@
     @endphp
 
 
-
     @php
         $tamp=0; $tamHtml="";
         $newMember = array();
@@ -183,9 +179,8 @@
     @if(count($newMember)>0)
         <div class=" container">
             @php echo($kop); @endphp
-            <hr> 
-            <!-- <br> -->
-            <table  class="w100p">
+            <hr>  
+            <table class="w100p">
                 <tr>
                     <td class="w10p"></td>
                     <td class="w60p"></td>
@@ -199,20 +194,23 @@
                         <br><span id="addTitik2">Permohonan Penerbitan Surat Tugas</span>
                     </td>
                     <td></td>
-                </tr>    
+                </tr> 
                 <tr> 
                     <td colspan="2">
                         <br/>
-                        Yth. Sekretaris Daerah {{$kab}}<br>
+                        <div class="flexR">
+                            <p class="pm0">Yth.</p>
+                            <p class="pm0">@php echo($ttJabatanSetda)  @endphp</p>
+                        </div>
                         @php echo($spaci4); @endphp di <br>
                         @php echo($spaci4); @endphp Tempat
                         @php echo($spaceTT); @endphp
                         Dengan hormat,
                     </td>
                     <td></td>
-                </tr>  
-                <tr> 
-                    <td colspan="3">
+                </tr> 
+                <tr>
+                    <td colspan="3"> 
                         <p style="text-align: justify;padding: 0px; margin: 0px;">
                             @php echo($spaci4); @endphp {{$data->maksud}} pada tanggal
                             {{$textTanggal}}
@@ -229,9 +227,9 @@
                             <div style="margin-left: 70px;">
                         @endif
                         <p style="width: 600px;">
-                            Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$kab}} Tahun Anggaran {{$tahun}}.
+                            Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$asKab}} Tahun Anggaran {{$tahun}}.
                             <br><br>
-                            @php echo($spaci4); @endphp  Demikian dan atas kebijakan Bapak dihaturkan terima kasih.
+                            @php echo($spaci4); @endphp Demikian dan atas kebijakan Bapak dihaturkan terima kasih.
                         </p>
                         @if(count($newMember)>4)
                             </div>
@@ -245,16 +243,18 @@
         <div class="page-break"></div>
         <div class=" container">
             @php echo($kopSetda);$tamp =0; @endphp
-            <hr>  
+            <hr> 
+            <!-- <br> -->
             <table class="w100p">
                 <tr class="tcenter ">
                     <td colspan="3">
+                        <br/>
                         <b class="fzK">
                             SURAT TUGAS<br>
                         </b>
-                        Nomor : @php echo($nomorTugas);  @endphp
+                        Nomor : @php echo($nomorTugas)  @endphp
                     </td>
-                </tr>
+                </tr> 
                 <tr>
                     <td colspan="3">
                         <br/>
@@ -263,13 +263,13 @@
                     </td> 
                 </tr>
                 <tr>
-                    <td class="w20p">Nama</td><td>: {{$setda->kadis}}</td>
+                    <td class="w20p">Nama</td><td class="w2p">:</td><td >{{$subPimpinan->nmAnggota}}</td>
                 </tr>
                 <tr>
-                    <td>NIP</td><td>: {{$setda['nip']}}</td>
+                    <td>NIP</td><td>:</td><td> {{$subPimpinan->nip}}</td>
                 </tr>
                 <tr>
-                    <td>Jabatan</td><td>: Sekretaris Daerah {{$asKab}}</td>
+                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan->nmJabatan); @endphp {{$asKab}}</td>
                 </tr> 
                 <tr class="tcenter ">
                     <td colspan="3">
@@ -282,10 +282,14 @@
                 <tr>
                     <td colspan="3">
                         <div style="margin-left: 70px;">
-                            @php viewTabel($newMember); @endphp 
+                        @php 
+                            $tamp=0; $tamHtml=""; 
+                            viewTabel($newMember);
+                        @endphp  
                         </div>
                     </td>
                 </tr>
+                
                 <tr>
                     <!-- class="w20p verTop"  -->
                     <td colspan="3" >
@@ -322,31 +326,8 @@
                             </span>
                         </div>
                     </td>   
-                </tr>  
-                <tr> 
-                    <td colspan="3" >
-                        <div class="ml60p">
-                            Taliwang {{$tglCetak}}
-                            <br>
-                            <p class="w55p">
-                                Sekretaris Daerah,
-                                <br>{{$kab}}
-                            </p>
-                        </div>
-                         
-                    </td>
-                </tr> 
-                <tr>
-                    <td colspan="3" >
-                        <br/><br/>
-                        <br/><br/>
-                        <div class="ml60p">
-                            <p class=" ">{{$subPimpinan['nmAnggota']}}<br>
-                            {{$subPimpinan['golongan']}} <br>
-                            NIP. {{$subPimpinan['nip']}}</p>
-                        </div>
-                    </td>
-                </tr>
+                </tr>   
+                @php echo($ttSetda); @endphp
             </table>
         </div>
         <div class="page-break"></div>
@@ -362,9 +343,8 @@
     @endphp
     @if(count($newMember)>0)
         <div class=" container">
-            @php echo($kop); @endphp
-            <hr> 
-            <!-- <br> -->
+            @php echo($kop);   @endphp
+            <hr>  
             <table class="w100p">
                 <tr>
                     <td class="w10p"></td>
@@ -379,13 +359,13 @@
                         <br><span id="addTitik2">Permohonan Penerbitan Surat Tugas</span>
                     </td>
                     <td></td>
-                </tr>  
+                </tr> 
                 <tr> 
                     <td colspan="2">
                         <br/>
                         <div class="flexR">
                             <p class="pm0">Yth.</p>
-                            <p class="pm0">@php echo($ttJabatanSub)  @endphp</p>
+                            <p class="pm0">@php echo($ttJabatanSetda)  @endphp</p>
                         </div>
                         @php echo($spaci4); @endphp di <br>
                         @php echo($spaci4); @endphp Tempat
@@ -402,10 +382,12 @@
                             di {{$data->lokasi}}.
                             untuk itu mohon diterbitkan SPD atas nama :
                         </p>
-                        @php $tamp=0; $tamHtml=""; 
-                            viewTabel($newMember)
+                        @php 
+                            $tamp=0; $tamHtml=""; 
+                            viewTabel($newMember);
                         @endphp
-                         
+                        
+                        <!-- <div style="min-height: 400px;"></div> -->
                         <br>
                         @if(count($newMember)>4)
                             <div style="margin-left: 70px;">
@@ -425,18 +407,18 @@
         </div>
         <div class="page-break"></div>
         <div class=" container">
-            @php echo($kopSetda);$tamp =0; @endphp
+            @php echo($kopSetda);$tamp =0;  @endphp
             <hr> 
             <!-- <br> -->
             <table class="w100p">
-                <tr class="tcenter">
+                <tr class="tcenter ">
                     <td colspan="3">
-                        <b class=" fzK">
+                        <b class="fzK">
                             SURAT TUGAS<br>
                         </b>
-                        Nomor : @php echo($nomorTugas); @endphp
+                        Nomor : @php echo($nomorTugas)  @endphp
                     </td>
-                </tr> 
+                </tr>
                 <tr>
                     <td colspan="3">
                         <br/>
@@ -445,36 +427,30 @@
                     </td> 
                 </tr>
                 <tr>
-                    <td class="w20p">Nama</td><td class="w2p">:</td><td >{{$subPimpinan['nmAnggota']}}</td>
+                    <td class="w20p">Nama</td><td class="w2p">:</td><td >{{$subPimpinan->nmAnggota}}</td>
                 </tr>
                 <tr>
-                    <td>NIP</td><td>:</td><td> {{$subPimpinan['nip']}}</td>
+                    <td>NIP</td><td>:</td><td> {{$subPimpinan->nip}}</td>
                 </tr>
                 <tr>
-                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan['nmJabatan']); @endphp {{$asKab}}</td>
+                    <td>Jabatan</td><td>:</td><td>@php echo($subPimpinan->nmJabatan); @endphp {{$asKab}}</td>
                 </tr> 
                 <tr class="tcenter ">
                     <td colspan="3">
-                        <b class="fzK"><br/>MEMERINTAHKAN<br></b>
+                        <br/>
+                        <b class="fzK">MEMERINTAHKAN<br></b>
                     </td>
                 </tr>
                 <tr>
-                    <td class="w20p">Kepada :</td><td></td>
+                    <td class="w20p">Kepada : </td><td></td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <div style="margin-left: 70px;">
-                        @php
-                            $tamp=0; $tamHtml="";
-                            $newMember = array();
-                            foreach ($member as $key => $value) {
-                                if($value['tingkatan'] >= 4){
-                                    array_push($newMember,$value);
-                                }
-                            }
-
-                            viewTabel($newMember);
-                        @endphp 
+                            @php  
+                                viewTabel($newMember);
+                            @endphp 
+                            
                         </div>
                     </td>
                 </tr>
@@ -514,12 +490,11 @@
                             </span>
                         </div>
                     </td>   
-                </tr>
-                @php echo($ttSubSetda); @endphp
+                </tr>  
+                @php echo($ttSetdaStaf); @endphp
             </table>
         </div>
     @endif
-
     <script>
         window.print();
     </script>
