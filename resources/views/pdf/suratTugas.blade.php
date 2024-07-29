@@ -127,7 +127,7 @@
             foreach ($data as $loop =>$dt){
                 $html.="
                     <Table>
-                        <tr><td style="min-width: 20px;">".(count($data)>1 ? ($loop+1).'.':'')."</td><td class='verTop'>Nama</td><td>:</td><td>".$dt['nmAnggota']."</td></tr>
+                        <tr><td style='min-width: 20px;'>".(count($data)>1 ? ($loop+1).'.':'')."</td><td class='verTop'>Nama</td><td>:</td><td>".$dt['nmAnggota']."</td></tr>
                         <tr><td></td><td class='verTop'>Pangkat/Gol</td><td class='verTop'>:</td><td >".$dt['golongan']."</td></tr>
                         <tr><td></td><td class='verTop'>NIP</td><td>:</td><td>".$dt['nip']."</td></tr>
                         <tr><td></td><td class='verTop'>Jabatan</td><td>:</td><td>".$dt['nmJabatan']." "."</td></tr>
