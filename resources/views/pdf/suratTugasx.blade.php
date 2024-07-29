@@ -326,7 +326,7 @@
                 <tr> 
                     <td colspan="3" >
                         <div class="ml60p">
-                            Taliwang {{$tglCetak}}
+                            Taliwang, @php echo($spaci4); @endphp {{$tglCetak}}
                             <br>
                             <p class="w55p">
                                 Sekretaris Daerah,
