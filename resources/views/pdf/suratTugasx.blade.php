@@ -44,7 +44,7 @@
                 <td colspan="3" >
                     <div class="ml60p">
                         <p class="capitalize">
-                            '.$pimpinan->jabatanx.',
+                            '.$pimpinan['jabatanx'].',
                         </p>
                     </div>
                 </td>
