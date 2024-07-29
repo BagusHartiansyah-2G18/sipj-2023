@@ -153,6 +153,7 @@ class PdfGenerator extends Controller
         $member = $this->Hdb->dworkAnggotaBidang($param); 
 
          
+        
         // keperluan kop  dan kepala SKPD
         $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']); 
         $pimpinan = $this->getTTPimpinan(
