@@ -197,7 +197,7 @@
                         @endphp 
                          
                         @if(count($member)>4)
-                            <div style="margin-left: 70px;">
+                            <div >
                         @endif
                         <p style="width: 600px;">
                             Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$kab}} Tahun Anggaran {{$tahun}}.

@@ -390,7 +390,7 @@
                         <!-- <div style="min-height: 400px;"></div> -->
                         <br>
                         @if(count($newMember)>4)
-                            <div style="margin-left: 70px;">
+                            <div>
                         @endif
                         <p style="width: 600px;">
                             Kegiatan tersebut dibebankan pada {{$data->anggaran}} {{$kab}} Tahun Anggaran {{$tahun}}.
