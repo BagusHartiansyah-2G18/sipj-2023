@@ -159,8 +159,8 @@ class PdfGenerator extends Controller
             $param['kdDinas'],"pimpinan",$param['tahun'],
             $data->pimOpd,$dinas->nmDinas
         ); 
-        $pimpinan->nmDinas= $dinas->nmDinas;
-        $pimpinan->alamat= $dinas->alamat;
+        $pimpinan['nmDinas']= $dinas->nmDinas;
+        $pimpinan['alamat']= $dinas->alamat;
 
         //kepala SETDA / Asisten
         $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']); 
@@ -168,8 +168,8 @@ class PdfGenerator extends Controller
             $cek['setda'],"setda",$param['tahun'],
             $data->pimSetda,$setda->nmDinas
         ); 
-        $subPimpinan->nmDinas= $setda->nmDinas;
-        $subPimpinan->alamat= $setda->alamat; 
+        $subPimpinan['nmDinas']= $setda->nmDinas;
+        $subPimpinan['alamat']= $setda->alamat; 
 
         
 
@@ -288,6 +288,7 @@ class PdfGenerator extends Controller
                 "tahun"=>$cek['ta'],
                 "tglCetak"=>$baseEND->{'tglCetak'}
             ]; 
+            // return $this->Mfc->log($this->__DataSuratTugasPermohonan($param,$cek));
             return view('pdf.suratTugasx',$this->__DataSuratTugasPermohonan($param,$cek)); 
         }
         return response()->json([
@@ -669,17 +670,18 @@ class PdfGenerator extends Controller
         $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
         $asJabatan = $pimpinan->asJabatan;
 
-        $pimpinan =[];
+        
         if(!empty($_pim)){
-            $pimpinan = json_decode(base64_decode($_pim));    
+            // $pimpinan =[];  
+            $pimpinan = json_decode(base64_decode($_pim));  
+            
             // $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
             if($pimpinan->manual == "yes"){
                 $pimpinan->nmJabatan=$this->getNewLineInText($pimpinan->nmJabatan);
                 $pimpinan->jabatanx=$this->getNewLineInText($pimpinan->nmJabatan);  
             }else{
                 $pimpinan->jabatanx=$pimpinan->nmJabatan;  
-            }
-            
+            } 
         } 
         $pimpinan->asJabatan = $asJabatan;
         return $pimpinan;

@@ -144,7 +144,7 @@
                                 <td class="w40p">Pejabat yang Memberi Perintah</td>
                                 <td colspan="2">
                                     <b style="text-transform: uppercase;">
-                                        @php echo($pimpinan['nmJabatan']) @endphp
+                                        @php echo($pimpinan->nmJabatan) @endphp
                                         {{$kab}}
                                     </b>
                                 </td>
@@ -172,7 +172,7 @@
                                     <ul>
                                         <ol type="a">
                                             <li>{{(empty($dt->golongan)?'-':$dt->golongan)}}</li>
-                                            <li>{{(strlen($dt['nmJabatan'])>15 ? $dt->asJabatan:$dt['nmJabatan'])." ".$asdiskab}}</li>
+                                            <li>{{(strlen($dt->nmJabatan)>15 ? $dt->asJabatan:$dt->nmJabatan)." ".$asdiskab}}</li>
                                             <li>{{$dt->tingkat}}</li>
                                         </ol>
                                     </ul>
@@ -317,7 +317,7 @@
                     <td class="w50p"></td>
                     <td>
                         <span class="tupper">
-                            @php echo($pimpinan['nmJabatan']) @endphp
+                            @php echo($pimpinan->nmJabatan) @endphp
                             {{$kab}}
                         </span>
                     </td>
@@ -500,7 +500,7 @@
                                 </p>
                                 <p class="tcenter">
                                     <b>
-                                        <label class="tupper">@php echo($pimpinan['nmJabatan']) @endphp {{$kab}}</label>
+                                        <label class="tupper">@php echo($pimpinan->nmJabatan) @endphp {{$kab}}</label>
                                         @php echo($br); @endphp
                                         <br><br>
                                         @php echo($pimpinan->nmAnggota) @endphp
