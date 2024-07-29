@@ -159,8 +159,8 @@ class PdfGenerator extends Controller
             $param['kdDinas'],"pimpinan",$param['tahun'],
             $data->pimOpd,$dinas->nmDinas
         ); 
-        $pimpinan['nmDinas']= $dinas->nmDinas;
-        $pimpinan['alamat']= $dinas->alamat;
+        $pimpinan->nmDinas= $dinas->nmDinas;
+        $pimpinan->alamat= $dinas->alamat;
 
         //kepala SETDA / Asisten
         $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']); 
@@ -168,8 +168,8 @@ class PdfGenerator extends Controller
             $cek['setda'],"setda",$param['tahun'],
             $data->pimSetda,$setda->nmDinas
         ); 
-        $subPimpinan['nmDinas']= $setda->nmDinas;
-        $subPimpinan['alamat']= $setda->alamat; 
+        $subPimpinan->nmDinas= $setda->nmDinas;
+        $subPimpinan->alamat= $setda->alamat; 
 
         
 
@@ -681,7 +681,7 @@ class PdfGenerator extends Controller
             }
             
         } 
-        $pimpinan['asJabatan'] = $asJabatan;
+        $pimpinan->asJabatan = $asJabatan;
         return $pimpinan;
     }
 
