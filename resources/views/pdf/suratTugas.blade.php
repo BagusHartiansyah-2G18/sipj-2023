@@ -62,7 +62,7 @@
         ';
         $ttJabatanSetda = $subPimpinan->nmJabatan.'<br>'.$kab;
 
-        $penyesuaian = (strlen($ttJabatanSetda)>33 ? "ml30p":"ml50p");
+        $penyesuaian = (strlen($ttJabatanSetda)>33 ? "ml50p":"ml30p");
  
         $ttSetda='
             <tr>
@@ -91,7 +91,7 @@
         ';
 
         $ttJabatanSetdaStaf = $subPimpinan->nmJabatan.'<br>'.$kab;
-        $penyesuaian = (strlen($ttJabatanSetdaStaf)>33 ? "ml30p":"ml50p");
+        $penyesuaian = (strlen($ttJabatanSetdaStaf)>33 ? "ml50p":"ml30p");
          $ttSetdaStaf='
             <tr>
                 <td colspan="3" >
@@ -130,7 +130,7 @@
                         <tr><td style='min-width: 20px;'>".(count($data)>1 ? ($loop+1).'.':'')."</td><td class='verTop'>Nama</td><td>:</td><td>".$dt['nmAnggota']."</td></tr>
                         <tr><td></td><td class='verTop'>Pangkat/Gol</td><td class='verTop'>:</td><td >".$dt['golongan']."</td></tr>
                         <tr><td></td><td class='verTop'>NIP</td><td>:</td><td>".$dt['nip']."</td></tr>
-                        <tr><td></td><td class='verTop'>Jabatan</td><td>:</td><td>".$dt['nmJabatan']." "."</td></tr>
+                        <tr><td></td><td class='verTop'>Jabatan</td><td class='verTop'>:</td class='verTop'><td>".$dt['nmJabatan']." "."</td></tr>
                     </Table>
                 ";
                 if(count($data)>4){
