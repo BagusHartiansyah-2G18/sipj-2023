@@ -69,7 +69,7 @@
                     <br/>
                     <br/>
                     <div class="'.$penyesuaian.'">
-                        Taliwang, '.$tglCetak.'
+                        Taliwang, @php echo($spaci4); @endphp '.$tglCetak.'
                         <br>
                         <p class="w55p">
                             '.$ttJabatanSetda.',
