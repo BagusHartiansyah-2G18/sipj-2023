@@ -156,7 +156,7 @@ class PdfGenerator extends Controller
         $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']); 
         $pimpinan = $this->getTTPimpinan(
             $param['kdDinas'],"pimpinan",$param['tahun'],
-            $data->pimOpd,$dinas->nmDinas
+            $data->pimOpd,$dinas->nmDinas,$dinas->asDinas
         ); 
         $pimpinan->nmDinas= $dinas->nmDinas;
         $pimpinan->alamat= $dinas->alamat;
@@ -165,7 +165,7 @@ class PdfGenerator extends Controller
         $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']);  
         $subPimpinan = $this->getTTPimpinan(
             $cek['setda'],"setda",$param['tahun'],
-            $data->pimSetda,$setda->nmDinas
+            $data->pimSetda,$setda->nmDinas,$setda->asDinas
         );  
         $subPimpinan->nmDinas= $setda->nmDinas;
         $subPimpinan->alamat= $setda->alamat; 
@@ -230,7 +230,7 @@ class PdfGenerator extends Controller
             'kab' => 'Kabupaten Sumbawa Barat',
             'asdiskab' => $dinas->asDinas.' Kab. Sumbawa Barat',
             
-            'pimpinan'=> $pimpinan,  
+            'pimpinan'=> $pimpinan, 
             "setda"=> $setda, //bisa setda / asisten2
             "subPimpinan"=>$subPimpinan,  
 
@@ -335,76 +335,76 @@ class PdfGenerator extends Controller
 
             // return $this->Mfc->log($this->__DataSuratTugasPermohonan($param,$cek));
             return view('pdf.sppdSetda',$this->__DataSuratTugasPermohonan($param,$cek));  
-            $param["where"]= ' and a.kdBAnggota =""';
-            $data =$this->Hdb->dwork($param)[0];
+            // $param["where"]= ' and a.kdBAnggota =""';
+            // $data =$this->Hdb->dwork($param)[0];
 
-            $param["where"]= ' and a.kdBAnggota !=""';  // and b.tingkatan>3
-            $member = $this->Hdb->dworkAnggotaBidang($param);
+            // $param["where"]= ' and a.kdBAnggota !=""';  // and b.tingkatan>3
+            // $member = $this->Hdb->dworkAnggotaBidang($param);
 
 
-            $pimpinan = $this->getTTPimpinan(
-                $param['kdDinas'],"pimpinan",$param['tahun'],
-                $data->pimOpd,$data->tdOPD
-            );
+            // $pimpinan = $this->getTTPimpinan(
+            //     $param['kdDinas'],"pimpinan",$param['tahun'],
+            //     $data->pimOpd,$data->tdOPD,''
+            // );
 
-            $jabatanPim = "<span class='tlower'>ub.</span> ".$pimpinan->nmJabatan;
-            if(!$pimpinan->manual){
-                if($pimpinan->status !=='pimpinan'){
-                    $jabatanPim="<span class='tlower'>plh.</span> ".$pimpinan->nmJabatanR;
-                }
-            }
+            // $jabatanPim = "<span class='tlower'>ub.</span> ".$pimpinan->nmJabatan;
+            // if(!$pimpinan->manual){
+            //     if($pimpinan->status !=='pimpinan'){
+            //         $jabatanPim="<span class='tlower'>plh.</span> ".$pimpinan->nmJabatanR;
+            //     }
+            // }
 
-            $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
+            // $dinas = $this->Hdb->getDinasOne($param['kdDinas'],$param['tahun']);
 
-            if(count($member)>0){
-                foreach ($member as $key => $value) {
-                    $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
-                }
-            }
+            // if(count($member)>0){
+            //     foreach ($member as $key => $value) {
+            //         $member[$key]->tingkat=$this->getTingkat($value->tingkatan);
+            //     }
+            // }
 
-            $date =  explode("-",$param['tglCetak']);
-            // Array ( [0] => 2023 [1] => 08 [2] => 27 )
-            // $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-            $hari = 1;
-            if(strlen($data->dateE)>1){
-                $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
-                $hari++;
-            }
+            // $date =  explode("-",$param['tglCetak']);
+            // // Array ( [0] => 2023 [1] => 08 [2] => 27 )
+            // // $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+            // $hari = 1;
+            // if(strlen($data->dateE)>1){
+            //     $hari = (strtotime($data->dateE) - strtotime($data->date)) / 60 / 60 / 24;
+            //     $hari++;
+            // }
 
-            $dateS = explode("-",$data->date);
-            $dateE = ["","",""];
-            $textTanggal = $dateS[2];
-            if(!empty($data->dateE)){
-                $dateE = explode("-",$data->dateE);
-            }else{
-                $dateE = explode("-",$data->date);
-            }
+            // $dateS = explode("-",$data->date);
+            // $dateE = ["","",""];
+            // $textTanggal = $dateS[2];
+            // if(!empty($data->dateE)){
+            //     $dateE = explode("-",$data->dateE);
+            // }else{
+            //     $dateE = explode("-",$data->date);
+            // }
 
-            $asKab = 'Kab. Sumbawa Barat';
-            $kab = 'Kabupaten Sumbawa Barat';
-            $asdiskab= $dinas->asDinas.' '.$asKab;
-            $datax = [
-                'dinas' =>$dinas->nmDinas,
-                'asDinas' => $dinas->asDinas,
-                'asKab' => $asKab,
-                'kab' => $kab,
-                'asdiskab' => $asdiskab,
-                'alamat'    => $dinas->alamat,
-                "tahun"=> $cek['ta'],
-                'data' => $data,
+            // $asKab = 'Kab. Sumbawa Barat';
+            // $kab = 'Kabupaten Sumbawa Barat';
+            // $asdiskab= $dinas->asDinas.' '.$asKab;
+            // $datax = [
+            //     'dinas' =>$dinas->nmDinas,
+            //     'asDinas' => $dinas->asDinas,
+            //     'asKab' => $asKab,
+            //     'kab' => $kab,
+            //     'asdiskab' => $asdiskab,
+            //     'alamat'    => $dinas->alamat,
+            //     "tahun"=> $cek['ta'],
+            //     'data' => $data,
 
-                "dateS"=>((int)$dateS[2])." ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ,
-                "dateE"=>((int)$dateE[2])." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ,
-                "no" =>"000.1.2.3",
-                'member' => $member,
-                // 'jabatanPimReal'=>$jabatanPimReal,
-                'pimpinan'=> $pimpinan,
-                'jabatanPim' => $jabatanPim,
-                'jabatanPim1' => $pimpinan->nmJabatan,
-                'tglCetak'=> $this->Mfc->__bulan($date[1])." ".$date[0],
-                'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari"
-            ];
-            return view('pdf.sppdSetda', $datax);
+            //     "dateS"=>((int)$dateS[2])." ".$this->Mfc->__bulan($dateS[1])." ".$dateS[0] ,
+            //     "dateE"=>((int)$dateE[2])." ".$this->Mfc->__bulan($dateE[1])." ".$dateE[0] ,
+            //     "no" =>"000.1.2.3",
+            //     'member' => $member,
+            //     // 'jabatanPimReal'=>$jabatanPimReal,
+            //     'pimpinan'=> $pimpinan,
+            //     'jabatanPim' => $jabatanPim,
+            //     'jabatanPim1' => $pimpinan->nmJabatan,
+            //     'tglCetak'=> $this->Mfc->__bulan($date[1])." ".$date[0],
+            //     'hari'  => $hari." (".$this->Hsf->terbilang($hari).") "."hari"
+            // ];
+            // return view('pdf.sppdSetda', $datax);
             // $pdf = PDF::loadView('pdf.sppdSetda', $datax)
             //         ->setPaper('legal','portrait');
             // return $pdf->stream('sppd-Setda'.$data->no.'.pdf');
@@ -659,7 +659,7 @@ class PdfGenerator extends Controller
     }
 
 
-    function getTTPimpinan($kdDinas,$status,$tahun, $_pim,$nmDinas){ //_ artinya isi manual
+    function getTTPimpinan($kdDinas,$status,$tahun, $_pim,$nmDinas,$asDinas ){ //_ artinya isi manual
         // 1. data pimpinan asli
         $pimpinan = $this->Hdb->getAnggotaJabatan([
             "kdDinas"=>$kdDinas,
@@ -667,6 +667,7 @@ class PdfGenerator extends Controller
             "status"=>$status
         ])[0];   
         $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
+        $pimpinan->jabatanx1= $pimpinan->nmJabatan." ".$asDinas;
         $asJabatan = $pimpinan->asJabatan;
 
         
@@ -679,8 +680,10 @@ class PdfGenerator extends Controller
             if($pimpinan->manual == "yes"){
                 $pimpinan->nmJabatan=$this->getNewLineInText($pimpinan->nmJabatan);
                 $pimpinan->jabatanx=$this->getNewLineInText($pimpinan->nmJabatan);  
+                $pimpinan->jabatanx1=$this->getNewLineInText($pimpinan->nmJabatan);
             }else{
                 $pimpinan->jabatanx=$pimpinan->nmJabatan;  
+                $pimpinan->jabatanx1=$pimpinan->nmJabatan." ".$asDinas;
             }
             
         } 

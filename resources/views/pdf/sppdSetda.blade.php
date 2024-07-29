@@ -75,7 +75,7 @@
                                         <span id="titik2">:</span>
                                         <label>
                                             @php
-                                                echo $pimpinan->nmJabatan;
+                                                echo $pimpinan->jabatanx1;
                                             @endphp
                                         </label>
                                     </div> 
@@ -255,7 +255,7 @@
                     <td class="w50p"></td>
                     <td class="capitalize">
                         @php
-                            echo($pimpinan->nmJabatan.",");
+                            echo($pimpinan->jabatanx1.",");
                             echo($spaceTT);
                         @endphp
                         
@@ -445,7 +445,7 @@
                                     <p class="">
                                         <label class="capitalize" >
                                                 @php
-                                                    echo($pimpinan->nmJabatan.","); 
+                                                    echo($pimpinan->jabatanx1.","); 
                                                 @endphp
                                             </label>
                                             @php echo($br); @endphp
