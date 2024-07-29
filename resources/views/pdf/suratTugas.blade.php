@@ -62,7 +62,7 @@
         ';
         $ttJabatanSetda = $subPimpinan->nmJabatan.'<br>'.$kab;
 
-        $penyesuaian = (strlen($ttJabatanSetda)>25 ? "ml45p":"ml50p");
+        $penyesuaian = (strlen($ttJabatanSetda)>35 ? "ml45p":"ml50p");
  
         $ttSetda='
             <tr>
@@ -91,7 +91,7 @@
         ';
 
         $ttJabatanSetdaStaf = $subPimpinan->nmJabatan.'<br>'.$kab;
-        $penyesuaian = (strlen($ttJabatanSetdaStaf)>25 ? "ml45p":"ml50p");
+        $penyesuaian = (strlen($ttJabatanSetdaStaf)>35 ? "ml45p":"ml50p");
          $ttSetdaStaf='
             <tr>
                 <td colspan="3" >

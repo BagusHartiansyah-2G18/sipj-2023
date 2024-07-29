@@ -175,13 +175,13 @@ class PdfGenerator extends Controller
         $asKab = 'Kab. Sumbawa Barat';
         
 
-        // seleksi data member 
+        // seleksi data member  " ".$dinas->asDinas.
         $newMember = [];
         if(count($member)>0){
             foreach ($member as $key => $value) {
                 if(empty($value->fileD)){ 
                     $newMember[$key]['nmAnggota']=$value->nmAnggota;
-                    $newMember[$key]['nmJabatan']=$value->nmJabatan." ".$dinas->asDinas." ".$asKab;
+                    $newMember[$key]['nmJabatan']=$value->nmJabatan." ".$asKab;
                     $newMember[$key]['golongan']=$value->golongan;
                     $newMember[$key]['nip']=$value->nip;
                     $newMember[$key]['tingkatan']=$value->tingkatan;
@@ -190,7 +190,7 @@ class PdfGenerator extends Controller
                 }else{
                     $fileD = json_decode(base64_decode($value->fileD)); 
                     $newMember[$key]['nmAnggota']=$fileD->nmAnggota;
-                    $newMember[$key]['nmJabatan']=$fileD->nmJabatan." ".$dinas->asDinas." ".$asKab;
+                    $newMember[$key]['nmJabatan']=$fileD->nmJabatan." ".$asKab;
                     $newMember[$key]['golongan']=$fileD->golongan;
                     $newMember[$key]['nip']=$fileD->nip;
                     $newMember[$key]['tingkatan']=$fileD->tingkatan;
