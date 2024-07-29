@@ -673,6 +673,8 @@ class PdfGenerator extends Controller
         if(!empty($_pim)){
             // $pimpinan =[];
             $pimpinan = json_decode(base64_decode($_pim));    
+            return $this->Mfc->log($pimpinan);
+            
             // $pimpinan->jabatanx= $pimpinan->nmJabatan." ".strtolower(explode(" ",$nmDinas)[0]);
             if($pimpinan->manual == "yes"){
                 $pimpinan->nmJabatan=$this->getNewLineInText($pimpinan->nmJabatan);
