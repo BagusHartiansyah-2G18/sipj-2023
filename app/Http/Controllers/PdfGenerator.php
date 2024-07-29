@@ -163,11 +163,7 @@ class PdfGenerator extends Controller
         $pimpinan->alamat= $dinas->alamat;
 
         //kepala SETDA / Asisten
-        $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']); 
-        return $this->getTTPimpinan(
-            $cek['setda'],"setda",$param['tahun'],
-            $data->pimSetda,$setda->nmDinas
-        );
+        $setda = $this->Hdb->getDinasOne( $cek['setda'],$param['tahun']);  
         $subPimpinan = $this->getTTPimpinan(
             $cek['setda'],"setda",$param['tahun'],
             $data->pimSetda,$setda->nmDinas
