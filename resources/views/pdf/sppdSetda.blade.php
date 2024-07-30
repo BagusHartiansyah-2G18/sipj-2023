@@ -4,7 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Resume</title>
     <style>
-        td{ line-height: 25px; }
+        #lh30 td{ 
+            line-height: 25px; 
+        }
     </style>
     <link rel="stylesheet" href="{{url('css/sf.css')}}" >
 
@@ -36,7 +38,7 @@
         <div class=" container">
             @php echo($kop); @endphp
             <hr> 
-            <table class=" w100p">
+            <table class=" w100p" id="lh30">
                 <tr>
                     <td></td>
                     <td></td>

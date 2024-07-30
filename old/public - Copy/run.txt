@@ -1,5 +1,0 @@
-npm install -g sass
-
-
-sass --watch ./main.scss ../css/output.css
-
