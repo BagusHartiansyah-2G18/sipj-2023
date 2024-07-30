@@ -40,8 +40,8 @@ table{
     margin: 0;
 }
 td{
-    padding: 5px;
-}
+    padding: 5px; 
+} 
 .pm0{padding: 0px; margin: 0px;}
 .p0{padding: 0px;}
 .ml60p{ margin-left: 60%;} 

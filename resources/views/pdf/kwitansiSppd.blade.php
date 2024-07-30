@@ -2,48 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Resume</title>
-    <!-- <style>
-        .page-break {
-            page-break-after: always;
-        }
-        .fz12{font-size: 12px;}
-        .fz14{ font-size: 14px;}
-
-        .w100p{width: 100%;}
-        .w70p{width: 70%;}
-        .w60p{width: 60%;}
-        .w50p{width: 50%;}
-        .w40p{width: 40%;}
-        .w30p{width: 30%;}
-        .w20p{width: 20%;}
-        .w10p{width: 10%;}
-        .w5p{width: 5%;}
-        .w2p{width: 2%;}
-        .pm0{padding: 0px; margin: 0px;}
-        .container{
-            margin: 0 auto;
-            display: block;
-            /* display: flex;
-            flex-direction: column; */
-        }
-        table{
-            box-sizing: 1.5px;
-        }
-        .tdB{
-            border: 1px solid black; padding-left: 10px;
-        }
-        .right{
-            width: 100%;
-            margin-left: 60%;
-        }
-        .tcenter{text-align: center;}
-        .fz40{font-size: 40px;}
-        .fz20{font-size: 20px;}
-        .bbottom{border-bottom: 1px solid;}
-
-        .capitalize{text-transform: capitalize;}
-    </style> -->
+    <title>Resume</title> 
     <link rel="stylesheet" href="{{url('css/sf.css')}}" >
 
 </head>
@@ -63,8 +22,7 @@
 
                     <tr>
                         <td class="">Nomor Rekening</td>
-                        <td>{{$noRek}}</td>
-<!--                         <td></td> -->
+                        <td>{{$noRek}}</td> 
                     </tr>
                     <tr>
                         <td>Dibukukan Tanggal</td>
@@ -172,8 +130,7 @@
                 </tr>
                 <tr>
                     <td colspan="3"><br></td>
-                </tr>
-                <!--  -->
+                </tr> 
                 <tr>
                     <td colspan="3">
                         <table class="w100p" >
@@ -250,11 +207,11 @@
                     </td>
                 </tr>
                 <br>
-                <tr>
+                <tr> 
                     <td colspan="3">
                         <table class="w100p">
                             <tr>
-                                <td class="w50p ">
+                                <td class="w30p ">
                                     <br>
                                     Telah dibayarkan uang sebesar <br>
                                     Rp. {{number_format($totalJenis,0,',','.')}}<br><br>
@@ -264,7 +221,8 @@
                                         NIP. {{$nipBendahara}}
                                     </div>
                                 </td>
-                                <td class="w50p tcenter">
+                                <td class="w30p"></td>
+                                <td class="w30p tcenter">
                                     Taliwang, @php echo($space); @endphp {{$tahun}}<br>
                                     Telah Menerima Uang Sebesar, <br>
                                     Rp. {{number_format($totalJenis,0,',','.')}}<br><br>
@@ -302,17 +260,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="w100p">
-                        <div class="right">
-                            <div class="w30p tcenter">
-                                Mengetahui <br>
-                                Kepala {{$asDinas}} <br>
-                                {{$asKab}} @php echo($spaceTT); @endphp
+                    <td colspan="3" >
+                        <table class="w100p">
+                            <tr>
+                                <td class="w30p "> 
+                                </td>
+                                <td class="w30p"></td>
+                                <td class="w30p tcenter">
+                                    Mengetahui <br>
+                                    Kepala {{$asDinas}} <br>
+                                    {{$asKab}} @php echo($spaceTT); @endphp
 
-                                <b><u>{{$kaban}}</u></b> <br>
-                                NIP. {{$nipKaban}}
-                            </div>
-                        </div>
+                                    <b><u>{{$kaban}}</u></b> <br>
+                                    NIP. {{$nipKaban}}
+                                </td>
+                            </tr>
+                        </table> 
                     </td>
                 </tr>
             </table>

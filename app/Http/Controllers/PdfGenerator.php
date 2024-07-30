@@ -179,7 +179,7 @@ class PdfGenerator extends Controller
         $newMember = [];
         if(count($member)>0){
             foreach ($member as $key => $value) {
-                if(empty($value->fileD)){ 
+                if(empty($value->fileD)){  
                     $newMember[$key]['nmAnggota']=$value->nmAnggota;
                     $newMember[$key]['nmJabatan']=$value->nmJabatan." ".$asKab;
                     $newMember[$key]['golongan']=$value->golongan;
@@ -187,6 +187,9 @@ class PdfGenerator extends Controller
                     $newMember[$key]['tingkatan']=$value->tingkatan;
                     $newMember[$key]['snip']=$value->snip;    
                     $newMember[$key]['tingkat']=$this->getTingkat($value->tingkatan);
+                    if(strtolower($value->nmJabatan)=="kepala"){ // jika kasus ini maka hapus spaxi di text kepala ya
+                        $newMember[$key]['nmJabatan']=$value->nmJabatan." ".$dinas->asDinas." ".$asKab;
+                    }
                 }else{
                     $fileD = json_decode(base64_decode($value->fileD)); 
                     $newMember[$key]['nmAnggota']=$fileD->nmAnggota;
@@ -195,7 +198,10 @@ class PdfGenerator extends Controller
                     $newMember[$key]['nip']=$fileD->nip;
                     $newMember[$key]['tingkatan']=$fileD->tingkatan;
                     $newMember[$key]['tingkat']=$this->getTingkat($fileD->tingkatan);
-                    $newMember[$key]['snip']=$value->snip;    
+                    $newMember[$key]['snip']=$value->snip;   
+                    if(strtolower($fileD->nmJabatan)=="kepala"){ // jika kasus ini maka hapus spaxi di text kepala ya
+                        $newMember[$key]['nmJabatan']=$fileD->nmJabatan." ".$dinas->asDinas." ".$asKab;
+                    } 
                 }  
                 
             }

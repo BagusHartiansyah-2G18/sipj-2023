@@ -1237,6 +1237,9 @@ body {
   }
 }
 
+.MDcontainer {
+  position: relative;
+}
 .MDcontainer .OnBtn {
   left: 250px !important;
   z-index: 4;
@@ -1249,6 +1252,9 @@ body {
   width: 250px;
   height: 100%;
   display: none;
+  top: 99px;
+  position: fixed;
+  z-index: 3;
 }
 .MDcontainer #MDCnav .user {
   margin-bottom: 20px;
@@ -1267,7 +1273,7 @@ body {
   transform: rotate(90deg);
 }
 .MDcontainer #keyOnOffed {
-  position: absolute;
+  position: fixed;
   border-radius: 10%;
   border: none;
   padding: 10px;
