@@ -94,7 +94,7 @@
         $hurup="abcdefghijklmnopqrstupwxyz";
     @endphp
     <div >
-        <table style="">
+        <table style="border-collapse: collapse;">
             <tr>
                 <td class="w5p">
                     <img src="{{url('logo/ksb.png')}}" width="60px">
@@ -133,7 +133,7 @@
             </tr> 
             <tr class="h30">
                 <td colspan="2">
-                    <table class="border w100p fz12">
+                    <table class="border w100p fz12" style="border-collapse: collapse;">
                         <tr class="tcenter">
                             <td class="w3p">No</td>
                             <td class="w17p">Nama</td>

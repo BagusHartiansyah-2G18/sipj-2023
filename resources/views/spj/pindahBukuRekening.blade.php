@@ -155,7 +155,7 @@
                     <label>:</label>
                 </td> 
                 <td class="capitalize">Permohonan Pemindahbukuan {{$spj->nmApbd6.' '}} 
-                    @php echo(strtolower($nmDinas1)); @endphp {{' '.$kab[0]}},  {{$staf[0][8]->label." ".$bulan." Tahun ".$ta}}
+                    @php echo(strtolower($kadis['asDinas'])); @endphp {{' '.$kab[0]}},  {{$staf[0][8]->label." ".$bulan." Tahun ".$ta}}
                     <br/><br/>
                 </td>
             </tr> 

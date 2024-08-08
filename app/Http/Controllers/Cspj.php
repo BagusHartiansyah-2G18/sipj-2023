@@ -14,7 +14,7 @@ class Cspj extends Controller
         $this->middleware('auth');
     }
     function getSpj($param) {
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($param)));
             $param = [
@@ -27,15 +27,15 @@ class Cspj extends Controller
             $data =$this->Hdb->getDataJudulSub($param);
             unset($param['tahun']);
             $param['taSPJ']=$cek['ta'];
-            return Mfc::resp([
+            return $this->Mfc->resp([
                 "basic" => $data[0],
                 "data" => spj::where($param)->get()
             ]);
         }
-        return Mfc::respError($cek['msg']);  
+        return $this->Mfc->respError($cek['msg']);  
     }
     function setSpj(Request $request) {
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $vld = $request;
             try {
@@ -55,7 +55,7 @@ class Cspj extends Controller
                     'an'=> 'required',
                 ]);
             } catch (\Throwable $th) {
-                return Mfc::respError('body not valid');
+                return $this->Mfc->respError('body not valid');
             }
             $vld['idMember']=$cek['kdMember'];
             $vld['taSPJ']=$cek['ta'];
@@ -74,14 +74,14 @@ class Cspj extends Controller
                 $vld['no']=$fdt[0]->no+1;
             }   
             if(spj::create($vld)){
-                return Mfc::resp(spj::where($where)->get());
+                return $this->Mfc->resp(spj::where($where)->get());
             }
-            return Mfc::respError('error, bagian setSpj');  
+            return $this->Mfc->respError('error, bagian setSpj');  
         }
-        return Mfc::respError($cek['msg']);  
+        return $this->Mfc->respError($cek['msg']);  
     }
     function updSpj(Request $request) {
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $vld = $request;
             try {
@@ -102,7 +102,7 @@ class Cspj extends Controller
                     'no'=> 'required',
                 ]);
             } catch (\Throwable $th) {
-                return Mfc::respError('body not valid');
+                return $this->Mfc->respError('body not valid');
             }
             $vld['idMember']=$cek['kdMember']; 
             
@@ -125,10 +125,10 @@ class Cspj extends Controller
             ];
             $fdt = spj::where($where);
             if($fdt->update($upd)){ 
-                return Mfc::resp([]);
+                return $this->Mfc->resp([]);
             }   
-            return Mfc::respError('error, bagian updSpj');  
+            return $this->Mfc->respError('error, bagian updSpj');  
         }
-        return Mfc::respError($cek['msg']);  
+        return $this->Mfc->respError($cek['msg']);  
     }
 }

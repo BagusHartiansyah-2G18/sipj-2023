@@ -20,8 +20,7 @@ class Cdinas extends Controller
         $this->Hdb = new Hdb(); 
         $this->middleware('auth'); 
     }
-    public function sess(){
-        
+    public function sess(){ 
         $cek = $this->Mfc->portal();
         if($cek['exc']){
             return response()->json([

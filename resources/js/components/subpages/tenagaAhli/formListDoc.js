@@ -73,16 +73,25 @@ function TAformListDoc({ ddoc,dselect, checkListForm }){
      
     if(Object.keys(form).length==0){
         return <></>;
-    }  
+    }   
+    const { an,keterangan,taSPJ } = dselect.row;
     return(
-        <div className="form1 bwhite boxShadow1px ">
-            <div className="header bprimary clight">
-                <div className="icon">
-                    <span className="mdi mdi-office-building-marker fz25 "></span>
-                    <h3>Dokumen Keperluan SPJ</h3>
+        <div class="FM1 ">
+            <div class="header bdark">
+                <div class=" flexR">
+                    <button className="btn bnone">
+                        <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                    </button>
+                    <h2 className="  pl0 aiE fBebasNeue">
+                        <b>Dokumen Keperluan SPJ <rb/>{an+" / "+keterangan+" "+taSPJ}</b> 
+                    </h2>
+                </div> 
+                <div class="btnGroup">
+                    <button class="btn2  bsuccess3" ><b>Dokumen</b></button>
+                    
                 </div> 
             </div>
-            <div className="body">
+            <div class="body blight pm0 bsolid1" style={{width:"unset",borderRadius:"0px"}}><br/>
                 <Tabel1
                     search={search}
                     oncSearch={_search}
@@ -99,7 +108,6 @@ function TAformListDoc({ ddoc,dselect, checkListForm }){
                         )}
                 ></Tabel1>
             </div>
-            {/* <div className="footer"></div> */}
         </div> 
     )
 }

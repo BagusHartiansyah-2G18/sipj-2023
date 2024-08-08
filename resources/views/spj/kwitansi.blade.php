@@ -82,7 +82,7 @@
         $hurup="abcdefghijklmnopqrstupwxyz";
     @endphp
     <div style="border:1px solid black; padding:5px;">
-        <table class="fz12">
+        <table class="fz12" style="border-collapse: collapse;">
             <tr>
                 <td class="vaTop" style="width: 2%;">
                     <img src="{{url('logo/ksb.png')}}" width="35px">

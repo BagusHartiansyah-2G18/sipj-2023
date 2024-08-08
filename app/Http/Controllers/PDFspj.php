@@ -14,14 +14,15 @@ use PDF;
 
 
 class PDFspj extends Controller {
-    private $Mfc, $Hdb;
+    private $Mfc, $Hdb, $Hsf;
     public function __construct(){
         $this->Mfc = new Mfc();
         $this->Hdb = new Hdb();
+        $this->Hsf = new Hsf();
         $this->middleware('auth');
     }
     function kwitansi($val){ 
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val))); 
             $param = [
@@ -38,12 +39,12 @@ class PDFspj extends Controller {
                 "taDinas"=>$param['tahun'],
             ])->get();
             
-            $dkadis = Mfc::__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
+            $dkadis = $this->Mfc->__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
             $dbendahara =Banggota::where([
                 "kdDinas"=>$param['kdDinas'],
                 "status"=>"bendahara",
             ])->get();
-            $dbendahara = Mfc::__valByKey($dbendahara[0],['nmAnggota', 'nip']);
+            $dbendahara = $this->Mfc->__valByKey($dbendahara[0],['nmAnggota', 'nip']);
             
             $param["where"]= '';
             $dspj = $this->Hdb->getDataSPJKegiatan($param)[0];
@@ -81,16 +82,16 @@ class PDFspj extends Controller {
 
             // $totalUang = $staf[0][4]->label * $dspj->totVol;
             $tambahan=[
-                "terbilang"=>Hsf::terbilang($totalUang)." Rupiah",
+                "terbilang"=>$this->Hsf->terbilang($totalUang)." Rupiah",
                 "uang"=>number_format($totalUang,0,',','.'),
                 "nipStaf"=>"-",
                 "an"=>$an
             ];
 
-            // $staf[7]=Hsf::terbilang($staf[0][4]->label)." Rupiah";
+            // $staf[7]=$this->Hsf->terbilang($staf[0][4]->label)." Rupiah";
             // $staf[8]=$staf[4]->label * $dspj->totVol;
             // $staf[9]="-";
-            // return Mfc::log([
+            // return $this->Mfc->log([
             //     "kadis"=>$dkadis,
             //     "bend"=>$dbendahara,
             //     "kab"=>["Kabupaten Sumbawa Barat",'Kab. Sumbawa Barat'],
@@ -121,10 +122,10 @@ class PDFspj extends Controller {
             ])->setPaper('legal','portrait');
             return $pdf->stream('kwitansi-'.$staf[0]->label."-".$dspj->keterangan.'.pdf');
         }
-        return Mfc::respError($cek['msg']);
+        return $this->Mfc->respError($cek['msg']);
     }
     function tandaTerima($val){ 
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val))); 
             $param = [
@@ -141,12 +142,12 @@ class PDFspj extends Controller {
                 "taDinas"=>$param['tahun'],
             ])->get();
             
-            $dkadis = Mfc::__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
+            $dkadis = $this->Mfc->__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
             $dbendahara =Banggota::where([
                 "kdDinas"=>$param['kdDinas'],
                 "status"=>"bendahara",
             ])->get();
-            $dbendahara = Mfc::__valByKey($dbendahara[0],['nmAnggota', 'nip']);
+            $dbendahara = $this->Mfc->__valByKey($dbendahara[0],['nmAnggota', 'nip']);
             
             $param["where"]= '';
             $dspj = $this->Hdb->getDataSPJKegiatan($param)[0];
@@ -164,7 +165,7 @@ class PDFspj extends Controller {
             $zakat =((($totalUang-$ppn)/100)*$staf[0][6]->label); 
             $terima = $totalUang - ($ppn+$zakat);
             $tambahan=[
-                "terbilang"=>Hsf::terbilang($staf[0][4]->label)." Rupiah",
+                "terbilang"=>$this->Hsf->terbilang($staf[0][4]->label)." Rupiah",
                 "uang"=>number_format($totalUang,0,',','.'),
                 "nipStaf"=>"-", 
                 "pph"=>number_format($ppn,0,',','.'),
@@ -206,7 +207,7 @@ class PDFspj extends Controller {
             $tambahan['allzakat']= number_format($allzakat,0,',','.');
             $tambahan['allTerima']= number_format($allTerima,0,',','.');
             
-            // return Mfc::log([
+            // return $this->Mfc->log([
             //     "kadis"=>$dkadis,
             //     "bend"=>$dbendahara,
             //     "kab"=>["Kabupaten Sumbawa Barat",'Kab. Sumbawa Barat'],
@@ -237,10 +238,10 @@ class PDFspj extends Controller {
             ])->setPaper('legal','portrait');
             return $pdf->stream('kwitansi-'.$staf[0]->label."-".$dspj->keterangan.'.pdf');
         }
-        return Mfc::respError($cek['msg']);
+        return $this->Mfc->respError($cek['msg']);
     }
     function daftarNominatif($val){ 
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val))); 
             $param = [
@@ -257,12 +258,12 @@ class PDFspj extends Controller {
                 "taDinas"=>$param['tahun'],
             ])->get();
             
-            $dkadis = Mfc::__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
+            $dkadis = $this->Mfc->__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
             $dbendahara =Banggota::where([
                 "kdDinas"=>$param['kdDinas'],
                 "status"=>"bendahara",
             ])->get();
-            $dbendahara = Mfc::__valByKey($dbendahara[0],['nmAnggota', 'nip']);
+            $dbendahara = $this->Mfc->__valByKey($dbendahara[0],['nmAnggota', 'nip']);
             
             $param["where"]= '';
             $dspj = $this->Hdb->getDataSPJKegiatan($param)[0];
@@ -280,7 +281,7 @@ class PDFspj extends Controller {
             $zakat =((($totalUang-$ppn)/100)*$staf[0][6]->label);
             $terima = $totalUang - ($ppn+$zakat);
             $tambahan=[
-                "terbilang"=>Hsf::terbilang($staf[0][4]->label)." Rupiah",
+                "terbilang"=>$this->Hsf->terbilang($staf[0][4]->label)." Rupiah",
                 "uang"=>number_format($totalUang,0,',','.'),
                 "nipStaf"=>"-", 
                 "pph"=>number_format($ppn,0,',','.'),
@@ -323,7 +324,7 @@ class PDFspj extends Controller {
             $tambahan['allzakat']= number_format($allzakat,0,',','.');
             $tambahan['allTerima']= number_format($allTerima,0,',','.');
             
-            // return Mfc::log([
+            // return $this->Mfc->log([
             //     "kadis"=>$dkadis,
             //     "bend"=>$dbendahara,
             //     "kab"=>["Kabupaten Sumbawa Barat",'Kab. Sumbawa Barat'],
@@ -354,11 +355,11 @@ class PDFspj extends Controller {
             ])->setPaper('legal','portrait');
             return $pdf->stream('kwitansi-'.$staf[0]->label."-".$dspj->keterangan.'.pdf');
         }
-        return Mfc::respError($cek['msg']);
+        return $this->Mfc->respError($cek['msg']);
     } 
 
     function pindahBukuanPajak($val){ 
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val))); 
             $param = [
@@ -375,12 +376,12 @@ class PDFspj extends Controller {
                 "taDinas"=>$param['tahun'],
             ])->get();
             
-            $dkadis = Mfc::__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
+            $dkadis = $this->Mfc->__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
             $dbendahara =Banggota::where([
                 "kdDinas"=>$param['kdDinas'],
                 "status"=>"bendahara",
             ])->get();
-            $dbendahara = Mfc::__valByKey($dbendahara[0],['nmAnggota', 'nip']);
+            $dbendahara = $this->Mfc->__valByKey($dbendahara[0],['nmAnggota', 'nip']);
             
             $param["where"]= '';
             $dspj = $this->Hdb->getDataSPJKegiatan($param)[0];
@@ -398,7 +399,7 @@ class PDFspj extends Controller {
             $zakat =((($totalUang-$ppn)/100)*$staf[0][6]->label);
             $terima = $totalUang - ($ppn+$zakat);
             $tambahan=[
-                "terbilang"=>Hsf::terbilang($staf[0][4]->label)." Rupiah",
+                "terbilang"=>$this->Hsf->terbilang($staf[0][4]->label)." Rupiah",
                 "uang"=>number_format($totalUang,0,',','.'),
                 "nipStaf"=>"-", 
                 "pph"=>number_format($ppn,0,',','.'),
@@ -443,9 +444,9 @@ class PDFspj extends Controller {
             $tambahan['allzakat']= number_format($allzakat,0,',','.');
             $tambahan['allTerima']= number_format($allTerima,0,',','.');
             
-            $tambahan['terbilang']=Hsf::terbilang($allpph+$allzakat)." Rupiah"; 
+            $tambahan['terbilang']=$this->Hsf->terbilang($allpph+$allzakat)." Rupiah"; 
             $date = explode("/",date("Y/m/d")); 
-            $tambahan['bulan']=Mfc::__romawi($date[1]);
+            $tambahan['bulan']=$this->Mfc->__romawi($date[1]);
             
             return view('spj.pindahBukuPajak',[
                 "kadis"=>$dkadis,
@@ -456,7 +457,7 @@ class PDFspj extends Controller {
                 "ta"=>$param['tahun'],
                 "nmDinas1"=>$NmDinas1,
                 "tambahan"=>$tambahan,
-                "tglC"=>$date[2]." ".Mfc::__bulan($date[1])." ".$date[0],
+                "tglC"=>$date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0],
                 "bulan"=>strtolower(explode(")",explode("(",$dspj->keterangan)[1])[0]),
                 "zakat"=>[
                     [
@@ -478,10 +479,10 @@ class PDFspj extends Controller {
             ])->setPaper('legal','portrait');
             return $pdf->stream('kwitansi-'.$staf[0]->label."-".$dspj->keterangan.'.pdf');
         }
-        return Mfc::respError($cek['msg']);
+        return $this->Mfc->respError($cek['msg']);
     } 
     function pindahBukuanRekening($val){ 
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val))); 
             $param = [
@@ -498,12 +499,12 @@ class PDFspj extends Controller {
                 "taDinas"=>$param['tahun'],
             ])->get();
             
-            $dkadis = Mfc::__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
+            $dkadis = $this->Mfc->__valByKey($dinas[0],['kadis', 'nip','nmDinas','alamat','asDinas']);
             $dbendahara =Banggota::where([
                 "kdDinas"=>$param['kdDinas'],
                 "status"=>"bendahara",
             ])->get();
-            $dbendahara = Mfc::__valByKey($dbendahara[0],['nmAnggota', 'nip']);
+            $dbendahara = $this->Mfc->__valByKey($dbendahara[0],['nmAnggota', 'nip']);
             
             $param["where"]= '';
             $dspj = $this->Hdb->getDataSPJKegiatan($param)[0];
@@ -528,7 +529,7 @@ class PDFspj extends Controller {
             $staf[$key][count($staf[$key])]= number_format($terima,0,',','.');
             
             $tambahan=[
-                "terbilang"=>Hsf::terbilang($staf[0][4]->label)." Rupiah",
+                "terbilang"=>$this->Hsf->terbilang($staf[0][4]->label)." Rupiah",
                 "uang"=>number_format($totalUang,0,',','.'),
                 "nipStaf"=>"-", 
                 "pph"=>number_format($ppn,0,',','.'),
@@ -585,9 +586,9 @@ class PDFspj extends Controller {
             $tambahan['allzakat']= number_format($allzakat,0,',','.');
             $tambahan['allTerima']= number_format($allTerima,0,',','.');
             
-            $tambahan['terbilang']=Hsf::terbilang($allTerima)." Rupiah"; 
+            $tambahan['terbilang']=$this->Hsf->terbilang($allTerima)." Rupiah"; 
             $date = explode("/",date("Y/m/d")); 
-            $tambahan['bulan']=Mfc::__romawi($date[1]);
+            $tambahan['bulan']=$this->Mfc->__romawi($date[1]);
 
 
             return view('spj.pindahBukuRekening',[
@@ -599,7 +600,7 @@ class PDFspj extends Controller {
                 "ta"=>$param['tahun'],
                 "nmDinas1"=>$NmDinas1,
                 "tambahan"=>$tambahan,
-                "tglC"=>$date[2]." ".Mfc::__bulan($date[1])." ".$date[0],
+                "tglC"=>$date[2]." ".$this->Mfc->__bulan($date[1])." ".$date[0],
                 "bulan"=>strtolower(explode(")",explode("(",$dspj->keterangan)[1])[0]), 
                     
             ]);
@@ -614,11 +615,11 @@ class PDFspj extends Controller {
             ])->setPaper('legal','portrait');
             return $pdf->stream('kwitansi-'.$staf[0]->label."-".$dspj->keterangan.'.pdf');
         }
-        return Mfc::respError($cek['msg']);
+        return $this->Mfc->respError($cek['msg']);
     } 
 
     function checkListSPM($val){
-        $cek = Mfc::portal();
+        $cek = $this->Mfc->portal();
         if($cek['exc']){
             $baseEND=json_decode((base64_decode($val)));
             $dt = [];
@@ -635,7 +636,7 @@ class PDFspj extends Controller {
             $ppk = Banggota::where("nmJabatan","like","%Bagian Keuangan%")
                 ->where("kdDinas",$param->kdDinas)
                 ->get()[0]; 
-            // return Mfc::log([
+            // return $this->Mfc->log([
             //     "noSPM"=>$baseEND->noSPM,
             //     "nilai"=>$baseEND->nilai,
             //     "list"=>$dt,
@@ -653,6 +654,6 @@ class PDFspj extends Controller {
                     
             ]);
         }
-        return Mfc::respError($cek['msg']); 
+        return $this->Mfc->respError($cek['msg']); 
     }
 }

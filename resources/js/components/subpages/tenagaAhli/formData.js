@@ -9,8 +9,9 @@ import Tabel1 from "../../tabel/tabel1";
 import TAFEdata from "./feData";
 import sfLib from "../../mfc/sfLib";
 import { openFormEntri } from '../../../states/sfHtml/action';
+import FormInformasi from "../sppd/formInformasi";
 
-function TAformData({ data, duser, param, formProses}){
+function TAformData({ data, duser, param, formProses, basic}){
     const dispatch = useDispatch();
     const [search, _search] = useInput('');
     const [form, _form] = useState({
@@ -99,55 +100,74 @@ function TAformData({ data, duser, param, formProses}){
     }
     if(Object.keys(form).length==0){
         return <></>;
-    }  
-     
+    }   
+    
     return(
-        <div className={(form.onOff?'formActionLeft':'formActionLeftAct')} id="formActionLeft">
-            <div className="form1 bwhite boxShadow1px ">
-                <div className="header bprimary clight">
-                    <div className="icon">
-                        <span className="mdi mdi-office-building-marker fz25 "></span>
-                        <h3>FR Tenaga Ahli</h3>
+        <div className="Mcontainer2Form">
+            <div className="right-1" >
+                <div class="FM1 ">
+                    <div class="header ">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>{(form.ins?'Entri':'Perbarui')} Data</b> 
+                            </h2>
+                        </div> 
+                        <button className="btn2 blight cmuted" onClick={add}>Entri</button>
                     </div>
-                    <div className="btnGroup">
-                        <button className="btn2 blight bsuccess" onClick={()=>openFormEntri('eyJrZE1lbWJlciI6Ik13PT0iLCJrZE5vdGUiOiIxNk1GQzEjMSIsInRpbmdrYXQiOiIyIiwia2RGb3JtIjoiMSJ9')}>Form Entri Staf</button>
-                        <button className="btn2 blight blight cprimary" onClick={add}>Entri</button>
+                    <div class="body pwrap_5 bdark flexC  " style={{width:"unset"}}><br/>
+                        <TAFEdata 
+                            form={form}
+                            close={formClose}
+                            xadded={xadded}
+                            xupded={xupded}
+                            duser={duser}
+                            userOps={sfLib.coptionSelect({
+                                dt:duser ,
+                                xind:true,
+                                row:{label:0},
+                            }).map(v=>{ return {...v, label:v.label.label}})}
+                        ></TAFEdata> 
                     </div>
-                </div>
-                <div className="body">
-                    <Tabel1
-                        search={search}
-                        oncSearch={_search}
-                        columns={coll}
-                        data={data.filter((item) => {
-                                    if (search === "") {
-                                        return item;
-                                    } else if (
-                                        item.no.toLowerCase().includes(search.toLowerCase())
-                                    ) {
-                                        return item;
+                </div> 
+            </div>
+            <div className="left ">
+                <FormInformasi
+                    dt={basic}
+                ></FormInformasi>
+                <div class="FM1 ">
+                    <div class="header">
+                        <div class="cdark flexR">
+                            <button className="btn bnone">
+                                <span className="mdi mdi-star-crescent cwarning fzXl"></span>
+                            </button>
+                            <h2 className="  pl0 aiE fBebasNeue">
+                                <b>List Perjalanan Dinas </b> 
+                            </h2>
+                        </div> 
+                    </div>
+                    <div class="body bdark pm0 bsolid1 " style={{width:"unset", borderRadius:"0px" }}><br/>
+                        <Tabel1
+                            search={search}
+                            oncSearch={_search}
+                            columns={coll}
+                            data={data.filter((item) => {
+                                        if (search === "") {
+                                            return item;
+                                        } else if (
+                                            item.no.toLowerCase().includes(search.toLowerCase())
+                                        ) {
+                                            return item;
+                                        }
                                     }
-                                }
-                            )}
-                    ></Tabel1>
-                </div>
-                {/* <div className="footer"></div> */}
+                                )}
+                        ></Tabel1>
+                    </div>
+                </div> 
             </div>
-            <div className={`form2 hmax bwhite updGrid2to1 ${(form.onOff && 'dnone')}`} id="itemFormLeft">
-                <TAFEdata 
-                    form={form}
-                    close={formClose}
-                    xadded={xadded}
-                    xupded={xupded}
-                    duser={duser}
-                    userOps={sfLib.coptionSelect({
-                        dt:duser ,
-                        xind:true,
-                        row:{label:0},
-                    }).map(v=>{ return {...v, label:v.label.label}})}
-                ></TAFEdata> 
-            </div>
-        </div>
+        </div> 
     )
 }
 export default TAformData;

@@ -134,7 +134,7 @@
             </tr> 
             <tr class="h30">
                 <td colspan="2">
-                    <table class="border w100p fz12">
+                    <table class="border w100p fz12" style="border-collapse: collapse;">
                         <tr class="tcenter">
                             <td class="w5p">No</td>
                             <td class="w17p">Nama</td>

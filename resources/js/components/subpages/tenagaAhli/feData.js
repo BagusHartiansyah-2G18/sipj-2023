@@ -42,8 +42,7 @@ function TAFEdata({ form, xadded, xupded, close, duser, userOps}){
     }
     const hitungBulan=({ bulan, start=1 })=>{
         if(start){
-            try {
-                console.log(bulanE);
+            try { 
                 if(bulanE.split("-").length!=2){
                     throw "Bulum terisi";
                 };
@@ -119,71 +118,63 @@ function TAFEdata({ form, xadded, xupded, close, duser, userOps}){
     }  
     return (
         <>
-            <div className={`header ${(form.ins?'bprimary clight':'bwarning cdark')} `}>
-                <div className="icon">
-                    <span className="mdi mdi-clock-edit-outline fz25"></span>
-                    <h3 className="">{(form.ins?'Entri':'Perbarui')} Data</h3>
+            <div className="flexC w95p pwrap">
+                <div className={`ptb10px `}>
+                    <label className="fbold">Nama Staf / Pegawai</label><br></br>
+                    <Select
+                        options={userOps}
+                        placeholder="Pilih Staf / Pegawai"
+                        value={user}
+                        onChange={_staf}
+                        isSearchable={true}
+                    />
                 </div>
-                <button className="btn2 blight cmuted" onClick={close}>Close</button>
-            </div>
-            <div className="body">
-                <div className="flexC w95p justifySA pwrap">
-                    <div className={`ptb10px `}>
-                        <label className="fbold">Nama Staf / Pegawai</label><br></br>
-                        <Select
-                            options={userOps}
-                            placeholder="Pilih Staf / Pegawai"
-                            value={user}
-                            onChange={_staf}
-                            isSearchable={true}
-                        />
+                {(
+                    userSelected.length>0 &&
+                    <div className="borderB">
+                        <TAlistStaf
+                            dstaf={userSelected}
+                            ondel={delStaf}
+                        ></TAlistStaf>
                     </div>
-                    {(
-                        userSelected.length>0 &&
-                        <div className="borderB">
-                            <TAlistStaf
-                                dstaf={userSelected}
-                                ondel={delStaf}
-                            ></TAlistStaf>
-                        </div>
-                    )}
-                    <div className="doubleInput ptb10px">
-                        <label>Dari Bulan</label>
-                        <div className="iconInput2">
-                            <input className="borderR10px" type="month" value={bulanS} onChange={chgBulanS} placeholder="1-12" />
-                            <span className={`mdi mdi-calendar ${(form.ins?'cprimary':'cwarning')} `}></span>
-                        </div>
+                )}
+                <div className="doubleInput ptb10px">
+                    <label>Dari Bulan</label>
+                    <div className="iconInput2">
+                        <input className="borderR10px" type="month" value={bulanS} onChange={chgBulanS} placeholder="1-12" />
+                        <span className={`mdi mdi-calendar ${(form.ins?'cprimary':'cwarning')} `}></span>
                     </div>
-                    {
-                        (fbe==1 &&
-                            <div className="doubleInput ptb10px">
-                                <label>Hingga Bulan</label>
-                                <div className="iconInput2">
-                                    <input className="borderR10px" type="month" value={bulanE} onChange={chgBulanE} placeholder="1-12" />
-                                    <span className={`mdi mdi-calendar ${(form.ins?'cprimary':'cwarning')} `}></span>
-                                </div>
-                            </div>
-                        )
-                    }
-                    {
-                        (ket!='' &&
-                            <div className="doubleInput ptb10px">
-                                <label>keterangan :</label>
-                                <div className="iconInput2">
-                                    <label>{ket}</label>
-                                </div>
-                            </div>
-                        )
-                    } 
-                    
                 </div>
-            </div>
-            <div className="footer posEnd">
-                <div className="btnGroup">
-                    <button className="btn2"  onClick={close}>Close</button>
-                    <button className={`btn2 ${(form.ins?'bprimary':'bwarning')}`}  onClick={(form.ins?xadd:xupd)}>{(form.ins?'Entri':'Perbarui')}</button>
-                </div>
-            </div>
+                {
+                    (fbe==1 &&
+                        <div className="doubleInput ptb10px">
+                            <label>Hingga Bulan</label>
+                            <div className="iconInput2">
+                                <input className="borderR10px" type="month" value={bulanE} onChange={chgBulanE} placeholder="1-12" />
+                                <span className={`mdi mdi-calendar ${(form.ins?'cprimary':'cwarning')} `}></span>
+                            </div>
+                        </div>
+                    )
+                }
+                {
+                    (ket!='' &&
+                        <div className="doubleInput ptb10px">
+                            <label>keterangan :</label>
+                            <div className="iconInput2">
+                                <label>{ket}</label>
+                            </div>
+                        </div>
+                    )
+                }
+                <br/>
+                <div className="list jcE">
+                    <div className="btnGroup">
+                        <button className="btn2"  onClick={close}>Close</button>
+                        <button className={`btn2 ${(form.ins?'bprimary':'bwarning')}`}  onClick={(form.ins?xadd:xupd)}>{(form.ins?'Entri':'Perbarui')}</button>
+                    </div>
+                </div> 
+                <br/> 
+            </div> 
         </>
     )
 }
